@@ -1,0 +1,2 @@
+# BOUTiQ
+BOUTiQのTheme用レポジトリ
