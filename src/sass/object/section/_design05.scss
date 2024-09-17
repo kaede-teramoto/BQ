@@ -1,0 +1,170 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* design05
+ ----------------------------------------------------------------------------------------------- */
+
+.section__design05 {
+    padding: 120px;
+
+    @include m.mq(pc) {
+        padding: 80px;
+    }
+
+    @include m.mq(miniPc) {
+        padding-inline: 60px;
+    }
+
+    @include m.mq(tab) {
+        padding: 60px;
+    }
+
+    @include m.mq(sp) {
+        padding: 60px 40px;
+    }
+}
+
+.section__design05__inner {
+    width: 100%;
+
+    @include m.mq(pc) {
+        @include v.conWidth;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__design05 {
+    display: grid;
+    gap: 80px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        gap: 60px;
+    }
+
+    @include m.mq(tab) {
+        gap: 40px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design05 {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 50px 30px auto;
+    grid-template-areas:
+        "design_title design_title"
+        "design_img design_sub-title"
+        "design_img design_text"
+        "design_img design_text";
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        grid-template-rows: 40px 30px auto;
+        gap: 20px;
+    }
+
+    @include m.mq(tab) {
+        @include v.columnFlex;
+        align-items: flex-start;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design05__title {
+    grid-area: design_title;
+    font-size: 2.8rem;
+    font-weight: 600;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 2.2rem;
+    }
+
+    @include m.mq(tab) {
+        order: 1;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design05__subtitle {
+    grid-area: design_sub-title;
+    font-size: 2.2rem;
+    font-weight: 600;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 1.8rem;
+    }
+
+    @include m.mq(tab) {
+        order: 3;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design05__text {
+    grid-area: design_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 4;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design05__img {
+    grid-area: design_img;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        height: 200px;
+        width: 100%;
+        order: 2;
+    }
+
+    @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

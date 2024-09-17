@@ -1,0 +1,1161 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* Hambergur
+ ----------------------------------------------------------------------------------------------- */
+// common
+// --------------------------------------------------------------------------------------------- */
+.hamburger {
+
+    position: relative;
+    z-index: v.getZIndex(hm);
+    /*display: none;*/
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        /*display: flex;*/
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &.--active {
+        .hamburger__btn {
+            span {
+                background-color: var(--header_text_color);
+            }
+        }
+    }
+}
+
+.hamburger__btn {
+    padding: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        position: absolute;
+        height: 3px;
+        background-color: var(--header_text_color);
+        transition: transform .2s ease-in,
+            background .4s ease-in;
+        display: block;
+    }
+}
+
+.hamburger__btn__top {
+    top: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger__btn__center {
+    top: 11px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger__btn__bottom {
+    top: 22px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// hamburger01
+// --------------------------------------------------------------------------------------------- */
+.hamburger01 {
+    position: relative;
+    z-index: v.getZIndex(hm);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger01__btn__top {
+            transform: translateX(-2px);
+        }
+
+        .hamburger01__btn__center {
+            transform: translateX(2px);
+        }
+
+        .hamburger01__btn__bottom {
+            transform: translateX(-2px);
+        }
+    }
+
+    &.--active {
+        .hamburger01__btn {}
+
+        .hamburger01__btn__top {
+            top: 11px;
+            transform: rotate(35deg);
+        }
+
+        .hamburger01__btn__center {
+            transform: rotate(-35deg);
+            top: 11px;
+        }
+
+        .hamburger01__btn__bottom {
+            transform: rotate(35deg);
+            top: 11px;
+            opacity: 0;
+        }
+    }
+}
+
+.hamburger01__btn {
+    position: relative;
+    width: 32px;
+    height: 25px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        left: 0;
+        width: 100%;
+        border-radius: 2px;
+    }
+}
+
+.hamburger01__btn__top {
+    top: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger01__btn__center {
+    top: 11px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger01__btn__bottom {
+    top: 22px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger02
+// --------------------------------------------------------------------------------------------- */
+.hamburger02 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger02__btn__top {}
+
+        .hamburger02__btn__center {
+            width: 100%;
+        }
+
+        .hamburger02__btn__bottom {}
+    }
+
+    &.--active {
+        .hamburger02__btn {}
+
+        .hamburger02__btn__top {
+            top: 11px;
+            transform: rotate(145deg);
+        }
+
+        .hamburger02__btn__center {
+            top: 11px;
+            opacity: 0;
+        }
+
+        .hamburger02__btn__bottom {
+            transform: rotate(-145deg);
+            top: 11px;
+        }
+    }
+}
+
+.hamburger02__btn {
+    position: relative;
+    width: 32px;
+    height: 25px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        left: 0;
+        height: 3px;
+        border-radius: 2px;
+    }
+}
+
+.hamburger02__btn__top {
+    top: 0;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger02__btn__center {
+    top: 11px;
+    width: 70%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger02__btn__bottom {
+    top: 22px;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger03
+// --------------------------------------------------------------------------------------------- */
+.hamburger03 {
+    position: relative;
+    z-index: v.getZIndex(hm);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger03__btn__top {
+            transform: translateX(-2px);
+        }
+
+        .hamburger03__btn__center {
+            transform: translateX(2px);
+        }
+
+        .hamburger03__btn__bottom {
+            transform: translateX(-2px);
+        }
+    }
+
+    &.--active {
+        .hamburger03__btn {}
+
+        .hamburger03__btn__top {
+            top: 11px;
+            transform: rotate(35deg);
+        }
+
+        .hamburger03__btn__center {
+            transform: rotate(-35deg);
+            top: 11px;
+        }
+
+        .hamburger03__btn__bottom {
+            transform: rotate(35deg);
+            top: 11px;
+            opacity: 0;
+        }
+    }
+}
+
+.hamburger03__btn {
+    position: relative;
+    width: 32px;
+    height: 25px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.hamburger03__btn__top {
+    top: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger03__btn__center {
+    top: 11px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger03__btn__bottom {
+    top: 22px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger04
+// --------------------------------------------------------------------------------------------- */
+.hamburger04 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger04__btn__top {}
+
+        .hamburger04__btn__center {
+            width: 100%;
+        }
+
+        .hamburger04__btn__bottom {}
+    }
+
+    &.--active {
+        .hamburger04__btn {}
+
+        .hamburger04__btn__top {
+            top: 11px;
+            transform: rotate(145deg);
+        }
+
+        .hamburger04__btn__center {
+            top: 11px;
+            opacity: 0;
+        }
+
+        .hamburger04__btn__bottom {
+            transform: rotate(-145deg);
+            top: 11px;
+        }
+    }
+}
+
+.hamburger04__btn {
+    position: relative;
+    width: 32px;
+    height: 25px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        left: 0;
+        transition: transform .2s ease-in,
+            width .2s ease-in;
+    }
+}
+
+.hamburger04__btn__top {
+    top: 0;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger04__btn__center {
+    top: 11px;
+    width: 70%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger04__btn__bottom {
+    top: 22px;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// hamburger05
+// --------------------------------------------------------------------------------------------- */
+.hamburger05 {
+    width: 45px;
+    height: 18px;
+
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger05__btn__top {
+            width: 90%;
+        }
+
+        .hamburger05__btn__center {
+            width: 80%;
+        }
+
+        .hamburger05__btn__bottom {
+            width: 60%;
+        }
+    }
+
+    &.--active {
+        .hamburger05__btn {}
+
+        .hamburger05__btn__top {
+            width: 100%;
+            top: 8px;
+            transform: rotate(25deg);
+        }
+
+        .hamburger05__btn__center {
+            width: 100%;
+            top: 8px;
+            transform: rotate(-25deg);
+        }
+
+        .hamburger05__btn__bottom {
+            opacity: 0;
+        }
+    }
+}
+
+.hamburger05__btn {
+    width: 100%;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        width: 100%;
+        height: 2px;
+        transition: width .2s ease-in;
+    }
+}
+
+.hamburger05__btn__top {
+    top: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger05__btn__center {
+    top: 8px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger05__btn__bottom {
+    top: 16px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger06
+// --------------------------------------------------------------------------------------------- */
+.hamburger06 {
+    width: 45px;
+    height: 14px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger06__btn__top {}
+
+        .hamburger06__btn__center {
+            left: 17px;
+        }
+
+        .hamburger06__btn__bottom {
+            left: 7px;
+        }
+    }
+
+    &.--active {
+        .hamburger06__btn {}
+
+        .hamburger06__btn__top {
+            top: 6px;
+            transform: rotate(15deg);
+            transition: left 0s ease,
+                transform .2s ease-in;
+        }
+
+        .hamburger06__btn__center {
+            opacity: 0;
+        }
+
+        .hamburger06__btn__bottom {
+            width: 45px;
+            top: 6px;
+            left: 0;
+            transform: rotate(-15deg);
+            transition: left 0s ease,
+                transform .2s ease-in;
+        }
+    }
+}
+
+.hamburger06__btn {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        height: 2px;
+        transition: left .3s ease-in;
+    }
+}
+
+.hamburger06__btn__top {
+    width: 45px;
+    top: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger06__btn__center {
+    width: 28px;
+    top: 6px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger06__btn__bottom {
+    width: 38px;
+    top: 12px;
+    right: auto;
+    transition: all .2s;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger07
+// --------------------------------------------------------------------------------------------- */
+.hamburger07 {
+    width: 45px;
+    height: 16px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger07__btn__top {}
+
+        .hamburger07__btn__center {
+            right: 17px;
+        }
+
+        .hamburger07__btn__bottom {
+            right: 7px;
+        }
+    }
+
+    &.--active {
+        .hamburger07__btn {}
+
+        .hamburger07__btn__top {
+            top: 6px;
+            transform: rotate(15deg);
+            transition: left 0s ease,
+                transform .2s ease-in;
+        }
+
+        .hamburger07__btn__center {
+            opacity: 0;
+        }
+
+        .hamburger07__btn__bottom {
+            width: 45px;
+            top: 6px;
+            left: 0;
+            transform: rotate(-15deg);
+            transition: left 0s ease,
+                transform .2s ease-in;
+        }
+    }
+}
+
+.hamburger07__btn {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        height: 2px;
+        right: 0;
+        transition: right .2s ease-in;
+    }
+}
+
+.hamburger07__btn__top {
+    top: 0;
+    width: 45px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger07__btn__center {
+    top: 7px;
+    width: 28px;
+    right: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger07__btn__bottom {
+    top: 14px;
+    width: 38px;
+    left: auto;
+    right: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger08
+// --------------------------------------------------------------------------------------------- */
+.hamburger08 {
+    width: 48px;
+    height: 13px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger08__btn__top {
+            width: 35px;
+            top: 7px;
+            //transform: rotate(90deg);
+            transition:
+                width .2s ease-out,
+                top .1s ease .2s,
+                transform .2s ease-in .2s;
+        }
+
+        .hamburger08__btn__center {
+            width: 35px;
+            top: 7px;
+            transition:
+                width .2s ease-out,
+                top .1s ease .2s,
+                transform .2s ease-in .2s;
+        }
+
+        .hamburger08__btn__bottom {}
+    }
+
+    &.--active {
+        .hamburger08__btn {}
+
+        .hamburger08__btn__top {
+            width: 35px;
+            top: 7px;
+
+            &:hover {
+                transform: rotate(0);
+            }
+        }
+
+        .hamburger08__btn__center {
+            width: 35px;
+            top: 7px;
+        }
+
+        .hamburger08__btn__bottom {}
+    }
+
+    &:hover.--active {
+        .hamburger08__btn__top {
+            transform: rotate(0);
+        }
+    }
+}
+
+.hamburger08__btn {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        width: 48px;
+        height: 2px;
+        transition:
+            width .2s ease-out,
+            top .1s ease .2s,
+            transform .2s ease-in .2s;
+    }
+}
+
+.hamburger08__btn__top {
+    top: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger08__btn__center {
+    top: 11px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger08__btn__bottom {
+    opacity: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger09
+// --------------------------------------------------------------------------------------------- */
+.hamburger09 {
+    width: 48px;
+    height: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger09__btn__top {
+            width: 40px;
+        }
+
+        .hamburger09__btn__center {
+            width: 48px;
+            right: 0;
+        }
+
+        .hamburger09__btn__bottom {}
+    }
+
+    &.--active {
+        .hamburger09__btn {}
+
+        .hamburger09__btn__top {
+            top: 8px;
+            width: 40px;
+            transition: left 0s ease,
+                top .2s ease,
+                transform .2s ease-in;
+        }
+
+        .hamburger09__btn__center {
+            width: 40px;
+            transition: left 0s ease,
+                top .2s ease,
+                transform .2s ease-in;
+        }
+
+        .hamburger09__btn__bottom {}
+    }
+}
+
+.hamburger09__btn {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        height: 2px;
+        transition:
+            width .2s ease-out,
+            left .1s ease,
+            transform .2s ease-in;
+    }
+
+}
+
+.hamburger09__btn__top {
+    right: 0;
+    width: 48px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger09__btn__center {
+    top: 8px;
+    width: 40px;
+    right: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger09__btn__bottom {
+    opacity: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// hamburger10
+// --------------------------------------------------------------------------------------------- */
+.hamburger10 {
+    width: 48px;
+    height: 10px;
+    /*display: flex;*/
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hamburger10__btn__top {
+            width: 40px;
+        }
+
+        .hamburger10__btn__center {
+            width: 48px;
+        }
+
+        .hamburger10__btn__bottom {}
+    }
+
+    &.--active {
+        .hamburger10__btn {}
+
+        .hamburger10__btn__top {
+            top: 8px;
+        }
+
+        .hamburger10__btn__center {}
+
+        .hamburger10__btn__bottom {}
+    }
+}
+
+.hamburger10__btn {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    span {
+        height: 2px;
+        transition:
+            width .2s ease-out,
+            top .2s ease,
+            transform .2s ease-in;
+    }
+}
+
+.hamburger10__btn__top {
+    top: 0;
+    width: 48px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger10__btn__center {
+    top: 8px;
+    width: 40px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hamburger10__btn__bottom {
+    opacity: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}

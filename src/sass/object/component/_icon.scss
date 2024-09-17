@@ -1,0 +1,741 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* Icon_button
+ ----------------------------------------------------------------------------------------------- */
+.c-button__icon {
+    position: relative;
+    z-index: 5;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.c-button__icon__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon01
+ ----------------------------------------------------------------------------------------------- */
+
+.c-button__icon01 {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before,
+    &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+    }
+
+    &::before {
+        width: 10px;
+        height: 1px;
+        top: 50%;
+        left: 10px;
+        background-color: var(--main_color);
+    }
+
+    &::after {
+        width: 5px;
+        height: 5px;
+        transform: rotate(45deg);
+        border-top: solid 1px var(--main_color);
+        border-right: solid 1px var(--main_color);
+        top: 13px;
+    }
+}
+
+.c-button05 {
+    .c-button__icon01 {
+        background-color: var(--main_color);
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    icon02
+ ----------------------------------------------------------------------------------------------- */
+
+.c-button__icon02 {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 15px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 14px;
+        height: 14px;
+        background-color: var(--main_color);
+        border-radius: 50px;
+        top: 8px;
+        left: 8px;
+    }
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    icon03
+ ----------------------------------------------------------------------------------------------- */
+
+.c-button__icon03 {
+    width: 7px;
+    height: 7px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        content: "";
+        transform: rotate(45deg);
+        border-top: solid 2px var(--header_text_color);
+        border-right: solid 2px var(--header_text_color);
+    }
+}
+
+.c-button03,
+.c-button06,
+.c-button08,
+.c-button09 {
+    .c-button__icon03 {
+        &::before {
+            border-color: #fff;
+        }
+    }
+}
+
+.c-button07 {
+    .c-button__icon03 {
+        &::before {
+            border-color: var(--main_color);
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon04
+ ----------------------------------------------------------------------------------------------- */
+
+.c-button__icon04 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        content: "";
+        background-color: var(--main_color);
+        border-radius: 50px;
+    }
+}
+
+
+.c-button04 {
+    .c-button__icon04 {
+        background-color: var(--main_color);
+
+        &::before {
+            background-color: #fff;
+        }
+    }
+
+    &:hover {
+        .c-button__icon04 {
+            background-color: #fff;
+
+            &::before {
+                background-color: var(--main_color);
+            }
+        }
+    }
+}
+
+.c-button08 {
+
+    &:hover {
+        .c-button__icon04 {
+            background-color: var(--main_color);
+
+            &::before {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+
+/*  -----------------------------------------------------------------------------------------------
+    icon05
+ ----------------------------------------------------------------------------------------------- */
+
+.c-button__icon05 {
+    width: 15px;
+    height: 8px;
+    position: relative;
+    margin-right: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before,
+    &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        right: 0;
+    }
+
+    &::before {
+        height: 1px;
+        width: 14px;
+        top: 50%;
+        background-color: var(--header_text_color);
+    }
+
+    &::after {
+        width: 5px;
+        height: 5px;
+        transform: rotate(45deg);
+        border-top: solid 1px var(--header_text_color);
+        border-right: solid 1px var(--header_text_color);
+        top: 25%;
+    }
+}
+
+.c-button03 {
+    .c-button__icon05 {
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+}
+
+.c-button06,
+.c-button08,
+.c-button09 {
+
+    .c-button__icon05 {
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+}
+
+.c-button07 {
+
+    .c-button__icon05 {
+
+        &::before {
+            background-color: var(--main_color);
+        }
+
+        &::after {
+            border-color: var(--main_color);
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon06
+ ----------------------------------------------------------------------------------------------- */
+
+.c-button__icon06 {
+    width: 48px;
+    height: 12px;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before,
+    &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        right: 0;
+    }
+
+    &::before {
+        height: 1px;
+        width: 48px;
+        top: 50%;
+        background-color: var(--header_text_color);
+    }
+
+    &::after {
+        width: 7px;
+        height: 7px;
+        transform: rotate(45deg);
+        border-top: solid 1px var(--header_text_color);
+        border-right: solid 1px var(--header_text_color);
+        top: 25%;
+    }
+}
+
+.c-button03 {
+    .c-button__icon06 {
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+}
+
+.c-button06,
+.c-button08,
+.c-button09 {
+
+    .c-button__icon06 {
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+}
+
+.c-button07 {
+
+    .c-button__icon06 {
+
+        &::before {
+            background-color: var(--main_color);
+        }
+
+        &::after {
+            border-color: var(--main_color);
+        }
+    }
+}
+
+
+/* Icon_linktext
+ ----------------------------------------------------------------------------------------------- */
+
+/*  -----------------------------------------------------------------------------------------------
+    icon01
+ ----------------------------------------------------------------------------------------------- */
+
+.icon01 {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before,
+    &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+    }
+
+    &::before {
+        width: 10px;
+        height: 1px;
+        top: 50%;
+        left: 9px;
+        background-color: var(--main_color);
+    }
+
+    &::after {
+        width: 5px;
+        height: 5px;
+        transform: rotate(45deg);
+        border-top: solid 1px var(--main_color);
+        border-right: solid 1px var(--main_color);
+        top: 13px;
+        right: 10px;
+    }
+}
+
+.linkText02,
+.linkText04,
+.linkText05 {
+    .icon01 {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+        background-color: var(--main_color);
+
+        &::before {
+            background-color: #fff;
+            left: 19px;
+
+        }
+
+        &::after {
+            border-top: solid 1px #fff;
+            border-right: solid 1px #fff;
+            top: 22px;
+            right: 19px;
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon02
+ ----------------------------------------------------------------------------------------------- */
+
+.icon02 {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 15px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 14px;
+        height: 14px;
+        background-color: var(--main_color);
+        border-radius: 50px;
+        top: 8px;
+        left: 8px;
+    }
+}
+
+.linkText08 {
+    .icon02 {
+        &::before {
+            background-color: var(--text_color);
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon03
+ ----------------------------------------------------------------------------------------------- */
+
+.icon03 {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        width: 7px;
+        height: 7px;
+        display: inline-block;
+        content: "";
+        transform: rotate(45deg);
+        border-top: solid 2px var(--main_color);
+        border-right: solid 2px var(--main_color);
+    }
+}
+
+.linkText02,
+.linkText04,
+.linkText05 {
+    .icon03 {
+        width: 48px;
+        height: 48px;
+        border-radius: 50px;
+        background-color: var(--main_color);
+
+        &::before {
+            border-top: solid 2px #fff;
+            border-right: solid 2px #fff;
+        }
+    }
+}
+
+.linkText08 {
+    .icon03 {
+        margin-right: 10px;
+
+        &::before {
+            border-top: solid 2px var(--text_color);
+            border-right: solid 2px var(--text_color);
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon04
+ ----------------------------------------------------------------------------------------------- */
+
+.icon04 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        content: "";
+        background-color: var(--main_color);
+        border-radius: 50px;
+    }
+}
+
+.linkText01,
+.linkText03 {
+
+    .icon04 {
+        background-color: var(--main_color);
+
+        &::before {
+            background-color: #fff;
+        }
+    }
+}
+
+.linkText08 {
+    .icon04 {
+        &::before {
+            background-color: var(--text_color);
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon05
+ ----------------------------------------------------------------------------------------------- */
+
+.icon05 {
+    width: 15px;
+    height: 8px;
+    position: relative;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before,
+    &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        right: 0;
+    }
+
+    &::before {
+        height: 1px;
+        width: 14px;
+        top: 50%;
+        background-color: var(--text_color);
+    }
+
+    &::after {
+        width: 5px;
+        height: 5px;
+        transform: rotate(45deg);
+        border-top: solid 1px var(--text_color);
+        border-right: solid 1px var(--text_color);
+        top: 25%;
+    }
+}
+
+.linkText06,
+.linkText07 {
+    .icon05 {
+        &::before {
+            background-color: var(--main_color);
+        }
+
+        &::after {
+            border-top: solid 1px var(--main_color);
+            border-right: solid 1px var(--main_color);
+        }
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    icon06
+ ----------------------------------------------------------------------------------------------- */
+
+.icon06 {
+    width: 48px;
+    height: 12px;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before,
+    &::after {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        right: 0;
+    }
+
+    &::before {
+        height: 1px;
+        width: 48px;
+        top: 50%;
+        background-color: var(--main_color);
+    }
+
+    &::after {
+        width: 7px;
+        height: 7px;
+        transform: rotate(45deg);
+        border-top: solid 1px var(--main_color);
+        border-right: solid 1px var(--main_color);
+        top: 25%;
+    }
+}
+
+.linkText08 {
+    .icon06 {
+        margin-right: 10px;
+
+        &::before {
+            background-color: var(--text_color);
+        }
+
+        &::after {
+            border-top: solid 1px var(--text_color);
+            border-right: solid 1px var(--text_color);
+        }
+    }
+}

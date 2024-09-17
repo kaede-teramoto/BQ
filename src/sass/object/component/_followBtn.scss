@@ -1,0 +1,174 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* Follow button
+ ----------------------------------------------------------------------------------------------- */
+.follow_button {
+    position: fixed;
+    z-index: v.getZIndex(followBtn);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &.is-leftIn {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform .3s ease-in-out,
+            opacity .3s ease-in-out,
+        ;
+
+        &.--active {
+            transform: translateX(0);
+            opacity: 1;
+            transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out,
+        }
+    }
+
+    &.is-rightIn {
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform .3s ease-in-out,
+            opacity .3s ease-in-out,
+        ;
+
+        &.--active {
+            transform: translateX(0);
+            opacity: 1;
+            transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out,
+        }
+    }
+
+    &.is-topIn {
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform .3s ease-in-out,
+            opacity .3s ease-in-out,
+        ;
+
+        &.--active {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out,
+        }
+    }
+
+    &.is-bottomIn {
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform .3s ease-in-out,
+            opacity .3s ease-in-out,
+        ;
+
+        &.--active {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out,
+        }
+    }
+
+    &.is-fadeIn {
+        opacity: 0;
+        transition: opacity .3s ease-in-out,
+        ;
+
+        &.--active {
+            opacity: 1;
+            transition: opacity .3s ease-in-out,
+        }
+    }
+}
+
+.follow_button__link {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.follow_button__img {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+/* Follow button 01: 右上
+ ----------------------------------------------------------------------------------------------- */
+.follow_button01 {
+    top: var(--follow_button_tb);
+    right: var(--follow_button_lr);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+/* Follow button 02: 右下
+ ----------------------------------------------------------------------------------------------- */
+.follow_button02 {
+    bottom: var(--follow_button_tb);
+    right: var(--follow_button_lr);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+/* Follow button 03: 左上
+ ----------------------------------------------------------------------------------------------- */
+.follow_button03 {
+    top: var(--follow_button_tb);
+    left: var(--follow_button_lr);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+/* Follow button 04: 左下
+ ----------------------------------------------------------------------------------------------- */
+.follow_button04 {
+    bottom: var(--follow_button_tb);
+    left: var(--follow_button_lr);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}

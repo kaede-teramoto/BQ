@@ -1,0 +1,287 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* faq03
+ ----------------------------------------------------------------------------------------------- */
+.section__faq03 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+.section__faq03__inner {
+    display: grid;
+    gap: 0 150px;
+    grid-template-areas:
+        "block-title parts__wrapper"
+        "block-subtitle parts__wrapper";
+    grid-template-rows: 140px 1fr;
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        display: block;
+
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__faq03__block-title {
+    color: var(--accent_color);
+    grid-area: block-title;
+    @include v.titleH2;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__faq03__block-subtitle {
+    grid-area: block-subtitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__faq03 {
+    grid-area: parts__wrapper;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__faq03 {
+    padding: 30px 0;
+    border-top: 3px solid var(--sub_color);
+    position: relative;
+    z-index: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding: 20px 0;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:last-of-type {
+        border-bottom: 3px solid var(--sub_color);
+    }
+}
+
+.section__parts__faq03__title {
+    padding-left: 140px;
+    padding-right: 140px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        content: "";
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        border-bottom: 2px solid var(--accent_color);
+        border-left: 2px solid var(--accent_color);
+        position: absolute;
+        right: 30px;
+        transition: transform .3s linear;
+    }
+
+    &::before {
+        transform: rotate(-45deg);
+    }
+
+
+    &.--active {
+        &::before {
+            transform: rotate(135deg);
+        }
+    }
+
+    .versatile {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        font-size: 2.4rem;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+            content: "Q";
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            font-size: 2rem;
+            width: 60px;
+            height: 6px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.section__parts__faq03__text {
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+    color: var(--accent_color);
+    height: 0;
+    padding: 0 140px;
+    display: flex;
+    align-items: center;
+    transition:
+        height .3s ease-out,
+        padding-top .3s ease-out,
+        padding-bottom .3s ease-out;
+
+    &.--active {
+        height: auto;
+        padding: 30px 140px;
+        transition:
+            height .3s ease-out,
+            padding-top .3s ease-out,
+            padding-bottom .3s ease-out;
+    }
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding: 0 60px 0 60px;
+
+
+        &.--active {
+            padding: 30px 60px 0 60px;
+        }
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .versatile {
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100px;
+        height: auto;
+        font-size: 2.4rem;
+        visibility: hidden;
+        transition:
+            height .2s linear,
+            opacity .2s linear,
+            visibility .2s linear;
+
+        &::before {
+            color: var(--accent_color);
+            content: "A";
+            display: none;
+            transition:
+                opacity .1s linear,
+                visibility .3s linear;
+        }
+
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 60px;
+            top: calc(50% + 15px); //calc(calc(calc(50% - 26px) / 2) + 30px);
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    &.--active {
+
+        .versatile {
+            width: 100px;
+            opacity: 1;
+            visibility: visible;
+            /* 開くアニメーション */
+            transition:
+                height .3s linear,
+                opacity 1s linear,
+                visibility 1s linear;
+
+            &::before {
+                opacity: 1;
+                visibility: visible;
+                display: block;
+                transition:
+                    opacity .3s linear,
+                    visibility .3s linear;
+            }
+
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                width: 60px;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+        }
+    }
+}

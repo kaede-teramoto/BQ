@@ -1,0 +1,27 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/* Container
+ ----------------------------------------------------------------------------------------------- */
+.l-main {
+    width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.l-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

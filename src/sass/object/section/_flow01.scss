@@ -1,0 +1,255 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* flow01
+ ----------------------------------------------------------------------------------------------- */
+
+.section__flow01 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__flow01__inner {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__flow01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__flow01 {
+    display: grid;
+    gap: 5px 60px;
+    grid-template-columns: 124px auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "flow_img flow_sub"
+        "flow_img flow_title"
+        "flow_img flow_text";
+    width: 600px;
+    padding-bottom: 60px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        grid-template-columns: 110px auto;
+        gap: 5px 40px;
+        padding-bottom: 50px;
+        width: 580px;
+    }
+
+    @include m.mq(tab) {
+        grid-template-columns: 100px auto;
+        gap: 3px 40px;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+
+    @include m.mq(sp) {
+        grid-template-columns: 90px auto;
+        gap: 0px 30px;
+        padding-bottom: 30px;
+    }
+
+    &:first-child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto 30px;
+        width: 845px;
+        padding-bottom: 0px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 100%;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            text-align: left;
+        }
+    }
+
+    &:last-child {
+        padding-bottom: 40px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            padding-bottom: 20px;
+        }
+
+        @include m.mq(sp) {}
+
+        .section__parts__flow01__img {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.section__parts__flow01__title {
+    grid-area: flow_title;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    color: var(--main_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        font-size: 2.0rem;
+        line-height: 3.0rem;
+    }
+}
+
+.section__parts__flow01__subtitle {
+    grid-area: flow_sub;
+    font-size: 1.6rem;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 1.4rem;
+    }
+
+    @include m.mq(tab) {
+        font-size: 1.2rem;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__flow01__text {
+    grid-area: flow_text;
+    overflow-wrap: break-word;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__flow01__img {
+    grid-area: flow_img;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::before {
+        content: "";
+        width: 124px;
+        height: 124px;
+        border-radius: 100px;
+        background-color: #fff;
+        position: absolute;
+        z-index: 1;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 110px;
+            height: 110px;
+        }
+
+        @include m.mq(tab) {
+            width: 100px;
+            height: 100px;
+        }
+
+        @include m.mq(sp) {
+            width: 90px;
+            height: 90px;
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: var(--text_color);
+        position: absolute;
+        bottom: -120px;
+        z-index: 0;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            bottom: -100px;
+        }
+
+        @include m.mq(tab) {
+            bottom: -90px;
+        }
+
+        @include m.mq(sp) {
+            bottom: -80px;
+        }
+    }
+
+    img {
+        width: 45px;
+        position: absolute;
+        z-index: 2;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            width: 35px;
+        }
+
+        @include m.mq(sp) {}
+    }
+}

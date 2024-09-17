@@ -1,0 +1,167 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* design13
+ ----------------------------------------------------------------------------------------------- */
+
+.section__design13 {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design13__inner {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design13__block-title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design13__block-subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__design13 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        gap: 20px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design13 {
+    width: calc(50% - 15px);
+    background: #fff;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "parts_title parts_img"
+        "parts_text parts_img"
+        "parts_subtitle parts_img";
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design13__title {
+    grid-area: parts_title;
+    padding: 20px 20px 0;
+    font-size: 150%;
+    color: var(--text_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding: 10px 20px 0;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design13__subtitle {
+    grid-area: parts_subtitle;
+    padding: 5% 20px 20px;
+    color: var(--main_color);
+    font-size: 150%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding: 5px 20px 10px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design13__text {
+    grid-area: parts_text;
+    padding: 0 20px;
+    line-height: 1.8;
+    font-size: 90%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design13__img {
+    grid-area: parts_img;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

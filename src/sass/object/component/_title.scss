@@ -1,0 +1,352 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* Contents title
+ ----------------------------------------------------------------------------------------------- */
+// title ---------------------------------------------------
+.section__block__title {
+    color: var(--main_color);
+    @include v.contentTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title__text {
+    display: block;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title--subtitle {
+    font-size: 25%;
+    display: block;
+    font-weight: 100;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: 40%;
+    }
+
+    @include m.mq(sp) {
+        font-size: 50%;
+    }
+}
+
+// title01 ---------------------------------------------------
+.section__block__title01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title01__text {
+    order: 2;
+    font-weight: 600;
+    color: var(--main_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title01--subtitle {
+    order: 1;
+    font-weight: 600;
+    font-size: 30%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// title02 ---------------------------------------------------
+.section__block__title02 {
+    display: flex;
+    padding-bottom: 30px;
+    gap: 5px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title02__text {
+    font-weight: 600;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title02--subtitle {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// title03 ---------------------------------------------------
+.section__block__title03 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 30px;
+    padding-bottom: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title03__text {
+    font-weight: 200;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title03--subtitle {
+    transform: translateY(-50%);
+    font-weight: 400;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// title04 ---------------------------------------------------
+.section__block__title04 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    gap: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title04__text {
+    font-weight: 500;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title04--subtitle {
+    font-weight: 500;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// title05 ---------------------------------------------------
+.section__block__title05 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 30px;
+    gap: 15px;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        gap: 10px;
+    }
+
+    &::before {
+        content: "";
+        width: 8%;
+        height: 1px;
+        background-color: var(--main_color);
+    }
+}
+
+.section__block__title05__text {
+    font-weight: 550;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__block__title05--subtitle {
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30%;
+    margin-top: auto;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+// title06 ---------------------------------------------------
+.section__block__title06 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+    gap: 10px;
+    min-height: calc(var(--font_size_PC) * 5);
+
+    @include m.mq(pc) {
+        min-height: calc(var(--font_size_PC) * 4);
+    }
+
+    @include m.mq(miniPc) {
+        min-height: calc(var(--font_size_PC) * 4);
+    }
+
+    @include m.mq(tab) {
+        min-height: calc(var(--font_size_TAB) * 3);
+    }
+
+    @include m.mq(sp) {
+        min-height: calc(var(--font_size_SP) * 3)
+    }
+}
+
+.section__block__title06__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.section__block__title06__text {
+    position: relative;
+    z-index: 1;
+    order: 2;
+    font-size: calc(var(--font_size_PC) * 2);
+    color: var(--text_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: calc(var(--font_size_TAB) * 2);
+    }
+
+    @include m.mq(sp) {
+        font-size: calc(var(--font_size_SP) * 2)
+    }
+}
+
+.section__block__title06--subtitle {
+    position: relative;
+    z-index: 1;
+    order: 1;
+    font-size: var(--font_size_PC);
+    font-weight: bold;
+    color: var(--main_color);
+    line-height: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: var(--font_size_TAB);
+    }
+
+    @include m.mq(sp) {
+        font-size: var(--font_size_SP);
+    }
+}

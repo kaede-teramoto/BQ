@@ -1,0 +1,300 @@
+@use "./mixins" as m;
+/* Color
+ ----------------------------------------------------------------------------------------------- */
+// Primary Color
+$text_color: #222;
+
+// Secondary Color
+$main_color: #2641cf;
+
+// Tertiary color
+$accent_color: #f0f0f0;
+
+// Sub color
+$base_color: #cacaca;
+
+// Background color
+$bg_color: #7f7f7f;
+
+// White color
+$White_color: #fff;
+
+/* Size
+ ----------------------------------------------------------------------------------------------- */
+// Contents width
+$spWidth: 90%;
+$tabWidth: 540px;
+$miniWidth: 800px;
+$pcWidth: 1100px;
+$maxWidth: 1500px;
+$headerWidth: 94%;
+
+@mixin conWidth() {
+  width: $maxWidth;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include m.mq(pc) {
+    width: $pcWidth;
+  }
+
+  @include m.mq(miniPc) {
+    width: $miniWidth;
+  }
+
+  @include m.mq(tab) {
+    width: $tabWidth;
+  }
+
+  @include m.mq(sp) {
+    width: $spWidth;
+  }
+}
+
+@mixin sidePadding() {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0 calc(calc(100% - $maxWidth) / 2);
+
+  @include m.mq(pc) {
+    padding: 0 calc(calc(100% - $pcWidth) / 2);
+  }
+
+  @include m.mq(miniPc) {
+    padding: 0 calc(calc(100% - $miniWidth) / 2);
+  }
+
+  @include m.mq(tab) {
+    padding: 0 calc(calc(100% - $tabWidth) / 2);
+  }
+
+  @include m.mq(sp) {
+    padding: 0 calc(calc(100% - $spWidth) / 2);
+  }
+}
+
+@mixin rowFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin columnFlex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* z-index
+ ----------------------------------------------------------------------------------------------- */
+$z-index: header, mark, followBtn, hmContent, hm;
+
+@function getZIndex($name) {
+  @return index($z-index, $name) * 100;
+}
+
+// font
+$mon: "Montserrat", "Noto Sans JP", sans-serif;
+
+// 本文
+@mixin defaultText() {
+  font-size: var(--font_size_PC);
+  line-height: 2;
+  font-weight: 500;
+
+  @include m.mq(miniPc) {
+    font-size: var(--font_size_TAB);
+    line-height: 2;
+  }
+
+  @include m.mq(tab) {
+    font-size: var(--font_size_SP);
+    line-height: 2.2;
+  }
+
+  @include m.mq(sp) {}
+}
+
+// Contents title
+@mixin pageTitle() {
+  font-size: var(--heading_fontSize_PC);
+  line-height: 1.2;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    font-size: var(--heading_fontSize_TAB);
+    line-height: 1.4;
+  }
+
+  @include m.mq(sp) {
+    font-size: var(--heading_fontSize_SP);
+  }
+}
+
+// Contents title
+@mixin contentTitle() {
+  font-size: var(--heading_fontSize_PC);
+  line-height: 1.2;
+  font-family: var(--heading_font);
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    font-size: var(--heading_fontSize_TAB);
+  }
+
+  @include m.mq(sp) {
+    font-size: var(--heading_fontSize_SP);
+  }
+}
+
+@mixin borderRadius() {
+  & {
+    border-radius: var(--radius_pc);
+    overflow: hidden;
+  }
+
+  @include m.mq(pc) {}
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    border-radius: var(--radius_tab);
+  }
+
+  @include m.mq(sp) {
+    border-radius: var(--radius_sp);
+  }
+}
+
+// h2
+@mixin titleH2() {
+  font-size: 6rem;
+  line-height: 8rem;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {
+    font-size: 5rem;
+    line-height: 7rem;
+  }
+
+  @include m.mq(tab) {
+    font-size: 4.5rem;
+    line-height: 6rem;
+  }
+
+  @include m.mq(sp) {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+}
+
+// h3
+@mixin titleH3() {
+  font-size: 5rem;
+  line-height: 8rem;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+
+  @include m.mq(sp) {
+    font-size: 3.8rem;
+    line-height: 5.2rem;
+  }
+}
+
+// h4
+@mixin titleH4() {
+  font-size: 4.4rem;
+  line-height: 8.4rem;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {
+    font-size: 4.2rem;
+    line-height: 6.0rem;
+  }
+
+  @include m.mq(tab) {
+    font-size: 3.8rem;
+    line-height: 5.0rem;
+  }
+
+  @include m.mq(sp) {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+  }
+}
+
+// h5
+@mixin titleH5() {
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {
+    font-size: 3.0rem;
+    line-height: 4.4rem;
+  }
+
+  @include m.mq(tab) {}
+
+  @include m.mq(sp) {
+    font-size: 2.2rem;
+    line-height: 4.0rem;
+  }
+}
+
+
+// h6
+@mixin titleH6() {
+  font-size: 2.4rem;
+  line-height: 4.0rem;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {
+    font-size: 2.2rem;
+    line-height: 3.8rem;
+  }
+
+  @include m.mq(tab) {}
+
+  @include m.mq(sp) {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+  }
+}
+
+// h7
+@mixin titleH7() {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  font-family: var(--heading_font);
+  font-weight: 500;
+
+  @include m.mq(miniPc) {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+
+  @include m.mq(tab) {}
+
+  @include m.mq(sp) {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+}

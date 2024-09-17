@@ -1,0 +1,21 @@
+// Breakpoint  ------------------------------------------------------------------------------------
+$breakpoints: (
+  pc: "screen and (max-width: 1599px)",
+  miniPc: "screen and (max-width: 1199px)",
+  tab: "screen and (max-width: 849px)",
+  sp: "screen and (max-width: 599px)",
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content;
+  }
+}
+
+// @include m.mq(pc) {}
+
+// @include m.mq(miniPc) {}
+
+// @include m.mq(tab) {}
+
+// @include m.mq(sp) {}

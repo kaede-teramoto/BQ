@@ -1,0 +1,71 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* marker
+ ----------------------------------------------------------------------------------------------- */
+.c-marker {
+    overflow: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &.js-marker.is-active {
+        .c-marker__bar {
+            transform: translateX(0);
+        }
+
+        .c-marker__content {
+            &::after {
+                transform: translateX(130%);
+            }
+        }
+    }
+}
+
+.c-marker__bar {
+    overflow: hidden;
+    display: inline-block;
+    transition: transform .3s ease;
+    transform: translateX(-100%);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.c-marker__content {
+    display: inline-block;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main_color);
+        display: inline-block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: all .3s ease-in-out .5s;
+    }
+
+}

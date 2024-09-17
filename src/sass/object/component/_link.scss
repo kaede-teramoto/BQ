@@ -1,0 +1,311 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* link
+ ----------------------------------------------------------------------------------------------- */
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText01
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText01 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+
+    .linkText__main {
+        order: 2;
+        color: var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText02
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText02 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+
+    .linkText__main {
+        order: 2;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText03
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText03 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+
+    .linkText__main {
+        order: 2;
+        color: var(--main_color);
+        font-size: 2.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.4;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        &::after {
+            content: "詳しく見る";
+            display: inline-block;
+            font-size: 1.0rem;
+            color: var(--base_color);
+        }
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText04
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText04 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+
+    .linkText__main {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText05
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText05 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 100px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        gap: 80px;
+    }
+
+
+    .linkText__main {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText06
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText06 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+
+    .linkText__main {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText07
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText07 {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 15px;
+
+    .linkText__main {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText08
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText08 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16.25vw;
+    max-width: 260px;
+    min-width: 200px;
+    padding-bottom: 12px;
+    position: relative;
+
+    &:hover {
+        .icon05 {
+            transform: translateX(5px); // ホバー時にアイコンを右に移動
+        }
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--text_color);
+    }
+
+    .linkText__main {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    linkText09
+ ----------------------------------------------------------------------------------------------- */
+
+.linkText09 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    position: relative;
+    width: min-content;
+    white-space: nowrap;
+
+    .icon01,
+    .icon02,
+    .icon03,
+    .icon04,
+    .icon05,
+    .icon06 {
+        display: none;
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 40%;
+        height: 1px;
+        background-color: var(--text_color);
+    }
+
+    .linkText__main {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    br {
+        display: none;
+    }
+}

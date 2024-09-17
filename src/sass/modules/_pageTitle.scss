@@ -1,0 +1,1305 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*最後削除します*/
+.page-title__wrapper+.page-title__wrapper {
+    margin-top: 100px;
+}
+
+/* pageTitle
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title {
+    @include v.conWidth;
+}
+
+.page-title__img {
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle01
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title01__wrapper {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title01 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title01__feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 243px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 40px;
+    margin-bottom: 90px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        margin-top: 150px;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {
+        margin-bottom: 40px;
+    }
+
+    @include m.mq(sp) {
+        margin: 110px 0 30px;
+        gap: 20px;
+    }
+}
+
+.page-title01__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title01__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title01__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title01__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title01__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.page-title01__img {
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 460px;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        aspect-ratio: 849 / 460;
+        height: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle02
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title02__wrapper {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title02 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title02__feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 243px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 40px;
+    margin-bottom: 90px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        margin-top: 150px;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {
+        margin-bottom: 40px;
+    }
+
+    @include m.mq(sp) {
+        margin: 110px 0 30px;
+        gap: 20px;
+    }
+}
+
+.page-title02__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title02__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title02__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title02__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title02__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.page-title02__img {
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 460px;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        aspect-ratio: 540 / 460;
+        height: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle03
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title03__wrapper {
+    width: 100%;
+    overflow-x: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title03 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title03__feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 243px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 40px;
+    margin-bottom: 90px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        margin-top: 150px;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {
+        margin-bottom: 40px;
+    }
+
+    @include m.mq(sp) {
+        margin: 110px 0 30px;
+        gap: 20px;
+    }
+}
+
+.page-title03__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title03__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title03__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title03__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title03__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.page-title03__img {
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 460px;
+    margin-right: calc(50% - 50vw);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        aspect-ratio: 695 / 460;
+        height: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle04
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title04__wrapper {
+    width: 100%;
+    overflow-x: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title04 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title04__feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 243px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 40px;
+    margin-bottom: 90px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        margin-top: 150px;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {
+        margin-bottom: 40px;
+    }
+
+    @include m.mq(sp) {
+        margin: 110px 0 30px;
+        gap: 20px;
+    }
+}
+
+.page-title04__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title04__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title04__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title04__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title04__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.page-title04__img {
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 460px;
+    margin-left: calc(50% - 50vw);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        aspect-ratio: 695 / 460;
+        height: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle05
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title05__wrapper {
+    width: 100%;
+    height: 540px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        height: 320px;
+    }
+}
+
+.page-title05 {
+    height: 100%;
+    display: grid;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title05__feature {
+    grid-area: 1 / 1;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 360px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 20px;
+    color: v.$White_color;
+    margin-bottom: 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        gap: 20px;
+    }
+}
+
+.page-title05__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title05__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title05__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title05__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title05__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.page-title05__img {
+    grid-area: 1 / 1;
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 540px;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        height: 320px;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle06
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title06__wrapper {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title06 {
+    display: flex;
+    flex-direction: column;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title06__feature {
+    order: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 130px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 30px;
+        gap: 20px;
+    }
+}
+
+.page-title06__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title06__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title06__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title06__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title06__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.page-title06__img {
+    display: flex;
+    order: 1;
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle07
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title07__wrapper {
+    overflow: hidden;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title07 {
+    display: flex;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: inline-block;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.page-title07__feature {
+    margin-right: 100px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        max-width: 420px;
+        margin-right: 80px;
+    }
+
+    @include m.mq(tab) {
+        margin-right: 0px;
+        max-width: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.page-title07__main {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 80px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 60px;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 2px;
+        background-color: var(--main_color);
+        margin-top: 50px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 60px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            margin-top: 40px;
+        }
+    }
+}
+
+.page-title07__title--main {
+    color: var(--main_color);
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title07__sub {
+    margin-top: 56px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 50px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 40px;
+    }
+}
+
+.page-title07__title--sub {
+    @include v.titleH4;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title07__text {
+    margin-top: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title07__img {
+    height: 560px;
+    margin-right: calc(50% - 50vw);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+        margin-top: 80px;
+        height: 100%;
+        aspect-ratio: 849 / 560;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 40px;
+        aspect-ratio: 599 / 395;
+    }
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle08
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title08__wrapper {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title08 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title08__feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 217px auto;
+    grid-template-areas:
+        "page-title_main page-title_main"
+        "page-title_sub page-title_text";
+    gap: 40px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        @include v.columnFlex;
+        align-items: flex-start;
+        margin-top: 130px;
+        gap: 10px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 110px;
+        gap: 20px;
+    }
+}
+
+.page-title08__main {
+    grid-area: page-title_main;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title08__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title08__sub {
+    grid-area: page-title_sub;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title08__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title08__text {
+    grid-area: page-title_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 20px
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px
+    }
+}
+
+.page-title08__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    pageTitle09
+ ----------------------------------------------------------------------------------------------- */
+
+.page-title09__wrapper {
+    width: 100%;
+    height: 520px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        height: 370px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        height: 315px;
+    }
+}
+
+.page-title09 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title09__feature {
+    text-align: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title09__main {
+    margin-bottom: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-bottom: 10px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-bottom: 20px;
+    }
+}
+
+.page-title09__title--main {
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title09__sub {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title09__title--sub {
+    @include v.titleH6;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title09__text {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.page-title09__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}

@@ -1,0 +1,245 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/*後で消します*/
+.lead__wrapper+.lead__wrapper {
+    margin-top: 100px;
+}
+
+/* cta
+ ----------------------------------------------------------------------------------------------- */
+
+.lead__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.lead {
+    @include v.conWidth;
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    cms01
+ ----------------------------------------------------------------------------------------------- */
+
+.lead01__wrapper {
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.lead01 {
+    &:nth-child(2) {
+        display: none;
+    }
+
+    &:last-child {
+        display: none;
+    }
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        text-align: center;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.lead01__title {
+    margin-bottom: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-bottom: 20px;
+    }
+}
+
+.lead01__title--main {
+    @include v.titleH3;
+    color: v.$White_color;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.lead01__text {
+    color: v.$White_color;
+    max-width: 846px;
+    margin-bottom: 60px;
+
+    @include m.mq(pc) {
+        max-width: 634px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin: 0 auto 30px;
+        max-width: 406px;
+    }
+
+    @include m.mq(sp) {
+        margin: 0 auto 40px;
+        max-width: 100%;
+    }
+}
+
+.lead01__button {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: flex;
+        justify-content: center;
+    }
+
+    @include m.mq(sp) {}
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    cms02
+ ----------------------------------------------------------------------------------------------- */
+
+.lead02__wrapper {
+    height: 500px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.lead02 {
+    background-image: url(file:///C:/Users/teram/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/format/assets/img/cta/malek-dridi-0F7GRXNOG7g-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding-inline: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    &:nth-child(2) {
+        display: none;
+    }
+
+    &:last-child {
+        display: none;
+    }
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        text-align: center;
+        padding-inline: 60px;
+    }
+
+    @include m.mq(sp) {
+        padding-inline: 25px;
+    }
+}
+
+.lead02__title {
+    margin-bottom: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin: 0 auto;
+    }
+
+    @include m.mq(sp) {
+        margin-bottom: 20px;
+    }
+}
+
+.lead02__title--main {
+    @include v.titleH3;
+    color: v.$White_color;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.lead02__text {
+    color: v.$White_color;
+    max-width: 846px;
+    margin-bottom: 60px;
+
+    @include m.mq(pc) {
+        max-width: 634px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin: 0 auto 30px;
+        max-width: 406px;
+    }
+
+    @include m.mq(sp) {
+        margin: 0 auto 40px;
+        max-width: 100%;
+    }
+}
+
+.lead02__button {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin: 0 auto;
+    }
+
+    @include m.mq(sp) {}
+}

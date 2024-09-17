@@ -1,0 +1,241 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* design09
+ ----------------------------------------------------------------------------------------------- */
+
+.section__design09 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design09__inner {
+    padding-inline: 80px;
+    @include v.conWidth;
+
+    @include m.mq(pc) {
+        padding-inline: 60px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        gap: 0 30px;
+        padding-inline: 0;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__design09__block-title {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design09__block-subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__design09 {
+    @include v.columnFlex;
+    gap: 24px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        gap: 20px;
+    }
+}
+
+.section__parts__design09 {
+    display: grid;
+    gap: 0 6%;
+    grid-template-columns: auto 52%;
+    grid-template-rows: 30px auto auto;
+    grid-template-areas:
+        "parts_sub parts_img"
+        "parts_main parts_img"
+        "parts_text parts_img";
+    background-color: #fff;
+    border-radius: var(--radius_pc);
+    padding: 50px 0 50px 80px;
+    width: 100%;
+
+    @include m.mq(pc) {
+        padding: 50px 0 50px 70px;
+    }
+
+    @include m.mq(miniPc) {
+        padding: 40px 0 40px 50px;
+    }
+
+    @include m.mq(tab) {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+        border-radius: var(--radius_tab);
+        padding: 40px;
+    }
+
+    @include m.mq(sp) {
+        border-radius: var(--radius_sp);
+    }
+}
+
+.section__parts__design09__title {
+    grid-area: parts_main;
+    display: flex;
+    align-items: flex-start;
+    font-size: calc(var(--font_size_PC) * 2);
+    line-height: 1.4;
+    font-family: var(--heading_font);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: calc(var(--font_size_TAB) * 2);
+        line-height: 1.2;
+        order: 2;
+    }
+
+    @include m.mq(sp) {
+        font-size: calc(var(--font_size_SP) * 2)
+    }
+}
+
+.section__parts__design09__subtitle {
+    grid-area: parts_sub;
+    font-size: 1.6rem;
+    color: var(--base_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        line-height: 1.2;
+        order: 1;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design09__text {
+    grid-area: parts_text;
+    padding-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding-top: 10px;
+        order: 3;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design09__text .versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design09__img {
+    grid-area: parts_img;
+    overflow: hidden;
+    width: 100%;
+    margin: -50px 0;
+    border-radius: 0 var(--radius_pc) var(--radius_pc) 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin: -40px 0;
+    }
+
+    @include m.mq(tab) {
+        width: calc(100% + 80px);
+        height: 260px;
+        margin: 30px -40px -40px -40px;
+        order: 4;
+        border-radius: 0 0 var(--radius_tab) var(--radius_tab);
+    }
+
+    @include m.mq(sp) {
+        border-radius: 0 0 var(--radius_sp) var(--radius_sp);
+        height: 240px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section__parts__design09__link {
+    grid-area: parts_btn;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design09__editor {
+    grid-area: parts_img;
+    aspect-ratio: 1.95 / 1;
+    overflow: hidden;
+    width: 100%;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    @include m.mq(sp) {}
+
+    iframe {
+        width: 100%;
+    }
+}

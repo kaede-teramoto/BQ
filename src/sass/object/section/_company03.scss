@@ -1,0 +1,200 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* company03
+ ----------------------------------------------------------------------------------------------- */
+
+.section__company03 {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__company03__inner {
+    width: 1100px;
+    margin: 0 auto;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 100%;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__company03__block-title {
+    color: var(--main_color);
+    padding-bottom: 60px;
+    border-bottom: solid 2px var(--main_color);
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding-bottom: 50px;
+    }
+
+    @include m.mq(tab) {
+        padding-bottom: 40px;
+    }
+
+    @include m.mq(sp) {
+        padding-bottom: 30px;
+    }
+}
+
+.section__parts__wrapper__company03 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__company03 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__dl {
+    display: flex;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__company03__dt {
+    color: var(--main_color);
+    padding: 40px 40px 40px 0;
+    width: 22%;
+    border-right: solid 1px var(--sub_color);
+    border-bottom: solid 1px var(--sub_color);
+    line-height: 3.6rem;
+    @include v.titleH5;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 31%;
+        line-height: 3.2rem;
+    }
+
+    @include m.mq(tab) {
+        width: 33%;
+        padding: 30px 30px 30px 0;
+    }
+
+    @include m.mq(sp) {
+        padding: 20px 20px 20px 0;
+    }
+}
+
+.section__parts__company03__dd {
+    padding: 40px 0 40px 40px;
+    width: 78%;
+    border-bottom: solid 1px var(--sub_color);
+    display: grid;
+    gap: 5px;
+    overflow: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 69%;
+    }
+
+    @include m.mq(tab) {
+        width: 67%;
+        gap: 0px;
+        padding: 30px 0 30px 30px;
+    }
+
+    @include m.mq(sp) {
+        padding: 20px 0 20px 20px;
+    }
+
+    iframe {
+        width: 470px;
+        height: 198px;
+        margin-top: 10px;
+
+        @include m.mq(miniPc) {
+            width: 100%;
+        }
+
+        @include m.mq(tab) {
+            height: 150px;
+        }
+
+        @include m.mq(sp) {
+            height: 130px;
+        }
+    }
+
+    img {
+        border-radius: 5px;
+        width: 250px;
+        height: 150px;
+        object-fit: cover;
+
+        &:first-child,
+        &:nth-of-type(2),
+        &:nth-of-type(3) {
+            margin-top: 10px;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+
+            &:first-child,
+            &:nth-of-type(2) {
+                margin-top: 10px;
+            }
+
+            &:nth-of-type(3) {
+                margin-top: 0px;
+            }
+        }
+
+        @include m.mq(tab) {
+            width: 155px;
+            height: 92px;
+        }
+
+        @include m.mq(sp) {
+            width: 100%;
+            height: 125px;
+
+            &:first-child {
+                margin-top: 10px;
+            }
+
+            &:nth-of-type(2) {
+                margin-top: 0px;
+            }
+        }
+    }
+}

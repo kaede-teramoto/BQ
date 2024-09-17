@@ -1,0 +1,899 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/* topFaq
+ ----------------------------------------------------------------------------------------------- */
+
+// ========================================================================================================================================
+// faq01
+// ========================================================================================================================================
+
+
+// ========================================================================================================================================
+// faq02
+// ========================================================================================================================================
+
+
+
+// .top-faq__wrapper {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// /*faq01*/
+
+// .top-faq01__wrapper {
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq01 {
+//     @include v.conWidth;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq01__title {
+//     margin-bottom: 60px;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq01__title--main {
+//     color: v.$secondary_color;
+//     @include v.titleH2;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq01__content {
+//     width: 100%;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+
+//     .qa {
+//         height: 100%;
+//         margin-bottom: 30px;
+//     }
+
+//     .question {
+//         border-top: solid 1px;
+//         padding-top: 30px;
+//         width: 100%;
+//         position: relative;
+//         display: flex;
+//         align-items: center;
+//         margin-bottom: 30px;
+
+//         @include m.mq(pc) {}
+
+//         @include m.mq(miniPc) {}
+
+//         @include m.mq(tab) {}
+
+//         @include m.mq(sp) {
+//             padding-top: 20px;
+//             margin-bottom: 20px;
+//         }
+
+//         p {
+//             max-width: 1150px;
+
+//             @include m.mq(pc) {
+//                 max-width: 800px;
+//             }
+
+//             @include m.mq(miniPc) {
+//                 max-width: 600px;
+//             }
+
+//             @include m.mq(tab) {
+//                 max-width: 380px;
+//             }
+
+//             @include m.mq(sp) {
+//                 max-width: 63vw;
+//             }
+//         }
+
+//         &::before {
+//             content: "Q";
+//             display: table-cell;
+//             padding: 34px 0;
+//             width: 100px;
+//             height: 100px;
+//             border: solid 4px;
+//             border-color: v.$secondary_color;
+//             border-radius: 100px;
+//             text-align: center;
+//             vertical-align: middle;
+//             font-size: 2.4rem;
+//             line-height: 2.4rem;
+//             color: v.$secondary_color;
+//             margin-right: 64px;
+
+//             @include m.mq(pc) {}
+
+//             @include m.mq(miniPc) {
+//                 width: 75px;
+//                 height: 75px;
+//                 font-size: 2.2rem;
+//                 line-height: 2.2rem;
+//                 padding: 23px 0;
+//                 margin-right: 25px;
+//                 border: solid 3px;
+//             }
+
+//             @include m.mq(tab) {}
+
+//             @include m.mq(sp) {
+//                 width: 56px;
+//                 height: 56px;
+//                 font-size: 1.8rem;
+//                 line-height: 1.8rem;
+//                 padding: 17px 0;
+//                 margin-right: 20px;
+//                 border: solid 2px;
+//             }
+//         }
+
+//         span {
+//             position: absolute;
+//             right: 0;
+//             display: flex;
+//             align-items: center;
+//             width: 36px;
+//             height: 36px;
+//             vertical-align: bottom;
+//             transition: all  0.5s ease;
+
+//             @include m.mq(pc) {}
+
+//             @include m.mq(miniPc) {
+//                 width: 28px;
+//                 height: 28px;
+//             }
+
+//             @include m.mq(tab) {}
+
+//             @include m.mq(sp) {
+//                 width: 16px;
+//                 height: 16px;
+//             }
+
+//             &::before {
+//                 content: "";
+//                 background-color: v.$bg_color;
+//                 width: 36px;
+//                 height: 5px;
+//                 transform: rotate(90deg);
+//                 position: absolute;
+
+//                 @include m.mq(pc) {}
+
+//                 @include m.mq(miniPc) {
+//                     width: 28px;
+//                     height: 4px;
+//                 }
+
+//                 @include m.mq(tab) {}
+
+//                 @include m.mq(sp) {
+//                     width: 16px;
+//                     height: 2px;
+//                 }
+//             }
+
+//             &::after {
+//                 content: "";
+//                 background-color: v.$bg_color;
+//                 width: 36px;
+//                 height: 5px;
+//                 position: absolute;
+//                 transition: all 1.0s ease;
+
+//                 @include m.mq(pc) {}
+
+//                 @include m.mq(miniPc) {
+//                     width: 28px;
+//                     height: 4px;
+//                 }
+
+//                 @include m.mq(tab) {}
+
+//                 @include m.mq(sp) {
+//                     width: 16px;
+//                     height: 2px;
+//                 }
+//             }
+
+//         }
+
+//         &.is-active {
+//             span {
+//                 transform: rotate(90deg);
+
+//                 &::after  {
+//                     opacity: 0;
+//                 }
+//             }
+//         }
+//     }
+
+
+//     .answer {
+//         max-height: 0;
+//         overflow: hidden;
+//         transition: all 0.5s ease-in-out;
+//         width: 100%;
+//         height: 100%;
+//         position: relative;
+//         display: flex;
+//         align-items: center;
+//         padding: 0 1rem;
+
+//         &.is-active  {
+//            max-height: 1000px;
+//            min-height: 100px;
+
+//    }
+
+//         p {
+//             max-width: 1150px;
+//             color: v.$secondary_color;
+
+//             @include m.mq(pc) {
+//                 max-width: 800px;
+//             }
+
+//             @include m.mq(miniPc) {
+//                 max-width: 600px;
+//             }
+
+//             @include m.mq(tab) {
+//                 max-width: 380px;
+//             }
+
+//             @include m.mq(sp) {
+//                 max-width: 63vw;
+//             }
+//         }
+
+//         &::before {
+//             content: "A";
+//             display: table-cell;
+//             padding: 34px 0;
+//             width: 100px;
+//             height: 100px;
+//             border: solid 4px;
+//             border-color: v.$secondary_color;
+//             background-color: v.$secondary_color;
+//             border-radius: 100px;
+//             text-align: center;
+//             vertical-align: middle;
+//             font-size: 2.4rem;
+//             line-height: 2.4rem;
+//             color: v.$White_color;
+//             margin-right: 64px;
+
+//             @include m.mq(pc) {}
+
+//             @include m.mq(miniPc) {
+//                 width: 75px;
+//                 height: 75px;
+//                 font-size: 2.2rem;
+//                 line-height: 2.2rem;
+//                 padding: 23px 0;
+//                 margin-right: 25px;
+//             }
+
+//             @include m.mq(tab) {}
+
+//             @include m.mq(sp) {
+//                 width: 56px;
+//                 height: 56px;
+//                 font-size: 1.8rem;
+//                 line-height: 1.8rem;
+//                 padding: 17px 0;
+//                 margin-right: 20px;
+//             }     
+//         }
+//     }
+// }
+
+
+// /*faq02*/
+
+// .top-faq02__wrapper {
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq02 {
+//     @include v.conWidth;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq02__title {
+//     margin-bottom: 60px;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {
+//         margin-bottom: 50px;
+//     }
+// }
+
+// .top-faq02__title--main {
+//     color: v.$secondary_color;
+//     @include v.titleH2;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq02__content {
+//     width: 100%;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+
+//     .qa {
+//         height: 100%;
+//         padding: 36px 40px;
+//         margin-bottom: 20px;
+//         background-color: v.$tertiary_color;
+//         border-radius: 10px;
+
+//         @include m.mq(pc) {}
+
+//         @include m.mq(miniPc) {
+//             padding: 36px 30px;
+//             margin-bottom: 15px;
+//         }
+
+//         @include m.mq(tab) {
+//             padding: 30px;
+//             margin-bottom: 12px;
+//         }
+
+//         @include m.mq(sp) {
+//             padding: 20px 14px;
+//         }
+//     }
+
+//     .question {
+//         width: 100%;
+//         position: relative;
+//         display: flex;
+//         align-items: center;
+
+//         @include m.mq(pc) {}
+
+//         @include m.mq(miniPc) {}
+
+//         @include m.mq(tab) {}
+
+//         @include m.mq(sp) {}
+
+//         p {
+//             max-width: 1200px;
+
+//             @include m.mq(pc) {
+//                 max-width: 850px;
+//             }
+
+//             @include m.mq(miniPc) {
+//                 max-width: 600px;
+//             }
+
+//             @include m.mq(tab) {
+//                 max-width: 400px;
+//             }
+
+//             @include m.mq(sp) {
+//                 max-width: 66vw;
+//             }
+//         }
+
+//         &::before {
+//             content: "Q";
+//             display: table-cell;
+//             width: 20px;
+//             height: 20px;
+//             text-align: center;
+//             vertical-align: middle;
+//             font-size: 2.4rem;
+//             line-height: 2.4rem;
+//             color: v.$primary_color;
+//             margin-right: 116px;
+
+//             @include m.mq(pc) {
+//                 margin-right: 50px;
+//             }
+
+//             @include m.mq(miniPc) {
+//                 font-size: 2.2rem;
+//                 line-height: 2.2rem;
+//             }
+
+//             @include m.mq(tab) {
+//                 margin-right: 30px;
+//             }
+
+//             @include m.mq(sp) {
+//                 width: 16px;
+//                 height: 16px;
+//                 font-size: 1.8rem;
+//                 line-height: 1.8rem;
+//                 margin-right: 24px;
+//             }
+//         }
+
+//         span {
+//             position: absolute;
+//             right: 0;
+//             display: flex;
+//             align-items: center;
+//             width: 16px;
+//             height: 10px;
+//             vertical-align: bottom;
+//             transition: all  0.5s ease;
+//             background-image: url('data:image/svg+xml;utf8, <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99997 6.22217L14.2222 0L16 1.77777L7.99997 9.77781L0 1.77777L1.77778 0L7.99997 6.22217Z" fill="%231571DA"/></svg>');
+//             background-repeat: no-repeat;
+
+//             @include m.mq(pc) {}
+
+//             @include m.mq(miniPc) {}
+
+//             @include m.mq(tab) {}
+
+//             @include m.mq(sp) {}
+//         }
+
+//         &.is-active {
+//             margin-bottom: 30px;
+//                 @include m.mq(pc) {}
+
+//                 @include m.mq(miniPc) {}
+
+//                 @include m.mq(tab) {}
+
+//                 @include m.mq(sp) {
+//                     margin-bottom: 20px;
+//                 }
+//             span {
+//                 transform: rotate(180deg);
+//             }
+//         }
+//     }
+
+
+//     .answer {
+//         display: none;
+//         opacity: 0;
+
+//         &.is-active  {
+//             width: 100%;
+//             position: relative;
+//             display: flex;
+//             align-items: center;
+//             animation-name: fadeIn;
+//             animation-fill-mode: both;
+//             animation-duration:1s;
+
+//             @keyframes fadeIn{
+//                 0% {
+//                   opacity: 0;
+//                 }
+
+//                 100% {
+//                   opacity: 1;
+//                 }
+//             }
+
+//             p {
+//                 max-width: 1200px;
+//                 color: v.$secondary_color;
+
+//                 @include m.mq(pc) {
+//                     max-width: 850px;
+//                 }
+
+//                 @include m.mq(miniPc) {
+//                     max-width: 600px;
+//                 }
+
+//                 @include m.mq(tab) {
+//                     max-width: 400px;
+//                 }
+
+//                 @include m.mq(sp) {
+//                     max-width: 66vw;
+//                 }
+//             }
+
+//             &::before {
+//                 content: "A";
+//                 display: table-cell;
+//                 width: 20px;
+//                 height: 20px;
+//                 text-align: center;
+//                 vertical-align: middle;
+//                 font-size: 2.4rem;
+//                 line-height: 2.4rem;
+//                 color: v.$secondary_color;
+//                 margin-right: 116px;
+
+//                 @include m.mq(pc) {
+//                     margin-right: 50px;
+//                 }
+
+//                 @include m.mq(miniPc) {
+//                     font-size: 2.2rem;
+//                     line-height: 2.2rem;
+//                 }
+
+//                 @include m.mq(tab) {
+//                     margin-right: 30px;
+//                 }
+
+//                 @include m.mq(sp) {
+//                     width: 16px;
+//                     height: 16px;
+//                     font-size: 1.8rem;
+//                     line-height: 1.8rem;
+//                     margin-right: 24px;
+//                 }
+
+//             }
+//         }
+//     }
+// }
+
+// /*faq03*/
+
+// .top-faq03__wrapper {
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq03 {
+//     @include v.conWidth;
+//     display: grid;
+//     grid-template-columns: 300px auto;
+//     grid-template-rows: 1fr 1fr;
+//     grid-template-areas:
+//         "faq_title faq_content"
+//         "faq_title faq_content";
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {
+//         grid-template-columns: 220px auto;
+//     }
+
+//     @include m.mq(tab) {
+//         @include v.columnFlex;
+//     }
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq03__title {
+//     grid-area: faq_title;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {
+//         margin-right: auto;
+//         margin-bottom: 40px;
+//     }
+
+//     @include m.mq(sp) {
+//         margin-bottom: 30px;
+//     }
+// }
+
+// .top-faq03__title--main {
+//     color: v.$secondary_color;
+//     @include v.titleH2;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+// }
+
+// .top-faq03__content {
+//     grid-area: faq_content;
+//     width: 100%;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {}
+
+//     @include m.mq(sp) {}
+
+//     .qa {
+//         border-top: solid 1px;
+//         padding: 40px 30px;
+
+//         @include m.mq(pc) {}
+
+//         @include m.mq(miniPc) {
+//             padding: 30px 15px;
+//         }
+
+//         @include m.mq(tab) {}
+
+//         @include m.mq(sp) {
+//             padding: 20px 10px;
+//         }
+//     }
+
+//     .question {
+//         width: 100%;
+//         position: relative;
+//         display: flex;
+//         align-items: center;
+
+//         @include m.mq(pc) {}
+
+//         @include m.mq(miniPc) {}
+
+//         @include m.mq(tab) {}
+
+//         @include m.mq(sp) {}
+
+//         p {
+//             max-width: 1000px;
+//             margin-left: 40px;
+
+//             @include m.mq(pc) {
+//                 max-width: 650px;
+//                 margin-left: 34px;
+//             }
+
+//             @include m.mq(miniPc) {
+//                 max-width: 460px;
+//                 margin-left: 30px;
+//             }
+
+//             @include m.mq(tab) {
+//                 max-width: 440px;
+//             }
+
+//             @include m.mq(sp) {
+//                 max-width: 70vw;
+//             }
+//         }
+
+//         &::before {
+//             content: "Q";
+//             width: 18px;
+//             height: 18px;
+//             font-size: 1.8rem;
+//             line-height: 1.8rem;
+//             color: v.$primary_color;
+//             position: absolute;
+//             top: 8px;
+//             left: 0;
+
+//             @include m.mq(pc) {}
+
+//             @include m.mq(miniPc) {
+//                 width: 16px;
+//                 height: 16px;
+//                 font-size: 1.6rem;
+//                 line-height: 1.6rem;
+//             }
+
+//             @include m.mq(tab) {}
+
+//             @include m.mq(sp) {
+//                 width: 15px;
+//                 height: 15px;
+//                 font-size: 1.5rem;
+//                 line-height: 1.5rem;
+//             }
+//         }
+
+//         span {
+//             position: absolute;
+//             right: 0;
+//             display: flex;
+//             align-items: center;
+//             width: 16px;
+//             height: 10px;
+//             vertical-align: bottom;
+//             transition: all  0.5s ease;
+//             background-image: url('data:image/svg+xml;utf8, <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.99997 6.22217L14.2222 0L16 1.77777L7.99997 9.77781L0 1.77777L1.77778 0L7.99997 6.22217Z" fill="%231571DA"/></svg>');
+//             background-repeat: no-repeat;
+
+//             @include m.mq(pc) {}
+
+//             @include m.mq(miniPc) {}
+
+//             @include m.mq(tab) {}
+
+//             @include m.mq(sp) {}
+//         }
+
+//         &.is-active {
+//             margin-bottom: 30px;
+//                 @include m.mq(pc) {}
+
+//                 @include m.mq(miniPc) {}
+
+//                 @include m.mq(tab) {}
+
+//                 @include m.mq(sp) {
+//                     margin-bottom: 20px;
+//                 }
+//             span {
+//                 transform: rotate(180deg);
+//             }
+//         }
+//     }
+
+
+//     .answer {
+//         display: none;
+//         opacity: 0;
+
+//         &.is-active  {
+//             width: 100%;
+//             position: relative;
+//             display: flex;
+//             align-items: center;
+//             animation-name: fadeIn;
+//             animation-fill-mode: both;
+//             animation-duration:1s;
+
+//             @keyframes fadeIn{
+//                 0% {
+//                   opacity: 0;
+//                 }
+
+//                 100% {
+//                   opacity: 1;
+//                 }
+//             }
+
+//             p {
+//                 max-width: 1000px;
+//                 color: v.$secondary_color;
+//                 margin-left: 40px;
+
+//                 @include m.mq(pc) {
+//                     max-width: 650px;
+//                     margin-left: 34px;
+//                 }
+
+//                 @include m.mq(miniPc) {
+//                     max-width: 460px;
+//                     margin-left: 30px
+//                 }
+
+//                 @include m.mq(tab) {
+//                     max-width: 440px;
+//                 }
+
+//                 @include m.mq(sp) {
+//                     max-width: 70vw;
+//                 }
+//             }
+
+//             &::before {
+//                 content: "A";
+//                 width: 18px;
+//                 height: 18px;
+//                 font-size: 1.8rem;
+//                 line-height: 1.8rem;
+//                 color: v.$secondary_color;
+//                 position: absolute;
+//                 top: 8px;
+//                 left: 0;
+
+//                 @include m.mq(pc) {}
+
+//                 @include m.mq(miniPc) {
+//                     width: 16px;
+//                     height: 16px;
+//                     font-size: 1.6rem;
+//                     line-height: 1.6rem;
+//                 }
+
+//                 @include m.mq(tab) {}
+
+//                 @include m.mq(sp) {
+//                     width: 15px;
+//                     height: 15px;
+//                     font-size: 1.5rem;
+//                     line-height: 1.5rem;
+//                 }
+
+//             }
+//         }
+//     }
+// }

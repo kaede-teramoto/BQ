@@ -1,0 +1,2796 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/* Hamburger menu
+ ----------------------------------------------------------------------------------------------- */
+
+// -----------------------------------------------------------------------------------------------
+// default
+// -----------------------------------------------------------------------------------------------
+#page-hamburger-menu {
+    .hm {
+        transform: translateX(0);
+    }
+}
+
+.hm {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: v.getZIndex(hmContent);
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+    /* トランジションを指定 */
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &.--active {
+        .hm__img__wrapper {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out,
+                transform .2s ease-in-out;
+        }
+
+        .hm__content__top {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out .1s,
+                transform .2s ease-in-out .1s;
+        }
+
+        .hm__banner {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out .1s,
+                transform .2s ease-in-out .2s;
+        }
+
+        .hm__logo {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out .1s,
+                transform .2s ease-in-out .1s;
+        }
+
+
+        .hm__sns {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out .1s,
+                transform .2s ease-in-out .1s;
+        }
+
+        .hm__button {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out .1s,
+                transform .2s ease-in-out .1s;
+        }
+
+        .hm__info {
+            color: var(--header_text_color);
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity .2s ease-in-out .1s,
+                transform .2s ease-in-out .1s;
+
+            a {
+                color: var(--header_text_color);
+            }
+        }
+    }
+}
+
+.hm__img__wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out,
+        transform .2s ease-in-out;
+    width: calc(100% - 750px);
+
+    @include m.mq(pc) {
+        width: calc(100% - 650px);
+    }
+
+    @include m.mq(miniPc) {
+        width: calc(100% - 540px);
+    }
+
+    @include m.mq(tab) {
+        width: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm__content__top {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out .1s,
+        transform .2s ease-in-out .1s;
+}
+
+.hm__banner {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out .1s,
+        transform .2s ease-in-out .4s;
+}
+
+.hm__logo {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out .1s,
+        transform .2s ease-in-out .5s;
+}
+
+.hm__sns {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out .1s,
+        transform .2s ease-in-out .6s;
+}
+
+.hm__button {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out .1s,
+        transform .2s ease-in-out .7s;
+}
+
+.hm__info {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .2s ease-in-out .1s,
+        transform .2s ease-in-out .8s;
+}
+
+.hm__inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__img__wrapper {
+    height: 100%;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.hm__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.hm__content {
+    background-color: var(--hm_bg_color_setting);
+    width: 750px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    overflow-y: auto;
+
+    @include m.mq(pc) {
+        width: 650px;
+        padding-top: 80px;
+    }
+
+    @include m.mq(miniPc) {
+        width: 100%;
+        padding-top: 100px;
+    }
+
+    @include m.mq(tab) {
+        padding-top: 80px;
+    }
+
+    @include m.mq(sp) {
+        padding-inline: 20px;
+    }
+
+}
+
+.hm__content__inner {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        height: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm__content__top {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+.hm__content__bottom {
+    width: 100%;
+    padding-bottom: 70px;
+
+    @include m.mq(pc) {
+        padding-bottom: 30px;
+    }
+
+    @include m.mq(miniPc) {
+        padding-bottom: 100px;
+    }
+
+    @include m.mq(tab) {
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {
+        padding-bottom: 60px;
+    }
+}
+
+
+.hm__banner {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__banner__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__banner__right {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__banner__item {
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        background-size: 130% !important;
+    }
+}
+
+.hm__banner__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__banner__link {
+    width: 100%;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:hover {
+        .hm__banner__bg {
+            transform: scale(110%);
+        }
+
+        .hm__banner__text {
+            background-color: rgba(0, 0, 0, .6);
+        }
+    }
+}
+
+.hm__banner__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    transition: all 0.2s ease-in-out;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__logo {
+    margin-top: 40px;
+    width: 300px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 348px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        width: 50vw;
+    }
+}
+
+.hm_externalLink {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        flex-direction: column;
+    }
+}
+
+.hm__sns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__sns__link {
+    display: flex;
+    align-items: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__info {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__info__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm__info__list {
+    display: flex;
+    gap: 0 20px;
+    margin-top: 20px;
+    text-decoration: underline;
+    flex-wrap: wrap;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type01
+// -----------------------------------------------------------------------------------------------
+
+.hm01 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__inner {
+    display: flex;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        @include v.columnFlex;
+        background-color: #ddd;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm01__img__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: none;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm01__img {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__content {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        height: 100%;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm01__content__inner {
+    width: 450px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .hm__logo {
+        margin-top: 0px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm01__top {
+    flex-grow: 2;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__bottom {
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 80px;
+    }
+}
+
+.hm01__nav {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__nav__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        display: inline-block;
+        @include v.titleH6;
+    }
+
+
+}
+
+.hm01__nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include m.mq(pc) {
+        gap: 20px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .menu-item-has-children {
+
+        &::before,
+        &::after {
+            grid-area: menu_toggle;
+            content: "";
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            background-color: var(--header_text_color);
+            position: absolute;
+            right: 0;
+            transition: transform .2s linear;
+        }
+
+        &::before {
+            transform: rotate(90deg);
+        }
+
+        &.--active {
+            &::before {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    &>li {
+        grid-area: menu_main;
+        position: relative;
+        display: grid;
+        grid-template-columns: calc(100% - 30px) 30px;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "menu_main menu_toggle"
+            "menu_sub menu_sub";
+        width: 100%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .sub-menu {
+            grid-area: menu_sub;
+            max-height: 0;
+            overflow: hidden;
+            display: block;
+            height: auto;
+            position: relative;
+            transition: height .2s ease-out,
+                padding .2s ease-out;
+            padding: 0px;
+
+            &.--active {
+                max-height: 100%;
+                width: 100%;
+                padding: 10px 0px;
+                transition: height .2s ease-out,
+                    padding .2s ease-out;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {
+                    padding: 5px 0px;
+                }
+
+                @include m.mq(sp) {}
+            }
+
+            a {
+                color: var(--header_text_color);
+                @include v.titleH7;
+            }
+        }
+    }
+}
+
+.hm01__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__nav__list__right {
+    flex: 1;
+    margin-top: 30px;
+
+    @include m.mq(pc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__banner {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__info {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__info__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type02
+// -----------------------------------------------------------------------------------------------
+
+.hm02 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        .hm__img__wrapper {
+            width: calc(100% - 350px);
+        }
+    }
+}
+
+.hm02__img__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 30%;
+    }
+
+    @include m.mq(sp) {
+        width: 10%;
+        min-width: 40px;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+
+.hm02__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__content {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 70%;
+    }
+
+    @include m.mq(sp) {
+        height: 100%;
+        width: 90%;
+
+    }
+}
+
+.hm02__content__inner {
+    width: 450px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .hm__logo {
+        margin-top: 0px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm02__top {
+    flex-grow: 2;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__bottom {
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 80px;
+    }
+}
+
+.hm02__nav {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__nav__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        display: inline-block;
+        @include v.titleH6;
+    }
+
+
+}
+
+.hm02__nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include m.mq(pc) {
+        gap: 20px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .menu-item-has-children {
+
+        &::before,
+        &::after {
+            grid-area: menu_toggle;
+            content: "";
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            background-color: var(--header_text_color);
+            position: absolute;
+            right: 0;
+            transition: transform .2s linear;
+        }
+
+        &::before {
+            transform: rotate(90deg);
+        }
+
+        &.--active {
+            &::before {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    &>li {
+        grid-area: menu_main;
+        position: relative;
+        display: grid;
+        grid-template-columns: calc(100% - 30px) 30px;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "menu_main menu_toggle"
+            "menu_sub menu_sub";
+        width: 100%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .sub-menu {
+            grid-area: menu_sub;
+            max-height: 0;
+            overflow: hidden;
+            display: block;
+            height: auto;
+            position: relative;
+            transition: height .2s ease-out,
+                padding .2s ease-out;
+            padding: 0px;
+
+            &.--active {
+                max-height: 100%;
+                width: 100%;
+                padding: 10px 0px;
+                transition: height .2s ease-out,
+                    padding .2s ease-out;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {
+                    padding: 5px 0px;
+                }
+
+                @include m.mq(sp) {}
+            }
+
+            a {
+                color: var(--header_text_color);
+                @include v.titleH7;
+            }
+        }
+    }
+}
+
+.hm02__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__nav__list__right {
+    flex: 1;
+    margin-top: 30px;
+
+    @include m.mq(pc) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__banner {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__info {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm02__info__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm01__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type03
+// -----------------------------------------------------------------------------------------------
+
+.hm03 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__inner {
+    display: flex;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        @include v.columnFlex;
+        background-color: #ddd;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm03__img__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: none;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm03__img {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__content {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        height: 100%;
+    }
+}
+
+.hm03__content__inner {
+    width: 450px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .hm__logo {
+        margin-top: 0px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm03__top {
+    flex-grow: 2;
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 60px;
+    }
+}
+
+.hm03__bottom {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .hm_externalLink {
+        margin-top: 60px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm03__nav {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__nav__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding-top: 0;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        @include v.titleH6;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+.hm03__nav__list {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &>li {
+        padding: 15px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include m.mq(pc) {
+            padding: 10px 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm03__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__nav__list__right {
+    flex: 1;
+    margin-top: 15px;
+
+    @include m.mq(pc) {
+        margin-top: 10px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__banner {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__info {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__info__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm03__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type04
+// -----------------------------------------------------------------------------------------------
+
+.hm04 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        .hm__img__wrapper {
+            width: calc(100% - 350px);
+        }
+    }
+}
+
+.hm04__img__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 30%;
+    }
+
+    @include m.mq(sp) {
+        width: 10%;
+        min-width: 40px;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+
+.hm04__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__content {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 70%;
+        padding-inline: 20px;
+    }
+
+    @include m.mq(sp) {
+        height: 100%;
+        width: 90%;
+    }
+}
+
+.hm04__content__inner {
+    width: 450px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .hm__logo {
+        margin-top: 0px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm04__top {
+    flex-grow: 2;
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 60px;
+    }
+}
+
+.hm04__bottom {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .hm_externalLink {
+        margin-top: 60px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm04__nav {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__nav__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding-top: 0;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        @include v.titleH6;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+.hm04__nav__list {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &>li {
+        padding: 15px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include m.mq(pc) {
+            padding: 10px 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm04__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__nav__list__right {
+    flex: 1;
+    margin-top: 15px;
+
+    @include m.mq(pc) {
+        margin-top: 10px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__banner {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__info {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__info__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm04__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type05
+// -----------------------------------------------------------------------------------------------
+.hm05 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__inner {
+    display: flex;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        @include v.columnFlex;
+        background-color: #ddd;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm05__top {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__bottom {
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 80px;
+    }
+}
+
+.hm05__img__wrapper {
+    @include m.mq(pc) {
+        /*
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .4);
+        }*/
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: none;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm05__img {
+    @include m.mq(pc) {
+        /*
+        height: 660px;
+        z-index: 100;
+        position: absolute;*/
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__content {
+    @include m.mq(pc) {
+        padding-top: 100px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__content__inner {
+    width: 500px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__nav {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__nav__wrapper {
+    display: flex;
+    gap: 0 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        @include v.titleH6;
+    }
+
+    .sub-menu {
+        a {
+            color: var(--header_text_color);
+            @include v.titleH7;
+        }
+    }
+}
+
+.hm05__nav__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &>li {
+        padding: 20px 0;
+        border-bottom: solid 1px;
+        border-color: var(--bg_color);
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include m.mq(pc) {
+            padding: 15px 0;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            padding: 10px 0;
+        }
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm05__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__nav__list__right {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__banner {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__info {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__info__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm05__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type06
+// -----------------------------------------------------------------------------------------------
+.hm06 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        .hm__img__wrapper {
+            width: calc(100% - 350px);
+        }
+    }
+}
+
+.hm06__top {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__bottom {
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 80px;
+    }
+}
+
+.hm06__img__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 30%;
+    }
+
+    @include m.mq(sp) {
+        width: 10%;
+        min-width: 40px;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+
+.hm06__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__content {
+    @include m.mq(pc) {
+        padding-top: 100px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 70%;
+    }
+
+    @include m.mq(sp) {
+        height: 100%;
+        width: 90%;
+    }
+}
+
+.hm06__content__inner {
+    width: 500px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__nav {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__nav__wrapper {
+    display: flex;
+    gap: 0 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        gap: 0 20px;
+    }
+
+    a {
+        color: var(--header_text_color);
+        @include v.titleH6;
+    }
+
+    .sub-menu {
+        a {
+            color: var(--header_text_color);
+            @include v.titleH7;
+        }
+    }
+}
+
+.hm06__nav__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &>li {
+        padding: 20px 0;
+        border-bottom: solid 1px;
+        border-color: var(--bg_color);
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include m.mq(pc) {
+            padding: 15px 0;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            padding: 10px 0;
+        }
+
+        @include m.mq(sp) {}
+    }
+}
+
+.hm06__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__nav__list__right {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__banner {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__info {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__info__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm06__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type07
+// -----------------------------------------------------------------------------------------------
+.hm07 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__inner {
+    display: flex;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        @include v.columnFlex;
+        background-color: var(__base_color);
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm07__bottom {
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        padding-bottom: 50px;
+    }
+
+    @include m.mq(tab) {
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm07__img__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: none;
+    }
+
+    @include m.mq(sp) {}
+
+}
+
+.hm07__img {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__content {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 100%;
+        height: 100%;
+        padding-top: 80px;
+    }
+
+    @include m.mq(sp) {
+        padding-inline: 20px;
+    }
+}
+
+.hm07__content__inner {
+    width: 450px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__nav {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__nav__wrapper {
+    display: flex;
+    gap: 0 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        @include v.titleH6;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+.hm07__nav__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &>li {
+        padding: 20px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include m.mq(pc) {
+            padding: 15px 0;
+        }
+
+        @include m.mq(miniPc) {
+            &:first-child {
+                padding-top: 15px;
+            }
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            padding: 10px 0;
+
+            &:first-child {
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+.hm07__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        &>li {
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__nav__list__right {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__banner {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        flex-direction: column;
+        height: auto;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm07__info {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__info__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm07__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+// -----------------------------------------------------------------------------------------------
+// type08
+// -----------------------------------------------------------------------------------------------
+.hm08 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        .hm__img__wrapper {
+            width: calc(100% - 350px);
+        }
+    }
+}
+
+.hm08__bottom {
+    margin-top: 80px;
+
+    @include m.mq(pc) {
+        margin-top: 60px;
+    }
+
+    @include m.mq(miniPc) {
+        padding-bottom: 50px;
+    }
+
+    @include m.mq(tab) {
+        padding-bottom: 80px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.hm08__img__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 30%;
+    }
+
+    @include m.mq(sp) {
+        width: 10%;
+        min-width: 40px;
+    }
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .6);
+    }
+
+}
+
+.hm08__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__content {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 70%;
+    }
+
+    @include m.mq(sp) {
+        height: 100%;
+        width: 90%;
+    }
+}
+
+.hm08__content__inner {
+    width: 450px;
+    height: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 400px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__nav {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__nav__wrapper {
+    display: flex;
+    gap: 0 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        color: var(--header_text_color);
+        @include v.titleH6;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+.hm08__nav__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &>li {
+        padding: 20px 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        @include m.mq(pc) {
+            padding: 15px 0;
+        }
+
+        @include m.mq(miniPc) {
+            &:first-child {
+                padding-top: 15px;
+            }
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            padding: 10px 0;
+
+            &:first-child {
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+.hm08__nav__list__left {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        &>li {
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__nav__list__right {
+    flex: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__banner {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__info {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__info__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.hm08__info__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}

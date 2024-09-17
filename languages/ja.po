@@ -1,0 +1,1273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Format\n"
+"POT-Creation-Date: 2024-07-29 16:34+0900\n"
+"PO-Revision-Date: 2024-07-29 16:34+0900\n"
+"Last-Translator: \n"
+"Language-Team: atq\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _e;__;_n\n"
+"X-Poedit-SearchPath-0: languages\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+
+#: customizer/customizer-design.php:16
+msgid "Basic design settings"
+msgstr "デザインの基本設定"
+
+#: customizer/customizer-design.php:27
+msgid "Color Settings"
+msgstr "カラー設定"
+
+#: customizer/customizer-design.php:47
+msgid "Text Color"
+msgstr "テキストカラー"
+
+#: customizer/customizer-design.php:69
+msgid "Main Color"
+msgstr "メインカラー"
+
+#: customizer/customizer-design.php:90
+msgid "Accent Color"
+msgstr "アクセントカラー"
+
+#: customizer/customizer-design.php:112
+msgid "Base Color"
+msgstr "ベースカラー"
+
+#: customizer/customizer-design.php:133
+msgid "Sub Color"
+msgstr "サブカラー"
+
+#: customizer/customizer-design.php:155
+msgid "Background Color"
+msgstr "背景カラー"
+
+#: customizer/customizer-design.php:170
+msgid "Text Settings"
+msgstr "テキストの設定"
+
+#: customizer/customizer-design.php:190
+msgid "Japanese Font"
+msgstr "日本語フォント"
+
+#: customizer/customizer-design.php:212
+msgid "Japanese Font Family"
+msgstr "日本語フォント"
+
+#: customizer/customizer-design.php:233
+msgid "European language Font"
+msgstr "欧文フォント"
+
+#: customizer/customizer-design.php:255
+msgid "European Font Family"
+msgstr "欧文フォント"
+
+#: customizer/customizer-design.php:277
+msgid "Heading Font"
+msgstr "見出しフォント"
+
+#: customizer/customizer-design.php:299
+msgid "Heading Font Family"
+msgstr "見出しフォント"
+
+#: customizer/customizer-design.php:322
+msgid "Normal text font size for PC"
+msgstr "PC用本文のテキストサイズ"
+
+#: customizer/customizer-design.php:343
+msgid "Normal text font size for TAB"
+msgstr "タブレット用本文のテキストサイズ"
+
+#: customizer/customizer-design.php:364
+msgid "Normal text font size for SP"
+msgstr "スマートフォン用本文のテキストサイズ"
+
+#: customizer/customizer-design.php:387
+msgid "H1 text font size for PC"
+msgstr "PC用大見出しサイズ"
+
+#: customizer/customizer-design.php:408
+msgid "H1 text font size for TAB"
+msgstr "タブレット用大見出しサイズ"
+
+#: customizer/customizer-design.php:429
+msgid "H1 text font size for SP"
+msgstr "スマートフォン用大見出しサイズ"
+
+#: customizer/customizer-design.php:444
+msgid "Button Link Settings"
+msgstr "ボタンリンクの設定"
+
+#: customizer/customizer-design.php:465
+msgid "Button Link Design Type"
+msgstr "ボタンリンクのデザインを選択する"
+
+#: customizer/customizer-design.php:470
+msgid "Button Link Type1"
+msgstr "ボタンリンク Type1"
+
+#: customizer/customizer-design.php:471
+msgid "Button Link Type2"
+msgstr "ボタンリンク Type2"
+
+#: customizer/customizer-design.php:472
+msgid "Button Link Type3"
+msgstr "ボタンリンク Type3"
+
+#: customizer/customizer-design.php:473
+msgid "Button Link Type4"
+msgstr "ボタンリンク Type4"
+
+#: customizer/customizer-design.php:474
+msgid "Button Link Type5"
+msgstr "ボタンリンク Type5"
+
+#: customizer/customizer-design.php:475
+msgid "Button Link Type6"
+msgstr "ボタンリンク Type6"
+
+#: customizer/customizer-design.php:476
+msgid "Button Link Type7"
+msgstr "ボタンリンク Type7"
+
+#: customizer/customizer-design.php:477
+msgid "Button Link Type8"
+msgstr "ボタンリンク Type8"
+
+#: customizer/customizer-design.php:478
+msgid "Button Link Type9"
+msgstr "ボタンリンク Type9"
+
+#: customizer/customizer-design.php:479
+msgid "Button Link Type10"
+msgstr "ボタンリンク Type10"
+
+#: customizer/customizer-design.php:498
+msgid "Button Link Icon Type"
+msgstr "ボタンリンクのアイコンを選択する"
+
+#: customizer/customizer-design.php:503 customizer/customizer-design.php:604
+msgid "Icon Type1"
+msgstr ""
+
+#: customizer/customizer-design.php:504 customizer/customizer-design.php:605
+msgid "Icon  Type2"
+msgstr ""
+
+#: customizer/customizer-design.php:505 customizer/customizer-design.php:606
+msgid "Icon  Type3"
+msgstr ""
+
+#: customizer/customizer-design.php:506 customizer/customizer-design.php:607
+msgid "Icon  Type4"
+msgstr ""
+
+#: customizer/customizer-design.php:507 customizer/customizer-design.php:608
+msgid "Icon  Type5"
+msgstr ""
+
+#: customizer/customizer-design.php:508 customizer/customizer-design.php:609
+msgid "Icon  Type6"
+msgstr ""
+
+#: customizer/customizer-design.php:527
+msgid "filter set"
+msgstr ""
+
+#: customizer/customizer-design.php:544
+msgid "Text Link Settings"
+msgstr "テキストリンクの設定"
+
+#: customizer/customizer-design.php:564
+msgid "Text Link Design Type"
+msgstr "テキストリンクのデザインを選択する"
+
+#: customizer/customizer-design.php:569
+msgid "Text Link Type1"
+msgstr ""
+
+#: customizer/customizer-design.php:570
+msgid "Text Link Type2"
+msgstr ""
+
+#: customizer/customizer-design.php:571
+msgid "Text Link Type3"
+msgstr ""
+
+#: customizer/customizer-design.php:572
+msgid "Text Link Type4"
+msgstr ""
+
+#: customizer/customizer-design.php:573
+msgid "Text Link Type5"
+msgstr ""
+
+#: customizer/customizer-design.php:574
+msgid "Text Link Type6"
+msgstr ""
+
+#: customizer/customizer-design.php:575
+msgid "Text Link Type7"
+msgstr ""
+
+#: customizer/customizer-design.php:576
+msgid "Text Link Type8"
+msgstr ""
+
+#: customizer/customizer-design.php:577
+msgid "Text Link Type9"
+msgstr ""
+
+#: customizer/customizer-design.php:578
+msgid "Text Link Type10"
+msgstr ""
+
+#: customizer/customizer-design.php:579
+msgid "Text Link Type11"
+msgstr ""
+
+#: customizer/customizer-design.php:580
+msgid "Text Link Type12"
+msgstr ""
+
+#: customizer/customizer-design.php:599
+msgid "Text Link Icon Type"
+msgstr "テキストリンクのアイコンを選択する"
+
+#: customizer/customizer-design.php:610
+msgid "Icon  Type7"
+msgstr ""
+
+#: customizer/customizer-design.php:611
+msgid "Icon  Type8"
+msgstr ""
+
+#: customizer/customizer-design.php:612
+msgid "Icon  Type9"
+msgstr ""
+
+#: customizer/customizer-design.php:613
+msgid "Icon  Type10"
+msgstr ""
+
+#: customizer/customizer-design.php:614
+msgid "Icon  Type11"
+msgstr ""
+
+#: customizer/customizer-design.php:615
+msgid "Icon  Type12"
+msgstr ""
+
+#: customizer/customizer-design.php:616
+msgid "Icon  Type13"
+msgstr ""
+
+#: customizer/customizer-design.php:617
+msgid "Icon  Type14"
+msgstr ""
+
+#: customizer/customizer-design.php:636
+msgid "Invert colors"
+msgstr "色を反転する"
+
+#: customizer/customizer-design.php:648
+msgid "Animation Settings"
+msgstr "アニメーションの設定"
+
+#: customizer/customizer-design.php:668
+msgid "Animation Type"
+msgstr ""
+
+#: customizer/customizer-design.php:673
+msgid "Animation Type1"
+msgstr ""
+
+#: customizer/customizer-design.php:674
+msgid "Animation Type2"
+msgstr ""
+
+#: customizer/customizer-design.php:675
+msgid "Animation Type3"
+msgstr ""
+
+#: customizer/customizer-design.php:676
+msgid "Animation Type4"
+msgstr ""
+
+#: customizer/customizer-design.php:677
+msgid "Animation Type5"
+msgstr ""
+
+#: customizer/customizer-design.php:678
+msgid "Animation Type6"
+msgstr ""
+
+#: customizer/customizer-followBtn.php:9
+msgid "Follow button"
+msgstr "追従ボタン"
+
+#: customizer/customizer-followBtn.php:28
+msgid "Follow button position"
+msgstr "追従ボタンの位置"
+
+#: customizer/customizer-followBtn.php:33
+msgid "Do not use"
+msgstr "追従ボタンを使わない"
+
+#: customizer/customizer-followBtn.php:34
+msgid "Top right position"
+msgstr "右上"
+
+#: customizer/customizer-followBtn.php:35
+msgid "Bottom right position"
+msgstr "右下"
+
+#: customizer/customizer-followBtn.php:36
+msgid "Top left position"
+msgstr "左上"
+
+#: customizer/customizer-followBtn.php:37
+msgid "Bottom left position"
+msgstr "左下"
+
+#: customizer/customizer-followBtn.php:56
+msgid "Position from top and bottom"
+msgstr "上もしくは下からの位置"
+
+#: customizer/customizer-followBtn.php:60
+#: customizer/customizer-followBtn.php:82
+msgid "Enter the unit. Example: px,%"
+msgstr ""
+"単位まで入力してください。\n"
+"例：px, , %, vh"
+
+#: customizer/customizer-followBtn.php:78
+msgid "Position from left and right"
+msgstr "左もしくは右からの位置"
+
+#: customizer/customizer-followBtn.php:104
+msgid "Follow button image"
+msgstr "追従ボタンの画像"
+
+#: customizer/customizer-followBtn.php:125
+msgid "Follow button link destination"
+msgstr "追従ボタンのリンク先を入力します"
+
+#: customizer/customizer-followBtn.php:146
+msgid "Image alt text"
+msgstr "追従ボタンの画像の代替テキスト"
+
+#: customizer/customizer-footer.php:13
+msgid "footer option"
+msgstr "フッターの設定"
+
+#: customizer/customizer-footer.php:33
+msgid "Footer Design Type"
+msgstr "フッターデザインを選択する"
+
+#: customizer/customizer-footer.php:38
+msgid "Footer Type1"
+msgstr ""
+
+#: customizer/customizer-footer.php:39
+msgid "Footer Type2"
+msgstr ""
+
+#: customizer/customizer-footer.php:40
+msgid "Footer Type3"
+msgstr ""
+
+#: customizer/customizer-footer.php:41
+msgid "Set Original Footer"
+msgstr "オリジナルのフッターを設定する"
+
+#: customizer/customizer-footer.php:61
+msgid "Footer Logo Image"
+msgstr "フッターのロゴ画像"
+
+#: customizer/customizer-footer.php:84
+msgid "Simple company profile"
+msgstr "簡単な会社概要"
+
+#: customizer/customizer-footer.php:107
+msgid "Set background color"
+msgstr "背景にカラーを追加する"
+
+#: customizer/customizer-footer.php:126
+msgid "Footer Background Color"
+msgstr "フッターの背景カラー"
+
+#: customizer/customizer-footer.php:148
+msgid "Footer Text Color"
+msgstr "フッターテキストカラー"
+
+#: customizer/customizer-footer.php:190 customizer/customizer-hamburger.php:324
+msgid "Enter text if a button is needed"
+msgstr "ボタンが必要な場合はテキストを入力します"
+
+#: customizer/customizer-footer.php:191
+msgid "Only if the footer design is type 03"
+msgstr "フッターデザインがタイプ03の場合のみ入力します"
+
+#: customizer/customizer-footer.php:213
+msgid "Enter the link to the button"
+msgstr "ボタンのリンク先を入力してください"
+
+#: customizer/customizer-footer.php:234
+msgid "Set copyright"
+msgstr "コピーライトを入力します"
+
+#: customizer/customizer-hamburger.php:13
+msgid "Hamburger menu option"
+msgstr "ハンバーガーメニューの設定"
+
+#: customizer/customizer-hamburger.php:33
+msgid "Hamburger menu Design Type"
+msgstr "ハンバーガーメニューのデザインを選択する"
+
+#: customizer/customizer-hamburger.php:38
+msgid "Don't use hamburger menu"
+msgstr "ハンバーガーメニューは使わない"
+
+#: customizer/customizer-hamburger.php:39
+msgid "Set Original Hamburger menu"
+msgstr "オリジナルのハンバーガーメニューを設定する"
+
+#: customizer/customizer-hamburger.php:40
+msgid "Hamburger menu Type1"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:41
+msgid "Hamburger menu Type2"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:42
+msgid "Hamburger menu Type3"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:43
+msgid "Hamburger menu Type4"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:44
+msgid "Hamburger menu Type5"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:45
+msgid "Hamburger menu Type6"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:46
+msgid "Hamburger menu Type7"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:47
+msgid "Hamburger menu Type8"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:58
+msgid "Hamburger Icon Design Settings"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:78
+msgid "Hamburger Icon Design Type"
+msgstr "アイコンデザインを選択する"
+
+#: customizer/customizer-hamburger.php:83
+msgid "Hamburger Icon Design Type1"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:84
+msgid "Hamburger Icon Design Type2"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:85
+msgid "Hamburger Icon Design Type3"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:86
+msgid "Hamburger Icon Design Type4"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:87
+msgid "Hamburger Icon Design Type5"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:88
+msgid "Hamburger Icon Design Type6"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:89
+msgid "Hamburger Icon Design Type7"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:90
+msgid "Hamburger Icon Design Type8"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:91
+msgid "Hamburger Icon Design Type9"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:92
+msgid "Hamburger Icon Design Type10"
+msgstr ""
+
+#: customizer/customizer-hamburger.php:112
+#, fuzzy
+#| msgid "Set background color for page"
+msgid "Background Color for Hamburger Menu"
+msgstr "ページの背景にカラーを追加する"
+
+#: customizer/customizer-hamburger.php:136
+msgid "Hamburger menu Left Image"
+msgstr "ハンバーガーメニュー左側の画像"
+
+#: customizer/customizer-hamburger.php:162
+#: customizer/customizer-hamburger.php:231
+msgid "Set the banner background image"
+msgstr "バナーの背景画像を設定します"
+
+#: customizer/customizer-hamburger.php:184
+msgid "If you want the first banner, please enter the text"
+msgstr "①バナーが必要な場合は、テキストを入力してください"
+
+#: customizer/customizer-hamburger.php:185
+#: customizer/customizer-hamburger.php:255
+msgid "Set when design type 07 and type 08"
+msgstr "タイプ07、タイプ08をデザインする場合に設定します"
+
+#: customizer/customizer-hamburger.php:206
+#: customizer/customizer-hamburger.php:277
+msgid "Enter the banner link destination"
+msgstr "バナーのリンク先を入力します"
+
+#: customizer/customizer-hamburger.php:254
+msgid "If you want a second banner, please enter the text"
+msgstr "②バナーが必要な場合は、テキストを入力してください"
+
+#: customizer/customizer-hamburger.php:301
+msgid "Hamburger menu Logo Image"
+msgstr "ハンバーガーメニュー内で表示するロゴ画像"
+
+#: customizer/customizer-hamburger.php:302
+msgid "If not entered, the image set in the header will be used"
+msgstr "入力しない場合はヘッダーに設定されている画像が使用されます"
+
+#: customizer/customizer-hamburger.php:346
+msgid "Enter the button link destination"
+msgstr "ボタンのリンク先を入力します"
+
+#: customizer/customizer-header.php:9
+msgid "Header option"
+msgstr "ヘッダーの設定"
+
+#: customizer/customizer-header.php:32
+msgid "Logo Image"
+msgstr "ロゴ画像"
+
+#: customizer/customizer-header.php:53
+msgid "Design Type"
+msgstr "ヘッダーデザインを選択する"
+
+#: customizer/customizer-header.php:58
+msgid "Header Type1"
+msgstr ""
+
+#: customizer/customizer-header.php:59
+msgid "Header Type2"
+msgstr ""
+
+#: customizer/customizer-header.php:60
+msgid "Header Type3"
+msgstr ""
+
+#: customizer/customizer-header.php:61
+msgid "Header Type4"
+msgstr ""
+
+#: customizer/customizer-header.php:62
+msgid "Header Type5"
+msgstr ""
+
+#: customizer/customizer-header.php:63
+msgid "Header Type6"
+msgstr ""
+
+#: customizer/customizer-header.php:64
+msgid "Header Type7"
+msgstr ""
+
+#: customizer/customizer-header.php:65
+msgid "Header Type8"
+msgstr ""
+
+#: customizer/customizer-header.php:66
+msgid "Header Type9"
+msgstr ""
+
+#: customizer/customizer-header.php:67
+msgid "Header Type10"
+msgstr ""
+
+#: customizer/customizer-header.php:68
+msgid "Header Type11"
+msgstr ""
+
+#: customizer/customizer-header.php:69
+msgid "Header Type12"
+msgstr ""
+
+#: customizer/customizer-header.php:90
+msgid "Set to card type"
+msgstr "背景をカードタイプにする"
+
+#: customizer/customizer-header.php:108
+msgid "Set card corner radius for PC (px)"
+msgstr "PC用のカードのコーナーの角度"
+
+#: customizer/customizer-header.php:129
+msgid "Set card corner radius for Tablet (px)"
+msgstr "タブレット用のカードのコーナーの角度"
+
+#: customizer/customizer-header.php:150
+msgid "Set card corner radius for SP (px)"
+msgstr "スマートフォン用のカードのコーナーの角度"
+
+#: customizer/customizer-header.php:172
+msgid "Header Link Text Color"
+msgstr "ヘッダーリンクカラー"
+
+#: customizer/customizer-header.php:194
+msgid "Header Background Color"
+msgstr "ヘッダーの背景カラー"
+
+#: customizer/customizer-header.php:240
+msgid "Add an underline"
+msgstr "ヘッダーに下線を追加する"
+
+#: customizer/customizer-header.php:260
+msgid "Add blur processing"
+msgstr ""
+"ヘッダーにぼかしをかける\n"
+"（背景からーを設定している場合は利用できません）"
+
+#: customizer/customizer-header.php:281
+msgid "Adjust the blur ratio"
+msgstr "ぼかし度合いを設定する"
+
+#: customizer/customizer-page.php:9
+msgid "Page option"
+msgstr "ページの設定"
+
+#: customizer/customizer-page.php:28
+msgid "Page Title Design"
+msgstr "ページタイトルのデザインを設定"
+
+#: customizer/customizer-page.php:33
+msgid "Page Title1"
+msgstr ""
+
+#: customizer/customizer-page.php:34
+msgid "Page Title2"
+msgstr ""
+
+#: customizer/customizer-page.php:35
+msgid "Page Title3"
+msgstr ""
+
+#: customizer/customizer-page.php:36
+msgid "Page Title4"
+msgstr ""
+
+#: customizer/customizer-page.php:37
+msgid "Page Title5"
+msgstr ""
+
+#: customizer/customizer-page.php:38
+msgid "Page Title6"
+msgstr ""
+
+#: customizer/customizer-page.php:39
+msgid "Page Title7"
+msgstr ""
+
+#: customizer/customizer-page.php:40
+msgid "Page Title8"
+msgstr ""
+
+#: customizer/customizer-page.php:41
+msgid "Page Title9"
+msgstr ""
+
+#: customizer/customizer-page.php:59
+#, fuzzy
+#| msgid "Page Title Design"
+msgid "Content Title Design"
+msgstr "ページタイトルのデザインを設定"
+
+#: customizer/customizer-page.php:64
+msgid "Content Title1"
+msgstr ""
+
+#: customizer/customizer-page.php:65
+msgid "Content Title2"
+msgstr ""
+
+#: customizer/customizer-page.php:66
+msgid "Content Title3"
+msgstr ""
+
+#: customizer/customizer-page.php:67
+msgid "Content Title4"
+msgstr ""
+
+#: customizer/customizer-page.php:86
+msgid "Set corner radius for PC (px)"
+msgstr "PC用のコーナーの角度"
+
+#: customizer/customizer-page.php:107
+msgid "Set corner radius for Tablet (px)"
+msgstr "タブレット用のコーナーの角度"
+
+#: customizer/customizer-page.php:128
+msgid "Set corner radius for SP (px)"
+msgstr "スマートフォン用のコーナーの角度"
+
+#: customizer/customizer-sns.php:16
+msgid "SNS Settings"
+msgstr "SNSの設定"
+
+#: customizer/customizer-sns.php:29
+msgid "SNS 0"
+msgstr ""
+
+#: customizer/customizer-sns.php:46
+msgid "Enter the name of your SNS"
+msgstr ""
+
+#: customizer/customizer-sns.php:67
+msgid "SNS Image"
+msgstr "SNSのアイコン"
+
+#: customizer/customizer-sns.php:87
+msgid "Please enter the link"
+msgstr "リンクを入力してください"
+
+#: customizer/customizer-top.php:16
+msgid "Top Page Settings"
+msgstr "トップページの設定"
+
+#: customizer/customizer-top.php:26
+msgid "Slide Image Setting"
+msgstr "スライドの設定"
+
+#: customizer/customizer-top.php:44
+msgid "First view settings"
+msgstr "ファーストビューの高さを設定する"
+
+#: customizer/customizer-top.php:49
+msgid "Show Page title"
+msgstr "ページタイトルを表示する"
+
+#: customizer/customizer-top.php:50
+msgid "Show default slider"
+msgstr "通常のスライダーを表示する"
+
+#: customizer/customizer-top.php:51
+msgid "Show the original slider"
+msgstr "オリジナルのスライダーを表示する"
+
+#: customizer/customizer-top.php:52
+msgid "Show nothing"
+msgstr "何も表示させない"
+
+#: customizer/customizer-top.php:88
+msgid "Change Effect"
+msgstr "エフェクトを設定する"
+
+#: customizer/customizer-top.php:93
+msgid "Fade"
+msgstr ""
+
+#: customizer/customizer-top.php:94
+msgid "Slide"
+msgstr ""
+
+#: customizer/customizer-top.php:95
+msgid "Cube"
+msgstr ""
+
+#: customizer/customizer-top.php:96
+msgid "Coverflow"
+msgstr ""
+
+#: customizer/customizer-top.php:97
+msgid "Flip"
+msgstr ""
+
+#: customizer/customizer-top.php:98
+msgid "Cards"
+msgstr ""
+
+#: customizer/customizer-top.php:116
+msgid "First view height for PC"
+msgstr "PCの時のファーストビューの高さ"
+
+#: customizer/customizer-top.php:117 customizer/customizer-top.php:138
+#: customizer/customizer-top.php:159
+msgid "Enter the unit. Example: px, vh"
+msgstr ""
+"単位まで入力してください。\n"
+"例：px, vh"
+
+#: customizer/customizer-top.php:137
+msgid "First view height for Tablet"
+msgstr "タブレットの時のファーストビューの高さ"
+
+#: customizer/customizer-top.php:158
+msgid "First view height for SP"
+msgstr "スマートフォンの時のファーストビューの高さ"
+
+#: customizer/customizer-top.php:182
+msgid "Show Arrow"
+msgstr "矢印を表示する"
+
+#: customizer/customizer-top.php:201
+msgid "Show Pagination"
+msgstr "ページネーションを表示する"
+
+#: customizer/customizer-top.php:220
+msgid "Change Progress Bar"
+msgstr "プログレンスバーに変更する"
+
+#: customizer/customizer-top.php:221
+msgid "\"Show pagination\" must be turned on"
+msgstr "「ページネーションを表示」をオンにする必要があります"
+
+#: customizer/customizer-top.php:241
+msgid "Slider Custom CSS"
+msgstr "スライダーのカスタムCSS"
+
+#: customizer/customizer-top.php:256
+msgid "Slide Image"
+msgstr "スライド画像の設定"
+
+#: customizer/customizer-top.php:273
+msgid "Image"
+msgstr "スライド画像"
+
+#: customizer/customizer-top.php:293
+msgid "If you put a link to the image"
+msgstr "もしも画像にリンクを設定する場合はURLを記載してください"
+
+#: customizer/customizer-top.php:319
+msgid "Open in new tab"
+msgstr "ページを新しいタブで開く"
+
+#: customizer/customizer-top.php:334
+msgid "CMS Setting for Top Page"
+msgstr "トップページのCMS設定"
+
+#: customizer/customizer-top.php:355
+msgid "Show CMS"
+msgstr "CMSを表示する"
+
+#: customizer/customizer-top.php:373
+msgid "Number of articles displayed"
+msgstr "表示する投稿数"
+
+#: customizer/customizer-top.php:392
+msgid "CMS Design Setting"
+msgstr "CMSのデザイン設定"
+
+#: customizer/customizer-top.php:397
+msgid "CMS Type01"
+msgstr ""
+
+#: customizer/customizer-top.php:398
+msgid "CMS Type02"
+msgstr ""
+
+#: customizer/customizer-top.php:399
+msgid "CMS Type03"
+msgstr ""
+
+#: customizer/customizer-top.php:400
+msgid "CMS Type04"
+msgstr ""
+
+#: customizer/customizer-top.php:401
+msgid "CMS Type05"
+msgstr ""
+
+#: customizer/customizer-top.php:402
+msgid "CMS Type06"
+msgstr ""
+
+#: customizer/customizer-top.php:421
+msgid "CMS Main Title"
+msgstr "CMSのメインタイトル"
+
+#: customizer/customizer-top.php:442
+msgid "CMS Sub Title"
+msgstr "CMSのサブタイトル"
+
+#: customizer/customizer-top.php:463
+msgid "Button Text"
+msgstr "ボタンに表示するテキスト"
+
+#: customizer/customizer-top.php:484
+msgid "Button Link"
+msgstr "ボタンのリンク先を入力してください"
+
+#: inc/class-tgm-plugin-activation.php:334
+msgid "Install Required Plugins"
+msgstr "必要なプラグインをインストールする"
+
+#: inc/class-tgm-plugin-activation.php:335
+msgid "Install Plugins"
+msgstr "プラグインのインストール"
+
+#: inc/class-tgm-plugin-activation.php:337
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "プラグインをインストールしています: %s"
+
+#: inc/class-tgm-plugin-activation.php:339
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "プラグインを更新中: %s"
+
+#: inc/class-tgm-plugin-activation.php:340
+msgid "Something went wrong with the plugin API."
+msgstr "プラグイン API で問題が発生しました。"
+
+#: inc/class-tgm-plugin-activation.php:392
+msgid "Return to Required Plugins Installer"
+msgstr "必要なプラグイン インストーラーに戻る"
+
+#: inc/class-tgm-plugin-activation.php:393
+msgid "Return to the Dashboard"
+msgstr "ダッシュボードに戻る"
+
+#: inc/class-tgm-plugin-activation.php:394
+#: inc/class-tgm-plugin-activation.php:3252
+msgid "Plugin activated successfully."
+msgstr "プラグインが正常に有効化されました。"
+
+#: inc/class-tgm-plugin-activation.php:395
+#: inc/class-tgm-plugin-activation.php:3045
+msgid "The following plugin was activated successfully:"
+msgstr "次のプラグインは正常に有効化されました:"
+
+#: inc/class-tgm-plugin-activation.php:397
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+"何もアクションは取られませんでした。プラグイン %1$s はすでにアクティブでし"
+"た。"
+
+#: inc/class-tgm-plugin-activation.php:399
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"プラグインが有効化されていません。このテーマには %s の上位バージョンが必要で"
+"す。プラグインを更新してください。"
+
+#: inc/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "すべてのプラグインが正常にインストールされ、有効化されました。 %1$s"
+
+#: inc/class-tgm-plugin-activation.php:402
+msgid "Dismiss this notice"
+msgstr "この通知を無視する"
+
+#: inc/class-tgm-plugin-activation.php:403
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"インストール、更新、またはアクティブ化するために必須または推奨されるプラグイ"
+"ンが 1 つ以上あります。"
+
+#: inc/class-tgm-plugin-activation.php:404
+msgid "Please contact the administrator of this site for help."
+msgstr "このサイトの管理者にお問い合わせください。"
+
+#: inc/class-tgm-plugin-activation.php:2075
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2366
+msgid "Required"
+msgstr "必須"
+
+#: inc/class-tgm-plugin-activation.php:2369
+msgid "Recommended"
+msgstr "推奨"
+
+#: inc/class-tgm-plugin-activation.php:2385
+msgid "WordPress Repository"
+msgstr "WordPressリポジトリ"
+
+#: inc/class-tgm-plugin-activation.php:2388
+msgid "External Source"
+msgstr "外部ソース"
+
+#: inc/class-tgm-plugin-activation.php:2391
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2408
+msgid "Not Installed"
+msgstr "インストールされていない"
+
+#: inc/class-tgm-plugin-activation.php:2412
+msgid "Installed But Not Activated"
+msgstr "インストールされているがアクティベートされていない"
+
+#: inc/class-tgm-plugin-activation.php:2414
+msgid "Active"
+msgstr "有効"
+
+#: inc/class-tgm-plugin-activation.php:2420
+msgid "Required Update not Available"
+msgstr "必要なアップデートが利用できない"
+
+#: inc/class-tgm-plugin-activation.php:2423
+msgid "Requires Update"
+msgstr "アップデートが必要です"
+
+#: inc/class-tgm-plugin-activation.php:2426
+msgid "Update recommended"
+msgstr "アップデートを推奨"
+
+#: inc/class-tgm-plugin-activation.php:2485
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2489
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2493
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2583
+msgid "Installed version:"
+msgstr "インストールされているバージョン:"
+
+#: inc/class-tgm-plugin-activation.php:2591
+msgid "Minimum required version:"
+msgstr "最低限必要なバージョン:"
+
+#: inc/class-tgm-plugin-activation.php:2603
+msgid "Available version:"
+msgstr "利用可能なバージョン:"
+
+#: inc/class-tgm-plugin-activation.php:2640
+msgid "Plugin"
+msgstr "プラグイン"
+
+#: inc/class-tgm-plugin-activation.php:2641
+msgid "Source"
+msgstr "ソース"
+
+#: inc/class-tgm-plugin-activation.php:2642
+msgid "Type"
+msgstr "タイプ"
+
+#: inc/class-tgm-plugin-activation.php:2646
+msgid "Version"
+msgstr "バージョン"
+
+#: inc/class-tgm-plugin-activation.php:2647
+msgid "Status"
+msgstr "ステータス"
+
+#: inc/class-tgm-plugin-activation.php:2696
+#, php-format
+msgid "Install %2$s"
+msgstr "%2$sをインストールします"
+
+#: inc/class-tgm-plugin-activation.php:2701
+#, php-format
+msgid "Update %2$s"
+msgstr "%2$sを更新します"
+
+#: inc/class-tgm-plugin-activation.php:2707
+#, php-format
+msgid "Activate %2$s"
+msgstr "%2$sを有効化します"
+
+#: inc/class-tgm-plugin-activation.php:2810
+msgid "Install"
+msgstr "インストール"
+
+#: inc/class-tgm-plugin-activation.php:2816
+msgid "Update"
+msgstr "更新"
+
+#: inc/class-tgm-plugin-activation.php:2819
+msgid "Activate"
+msgstr "有効化"
+
+#: inc/class-tgm-plugin-activation.php:2850
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+"インストールするプラグインが選択されていません。何もアクションは取られません"
+"でした。"
+
+#: inc/class-tgm-plugin-activation.php:2852
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+"更新するプラグインが選択されていませんでした。何もアクションは取られませんで"
+"した。"
+
+#: inc/class-tgm-plugin-activation.php:2893
+msgid "No plugins are available to be installed at this time."
+msgstr "現時点ではインストールできるプラグインはありません。"
+
+#: inc/class-tgm-plugin-activation.php:2895
+msgid "No plugins are available to be updated at this time."
+msgstr "現時点では更新できるプラグインはありません。"
+
+#: inc/class-tgm-plugin-activation.php:3251
+msgid "Plugin activation failed."
+msgstr "プラグインの有効化に失敗しました。"
+
+#: inc/class-tgm-plugin-activation.php:3591
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "プラグイン %1$s を更新しています (%2$d/%3$d)"
+
+#: inc/class-tgm-plugin-activation.php:3594
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "%1$s のインストール中にエラーが発生しました <strong>%2$s</strong>."
+
+#: inc/class-tgm-plugin-activation.php:3596
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "%1$s のインストールに失敗しました。"
+
+#: inc/class-tgm-plugin-activation.php:3600
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"インストールとアクティベーションのプロセスが開始されます。一部のホストではこ"
+"のプロセスに時間がかかる場合がありますので、しばらくお待ちください。"
+
+#: inc/class-tgm-plugin-activation.php:3602
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s は正常にインストールされ、アクティブ化されました。"
+
+#: inc/class-tgm-plugin-activation.php:3603
+msgid "All installations and activations have been completed."
+msgstr "すべてのインストールとアクティベーションが完了しました。"
+
+#: inc/class-tgm-plugin-activation.php:3605
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+
+#: inc/class-tgm-plugin-activation.php:3608
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"インストールプロセスが開始されます。一部のホストではこのプロセスに時間がかか"
+"る場合がありますので、しばらくお待ちください。"
+
+#: inc/class-tgm-plugin-activation.php:3611
+msgid "All installations have been completed."
+msgstr "すべてのインストールが完了しました。"
+
+#: inc/class-tgm-plugin-activation.php:3613
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "プラグイン %1$s をインストールしています (%2$d/%3$d)"
+
+#: inc/init.php:29
+msgid "HEADER MENU"
+msgstr "ヘッダーナビゲーション"
+
+#: inc/init.php:30
+msgid "HEADER SUB MENU"
+msgstr "ヘッダーサブナビゲーション"
+
+#: inc/init.php:31
+msgid "FOOTER MENU"
+msgstr "フッターナビゲーション"
+
+#: inc/init.php:32
+msgid "FOOTER LEFT MENU"
+msgstr "フッターナビゲーション 左側"
+
+#: inc/init.php:33
+msgid "FOOTER RIGHT MENU"
+msgstr "フッターナビゲーション 右側"
+
+#: inc/init.php:34
+msgid "FOOTER INFO MENU"
+msgstr "フッターナビゲーション 下部"
+
+#: inc/init.php:35
+msgid "HAMBURGER MENU LEFT MENU"
+msgstr "ハンバーガーメニュー内 左側"
+
+#: inc/init.php:36
+msgid "HAMBURGER MENU RIGHT MENU"
+msgstr "ハンバーガーメニュー内 右側"
+
+#: inc/init.php:37
+msgid "HAMBURGER MENU INFO MENU"
+msgstr "フッターナビゲーションハンバーガーメニュー内 下部"
+
+#: inc/init.php:52
+msgid "...more"
+msgstr "…続きを見る"
+
+#~ msgid "Footer Add an top line"
+#~ msgstr "フッターコンテンツの上部に線を追加する"
+
+#~ msgid "Page Background Color"
+#~ msgstr "ページの背景カラー"
+
+#~ msgid "Primary Color"
+#~ msgstr "プライマリカラー"
+
+#~ msgid "Secondary Color"
+#~ msgstr "セカンダリーカラー"
+
+#~ msgid "Button Link Type11"
+#~ msgstr "ボタンリンク Type11"
+
+#~ msgid "Site Design Settings"
+#~ msgstr "デザインの設定"
+
+#~ msgid "Page Heading Type"
+#~ msgstr "個別ページの大見出しデザインを選択する"
+
+#~ msgid "Button Link Type12"
+#~ msgstr "ボタンリンク Type12"
+
+#~ msgid "Page Heading Settings"
+#~ msgstr "個別ページの大見出しデザインを設定"

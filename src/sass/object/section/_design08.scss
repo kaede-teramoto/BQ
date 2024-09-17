@@ -1,0 +1,230 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* design08
+ ----------------------------------------------------------------------------------------------- */
+.section__design08 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design08__inner {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: 90%;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design08__block-title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design08__block-subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__design08 {
+    margin-top: 80px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design08 {
+    display: grid;
+    gap: 20px 50px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "design_img design_title"
+        "design_img design_subtitle"
+        "design_img design_text"
+        "design_img design_btn";
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include m.mq(sp) {}
+
+}
+
+// .section__parts__design08__left {
+//     width: 50%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+
+//     @include m.mq(pc) {}
+
+//     @include m.mq(miniPc) {}
+
+//     @include m.mq(tab) {
+//         width: 100%;
+//         gap: 5px;
+//     }
+
+//     @include m.mq(sp) {}
+// }
+
+.section__parts__design08__title {
+    grid-area: design_title;
+    display: flex;
+    align-items: flex-end;
+    font-size: calc(var(--font_size_PC) * 2);
+    line-height: 1.4;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: calc(var(--font_size_TAB) * 2);
+        line-height: 1;
+        order: 1;
+    }
+
+    @include m.mq(sp) {
+        font-size: calc(var(--font_size_SP) * 2)
+    }
+}
+
+.section__parts__design08__subtitle {
+    grid-area: design_subtitle;
+    font-size: 90%;
+    margin-top: 10px;
+    color: var(--main_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 2;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design08__text {
+    grid-area: design_text;
+    padding-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding-top: 10px;
+        order: 4;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design08__text .versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design08__img {
+    grid-area: design_img;
+    max-height: 600px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 30px;
+        width: 100%;
+        order: 3;
+
+    }
+
+    @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.section__parts__design08__link {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 5;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design08__editor {
+    aspect-ratio: 1.95 / 1;
+    overflow: hidden;
+    width: 57.9%;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    @include m.mq(sp) {}
+
+    iframe {
+        width: 100%;
+    }
+}

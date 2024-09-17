@@ -1,0 +1,504 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* form04
+ ----------------------------------------------------------------------------------------------- */
+
+.section__form04 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .section__form04__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .section__form04__block-title {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .section__parts__wrapper__form04 {
+        width: 770px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 680px;
+        }
+
+        @include m.mq(tab) {
+            width: 540px;
+        }
+
+        @include m.mq(sp) {
+            width: 90%;
+        }
+
+        p,
+        br {
+            display: none;
+        }
+    }
+
+    .section__parts__form04 {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .section__parts__form04__text {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .mw_wp_form {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    form {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .ctaForm04__note {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        p {
+            display: flex;
+            gap: 5px;
+            color: var(--sub_color);
+        }
+    }
+
+    .required {
+        color: #FF0000;
+    }
+
+    input,
+    select,
+    textarea {
+        border: solid 1px var(--main_color);
+        color: var(--text_color);
+
+        @include m.mq(sp) {
+            padding: 15px;
+        }
+    }
+
+    ::placeholder {
+        color: var(--sub_color);
+    }
+
+    .ctaForm04__form__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            gap: 30px;
+        }
+
+        @include m.mq(sp) {
+            gap: 20px;
+        }
+    }
+
+    .ctaForm04__form-group {
+        color: var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .pull_down {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .form_area {
+        appearance: none;
+        background-image: url(../../assets/images/ctaForm/form_arrow04.svg);
+        background-repeat: no-repeat;
+        background-position: right 30px center;
+    }
+
+    .radio {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    input[type="radio"] {
+        display: none;
+        /* 標準のラジオボタンを非表示に */
+    }
+
+    .mw_wp_form .horizontal-item+.horizontal-item {
+        margin: 0;
+    }
+
+    .mwform-radio-field-text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        color: var(--text_color);
+        /* テキストの色をカスタマイズ */
+        cursor: pointer;
+        /* カーソルをポインターに */
+    }
+
+    .mwform-radio-field-text::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        border: 1px solid var(--main_color);
+        /* 外枠の色を設定 */
+        border-radius: 50%;
+        background-color: #fff;
+        /* デフォルトで白い背景 */
+        position: relative;
+        box-sizing: border-box;
+        transition: background-color 0.3s, border-color 0.3s;
+        /* スムーズなトランジションを設定 */
+    }
+
+    .mwform-radio-field-text::after {
+        content: "";
+        display: block;
+        width: 12px;
+        /* 内側の小さな円の直径 */
+        height: 12px;
+        /* 内側の小さな円の直径 */
+        border-radius: 50%;
+        background-color: var(--main_color);
+        /* 内側の小さな円の色 */
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        /* 初期状態では非表示 */
+        transition: opacity 0.3s;
+    }
+
+    input[type="radio"]:checked+.mwform-radio-field-text::after {
+        opacity: 1;
+        /* 選択時に内側の小さな円を表示 */
+    }
+
+    .radio_contents {
+        display: flex;
+        gap: 30px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            gap: 10px 20px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .checkbox {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    input[type="checkbox"] {
+        display: none;
+        /* 標準のチェックボックスを非表示に */
+    }
+
+    .mwform-checkbox-field-text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        color: var(--text_color);
+        /* テキストの色をカスタマイズ */
+        cursor: pointer;
+        /* カーソルをポインターに */
+    }
+
+    .mwform-checkbox-field-text::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        border: 1px solid var(--main_color);
+        /* 外枠の色を設定 */
+        border-radius: 4px;
+        /* チェックボックスは角を丸めず、四角に */
+        background-color: #fff;
+        /* デフォルトで白い背景 */
+        position: relative;
+        box-sizing: border-box;
+        transition: background-color 0.3s, border-color 0.3s;
+        /* スムーズなトランジションを設定 */
+    }
+
+    .mwform-checkbox-field-text::after {
+        content: "";
+        display: block;
+        width: 8px;
+        /* 内側のチェックマークの大きさ */
+        height: 13px;
+        /* 内側のチェックマークの高さ */
+        border: solid var(--main_color);
+        /* チェックマークの色を設定 */
+        border-width: 0 2px 2px 0;
+        /* チェックマークの線の太さを設定 */
+        transform: rotate(45deg);
+        /* チェックマークを45度回転させて表示 */
+        position: absolute;
+        top: 48%;
+        left: 10px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        opacity: 0;
+        /* 初期状態では非表示 */
+        transition: opacity 0.3s;
+    }
+
+    input[type="checkbox"]:checked+.mwform-checkbox-field-text::after {
+        opacity: 1;
+        /* 選択時にチェックマークを表示 */
+    }
+
+    .checkbox_contents {
+        display: flex;
+        gap: 30px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            gap: 10px 20px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .text-area {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .form_text-area {
+        height: 290px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            height: 200px;
+        }
+    }
+
+
+    .privacypolicy04 {
+        margin: 90px auto 0;
+        display: flex;
+
+        @include m.mq(pc) {
+            margin: 70px auto 0;
+        }
+
+        @include m.mq(miniPc) {
+            margin: 50px auto 0;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            margin: 30px auto 0;
+        }
+
+        .txt-c {
+            display: flex !important;
+        }
+
+        a {
+            color: var(--main_color);
+            text-decoration: underline;
+        }
+
+        .mwform-checkbox-field-text {
+            position: relative;
+            cursor: pointer;
+            /* カーソルをポインターに */
+            display: flex;
+            align-items: center;
+            color: var(--text_color);
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+                border: 1px solid var(--main_color);
+                border-radius: 4px;
+                background-color: #fff;
+                position: relative;
+                box-sizing: border-box;
+                transition: background-color 0.3s, border-color 0.3s;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 8px;
+                /* 内側のチェックマークの大きさ */
+                height: 13px;
+                /* 内側のチェックマークの高さ */
+                border: solid var(--main_color);
+                /* チェックマークの色を設定 */
+                border-width: 0 2px 2px 0;
+                /* チェックマークの線の太さを設定 */
+                transform: rotate(45deg);
+                /* チェックマークを45度回転させて表示 */
+                position: absolute;
+                top: 48%;
+                left: 10px;
+                transform: translate(-50%, -50%) rotate(45deg);
+                opacity: 0;
+                /* 初期状態では非表示 */
+                transition: opacity 0.3s;
+            }
+        }
+
+        input[type="checkbox"]:checked+.form_privacy__text::after {
+            opacity: 1;
+            /* 選択時にチェックマークを表示 */
+        }
+    }
+
+
+    .submit-btn {
+        display: flex;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .form_submit {
+            margin: 0 auto;
+            width: auto;
+            padding: 10px 60px;
+            color: var(--main_color);
+            border-radius: 50px;
+            border: solid 2px;
+            transition: all 0.3s ease-out;
+
+            &:hover {
+                color: #fff;
+                background-color: var(--main_color);
+                border: solid 2px var(--main_color);
+            }
+        }
+    }
+}

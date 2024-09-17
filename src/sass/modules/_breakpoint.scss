@@ -1,0 +1,78 @@
+@use "../foundation/variables" as v;
+@use "../foundation/mixins" as m;
+
+/* breakpoint
+ ----------------------------------------------------------------------------------------------- */
+.l-sp {
+    display: none;
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        display: block;
+    }
+}
+
+.l-tab {
+    display: none;
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: block;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.l-miniPc {
+    display: none;
+
+    @include m.mq(miniPc) {
+        display: block;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+
+.l-spN {
+    display: block;
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        display: none;
+    }
+}
+
+.l-tabN {
+    display: block;
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        display: none;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.l-miniPcN {
+    display: block;
+
+    @include m.mq(miniPc) {
+        display: none;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}

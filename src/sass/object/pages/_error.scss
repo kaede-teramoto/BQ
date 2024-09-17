@@ -1,0 +1,149 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* page404_01
+ ----------------------------------------------------------------------------------------------- */
+body.error404 {
+    height: 100%;
+}
+
+.section__error {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__error__title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__error__subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__error__text {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__error__button {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+/* error01
+ ----------------------------------------------------------------------------------------------- */
+.section__error01 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding-inline: 30px;
+    }
+
+    @include m.mq(sp) {}
+
+    .c-button {
+        margin-top: 40px;
+    }
+}
+
+.section__error01__title {
+    font-family: var(--en_font);
+    font-weight: 600;
+    font-size: 30rem;
+    line-height: 0.8;
+    color: var(--main_color);
+
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 26rem;
+    }
+
+    @include m.mq(tab) {
+        font-size: 22rem;
+    }
+
+    @include m.mq(sp) {
+        font-size: 40vw;
+    }
+}
+
+.section__error01__subtitle {
+    font-family: var(--en_font);
+    font-weight: 600;
+    font-size: 9.6rem;
+    line-height: 1;
+    color: var(--main_color);
+    margin-top: 50px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 8.6rem;
+    }
+
+    @include m.mq(tab) {
+        font-size: 8rem;
+    }
+
+    @include m.mq(sp) {
+        font-size: 12vw;
+    }
+}
+
+.section__error01__text {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 500;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 40px;
+    }
+}

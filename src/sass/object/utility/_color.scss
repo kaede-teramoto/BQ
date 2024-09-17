@@ -1,0 +1,30 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* Color
+ ----------------------------------------------------------------------------------------------- */
+.u-color {}
+
+.u-color__main {
+    color: var(--main_color);
+}
+
+.u-color__text {
+    color: var(--text_color);
+}
+
+.u-color__accent {
+    color: var(--accent_color);
+}
+
+.u-color__base {
+    color: var(--base_color);
+}
+
+.u-color__sub {
+    color: var(--sub_color);
+}
+
+.u-color__bg {
+    color: var(--bg_color);
+}

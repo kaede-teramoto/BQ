@@ -1,0 +1,26 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+.p-law__wrapper {
+    //background-color: var(--base_color);
+}
+
+.p-law__heading {
+    padding: 150px 0 0;
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding: 100px 0 0;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.p-law__title {
+    @include v.pageTitle;
+}

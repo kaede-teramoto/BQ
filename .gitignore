@@ -1,0 +1,10 @@
+# dependencies
+node_modules
+
+Thumbs.db
+.DS_Store
+*.log
+
+assets/css
+package-lock.json
+package.json
