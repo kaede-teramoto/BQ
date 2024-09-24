@@ -1,0 +1,155 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+/* cta
+ ----------------------------------------------------------------------------------------------- */
+
+.cta__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.cta {
+    @include v.conWidth;
+}
+
+
+
+/* cta01
+ ----------------------------------------------------------------------------------------------- */
+
+.section__cta01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__cta01__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding: 40px 0;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        padding: 0;
+    }
+}
+
+.section__cta01__block-title {
+    @include v.titleH2;
+    /*font-size: calc(var(--font_size_PC) * 2);*/
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__cta01__block-subtitle {
+    width: 100%;
+    margin-top: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 540px;
+    }
+
+    @include m.mq(sp) {
+        width: 90vw;
+    }
+}
+
+.section__parts__wrapper__cta01 {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.section__parts__cta01 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__cta01__title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__cta01__text {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__link__btn {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
