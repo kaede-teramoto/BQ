@@ -1,0 +1,134 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* cta02
+ ----------------------------------------------------------------------------------------------- */
+
+.section__cta02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__cta02__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 700px 0 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding: 720px 0 50px;
+    }
+
+    @include m.mq(tab) {
+        padding: 300px 0 0;
+    }
+
+    @include m.mq(sp) {
+        padding: 290px 0 0;
+    }
+}
+
+.section__cta02__block-title {
+    @include v.titleH3;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__cta02__block-subtitle {
+    width: 50%;
+    margin-top: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 540px;
+    }
+
+    @include m.mq(sp) {
+        width: 90vw;
+    }
+}
+
+.section__parts__wrapper__cta02 {
+    margin-top: 45px;
+    display: flex;
+    gap: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__cta02 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__cta02__title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__cta02__text {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__link__btn {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
