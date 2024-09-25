@@ -1,0 +1,175 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* design14
+ ----------------------------------------------------------------------------------------------- */
+
+.section__design14 {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design14__inner {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design14__block-title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design14__block-subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__design14 {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    @include m.mq(pc) {
+        margin-top: 70px;
+        gap: 90px;
+    }
+
+    @include m.mq(miniPc) {
+        margin-top: 60px;
+        gap: 80px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 40px;
+        gap: 50px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 30px;
+    }
+}
+
+.section__parts__design14 {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design14__title {
+    font-size: 200%;
+    color: var(--main_color);
+    text-align: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design14__subtitle {
+    color: var(--base_color);
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-bottom: 5px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design14__text {
+    line-height: 2.0;
+    text-align: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design14__img {
+    aspect-ratio: 3 / 1;
+    margin: 100px 0 60px;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {
+        margin: 90px 0 60px;
+    }
+
+    @include m.mq(miniPc) {
+        margin: 80px 0 50px;
+    }
+
+    @include m.mq(tab) {
+        margin: 60px 0 30px;
+        aspect-ratio: 3 / 1.5;
+    }
+
+    @include m.mq(sp) {
+        margin: 50px 0 30px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section__parts__design14__link {
+    display: flex;
+    justify-content: center;
+}
