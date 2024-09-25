@@ -208,7 +208,7 @@ $show_arrows = get_theme_mod('atq_slider_arrow', '');
 $atq_slider_pagination = get_theme_mod('atq_slider_pagination', '');
 $atq_slider_progressbar = get_theme_mod('atq_slider_progressbar', '');
 $atq_slider_speed = get_theme_mod('atq_fv_slider_speed', '3000');
-$cms_design = esc_attr(get_theme_mod('atq_top_cms_design_setting', '01'));
+$cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
 ?>
 
 <script>

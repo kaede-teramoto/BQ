@@ -8,7 +8,7 @@
 
 $site_url  = home_url();
 $theme_url = get_template_directory_uri();
-$cms = get_theme_mod('atq_top_cms_display', false);
+$cms = get_theme_mod('cms_top_display', false);
 
 get_header(); ?>
 

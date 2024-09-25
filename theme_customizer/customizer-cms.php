@@ -5,98 +5,70 @@
  * @package BOUTiQ
  */
 
-add_action('customize_register', 'atq_cms_register');
-function atq_cms_register($wp_customize)
+add_action('customize_register', 'cms_register');
+function cms_register($wp_customize)
 {
 
-    // セクションの追加
     $wp_customize->add_section(
-        'atq_cms_section',
+        'cms_section',
         array(
-            'title' => __('CMS Setting', 'atq'), // セクションのタイトル
-            'priority' => 35, // セクションの優先順位
+            'title' => __('CMS Setting', 'boutiq'),
+            'priority' => 35,
             'transport'   => 'refresh',
         )
     );
-    // CMS 表示設定
+
+    // CMS setting ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_display',
+        'cms_top_display',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_top_cms_display_control',
+        'cms_top_display_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_cms_section',
-            'settings' => 'atq_top_cms_display', // コントロールの設定
-            'label' => __('Show CMS', 'atq'), // コントロールのラベル
+            'section' => 'cms_section',
+            'settings' => 'cms_top_display',
+            'label' => __('Show CMS', 'boutiq'),
         )
     );
 
     // Change Effect ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_design_setting',
+        'cms_top_design_setting',
         array(
-            'default' => '01', // デフォルトの選択
-            'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
+            'default' => '01',
+            'sanitize_callback' => 'sanitize_text_field',
             'type' => 'theme_mod',
         )
     );
+
     $wp_customize->add_control(
-        'atq_top_cms_design_setting_control',
+        'cms_top_design_setting_control',
         array(
-            'label'    => __('CMS TOP Design Setting', 'atq'), // コントロールのラベル
-            'section'  => 'atq_cms_section', // コントロールを追加するセクション
-            'settings' => 'atq_top_cms_design_setting', // コントロールの設定
-            'type'     => 'select', // コントロールの種類
+            'label'    => __('CMS TOP Design Setting', 'boutiq'),
+            'section'  => 'cms_section',
+            'settings' => 'cms_top_design_setting',
+            'type'     => 'select',
             'choices'  => array(
-                '01'   => __('CMS Type01', 'atq'),
-                '02'   => __('CMS Type02', 'atq'),
-                '03'   => __('CMS Type03', 'atq'),
-                '04'   => __('CMS Type04', 'atq'),
-                '05'   => __('CMS Type05', 'atq'),
-                '06'   => __('CMS Type06', 'atq'),
+                '01'   => __('CMS Type01', 'boutiq'),
+                '02'   => __('CMS Type02', 'boutiq'),
+                '03'   => __('CMS Type03', 'boutiq'),
+                '04'   => __('CMS Type04', 'boutiq'),
+                '05'   => __('CMS Type05', 'boutiq'),
+                '06'   => __('CMS Type06', 'boutiq'),
             ),
         )
     );
 
-    // Change Effect ======================================================================================================================================================
+    // Number to display ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_single_design_setting',
-        array(
-            'default' => '01', // デフォルトの選択
-            'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
-            'type' => 'theme_mod',
-        )
-    );
-    $wp_customize->add_control(
-        'atq_top_cms_single_design_setting_control',
-        array(
-            'label'    => __('CMS Single Design Setting', 'atq'), // コントロールのラベル
-            'section'  => 'atq_cms_section', // コントロールを追加するセクション
-            'settings' => 'atq_top_cms_single_design_setting', // コントロールの設定
-            'type'     => 'select', // コントロールの種類
-            'choices'  => array(
-                '01'   => __('CMS Single Type01', 'atq'),
-                '02'   => __('CMS Single Type02', 'atq'),
-                '03'   => __('CMS Single Type03', 'atq'),
-                '04'   => __('CMS Single Type04', 'atq'),
-                '05'   => __('CMS Single Type05', 'atq'),
-                '06'   => __('CMS Single Type06', 'atq'),
-            ),
-        )
-    );
-
-
-
-    // Setting ======================================================================================================================================================
-    $wp_customize->add_setting(
-        'atq_top_cms_num_setting',
+        'cms_top_num_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '10',
@@ -106,18 +78,18 @@ function atq_cms_register($wp_customize)
     );
 
     $wp_customize->add_control(
-        'atq_top_cms_num_setting_control',
+        'cms_top_num_setting_control',
         array(
-            'label' => esc_attr(__('Number of articles displayed', 'atq')),
-            'section' => 'atq_cms_section',
-            'settings' => 'atq_top_cms_num_setting',
+            'label' => __('Number of articles displayed', 'boutiq'),
+            'section' => 'cms_section',
+            'settings' => 'cms_top_num_setting',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Main title for Top page ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_main_title_setting',
+        'cms_top_main_title_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -125,20 +97,20 @@ function atq_cms_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_top_cms_main_title_setting_control',
+        'cms_top_main_title_setting_control',
         array(
-            'label' => esc_attr(__('CMS Main Title', 'atq')),
-            'section' => 'atq_cms_section',
-            'settings' => 'atq_top_cms_main_title_setting',
+            'label' => __('CMS Main Title', 'boutiq'),
+            'section' => 'cms_section',
+            'settings' => 'cms_top_main_title_setting',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Sub title for Top page ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_sub_title_setting',
+        'cms_top_sub_title_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -146,20 +118,20 @@ function atq_cms_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_top_cms_sub_title_setting_control',
+        'cms_top_sub_title_setting_control',
         array(
-            'label' => esc_attr(__('CMS Sub Title', 'atq')),
-            'section' => 'atq_cms_section',
-            'settings' => 'atq_top_cms_sub_title_setting',
+            'label' => __('CMS Sub Title', 'boutiq'),
+            'section' => 'cms_section',
+            'settings' => 'cms_top_sub_title_setting',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Button for Top page ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_btn_setting',
+        'cms_top_btn_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -167,20 +139,20 @@ function atq_cms_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_top_cms_btn_setting_control',
+        'cms_top_btn_setting_control',
         array(
-            'label' => 'リンクのテキスト', //esc_attr(__('Button Text', 'atq')),
-            'section' => 'atq_cms_section',
-            'settings' => 'atq_top_cms_btn_setting',
+            'label' => __('Button Text', 'boutiq'),
+            'section' => 'cms_section',
+            'settings' => 'cms_top_btn_setting',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Button Link for Top page ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_top_cms_btn_link_setting',
+        'cms_top_btn_link_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -188,63 +160,92 @@ function atq_cms_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_top_cms_btn_link_setting_control',
+        'cms_top_btn_link_setting_control',
         array(
-            'label' => 'リンク先URL', //esc_attr(__('Button Link', 'atq')),
-            'section' => 'atq_cms_section',
-            'settings' => 'atq_top_cms_btn_link_setting',
+            'label' => __('Button Link', 'boutiq'),
+            'section' => 'cms_section',
+            'settings' => 'cms_top_btn_link_setting',
             'type'     => 'text',
         )
     );
 
-    // Change Effect ======================================================================================================================================================
+    // Choose Button or Text ======================================================================================================================================================
     $wp_customize->add_setting(
         'cms_link_type',
         array(
-            'default' => '01', // デフォルトの選択
-            'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
+            'default' => '01',
+            'sanitize_callback' => 'sanitize_text_field',
             'type' => 'theme_mod',
         )
     );
+
     $wp_customize->add_control(
         'cms_link_type_control',
         array(
-            'label'    => __('CMS Link Design Setting', 'atq'), // コントロールのラベル
-            'section'  => 'atq_cms_section', // コントロールを追加するセクション
-            'settings' => 'cms_link_type', // コントロールの設定
-            'type'     => 'select', // コントロールの種類
+            'label'    => __('CMS Link Design Setting', 'boutiq'),
+            'section'  => 'cms_section',
+            'settings' => 'cms_link_type',
+            'type'     => 'select',
             'choices'  => array(
-                '01'   => __('Button Type', 'atq'),
-                '02'   => __('Text Type', 'atq'),
+                '01'   => __('Button Type', 'boutiq'),
+                '02'   => __('Text Type', 'boutiq'),
             ),
         )
     );
 
-    // Change Effect ======================================================================================================================================================
+    // Single page layout ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'cms_single_design_setting',
+        array(
+            'default' => '01',
+            'sanitize_callback' => 'sanitize_text_field',
+            'type' => 'theme_mod',
+        )
+    );
+
+    $wp_customize->add_control(
+        'cms_single_design_setting_control',
+        array(
+            'label'    => __('CMS Single Design Setting', 'boutiq'),
+            'section'  => 'cms_section',
+            'settings' => 'cms_single_design_setting',
+            'type'     => 'select',
+            'choices'  => array(
+                '01'   => __('CMS Single Type01', 'boutiq'),
+                '02'   => __('CMS Single Type02', 'boutiq'),
+                '03'   => __('CMS Single Type03', 'boutiq'),
+                '04'   => __('CMS Single Type04', 'boutiq'),
+                '05'   => __('CMS Single Type05', 'boutiq'),
+                '06'   => __('CMS Single Type06', 'boutiq'),
+            ),
+        )
+    );
+
+    // Archive page layout ======================================================================================================================================================
     $wp_customize->add_setting(
         'archive_cms_design',
         array(
-            'default' => '01', // デフォルトの選択
-            'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
+            'default' => '01',
+            'sanitize_callback' => 'sanitize_text_field',
             'type' => 'theme_mod',
         )
     );
     $wp_customize->add_control(
         'archive_cms_design_control',
         array(
-            'label'    => __('CMS Archive Design Setting', 'atq'), // コントロールのラベル
-            'section'  => 'atq_cms_section', // コントロールを追加するセクション
-            'settings' => 'archive_cms_design', // コントロールの設定
-            'type'     => 'select', // コントロールの種類
+            'label'    => __('CMS Archive Design Setting', 'boutiq'),
+            'section'  => 'cms_section',
+            'settings' => 'archive_cms_design',
+            'type'     => 'select',
             'choices'  => array(
-                '01'   => __('CMS Type01', 'atq'),
-                '02'   => __('CMS Type02', 'atq'),
-                '03'   => __('CMS Type03', 'atq'),
-                '04'   => __('CMS Type04', 'atq'),
-                '05'   => __('CMS Type05', 'atq'),
-                '06'   => __('CMS Type06', 'atq'),
+                '01'   => __('CMS Archive Type01', 'boutiq'),
+                '02'   => __('CMS Archive Type02', 'boutiq'),
+                '03'   => __('CMS Archive Type03', 'boutiq'),
+                '04'   => __('CMS Archive Type04', 'boutiq'),
+                '05'   => __('CMS Archive Type05', 'boutiq'),
+                '06'   => __('CMS Archive Type06', 'boutiq'),
             ),
         )
     );

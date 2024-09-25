@@ -5,20 +5,20 @@
  * @package BOUTiQ
  */
 $site_name = get_bloginfo();
-$cms = get_theme_mod('atq_top_cms_display', false);
-$cms_num = esc_attr(get_theme_mod('atq_top_cms_num_setting', '10'));
-$cms_design = esc_attr(get_theme_mod('atq_top_cms_design_setting', '01'));
-$main_title = esc_html(get_theme_mod('atq_top_cms_main_title_setting', ''));
-$sub_title = esc_html(get_theme_mod('atq_top_cms_sub_title_setting', ''));
-$btn_text = esc_html(get_theme_mod('atq_top_cms_btn_setting', ''));
-$btn_link_design = get_theme_mod('atq_btn_link_setting', '01');
-$btn_icon_design = get_theme_mod('atq_btn_link_icon_setting', '01');
+$cms = get_theme_mod('cms_top_display', false);
+$cms_num = esc_attr(get_theme_mod('cms_top_num_setting', '10'));
+$cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
+$main_title = esc_html(get_theme_mod('cms_top_main_title_setting', ''));
+$sub_title = esc_html(get_theme_mod('cms_top_sub_title_setting', ''));
+$btn_text = esc_html(get_theme_mod('cms_top_btn_setting', ''));
+$btn_link_design = get_theme_mod('common_btn_link_setting', '01');
+$btn_icon_design = get_theme_mod('common_btn_link_icon_setting', '01');
 // Text Link design type
-$text_link_design = get_theme_mod('atq_text_link_setting', '01');
-$text_icon_design = get_theme_mod('atq_text_link_icon_setting', '01');
+$text_link_design = get_theme_mod('text_link_setting', '01');
+$text_icon_design = get_theme_mod('text_link_icon_setting', '01');
 
 $link_type = get_theme_mod('cms_link_type', '01');
-$topCms_btn_link   = esc_url(get_theme_mod('atq_top_cms_btn_link_setting'));
+$topCms_btn_link   = esc_url(get_theme_mod('cms_top_btn_link_setting'));
 $categories = get_categories(array(
     'hide_empty' => true // 投稿がないカテゴリは除外
 ));

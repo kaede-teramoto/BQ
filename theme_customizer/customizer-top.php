@@ -488,7 +488,7 @@ function atq_customize_register($wp_customize)
 
     // // スライドの設定用パネルの追加
     // $wp_customize->add_section(
-    //     'atq_top_cms',
+    //     'cms_top_cms',
     //     array(
     //         'title'          => esc_attr(__('CMS Setting for Top Page', 'atq')),
     //         'priority'       => 400,
@@ -497,7 +497,7 @@ function atq_customize_register($wp_customize)
     // );
 
     // $wp_customize->add_setting(
-    //     'atq_top_cms_display',
+    //     'cms_top_display',
     //     array(
     //         'type'           => 'theme_mod',
     //         'default' => false, // デフォルト値はfalse
@@ -506,18 +506,18 @@ function atq_customize_register($wp_customize)
     // );
 
     // $wp_customize->add_control(
-    //     'atq_top_cms_display_control',
+    //     'cms_top_display_control',
     //     array(
     //         'type' => 'checkbox',
-    //         'section' => 'atq_top_cms',
-    //         'settings' => 'atq_top_cms_display', // コントロールの設定
+    //         'section' => 'cms_top_cms',
+    //         'settings' => 'cms_top_display', // コントロールの設定
     //         'label' => __('Show CMS', 'atq'), // コントロールのラベル
     //     )
     // );
 
     // // Setting ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_num_setting',
+    //     'cms_top_num_setting',
     //     array(
     //         'type' => 'theme_mod',
     //         'default'     => '10',
@@ -527,18 +527,18 @@ function atq_customize_register($wp_customize)
     // );
     // // Control ======================================================================================================================================================
     // $wp_customize->add_control(
-    //     'atq_top_cms_num_setting_control',
+    //     'cms_top_num_setting_control',
     //     array(
     //         'label' => esc_attr(__('Number of articles displayed', 'atq')),
-    //         'section' => 'atq_top_cms',
-    //         'settings' => 'atq_top_cms_num_setting',
+    //         'section' => 'cms_top_cms',
+    //         'settings' => 'cms_top_num_setting',
     //         'type'     => 'text',
     //     )
     // );
 
     // // Change Effect ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_design_setting',
+    //     'cms_top_design_setting',
     //     array(
     //         'default' => '01', // デフォルトの選択
     //         'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
@@ -546,11 +546,11 @@ function atq_customize_register($wp_customize)
     //     )
     // );
     // $wp_customize->add_control(
-    //     'atq_top_cms_design_setting_control',
+    //     'cms_top_design_setting_control',
     //     array(
     //         'label'    => __('CMS Archive Design Setting', 'atq'), // コントロールのラベル
-    //         'section'  => 'atq_top_cms', // コントロールを追加するセクション
-    //         'settings' => 'atq_top_cms_design_setting', // コントロールの設定
+    //         'section'  => 'cms_top_cms', // コントロールを追加するセクション
+    //         'settings' => 'cms_top_design_setting', // コントロールの設定
     //         'type'     => 'select', // コントロールの種類
     //         'choices'  => array(
     //             '01'   => __('CMS Type01', 'atq'),
@@ -565,7 +565,7 @@ function atq_customize_register($wp_customize)
 
     // // Change Effect ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_single_design_setting',
+    //     'cms_single_design_setting',
     //     array(
     //         'default' => '01', // デフォルトの選択
     //         'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
@@ -573,11 +573,11 @@ function atq_customize_register($wp_customize)
     //     )
     // );
     // $wp_customize->add_control(
-    //     'atq_top_cms_single_design_setting_control',
+    //     'cms_single_design_setting_control',
     //     array(
     //         'label'    => __('CMS Single Design Setting', 'atq'), // コントロールのラベル
-    //         'section'  => 'atq_top_cms', // コントロールを追加するセクション
-    //         'settings' => 'atq_top_cms_single_design_setting', // コントロールの設定
+    //         'section'  => 'cms_top_cms', // コントロールを追加するセクション
+    //         'settings' => 'cms_single_design_setting', // コントロールの設定
     //         'type'     => 'select', // コントロールの種類
     //         'choices'  => array(
     //             '01'   => __('CMS Single Type01', 'atq'),
@@ -592,7 +592,7 @@ function atq_customize_register($wp_customize)
 
     // // Setting ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_main_title_setting',
+    //     'cms_top_main_title_setting',
     //     array(
     //         'type' => 'theme_mod',
     //         'default'     => '',
@@ -602,18 +602,18 @@ function atq_customize_register($wp_customize)
     // );
     // // Control ======================================================================================================================================================
     // $wp_customize->add_control(
-    //     'atq_top_cms_main_title_setting_control',
+    //     'cms_top_main_title_setting_control',
     //     array(
     //         'label' => esc_attr(__('CMS Main Title', 'atq')),
-    //         'section' => 'atq_top_cms',
-    //         'settings' => 'atq_top_cms_main_title_setting',
+    //         'section' => 'cms_top_cms',
+    //         'settings' => 'cms_top_main_title_setting',
     //         'type'     => 'text',
     //     )
     // );
 
     // // Setting ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_sub_title_setting',
+    //     'cms_top_sub_title_setting',
     //     array(
     //         'type' => 'theme_mod',
     //         'default'     => '',
@@ -623,18 +623,18 @@ function atq_customize_register($wp_customize)
     // );
     // // Control ======================================================================================================================================================
     // $wp_customize->add_control(
-    //     'atq_top_cms_sub_title_setting_control',
+    //     'cms_top_sub_title_setting_control',
     //     array(
     //         'label' => esc_attr(__('CMS Sub Title', 'atq')),
-    //         'section' => 'atq_top_cms',
-    //         'settings' => 'atq_top_cms_sub_title_setting',
+    //         'section' => 'cms_top_cms',
+    //         'settings' => 'cms_top_sub_title_setting',
     //         'type'     => 'text',
     //     )
     // );
 
     // // Setting ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_btn_setting',
+    //     'cms_top_btn_setting',
     //     array(
     //         'type' => 'theme_mod',
     //         'default'     => '',
@@ -644,18 +644,18 @@ function atq_customize_register($wp_customize)
     // );
     // // Control ======================================================================================================================================================
     // $wp_customize->add_control(
-    //     'atq_top_cms_btn_setting_control',
+    //     'cms_top_btn_setting_control',
     //     array(
     //         'label' => esc_attr(__('Button Text', 'atq')),
-    //         'section' => 'atq_top_cms',
-    //         'settings' => 'atq_top_cms_btn_setting',
+    //         'section' => 'cms_top_cms',
+    //         'settings' => 'cms_top_btn_setting',
     //         'type'     => 'text',
     //     )
     // );
 
     // // Setting ======================================================================================================================================================
     // $wp_customize->add_setting(
-    //     'atq_top_cms_btn_link_setting',
+    //     'cms_top_btn_link_setting',
     //     array(
     //         'type' => 'theme_mod',
     //         'default'     => '',
@@ -665,11 +665,11 @@ function atq_customize_register($wp_customize)
     // );
     // // Control ======================================================================================================================================================
     // $wp_customize->add_control(
-    //     'atq_top_cms_btn_link_setting_control',
+    //     'cms_top_btn_link_setting_control',
     //     array(
     //         'label' => esc_attr(__('Button Link', 'atq')),
-    //         'section' => 'atq_top_cms',
-    //         'settings' => 'atq_top_cms_btn_link_setting',
+    //         'section' => 'cms_top_cms',
+    //         'settings' => 'cms_top_btn_link_setting',
     //         'type'     => 'text',
     //     )
     // );

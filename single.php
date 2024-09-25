@@ -1,23 +1,23 @@
 <?php
 /*
- * this is index page.
+ * this is single.
  *
  *
- * @package Format
+ * @package BOUTiQ
  */
 
 $site_url  = home_url();
 $theme_url = get_template_directory_uri();
 get_header();
 
-//$cms_design = esc_attr(get_theme_mod('atq_top_cms_design_setting', '01'));
-$cms_single_design = esc_attr(get_theme_mod('atq_top_cms_single_design_setting', '01'));
-//$main_title = esc_html(get_theme_mod('atq_top_cms_main_title_setting', ''));
-//$sub_title = esc_html(get_theme_mod('atq_top_cms_sub_title_setting', ''));
-//$btn_text = esc_html(get_theme_mod('atq_top_cms_btn_setting', ''));
-//$btn_icon_design = get_theme_mod('atq_btn_link_icon_setting', '01');
-//$btn_link_design = get_theme_mod('atq_btn_link_setting', '01');
-//$topCms_btn_link = esc_url(get_theme_mod('atq_top_cms_btn_link_setting'));
+//$cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
+$cms_single_design = esc_attr(get_theme_mod('cms_single_design_setting', '01'));
+//$main_title = esc_html(get_theme_mod('cms_top_main_title_setting', ''));
+//$sub_title = esc_html(get_theme_mod('cms_top_sub_title_setting', ''));
+//$btn_text = esc_html(get_theme_mod('cms_top_btn_setting', ''));
+//$btn_icon_design = get_theme_mod('common_btn_link_icon_setting', '01');
+//$btn_link_design = get_theme_mod('common_btn_link_setting', '01');
+//$topCms_btn_link = esc_url(get_theme_mod('cms_top_btn_link_setting'));
 $categories = get_categories(array(
     'hide_empty' => true // 投稿がないカテゴリは除外
 ));

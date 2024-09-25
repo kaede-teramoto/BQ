@@ -28,17 +28,17 @@ function atq_customize_css()
 
 
     // FONT関連
-    $font_size_PC = get_theme_mod('atq_pc_font_size_setting', '16') * 0.1;
-    $font_size_TAB = get_theme_mod('atq_tab_font_size_setting', '14') * 0.1;
-    $font_size_SP = get_theme_mod('atq_sp_font_size_setting', '12') * 0.1;
-    $heading_size_PC = get_theme_mod('atq_pc_heading_size_setting', '42') * 0.1;
-    $heading_size_TAB = get_theme_mod('atq_tab_heading_size_setting', '34') * 0.1;
-    $heading_size_SP = get_theme_mod('atq_sp_heading_size_setting', '28') * 0.1;
+    $font_size_PC = get_theme_mod('font_size_pc_setting', '16') * 0.1;
+    $font_size_TAB = get_theme_mod('font_size_tab_setting', '14') * 0.1;
+    $font_size_SP = get_theme_mod('font_size_sp_setting', '12') * 0.1;
+    $heading_size_PC = get_theme_mod('heading_size_pc_setting', '42') * 0.1;
+    $heading_size_TAB = get_theme_mod('heading_size_tab_setting', '34') * 0.1;
+    $heading_size_SP = get_theme_mod('heading_size_sp_setting', '28') * 0.1;
 
     // Header
     $header_text_color = get_theme_mod('atq_header_text_color_setting', '');
     $header_bg_color = get_theme_mod('atq_header_bg_color_setting', '#ffffff');
-    $btn_filter = get_theme_mod('atq_btn_link_filter_setting', '');
+    $btn_filter = get_theme_mod('common_btn_link_filter_setting', '');
     $card_radius_pc = get_theme_mod('atq_card_radius_pc_setting', '');
     $card_radius_tab = get_theme_mod('atq_card_radius_tab_setting', '');
     $card_radius_sp = get_theme_mod('atq_card_radius_sp_setting', '');
