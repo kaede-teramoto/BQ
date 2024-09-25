@@ -89,15 +89,15 @@ else : ?>
                 </div>
             <?php endif; ?>
 
-            <?php $sns_check = get_theme_mod('atq_sns_1');
+            <?php $sns_check = get_theme_mod('sns_1');
             if ($sns_check) : ?>
                 <div class="footer__sns footer<?php echo $footer_design; ?>__sns">
                     <?php
                     for ($i = 1; $i <= 5; $i++) {
 
-                        $sns_img = esc_url(get_theme_mod("atq_sns_$i", ''));
-                        $sns_name = esc_attr(get_theme_mod("atq_sns_name_$i", ''));
-                        $sns_img_link = esc_url(get_theme_mod("atq_sns_link_$i", ''));
+                        $sns_img = esc_url(get_theme_mod("sns_$i", ''));
+                        $sns_name = esc_attr(get_theme_mod("sns_name_$i", ''));
+                        $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
 
                         if ($sns_img) {
                             echo '<a href="' . $sns_img_link . '" target="_blank">';
@@ -203,11 +203,11 @@ else : ?>
 <!-- // all-container -->
 
 <?php wp_footer();
-$effect = "'" . esc_attr(get_theme_mod('atq_mainvisu_slider_option', 'fade')) . "'";
-$show_arrows = get_theme_mod('atq_slider_arrow', '');
-$atq_slider_pagination = get_theme_mod('atq_slider_pagination', '');
-$atq_slider_progressbar = get_theme_mod('atq_slider_progressbar', '');
-$atq_slider_speed = get_theme_mod('atq_fv_slider_speed', '3000');
+$effect = "'" . esc_attr(get_theme_mod('top_fv_slider_option', 'fade')) . "'";
+$show_arrows = get_theme_mod('top_fv_slider_arrow', '');
+$top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', '');
+$top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', '');
+$top_fv_slider_speed = get_theme_mod('top_fv_slider_speed', '3000');
 $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
 ?>
 
@@ -215,7 +215,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
     const topPage_slider = new Swiper(".p-top.swiper", {
         loop: true,
         autoplay: {
-            delay: <?php echo $atq_slider_speed; ?>,
+            delay: <?php echo $top_fv_slider_speed; ?>,
         },
         speed: 3000,
         //spaceBetween: 10,
@@ -230,10 +230,10 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             },
         <?php } ?>
 
-        <?php if ($atq_slider_pagination) { ?>
+        <?php if ($top_fv_slider_pagination) { ?>
             pagination: {
                 el: ".swiper-pagination",
-                <?php if ($atq_slider_progressbar) { ?>
+                <?php if ($top_fv_slider_progressbar) { ?>
                     type: "progressbar",
                 <?php } ?>
                 clickable: true,

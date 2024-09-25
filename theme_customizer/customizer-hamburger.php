@@ -5,19 +5,16 @@
  * @package BOUTiQ
  */
 
-/*----------------------------------------------------------------------------------------------------------------------------
-  Hamburger menu design settings
----------------------------------------------------------------------------------------------------------------------------- */
-add_action('customize_register', 'atq_hm_design_setting');
+add_action('customize_register', 'hm_design_setting');
 
-function atq_hm_design_setting($wp_customize)
+function hm_design_setting($wp_customize)
 {
 
     $wp_customize->add_section(
-        'atq_hm_section',
+        'hm_section',
         array(
-            'title' => __('Hamburger menu option', 'atq'), // セクションのタイトル
-            'priority' => 31, // セクションの優先順位
+            'title' => __('Hamburger menu option', 'boutiq'),
+            'priority' => 31,
             'transport'   => 'refresh',
         )
     );
@@ -25,51 +22,39 @@ function atq_hm_design_setting($wp_customize)
 
     // デザイン選択 ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_design_type',
+        'hm_design_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => '100', // デフォルトの選択
-            'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
+            'default' => '100',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_design_control',
+        'hm_design_control',
         array(
-            'label' => __('Hamburger menu Design Type', 'atq'), // コントロールのラベル
-            'section' => 'atq_hm_section', // コントロールを追加するセクション
-            'settings' => 'atq_hm_design_type', // コントロールの設定
-            'type' => 'select', // コントロールの種類
+            'label' => __('Hamburger menu Design Type', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_design_setting',
+            'type' => 'select',
             'choices' => array(
-                '100' => __("Don't use hamburger menu", 'atq'),
-                '00' => __('Set Original Hamburger menu', 'atq'),
-                '01' => __('Hamburger menu Type1', 'atq'),
-                '02' => __('Hamburger menu Type2', 'atq'),
-                '03' => __('Hamburger menu Type3', 'atq'),
-                '04' => __('Hamburger menu Type4', 'atq'),
-                '05' => __('Hamburger menu Type5', 'atq'),
-                '06' => __('Hamburger menu Type6', 'atq'),
-                '07' => __('Hamburger menu Type7', 'atq'),
-                '08' => __('Hamburger menu Type8', 'atq'),
+                '100' => __("Don't use hamburger menu", 'boutiq'),
+                '00' => __('Set Original Hamburger menu', 'boutiq'),
+                '01' => __('Hamburger menu Type1', 'boutiq'),
+                '02' => __('Hamburger menu Type2', 'boutiq'),
+                '03' => __('Hamburger menu Type3', 'boutiq'),
+                '04' => __('Hamburger menu Type4', 'boutiq'),
+                '05' => __('Hamburger menu Type5', 'boutiq'),
+                '06' => __('Hamburger menu Type6', 'boutiq'),
+                '07' => __('Hamburger menu Type7', 'boutiq'),
+                '08' => __('Hamburger menu Type8', 'boutiq'),
             ),
         )
     );
 
-
-    //=======================================================================================
-
-    $wp_customize->add_section(
-        'atq_hm_design',
-        array(
-            'title'          => esc_attr(__('Hamburger Icon Design Settings', 'atq')),
-            'panel'  => 'site_default_panel',
-            'transport'   => 'refresh',
-        )
-    );
-
-    // Setting ======================================================================================================================================================
+    // Hamburger icon set ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_design_setting',
+        'hm_icon_design_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '01',
@@ -77,32 +62,32 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_design_setting_control',
+        'hm_icon_design_setting_control',
         array(
-            'label' => __('Hamburger Icon Design Type', 'atq'), // コントロールのラベル
-            'section' => 'atq_hm_section', // コントロールを追加するセクション
-            'settings' => 'atq_hm_design_setting', // コントロールの設定
-            'type' => 'select', // コントロールの種類
+            'label' => __('Hamburger Icon Design Type', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_icon_design_setting',
+            'type' => 'select',
             'choices' => array(
-                '01' => __('Hamburger Icon Design Type1', 'atq'),
-                '02' => __('Hamburger Icon Design Type2', 'atq'),
-                '03' => __('Hamburger Icon Design Type3', 'atq'),
-                '04' => __('Hamburger Icon Design Type4', 'atq'),
-                '05' => __('Hamburger Icon Design Type5', 'atq'),
-                '06' => __('Hamburger Icon Design Type6', 'atq'),
-                '07' => __('Hamburger Icon Design Type7', 'atq'),
-                '08' => __('Hamburger Icon Design Type8', 'atq'),
-                '09' => __('Hamburger Icon Design Type9', 'atq'),
-                '10' => __('Hamburger Icon Design Type10', 'atq'),
+                '01' => __('Hamburger Icon Design Type1', 'boutiq'),
+                '02' => __('Hamburger Icon Design Type2', 'boutiq'),
+                '03' => __('Hamburger Icon Design Type3', 'boutiq'),
+                '04' => __('Hamburger Icon Design Type4', 'boutiq'),
+                '05' => __('Hamburger Icon Design Type5', 'boutiq'),
+                '06' => __('Hamburger Icon Design Type6', 'boutiq'),
+                '07' => __('Hamburger Icon Design Type7', 'boutiq'),
+                '08' => __('Hamburger Icon Design Type8', 'boutiq'),
+                '09' => __('Hamburger Icon Design Type9', 'boutiq'),
+                '10' => __('Hamburger Icon Design Type10', 'boutiq'),
             ),
         )
     );
 
-    // 背景色選択 ======================================================================================================================================================
+    // Background color settings in hamburger menu ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_bg_color_setting',
+        'hm_bg_color_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '#FFFFFF',
@@ -110,72 +95,71 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_hex_color',
         )
     );
+
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'atq_hm_bg_color_setting_control',
+            'hm_bg_color_setting_control',
             array(
-                'label' => esc_attr(__('Background Color for Hamburger Menu', 'atq')),
-                'section' => 'atq_hm_section',
-                'settings' => 'atq_hm_bg_color_setting',
+                'label' => __('Background Color for Hamburger Menu', 'boutiq'),
+                'section' => 'hm_section',
+                'settings' => 'hm_bg_color_setting',
             )
         )
     );
 
-    // ハンバーガーメニュー内左側の画像の設定 ======================================================================================================================================================
+    // Setting the image on the left side of the hamburger menu ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_left_image',
+        'hm_left_image',
         array(
-            'default' => '', // デフォルトの値
+            'default' => '',
             'type'           => 'theme_mod',
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw', // サニタイズコールバック関数
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
 
-    // イメージコントロールの追加
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'atq_hm_left_image_control',
+            'hm_left_image_control',
             array(
-                'label' => __('Hamburger menu Left Image', 'atq'), // コントロールのラベル
-                'section' => 'atq_hm_section', // コントロールを追加するセクション
-                'settings' => 'atq_hm_left_image', // コントロールの設定
-                //'width' => 180, // アップロードされる画像の幅
+                'label' => __('Hamburger menu Left Image', 'boutiq'),
+                'section' => 'hm_section',
+                'settings' => 'hm_left_image',
             )
         )
     );
 
 
-    // BANNER01の設定 ======================================================================================================================================================
+    // BANNER01 settings ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner01_image',
+        'hm_banner01_image',
         array(
-            'default' => '', // デフォルトの値
+            'default' => '',
             'type'           => 'theme_mod',
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw', // サニタイズコールバック関数
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
 
-    // イメージコントロールの追加
+
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'atq_hm_banner01_image_control',
+            'hm_banner01_image_control',
             array(
-                'label' => 'バナー①の背景画像', //__('Set the banner background image', 'atq'), // コントロールのラベル
-                'section' => 'atq_hm_section', // コントロールを追加するセクション
-                'settings' => 'atq_hm_banner01_image', // コントロールの設定
-                //'width' => 180, // アップロードされる画像の幅
+                'label' => __('Background image of banner "1"', 'boutiq'),
+                'section' => 'hm_section',
+                'settings' => 'hm_banner01_image',
+
             )
         )
     );
 
     // Setting ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner01_text',
+        'hm_banner01_text',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -183,21 +167,21 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_banner01_text_control',
+        'hm_banner01_text_control',
         array(
-            'label' => esc_attr(__('If you want the first banner, please enter the text', 'atq')),
-            'description' => esc_attr(__('Set when design type 07 and type 08', 'atq')),
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_banner01_text',
+            'label' => __('If you want the first banner, please enter the text', 'boutiq'),
+            'description' => __('Set when design type 07 and type 08', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_banner01_text',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Link setting for BANNER01 ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner01_link',
+        'hm_banner01_link',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -205,67 +189,66 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_banner01_link_control',
+        'hm_banner01_link_control',
         array(
-            'label' => esc_attr(__('Enter the banner link destination', 'atq')),
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_banner01_link',
+            'label' => __('Enter the banner link destination', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_banner01_link',
             'type'     => 'text',
         )
     );
 
-    // buttonのtarget ======================================================================================================================================================
+    // target for BANNER01 ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner01_link_target_setting',
+        'hm_banner01_link_target_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_hm_banner01_link_target_control',
+        'hm_banner01_link_target_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_banner01_link_target_setting', // コントロールの設定
-            'label' => 'ボタンを別タブで表示する', //__('Add an underline', 'atq'), // コントロールのラベル
+            'section' => 'hm_section',
+            'settings' => 'hm_banner01_link_target_setting',
+            'label' => __('Display button in separate tab', 'boutiq'),
         )
     );
 
 
-    // BANNER02の設定 ======================================================================================================================================================
+    // BANNER02 setting ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner02_image',
+        'hm_banner02_image',
         array(
-            'default' => '', // デフォルトの値
+            'default' => '',
             'type'           => 'theme_mod',
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw', // サニタイズコールバック関数
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
 
-    // イメージコントロールの追加
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'atq_hm_banner02_image_control',
+            'hm_banner02_image_control',
             array(
-                'label' => 'バナー②の背景画像', //__('Set the banner background image', 'atq'), // コントロールのラベル
-                'section' => 'atq_hm_section', // コントロールを追加するセクション
-                'settings' => 'atq_hm_banner02_image', // コントロールの設定
-                //'width' => 180, // アップロードされる画像の幅
+                'label' => __('Background image of banner "2"', 'boutiq'),
+                'section' => 'hm_section',
+                'settings' => 'hm_banner02_image',
+
             )
         )
     );
 
 
-    // Setting ======================================================================================================================================================
+    // Text setting for BANNER02 ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner02_text',
+        'hm_banner02_text',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -273,22 +256,22 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_banner02_text_control',
+        'hm_banner02_text_control',
         array(
-            'label' => esc_attr(__('If you want a second banner, please enter the text', 'atq')),
-            'description' => esc_attr(__('Set when design type 07 and type 08', 'atq')),
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_banner02_text',
+            'label' => __('If you want a second banner, please enter the text', 'boutiq'),
+            'description' => __('Set when design type 07 and type 08', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_banner02_text',
             'type'     => 'text',
         )
     );
 
 
-    // Setting ======================================================================================================================================================
+    //  Link setting for BANNER02 ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner02_link',
+        'hm_banner02_link',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -296,66 +279,65 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_banner02_link_control',
+        'hm_banner02_link_control',
         array(
-            'label' => esc_attr(__('Enter the banner link destination', 'atq')),
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_banner02_link',
+            'label' => __('Enter the banner link destination', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_banner02_link',
             'type'     => 'text',
         )
     );
 
-    // buttonのtarget ======================================================================================================================================================
+    // Target for BANNER02 ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_banner02_link_target_setting',
+        'hm_banner02_link_target_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_hm_banner02_link_target_control',
+        'hm_banner02_link_target_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_banner02_link_target_setting', // コントロールの設定
-            'label' => 'ボタンを別タブで表示する', //__('Add an underline', 'atq'), // コントロールのラベル
+            'section' => 'hm_section',
+            'settings' => 'hm_banner02_link_target_setting',
+            'label' => 'ボタンを別タブで表示する', //__('Add an underline', 'boutiq'),
         )
     );
 
-    // ロゴの設定 ======================================================================================================================================================
+    // Logo setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_logo_image',
+        'hm_logo_image',
         array(
-            'default' => '', // デフォルトの値
+            'default' => '',
             'type'           => 'theme_mod',
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw', // サニタイズコールバック関数
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
 
-    // イメージコントロールの追加
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'atq_hm_logo_image_control',
+            'hm_logo_image_control',
             array(
-                'label' => __('Hamburger menu Logo Image', 'atq'), // コントロールのラベル
-                'description' => esc_attr(__('If not entered, the image set in the header will be used', 'atq')),
-                'section' => 'atq_hm_section', // コントロールを追加するセクション
-                'settings' => 'atq_hm_logo_image', // コントロールの設定
-                //'width' => 180, // アップロードされる画像の幅
+                'label' => __('Hamburger menu Logo Image', 'boutiq'),
+                'description' => __('If not entered, the image set in the header will be used', 'boutiq'),
+                'section' => 'hm_section',
+                'settings' => 'hm_logo_image',
+
             )
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Button text setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_button_text',
+        'hm_button_text',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -363,21 +345,20 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_button_text_control',
+        'hm_button_text_control',
         array(
-            'label' => esc_attr(__('Enter text if a button is needed', 'atq')),
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_button_text',
+            'label' => __('Enter text if a button is needed', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_button_text',
             'type'     => 'text',
         )
     );
 
-
-    // Setting ======================================================================================================================================================
+    // Button link setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_button_link',
+        'hm_button_link',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -385,34 +366,34 @@ function atq_hm_design_setting($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_hm_button_link_control',
+        'hm_button_link_control',
         array(
-            'label' => esc_attr(__('Enter the button link destination', 'atq')),
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_button_link',
+            'label' => __('Enter the button link destination', 'boutiq'),
+            'section' => 'hm_section',
+            'settings' => 'hm_button_link',
             'type'     => 'text',
         )
     );
 
-    // buttonのtarget ======================================================================================================================================================
+    // Button target for hm ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_hm_button_link_target_setting',
+        'hm_button_link_target_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_hm_button_link_target_target_control',
+        'hm_button_link_target_target_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_hm_section',
-            'settings' => 'atq_hm_button_link_target_setting', // コントロールの設定
-            'label' => 'ボタンを別タブで表示する', //__('Add an underline', 'atq'), // コントロールのラベル
+            'section' => 'hm_section',
+            'settings' => 'hm_button_link_target_setting',
+            'label' => __('Display button in separate tab', 'boutiq'),
         )
     );
 }

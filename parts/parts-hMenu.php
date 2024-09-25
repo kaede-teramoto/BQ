@@ -8,12 +8,12 @@
 $site_url  = home_url();
 $site_name = get_bloginfo();
 
-$hm_bg_img = esc_url(get_theme_mod('atq_hm_left_image', ''));
+$hm_bg_img = esc_url(get_theme_mod('hm_left_image', ''));
 
-$hm_banner_img01 = esc_url(get_theme_mod('atq_hm_banner01_image', ''));
-$hm_banner_text01 = get_theme_mod('atq_hm_banner01_text', false);
-$hm_banner_link01 = esc_url(get_theme_mod('atq_hm_banner01_link', ''));
-$hm_banner_target01 = get_theme_mod('atq_hm_banner01_link_target_setting', false);
+$hm_banner_img01 = esc_url(get_theme_mod('hm_banner01_image', ''));
+$hm_banner_text01 = get_theme_mod('hm_banner01_text', false);
+$hm_banner_link01 = esc_url(get_theme_mod('hm_banner01_link', ''));
+$hm_banner_target01 = get_theme_mod('hm_banner01_link_target_setting', false);
 if ($hm_banner_target01) {
     $banner01_target = ' target="_blank"';
 } else {
@@ -21,10 +21,10 @@ if ($hm_banner_target01) {
 }
 
 
-$hm_banner_img02 = esc_url(get_theme_mod('atq_hm_banner02_image', ''));
-$hm_banner_text02 = esc_attr(get_theme_mod('atq_hm_banner02_text', false));
-$hm_banner_link02 = esc_url(get_theme_mod('atq_hm_banner02_link', ''));
-$hm_banner_target02 = get_theme_mod('atq_hm_banner02_link_target_setting', false);
+$hm_banner_img02 = esc_url(get_theme_mod('hm_banner02_image', ''));
+$hm_banner_text02 = esc_attr(get_theme_mod('hm_banner02_text', false));
+$hm_banner_link02 = esc_url(get_theme_mod('hm_banner02_link', ''));
+$hm_banner_target02 = get_theme_mod('hm_banner02_link_target_setting', false);
 if ($hm_banner_target02) {
     $banner02_target = ' target="_blank"';
 } else {
@@ -32,19 +32,19 @@ if ($hm_banner_target02) {
 }
 
 
-$hm_logo_img = esc_url(get_theme_mod('atq_hm_logo_image', ''));
-$header_logo_img = esc_url(get_theme_mod('atq_logo_image', ''));
+$hm_logo_img = esc_url(get_theme_mod('hm_logo_image', ''));
+$header_logo_img = esc_url(get_theme_mod('header_logo_image', ''));
 
-$hm_button_text = esc_attr(get_theme_mod('atq_hm_button_text', false));
-$hm_button_link = esc_url(get_theme_mod('atq_hm_button_link', false));
-$hm_button_target = get_theme_mod('atq_hm_button_link_target_setting', false);
+$hm_button_text = esc_attr(get_theme_mod('hm_button_text', false));
+$hm_button_link = esc_url(get_theme_mod('hm_button_link', false));
+$hm_button_target = get_theme_mod('hm_button_link_target_setting', false);
 if ($hm_button_target) {
     $button_target = ' target="_blank"';
 } else {
     $button_target = '';
 }
 
-$hm_design_type = esc_attr(get_theme_mod('atq_hm_design_type', '100'));
+$hm_design_type = esc_attr(get_theme_mod('hm_design_setting', '100'));
 
 // Button design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
@@ -114,7 +114,7 @@ if (!($hm_design_type == 100)) :
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="hm__content__bottom hm<?php echo $hm_design_type; ?>__bottom">
+                        <div class="hm__content__bottom hm<?php echo $hm_design_type; ?>__content__bottom">
                             <?php if ($hm_banner_img01 && $hm_banner_link01) : ?>
                                 <div class="hm__banner hm<?php echo $hm_design_type; ?>__banner">
                                     <div class="hm__banner__left">
@@ -140,15 +140,15 @@ if (!($hm_design_type == 100)) :
 
                             <div class="hm_externalLink">
                                 <?php
-                                $sns = esc_url(get_theme_mod("atq_sns_1", ''));
+                                $sns = esc_url(get_theme_mod("sns_1", ''));
                                 if ($sns) :
                                 ?>
                                     <div class="hm__sns">
                                         <?php
                                         for ($i = 1; $i <= 5; $i++) {
 
-                                            $sns_img = esc_url(get_theme_mod("atq_sns_$i", ''));
-                                            $sns_img_link = esc_url(get_theme_mod("atq_sns_link_$i", ''));
+                                            $sns_img = esc_url(get_theme_mod("sns_$i", ''));
+                                            $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
 
                                             if ($sns_img) {
                                                 echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
@@ -285,15 +285,15 @@ if (!($hm_design_type == 100)) :
 
                         <div class="hm_externalLink">
                             <?php
-                            $sns = esc_url(get_theme_mod("atq_sns_1", ''));
+                            $sns = esc_url(get_theme_mod("sns_1", ''));
                             if ($sns) :
                             ?>
                                 <div class="hm__sns">
                                     <?php
                                     for ($i = 1; $i <= 5; $i++) {
 
-                                        $sns_img = esc_url(get_theme_mod("atq_sns_$i", ''));
-                                        $sns_img_link = esc_url(get_theme_mod("atq_sns_link_$i", ''));
+                                        $sns_img = esc_url(get_theme_mod("sns_$i", ''));
+                                        $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
 
                                         if ($sns_img) {
                                             echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';

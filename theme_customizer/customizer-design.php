@@ -431,7 +431,7 @@ function site_design_settings($wp_customize)
   );
 
 
-  // ボタン選択 ======================================================================================================================================================
+  // Button Design ======================================================================================================================================================
   $wp_customize->add_setting(
     'common_btn_design_setting',
     array(
@@ -444,7 +444,7 @@ function site_design_settings($wp_customize)
   $wp_customize->add_control(
     'common_btn_design_control',
     array(
-      'label' => 'ページコンテンツ以外のボタンのデザイン', //__('Button Link Design Type For common', 'boutiq'),
+      'label' => __('Button Link Design Type For common', 'boutiq'),
       'section' => 'common_btn_link',
       'settings' => 'common_btn_design_setting',
       'type' => 'select',
@@ -477,7 +477,7 @@ function site_design_settings($wp_customize)
   $wp_customize->add_control(
     'common_btn_icon_control',
     array(
-      'label' => 'ページコンテンツ以外のボタンアイコンのデザイン', //__('Button Link Design Type For common', 'boutiq'),
+      'label' => __('Button icon design other than page content', 'boutiq'),
       'section' => 'common_btn_link',
       'settings' => 'common_btn_icon_setting',
       'type' => 'select',
@@ -504,7 +504,7 @@ function site_design_settings($wp_customize)
     )
   );
 
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
     'common_btn_link_setting_control',
     array(
@@ -537,7 +537,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
     'common_btn_link_icon_setting_control',
     array(
@@ -558,10 +558,7 @@ function site_design_settings($wp_customize)
 
 
   //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
+  // Set panel for text link ===================================================================
   $wp_customize->add_section(
     'font_link',
     array(
@@ -581,7 +578,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
     'text_link_setting_control',
     array(
@@ -616,7 +613,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
     'text_link_icon_setting_control',
     array(
@@ -644,45 +641,42 @@ function site_design_settings($wp_customize)
   );
 
   //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  $wp_customize->add_section(
-    'atq_animation',
-    array(
-      'title'          => __('Animation Settings', 'boutiq'),
-      'panel'  => 'site_default_panel',
-      'transport'   => 'refresh',
-    )
-  );
+  // Set panel for Font ===================================================================
+  //   $wp_customize->add_section(
+  //     'boutiq_animation',
+  //     array(
+  //       'title'          => __('Animation Settings', 'boutiq'),
+  //       'panel'  => 'site_default_panel',
+  //       'transport'   => 'refresh',
+  //     )
+  //   );
 
-  // Setting ======================================================================================================================================================
-  $wp_customize->add_setting(
-    'atq_animation_setting',
-    array(
-      'type' => 'theme_mod',
-      'default'     => '01',
-      'transport'   => 'refresh',
-      'sanitize_callback' => 'sanitize_text_field',
-    )
-  );
-  // Control ======================================================================================================================================================
-  $wp_customize->add_control(
-    'atq_animation_setting_control',
-    array(
-      'label' => __('Animation Type', 'boutiq'),
-      'section' => 'atq_animation',
-      'settings' => 'atq_animation_setting',
-      'type' => 'select',
-      'choices' => array(
-        '01' => __('Animation Type1', 'boutiq'),
-        '02' => __('Animation Type2', 'boutiq'),
-        '03' => __('Animation Type3', 'boutiq'),
-        '04' => __('Animation Type4', 'boutiq'),
-        '05' => __('Animation Type5', 'boutiq'),
-        '06' => __('Animation Type6', 'boutiq'),
-      ),
-    )
-  );
+  //   // Setting ======================================================================================================================================================
+  //   $wp_customize->add_setting(
+  //     'boutiq_animation_setting',
+  //     array(
+  //       'type' => 'theme_mod',
+  //       'default'     => '01',
+  //       'transport'   => 'refresh',
+  //       'sanitize_callback' => 'sanitize_text_field',
+  //     )
+  //   );
+
+  //   $wp_customize->add_control(
+  //     'boutiq_animation_setting_control',
+  //     array(
+  //       'label' => __('Animation Type', 'boutiq'),
+  //       'section' => 'boutiq_animation',
+  //       'settings' => 'boutiq_animation_setting',
+  //       'type' => 'select',
+  //       'choices' => array(
+  //         '01' => __('Animation Type1', 'boutiq'),
+  //         '02' => __('Animation Type2', 'boutiq'),
+  //         '03' => __('Animation Type3', 'boutiq'),
+  //         '04' => __('Animation Type4', 'boutiq'),
+  //         '05' => __('Animation Type5', 'boutiq'),
+  //         '06' => __('Animation Type6', 'boutiq'),
+  //       ),
+  //     )
+  //   );
 }

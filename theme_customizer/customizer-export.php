@@ -8,7 +8,7 @@
 /*----------------------------------------------------------------------------------------------------------------------------
   Set css for customizer
 ---------------------------------------------------------------------------------------------------------------------------- */
-function atq_customize_css()
+function boutiq_customize_css()
 {
     // 基本カラー
     $text_color = get_theme_mod('site_default_text_color', '#333333');
@@ -26,7 +26,6 @@ function atq_customize_css()
         $content_title_underline_color = 'transparent';
     }
 
-
     // FONT関連
     $font_size_PC = get_theme_mod('font_size_pc_setting', '16') * 0.1;
     $font_size_TAB = get_theme_mod('font_size_tab_setting', '14') * 0.1;
@@ -36,12 +35,12 @@ function atq_customize_css()
     $heading_size_SP = get_theme_mod('heading_size_sp_setting', '28') * 0.1;
 
     // Header
-    $header_text_color = get_theme_mod('atq_header_text_color_setting', '');
-    $header_bg_color = get_theme_mod('atq_header_bg_color_setting', '#ffffff');
+    $header_text_color = get_theme_mod('header_text_color_setting', '');
+    $header_bg_color = get_theme_mod('header_bg_color_setting', '#ffffff');
     $btn_filter = get_theme_mod('common_btn_link_filter_setting', '');
-    $card_radius_pc = get_theme_mod('atq_card_radius_pc_setting', '');
-    $card_radius_tab = get_theme_mod('atq_card_radius_tab_setting', '');
-    $card_radius_sp = get_theme_mod('atq_card_radius_sp_setting', '');
+    $card_radius_pc = get_theme_mod('header_card_radius_pc', '');
+    $card_radius_tab = get_theme_mod('header_card_radius_tab', '');
+    $card_radius_sp = get_theme_mod('header_card_radius_sp', '');
 
     //Page設定
     $radius_pc = get_theme_mod('boutiq_page_radius_pc_setting', '12px');
@@ -50,13 +49,12 @@ function atq_customize_css()
 
     // Hamburger Menu
 
-    $hm_bg_color_setting = get_theme_mod('atq_hm_bg_color_setting', false);
+    $hm_bg_color_setting = get_theme_mod('hm_bg_color_setting', false);
     if ($hm_bg_color_setting) {
         $hm_bg_color_setting = $hm_bg_color_setting;
     } else {
         $hm_bg_color_setting = 'transparent';
     }
-
 
     // Footer
     $footer_text_color = get_theme_mod('footer_text_color_set', false);
@@ -90,6 +88,11 @@ function atq_customize_css()
         $follow_button_top_and_bottom = '0';
         $follow_button_left_and_right = '0';
     }
+
+    // top FV
+    $fv_height_pc = esc_attr(get_theme_mod('top_fv_height_size_pc', ''));
+    $fv_height_tab = esc_attr(get_theme_mod('top_fv_height_size_tab', ''));
+    $fv_height_sp = esc_attr(get_theme_mod('top_fv_height_size_sp', ''));
 
 ?>
     <style type="text/css">
@@ -137,21 +140,37 @@ function atq_customize_css()
             --follow_button_tb: <?php echo $follow_button_top_and_bottom; ?>;
             --follow_button_lr: <?php echo $follow_button_left_and_right; ?>;
         }
+
+        .p-top {
+            height: <?php echo $fv_height_pc ?>;
+        }
+
+        @media screen and (max-width: 849px) {
+            .p-top {
+                height: <?php echo $fv_height_tab ?>;
+            }
+        }
+
+        @media screen and (max-width: 599px) {
+            .p-top {
+                height: <?php echo $fv_height_sp ?>;
+            }
+        }
     </style>
 
 <?php
 }
-add_action('wp_head', 'atq_customize_css');
+add_action('wp_head', 'boutiq_customize_css');
 
 /*
  * this is style & script.
  *
- * @package atq
+ * @package boutiq
  */
 /*--------------------------------------------------------------
   css
 --------------------------------------------------------------*/
-function atq_scripts()
+function boutiq_scripts()
 {
     $site_default_jp_text = get_theme_mod('site_default_jp_text', false);
     $site_default_en_text = get_theme_mod('site_default_en_text', false);
@@ -209,4 +228,4 @@ function atq_scripts()
         }
     }
 }
-add_action('wp_enqueue_scripts', 'atq_scripts');
+add_action('wp_enqueue_scripts', 'boutiq_scripts');

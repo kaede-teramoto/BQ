@@ -8,9 +8,9 @@
 /*--------------------------------------------------------------
 SNS setting
 --------------------------------------------------------------*/
-add_action('customize_register', 'atq_sns_setting');
+add_action('customize_register', 'sns_setting');
 
-function atq_sns_setting($wp_customize)
+function sns_setting($wp_customize)
 {
 
     $priority = 300;
@@ -19,46 +19,44 @@ function atq_sns_setting($wp_customize)
         array(
             'priority'       => 39,
             'theme_supports' => '',
-            'title'          => esc_attr(__('SNS Settings', 'boutiq')),
+            'title'          => __('SNS Settings', 'boutiq'),
             'description'    => '',
-            //'capability'     => 'edit_theme_options', 権限を編集者以上に指定
         )
     );
 
     // SNS set ======================================================================================================================================================
-
     for ($i = 1; $i <= 5;) {
 
         $wp_customize->add_section(
-            'atq_sns_section_' . $i,
+            'sns_section_' . $i,
             array(
-                'title'  => esc_attr(__('SNS 0', 'boutiq')) . $i,
+                'title'  => __('SNS 0', 'boutiq') . $i,
                 'panel'  => 'sns_panel',
             )
         );
 
         $wp_customize->add_setting(
-            'atq_sns_name_' . $i,
+            'sns_name_' . $i,
             array(
                 'default' => '',
                 'type'    => 'theme_mod',
                 'sanitize_callback' => 'sanitize_text_field',
-                //'capability'     => 'edit_theme_options', 権限を編集者以上に指定
             )
         );
+
         $wp_customize->add_control(
-            'atq_sns_name_control' . $i,
+            'sns_name_control' . $i,
             array(
-                'label'    => esc_attr(__('Enter the name of your SNS', 'boutiq')),
-                'section'  => 'atq_sns_section_' . $i,
-                'settings' => 'atq_sns_name_' . $i,
+                'label'    => __('Enter the name of your SNS', 'boutiq'),
+                'section'  => 'sns_section_' . $i,
+                'settings' => 'sns_name_' . $i,
                 'type'     => 'text',
                 'priority' => $priority,
             )
         );
 
         $wp_customize->add_setting(
-            'atq_sns_' . $i,
+            'sns_' . $i,
             array(
                 'default' => '',
                 'type'    => 'theme_mod',
@@ -67,18 +65,18 @@ function atq_sns_setting($wp_customize)
         );
         $wp_customize->add_control(new WP_Customize_Image_Control(
             $wp_customize,
-            'atq_sns_image_' . $i,
+            'sns_image_' . $i,
             array(
-                'label'    => esc_attr(__('SNS Image', 'boutiq')),
-                'section'  => 'atq_sns_section_' . $i,
-                'settings' => 'atq_sns_' . $i,
+                'label'    => __('SNS Image', 'boutiq'),
+                'section'  => 'sns_section_' . $i,
+                'settings' => 'sns_' . $i,
                 'priority' => $priority,
             )
         ));
 
         $priority = $priority + 1;
         $wp_customize->add_setting(
-            'atq_sns_link_' . $i,
+            'sns_link_' . $i,
             array(
                 'type'      => 'theme_mod',
                 'default'   => '',
@@ -87,11 +85,11 @@ function atq_sns_setting($wp_customize)
             )
         );
         $wp_customize->add_control(
-            'atq_sns_link_' . $i,
+            'sns_link_' . $i,
             array(
-                'label'    => esc_attr(__('Please enter the link', 'boutiq')),
-                'section'  => 'atq_sns_section_' . $i,
-                'settings' => 'atq_sns_link_' . $i,
+                'label'    => __('Please enter the link', 'boutiq'),
+                'section'  => 'sns_section_' . $i,
+                'settings' => 'sns_link_' . $i,
                 'type'     => 'text',
                 'priority' => $priority,
             )
