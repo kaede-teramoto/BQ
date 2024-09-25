@@ -4,10 +4,6 @@
  *
  * @package BOUTiQ
  */
-
-/*----------------------------------------------------------------------------------------------------------------------------
-  Basic design settings
----------------------------------------------------------------------------------------------------------------------------- */
 add_action('customize_register', 'site_design_settings');
 
 function site_design_settings($wp_customize)
@@ -24,7 +20,8 @@ function site_design_settings($wp_customize)
     )
   );
 
-  // Set panel for color ======================================================================================================================================================
+  //=======================================================================================
+  // Set panel for color ==================================================================
   $wp_customize->add_section(
     'site_default_setting',
     array(
@@ -32,8 +29,8 @@ function site_design_settings($wp_customize)
       'panel'  => 'site_default_panel',
     )
   );
-  // Setting ==============================================================================================================================================
-  // Text Color ========================================================================================================================================
+
+  // Text Color Setting ====================================================================
   $wp_customize->add_setting(
     'site_default_text_color',
     array(
@@ -43,19 +40,18 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_hex_color',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(new WP_Customize_Color_Control(
     $wp_customize,
     'site_default_text_color',
     array(
-      'label' => esc_attr(__('Text Color', 'boutiq')),
+      'label' => __('Text Color', 'boutiq'),
       'section' => 'site_default_setting',
       'settings' => 'site_default_text_color',
     )
   ));
 
-  // Setting ==============================================================================================================================================
-  // Main Color ====================================================================================================================================
+  // Main Color Setting ===================================================================
   $wp_customize->add_setting(
     'site_default_main_color',
     array(
@@ -65,7 +61,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_hex_color',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(new WP_Customize_Color_Control(
     $wp_customize,
     'site_default_main_color',
@@ -75,8 +71,7 @@ function site_design_settings($wp_customize)
       'settings' => 'site_default_main_color',
     )
   ));
-  // Setting ==============================================================================================================================================
-  // Accent Color
+  // Accent Color Setting =================================================================
   $wp_customize->add_setting(
     'site_default_accent_color',
     array(
@@ -86,7 +81,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_hex_color',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(new WP_Customize_Color_Control(
     $wp_customize,
     'site_default_accent_color',
@@ -97,8 +92,7 @@ function site_design_settings($wp_customize)
     )
   ));
 
-  // Setting ==============================================================================================================================================
-  // Base Color ===========================================================================================================================================
+  // Base Color Setting ===================================================================
   $wp_customize->add_setting(
     'site_default_base_color',
     array(
@@ -108,7 +102,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_hex_color',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(new WP_Customize_Color_Control(
     $wp_customize,
     'site_default_base_color',
@@ -119,7 +113,7 @@ function site_design_settings($wp_customize)
     )
   ));
 
-  // Sub Color ===========================================================================================================================================
+  // Sub Color Setting ====================================================================
   $wp_customize->add_setting(
     'site_default_sub_color',
     array(
@@ -129,7 +123,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_hex_color',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(new WP_Customize_Color_Control(
     $wp_customize,
     'site_default_sub_color',
@@ -140,8 +134,7 @@ function site_design_settings($wp_customize)
     )
   ));
 
-  // Setting ======================================================================================================================================================
-  // Background Color  ======================================================================================================================================================
+  // Background Color Setting =============================================================
   $wp_customize->add_setting(
     'site_default_background_color',
     array(
@@ -151,7 +144,7 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_hex_color',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(new WP_Customize_Color_Control(
     $wp_customize,
     'site_default_background_color',
@@ -164,20 +157,17 @@ function site_design_settings($wp_customize)
 
 
   //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  // Japanese Font =======================================================================================
+  // Set panel for Font ===================================================================
   $wp_customize->add_section(
-    'atq_text_setting',
+    'font_setting',
     array(
-      'title'          => __('Text Settings', 'boutiq'),
+      'title'          => __('Font Settings', 'boutiq'),
       'panel'  => 'site_default_panel',
       'transport'   => 'refresh',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // Japanese Font Setting ================================================================
   $wp_customize->add_setting(
     'site_default_jp_text',
     array(
@@ -187,18 +177,18 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
     'site_default_jp_text_control',
     array(
       'label' => __('Japanese Font', 'boutiq'),
-      'section' => 'atq_text_setting',
+      'section' => 'font_setting',
       'settings' => 'site_default_jp_text',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // Japanese Font Family Setting ==============================================================================
   $wp_customize->add_setting(
     'site_default_jp_fontFamily',
     array(
@@ -209,18 +199,17 @@ function site_design_settings($wp_customize)
     )
   );
 
-  // Control ======================================================================================================================================================
   $wp_customize->add_control(
     'site_default_jp_fontFamily_control',
     array(
       'label' => __('Japanese Font Family', 'boutiq'),
-      'section' => 'atq_text_setting',
+      'section' => 'font_setting',
       'settings' => 'site_default_jp_fontFamily',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // European Font Setting ==============================================================================
   $wp_customize->add_setting(
     'site_default_en_text',
     array(
@@ -230,18 +219,18 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
     'site_default_en_text_control',
     array(
       'label' => __('European language Font', 'boutiq'),
-      'section' => 'atq_text_setting',
+      'section' => 'font_setting',
       'settings' => 'site_default_en_text',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // European Font Family Setting ======================================================================================================================================================
   $wp_customize->add_setting(
     'site_default_en_fontFamily',
     array(
@@ -252,18 +241,17 @@ function site_design_settings($wp_customize)
     )
   );
 
-  // Control ======================================================================================================================================================
   $wp_customize->add_control(
     'site_default_en_fontFamily_control',
     array(
       'label' => __('European Font Family', 'boutiq'),
-      'section' => 'atq_text_setting',
+      'section' => 'font_setting',
       'settings' => 'site_default_en_fontFamily',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // Heading Font Setting ======================================================================================================================================================
   $wp_customize->add_setting(
     'site_default_heading_text',
     array(
@@ -274,18 +262,17 @@ function site_design_settings($wp_customize)
     )
   );
 
-  // Control ======================================================================================================================================================
   $wp_customize->add_control(
     'site_default_heading_text_control',
     array(
       'label' => __('Heading Font', 'boutiq'),
-      'section' => 'atq_text_setting',
+      'section' => 'font_setting',
       'settings' => 'site_default_heading_text',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // Heading Font Family Setting ======================================================================================================================================================
   $wp_customize->add_setting(
     'site_default_heading_text_fontFamily',
     array(
@@ -296,22 +283,19 @@ function site_design_settings($wp_customize)
     )
   );
 
-  // Control ======================================================================================================================================================
   $wp_customize->add_control(
     'site_default_heading_text_fontFamily_control',
     array(
       'label' => __('Heading Font Family', 'boutiq'),
-      'section' => 'atq_text_setting',
+      'section' => 'font_setting',
       'settings' => 'site_default_heading_text_fontFamily',
       'type'     => 'text',
     )
   );
 
-  // Normal text font size =======================================================================================
-  //=======================================================================================
-  // Setting ======================================================================================================================================================
+  // Normal text font size for PC =======================================================================================
   $wp_customize->add_setting(
-    'atq_pc_font_size_setting',
+    'font_size_pc_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '16',
@@ -319,20 +303,20 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
-    'atq_pc_font_size_setting_control',
+    'font_size_pc_setting_control',
     array(
       'label' => __('Normal text font size for PC', 'boutiq'),
-      'section' => 'atq_text_setting',
-      'settings' => 'atq_pc_font_size_setting',
+      'section' => 'font_setting',
+      'settings' => 'font_size_pc_setting',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // Normal text font size for TAB ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_tab_font_size_setting',
+    'font_size_tab_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '14',
@@ -340,20 +324,20 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
-    'atq_tab_font_size_setting_control',
+    'font_size_tab_setting_control',
     array(
       'label' => __('Normal text font size for TAB', 'boutiq'),
-      'section' => 'atq_text_setting',
-      'settings' => 'atq_tab_font_size_setting',
+      'section' => 'font_setting',
+      'settings' => 'font_size_tab_setting',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // // Normal text font size for SP ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_sp_font_size_setting',
+    'font_size_sp_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '14',
@@ -361,22 +345,20 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
-    'atq_sp_font_size_setting_control',
+    'font_size_sp_setting_control',
     array(
       'label' => __('Normal text font size for SP', 'boutiq'),
-      'section' => 'atq_text_setting',
-      'settings' => 'atq_sp_font_size_setting',
+      'section' => 'font_setting',
+      'settings' => 'font_size_sp_setting',
       'type'     => 'text',
     )
   );
 
-  // H1 text font size =======================================================================================
-  //=======================================================================================
-  // Setting ======================================================================================================================================================
+  // H1 text font size for PC =======================================================================================
   $wp_customize->add_setting(
-    'atq_pc_heading_size_setting',
+    'heading_size_pc_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '40',
@@ -384,20 +366,20 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
-    'atq_pc_heading_size_setting_control',
+    'heading_size_pc_setting_control',
     array(
       'label' => __('H1 text font size for PC', 'boutiq'),
-      'section' => 'atq_text_setting',
-      'settings' => 'atq_pc_heading_size_setting',
+      'section' => 'font_setting',
+      'settings' => 'heading_size_pc_setting',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // H1 text font size for TAB ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_tab_heading_size_setting',
+    'heading_size_tab_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '35',
@@ -405,20 +387,20 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
-    'atq_tab_heading_size_setting_control',
+    'heading_size_tab_setting_control',
     array(
       'label' => __('H1 text font size for TAB', 'boutiq'),
-      'section' => 'atq_text_setting',
-      'settings' => 'atq_tab_heading_size_setting',
+      'section' => 'font_setting',
+      'settings' => 'heading_size_tab_setting',
       'type'     => 'text',
     )
   );
 
-  // Setting ======================================================================================================================================================
+  // H1 text font size for SP ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_sp_heading_size_setting',
+    'heading_size_sp_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '30',
@@ -426,24 +408,21 @@ function site_design_settings($wp_customize)
       'sanitize_callback' => 'sanitize_text_field',
     )
   );
-  // Control ======================================================================================================================================================
+
   $wp_customize->add_control(
-    'atq_sp_heading_size_setting_control',
+    'heading_size_sp_setting_control',
     array(
       'label' => __('H1 text font size for SP', 'boutiq'),
-      'section' => 'atq_text_setting',
-      'settings' => 'atq_sp_heading_size_setting',
+      'section' => 'font_setting',
+      'settings' => 'heading_size_sp_setting',
       'type'     => 'text',
     )
   );
 
   //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
-  //=======================================================================================
   // Button Link Settings =======================================================================================
   $wp_customize->add_section(
-    'atq_btn_link',
+    'common_btn_link',
     array(
       'title'          => (__('Button Link Settings', 'boutiq')),
       'panel'  => 'site_default_panel',
@@ -466,7 +445,7 @@ function site_design_settings($wp_customize)
     'common_btn_design_control',
     array(
       'label' => 'ページコンテンツ以外のボタンのデザイン', //__('Button Link Design Type For common', 'boutiq'),
-      'section' => 'atq_btn_link',
+      'section' => 'common_btn_link',
       'settings' => 'common_btn_design_setting',
       'type' => 'select',
       'choices' => array(
@@ -499,7 +478,7 @@ function site_design_settings($wp_customize)
     'common_btn_icon_control',
     array(
       'label' => 'ページコンテンツ以外のボタンアイコンのデザイン', //__('Button Link Design Type For common', 'boutiq'),
-      'section' => 'atq_btn_link',
+      'section' => 'common_btn_link',
       'settings' => 'common_btn_icon_setting',
       'type' => 'select',
       'choices' => array(
@@ -516,7 +495,7 @@ function site_design_settings($wp_customize)
 
   // Setting ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_btn_link_setting',
+    'common_btn_link_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '01',
@@ -527,11 +506,11 @@ function site_design_settings($wp_customize)
 
   // Control ======================================================================================================================================================
   $wp_customize->add_control(
-    'atq_btn_link_setting_control',
+    'common_btn_link_setting_control',
     array(
       'label' => __('Button Link Design Type', 'boutiq'),
-      'section' => 'atq_btn_link',
-      'settings' => 'atq_btn_link_setting',
+      'section' => 'common_btn_link',
+      'settings' => 'common_btn_link_setting',
       'type' => 'select',
       'choices' => array(
         '01' => __('Button Link Type1', 'boutiq'),
@@ -550,7 +529,7 @@ function site_design_settings($wp_customize)
 
   // Setting ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_btn_link_icon_setting',
+    'common_btn_link_icon_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '01',
@@ -560,11 +539,11 @@ function site_design_settings($wp_customize)
   );
   // Control ======================================================================================================================================================
   $wp_customize->add_control(
-    'atq_btn_link_icon_setting_control',
+    'common_btn_link_icon_setting_control',
     array(
       'label' => __('Button Link Icon Type', 'boutiq'),
-      'section' => 'atq_btn_link',
-      'settings' => 'atq_btn_link_icon_setting',
+      'section' => 'common_btn_link',
+      'settings' => 'common_btn_link_icon_setting',
       'type' => 'select',
       'choices' => array(
         '01' => __('Icon Type1', 'boutiq'),
@@ -584,7 +563,7 @@ function site_design_settings($wp_customize)
   //=======================================================================================
   //=======================================================================================
   $wp_customize->add_section(
-    'atq_text_link',
+    'font_link',
     array(
       'title'          => __('Text Link Settings', 'boutiq'),
       'panel'  => 'site_default_panel',
@@ -594,7 +573,7 @@ function site_design_settings($wp_customize)
 
   // Setting ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_text_link_setting',
+    'text_link_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '01',
@@ -604,11 +583,11 @@ function site_design_settings($wp_customize)
   );
   // Control ======================================================================================================================================================
   $wp_customize->add_control(
-    'atq_text_link_setting_control',
+    'text_link_setting_control',
     array(
       'label' => __('Text Link Design Type', 'boutiq'),
-      'section' => 'atq_text_link',
-      'settings' => 'atq_text_link_setting',
+      'section' => 'font_link',
+      'settings' => 'text_link_setting',
       'type' => 'select',
       'choices' => array(
         '01' => __('Text Link Type1', 'boutiq'),
@@ -629,7 +608,7 @@ function site_design_settings($wp_customize)
 
   // Setting ======================================================================================================================================================
   $wp_customize->add_setting(
-    'atq_text_link_icon_setting',
+    'text_link_icon_setting',
     array(
       'type' => 'theme_mod',
       'default'     => '01',
@@ -639,11 +618,11 @@ function site_design_settings($wp_customize)
   );
   // Control ======================================================================================================================================================
   $wp_customize->add_control(
-    'atq_text_link_icon_setting_control',
+    'text_link_icon_setting_control',
     array(
       'label' => __('Text Link Icon Type', 'boutiq'),
-      'section' => 'atq_text_link',
-      'settings' => 'atq_text_link_icon_setting',
+      'section' => 'font_link',
+      'settings' => 'text_link_icon_setting',
       'type' => 'select',
       'choices' => array(
         '01' => __('Icon Type1', 'boutiq'),
