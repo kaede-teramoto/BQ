@@ -199,8 +199,8 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php if (get_sub_field('block_parts_image')) : ?>
                                         <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
                                     <?php endif; ?>
-                                    <?php if (get_sub_field('block_parts_link_url')) : ?>
 
+                                    <?php if (get_sub_field('block_parts_link_url')) : ?>
                                         <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                             <div class="section__parts__<?php echo $block_design_type; ?>__link">
                                                 <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
@@ -211,12 +211,6 @@ if (have_rows('content_block')) : $i = 1;
                                                 </div>
                                             </div>
                                         <?php else : ?>
-                                            <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php the_sub_field('block_parts_link_url'); ?>" style="<?php echo $border_color_set; ?>">
-                                                    <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php the_sub_field('block_parts_link_text'); ?></span>
-                                                    <span class="icon<?php echo $text_icon_design; ?>"></span>
-                                                </a>
-                                            </div>
                                             <div class="section__parts__<?php echo $block_design_type; ?>__link">
                                                 <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php the_sub_field('block_parts_link_url'); ?>" style="<?php echo $border_color_set; ?>">
                                                     <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php the_sub_field('block_parts_link_text'); ?></span>
