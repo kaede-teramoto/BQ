@@ -7,7 +7,7 @@
 /*--------------------------------------------------------------
    breadcrumbs
  --------------------------------------------------------------*/
-function atq_breadcrumb()
+function boutiq_breadcrumb()
 {
         echo '<div><ul id="crumbs" class="breadcrumb">';
         if (!is_home()) {

@@ -7,98 +7,96 @@
 
 function custom_customize_register($wp_customize)
 {
-    // セクションの追加
+
     $wp_customize->add_section(
-        'atq_header_section',
+        'header_section',
         array(
-            'title' => __('Header option', 'atq'), // セクションのタイトル
-            'priority' => 30, // セクションの優先順位
+            'title' => __('Header option', 'boutiq'),
+            'priority' => 30,
             'transport'   => 'refresh',
         )
     );
 
-    // ロゴの設定 ======================================================================================================================================================
+    // Logo setting for header ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_logo_image',
+        'header_logo_image',
         array(
-            'default' => '', // デフォルトの値
+            'default' => '',
             'type'           => 'theme_mod',
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'esc_url_raw', // サニタイズコールバック関数
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
 
-    // イメージコントロールの追加
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'atq_logo_image_control',
+            'header_logo_image_control',
             array(
-                'label' => __('Logo Image', 'atq'), // コントロールのラベル
-                'section' => 'atq_header_section', // コントロールを追加するセクション
-                'settings' => 'atq_logo_image', // コントロールの設定
-                //'width' => 180, // アップロードされる画像の幅
+                'label' => __('Logo Image', 'boutiq'),
+                'section' => 'header_section',
+                'settings' => 'header_logo_image',
             )
         )
     );
 
-    // デザイン選択 ======================================================================================================================================================
+    // Design setting for header ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_design_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => 'type1', // デフォルトの選択
-            'sanitize_callback' => 'sanitize_text_field', // サニタイズコールバック関数
+            'default' => 'type1',
+            'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
         'header_design_control',
         array(
-            'label' => __('Design Type', 'atq'), // コントロールのラベル
-            'section' => 'atq_header_section', // コントロールを追加するセクション
-            'settings' => 'header_design_setting', // コントロールの設定
-            'type' => 'select', // コントロールの種類
+            'label' => __('Design Type', 'boutiq'),
+            'section' => 'header_section',
+            'settings' => 'header_design_setting',
+            'type' => 'select',
             'choices' => array(
-                '01' => __('Header Type1', 'atq'),
-                '02' => __('Header Type2', 'atq'),
-                '03' => __('Header Type3', 'atq'),
-                '04' => __('Header Type4', 'atq'),
-                '05' => __('Header Type5', 'atq'),
-                '06' => __('Header Type6', 'atq'),
-                '07' => __('Header Type7', 'atq'),
-                '08' => __('Header Type8', 'atq'),
-                '09' => __('Header Type9', 'atq'),
-                '10' => __('Header Type10', 'atq'),
-                '11' => __('Header Type11', 'atq'),
-                '12' => __('Header Type12', 'atq'),
+                '01' => __('Header Type1', 'boutiq'),
+                '02' => __('Header Type2', 'boutiq'),
+                '03' => __('Header Type3', 'boutiq'),
+                '04' => __('Header Type4', 'boutiq'),
+                '05' => __('Header Type5', 'boutiq'),
+                '06' => __('Header Type6', 'boutiq'),
+                '07' => __('Header Type7', 'boutiq'),
+                '08' => __('Header Type8', 'boutiq'),
+                '09' => __('Header Type9', 'boutiq'),
+                '10' => __('Header Type10', 'boutiq'),
+                '11' => __('Header Type11', 'boutiq'),
+                '12' => __('Header Type12', 'boutiq'),
             ),
         )
     );
 
-    // カード選択 ======================================================================================================================================================
+    // Turn your header design into a card ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_header_card',
+        'header_card',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_header_card_control',
+        'header_card_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_header_card', // コントロールの設定
-            'label' => __('Set to card type', 'atq'),
+            'section' => 'header_section',
+            'settings' => 'header_card',
+            'label' => __('Set to card type', 'boutiq'),
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // card corner angle for PC ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_card_radius_pc_setting',
+        'header_card_radius_pc',
         array(
             'type' => 'theme_mod',
             'default'     => '12',
@@ -106,20 +104,20 @@ function custom_customize_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_card_radius_pc_setting_control',
+        'header_card_radius_pc_control',
         array(
-            'label' => esc_attr(__('Set card corner radius for PC (px)', 'atq')),
-            'section' => 'atq_header_section',
-            'settings' => 'atq_card_radius_pc_setting',
+            'label' => __('Set card corner radius for PC (px)', 'boutiq'),
+            'section' => 'header_section',
+            'settings' => 'header_card_radius_pc',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // card corner angle for TAB ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_card_radius_tab_setting',
+        'header_card_radius_tab',
         array(
             'type' => 'theme_mod',
             'default'     => '10',
@@ -127,20 +125,20 @@ function custom_customize_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_card_radius_tab_setting_control',
+        'header_card_radius_tab_control',
         array(
-            'label' => esc_attr(__('Set card corner radius for Tablet (px)', 'atq')),
-            'section' => 'atq_header_section',
-            'settings' => 'atq_card_radius_tab_setting',
+            'label' => __('Set card corner radius for Tablet (px)', 'boutiq'),
+            'section' => 'header_section',
+            'settings' => 'header_card_radius_tab',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // card corner angle for SP ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_card_radius_sp_setting',
+        'header_card_radius_sp',
         array(
             'type' => 'theme_mod',
             'default'     => '8',
@@ -148,20 +146,20 @@ function custom_customize_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_card_radius_sp_setting_control',
+        'header_card_radius_sp_control',
         array(
-            'label' => esc_attr(__('Set card corner radius for SP (px)', 'atq')),
-            'section' => 'atq_header_section',
-            'settings' => 'atq_card_radius_sp_setting',
+            'label' => __('Set card corner radius for SP (px)', 'boutiq'),
+            'section' => 'header_section',
+            'settings' => 'header_card_radius_sp',
             'type'     => 'text',
         )
     );
 
-    // リンク色選択 ======================================================================================================================================================
+    // Setting link color ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_header_text_color_setting',
+        'header_text_color_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -172,18 +170,18 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'atq_header_text_color_setting_control',
+            'header_text_color_setting_control',
             array(
-                'label' => esc_attr(__('Header Link Text Color', 'atq')),
-                'section' => 'atq_header_section',
-                'settings' => 'atq_header_text_color_setting',
+                'label' => __('Header Link Text Color', 'boutiq'),
+                'section' => 'header_section',
+                'settings' => 'header_text_color_setting',
             )
         )
     );
 
-    // 背景色選択 ======================================================================================================================================================
+    // Setting background color ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_header_bg_color_setting',
+        'header_bg_color_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -194,18 +192,18 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'atq_header_bg_color_setting_control',
+            'header_bg_color_setting_control',
             array(
-                'label' => esc_attr(__('Header Background Color', 'atq')),
-                'section' => 'atq_header_section',
-                'settings' => 'atq_header_bg_color_setting',
+                'label' => __('Header Background Color', 'boutiq'),
+                'section' => 'header_section',
+                'settings' => 'header_bg_color_setting',
             )
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // When making the background a gradient ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_header_bg_gradation_setting',
+        'header_bg_gradation_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -214,86 +212,84 @@ function custom_customize_register($wp_customize)
         )
     );
 
-    // Control ======================================================================================================================================================
     $wp_customize->add_control(
-        'atq_header_bg_gradation_setting_control',
+        'header_bg_gradation_setting_control',
         array(
-            'label' => '背景色にグラデーションを設定したい場合はこちらに入力してください。',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_header_bg_gradation_setting',
+            'label' => __('If you would like to set a gradation for the background color, enter it here.', 'boutiq'),
+            'section' => 'header_section',
+            'settings' => 'header_bg_gradation_setting',
             'type'     => 'text',
             'description' => wp_kses_post('Get the gradation from here: <br><a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Gradient Generator</a>'),
         )
     );
 
-    // アンダーラインの有無 ======================================================================================================================================================
+    // underline ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_header_under_line',
+        'header_under_line',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_header_under_line_control',
+        'header_under_line_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_header_under_line', // コントロールの設定
-            'label' => __('Add an underline', 'atq'), // コントロールのラベル
+            'section' => 'header_section',
+            'settings' => 'header_under_line',
+            'label' => __('Add an underline', 'boutiq'),
         )
     );
 
-    // フィルターの有無 ======================================================================================================================================================
+    // Filter ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_header_filter',
+        'header_filter',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_header_filter_control',
+        'header_filter_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_header_filter', // コントロールの設定
-            'label' => __('Add blur processing', 'atq'), // コントロールのラベル
+            'section' => 'header_section',
+            'settings' => 'header_filter',
+            'label' => __('Add blur processing', 'boutiq'),
         )
     );
 
 
-    // プログレスバーオプションの追加
+    // Progress bar settings ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_progress_bar_option',
+        'progress_bar_option',
         array(
             'type'           => 'theme_mod',
-            'default' => '0', // デフォルトの値
-            'sanitize_callback' => 'absint', // サニタイズコールバック関数
+            'default' => '0',
+            'sanitize_callback' => 'absint',
         )
     );
 
-    // プログレスバーコントロールの追加
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
-            'atq_progress_bar_control',
+            'progress_bar_control',
             array(
-                'label' => __('Adjust the blur ratio', 'atq'), // コントロールのラベル
-                'section' => 'atq_header_section', // コントロールを追加するセクション
-                'settings' => 'atq_progress_bar_option', // コントロールの設定
-                'type' => 'progress-bar', // カスタムコントロールのタイプ
+                'label' => __('Adjust the blur ratio', 'boutiq'),
+                'section' => 'header_section',
+                'settings' => 'progress_bar_option',
+                'type' => 'progress-bar',
             )
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Button text for header ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_btn_text_setting',
+        'header_btn_text_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -301,20 +297,20 @@ function custom_customize_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_btn_text_setting_control',
+        'header_btn_text_setting_control',
         array(
             'label' => 'ボタンのテキスト',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_btn_text_setting',
+            'section' => 'header_section',
+            'settings' => 'header_btn_text_setting',
             'type'     => 'text',
         )
     );
 
-    // Setting ======================================================================================================================================================
+    // Button url for header ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_btn_url_setting',
+        'header_btn_url_setting',
         array(
             'type' => 'theme_mod',
             'default'     => '',
@@ -322,35 +318,35 @@ function custom_customize_register($wp_customize)
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-    // Control ======================================================================================================================================================
+
     $wp_customize->add_control(
-        'atq_btn_url_setting_control',
+        'header_btn_url_setting_control',
         array(
             'label' => 'ボタンのリンク',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_btn_url_setting',
+            'section' => 'header_section',
+            'settings' => 'header_btn_url_setting',
             'type'     => 'text',
         )
     );
 
 
-    // buttonのtarget ======================================================================================================================================================
+    // Button target ======================================================================================================================================================
     $wp_customize->add_setting(
-        'atq_btn_target_setting',
+        'header_btn_target_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => false, // デフォルト値はfalse
-            'sanitize_callback' => 'wp_validate_boolean', // サニタイズコールバック関数
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
         )
     );
 
     $wp_customize->add_control(
-        'atq_btn_target_setting_control',
+        'header_btn_target_setting_control',
         array(
             'type' => 'checkbox',
-            'section' => 'atq_header_section',
-            'settings' => 'atq_btn_target_setting', // コントロールの設定
-            'label' => 'ボタンを別タブで表示する', //__('Add an underline', 'atq'), // コントロールのラベル
+            'section' => 'header_section',
+            'settings' => 'header_btn_target_setting',
+            'label' => __('Display button in separate tab', 'boutiq'),
         )
     );
 }

@@ -14,13 +14,13 @@ $site_name = get_bloginfo();
 $slug = get_post_field('post_name', get_the_ID());
 // design type
 $header_design = esc_attr(get_theme_mod('header_design_setting', '01')); // デフォルト値は 'type1'
-$hm_design = esc_attr(get_theme_mod('atq_hm_design_setting', '01')); // デフォルト値は 'type1'
+$hm_design = esc_attr(get_theme_mod('hm_icon_design_setting', '01')); // デフォルト値は 'type1'
 
 
 // card type
-$header_card = get_theme_mod('atq_header_card', false);
+$header_card = get_theme_mod('header_card', false);
 // Setting Background color
-$header_bg_gradation = get_theme_mod('atq_header_bg_gradation_setting', false);
+$header_bg_gradation = get_theme_mod('header_bg_gradation_setting', false);
 if ($header_bg_gradation) {
     $header_bg_color = 'style="' . $header_bg_gradation . '"';
 } else {
@@ -28,29 +28,29 @@ if ($header_bg_gradation) {
 }
 
 // Setting underline
-$atq_header_under_line = get_theme_mod('atq_header_under_line', false);
-if ($atq_header_under_line) {
+$header_under_line = get_theme_mod('header_under_line', false);
+if ($header_under_line) {
     $header_under_line = ' header__underline';
 } else {
     $header_under_line = null;
 }
 // Setting blur
-$atq_header_filter = get_theme_mod('atq_header_filter', false);
-$atq_progress_bar_option = get_theme_mod('atq_progress_bar_option', '0');
-if ($atq_header_filter) {
+$header_filter = get_theme_mod('header_filter', false);
+$progress_bar_option = get_theme_mod('progress_bar_option', '0');
+if ($header_filter) {
     $header_filter = ' header_filter';
 } else {
     $header_filter = null;
 }
 
-$btn_url = esc_attr(get_theme_mod('atq_btn_url_setting', ''));
-$btn_text = get_theme_mod('atq_btn_text_setting', '');
+$btn_url = esc_attr(get_theme_mod('header_btn_url_setting', ''));
+$btn_text = get_theme_mod('header_btn_text_setting', '');
 
 // Button design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
 $btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 
-$btn_target_setting = get_theme_mod('atq_btn_target_setting', false);
+$btn_target_setting = get_theme_mod('header_btn_target_setting', false);
 
 
 //page 
@@ -70,10 +70,10 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <?php
-    if ($atq_header_filter) : ?>
+    if ($header_filter) : ?>
         <style>
             .header_filter {
-                backdrop-filter: blur(<?php echo $atq_progress_bar_option; ?>px);
+                backdrop-filter: blur(<?php echo $progress_bar_option; ?>px);
             }
         </style>
     <?php endif; ?>
@@ -121,7 +121,7 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
                                 /*----------------------------------------------------------------------
                         ロゴ画像が登録されていた場合
                         ----------------------------------------------------------------------*/
-                                $header_logo_img = esc_url(get_theme_mod('atq_logo_image'));
+                                $header_logo_img = esc_url(get_theme_mod('header_logo_image'));
                                 if (!empty($header_logo_img)) : ?>
 
                                     <a href='<?php echo $site_url; ?>' title='<?php echo $site_name; ?>' rel='home'>
@@ -191,8 +191,8 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
                         <main class="l-main">
 
                             <?php if (is_front_page()) : //toppage display
-                                $show_arrows = get_theme_mod('atq_slider_arrow', '');
-                                $atq_slider_pagination = get_theme_mod('atq_slider_pagination', '');
+                                $show_arrows = get_theme_mod('top_fv_slider_arrow', '');
+                                $top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', '');
                             ?>
                                 <?php if (!($show_arrows)) { ?>
                                     <style>
@@ -202,7 +202,7 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
                                     </style>
                                 <?php } ?>
 
-                                <?php if (!($atq_slider_pagination)) { ?>
+                                <?php if (!($top_fv_slider_pagination)) { ?>
                                     <style>
                                         .swiper-pagination {
                                             display: none;

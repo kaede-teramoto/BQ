@@ -12,57 +12,57 @@ $post_id = get_the_ID();
 $subTitle = get_post_meta($post_id, '_custom_subtitle', true);
 $pageSummary = get_post_meta($post_id, '_custom_page_summary', true);
 
-$fv_type = get_theme_mod('atq_mainvisu_type', '01');
-$fv_text_animation = get_theme_mod('atq_mainvisu_text_animation', 'fade');
+$fv_type = get_theme_mod('top_fv_type', '01');
+$fv_text_animation = get_theme_mod('top_fv_text_animation', 'fade');
 
-$fv_img1 = esc_url(get_theme_mod('atq_fv_image_1', ''));
-$fv_img2 = esc_url(get_theme_mod('atq_fv_image_2', ''));
-$fv_img3 = esc_url(get_theme_mod('atq_fv_image_3', ''));
-$fv_img4 = esc_url(get_theme_mod('atq_fv_image_4', ''));
-$fv_img5 = esc_url(get_theme_mod('atq_fv_image_5', ''));
+$fv_img1 = esc_url(get_theme_mod('top_fv_image_setting_1', ''));
+$fv_img2 = esc_url(get_theme_mod('top_fv_image_setting_2', ''));
+$fv_img3 = esc_url(get_theme_mod('top_fv_image_setting_3', ''));
+$fv_img4 = esc_url(get_theme_mod('top_fv_image_setting_4', ''));
+$fv_img5 = esc_url(get_theme_mod('top_fv_image_setting_5', ''));
 
-$fv_img1_link = esc_url(get_theme_mod('atq_fv_link_1', ''));
-$fv_img2_link = esc_url(get_theme_mod('atq_fv_link_2', ''));
-$fv_img3_link = esc_url(get_theme_mod('atq_fv_link_3', ''));
-$fv_img4_link = esc_url(get_theme_mod('atq_fv_link_4', ''));
-$fv_img5_link = esc_url(get_theme_mod('atq_fv_link_5', ''));
+$fv_img1_link = esc_url(get_theme_mod('top_fv_link_1', ''));
+$fv_img2_link = esc_url(get_theme_mod('top_fv_link_2', ''));
+$fv_img3_link = esc_url(get_theme_mod('top_fv_link_3', ''));
+$fv_img4_link = esc_url(get_theme_mod('top_fv_link_4', ''));
+$fv_img5_link = esc_url(get_theme_mod('top_fv_link_5', ''));
 
-$fv_link_target_1 = get_theme_mod('atq_fv_link_target_1', false);
-$fv_link_target_2 = get_theme_mod('atq_fv_link_target_2', false);
-$fv_link_target_3 = get_theme_mod('atq_fv_link_target_3', false);
-$fv_link_target_4 = get_theme_mod('atq_fv_link_target_4', false);
-$fv_link_target_5 = get_theme_mod('atq_fv_link_target_5', false);
+$fv_link_target_1 = get_theme_mod('top_fv_link_target_1', false);
+$fv_link_target_2 = get_theme_mod('top_fv_link_target_2', false);
+$fv_link_target_3 = get_theme_mod('top_fv_link_target_3', false);
+$fv_link_target_4 = get_theme_mod('top_fv_link_target_4', false);
+$fv_link_target_5 = get_theme_mod('top_fv_link_target_5', false);
 
 
-$fv_heading1 = nl2br(esc_html(get_theme_mod('atq_fv_heading_1', '')));
-$fv_heading2 = nl2br(esc_html(get_theme_mod('atq_fv_heading_2', '')));
-$fv_heading3 = nl2br(esc_html(get_theme_mod('atq_fv_heading_3', '')));
-$fv_heading4 = nl2br(esc_html(get_theme_mod('atq_fv_heading_4', '')));
-$fv_heading5 = nl2br(esc_html(get_theme_mod('atq_fv_heading_5', '')));
+$fv_heading1 = nl2br(esc_html(get_theme_mod('top_fv_heading_1', '')));
+$fv_heading2 = nl2br(esc_html(get_theme_mod('top_fv_heading_2', '')));
+$fv_heading3 = nl2br(esc_html(get_theme_mod('top_fv_heading_3', '')));
+$fv_heading4 = nl2br(esc_html(get_theme_mod('top_fv_heading_4', '')));
+$fv_heading5 = nl2br(esc_html(get_theme_mod('top_fv_heading_5', '')));
 
-$fv_text1 = nl2br(esc_html(get_theme_mod('atq_fv_text_1', '')));
-$fv_text2 = nl2br(esc_html(get_theme_mod('atq_fv_text_2', '')));
-$fv_text3 = nl2br(esc_html(get_theme_mod('atq_fv_text_3', '')));
-$fv_text4 = nl2br(esc_html(get_theme_mod('atq_fv_text_4', '')));
-$fv_text5 = nl2br(esc_html(get_theme_mod('atq_fv_text_5', '')));
+$fv_text1 = nl2br(esc_html(get_theme_mod('top_fv_text_1', '')));
+$fv_text2 = nl2br(esc_html(get_theme_mod('top_fv_text_2', '')));
+$fv_text3 = nl2br(esc_html(get_theme_mod('top_fv_text_3', '')));
+$fv_text4 = nl2br(esc_html(get_theme_mod('top_fv_text_4', '')));
+$fv_text5 = nl2br(esc_html(get_theme_mod('top_fv_text_5', '')));
 
-$fv_text_color1 = get_theme_mod('atq_fv_text_color1', '');
-$fv_text_color2 = get_theme_mod('atq_fv_text_color2', '');
-$fv_text_color3 = get_theme_mod('atq_fv_text_color3', '');
-$fv_text_color4 = get_theme_mod('atq_fv_text_color4', '');
-$fv_text_color5 = get_theme_mod('atq_fv_text_color5', '');
+$fv_text_color1 = get_theme_mod('top_fv_text_color1', '');
+$fv_text_color2 = get_theme_mod('top_fv_text_color2', '');
+$fv_text_color3 = get_theme_mod('top_fv_text_color3', '');
+$fv_text_color4 = get_theme_mod('top_fv_text_color4', '');
+$fv_text_color5 = get_theme_mod('top_fv_text_color5', '');
 
-$fv_text_bottom_position1 = get_theme_mod('atq_fv_text_bottom_position_1', '');
-$fv_text_bottom_position2 = get_theme_mod('atq_fv_text_bottom_position_2', '');
-$fv_text_bottom_position3 = get_theme_mod('atq_fv_text_bottom_position_3', '');
-$fv_text_bottom_position4 = get_theme_mod('atq_fv_text_bottom_position_4', '');
-$fv_text_bottom_position5 = get_theme_mod('atq_fv_text_bottom_position_5', '');
+$fv_text_bottom_position1 = get_theme_mod('top_fv_text_bottom_position_1', '');
+$fv_text_bottom_position2 = get_theme_mod('top_fv_text_bottom_position_2', '');
+$fv_text_bottom_position3 = get_theme_mod('top_fv_text_bottom_position_3', '');
+$fv_text_bottom_position4 = get_theme_mod('top_fv_text_bottom_position_4', '');
+$fv_text_bottom_position5 = get_theme_mod('top_fv_text_bottom_position_5', '');
 
-$fv_text_left_position1 = get_theme_mod('atq_fv_text_left_position_1', '');
-$fv_text_left_position2 = get_theme_mod('atq_fv_text_left_position_2', '');
-$fv_text_left_position3 = get_theme_mod('atq_fv_text_left_position_3', '');
-$fv_text_left_position4 = get_theme_mod('atq_fv_text_left_position_4', '');
-$fv_text_left_position5 = get_theme_mod('atq_fv_text_left_position_5', '');
+$fv_text_left_position1 = get_theme_mod('top_fv_text_left_position_1', '');
+$fv_text_left_position2 = get_theme_mod('top_fv_text_left_position_2', '');
+$fv_text_left_position3 = get_theme_mod('top_fv_text_left_position_3', '');
+$fv_text_left_position4 = get_theme_mod('top_fv_text_left_position_4', '');
+$fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
 
 ?>
 
