@@ -108,15 +108,19 @@ function boutiq_customize_css()
 
     // Button for SP
     $sp_button_first_text_color = get_theme_mod('sp_button_first_text_color_setting', '#393939');
-    $sp_button_first_bg_color = get_theme_mod('sp_button_first_bg_color_setting', false);
-    $sp_button_first_border_color = get_theme_mod('sp_button_first_border_color_setting', false);
-    $sp_button_first_border_width = get_theme_mod('sp_button_first_border_width_setting', false);
-    $sp_button_first_height = get_theme_mod('sp_button_first_height_setting', false);
+    $sp_button_first_bg_color = get_theme_mod('sp_button_first_bg_color_setting', '');
+    $sp_button_first_border_color = get_theme_mod('sp_button_first_border_color_setting', '');
+    $sp_button_first_border_width = get_theme_mod('sp_button_first_border_width_setting', '0');
+    $sp_button_first_height = get_theme_mod('sp_button_first_height_setting', '50px');
+    $sp_button_first_image = esc_url(get_theme_mod('sp_button_first_image_setting', ''));
+    $sp_button_first_image_fit = get_theme_mod('sp_button_first_image_fit', false);
     $sp_button_second_text_color = get_theme_mod('sp_button_second_text_color_setting', '#393939');
-    $sp_button_second_bg_color = get_theme_mod('sp_button_second_bg_color_setting', false);
-    $sp_button_second_border_color = get_theme_mod('sp_button_second_border_color_setting', false);
-    $sp_button_second_border_width = get_theme_mod('sp_button_second_border_width_setting', false);
-    $sp_button_second_height = get_theme_mod('sp_button_second_height_setting', false);
+    $sp_button_second_bg_color = get_theme_mod('sp_button_second_bg_color_setting', '');
+    $sp_button_second_border_color = get_theme_mod('sp_button_second_border_color_setting', '');
+    $sp_button_second_border_width = get_theme_mod('sp_button_second_border_width_setting', '0');
+    $sp_button_second_height = get_theme_mod('sp_button_second_height_setting', '50px');
+    $sp_button_second_image = esc_url(get_theme_mod('sp_button_second_image_setting', ''));
+    $sp_button_second_image_fit = get_theme_mod('sp_button_second_image_fit', false);
 
     echo '<style type="text/css">' . "\n";
     echo ':root {' . "\n";
@@ -259,10 +263,19 @@ function boutiq_customize_css()
         echo '@media screen and (max-width: 599px) {.p-top { height: ' . $fv_height_sp . ';}}' . "\n";
     }
     echo '--sp_button_first_text_color: ' . $sp_button_first_text_color . ';' . "\n";
-    if ($sp_button_first_bg_color) {
-        echo '--sp_button_first_bg_color: ' . $sp_button_first_bg_color . ';' . "\n";
+
+    if ($sp_button_first_image) {
+        if ($sp_button_first_bg_color) {
+            echo '--sp_button_first_bg: url(' . $sp_button_first_image . ') ' . $sp_button_first_bg_color . ';' . "\n";
+        } else {
+            echo '--sp_button_first_bg: url(' . $sp_button_first_image . ');' . "\n";
+        }
     } else {
-        echo '--sp_button_first_bg_color: transparent;' . "\n";
+        if ($sp_button_first_bg_color) {
+            echo '--sp_button_first_bg: ' . $sp_button_first_bg_color . ';' . "\n";
+        } else {
+            echo '--sp_button_first_bg: transparent;' . "\n";
+        }
     }
     if ($sp_button_first_border_color) {
         echo '--sp_button_first_border_color: ' . $sp_button_first_border_color . ';' . "\n";
@@ -271,12 +284,27 @@ function boutiq_customize_css()
     }
     echo '--sp_button_first_border_width: ' . $sp_button_first_border_width . ';' . "\n";
     echo '--sp_button_first_height: ' . $sp_button_first_height . ';' . "\n";
+    if ($sp_button_first_image_fit) {
+        echo '--sp_button_first_image_fit: contain;' . "\n";
+        echo '--sp_button_first_image_position: center bottom;' . "\n";
+    } else {
+        echo '--sp_button_first_image_fit: cover;' . "\n";
+        echo '--sp_button_first_image_position: center;' . "\n";
+    }
 
     echo '--sp_button_second_text_color: ' . $sp_button_second_text_color . ';' . "\n";
-    if ($sp_button_second_bg_color) {
-        echo '--sp_button_second_bg_color: ' . $sp_button_second_bg_color . ';' . "\n";
+    if ($sp_button_second_image) {
+        if ($sp_button_second_bg_color) {
+            echo '--sp_button_second_bg: url(' . $sp_button_second_image . ') ' . $sp_button_second_bg_color . ';' . "\n";
+        } else {
+            echo '--sp_button_second_bg: url(' . $sp_button_second_image . ');' . "\n";
+        }
     } else {
-        echo '--sp_button_second_bg_color: transparent;' . "\n";
+        if ($sp_button_second_bg_color) {
+            echo '--sp_button_second_bg: ' . $sp_button_second_bg_color . ';' . "\n";
+        } else {
+            echo '--sp_button_second_bg: transparent;' . "\n";
+        }
     }
     if ($sp_button_second_border_color) {
         echo '--sp_button_second_border_color: ' . $sp_button_second_border_color . ';' . "\n";
@@ -285,7 +313,13 @@ function boutiq_customize_css()
     }
     echo '--sp_button_second_border_width: ' . $sp_button_second_border_width . ';' . "\n";
     echo '--sp_button_second_height: ' . $sp_button_second_height . ';' . "\n";
-
+    if ($sp_button_second_image_fit) {
+        echo '--sp_button_second_image_fit: contain;' . "\n";
+        echo '--sp_button_second_image_position: center bottom;' . "\n";
+    } else {
+        echo '--sp_button_second_image_fit: cover;' . "\n";
+        echo '--sp_button_second_image_position: center;' . "\n";
+    }
     echo '}' . "\n" . '</style>' . "\n";
 ?>
 <?php

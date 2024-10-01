@@ -207,20 +207,28 @@ else : ?>
 <?php endif; ?>
 
 <?php if ($sp_button_first_display || $sp_button_second_display) : ?>
-    <div class="sp__button__wrapper">
+    <div class="sp__button__wrapper l-sp">
         <?php if ($sp_button_first_display) : ?>
             <div class="sp__button sp__button__first">
                 <a class="sp__button__link sp__button__first__link" href="<?php echo $sp_button_first_url; ?>" <?php echo $sp_button_first_btn_target; ?>>
-                    <span class="sp__button__icon sp__button__first__icon"><?php echo $sp_button_second_icon; ?></span>
-                    <span class="sp__button__text sp__button__first__text"><?php echo $sp_button_first_text; ?></span>
+                    <?php if ($sp_button_first_icon) : ?>
+                        <span class="sp__button__icon sp__button__first__icon"><img src="<?php echo $sp_button_first_icon; ?>" alt="<?php echo $sp_button_first_text; ?>"></span>
+                    <?php endif;
+                    if ($sp_button_first_text) : ?>
+                        <span class="sp__button__text sp__button__first__text"><?php echo $sp_button_first_text; ?></span>
+                    <?php endif; ?>
                 </a>
             </div>
         <?php endif; ?>
         <?php if ($sp_button_second_display) : ?>
             <div class="sp__button sp__button__second">
                 <a class="sp__button__link sp__button__second__link" href="<?php echo $sp_button_second_url; ?>" <?php echo $sp_button_second_btn_target; ?>>
-                    <span class="sp__button__icon sp__button__second__icon"><?php echo $sp_button_second_icon; ?></span>
-                    <span class="sp__button__text sp__button__second__text"><?php echo $sp_button_second_text; ?></span>
+                    <?php if ($sp_button_second_icon) : ?>
+                        <span class="sp__button__icon sp__button__second__icon"><img src="<?php echo $sp_button_second_icon; ?>" alt="<?php echo $sp_button_second_text; ?>"></span>
+                    <?php endif;
+                    if ($sp_button_second_text) : ?>
+                        <span class="sp__button__text sp__button__second__text"><?php echo $sp_button_second_text; ?></span>
+                    <?php endif; ?>
                 </a>
             </div>
         <?php endif; ?>

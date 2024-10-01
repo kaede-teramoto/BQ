@@ -253,6 +253,26 @@ function sp_button_setting($wp_customize)
         )
     );
 
+    // Button display ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'sp_button_first_image_fit',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'type' => 'theme_mod',
+        )
+    );
+    $wp_customize->add_control(
+        'sp_button_first_display_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'sp_button_first_section',
+            'settings' => 'sp_button_first_image_fit',
+            'label' => __('Show full image', 'boutiq'),
+            'description' =>  __("Don't forget to adjust the height if you want to see the entire image.", 'boutiq'),
+        )
+    );
+
     // underline width ======================================================================================================================================================
     $wp_customize->add_setting(
         'sp_button_first_height_setting',
@@ -467,6 +487,26 @@ function sp_button_setting($wp_customize)
                 'section' => 'sp_button_second_section',
                 'settings' => 'sp_button_second_image_setting',
             )
+        )
+    );
+
+    // Button display ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'sp_button_second_image_fit',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'type' => 'theme_mod',
+        )
+    );
+    $wp_customize->add_control(
+        'sp_button_second_display_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'sp_button_first_section',
+            'settings' => 'sp_button_second_image_fit',
+            'label' => __('Show full image', 'boutiq'),
+            'description' =>  __("Don't forget to adjust the height if you want to see the entire image.", 'boutiq'),
         )
     );
 

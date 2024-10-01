@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format\n"
-"POT-Creation-Date: 2024-10-01 02:36+0900\n"
-"PO-Revision-Date: 2024-10-01 02:36+0900\n"
+"POT-Creation-Date: 2024-10-01 16:32+0900\n"
+"PO-Revision-Date: 2024-10-01 16:33+0900\n"
 "Last-Translator: \n"
 "Language-Team: boutiq\n"
 "Language: ja_JP\n"
@@ -781,6 +781,7 @@ msgstr "バナーのリンク先を入力します"
 #: theme_customizer/customizer-hamburger.php:669
 #: theme_customizer/customizer-header.php:401
 #: theme_customizer/customizer-header.php:750
+#: theme_customizer/customizer-sp.php:119
 msgid "Display button in separate tab"
 msgstr "ボタンを別タブに表示する"
 
@@ -804,7 +805,7 @@ msgstr "入力しない場合はヘッダーに設定されている画像が使
 #: theme_customizer/customizer-hamburger.php:607
 #: theme_customizer/customizer-header.php:338
 #: theme_customizer/customizer-header.php:556
-#: theme_customizer/customizer-sp.php:57 theme_customizer/customizer-sp.php:274
+#: theme_customizer/customizer-sp.php:57 theme_customizer/customizer-sp.php:314
 msgid "Show button"
 msgstr "ボタンを表示する"
 
@@ -1133,51 +1134,61 @@ msgstr "第1ボタンの設定"
 msgid "SP second button Settings"
 msgstr "第2ボタンの設定"
 
-#: theme_customizer/customizer-sp.php:75 theme_customizer/customizer-sp.php:292
+#: theme_customizer/customizer-sp.php:75 theme_customizer/customizer-sp.php:332
 msgid "Set text for button"
 msgstr "ボタンのテキスト"
 
-#: theme_customizer/customizer-sp.php:96 theme_customizer/customizer-sp.php:313
+#: theme_customizer/customizer-sp.php:96 theme_customizer/customizer-sp.php:353
 msgid "Set URL for button"
 msgstr "ボタンのURL"
 
-#: theme_customizer/customizer-sp.php:118
-#: theme_customizer/customizer-sp.php:335
+#: theme_customizer/customizer-sp.php:138
+#: theme_customizer/customizer-sp.php:375
 msgid "Text Color For SP button"
 msgstr "ボタンの文字色"
 
-#: theme_customizer/customizer-sp.php:140
-#: theme_customizer/customizer-sp.php:357
+#: theme_customizer/customizer-sp.php:160
+#: theme_customizer/customizer-sp.php:397
 msgid "Background Color For SP button"
 msgstr "ボタンの背景色"
 
-#: theme_customizer/customizer-sp.php:162
-#: theme_customizer/customizer-sp.php:379
+#: theme_customizer/customizer-sp.php:182
+#: theme_customizer/customizer-sp.php:419
 msgid "Border Color For SP button"
 msgstr "ボタンの線の色"
 
-#: theme_customizer/customizer-sp.php:183
-#: theme_customizer/customizer-sp.php:400
+#: theme_customizer/customizer-sp.php:203
+#: theme_customizer/customizer-sp.php:440
 msgid "Set border width (px)"
 msgstr "線の太さを設定する"
 
-#: theme_customizer/customizer-sp.php:206
-#: theme_customizer/customizer-sp.php:423
+#: theme_customizer/customizer-sp.php:226
+#: theme_customizer/customizer-sp.php:463
 msgid "Icon Image"
 msgstr "アイコン画像"
 
-#: theme_customizer/customizer-sp.php:229
-#: theme_customizer/customizer-sp.php:446
+#: theme_customizer/customizer-sp.php:249
+#: theme_customizer/customizer-sp.php:486
 msgid "Background Image"
 msgstr "ボタンの背景画像（あれば）"
 
-#: theme_customizer/customizer-sp.php:250
-#: theme_customizer/customizer-sp.php:467
+#: theme_customizer/customizer-sp.php:271
+#: theme_customizer/customizer-sp.php:508
+msgid "Show full image"
+msgstr "画像全体を表示する"
+
+#: theme_customizer/customizer-sp.php:272
+#: theme_customizer/customizer-sp.php:509
+msgid "Don't forget to adjust the height if you want to see the entire image."
+msgstr "画像全体を表示する場合は高さを調整することを忘れないでください。"
+
+#: theme_customizer/customizer-sp.php:290
+#: theme_customizer/customizer-sp.php:527
 msgid "Set button height (px)"
 msgstr "ボタンの高さ"
 
-#: theme_customizer/customizer-sp.php:254
-#: theme_customizer/customizer-sp.php:471
+#: theme_customizer/customizer-sp.php:294
+#: theme_customizer/customizer-sp.php:531
 msgid "Please also enter the unit. Example: px"
 msgstr ""
 "単位まで入力してください。\n"
