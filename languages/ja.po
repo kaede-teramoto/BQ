@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format\n"
-"POT-Creation-Date: 2024-09-26 09:22+0900\n"
-"PO-Revision-Date: 2024-09-26 09:36+0900\n"
+"POT-Creation-Date: 2024-10-01 16:32+0900\n"
+"PO-Revision-Date: 2024-10-01 16:33+0900\n"
 "Last-Translator: \n"
 "Language-Team: boutiq\n"
 "Language: ja_JP\n"
@@ -199,7 +199,7 @@ msgid "Color Settings"
 msgstr "カラー設定"
 
 #: theme_customizer/customizer-design.php:48
-#: theme_customizer/customizer-top.php:343
+#: theme_customizer/customizer-top.php:452
 msgid "Text Color"
 msgstr "テキストカラー"
 
@@ -284,52 +284,62 @@ msgid "Button Link Design Type For common"
 msgstr "ページコンテンツ内のボタンリンクのデザインを選択する"
 
 #: theme_customizer/customizer-design.php:452
-#: theme_customizer/customizer-design.php:516
+#: theme_customizer/customizer-header.php:425
+#: theme_customizer/customizer-header.php:580
 msgid "Button Link Type1"
 msgstr "Button Type1"
 
 #: theme_customizer/customizer-design.php:453
-#: theme_customizer/customizer-design.php:517
+#: theme_customizer/customizer-header.php:426
+#: theme_customizer/customizer-header.php:581
 msgid "Button Link Type2"
 msgstr "Button Type2"
 
 #: theme_customizer/customizer-design.php:454
-#: theme_customizer/customizer-design.php:518
+#: theme_customizer/customizer-header.php:427
+#: theme_customizer/customizer-header.php:582
 msgid "Button Link Type3"
 msgstr "Button Type3"
 
 #: theme_customizer/customizer-design.php:455
-#: theme_customizer/customizer-design.php:519
+#: theme_customizer/customizer-header.php:428
+#: theme_customizer/customizer-header.php:583
 msgid "Button Link Type4"
 msgstr "Button Type4"
 
 #: theme_customizer/customizer-design.php:456
-#: theme_customizer/customizer-design.php:520
+#: theme_customizer/customizer-header.php:429
+#: theme_customizer/customizer-header.php:584
 msgid "Button Link Type5"
 msgstr "Button Type5"
 
 #: theme_customizer/customizer-design.php:457
-#: theme_customizer/customizer-design.php:521
+#: theme_customizer/customizer-header.php:430
+#: theme_customizer/customizer-header.php:585
 msgid "Button Link Type6"
 msgstr "Button Type6"
 
 #: theme_customizer/customizer-design.php:458
-#: theme_customizer/customizer-design.php:522
+#: theme_customizer/customizer-header.php:431
+#: theme_customizer/customizer-header.php:586
 msgid "Button Link Type7"
 msgstr "Button Type7"
 
 #: theme_customizer/customizer-design.php:459
-#: theme_customizer/customizer-design.php:523
+#: theme_customizer/customizer-header.php:432
+#: theme_customizer/customizer-header.php:587
 msgid "Button Link Type8"
 msgstr "Button Type8"
 
 #: theme_customizer/customizer-design.php:460
-#: theme_customizer/customizer-design.php:524
+#: theme_customizer/customizer-header.php:433
+#: theme_customizer/customizer-header.php:588
 msgid "Button Link Type9"
 msgstr "Button Type9"
 
 #: theme_customizer/customizer-design.php:461
-#: theme_customizer/customizer-design.php:525
+#: theme_customizer/customizer-header.php:434
+#: theme_customizer/customizer-header.php:589
 msgid "Button Link Type10"
 msgstr "Button Type10"
 
@@ -338,138 +348,136 @@ msgid "Button icon design other than page content"
 msgstr "ページコンテンツ以外のボタンアイコンのデザインを選択する"
 
 #: theme_customizer/customizer-design.php:485
-#: theme_customizer/customizer-design.php:549
-#: theme_customizer/customizer-design.php:625
+#: theme_customizer/customizer-design.php:561
+#: theme_customizer/customizer-header.php:458
+#: theme_customizer/customizer-header.php:613
 msgid "Icon Type1"
 msgstr "Icon Type1"
 
 #: theme_customizer/customizer-design.php:486
-#: theme_customizer/customizer-design.php:550
-#: theme_customizer/customizer-design.php:626
+#: theme_customizer/customizer-design.php:562
+#: theme_customizer/customizer-header.php:459
+#: theme_customizer/customizer-header.php:614
 msgid "Icon  Type2"
 msgstr "Icon Type2"
 
 #: theme_customizer/customizer-design.php:487
-#: theme_customizer/customizer-design.php:551
-#: theme_customizer/customizer-design.php:627
+#: theme_customizer/customizer-design.php:563
+#: theme_customizer/customizer-header.php:460
+#: theme_customizer/customizer-header.php:615
 msgid "Icon  Type3"
 msgstr "Icon Type3"
 
 #: theme_customizer/customizer-design.php:488
-#: theme_customizer/customizer-design.php:552
-#: theme_customizer/customizer-design.php:628
+#: theme_customizer/customizer-design.php:564
+#: theme_customizer/customizer-header.php:461
+#: theme_customizer/customizer-header.php:616
 msgid "Icon  Type4"
 msgstr "Icon Type4"
 
 #: theme_customizer/customizer-design.php:489
-#: theme_customizer/customizer-design.php:553
-#: theme_customizer/customizer-design.php:629
+#: theme_customizer/customizer-design.php:565
+#: theme_customizer/customizer-header.php:462
+#: theme_customizer/customizer-header.php:617
 msgid "Icon  Type5"
 msgstr "Icon Type5"
 
 #: theme_customizer/customizer-design.php:490
-#: theme_customizer/customizer-design.php:554
-#: theme_customizer/customizer-design.php:630
+#: theme_customizer/customizer-design.php:566
+#: theme_customizer/customizer-header.php:463
+#: theme_customizer/customizer-header.php:618
 msgid "Icon  Type6"
 msgstr "Icon Type6"
 
-#: theme_customizer/customizer-design.php:511
-msgid "Button Link Design Type"
-msgstr "ボタンリンクのデザインを選択する"
-
-#: theme_customizer/customizer-design.php:544
-msgid "Button Link Icon Type"
-msgstr "ボタンのアイコンを選択する"
-
-#: theme_customizer/customizer-design.php:565
+#: theme_customizer/customizer-design.php:501
 msgid "Text Link Settings"
 msgstr "テキストリンクの設定"
 
-#: theme_customizer/customizer-design.php:585
+#: theme_customizer/customizer-design.php:521
 msgid "Text Link Design Type"
 msgstr "テキストリンクのデザインを選択する"
 
-#: theme_customizer/customizer-design.php:590
+#: theme_customizer/customizer-design.php:526
 msgid "Text Link Type1"
 msgstr "Text Link Type1"
 
-#: theme_customizer/customizer-design.php:591
+#: theme_customizer/customizer-design.php:527
 msgid "Text Link Type2"
 msgstr "Text Link Type2"
 
-#: theme_customizer/customizer-design.php:592
+#: theme_customizer/customizer-design.php:528
 msgid "Text Link Type3"
 msgstr "Text Link Type3"
 
-#: theme_customizer/customizer-design.php:593
+#: theme_customizer/customizer-design.php:529
 msgid "Text Link Type4"
 msgstr "Text Link Type4"
 
-#: theme_customizer/customizer-design.php:594
+#: theme_customizer/customizer-design.php:530
 msgid "Text Link Type5"
 msgstr "Text Link Type5"
 
-#: theme_customizer/customizer-design.php:595
+#: theme_customizer/customizer-design.php:531
 msgid "Text Link Type6"
 msgstr "Text Link Type6"
 
-#: theme_customizer/customizer-design.php:596
+#: theme_customizer/customizer-design.php:532
 msgid "Text Link Type7"
 msgstr "Text Link Type7"
 
-#: theme_customizer/customizer-design.php:597
+#: theme_customizer/customizer-design.php:533
 msgid "Text Link Type8"
 msgstr "Text Link Type8"
 
-#: theme_customizer/customizer-design.php:598
+#: theme_customizer/customizer-design.php:534
 msgid "Text Link Type9"
 msgstr "Text Link Type9"
 
-#: theme_customizer/customizer-design.php:599
+#: theme_customizer/customizer-design.php:535
 msgid "Text Link Type10"
 msgstr "Text Link Type10"
 
-#: theme_customizer/customizer-design.php:600
+#: theme_customizer/customizer-design.php:536
 msgid "Text Link Type11"
 msgstr "Text Link Type11"
 
-#: theme_customizer/customizer-design.php:601
+#: theme_customizer/customizer-design.php:537
 msgid "Text Link Type12"
 msgstr "Text Link Type12"
 
-#: theme_customizer/customizer-design.php:620
+#: theme_customizer/customizer-design.php:556
 msgid "Text Link Icon Type"
 msgstr "テキストリンクのアイコンを選択する"
 
-#: theme_customizer/customizer-design.php:631
+#: theme_customizer/customizer-design.php:567
 msgid "Icon  Type7"
 msgstr "Icon Type7"
 
-#: theme_customizer/customizer-design.php:632
+#: theme_customizer/customizer-design.php:568
 msgid "Icon  Type8"
 msgstr "Icon Type8"
 
-#: theme_customizer/customizer-design.php:633
+#: theme_customizer/customizer-design.php:569
 msgid "Icon  Type9"
 msgstr "Icon Type9"
 
-#: theme_customizer/customizer-design.php:634
+#: theme_customizer/customizer-design.php:570
 msgid "Icon  Type10"
 msgstr "Icon Type10"
 
-#: theme_customizer/customizer-design.php:635
+#: theme_customizer/customizer-design.php:571
 msgid "Icon  Type11"
 msgstr "Icon Type11"
 
-#: theme_customizer/customizer-design.php:636
+#: theme_customizer/customizer-design.php:572
 msgid "Icon  Type12"
 msgstr "Icon Type12"
 
-#: theme_customizer/customizer-design.php:637
+#: theme_customizer/customizer-design.php:573
 msgid "Icon  Type13"
 msgstr "Icon Type13"
 
-#: theme_customizer/customizer-design.php:638
+#: theme_customizer/customizer-design.php:574
 msgid "Icon  Type14"
 msgstr "Icon Type14"
 
@@ -525,22 +533,22 @@ msgid "No animation"
 msgstr "アニメーションなし"
 
 #: theme_customizer/customizer-follow_button.php:110
-#: theme_customizer/customizer-top.php:104
+#: theme_customizer/customizer-top.php:213
 msgid "From left"
 msgstr "左から表示"
 
 #: theme_customizer/customizer-follow_button.php:111
-#: theme_customizer/customizer-top.php:105
+#: theme_customizer/customizer-top.php:214
 msgid "From right"
 msgstr "右から表示"
 
 #: theme_customizer/customizer-follow_button.php:112
-#: theme_customizer/customizer-top.php:102
+#: theme_customizer/customizer-top.php:211
 msgid "From top"
 msgstr "上から表示"
 
 #: theme_customizer/customizer-follow_button.php:113
-#: theme_customizer/customizer-top.php:103
+#: theme_customizer/customizer-top.php:212
 msgid "From bottom"
 msgstr "下から表示"
 
@@ -610,7 +618,6 @@ msgid "Footer Text Color"
 msgstr "フッターテキストカラー"
 
 #: theme_customizer/customizer-footer.php:173
-#: theme_customizer/customizer-hamburger.php:352
 msgid "Enter text if a button is needed"
 msgstr "ボタンが必要な場合はテキストを入力します"
 
@@ -626,252 +633,364 @@ msgstr "ボタンのリンク先を入力してください"
 msgid "Set copyright"
 msgstr "コピーライトを入力します"
 
-#: theme_customizer/customizer-hamburger.php:16
-msgid "Hamburger menu option"
+#: theme_customizer/customizer-hamburger.php:19
+msgid "Hamburger option"
 msgstr "ハンバーガーメニューの設定"
 
+#: theme_customizer/customizer-hamburger.php:28
+msgid "Design setting for Hamburger"
+msgstr "ハンバーガーメニューのデザイン設定"
+
 #: theme_customizer/customizer-hamburger.php:36
+msgid "First banner setting for Hamburger"
+msgstr "第1バナーを設定する"
+
+#: theme_customizer/customizer-hamburger.php:44
+msgid "Second banner setting for Hamburger"
+msgstr "第2バナーを設定する"
+
+#: theme_customizer/customizer-hamburger.php:52
+msgid "First button setting for Hamburger"
+msgstr "第1ボタンを設定する"
+
+#: theme_customizer/customizer-hamburger.php:60
+msgid "Second button setting for Hamburger"
+msgstr "第2ボタンを設定する"
+
+#: theme_customizer/customizer-hamburger.php:79
 msgid "Hamburger menu Design Type"
 msgstr "ハンバーガーメニューのデザインを選択する"
 
-#: theme_customizer/customizer-hamburger.php:41
+#: theme_customizer/customizer-hamburger.php:84
 msgid "Don't use hamburger menu"
 msgstr "ハンバーガーメニューは使わない"
 
-#: theme_customizer/customizer-hamburger.php:42
+#: theme_customizer/customizer-hamburger.php:85
 msgid "Set Original Hamburger menu"
 msgstr "オリジナルのハンバーガーメニューを設定する"
 
-#: theme_customizer/customizer-hamburger.php:43
+#: theme_customizer/customizer-hamburger.php:86
 msgid "Hamburger menu Type1"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:44
+#: theme_customizer/customizer-hamburger.php:87
 msgid "Hamburger menu Type2"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:45
+#: theme_customizer/customizer-hamburger.php:88
 msgid "Hamburger menu Type3"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:46
+#: theme_customizer/customizer-hamburger.php:89
 msgid "Hamburger menu Type4"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:47
+#: theme_customizer/customizer-hamburger.php:90
 msgid "Hamburger menu Type5"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:48
+#: theme_customizer/customizer-hamburger.php:91
 msgid "Hamburger menu Type6"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:49
+#: theme_customizer/customizer-hamburger.php:92
 msgid "Hamburger menu Type7"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:50
+#: theme_customizer/customizer-hamburger.php:93
 msgid "Hamburger menu Type8"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:69
+#: theme_customizer/customizer-hamburger.php:112
 msgid "Hamburger Icon Design Type"
 msgstr "アイコンデザインを選択する"
 
-#: theme_customizer/customizer-hamburger.php:74
+#: theme_customizer/customizer-hamburger.php:117
 msgid "Hamburger Icon Design Type1"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:75
+#: theme_customizer/customizer-hamburger.php:118
 msgid "Hamburger Icon Design Type2"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:76
+#: theme_customizer/customizer-hamburger.php:119
 msgid "Hamburger Icon Design Type3"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:77
+#: theme_customizer/customizer-hamburger.php:120
 msgid "Hamburger Icon Design Type4"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:78
+#: theme_customizer/customizer-hamburger.php:121
 msgid "Hamburger Icon Design Type5"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:79
+#: theme_customizer/customizer-hamburger.php:122
 msgid "Hamburger Icon Design Type6"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:80
+#: theme_customizer/customizer-hamburger.php:123
 msgid "Hamburger Icon Design Type7"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:81
+#: theme_customizer/customizer-hamburger.php:124
 msgid "Hamburger Icon Design Type8"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:82
+#: theme_customizer/customizer-hamburger.php:125
 msgid "Hamburger Icon Design Type9"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:83
+#: theme_customizer/customizer-hamburger.php:126
 msgid "Hamburger Icon Design Type10"
 msgstr ""
 
-#: theme_customizer/customizer-hamburger.php:104
+#: theme_customizer/customizer-hamburger.php:147
 msgid "Background Color for Hamburger Menu"
 msgstr "ハンバーガーメニューの背景色"
 
-#: theme_customizer/customizer-hamburger.php:127
+#: theme_customizer/customizer-hamburger.php:170
 msgid "Hamburger menu Left Image"
 msgstr "ハンバーガーメニュー左側の画像"
 
-#: theme_customizer/customizer-hamburger.php:152
+#: theme_customizer/customizer-hamburger.php:193
+#: theme_customizer/customizer-hamburger.php:302
+msgid "Show banner"
+msgstr "バナーを表示する"
+
+#: theme_customizer/customizer-hamburger.php:215
 msgid "Background image of banner \"1\""
 msgstr "バナー①の背景画像"
 
-#: theme_customizer/customizer-hamburger.php:174
+#: theme_customizer/customizer-hamburger.php:237
 msgid "If you want the first banner, please enter the text"
 msgstr "①バナーが必要な場合は、テキストを入力してください"
 
-#: theme_customizer/customizer-hamburger.php:175
-#: theme_customizer/customizer-hamburger.php:264
+#: theme_customizer/customizer-hamburger.php:238
+#: theme_customizer/customizer-hamburger.php:346
 msgid "Set when design type 07 and type 08"
 msgstr "タイプ07、タイプ08をデザインする場合に設定します"
 
-#: theme_customizer/customizer-hamburger.php:196
-#: theme_customizer/customizer-hamburger.php:286
+#: theme_customizer/customizer-hamburger.php:259
+#: theme_customizer/customizer-hamburger.php:368
 msgid "Enter the banner link destination"
 msgstr "バナーのリンク先を入力します"
 
-#: theme_customizer/customizer-hamburger.php:219
-#: theme_customizer/customizer-hamburger.php:396
-#: theme_customizer/customizer-header.php:349
+#: theme_customizer/customizer-hamburger.php:282
+#: theme_customizer/customizer-hamburger.php:500
+#: theme_customizer/customizer-hamburger.php:669
+#: theme_customizer/customizer-header.php:401
+#: theme_customizer/customizer-header.php:750
+#: theme_customizer/customizer-sp.php:119
 msgid "Display button in separate tab"
 msgstr "ボタンを別タブに表示する"
 
-#: theme_customizer/customizer-hamburger.php:240
+#: theme_customizer/customizer-hamburger.php:322
 msgid "Background image of banner \"2\""
 msgstr "バナー②の背景画像"
 
-#: theme_customizer/customizer-hamburger.php:263
+#: theme_customizer/customizer-hamburger.php:345
 msgid "If you want a second banner, please enter the text"
 msgstr "②バナーが必要な場合は、テキストを入力してください"
 
-#: theme_customizer/customizer-hamburger.php:329
+#: theme_customizer/customizer-hamburger.php:411
 msgid "Hamburger menu Logo Image"
 msgstr "ハンバーガーメニュー内で表示するロゴ画像"
 
-#: theme_customizer/customizer-hamburger.php:330
+#: theme_customizer/customizer-hamburger.php:412
 msgid "If not entered, the image set in the header will be used"
 msgstr "入力しない場合はヘッダーに設定されている画像が使用されます"
 
-#: theme_customizer/customizer-hamburger.php:373
+#: theme_customizer/customizer-hamburger.php:438
+#: theme_customizer/customizer-hamburger.php:607
+#: theme_customizer/customizer-header.php:338
+#: theme_customizer/customizer-header.php:556
+#: theme_customizer/customizer-sp.php:57 theme_customizer/customizer-sp.php:314
+msgid "Show button"
+msgstr "ボタンを表示する"
+
+#: theme_customizer/customizer-hamburger.php:456
+#: theme_customizer/customizer-hamburger.php:625
+msgid "Button text"
+msgstr "ボタンに表示するテキスト"
+
+#: theme_customizer/customizer-hamburger.php:477
+#: theme_customizer/customizer-hamburger.php:646
 msgid "Enter the button link destination"
 msgstr "ボタンのリンク先を入力します"
 
-#: theme_customizer/customizer-header.php:14
+#: theme_customizer/customizer-hamburger.php:519
+#: theme_customizer/customizer-hamburger.php:688
+msgid "Button background color"
+msgstr "ボタンの背景色"
+
+#: theme_customizer/customizer-hamburger.php:541
+#: theme_customizer/customizer-hamburger.php:710
+msgid "Button Text Color"
+msgstr "ボタンの文字色"
+
+#: theme_customizer/customizer-hamburger.php:564
+#: theme_customizer/customizer-hamburger.php:733
+msgid "Add a line to the button"
+msgstr "ボタンに線を表示する"
+
+#: theme_customizer/customizer-hamburger.php:582
+#: theme_customizer/customizer-hamburger.php:751
+msgid "Set border corner radius"
+msgstr "ボタンの角の角度"
+
+#: theme_customizer/customizer-header.php:16
 msgid "Header option"
 msgstr "ヘッダーの設定"
 
-#: theme_customizer/customizer-header.php:36
+#: theme_customizer/customizer-header.php:24
+msgid "Design setting for header"
+msgstr "ヘッダーのデザイン設定"
+
+#: theme_customizer/customizer-header.php:32
+msgid "Button setting for header"
+msgstr "ヘッダーの第1ボタンのデザイン"
+
+#: theme_customizer/customizer-header.php:40
+msgid "Another button setting for header"
+msgstr "ヘッダーの第2ボタンのデザイン"
+
+#: theme_customizer/customizer-header.php:61
 msgid "Logo Image"
 msgstr "ロゴ画像"
 
-#: theme_customizer/customizer-header.php:56
+#: theme_customizer/customizer-header.php:81
 msgid "Design Type"
 msgstr "ヘッダーデザインを選択する"
 
-#: theme_customizer/customizer-header.php:61
+#: theme_customizer/customizer-header.php:86
 msgid "Header Type1"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:62
+#: theme_customizer/customizer-header.php:87
 msgid "Header Type2"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:63
+#: theme_customizer/customizer-header.php:88
 msgid "Header Type3"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:64
+#: theme_customizer/customizer-header.php:89
 msgid "Header Type4"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:65
+#: theme_customizer/customizer-header.php:90
 msgid "Header Type5"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:66
+#: theme_customizer/customizer-header.php:91
 msgid "Header Type6"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:67
+#: theme_customizer/customizer-header.php:92
 msgid "Header Type7"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:68
+#: theme_customizer/customizer-header.php:93
 msgid "Header Type8"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:69
+#: theme_customizer/customizer-header.php:94
 msgid "Header Type9"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:70
+#: theme_customizer/customizer-header.php:95
 msgid "Header Type10"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:71
+#: theme_customizer/customizer-header.php:96
 msgid "Header Type11"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:72
+#: theme_customizer/customizer-header.php:97
 msgid "Header Type12"
 msgstr ""
 
-#: theme_customizer/customizer-header.php:93
+#: theme_customizer/customizer-header.php:118
 msgid "Set to card type"
 msgstr "背景をカードタイプにする"
 
-#: theme_customizer/customizer-header.php:111
+#: theme_customizer/customizer-header.php:136
 msgid "Set card corner radius for PC (px)"
-msgstr "PC用のカードのコーナーの角度"
+msgstr "カードタイプ時の角度（PC）"
 
-#: theme_customizer/customizer-header.php:132
+#: theme_customizer/customizer-header.php:157
 msgid "Set card corner radius for Tablet (px)"
-msgstr "タブレット用のカードのコーナーの角度"
+msgstr "カードタイプ時の角度（タブレット）"
 
-#: theme_customizer/customizer-header.php:153
+#: theme_customizer/customizer-header.php:178
 msgid "Set card corner radius for SP (px)"
-msgstr "スマートフォン用のカードのコーナーの角度"
+msgstr "カードタイプ時の角度（スマホ）"
 
-#: theme_customizer/customizer-header.php:175
+#: theme_customizer/customizer-header.php:200
 msgid "Header Link Text Color"
 msgstr "ヘッダーリンクカラー"
 
-#: theme_customizer/customizer-header.php:197
+#: theme_customizer/customizer-header.php:222
 msgid "Header Background Color"
 msgstr "ヘッダーの背景カラー"
 
-#: theme_customizer/customizer-header.php:218
+#: theme_customizer/customizer-header.php:243
 msgid ""
 "If you would like to set a gradation for the background color, enter it here."
 msgstr "背景色のグラデーションを設定したい場合はここに入力します。"
 
-#: theme_customizer/customizer-header.php:242
+#: theme_customizer/customizer-header.php:267
 msgid "Add an underline"
 msgstr "ヘッダーに下線を追加する"
 
-#: theme_customizer/customizer-header.php:262
+#: theme_customizer/customizer-header.php:287
 msgid "Add blur processing"
 msgstr ""
 "ヘッダーにぼかしをかける\n"
 "（背景からーを設定している場合は利用できません）"
 
-#: theme_customizer/customizer-header.php:282
+#: theme_customizer/customizer-header.php:307
 msgid "Adjust the blur ratio"
 msgstr "ぼかし度合いを設定する"
+
+#: theme_customizer/customizer-header.php:420
+#: theme_customizer/customizer-header.php:575
+msgid "Button Link Design Type"
+msgstr "ボタンリンクのデザインを選択する"
+
+#: theme_customizer/customizer-header.php:453
+#: theme_customizer/customizer-header.php:608
+msgid "Button Link Icon Type"
+msgstr "ボタンのアイコンを選択する"
+
+#: theme_customizer/customizer-header.php:483
+#: theme_customizer/customizer-header.php:638
+msgid "Button color for header"
+msgstr "ボタンの色"
+
+#: theme_customizer/customizer-header.php:486
+#: theme_customizer/customizer-header.php:641
+msgid "If not selected, the main color will be set."
+msgstr "入力しない場合は初期設定色となります。"
+
+#: theme_customizer/customizer-header.php:506
+#: theme_customizer/customizer-header.php:661
+msgid "Button text color for header"
+msgstr "ボタンの文字色"
+
+#: theme_customizer/customizer-header.php:509
+#: theme_customizer/customizer-header.php:664
+msgid "If not selected, the text color will be set."
+msgstr "入力しない場合は初期設定色となります。"
+
+#: theme_customizer/customizer-header.php:528
+#: theme_customizer/customizer-header.php:683
+msgid ""
+"If you would like to set a gradation for the button color, enter it here."
+msgstr ""
+"ボタンにグラデーションを設定したい場合はここに入力します。ここに入力がある場"
+"合は上のボタンの色は反映しません。"
 
 #: theme_customizer/customizer-page.php:14
 msgid "Page option"
@@ -918,71 +1037,68 @@ msgid "Page Title9"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:67
-#: theme_customizer/customizer-page.php:138
+#: theme_customizer/customizer-top.php:48
 msgid "Content Title1"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:68
-#: theme_customizer/customizer-page.php:139
+#: theme_customizer/customizer-top.php:49
 msgid "Content Title2"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:69
-#: theme_customizer/customizer-page.php:140
+#: theme_customizer/customizer-top.php:50
 msgid "Content Title3"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:70
-#: theme_customizer/customizer-page.php:141
+#: theme_customizer/customizer-top.php:51
 msgid "Content Title4"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:71
-#: theme_customizer/customizer-page.php:142
+#: theme_customizer/customizer-top.php:52
 msgid "Content Title5"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:72
-#: theme_customizer/customizer-page.php:143
+#: theme_customizer/customizer-top.php:53
 msgid "Content Title6"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:73
-#: theme_customizer/customizer-page.php:144
+#: theme_customizer/customizer-top.php:54
 msgid "Content Title7"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:74
-#: theme_customizer/customizer-page.php:145
+#: theme_customizer/customizer-top.php:55
 msgid "Content Title8"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:95
-#: theme_customizer/customizer-page.php:166
+#: theme_customizer/customizer-top.php:76
 msgid "Add underline to content title"
 msgstr "コンテンツのタイトルに下線を追加する"
 
 #: theme_customizer/customizer-page.php:114
-msgid "Underline Color For Top page"
-msgstr "コンテンツのタイトルに下線の色"
-
-#: theme_customizer/customizer-page.php:185
 msgid "Underline Color"
 msgstr "下線の色"
 
-#: theme_customizer/customizer-page.php:206
+#: theme_customizer/customizer-page.php:135
+#: theme_customizer/customizer-top.php:116
 msgid "Set Underline thickness (px)"
 msgstr "下線の太さを設定する"
 
-#: theme_customizer/customizer-page.php:227
+#: theme_customizer/customizer-page.php:156
 msgid "Set corner radius for PC (px)"
 msgstr "PC用のコーナーの角度"
 
-#: theme_customizer/customizer-page.php:247
+#: theme_customizer/customizer-page.php:176
 msgid "Set corner radius for Tablet (px)"
 msgstr "タブレット用のコーナーの角度"
 
-#: theme_customizer/customizer-page.php:267
+#: theme_customizer/customizer-page.php:196
 msgid "Set corner radius for SP (px)"
 msgstr "スマートフォン用のコーナーの角度"
 
@@ -1006,149 +1122,229 @@ msgstr "SNSのアイコン"
 msgid "Please enter the link"
 msgstr "リンクを入力してください"
 
+#: theme_customizer/customizer-sp.php:21
+msgid "SP button Settings"
+msgstr "スマホ用固定ボタンの設定"
+
+#: theme_customizer/customizer-sp.php:29
+msgid "SP first button Settings"
+msgstr "第1ボタンの設定"
+
+#: theme_customizer/customizer-sp.php:37
+msgid "SP second button Settings"
+msgstr "第2ボタンの設定"
+
+#: theme_customizer/customizer-sp.php:75 theme_customizer/customizer-sp.php:332
+msgid "Set text for button"
+msgstr "ボタンのテキスト"
+
+#: theme_customizer/customizer-sp.php:96 theme_customizer/customizer-sp.php:353
+msgid "Set URL for button"
+msgstr "ボタンのURL"
+
+#: theme_customizer/customizer-sp.php:138
+#: theme_customizer/customizer-sp.php:375
+msgid "Text Color For SP button"
+msgstr "ボタンの文字色"
+
+#: theme_customizer/customizer-sp.php:160
+#: theme_customizer/customizer-sp.php:397
+msgid "Background Color For SP button"
+msgstr "ボタンの背景色"
+
+#: theme_customizer/customizer-sp.php:182
+#: theme_customizer/customizer-sp.php:419
+msgid "Border Color For SP button"
+msgstr "ボタンの線の色"
+
+#: theme_customizer/customizer-sp.php:203
+#: theme_customizer/customizer-sp.php:440
+msgid "Set border width (px)"
+msgstr "線の太さを設定する"
+
+#: theme_customizer/customizer-sp.php:226
+#: theme_customizer/customizer-sp.php:463
+msgid "Icon Image"
+msgstr "アイコン画像"
+
+#: theme_customizer/customizer-sp.php:249
+#: theme_customizer/customizer-sp.php:486
+msgid "Background Image"
+msgstr "ボタンの背景画像（あれば）"
+
+#: theme_customizer/customizer-sp.php:271
+#: theme_customizer/customizer-sp.php:508
+msgid "Show full image"
+msgstr "画像全体を表示する"
+
+#: theme_customizer/customizer-sp.php:272
+#: theme_customizer/customizer-sp.php:509
+msgid "Don't forget to adjust the height if you want to see the entire image."
+msgstr "画像全体を表示する場合は高さを調整することを忘れないでください。"
+
+#: theme_customizer/customizer-sp.php:290
+#: theme_customizer/customizer-sp.php:527
+msgid "Set button height (px)"
+msgstr "ボタンの高さ"
+
+#: theme_customizer/customizer-sp.php:294
+#: theme_customizer/customizer-sp.php:531
+msgid "Please also enter the unit. Example: px"
+msgstr ""
+"単位まで入力してください。\n"
+"例：px, , %, vh"
+
 #: theme_customizer/customizer-top.php:18
 msgid "Top Page Settings"
 msgstr "トップページの設定"
 
 #: theme_customizer/customizer-top.php:26
+msgid "Top page title design"
+msgstr "ページタイトルのデザインを設定"
+
+#: theme_customizer/customizer-top.php:95
+msgid "Underline Color For Top page"
+msgstr "コンテンツのタイトルに下線の色"
+
+#: theme_customizer/customizer-top.php:136
 msgid "Slide Image Setting"
 msgstr "ファーストビューのスライドの設定"
 
-#: theme_customizer/customizer-top.php:44
+#: theme_customizer/customizer-top.php:153
 msgid "First view settings"
 msgstr "ファーストビューの高さを設定する"
 
-#: theme_customizer/customizer-top.php:49
+#: theme_customizer/customizer-top.php:158
 msgid "Show Page title"
 msgstr "ページタイトルを表示する"
 
-#: theme_customizer/customizer-top.php:50
+#: theme_customizer/customizer-top.php:159
 msgid "Show default slider"
 msgstr "通常のスライダーを表示する"
 
-#: theme_customizer/customizer-top.php:51
+#: theme_customizer/customizer-top.php:160
 msgid "Show the original slider"
 msgstr "オリジナルのスライダーを表示する"
 
-#: theme_customizer/customizer-top.php:52
+#: theme_customizer/customizer-top.php:161
 msgid "Show nothing"
 msgstr "何も表示させない"
 
-#: theme_customizer/customizer-top.php:69
+#: theme_customizer/customizer-top.php:178
 msgid "Change Effect"
 msgstr "エフェクトを設定する"
 
-#: theme_customizer/customizer-top.php:74
+#: theme_customizer/customizer-top.php:183
 msgid "Fade"
 msgstr ""
 
-#: theme_customizer/customizer-top.php:75
+#: theme_customizer/customizer-top.php:184
 msgid "Slide"
 msgstr ""
 
-#: theme_customizer/customizer-top.php:76
+#: theme_customizer/customizer-top.php:185
 msgid "Cube"
 msgstr ""
 
-#: theme_customizer/customizer-top.php:77
+#: theme_customizer/customizer-top.php:186
 msgid "Coverflow"
 msgstr ""
 
-#: theme_customizer/customizer-top.php:78
+#: theme_customizer/customizer-top.php:187
 msgid "Flip"
 msgstr ""
 
-#: theme_customizer/customizer-top.php:79
+#: theme_customizer/customizer-top.php:188
 msgid "Cards"
 msgstr ""
 
-#: theme_customizer/customizer-top.php:96
+#: theme_customizer/customizer-top.php:205
 msgid ""
 "Select the type of animated text you want to place on the first view image"
 msgstr "ファーストビュー画像に配置するテキストのアニメーションを選択します"
 
-#: theme_customizer/customizer-top.php:101
+#: theme_customizer/customizer-top.php:210
 msgid "Fade In"
 msgstr "フェードイン"
 
-#: theme_customizer/customizer-top.php:106
+#: theme_customizer/customizer-top.php:215
 msgid "Text display from solid fill"
 msgstr "塗りつぶしからのテキスト表示"
 
-#: theme_customizer/customizer-top.php:124
+#: theme_customizer/customizer-top.php:233
 msgid "First view height for PC"
 msgstr "PCの時のファーストビューの高さ"
 
-#: theme_customizer/customizer-top.php:125
-#: theme_customizer/customizer-top.php:146
-#: theme_customizer/customizer-top.php:167
+#: theme_customizer/customizer-top.php:234
+#: theme_customizer/customizer-top.php:255
+#: theme_customizer/customizer-top.php:276
 msgid "Enter the unit. Example: px, vh"
 msgstr ""
 "単位まで入力してください。\n"
 "例：px, vh"
 
-#: theme_customizer/customizer-top.php:145
+#: theme_customizer/customizer-top.php:254
 msgid "First view height for Tablet"
 msgstr "タブレットの時のファーストビューの高さ"
 
-#: theme_customizer/customizer-top.php:166
+#: theme_customizer/customizer-top.php:275
 msgid "First view height for SP"
 msgstr "スマートフォンの時のファーストビューの高さ"
 
-#: theme_customizer/customizer-top.php:187
+#: theme_customizer/customizer-top.php:296
 msgid "Slider speed"
 msgstr "スライドのスピード"
 
-#: theme_customizer/customizer-top.php:188
+#: theme_customizer/customizer-top.php:297
 msgid ""
 "1 second is 1000. If you want to change the slide in 2 seconds, enter 2000."
 msgstr "1 秒は 1000 です。2 秒でスライドを変更する場合は、2000 と入力します。"
 
-#: theme_customizer/customizer-top.php:210
+#: theme_customizer/customizer-top.php:319
 msgid "Show Arrow"
 msgstr "矢印を表示する"
 
-#: theme_customizer/customizer-top.php:229
+#: theme_customizer/customizer-top.php:338
 msgid "Show Pagination"
 msgstr "ページネーションを表示する"
 
-#: theme_customizer/customizer-top.php:249
+#: theme_customizer/customizer-top.php:358
 msgid "Change Progress Bar"
 msgstr "プログレンスバーに変更する"
 
-#: theme_customizer/customizer-top.php:250
+#: theme_customizer/customizer-top.php:359
 msgid "\"Show pagination\" must be turned on"
 msgstr "「ページネーションを表示」をオンにする必要があります"
 
-#: theme_customizer/customizer-top.php:261
+#: theme_customizer/customizer-top.php:370
 msgid "Slide Image"
 msgstr "スライド画像の設定"
 
-#: theme_customizer/customizer-top.php:277
+#: theme_customizer/customizer-top.php:386
 msgid "Image"
 msgstr "スライド画像"
 
-#: theme_customizer/customizer-top.php:298
+#: theme_customizer/customizer-top.php:407
 msgid "If you put text for heading on image"
 msgstr "画像に見出しの文字を入れる（空欄可）"
 
-#: theme_customizer/customizer-top.php:319
+#: theme_customizer/customizer-top.php:428
 msgid "If you put text for description on image"
 msgstr "画像に説明文を入れる（空欄可）"
 
-#: theme_customizer/customizer-top.php:364
+#: theme_customizer/customizer-top.php:473
 msgid "Position from bottom of text(%)"
 msgstr "上もしくは下からの位置"
 
-#: theme_customizer/customizer-top.php:386
+#: theme_customizer/customizer-top.php:495
 msgid "Position from left of text(%)"
 msgstr "左もしくは右からの位置"
 
-#: theme_customizer/customizer-top.php:407
+#: theme_customizer/customizer-top.php:516
 msgid "If you put a link to the image"
 msgstr "もしも画像にリンクを設定する場合はURLを記載してください"
 
-#: theme_customizer/customizer-top.php:433
+#: theme_customizer/customizer-top.php:542
 msgid "Open in new tab"
 msgstr "ページを新しいタブで開く"
 
@@ -1482,6 +1678,9 @@ msgstr "このカテゴリのサブタイトルを入力してください"
 #: theme_support/titles.php:164 theme_support/titles.php:181
 msgid "Enter a subtitle for this tag"
 msgstr "このタグのサブタイトルを入力してください"
+
+#~ msgid "Button setting for Hamburger"
+#~ msgstr "ボタン①を設定する"
 
 #~ msgid "filter set"
 #~ msgstr "フィルターを設定する"

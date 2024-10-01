@@ -8,8 +8,10 @@
 $site_url  = home_url();
 $site_name = get_bloginfo();
 
+$hm_design_type = get_theme_mod('hm_design_setting', '100');
 $hm_bg_img = esc_url(get_theme_mod('hm_left_image', ''));
 
+$hm_banner01_display = get_theme_mod('hm_banner01_display_setting', false);
 $hm_banner_img01 = esc_url(get_theme_mod('hm_banner01_image', ''));
 $hm_banner_text01 = get_theme_mod('hm_banner01_text', false);
 $hm_banner_link01 = esc_url(get_theme_mod('hm_banner01_link', ''));
@@ -19,8 +21,7 @@ if ($hm_banner_target01) {
 } else {
     $banner01_target = '';
 }
-
-
+$hm_banner02_display = get_theme_mod('hm_banner02_display_setting', false);
 $hm_banner_img02 = esc_url(get_theme_mod('hm_banner02_image', ''));
 $hm_banner_text02 = esc_attr(get_theme_mod('hm_banner02_text', false));
 $hm_banner_link02 = esc_url(get_theme_mod('hm_banner02_link', ''));
@@ -31,21 +32,33 @@ if ($hm_banner_target02) {
     $banner02_target = '';
 }
 
-
 $hm_logo_img = esc_url(get_theme_mod('hm_logo_image', ''));
 $header_logo_img = esc_url(get_theme_mod('header_logo_image', ''));
 
-$hm_button_text = esc_attr(get_theme_mod('hm_button_text', false));
-$hm_button_link = esc_url(get_theme_mod('hm_button_link', false));
-$hm_button_target = get_theme_mod('hm_button_link_target_setting', false);
-if ($hm_button_target) {
-    $button_target = ' target="_blank"';
+// Button 01
+$hm_btn_display = get_theme_mod('hm_btn_display_setting', false);
+$hm_btn_text = esc_attr(get_theme_mod('hm_btn_text', false));
+$hm_btn_link = esc_url(get_theme_mod('hm_btn_link', false));
+$hm_btn_target = get_theme_mod('hm_btn_link_target_setting', false);
+if ($hm_btn_target) {
+    $btn_target = ' target="_blank"';
 } else {
-    $button_target = '';
+    $btn_target = '';
 }
 
-$hm_design_type = esc_attr(get_theme_mod('hm_design_setting', '100'));
+// Button 02
+$hm_btn_sub_display = get_theme_mod('hm_btn_sub_display_setting', false);
+$hm_btn_sub_text = esc_attr(get_theme_mod('hm_btn_sub_text', false));
+$hm_btn_sub_link = esc_url(get_theme_mod('hm_btn_sub_link', false));
+$hm_btn_sub_target = get_theme_mod('hm_btn_sub_link_target_setting', false);
+if ($hm_btn_sub_target) {
+    $btn_sub_target = ' target="_blank"';
+} else {
+    $btn_sub_target = '';
+}
 
+
+// 削除予定
 // Button design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
 $btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
@@ -115,17 +128,19 @@ if (!($hm_design_type == 100)) :
                             <?php endif; ?>
                         </div>
                         <div class="hm__content__bottom hm<?php echo $hm_design_type; ?>__content__bottom">
-                            <?php if ($hm_banner_img01 && $hm_banner_link01) : ?>
+                            <?php if ($hm_banner01_display || $hm_banner02_display) : ?>
                                 <div class="hm__banner hm<?php echo $hm_design_type; ?>__banner">
-                                    <div class="hm__banner__left">
-                                        <div class="hm__banner__item">
-                                            <a class="hm__banner__link" href="<?php echo $hm_banner_link01; ?>" <?php echo $banner01_target; ?>>
-                                                <div class="hm__banner__bg" style="background-image: url(<?php echo $hm_banner_img01; ?>);"></div>
-                                                <span class="hm__banner__text"><?php echo $hm_banner_text01; ?></span>
-                                            </a>
+                                    <?php if ($hm_banner01_display) : ?>
+                                        <div class="hm__banner__left">
+                                            <div class="hm__banner__item">
+                                                <a class="hm__banner__link" href="<?php echo $hm_banner_link01; ?>" <?php echo $banner01_target; ?>>
+                                                    <div class="hm__banner__bg" style="background-image: url(<?php echo $hm_banner_img01; ?>);"></div>
+                                                    <span class="hm__banner__text"><?php echo $hm_banner_text01; ?></span>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <?php if ($hm_banner_img02 && $hm_banner_link02) : ?>
+                                    <?php endif; ?>
+                                    <?php if ($hm_banner02_display) : ?>
                                         <div class="hm__banner__right">
                                             <div class="hm__banner__item">
                                                 <a class="hm__banner__link" href="<?php echo $hm_banner_link02; ?>" <?php echo $banner02_target; ?>>
@@ -160,14 +175,18 @@ if (!($hm_design_type == 100)) :
                                     </div>
                                 <?php endif ?>
 
-                                <?php if ($hm_button_text) : ?>
-                                    <div class="hm__button">
-                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href="<?php echo $hm_button_link; ?>" <?php echo $button_target; ?>>
-                                                <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $hm_button_text; ?></div>
-                                                <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
-                                            </a>
-                                        </div>
+                                <?php if ($hm_btn_display) : ?>
+                                    <div class="hm__button  hm__button--first">
+                                        <a class="hm__button__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
+                                            <?php echo $hm_btn_text; ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($hm_btn_sub_display) : ?>
+                                    <div class="hm__button  hm__button--second">
+                                        <a class="hm__button__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
+                                            <?php echo $hm_btn_sub_text; ?>
+                                        </a>
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -250,17 +269,19 @@ if (!($hm_design_type == 100)) :
                         <?php endif; ?>
                     </div>
                     <div class="hm__content__bottom hm<?php echo $hm_design_type; ?>__bottom">
-                        <?php if ($hm_banner_img01) : ?>
+                        <?php if ($hm_banner01_display || $hm_banner02_display) : ?>
                             <div class="hm__banner hm<?php echo $hm_design_type; ?>__banner">
-                                <div class="hm__banner__left">
-                                    <div class="hm__banner__item">
-                                        <a class="hm__banner__link" href="<?php echo $hm_banner_link01; ?>" <?php echo $banner01_target; ?>>
-                                            <div class="hm__banner__bg" style="background-image: url(<?php echo $hm_banner_img01; ?>);"></div>
-                                            <span class="hm__banner__text"><?php echo $hm_banner_text01; ?></span>
-                                        </a>
+                                <?php if ($hm_banner01_display) : ?>
+                                    <div class="hm__banner__left">
+                                        <div class="hm__banner__item">
+                                            <a class="hm__banner__link" href="<?php echo $hm_banner_link01; ?>" <?php echo $banner01_target; ?>>
+                                                <div class="hm__banner__bg" style="background-image: url(<?php echo $hm_banner_img01; ?>);"></div>
+                                                <span class="hm__banner__text"><?php echo $hm_banner_text01; ?></span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <?php if ($hm_banner_img02) : ?>
+                                <?php endif; ?>
+                                <?php if ($hm_banner02_display) : ?>
                                     <div class="hm__banner__right">
                                         <div class="hm__banner__item">
                                             <a class="hm__banner__link" href="<?php echo $hm_banner_link02; ?>" <?php echo $banner02_target; ?>>
@@ -305,14 +326,18 @@ if (!($hm_design_type == 100)) :
                                 </div>
                             <?php endif ?>
 
-                            <?php if ($hm_button_text) : ?>
-                                <div class="hm__button">
-                                    <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                        <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $hm_button_link; ?>' <?php echo $button_target; ?>>
-                                            <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $hm_button_text; ?></div>
-                                            <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
-                                        </a>
-                                    </div>
+                            <?php if ($hm_btn_display) : ?>
+                                <div class="hm__button  hm__button--first">
+                                    <a class="hm__button__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
+                                        <?php echo $hm_btn_text; ?>
+                                    </a>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($hm_btn_sub_display) : ?>
+                                <div class="hm__button  hm__button--second">
+                                    <a class="hm__button__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
+                                        <?php echo $hm_btn_sub_text; ?>
+                                    </a>
                                 </div>
                             <?php endif; ?>
                         </div>

@@ -11,8 +11,8 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
 $main_title = esc_html(get_theme_mod('cms_top_main_title_setting', ''));
 $sub_title = esc_html(get_theme_mod('cms_top_sub_title_setting', ''));
 $btn_text = esc_html(get_theme_mod('cms_top_btn_setting', ''));
-$btn_link_design = get_theme_mod('common_btn_link_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_link_icon_setting', '01');
+$btn_link_design = get_theme_mod('atq_btn_link_setting', '01');
+$btn_icon_design = get_theme_mod('atq_btn_link_icon_setting', '01');
 // Text Link design type
 $text_link_design = get_theme_mod('text_link_setting', '01');
 $text_icon_design = get_theme_mod('text_link_icon_setting', '01');

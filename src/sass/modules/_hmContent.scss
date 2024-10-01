@@ -143,6 +143,7 @@
 }
 
 .hm__button {
+    flex: 1;
     display: inline-block;
     opacity: 0;
     transform: translateY(20px);
@@ -201,7 +202,7 @@
 }
 
 .hm__content {
-    background-color: var(--hm_bg_color_setting);
+    background-color: var(--hm_bg_color);
     width: 750px;
     height: 100%;
     display: flex;
@@ -425,7 +426,7 @@
 
 .hm_externalLink {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
 
     @include m.mq(pc) {}

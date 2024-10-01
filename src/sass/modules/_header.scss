@@ -50,6 +50,11 @@
     }
   }
 
+  .header__wrapper__nav>.c-button {
+    @include m.mq(miniPc) {
+      display: none;
+    }
+  }
 }
 
 /*header01*/
@@ -59,14 +64,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .header02__wrapper__nav>.c-button {
-    margin-right: 20px;
-
-    @include m.mq(miniPc) {
-      display: none;
-    }
   }
 
   .hamburger {

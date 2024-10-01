@@ -65,7 +65,6 @@ document.querySelectorAll('.js-toggle').forEach(toggle => {
 document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
     toggle.addEventListener('click', function () {
         const nextElement = this.nextElementSibling;
-        const followButtons = document.querySelectorAll('.followBtn');
         if (nextElement && nextElement.classList.contains('js-hm-target')) {
             if (getComputedStyle(nextElement).display === 'none') {
                 // 表示する場合
@@ -78,9 +77,6 @@ document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
                     nextElement.classList.add('--active');
                     nextElement.removeEventListener('transitionend', handleTransitionEnd);
                 });
-                followButtons.forEach(button => {
-                    button.style.display = 'none';
-                });
             } else {
                 // 非表示にする場合
                 nextElement.style.opacity = '0';
@@ -89,9 +85,6 @@ document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
                     nextElement.style.display = 'none';
                     nextElement.classList.remove('--active');
                     nextElement.removeEventListener('transitionend', handleTransitionEnd);
-                });
-                followButtons.forEach(button => {
-                    button.style.display = 'block';
                 });
             }
         }
@@ -102,13 +95,8 @@ document.querySelectorAll('.hm__nav__wrapper > .hm__nav__list > li:not(.menu-ite
     link.addEventListener('click', () => {
         // .js-hm-toggleから.--activeクラスを取り除く
         const toggle = document.querySelector('.js-hm-toggle');
-        const followButtons = document.querySelectorAll('.follow__button');
         if (toggle) {
             toggle.classList.remove('--active');
-
-            followButtons.forEach(button => {
-                button.style.display = 'block';
-            });
         }
 
         // .js-hm-targetから.--activeクラスを取り除き、スタイルを設定
@@ -273,4 +261,17 @@ bgColors.forEach(bgColor => {
             toggleActions: "play none none none",
         }
     });
+});
+
+// スクロール時にクラスを追加する処理
+window.addEventListener('scroll', function () {
+    const buttonWrapper = document.querySelector('.sp__button__wrapper');
+
+    if (window.scrollY > 100) {
+        // 100pxスクロールしたらクラスを追加
+        buttonWrapper.classList.add('--active');
+    } else {
+        // 100px未満の場合、クラスを削除
+        buttonWrapper.classList.remove('--active');
+    }
 });

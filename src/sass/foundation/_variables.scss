@@ -89,7 +89,7 @@ $headerWidth: 94%;
 
 /* z-index
  ----------------------------------------------------------------------------------------------- */
-$z-index: header, mark, followBtn, hmContent, hm;
+$z-index: followBtn, spBtn, header, mark, hmContent, hm;
 
 @function getZIndex($name) {
   @return index($z-index, $name) * 100;

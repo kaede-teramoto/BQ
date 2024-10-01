@@ -39,7 +39,10 @@
         padding-top: 60px;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        margin-top: 0;
+        padding-top: 0;
+    }
 }
 
 .section__design06__block-title {
