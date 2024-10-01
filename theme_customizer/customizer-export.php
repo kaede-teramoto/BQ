@@ -36,11 +36,15 @@ function boutiq_customize_css()
 
     // Header
     $header_text_color = get_theme_mod('header_text_color_setting', '');
-    $header_bg_color = get_theme_mod('header_bg_color_setting', '#ffffff');
-    $btn_filter = get_theme_mod('common_btn_link_filter_setting', '');
+    $header_bg_color = get_theme_mod('header_bg_color_setting', '');
     $card_radius_pc = get_theme_mod('header_card_radius_pc', '');
     $card_radius_tab = get_theme_mod('header_card_radius_tab', '');
     $card_radius_sp = get_theme_mod('header_card_radius_sp', '');
+
+    $header_btn_bg_color = get_theme_mod('header_btn_bg_color_setting', '');
+    $header_btn_text_color = get_theme_mod('header_btn_text_color_setting', '');
+    $header_btn_sub_bg_color = get_theme_mod('header_btn_sub_bg_color_setting', '');
+    $header_btn_sub_text_color = get_theme_mod('header_btn_sub_text_color_setting', '');
 
     //Page設定
     $radius_pc = get_theme_mod('boutiq_page_radius_pc_setting', '12px');
@@ -48,13 +52,21 @@ function boutiq_customize_css()
     $radius_sp = get_theme_mod('boutiq_page_radius_sp_setting', '8px');
 
     // Hamburger Menu
-
-    $hm_bg_color_setting = get_theme_mod('hm_bg_color_setting', false);
-    if ($hm_bg_color_setting) {
-        $hm_bg_color_setting = $hm_bg_color_setting;
+    $hm_bg_color = get_theme_mod('hm_bg_color_setting',  '#ffffff');
+    if ($hm_bg_color) {
+        $hm_bg_color = $hm_bg_color;
     } else {
-        $hm_bg_color_setting = 'transparent';
+        $hm_bg_color = 'transparent';
     }
+    $hm_btn_bg_color = get_theme_mod('hm_btn_bg_color_setting', '#ffffff');
+    $hm_btn_text_color = get_theme_mod('hm_btn_text_color_setting', '#393939');
+    $hm_btn_border = get_theme_mod('hm_btn_border_setting', false);
+    $hm_btn_radius = get_theme_mod('hm_btn_radius_setting', '0');
+
+    $hm_btn_sub_bg_color = get_theme_mod('hm_btn_sub_bg_color_setting', '#ffffff');
+    $hm_btn_sub_text_color = get_theme_mod('hm_btn_sub_text_color_setting', '#393939');
+    $hm_btn_sub_border = get_theme_mod('hm_btn_sub_border_setting', false);
+    $hm_btn_sub_radius = get_theme_mod('hm_btn_sub_radius_setting', '0');
 
     // Footer
     $footer_text_color = get_theme_mod('footer_text_color_set', false);
@@ -94,70 +106,188 @@ function boutiq_customize_css()
     $fv_height_tab = esc_attr(get_theme_mod('top_fv_height_size_tab', ''));
     $fv_height_sp = esc_attr(get_theme_mod('top_fv_height_size_sp', ''));
 
+    // Button for SP
+    $sp_button_first_text_color = get_theme_mod('sp_button_first_text_color_setting', '#393939');
+    $sp_button_first_bg_color = get_theme_mod('sp_button_first_bg_color_setting', false);
+    $sp_button_first_border_color = get_theme_mod('sp_button_first_border_color_setting', false);
+    $sp_button_first_border_width = get_theme_mod('sp_button_first_border_width_setting', false);
+    $sp_button_first_height = get_theme_mod('sp_button_first_height_setting', false);
+    $sp_button_second_text_color = get_theme_mod('sp_button_second_text_color_setting', '#393939');
+    $sp_button_second_bg_color = get_theme_mod('sp_button_second_bg_color_setting', false);
+    $sp_button_second_border_color = get_theme_mod('sp_button_second_border_color_setting', false);
+    $sp_button_second_border_width = get_theme_mod('sp_button_second_border_width_setting', false);
+    $sp_button_second_height = get_theme_mod('sp_button_second_height_setting', false);
+
+    echo '<style type="text/css">' . "\n";
+    echo ':root {' . "\n";
+    echo '--text_color: ' . $text_color . ';' . "\n";
+    echo '--main_color: ' . $main_color . ';' . "\n";
+    echo '--accent_color: ' . $accent_color . ';' . "\n";
+    echo '--base_color: ' . $base_color . ';' . "\n";
+    echo '--sub_color: ' . $sub_color . ';' . "\n";
+    echo '--bg_color: ' . $bg_color . ';' . "\n";
+
+    echo '--swiper-pagination-color: ' . $main_color . ';' . "\n";
+    echo '--swiper-theme-color: ' . $main_color . ';' . "\n";
+    echo '--swiper-navigation-size: ' . $font_size_PC . 'px;' . "\n";
+
+    echo '--content_title_color: ' . $content_title_underline_color . ';' . "\n";
+
+    echo '--font_size_PC: ' . $font_size_PC . 'rem;' . "\n";
+    echo '--font_size_TAB: ' . $font_size_TAB . 'rem;' . "\n";
+    echo '--font_size_SP: ' . $font_size_SP . 'rem;' . "\n";
+    echo '--heading_fontSize_PC: ' . $heading_size_PC . 'rem;' . "\n";
+    echo '--heading_fontSize_TAB: ' . $heading_size_TAB . 'rem;' . "\n";
+    echo '--heading_fontSize_SP: ' . $heading_size_SP . 'rem;' . "\n";
+    if ($header_text_color) {
+        echo '--header_text_color:' . $header_text_color . ';';
+        echo "\n";
+    } else {
+        echo '--header_text_color:' . $text_color . ';';
+        echo "\n";
+    }
+    if ($header_bg_color) {
+        echo '--header_bg_color: ' . $header_bg_color . ';';
+        echo "\n";
+    }
+    if ($card_radius_pc) {
+        echo '--card_radius_pc: ' . $card_radius_pc . ';' . "\n";
+    }
+    if ($card_radius_tab) {
+        echo '--card_radius_tab: ' . $card_radius_tab . ';' . "\n";
+    }
+    if ($card_radius_sp) {
+        echo '--card_radius_sp: ' . $card_radius_sp . ';' . "\n";
+    }
+    if ($radius_pc) {
+        echo '--radius_pc: ' . $radius_pc . ';' . "\n";
+    }
+    if ($radius_tab) {
+        echo '--radius_tab: ' . $radius_tab . ';' . "\n";
+    }
+    if ($radius_sp) {
+        echo '--radius_sp: ' . $radius_sp . ';' . "\n";
+    }
+    if ($hm_bg_color) {
+        echo '--hm_bg_color: ' . $hm_bg_color . ';' . "\n";
+    }
+    if ($hm_btn_bg_color) {
+        echo '--hm_btn_bg_color: ' . $hm_btn_bg_color . ';' . "\n";
+    } else {
+        echo '--hm_btn_bg_color: ' . $sub_color . ';' . "\n";
+    }
+    if ($hm_btn_text_color) {
+        echo '--hm_btn_text_color: ' . $hm_btn_text_color . ';' . "\n";
+    } else {
+        echo '--hm_btn_text_color: ' . $text_color . ';' . "\n";
+    }
+    if ($hm_btn_border) {
+        echo '--hm_btn_border: ' . $hm_btn_text_color . ';' . "\n";
+    }
+    echo '--hm_btn_radius: ' . $hm_btn_radius . ';' . "\n";
+    if ($hm_btn_sub_bg_color) {
+        echo '--hm_btn_sub_bg_color: ' . $hm_btn_sub_bg_color . ';' . "\n";
+    } else {
+        echo '--hm_btn_sub_bg_color: ' . $sub_color . ';' . "\n";
+    }
+    if ($hm_btn_sub_text_color) {
+        echo '--hm_btn_sub_text_color: ' . $hm_btn_sub_text_color . ';' . "\n";
+    } else {
+        echo '--hm_btn_sub_text_color: ' . $text_color . ';' . "\n";
+    }
+    if ($hm_btn_sub_border) {
+        echo '--hm_btn_sub_border: ' . $hm_btn_sub_text_color . ';' . "\n";
+    }
+    echo '--hm_btn_sub_radius: ' . $hm_btn_sub_radius . ';' . "\n";
+    if ($footer_text_color) {
+        echo '--footer_text_color: ' . $footer_text_color . ';' . "\n";
+    }
+    if ($footer_bg_color) {
+        echo '--footer_bg_color: ' . $footer_bg_color . ';' . "\n";
+    }
+    if ($jp_font) {
+        echo '--jp_font: ' . $jp_font . ';' . "\n";
+    }
+    if ($en_font) {
+        echo '--en_font: ' . $en_font . ';' . "\n";
+    }
+    if ($heading_font) {
+        echo '--heading_font: ' . $heading_font . ';' . "\n";
+    }
+    if ($follow_button_top_and_bottom) {
+        echo '--follow_button_tb: ' . $follow_button_top_and_bottom . ';' . "\n";
+    }
+    if ($follow_button_left_and_right) {
+        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    }
+    if ($header_btn_bg_color) {
+        echo '--header_btn_bg_color: ' . $header_btn_bg_color . ';' . "\n";
+    } else {
+        echo '--header_btn_bg_color: ' . $main_color . ';' . "\n";
+    }
+    if ($header_btn_text_color) {
+        echo '--header_btn_text_color:' . $header_btn_text_color . ';';
+    } else {
+        echo '--header_btn_text_color:' . $header_text_color . ';';
+    }
+    if ($header_btn_sub_bg_color) {
+        echo '--header_btn_sub_bg_color: ' . $header_btn_sub_bg_color . ';' . "\n";
+    } else {
+        echo '--header_btn_sub_bg_color: ' . $main_color . ';' . "\n";
+    }
+    if ($header_btn_sub_text_color) {
+        echo '--header_btn_sub_text_color:' . $header_btn_sub_text_color . ';';
+    } else {
+        echo '--header_btn_sub_text_color:' . $header_text_color . ';';
+    }
+    if ($follow_button_left_and_right) {
+        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    }
+    if ($follow_button_left_and_right) {
+        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    }
+    if ($follow_button_left_and_right) {
+        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    }
+    if ($fv_height_pc) {
+        echo '.p-top { height: ' . $fv_height_pc . ';}' . "\n";
+    }
+    if ($fv_height_tab) {
+        echo '@media screen and (max-width: 849px) {.p-top { height: ' . $fv_height_tab . ';}}' . "\n";
+    }
+    if ($fv_height_sp) {
+        echo '@media screen and (max-width: 599px) {.p-top { height: ' . $fv_height_sp . ';}}' . "\n";
+    }
+    echo '--sp_button_first_text_color: ' . $sp_button_first_text_color . ';' . "\n";
+    if ($sp_button_first_bg_color) {
+        echo '--sp_button_first_bg_color: ' . $sp_button_first_bg_color . ';' . "\n";
+    } else {
+        echo '--sp_button_first_bg_color: transparent;' . "\n";
+    }
+    if ($sp_button_first_border_color) {
+        echo '--sp_button_first_border_color: ' . $sp_button_first_border_color . ';' . "\n";
+    } else {
+        echo '--sp_button_first_border_color: transparent;' . "\n";
+    }
+    echo '--sp_button_first_border_width: ' . $sp_button_first_border_width . ';' . "\n";
+    echo '--sp_button_first_height: ' . $sp_button_first_height . ';' . "\n";
+
+    echo '--sp_button_second_text_color: ' . $sp_button_second_text_color . ';' . "\n";
+    if ($sp_button_second_bg_color) {
+        echo '--sp_button_second_bg_color: ' . $sp_button_second_bg_color . ';' . "\n";
+    } else {
+        echo '--sp_button_second_bg_color: transparent;' . "\n";
+    }
+    if ($sp_button_second_border_color) {
+        echo '--sp_button_second_border_color: ' . $sp_button_second_border_color . ';' . "\n";
+    } else {
+        echo '--sp_button_second_border_color: transparent;' . "\n";
+    }
+    echo '--sp_button_second_border_width: ' . $sp_button_second_border_width . ';' . "\n";
+    echo '--sp_button_second_height: ' . $sp_button_second_height . ';' . "\n";
+
+    echo '}' . "\n" . '</style>' . "\n";
 ?>
-    <style type="text/css">
-        :root {
-            --text_color: <?php echo $text_color; ?>;
-            --main_color: <?php echo $main_color; ?>;
-            --accent_color: <?php echo $accent_color; ?>;
-            --base_color: <?php echo $base_color; ?>;
-            --sub_color: <?php echo $sub_color; ?>;
-            --bg_color: <?php echo $bg_color; ?>;
-
-            --content_title_color: <?php echo $content_title_underline_color; ?>;
-
-            --font_size_PC: <?php echo $font_size_PC; ?>rem;
-            --font_size_TAB: <?php echo $font_size_TAB; ?>rem;
-            --font_size_SP: <?php echo $font_size_SP; ?>rem;
-            --heading_fontSize_PC: <?php echo $heading_size_PC; ?>rem;
-            --heading_fontSize_TAB: <?php echo $heading_size_TAB; ?>rem;
-            --heading_fontSize_SP: <?php echo $heading_size_SP; ?>rem;
-
-            --btn_filter: <?php echo $btn_filter; ?>;
-            --header_text_color: <?php echo $header_text_color; ?>;
-            --header_bg_color: <?php echo $header_bg_color; ?>;
-            --card_radius_pc: <?php echo $card_radius_pc; ?>px;
-            --card_radius_tab: <?php echo $card_radius_tab; ?>px;
-            --card_radius_sp: <?php echo $card_radius_sp; ?>px;
-
-            --radius_pc: <?php echo $radius_pc; ?>;
-            --radius_tab: <?php echo $radius_tab; ?>;
-            --radius_sp: <?php echo $radius_sp; ?>;
-
-            --hm_bg_color_setting: <?php echo $hm_bg_color_setting; ?>;
-
-            --footer_text_color: <?php echo $footer_text_color; ?>;
-            --footer_bg_color: <?php echo $footer_bg_color; ?>;
-
-            --swiper-pagination-color: <?php echo $main_color; ?>;
-            --swiper-theme-color: <?php echo $main_color; ?>;
-            --swiper-navigation-size: <?php echo $font_size_PC; ?>px;
-
-            --jp_font: <?php echo $jp_font; ?>;
-            --en_font: <?php echo $en_font; ?>;
-            --heading_font: <?php echo $heading_font; ?>;
-
-            --follow_button_tb: <?php echo $follow_button_top_and_bottom; ?>;
-            --follow_button_lr: <?php echo $follow_button_left_and_right; ?>;
-        }
-
-        .p-top {
-            height: <?php echo $fv_height_pc ?>;
-        }
-
-        @media screen and (max-width: 849px) {
-            .p-top {
-                height: <?php echo $fv_height_tab ?>;
-            }
-        }
-
-        @media screen and (max-width: 599px) {
-            .p-top {
-                height: <?php echo $fv_height_sp ?>;
-            }
-        }
-    </style>
-
 <?php
 }
 add_action('wp_head', 'boutiq_customize_css');

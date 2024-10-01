@@ -72,8 +72,8 @@
     }
 
     .section__block__title__text {
-        @include v.titleH3;
         order: 1;
+        @include v.titleH3;
 
         @include m.mq(pc) {}
 

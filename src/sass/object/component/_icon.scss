@@ -144,8 +144,8 @@
         display: inline-block;
         content: "";
         transform: rotate(45deg);
-        border-top: solid 2px var(--header_text_color);
-        border-right: solid 2px var(--header_text_color);
+        border-top: solid 2px var(--text_color);
+        border-right: solid 2px var(--text_color);
     }
 }
 
@@ -156,6 +156,14 @@
     .c-button__icon03 {
         &::before {
             border-color: #fff;
+        }
+    }
+
+    &:hover {
+        .c-button__icon03 {
+            &::before {
+                border-color: var(--text_color);
+            }
         }
     }
 }
@@ -288,6 +296,18 @@
             border-color: #fff;
         }
     }
+
+    &:hover {
+        .c-button__icon05 {
+            &::before {
+                background-color: var(--text_color);
+            }
+
+            &::after {
+                border-color: var(--text_color);
+            }
+        }
+    }
 }
 
 .c-button06,
@@ -370,6 +390,18 @@
 
         &::after {
             border-color: #fff;
+        }
+    }
+
+    &:hover {
+        .c-button__icon06 {
+            &::before {
+                background-color: var(--text_color);
+            }
+
+            &::after {
+                border-color: var(--text_color);
+            }
         }
     }
 }

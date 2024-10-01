@@ -11,7 +11,7 @@ function top_customize_register($wp_customize)
 
     $priority = 300;
     $wp_customize->add_panel(
-        'panel_id',
+        'top_page_panel',
         array(
             'priority'       => 34,
             'theme_supports' => '',
@@ -21,11 +21,120 @@ function top_customize_register($wp_customize)
     );
 
     $wp_customize->add_section(
+        'top_content_title_section',
+        array(
+            'title'          => __('Top page title design', 'boutiq'),
+            'panel'  => 'top_page_panel',
+        )
+    );
+
+    // Top page title design ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'boutiq_top_content_title_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => '01',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+    $wp_customize->add_control(
+        'boutiq_top_content_title_setting_control',
+        array(
+            'label' => 'トップページのタイトルデザイン', //__('Content Title Design', 'boutiq'),
+            'section' => 'top_content_title_section',
+            'settings' => 'boutiq_top_content_title_setting',
+            'type' => 'select',
+            'choices' => array(
+                '01' => __('Content Title1', 'boutiq'),
+                '02' => __('Content Title2', 'boutiq'),
+                '03' => __('Content Title3', 'boutiq'),
+                '04' => __('Content Title4', 'boutiq'),
+                '05' => __('Content Title5', 'boutiq'),
+                '06' => __('Content Title6', 'boutiq'),
+                '07' => __('Content Title7', 'boutiq'),
+                '08' => __('Content Title8', 'boutiq'),
+                '00' => 'オリジナルを作成する', //__('Content Title0', 'boutiq'),
+            ),
+        )
+    );
+
+    // Underline for top page title ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'top_content_title_underline',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'type' => 'theme_mod',
+        )
+    );
+    $wp_customize->add_control(
+        'top_content_title_underline_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'top_content_title_section',
+            'settings' => 'top_content_title_underline',
+            'label' => __('Add underline to content title', 'boutiq'),
+        )
+    );
+
+    // underline color ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'top_content_title_underline_color',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '#999999',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'top_content_title_underline_color_control',
+            array(
+                'label' => esc_attr(__('Underline Color For Top page', 'boutiq')),
+                'section'  => 'top_content_title_section',
+                'settings' => 'top_content_title_underline_color',
+            )
+        )
+    );
+
+    // underline width ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'top_content_title_underline_width',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '2px',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'top_content_title_underline_width_control',
+        array(
+            'label' => esc_attr(__('Set Underline thickness (px)', 'boutiq')),
+            'section' => 'top_content_title_section',
+            'settings' => 'top_content_title_underline_width',
+            'type'     => 'text',
+        )
+    );
+
+
+
+
+
+
+
+
+
+
+
+    $wp_customize->add_section(
         'top_fv_image_section',
         array(
             'title'          => __('Slide Image Setting', 'boutiq'),
-            'priority'       => 30,
-            'panel'  => 'panel_id',
+            'panel'  => 'top_page_panel',
         )
     );
 
@@ -259,7 +368,7 @@ function top_customize_register($wp_customize)
             'top_fv_image_setting_' . $i,
             array(
                 'title'          => __('Slide Image', 'boutiq') . $i,
-                'panel'  => 'panel_id',
+                'panel'  => 'top_page_panel',
             )
         );
         $wp_customize->add_setting(

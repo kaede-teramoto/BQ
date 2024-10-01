@@ -3,7 +3,7 @@
 
 /* Header Nav
  ----------------------------------------------------------------------------------------------- */
-.header__wrapper__nav-wrapper__list {
+.header__wrapper__nav--wrapper__list {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@
     margin-left: auto;
 }
 
-.header01__wrapper__nav-wrapper__list li {
+.header01__wrapper__nav--wrapper__list li {
     display: inline-block;
     font-weight: 600;
     font-size: 1.8rem;
@@ -84,7 +84,7 @@
     }
 }
 
-.header02__wrapper__nav-wrapper__list li {
+.header02__wrapper__nav--wrapper__list li {
     display: inline-block;
     margin-right: 30px;
 
@@ -120,17 +120,17 @@
     }
 }
 
-.header03__wrapper__nav-wrapper {
+.header03__wrapper__nav--wrapper {
     @include m.mq(miniPc) {
         display: none;
     }
 }
 
-.header03__wrapper__nav-wrapper__list {
+.header03__wrapper__nav--wrapper__list {
     display: flex;
 }
 
-.header03__wrapper__nav-wrapper__list li {
+.header03__wrapper__nav--wrapper__list li {
     padding: 0 20px;
     width: auto;
     min-width: 150px;
@@ -169,11 +169,11 @@
     }
 }
 
-.header04__wrapper__nav-wrapper {
+.header04__wrapper__nav--wrapper {
     margin: 0 auto;
 }
 
-.header04__wrapper__nav-wrapper__list li {
+.header04__wrapper__nav--wrapper__list li {
     display: inline-block;
     margin-right: 30px;
 
@@ -211,7 +211,7 @@
     }
 }
 
-.header05__wrapper__nav-wrapper {
+.header05__wrapper__nav--wrapper {
     margin: 0 auto;
     height: 50px;
     background-color: var(--header_bg_color);
@@ -224,7 +224,7 @@
 
 }
 
-.header05__wrapper__nav-wrapper__list li {
+.header05__wrapper__nav--wrapper__list li {
     display: inline-block;
     margin-right: 30px;
     vertical-align: middle;
@@ -262,11 +262,11 @@
     }
 }
 
-.header06__wrapper__nav-wrapper {
+.header06__wrapper__nav--wrapper {
     margin: 0 auto;
 }
 
-.header06__wrapper__nav-wrapper__list li {
+.header06__wrapper__nav--wrapper__list li {
     display: inline-block;
     padding: 23px 20px;
     //width: 150px;
@@ -328,7 +328,7 @@
     }
 }
 
-.header08__wrapper__nav-wrapper__list {
+.header08__wrapper__nav--wrapper__list {
     justify-content: flex-start;
 
     li {
@@ -377,7 +377,7 @@
     }
 }
 
-.header09__wrapper__nav-wrapper__list {
+.header09__wrapper__nav--wrapper__list {
     justify-content: flex-start;
 
     li {
@@ -422,7 +422,7 @@
     }
 }
 
-.header10__wrapper__nav-wrapper__list li {
+.header10__wrapper__nav--wrapper__list li {
     display: none;
 }
 
@@ -438,11 +438,11 @@
     }
 }
 
-.header11__wrapper__nav-wrapper {
+.header11__wrapper__nav--wrapper {
     margin: 0 auto;
 }
 
-.header11__wrapper__nav-wrapper__list li {
+.header11__wrapper__nav--wrapper__list li {
     display: inline-block;
     margin-right: 30px;
 
@@ -479,11 +479,11 @@
     }
 }
 
-.header12__wrapper__nav-wrapper {
+.header12__wrapper__nav--wrapper {
     margin: 0 auto;
 }
 
-.header12__wrapper__nav-wrapper__list li {
+.header12__wrapper__nav--wrapper__list li {
     display: inline-block;
     font-weight: 600;
     font-size: 1.8rem;

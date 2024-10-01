@@ -43,15 +43,37 @@ if ($header_filter) {
     $header_filter = null;
 }
 
+// First button
+$btn_display_setting = get_theme_mod('header_btn_display_setting', false);
 $btn_url = esc_attr(get_theme_mod('header_btn_url_setting', ''));
 $btn_text = get_theme_mod('header_btn_text_setting', '');
+$btn_link_design = get_theme_mod('header_btn_setting', '01');
+$btn_bg_color = get_theme_mod('header_btn_bg_color_setting', false);
+$btn_icon_design = get_theme_mod('header_btn_icon_setting', '01');
+$btn_gradation = get_theme_mod('header_btn_gradation_setting', false);
 
-// Button design type
-$btn_link_design = get_theme_mod('common_btn_design_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
-
+if ($btn_gradation) {
+    $btn_bg_color = 'style="' . $btn_gradation . '"';
+} else {
+    $btn_bg_color = NULL;
+}
 $btn_target_setting = get_theme_mod('header_btn_target_setting', false);
 
+// Second button
+$btn_sub_display_setting = get_theme_mod('header_btn_sub_display_setting', false);
+$btn_sub_url = esc_attr(get_theme_mod('header_btn_sub_url_setting', ''));
+$btn_sub_text = get_theme_mod('header_btn_sub_text_setting', '');
+$btn_sub_link_design = get_theme_mod('header_btn_sub_setting', '01');
+$btn_sub_bg_color = get_theme_mod('header_btn_sub_bg_color_setting', false);
+$btn_sub_icon_design = get_theme_mod('header_btn_sub_icon_setting', '01');
+$btn_sub_gradation = get_theme_mod('header_btn_sub_gradation_setting', false);
+
+if ($btn_sub_gradation) {
+    $btn_sub_bg_color = 'style="' . $btn_sub_gradation . '"';
+} else {
+    $btn_sub_bg_color = NULL;
+}
+$btn_sub_target_setting = get_theme_mod('header_btn_sub_target_setting', false);
 
 //page 
 $site_default_background_color = get_theme_mod('site_default_background_color', '#FFFFFF');
@@ -101,16 +123,16 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
 
                             <?php if (has_nav_menu('headerNavSub')) : ?>
                                 <div class="header<?php echo $header_design; ?>__wrapper__nav--left">
-                                    <nav class="header<?php echo $header_design; ?>__wrapper__nav-wrapper" role="navigation">
+                                    <nav class="header<?php echo $header_design; ?>__wrapper__nav--wrapper" role="navigation">
                                         <?php wp_nav_menu(array(
                                             'theme_location' => 'headerNavSub',
                                             'container' => '',
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="header__wrapper__nav-wrapper__list header' . $header_design . '__wrapper__nav-wrapper__list">%3$s</ul>',
-                                            'li_class' => 'header' . $header_design . '__wrapper__nav-wrapper__item',
-                                            'a_class' => 'header' . $header_design . '__wrapper__nav-wrapper__link',
+                                            'items_wrap' => '<ul class="header__wrapper__nav--wrapper__list header' . $header_design . '__wrapper__nav--wrapper__list">%3$s</ul>',
+                                            'li_class' => 'header' . $header_design . '__wrapper__nav--wrapper__item',
+                                            'a_class' => 'header' . $header_design . '__wrapper__nav--wrapper__link',
                                         )); ?>
                                     </nav>
                                 </div>
@@ -125,7 +147,7 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
                                 if (!empty($header_logo_img)) : ?>
 
                                     <a href='<?php echo $site_url; ?>' title='<?php echo $site_name; ?>' rel='home'>
-                                        <img class="header<?php echo $header_design; ?>__wrapper__logo-image" src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" />
+                                        <img class="header__wrapper__logo-image header<?php echo $header_design; ?>__wrapper__logo-image" src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" />
                                     </a>
 
                                 <?php else :
@@ -142,34 +164,53 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
                         ----------------------------------------------------------------------*/
                                 ?>
                             </div>
-                            <div class="header<?php echo $header_design; ?>__wrapper__nav">
+                            <div class="header__wrapper__nav header<?php echo $header_design; ?>__wrapper__nav">
                                 <?php if (has_nav_menu('headerNav')) : ?>
-                                    <nav class="header<?php echo $header_design; ?>__wrapper__nav-wrapper" role="navigation">
+                                    <nav class="header__wrapper__nav--wrapper header<?php echo $header_design; ?>__wrapper__nav--wrapper" role="navigation">
                                         <?php wp_nav_menu(array(
                                             'theme_location' => 'headerNav',
                                             'container' => '',
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="header__wrapper__nav-wrapper__list header' . $header_design . '__wrapper__nav-wrapper__list">%3$s</ul>',
-                                            'li_class' => 'header' . $header_design . '__wrapper__nav-wrapper__item',
-                                            'a_class' => 'header' . $header_design . '__wrapper__nav-wrapper__link',
+                                            'items_wrap' => '<ul class="header__wrapper__nav--wrapper__list header' . $header_design . '__wrapper__nav--wrapper__list">%3$s</ul>',
+                                            'li_class' => 'header' . $header_design . '__wrapper__nav--wrapper__item',
+                                            'a_class' => 'header' . $header_design . '__wrapper__nav--wrapper__link',
                                         )); ?>
                                     </nav>
                                 <?php endif; ?>
-                                <?php if ($btn_url) : ?>
+
+                                <?php if ($btn_display_setting) : ?>
                                     <?php if ($btn_target_setting) : ?>
-                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank">
+                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
                                                 <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
                                                 <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
                                             </a>
                                         </div>
                                     <?php else : ?>
-                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>'>
+                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
                                                 <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
                                                 <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+
+                                <?php if ($btn_sub_display_setting) : ?>
+                                    <?php if ($btn_sub_target_setting) : ?>
+                                        <div class="c-button c-button<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                            <a class="c-button__link c-button<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
+                                                <div class="c-button__text c-button__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                <div class="c-button__icon c-button__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                            </a>
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="c-button c-button<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                            <a class="c-button__link c-button<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
+                                                <div class="c-button__text c-button__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                <div class="c-button__icon c-button__icon<?php echo $btn_sub_icon_design; ?>"></div>
                                             </a>
                                         </div>
                                     <?php endif; ?>

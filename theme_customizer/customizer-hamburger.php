@@ -10,12 +10,55 @@ add_action('customize_register', 'hm_design_setting');
 function hm_design_setting($wp_customize)
 {
 
-    $wp_customize->add_section(
-        'hm_section',
+    $wp_customize->add_panel(
+        'hm_panel',
         array(
-            'title' => __('Hamburger menu option', 'boutiq'),
-            'priority' => 31,
-            'transport'   => 'refresh',
+            'priority'       => 30,
+            'capability'     => 'edit_theme_options',
+            'theme_supports' => '',
+            'title'          => __('Hamburger option', 'boutiq'),
+            'description'    =>  '',
+        )
+    );
+
+
+    $wp_customize->add_section(
+        'hm_design_section',
+        array(
+            'title' => __('Design setting for Hamburger', 'boutiq'),
+            'panel'  => 'hm_panel',
+        )
+    );
+
+    $wp_customize->add_section(
+        'hm_banner_first_section',
+        array(
+            'title' => __('First banner setting for Hamburger', 'boutiq'),
+            'panel'  => 'hm_panel',
+        )
+    );
+
+    $wp_customize->add_section(
+        'hm_banner_second_section',
+        array(
+            'title' => __('Second banner setting for Hamburger', 'boutiq'),
+            'panel'  => 'hm_panel',
+        )
+    );
+
+    $wp_customize->add_section(
+        'hm_btn_section',
+        array(
+            'title' => __('First button setting for Hamburger', 'boutiq'),
+            'panel'  => 'hm_panel',
+        )
+    );
+
+    $wp_customize->add_section(
+        'hm_btn_sub_section',
+        array(
+            'title' => __('Second button setting for Hamburger', 'boutiq'),
+            'panel'  => 'hm_panel',
         )
     );
 
@@ -34,7 +77,7 @@ function hm_design_setting($wp_customize)
         'hm_design_control',
         array(
             'label' => __('Hamburger menu Design Type', 'boutiq'),
-            'section' => 'hm_section',
+            'section' => 'hm_design_section',
             'settings' => 'hm_design_setting',
             'type' => 'select',
             'choices' => array(
@@ -67,7 +110,7 @@ function hm_design_setting($wp_customize)
         'hm_icon_design_setting_control',
         array(
             'label' => __('Hamburger Icon Design Type', 'boutiq'),
-            'section' => 'hm_section',
+            'section' => 'hm_design_section',
             'settings' => 'hm_icon_design_setting',
             'type' => 'select',
             'choices' => array(
@@ -102,7 +145,7 @@ function hm_design_setting($wp_customize)
             'hm_bg_color_setting_control',
             array(
                 'label' => __('Background Color for Hamburger Menu', 'boutiq'),
-                'section' => 'hm_section',
+                'section' => 'hm_design_section',
                 'settings' => 'hm_bg_color_setting',
             )
         )
@@ -125,9 +168,29 @@ function hm_design_setting($wp_customize)
             'hm_left_image_control',
             array(
                 'label' => __('Hamburger menu Left Image', 'boutiq'),
-                'section' => 'hm_section',
+                'section' => 'hm_design_section',
                 'settings' => 'hm_left_image',
             )
+        )
+    );
+
+    // BANNER02 ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_banner01_display_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_banner01_display_setting_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_banner_first_section',
+            'settings' => 'hm_banner01_display_setting',
+            'label' => __('Show banner', 'boutiq'),
         )
     );
 
@@ -150,7 +213,7 @@ function hm_design_setting($wp_customize)
             'hm_banner01_image_control',
             array(
                 'label' => __('Background image of banner "1"', 'boutiq'),
-                'section' => 'hm_section',
+                'section' => 'hm_banner_first_section',
                 'settings' => 'hm_banner01_image',
 
             )
@@ -173,7 +236,7 @@ function hm_design_setting($wp_customize)
         array(
             'label' => __('If you want the first banner, please enter the text', 'boutiq'),
             'description' => __('Set when design type 07 and type 08', 'boutiq'),
-            'section' => 'hm_section',
+            'section' => 'hm_banner_first_section',
             'settings' => 'hm_banner01_text',
             'type'     => 'text',
         )
@@ -194,7 +257,7 @@ function hm_design_setting($wp_customize)
         'hm_banner01_link_control',
         array(
             'label' => __('Enter the banner link destination', 'boutiq'),
-            'section' => 'hm_section',
+            'section' => 'hm_banner_first_section',
             'settings' => 'hm_banner01_link',
             'type'     => 'text',
         )
@@ -214,12 +277,31 @@ function hm_design_setting($wp_customize)
         'hm_banner01_link_target_control',
         array(
             'type' => 'checkbox',
-            'section' => 'hm_section',
+            'section' => 'hm_banner_first_section',
             'settings' => 'hm_banner01_link_target_setting',
             'label' => __('Display button in separate tab', 'boutiq'),
         )
     );
 
+    // BANNER02 ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_banner02_display_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_banner02_display_setting_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_banner_second_section',
+            'settings' => 'hm_banner02_display_setting',
+            'label' => __('Show banner', 'boutiq'),
+        )
+    );
 
     // BANNER02 setting ======================================================================================================================================================
     $wp_customize->add_setting(
@@ -238,7 +320,7 @@ function hm_design_setting($wp_customize)
             'hm_banner02_image_control',
             array(
                 'label' => __('Background image of banner "2"', 'boutiq'),
-                'section' => 'hm_section',
+                'section' => 'hm_banner_second_section',
                 'settings' => 'hm_banner02_image',
 
             )
@@ -262,7 +344,7 @@ function hm_design_setting($wp_customize)
         array(
             'label' => __('If you want a second banner, please enter the text', 'boutiq'),
             'description' => __('Set when design type 07 and type 08', 'boutiq'),
-            'section' => 'hm_section',
+            'section' => 'hm_banner_second_section',
             'settings' => 'hm_banner02_text',
             'type'     => 'text',
         )
@@ -284,7 +366,7 @@ function hm_design_setting($wp_customize)
         'hm_banner02_link_control',
         array(
             'label' => __('Enter the banner link destination', 'boutiq'),
-            'section' => 'hm_section',
+            'section' => 'hm_banner_second_section',
             'settings' => 'hm_banner02_link',
             'type'     => 'text',
         )
@@ -304,7 +386,7 @@ function hm_design_setting($wp_customize)
         'hm_banner02_link_target_control',
         array(
             'type' => 'checkbox',
-            'section' => 'hm_section',
+            'section' => 'hm_banner_second_section',
             'settings' => 'hm_banner02_link_target_setting',
             'label' => 'ボタンを別タブで表示する', //__('Add an underline', 'boutiq'),
         )
@@ -328,58 +410,18 @@ function hm_design_setting($wp_customize)
             array(
                 'label' => __('Hamburger menu Logo Image', 'boutiq'),
                 'description' => __('If not entered, the image set in the header will be used', 'boutiq'),
-                'section' => 'hm_section',
+                'section' => 'hm_design_section',
                 'settings' => 'hm_logo_image',
 
             )
         )
     );
 
-    // Button text setting for hm ======================================================================================================================================================
+    // ********************************************************************************************************************************************************************************************
+    // ********************************************************************************************************************************************************************************************
+    // Button display ======================================================================================================================================================
     $wp_customize->add_setting(
-        'hm_button_text',
-        array(
-            'type' => 'theme_mod',
-            'default'     => '',
-            'transport'   => 'refresh',
-            'sanitize_callback' => 'sanitize_text_field',
-        )
-    );
-
-    $wp_customize->add_control(
-        'hm_button_text_control',
-        array(
-            'label' => __('Enter text if a button is needed', 'boutiq'),
-            'section' => 'hm_section',
-            'settings' => 'hm_button_text',
-            'type'     => 'text',
-        )
-    );
-
-    // Button link setting for hm ======================================================================================================================================================
-    $wp_customize->add_setting(
-        'hm_button_link',
-        array(
-            'type' => 'theme_mod',
-            'default'     => '',
-            'transport'   => 'refresh',
-            'sanitize_callback' => 'sanitize_text_field',
-        )
-    );
-
-    $wp_customize->add_control(
-        'hm_button_link_control',
-        array(
-            'label' => __('Enter the button link destination', 'boutiq'),
-            'section' => 'hm_section',
-            'settings' => 'hm_button_link',
-            'type'     => 'text',
-        )
-    );
-
-    // Button target for hm ======================================================================================================================================================
-    $wp_customize->add_setting(
-        'hm_button_link_target_setting',
+        'hm_btn_display_setting',
         array(
             'type'           => 'theme_mod',
             'default' => false,
@@ -388,12 +430,328 @@ function hm_design_setting($wp_customize)
     );
 
     $wp_customize->add_control(
-        'hm_button_link_target_target_control',
+        'hm_btn_display_setting_control',
         array(
             'type' => 'checkbox',
-            'section' => 'hm_section',
-            'settings' => 'hm_button_link_target_setting',
+            'section' => 'hm_btn_section',
+            'settings' => 'hm_btn_display_setting',
+            'label' => __('Show button', 'boutiq'),
+        )
+    );
+
+    // Button text setting for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_text',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_text_control',
+        array(
+            'label' => __('Button text', 'boutiq'),
+            'section' => 'hm_btn_section',
+            'settings' => 'hm_btn_text',
+            'type'     => 'text',
+        )
+    );
+
+    // Button link setting for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_link',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_link_control',
+        array(
+            'label' => __('Enter the button link destination', 'boutiq'),
+            'section' => 'hm_btn_section',
+            'settings' => 'hm_btn_link',
+            'type'     => 'text',
+        )
+    );
+
+    // Button target for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_link_target_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_link_target_target_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_btn_section',
+            'settings' => 'hm_btn_link_target_setting',
             'label' => __('Display button in separate tab', 'boutiq'),
+        )
+    );
+
+    // Setting link color ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_bg_color_setting',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'hm_btn_bg_color_setting_control',
+            array(
+                'label' => __('Button background color', 'boutiq'),
+                'section' => 'hm_btn_section',
+                'settings' => 'hm_btn_bg_color_setting',
+            )
+        )
+    );
+
+    // Setting link color ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_text_color_setting',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'hm_btn_text_color_setting_control',
+            array(
+                'label' => __('Button Text Color', 'boutiq'),
+                'section' => 'hm_btn_section',
+                'settings' => 'hm_btn_text_color_setting',
+            )
+        )
+    );
+
+    // Button display ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_border_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_border_setting_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_btn_section',
+            'settings' => 'hm_btn_border_setting',
+            'label' => __('Add a line to the button', 'boutiq'),
+        )
+    );
+
+    // Button link setting for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_radius_setting',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_radius_setting_control',
+        array(
+            'label' => __('Set border corner radius', 'boutiq'),
+            'section' => 'hm_btn_section',
+            'settings' => 'hm_btn_radius_setting',
+            'type'     => 'text',
+        )
+    );
+
+    // ********************************************************************************************************************************************************************************************
+    // ********************************************************************************************************************************************************************************************
+    // Button display ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_display_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_sub_display_setting_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_btn_sub_section',
+            'settings' => 'hm_btn_sub_display_setting',
+            'label' => __('Show button', 'boutiq'),
+        )
+    );
+
+    // Button text setting for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_text',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_sub_text_control',
+        array(
+            'label' => __('Button text', 'boutiq'),
+            'section' => 'hm_btn_sub_section',
+            'settings' => 'hm_btn_sub_text',
+            'type'     => 'text',
+        )
+    );
+
+    // Button link setting for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_link',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_sub_link_control',
+        array(
+            'label' => __('Enter the button link destination', 'boutiq'),
+            'section' => 'hm_btn_sub_section',
+            'settings' => 'hm_btn_sub_link',
+            'type'     => 'text',
+        )
+    );
+
+    // Button target for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_link_target_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_sub_link_target_target_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_btn_sub_section',
+            'settings' => 'hm_btn_sub_link_target_setting',
+            'label' => __('Display button in separate tab', 'boutiq'),
+        )
+    );
+
+    // Setting link color ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_bg_color_setting',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'hm_btn_sub_bg_color_setting_control',
+            array(
+                'label' => __('Button background color', 'boutiq'),
+                'section' => 'hm_btn_sub_section',
+                'settings' => 'hm_btn_sub_bg_color_setting',
+            )
+        )
+    );
+
+    // Setting link color ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_text_color_setting',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_hex_color',
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'hm_btn_sub_text_color_setting_control',
+            array(
+                'label' => __('Button Text Color', 'boutiq'),
+                'section' => 'hm_btn_sub_section',
+                'settings' => 'hm_btn_sub_text_color_setting',
+            )
+        )
+    );
+
+    // Button display ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_border_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_sub_border_setting_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'hm_btn_sub_section',
+            'settings' => 'hm_btn_sub_border_setting',
+            'label' => __('Add a line to the button', 'boutiq'),
+        )
+    );
+
+    // Button link setting for hm ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'hm_btn_sub_radius_setting',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'hm_btn_sub_radius_setting_control',
+        array(
+            'label' => __('Set border corner radius', 'boutiq'),
+            'section' => 'hm_btn_sub_section',
+            'settings' => 'hm_btn_sub_radius_setting',
+            'type'     => 'text',
         )
     );
 }

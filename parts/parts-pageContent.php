@@ -43,8 +43,8 @@ if (is_front_page()) {
 
 
 // Button design type
-$btn_link_design = get_theme_mod('common_btn_link_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_link_icon_setting', '01');
+$btn_link_design = get_theme_mod('common_btn_design_setting', '01');
+$btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 
 // Text Link design type
 $text_link_design = get_theme_mod('text_link_setting', '01');
