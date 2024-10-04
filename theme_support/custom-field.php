@@ -31,7 +31,7 @@ if (function_exists('acf_add_local_field_group')):
                 'min' => 0,
                 'max' => 0,
                 'layout' => 'block',
-                'button_label' => '',
+                'btn_label' => '',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_664c367526be2',
@@ -286,7 +286,7 @@ if (function_exists('acf_add_local_field_group')):
                         'min' => 0,
                         'max' => 0,
                         'layout' => 'row',
-                        'button_label' => '',
+                        'btn_label' => '',
                         'sub_fields' => array(
                             array(
                                 'key' => 'field_664c374326be5',

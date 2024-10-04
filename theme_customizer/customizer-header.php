@@ -29,7 +29,7 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_section(
         'header_btn_section',
         array(
-            'title' => __('Button setting for header', 'boutiq'),
+            'title' => __('btn setting for header', 'boutiq'),
             'panel'  => 'header_panel',
         )
     );
@@ -37,7 +37,7 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_section(
         'header_btn_sub_section',
         array(
-            'title' => __('Another button setting for header', 'boutiq'),
+            'title' => __('Another btn setting for header', 'boutiq'),
             'panel'  => 'header_panel',
         )
     );
@@ -319,7 +319,7 @@ function custom_customize_register($wp_customize)
     // ********************************************************************************************************************************************************************************************
 
 
-    // Button display ======================================================================================================================================================
+    // btn display ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_display_setting',
         array(
@@ -339,7 +339,7 @@ function custom_customize_register($wp_customize)
         )
     );
 
-    // Button text for header ======================================================================================================================================================
+    // btn text for header ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_text_setting',
         array(
@@ -360,7 +360,7 @@ function custom_customize_register($wp_customize)
         )
     );
 
-    // Button url for header ======================================================================================================================================================
+    // btn url for header ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_url_setting',
         array(
@@ -382,7 +382,7 @@ function custom_customize_register($wp_customize)
     );
 
 
-    // Button target ======================================================================================================================================================
+    // btn target ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_target_setting',
         array(
@@ -417,21 +417,21 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         'header_btn_setting_control',
         array(
-            'label' => __('Button Link Design Type', 'boutiq'),
+            'label' => __('btn Link Design Type', 'boutiq'),
             'section' => 'header_btn_section',
             'settings' => 'header_btn_setting',
             'type' => 'select',
             'choices' => array(
-                '01' => __('Button Link Type1', 'boutiq'),
-                '02' => __('Button Link Type2', 'boutiq'),
-                '03' => __('Button Link Type3', 'boutiq'),
-                '04' => __('Button Link Type4', 'boutiq'),
-                '05' => __('Button Link Type5', 'boutiq'),
-                '06' => __('Button Link Type6', 'boutiq'),
-                '07' => __('Button Link Type7', 'boutiq'),
-                '08' => __('Button Link Type8', 'boutiq'),
-                '09' => __('Button Link Type9', 'boutiq'),
-                '10' => __('Button Link Type10', 'boutiq'),
+                '01' => __('btn Link Type1', 'boutiq'),
+                '02' => __('btn Link Type2', 'boutiq'),
+                '03' => __('btn Link Type3', 'boutiq'),
+                '04' => __('btn Link Type4', 'boutiq'),
+                '05' => __('btn Link Type5', 'boutiq'),
+                '06' => __('btn Link Type6', 'boutiq'),
+                '07' => __('btn Link Type7', 'boutiq'),
+                '08' => __('btn Link Type8', 'boutiq'),
+                '09' => __('btn Link Type9', 'boutiq'),
+                '10' => __('btn Link Type10', 'boutiq'),
             ),
         )
     );
@@ -450,7 +450,7 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         'header_btn_icon_control',
         array(
-            'label' => __('Button Link Icon Type', 'boutiq'),
+            'label' => __('btn Link Icon Type', 'boutiq'),
             'section' => 'header_btn_section',
             'settings' => 'header_btn_icon_setting',
             'type' => 'select',
@@ -480,7 +480,7 @@ function custom_customize_register($wp_customize)
             $wp_customize,
             'header_btn_bg_color_control',
             array(
-                'label' => __('Button color for header', 'boutiq'),
+                'label' => __('btn color for header', 'boutiq'),
                 'section' => 'header_btn_section',
                 'settings' => 'header_btn_bg_color_setting',
                 'description' => __('If not selected, the main color will be set.', 'boutiq'),
@@ -503,7 +503,7 @@ function custom_customize_register($wp_customize)
             $wp_customize,
             'header_btn_text_color__control',
             array(
-                'label' => __('Button text color for header', 'boutiq'),
+                'label' => __('btn text color for header', 'boutiq'),
                 'section' => 'header_btn_section',
                 'settings' => 'header_btn_text_color_setting',
                 'description' => __('If not selected, the text color will be set.', 'boutiq'),
@@ -525,7 +525,7 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         'header_btn_gradation_control',
         array(
-            'label' => __('If you would like to set a gradation for the button color, enter it here.', 'boutiq'),
+            'label' => __('If you would like to set a gradation for the btn color, enter it here.', 'boutiq'),
             'section' => 'header_btn_section',
             'settings' => 'header_btn_gradation_setting',
             'type'     => 'text',
@@ -537,7 +537,7 @@ function custom_customize_register($wp_customize)
     // ********************************************************************************************************************************************************************************************
     // ********************************************************************************************************************************************************************************************
     // ********************************************************************************************************************************************************************************************
-    // Button display ======================================================================================================================================================
+    // btn display ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_sub_display_setting',
         array(
@@ -572,21 +572,21 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         'header_btn_sub_setting_control',
         array(
-            'label' => __('Button Link Design Type', 'boutiq'),
+            'label' => __('btn Link Design Type', 'boutiq'),
             'section' => 'header_btn_sub_section',
             'settings' => 'header_btn_sub_setting',
             'type' => 'select',
             'choices' => array(
-                '01' => __('Button Link Type1', 'boutiq'),
-                '02' => __('Button Link Type2', 'boutiq'),
-                '03' => __('Button Link Type3', 'boutiq'),
-                '04' => __('Button Link Type4', 'boutiq'),
-                '05' => __('Button Link Type5', 'boutiq'),
-                '06' => __('Button Link Type6', 'boutiq'),
-                '07' => __('Button Link Type7', 'boutiq'),
-                '08' => __('Button Link Type8', 'boutiq'),
-                '09' => __('Button Link Type9', 'boutiq'),
-                '10' => __('Button Link Type10', 'boutiq'),
+                '01' => __('btn Link Type1', 'boutiq'),
+                '02' => __('btn Link Type2', 'boutiq'),
+                '03' => __('btn Link Type3', 'boutiq'),
+                '04' => __('btn Link Type4', 'boutiq'),
+                '05' => __('btn Link Type5', 'boutiq'),
+                '06' => __('btn Link Type6', 'boutiq'),
+                '07' => __('btn Link Type7', 'boutiq'),
+                '08' => __('btn Link Type8', 'boutiq'),
+                '09' => __('btn Link Type9', 'boutiq'),
+                '10' => __('btn Link Type10', 'boutiq'),
             ),
         )
     );
@@ -605,7 +605,7 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         'header_btn_sub_icon_control',
         array(
-            'label' => __('Button Link Icon Type', 'boutiq'),
+            'label' => __('btn Link Icon Type', 'boutiq'),
             'section' => 'header_btn_sub_section',
             'settings' => 'header_btn_sub_icon_setting',
             'type' => 'select',
@@ -635,7 +635,7 @@ function custom_customize_register($wp_customize)
             $wp_customize,
             'header_btn_sub_bg_color_control',
             array(
-                'label' => __('Button color for header', 'boutiq'),
+                'label' => __('btn color for header', 'boutiq'),
                 'section' => 'header_btn_sub_section',
                 'settings' => 'header_btn_sub_bg_color_setting',
                 'description' => __('If not selected, the main color will be set.', 'boutiq'),
@@ -658,7 +658,7 @@ function custom_customize_register($wp_customize)
             $wp_customize,
             'header_btn_sub_text_color__control',
             array(
-                'label' => __('Button text color for header', 'boutiq'),
+                'label' => __('btn text color for header', 'boutiq'),
                 'section' => 'header_btn_sub_section',
                 'settings' => 'header_btn_sub_text_color_setting',
                 'description' => __('If not selected, the text color will be set.', 'boutiq'),
@@ -680,7 +680,7 @@ function custom_customize_register($wp_customize)
     $wp_customize->add_control(
         'header_btn_sub_gradation_control',
         array(
-            'label' => __('If you would like to set a gradation for the button color, enter it here.', 'boutiq'),
+            'label' => __('If you would like to set a gradation for the btn color, enter it here.', 'boutiq'),
             'section' => 'header_btn_sub_section',
             'settings' => 'header_btn_sub_gradation_setting',
             'type'     => 'text',
@@ -688,7 +688,7 @@ function custom_customize_register($wp_customize)
         )
     );
 
-    // Button text for header ======================================================================================================================================================
+    // btn text for header ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_sub_text_setting',
         array(
@@ -709,7 +709,7 @@ function custom_customize_register($wp_customize)
         )
     );
 
-    // Button url for header ======================================================================================================================================================
+    // btn url for header ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_sub_url_setting',
         array(
@@ -731,7 +731,7 @@ function custom_customize_register($wp_customize)
     );
 
 
-    // Button target ======================================================================================================================================================
+    // btn target ======================================================================================================================================================
     $wp_customize->add_setting(
         'header_btn_sub_target_setting',
         array(

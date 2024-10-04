@@ -86,10 +86,10 @@ if ($cms_design == 03) : ?>
 
             <div class="top-cms<?php echo $cms_design; ?>__link">
                 <?php if ($link_type == 01) : ?>
-                    <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                        <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                            <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                            <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                    <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                        <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
+                            <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                            <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                         </a>
                     </div>
                 <?php else : ?>
@@ -122,10 +122,10 @@ if ($cms_design == 03) : ?>
             </div>
             <div class="top-cms<?php echo $cms_design; ?>__link">
                 <?php if ($link_type == 01) : ?>
-                    <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                        <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                            <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                            <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                    <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                        <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
+                            <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                            <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                         </a>
                     </div>
                 <?php else : ?>

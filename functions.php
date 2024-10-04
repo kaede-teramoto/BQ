@@ -40,7 +40,7 @@ get_template_part('theme_customizer/customizer-header');
 get_template_part('theme_customizer/customizer-footer');
 get_template_part('theme_customizer/customizer-page');
 get_template_part('theme_customizer/customizer-cms');
-get_template_part('theme_customizer/customizer-follow_button');
+get_template_part('theme_customizer/customizer-followBtn');
 get_template_part('theme_customizer/customizer-sns');
 get_template_part('theme_customizer/customizer-hamburger');
 get_template_part('theme_customizer/customizer-sp');

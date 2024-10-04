@@ -42,7 +42,7 @@ if (is_front_page()) {
 }
 
 
-// Button design type
+// btn design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
 $btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 
@@ -203,10 +203,10 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php if (get_sub_field('block_parts_link_url')) : ?>
                                         <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                             <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                    <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                        <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                        <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                                <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             </div>
@@ -278,10 +278,10 @@ if (have_rows('content_block')) : $i = 1;
 
                                             <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                                 <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                    <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                        <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                            <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                            <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                                    <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                                                        <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
+                                                            <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
+                                                            <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -492,10 +492,10 @@ if (have_rows('content_block')) : $i = 1;
 
                                             <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                                 <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                    <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                        <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                            <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                            <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                                    <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                                                        <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
+                                                            <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
+                                                            <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -573,10 +573,10 @@ if (have_rows('content_block')) : $i = 1;
 
                                         <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                             <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                    <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                        <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                        <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                                <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             </div>
@@ -657,10 +657,10 @@ if (have_rows('content_block')) : $i = 1;
 
                                                 <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                                     <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                                <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                                <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                                                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
+                                                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
+                                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -742,10 +742,10 @@ if (have_rows('content_block')) : $i = 1;
 
                                         <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
                                             <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                    <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                        <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                        <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                                <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             </div>

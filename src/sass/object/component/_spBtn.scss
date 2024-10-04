@@ -1,9 +1,9 @@
 @use "../../foundation/variables" as v;
 @use "../../foundation/mixins" as m;
 
-/* SP Button
+/* SP button
 ----------------------------------------------------------------------------------------------- */
-.sp__button__wrapper {
+.sp__btn__wrapper {
     width: 100%;
     flex-wrap: nowrap;
     position: fixed;
@@ -29,7 +29,7 @@
     }
 }
 
-.sp__button {
+.sp__btn {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -44,11 +44,11 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__wrapper:has(> :nth-child(2):last-child) .sp__button {
+.sp__btn__wrapper:has(> :nth-child(2):last-child) .sp__btn {
     width: 50%;
 }
 
-.sp__button__link {
+.sp__btn__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +65,7 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__icon {
+.sp__btn__icon {
 
     @include m.mq(pc) {}
 
@@ -76,7 +76,7 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__text {
+.sp__btn__text {
 
     @include m.mq(pc) {}
 
@@ -88,7 +88,7 @@
 }
 
 // first
-.sp__button__first {
+.sp__btn__first {
 
     @include m.mq(pc) {}
 
@@ -99,12 +99,12 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__first__link {
-    height: var(--sp_button_first_height);
-    background: var(--sp_button_first_bg) no-repeat;
-    background-size: var(--sp_button_first_image_fit);
-    background-position: var(--sp_button_first_image_position);
-    border: solid var(--sp_button_first_border_width) var(--sp_button_first_border_color);
+.sp__btn__first__link {
+    height: var(--sp_btn_first_height);
+    background: var(--sp_btn_first_bg) no-repeat;
+    background-size: var(--sp_btn_first_image_fit);
+    background-position: var(--sp_btn_first_image_position);
+    border: solid var(--sp_btn_first_border_width) var(--sp_btn_first_border_color);
 
     @include m.mq(pc) {}
 
@@ -115,7 +115,7 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__first__icon {
+.sp__btn__first__icon {
 
     @include m.mq(pc) {}
 
@@ -126,8 +126,8 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__first__text {
-    color: var(--sp_button_first_text_color);
+.sp__btn__first__text {
+    color: var(--sp_btn_first_text_color);
 
     @include m.mq(pc) {}
 
@@ -139,24 +139,7 @@
 }
 
 //　 second
-
-.sp__button__second {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.sp__button__second__link {
-    height: var(--sp_button_second_height);
-    background: var(--sp_button_second_bg) no-repeat;
-    background-size: var(--sp_button_second_image_fit);
-    background-position: var(--sp_button_second_image_position);
-    border: solid var(--sp_button_second_border_width) var(--sp_button_second_border_color);
+.sp__btn__second {
 
     @include m.mq(pc) {}
 
@@ -167,7 +150,12 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__second__icon {
+.sp__btn__second__link {
+    height: var(--sp_btn_second_height);
+    background: var(--sp_btn_second_bg) no-repeat;
+    background-size: var(--sp_btn_second_image_fit);
+    background-position: var(--sp_btn_second_image_position);
+    border: solid var(--sp_btn_second_border_width) var(--sp_btn_second_border_color);
 
     @include m.mq(pc) {}
 
@@ -178,8 +166,19 @@
     @include m.mq(sp) {}
 }
 
-.sp__button__second__text {
-    color: var(--sp_button_second_text_color);
+.sp__btn__second__icon {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.sp__btn__second__text {
+    color: var(--sp_btn_second_text_color);
 
     @include m.mq(pc) {}
 

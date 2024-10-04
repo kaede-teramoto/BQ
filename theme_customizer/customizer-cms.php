@@ -129,7 +129,7 @@ function cms_register($wp_customize)
         )
     );
 
-    // Button for Top page ======================================================================================================================================================
+    // btn for Top page ======================================================================================================================================================
     $wp_customize->add_setting(
         'cms_top_btn_setting',
         array(
@@ -143,14 +143,14 @@ function cms_register($wp_customize)
     $wp_customize->add_control(
         'cms_top_btn_setting_control',
         array(
-            'label' => __('Button Text', 'boutiq'),
+            'label' => __('btn Text', 'boutiq'),
             'section' => 'cms_section',
             'settings' => 'cms_top_btn_setting',
             'type'     => 'text',
         )
     );
 
-    // Button Link for Top page ======================================================================================================================================================
+    // btn Link for Top page ======================================================================================================================================================
     $wp_customize->add_setting(
         'cms_top_btn_link_setting',
         array(
@@ -164,14 +164,14 @@ function cms_register($wp_customize)
     $wp_customize->add_control(
         'cms_top_btn_link_setting_control',
         array(
-            'label' => __('Button Link', 'boutiq'),
+            'label' => __('btn Link', 'boutiq'),
             'section' => 'cms_section',
             'settings' => 'cms_top_btn_link_setting',
             'type'     => 'text',
         )
     );
 
-    // Choose Button or Text ======================================================================================================================================================
+    // Choose btn or Text ======================================================================================================================================================
     $wp_customize->add_setting(
         'cms_link_type',
         array(
@@ -189,7 +189,7 @@ function cms_register($wp_customize)
             'settings' => 'cms_link_type',
             'type'     => 'select',
             'choices'  => array(
-                '01'   => __('Button Type', 'boutiq'),
+                '01'   => __('btn Type', 'boutiq'),
                 '02'   => __('Text Type', 'boutiq'),
             ),
         )

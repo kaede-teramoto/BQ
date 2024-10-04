@@ -420,18 +420,18 @@ function site_design_settings($wp_customize)
   );
 
   //=======================================================================================
-  // Button Link Settings =======================================================================================
+  // btn Link Settings =======================================================================================
   $wp_customize->add_section(
     'common_btn_link',
     array(
-      'title'          => (__('Button Link Settings', 'boutiq')),
+      'title'          => (__('btn Link Settings', 'boutiq')),
       'panel'  => 'site_default_panel',
       'transport'   => 'refresh',
     )
   );
 
 
-  // Button Design ======================================================================================================================================================
+  // btn Design ======================================================================================================================================================
   $wp_customize->add_setting(
     'common_btn_design_setting',
     array(
@@ -444,21 +444,21 @@ function site_design_settings($wp_customize)
   $wp_customize->add_control(
     'common_btn_design_control',
     array(
-      'label' => __('Button Link Design Type For common', 'boutiq'),
+      'label' => __('btn Link Design Type For common', 'boutiq'),
       'section' => 'common_btn_link',
       'settings' => 'common_btn_design_setting',
       'type' => 'select',
       'choices' => array(
-        '01' => __('Button Link Type1', 'boutiq'),
-        '02' => __('Button Link Type2', 'boutiq'),
-        '03' => __('Button Link Type3', 'boutiq'),
-        '04' => __('Button Link Type4', 'boutiq'),
-        '05' => __('Button Link Type5', 'boutiq'),
-        '06' => __('Button Link Type6', 'boutiq'),
-        '07' => __('Button Link Type7', 'boutiq'),
-        '08' => __('Button Link Type8', 'boutiq'),
-        '09' => __('Button Link Type9', 'boutiq'),
-        '10' => __('Button Link Type10', 'boutiq'),
+        '01' => __('btn Link Type1', 'boutiq'),
+        '02' => __('btn Link Type2', 'boutiq'),
+        '03' => __('btn Link Type3', 'boutiq'),
+        '04' => __('btn Link Type4', 'boutiq'),
+        '05' => __('btn Link Type5', 'boutiq'),
+        '06' => __('btn Link Type6', 'boutiq'),
+        '07' => __('btn Link Type7', 'boutiq'),
+        '08' => __('btn Link Type8', 'boutiq'),
+        '09' => __('btn Link Type9', 'boutiq'),
+        '10' => __('btn Link Type10', 'boutiq'),
       ),
     )
   );
@@ -477,7 +477,7 @@ function site_design_settings($wp_customize)
   $wp_customize->add_control(
     'common_btn_icon_control',
     array(
-      'label' => __('Button icon design other than page content', 'boutiq'),
+      'label' => __('btn icon design other than page content', 'boutiq'),
       'section' => 'common_btn_link',
       'settings' => 'common_btn_icon_setting',
       'type' => 'select',

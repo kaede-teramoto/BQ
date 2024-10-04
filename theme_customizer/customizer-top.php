@@ -40,7 +40,7 @@ function top_customize_register($wp_customize)
     $wp_customize->add_control(
         'boutiq_top_content_title_setting_control',
         array(
-            'label' => 'トップページのタイトルデザイン', //__('Content Title Design', 'boutiq'),
+            'label' => __('Top page title design', 'boutiq'),
             'section' => 'top_content_title_section',
             'settings' => 'boutiq_top_content_title_setting',
             'type' => 'select',
@@ -92,7 +92,7 @@ function top_customize_register($wp_customize)
             $wp_customize,
             'top_content_title_underline_color_control',
             array(
-                'label' => esc_attr(__('Underline Color For Top page', 'boutiq')),
+                'label' => __('Underline Color For Top page', 'boutiq'),
                 'section'  => 'top_content_title_section',
                 'settings' => 'top_content_title_underline_color',
             )
@@ -113,22 +113,12 @@ function top_customize_register($wp_customize)
     $wp_customize->add_control(
         'top_content_title_underline_width_control',
         array(
-            'label' => esc_attr(__('Set Underline thickness (px)', 'boutiq')),
+            'label' => __('Set Underline thickness (px)', 'boutiq'),
             'section' => 'top_content_title_section',
             'settings' => 'top_content_title_underline_width',
             'type'     => 'text',
         )
     );
-
-
-
-
-
-
-
-
-
-
 
     $wp_customize->add_section(
         'top_fv_image_section',
@@ -142,7 +132,7 @@ function top_customize_register($wp_customize)
     $wp_customize->add_setting(
         'top_fv_type',
         array(
-            'default' => 'Show Page title',
+            'default' => '01',
             'sanitize_callback' => 'sanitize_text_field',
             'type' => 'theme_mod',
         )

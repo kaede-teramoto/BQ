@@ -43,7 +43,7 @@ if ($header_filter) {
     $header_filter = null;
 }
 
-// First button
+// First btn
 $btn_display_setting = get_theme_mod('header_btn_display_setting', false);
 $btn_url = esc_attr(get_theme_mod('header_btn_url_setting', ''));
 $btn_text = get_theme_mod('header_btn_text_setting', '');
@@ -59,7 +59,7 @@ if ($btn_gradation) {
 }
 $btn_target_setting = get_theme_mod('header_btn_target_setting', false);
 
-// Second button
+// Second btn
 $btn_sub_display_setting = get_theme_mod('header_btn_sub_display_setting', false);
 $btn_sub_url = esc_attr(get_theme_mod('header_btn_sub_url_setting', ''));
 $btn_sub_text = get_theme_mod('header_btn_sub_text_setting', '');
@@ -182,17 +182,17 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
 
                                 <?php if ($btn_display_setting) : ?>
                                     <?php if ($btn_target_setting) : ?>
-                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
-                                                <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
+                                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                             </a>
                                         </div>
                                     <?php else : ?>
-                                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
-                                                <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
+                                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -200,28 +200,28 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
 
                                 <?php if ($btn_sub_display_setting) : ?>
                                     <?php if ($btn_sub_target_setting) : ?>
-                                        <div class="c-button c-button<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                            <a class="c-button__link c-button<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
-                                                <div class="c-button__text c-button__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                <div class="c-button__icon c-button__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                        <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                            <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
+                                                <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
                                             </a>
                                         </div>
                                     <?php else : ?>
-                                        <div class="c-button c-button<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                            <a class="c-button__link c-button<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
-                                                <div class="c-button__text c-button__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                <div class="c-button__icon c-button__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                        <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                            <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
+                                                <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
                                             </a>
                                         </div>
                                     <?php endif; ?>
                                 <?php endif; ?>
 
                                 <div class="hamburger hamburger<?php echo $hm_design; ?> header<?php echo $header_design; ?>__hamburger<?php echo $hm_design; ?>  js-hm-toggle">
-                                    <button type="button" class="hamburger__btn hamburger<?php echo $hm_design; ?>__btn">
+                                    <btn type="btn" class="hamburger__btn hamburger<?php echo $hm_design; ?>__btn">
                                         <span class="hamburger__btn__top hamburger<?php echo $hm_design; ?>__btn__top"></span>
                                         <span class="hamburger__btn__center hamburger<?php echo $hm_design; ?>__btn__center"></span>
                                         <span class="hamburger__btn__bottom hamburger<?php echo $hm_design; ?>__btn__bottom"></span>
-                                    </button>
+                                    </btn>
                                 </div>
 
                                 <?php get_template_part('parts/parts', 'hMenu'); ?>
@@ -237,7 +237,7 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
                             ?>
                                 <?php if (!($show_arrows)) { ?>
                                     <style>
-                                        .swiper-button {
+                                        .swiper-btn {
                                             display: none;
                                         }
                                     </style>

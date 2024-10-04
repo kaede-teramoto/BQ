@@ -107,7 +107,7 @@ function error_register($wp_customize)
         )
     );
 
-    // Button setting ======================================================================================================================================================
+    // btn setting ======================================================================================================================================================
     $wp_customize->add_setting(
         'error_btn_setting',
         array(
@@ -121,14 +121,14 @@ function error_register($wp_customize)
     $wp_customize->add_control(
         'error_btn_setting_control',
         array(
-            'label' => __('Button Text', 'boutiq'),
+            'label' => __('btn Text', 'boutiq'),
             'section' => 'error_section',
             'settings' => 'error_btn_setting',
             'type'     => 'text',
         )
     );
 
-    // Button link ======================================================================================================================================================
+    // btn link ======================================================================================================================================================
     $site_url  = home_url();
     $wp_customize->add_setting(
         'error_btn_link_setting',
@@ -143,7 +143,7 @@ function error_register($wp_customize)
     $wp_customize->add_control(
         'error_btn_link_setting_control',
         array(
-            'label' => __('Button Link', 'boutiq'),
+            'label' => __('btn Link', 'boutiq'),
             'section' => 'error_section',
             'settings' => 'error_btn_link_setting',
             'type'     => 'text',

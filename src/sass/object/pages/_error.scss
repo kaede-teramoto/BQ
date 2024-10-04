@@ -51,7 +51,7 @@ body.error404 {
     @include m.mq(sp) {}
 }
 
-.section__error__button {
+.section__error__btn {
 
     @include m.mq(pc) {}
 
@@ -81,7 +81,7 @@ body.error404 {
 
     @include m.mq(sp) {}
 
-    .c-button {
+    .c-btn {
         margin-top: 40px;
     }
 }

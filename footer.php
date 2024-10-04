@@ -25,64 +25,94 @@ $footer_company_profile = nl2br(esc_textarea(get_theme_mod('footer_company_profi
 $footer_top_line = get_theme_mod('footer_top_line', false);
 $footer_copyright       = get_theme_mod('footer_copyright', false);
 
-$footer_button_text = esc_attr(get_theme_mod('footer_button_text', false));
-$footer_button_link = esc_url(get_theme_mod('footer_button_link', false));
+$footer_first_btn_text_setting = esc_attr(get_theme_mod('footer_first_btn_text_setting', false));
+$footer_first_btn_url_setting = esc_url(get_theme_mod('footer_first_btn_url_setting', false));
 
-// Button design type
-$btn_link_design = get_theme_mod('common_link_btn_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
+// btn design type
+$btn_link_design = get_theme_mod('footer_first_btn_setting', '01');
+$btn_icon_design = get_theme_mod('footer_first_btn_icon_setting', '01');
 
-$btn_target_setting = get_theme_mod('footer_btn_target_setting', false);
+$btn_target_setting = get_theme_mod('footer_first_btn_target_setting', false);
 
-// Follow BUTTON
-$follow_button = get_theme_mod('follow_button_setting', '00');
-$follow_button_top_and_bottom = get_theme_mod('follow_button_top_and_bottom', '');
-$follow_button_left_and_right = get_theme_mod('follow_button_left_and_right', '');
-$follow_button_image = esc_url(get_theme_mod('follow_button_image', ''));
-$follow_button_url = esc_url(get_theme_mod('follow_button_url', ''));
-$follow_button_alt = get_theme_mod('follow_button_alt', '');
-$follow_button_target = get_theme_mod('follow_button_target_setting', false);
-if ($follow_button_target) {
-    $follow_button_target_set = ' target="_blank"';
+// Follow button
+$follow_btn_pc = get_theme_mod('follow_btn_pc_display', false);
+$follow_btn_pc_position = get_theme_mod('follow_btn_pc_setting', '00');
+$follow_btn_pc_top_and_bottom = get_theme_mod('follow_btn_pc_top_and_bottom', '50px');
+$follow_btn_pc_left_and_right = get_theme_mod('follow_btn_pc_left_and_right', '50px');
+$follow_btn_pc_image = esc_url(get_theme_mod('follow_btn_pc_image', ''));
+$follow_btn_pc_url = esc_url(get_theme_mod('follow_btn_pc_url', ''));
+$follow_btn_pc_alt = get_theme_mod('follow_btn_pc_alt', '');
+$follow_btn_pc_target = get_theme_mod('follow_btn_pc_target_setting', false);
+if ($follow_btn_pc_target) {
+    $follow_btn_pc_target_set = ' target="_blank"';
 } else {
-    $follow_button_target_set = '';
+    $follow_btn_pc_target_set = '';
 }
-$follow_button_animation = get_theme_mod('follow_button_animation', '00');
-if ($follow_button_animation == 01) {
-    $follow_button_animation_set = ' is-leftIn';
-} elseif ($follow_button_animation == 02) {
-    $follow_button_animation_set = ' is-rightIn';
-} elseif ($follow_button_animation == 03) {
-    $follow_button_animation_set = ' is-topIn';
-} elseif ($follow_button_animation == 04) {
-    $follow_button_animation_set = ' is-bottomIn';
-} elseif ($follow_button_animation == 05) {
-    $follow_button_animation_set = ' is-fadeIn';
+$follow_btn_pc_animation = get_theme_mod('follow_btn_pc_animation', '00');
+if ($follow_btn_pc_animation == 01) {
+    $follow_btn_pc_animation_set = ' is-leftIn';
+} elseif ($follow_btn_pc_animation == 02) {
+    $follow_btn_pc_animation_set = ' is-rightIn';
+} elseif ($follow_btn_pc_animation == 03) {
+    $follow_btn_pc_animation_set = ' is-topIn';
+} elseif ($follow_btn_pc_animation == 04) {
+    $follow_btn_pc_animation_set = ' is-bottomIn';
+} elseif ($follow_btn_pc_animation == 05) {
+    $follow_btn_pc_animation_set = ' is-fadeIn';
 } else {
-    $follow_button_animation_set = '';
+    $follow_btn_pc_animation_set = '';
 }
 
-// Button for SP
-$sp_button_first_display = get_theme_mod('sp_button_first_display', false);
-$sp_button_first_text = esc_attr(get_theme_mod('sp_button_first_text_setting', false));
-$sp_button_first_url = esc_url(get_theme_mod('sp_button_first_url_setting', false));
-$sp_button_first_icon = esc_url(get_theme_mod('sp_button_first_icon_setting', false));
-$sp_button_first_image = esc_url(get_theme_mod('sp_button_first_image_setting', false));
-$sp_button_first_btn_target = esc_url(get_theme_mod('sp_button_first_btn_target_setting', false));
-if ($sp_button_first_btn_target) {
-    $sp_button_first_btn_target = 'target="_blank"';
+// Follow button
+$follow_btn_sp = get_theme_mod('follow_btn_sp_display', false);
+$follow_btn_sp_position = get_theme_mod('follow_btn_sp_setting', '00');
+$follow_btn_sp_top_and_bottom = get_theme_mod('follow_btn_sp_top_and_bottom', '50px');
+$follow_btn_sp_left_and_right = get_theme_mod('follow_btn_sp_left_and_right', '50px');
+$follow_btn_sp_image = esc_url(get_theme_mod('follow_btn_sp_image', ''));
+$follow_btn_sp_url = esc_url(get_theme_mod('follow_btn_sp_url', ''));
+$follow_btn_sp_alt = get_theme_mod('follow_btn_sp_alt', '');
+$follow_btn_sp_target = get_theme_mod('follow_btn_sp_target_setting', false);
+if ($follow_btn_sp_target) {
+    $follow_btn_sp_target_set = ' target="_blank"';
 } else {
-    $sp_button_first_btn_target = NULL;
+    $follow_btn_sp_target_set = '';
 }
-$sp_button_second_display = get_theme_mod('sp_button_second_display', false);
-$sp_button_second_text = esc_attr(get_theme_mod('sp_button_second_text_setting', false));
-$sp_button_second_url = esc_url(get_theme_mod('sp_button_second_url_setting', false));
-$sp_button_second_icon = esc_url(get_theme_mod('sp_button_second_icon_setting', false));
-$sp_button_second_btn_target = esc_url(get_theme_mod('sp_button_second_btn_target_setting', false));
-if ($sp_button_second_btn_target) {
-    $sp_button_second_btn_target = 'target="_blank"';
+$follow_btn_sp_animation = get_theme_mod('follow_btn_sp_animation', '00');
+if ($follow_btn_sp_animation == 01) {
+    $follow_btn_sp_animation_set = ' is-leftIn';
+} elseif ($follow_btn_sp_animation == 02) {
+    $follow_btn_sp_animation_set = ' is-rightIn';
+} elseif ($follow_btn_sp_animation == 03) {
+    $follow_btn_sp_animation_set = ' is-topIn';
+} elseif ($follow_btn_sp_animation == 04) {
+    $follow_btn_sp_animation_set = ' is-bottomIn';
+} elseif ($follow_btn_sp_animation == 05) {
+    $follow_btn_sp_animation_set = ' is-fadeIn';
 } else {
-    $sp_button_second_btn_target = NULL;
+    $follow_btn_sp_animation_set = '';
+}
+
+// btn for SP
+$sp_btn_first_display = get_theme_mod('sp_btn_first_display', false);
+$sp_btn_first_text = esc_attr(get_theme_mod('sp_btn_first_text_setting', false));
+$sp_btn_first_url = esc_url(get_theme_mod('sp_btn_first_url_setting', false));
+$sp_btn_first_icon = esc_url(get_theme_mod('sp_btn_first_icon_setting', false));
+$sp_btn_first_image = esc_url(get_theme_mod('sp_btn_first_image_setting', false));
+$sp_btn_first_btn_target = esc_url(get_theme_mod('sp_btn_first_btn_target_setting', false));
+if ($sp_btn_first_btn_target) {
+    $sp_btn_first_btn_target = 'target="_blank"';
+} else {
+    $sp_btn_first_btn_target = NULL;
+}
+$sp_btn_second_display = get_theme_mod('sp_btn_second_display', false);
+$sp_btn_second_text = esc_attr(get_theme_mod('sp_btn_second_text_setting', false));
+$sp_btn_second_url = esc_url(get_theme_mod('sp_btn_second_url_setting', false));
+$sp_btn_second_icon = esc_url(get_theme_mod('sp_btn_second_icon_setting', false));
+$sp_btn_second_btn_target = esc_url(get_theme_mod('sp_btn_second_btn_target_setting', false));
+if ($sp_btn_second_btn_target) {
+    $sp_btn_second_btn_target = 'target="_blank"';
+} else {
+    $sp_btn_second_btn_target = NULL;
 }
 ?>
 </main>
@@ -130,20 +160,20 @@ else : ?>
                 </div>
             <?php endif; ?>
 
-            <?php if ($footer_button_text) : ?>
-                <div class="footer__button footer<?php echo $footer_design; ?>__button">
+            <?php if ($footer_first_btn_text_setting) : ?>
+                <div class="footer__btn footer<?php echo $footer_design; ?>__btn">
                     <?php if ($btn_target_setting) : ?>
-                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $footer_button_link; ?>' target="_blank">
-                                <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $footer_button_text; ?></div>
-                                <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url_setting; ?>' target="_blank">
+                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $footer_first_btn_text_setting; ?></div>
+                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
-                        <div class="c-button c-button<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-button__link c-button<?php echo $btn_link_design; ?>__link" href='<?php echo $footer_button_link; ?>'>
-                                <div class="c-button__text c-button__text<?php echo $btn_link_design; ?>"><?php echo $footer_button_text; ?></div>
-                                <div class="c-button__icon c-button__icon<?php echo $btn_icon_design; ?>"></div>
+                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url_setting; ?>'>
+                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $footer_first_btn_text_setting; ?></div>
+                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php endif; ?>
@@ -206,28 +236,28 @@ else : ?>
     </footer>
 <?php endif; ?>
 
-<?php if ($sp_button_first_display || $sp_button_second_display) : ?>
-    <div class="sp__button__wrapper l-sp">
-        <?php if ($sp_button_first_display) : ?>
-            <div class="sp__button sp__button__first">
-                <a class="sp__button__link sp__button__first__link" href="<?php echo $sp_button_first_url; ?>" <?php echo $sp_button_first_btn_target; ?>>
-                    <?php if ($sp_button_first_icon) : ?>
-                        <span class="sp__button__icon sp__button__first__icon"><img src="<?php echo $sp_button_first_icon; ?>" alt="<?php echo $sp_button_first_text; ?>"></span>
+<?php if ($sp_btn_first_display || $sp_btn_second_display) : ?>
+    <div class="sp__btn__wrapper l-sp">
+        <?php if ($sp_btn_first_display) : ?>
+            <div class="sp__btn sp__btn__first">
+                <a class="sp__btn__link sp__btn__first__link" href="<?php echo $sp_btn_first_url; ?>" <?php echo $sp_btn_first_btn_target; ?>>
+                    <?php if ($sp_btn_first_icon) : ?>
+                        <span class="sp__btn__icon sp__btn__first__icon"><img src="<?php echo $sp_btn_first_icon; ?>" alt="<?php echo $sp_btn_first_text; ?>"></span>
                     <?php endif;
-                    if ($sp_button_first_text) : ?>
-                        <span class="sp__button__text sp__button__first__text"><?php echo $sp_button_first_text; ?></span>
+                    if ($sp_btn_first_text) : ?>
+                        <span class="sp__btn__text sp__btn__first__text"><?php echo $sp_btn_first_text; ?></span>
                     <?php endif; ?>
                 </a>
             </div>
         <?php endif; ?>
-        <?php if ($sp_button_second_display) : ?>
-            <div class="sp__button sp__button__second">
-                <a class="sp__button__link sp__button__second__link" href="<?php echo $sp_button_second_url; ?>" <?php echo $sp_button_second_btn_target; ?>>
-                    <?php if ($sp_button_second_icon) : ?>
-                        <span class="sp__button__icon sp__button__second__icon"><img src="<?php echo $sp_button_second_icon; ?>" alt="<?php echo $sp_button_second_text; ?>"></span>
+        <?php if ($sp_btn_second_display) : ?>
+            <div class="sp__btn sp__btn__second">
+                <a class="sp__btn__link sp__btn__second__link" href="<?php echo $sp_btn_second_url; ?>" <?php echo $sp_btn_second_btn_target; ?>>
+                    <?php if ($sp_btn_second_icon) : ?>
+                        <span class="sp__btn__icon sp__btn__second__icon"><img src="<?php echo $sp_btn_second_icon; ?>" alt="<?php echo $sp_btn_second_text; ?>"></span>
                     <?php endif;
-                    if ($sp_button_second_text) : ?>
-                        <span class="sp__button__text sp__button__second__text"><?php echo $sp_button_second_text; ?></span>
+                    if ($sp_btn_second_text) : ?>
+                        <span class="sp__btn__text sp__btn__second__text"><?php echo $sp_btn_second_text; ?></span>
                     <?php endif; ?>
                 </a>
             </div>
@@ -235,15 +265,29 @@ else : ?>
     </div>
 <?php endif; ?>
 
-<?php if (!($follow_button == 00)) : ?>
-    <?php if ($follow_button_image) : ?>
-        <div class="follow_button follow_button<?php echo $follow_button; ?><?php echo $follow_button_animation_set; ?>">
-            <?php if ($follow_button_url) : ?>
-                <a class="follow_button__link follow_button<?php echo $follow_button; ?>__link" href="<?php echo $follow_button_url; ?>" <?php echo $follow_button_target_set; ?>>
-                    <img class="follow_button__img follow_button<?php echo $follow_button; ?>__img" src="<?php echo $follow_button_image; ?>" alt="<?php echo $follow_button_alt; ?>">
+<?php if ($follow_btn_pc) : ?>
+    <?php if ($follow_btn_pc_image) : ?>
+        <div class="l-spN follow_btn follow_btn<?php echo $follow_btn_pc_position; ?><?php echo $follow_btn_pc_animation_set; ?>">
+            <?php if ($follow_btn_pc_url) : ?>
+                <a class="follow_btn__link follow_btn<?php echo $follow_btn_pc_position; ?>__link" href="<?php echo $follow_btn_pc_url; ?>" <?php echo $follow_btn_pc_target_set; ?>>
+                    <img class="follow_btn__img follow_btn<?php echo $follow_btn_pc_position; ?>__img" src="<?php echo $follow_btn_pc_image; ?>" alt="<?php echo $follow_btn_pc_alt; ?>">
                 </a>
             <?php else : ?>
-                <img class="follow_button__img follow_button<?php echo $follow_button; ?>__img" src="<?php echo $follow_button_image; ?>" alt="<?php echo $follow_button_alt; ?>">
+                <img class="follow_btn__img follow_btn<?php echo $follow_btn_pc_position; ?>__img" src="<?php echo $follow_btn_pc_image; ?>" alt="<?php echo $follow_btn_pc_alt; ?>">
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+
+<?php if ($follow_btn_sp) : ?>
+    <?php if ($follow_btn_sp_image) : ?>
+        <div class="l-sp follow_btn follow_btn<?php echo $follow_btn_sp_position; ?><?php echo $follow_btn_sp_animation_set; ?>">
+            <?php if ($follow_btn_sp_url) : ?>
+                <a class="follow_btn__link follow_btn<?php echo $follow_btn_sp_position; ?>__link" href="<?php echo $follow_btn_sp_url; ?>" <?php echo $follow_btn_sp_target_set; ?>>
+                    <img class="follow_btn__img follow_btn<?php echo $follow_btn_sp_position; ?>__img" src="<?php echo $follow_btn_sp_image; ?>" alt="<?php echo $follow_btn_sp_alt; ?>">
+                </a>
+            <?php else : ?>
+                <img class="follow_btn__img follow_btn<?php echo $follow_btn_sp_position; ?>__img" src="<?php echo $follow_btn_sp_image; ?>" alt="<?php echo $follow_btn_sp_alt; ?>">
             <?php endif; ?>
         </div>
     <?php endif; ?>
@@ -274,8 +318,8 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
         },
         <?php if ($show_arrows) { ?>
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-btn-next",
+                prevEl: ".swiper-btn-prev",
             },
         <?php } ?>
 
@@ -324,8 +368,8 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             spaceBetween: 20,
             //centeredSlides: true,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-btn-next",
+                prevEl: ".swiper-btn-prev",
             },
             breakpoints: {
                 1599: {

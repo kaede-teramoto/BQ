@@ -77,6 +77,12 @@ function boutiq_customize_css()
         $footer_bg_color = 'transparent';
     }
 
+    $footer_first_btn_bg_color = get_theme_mod('footer_first_btn_bg_color_setting', '');
+    $footer_first_btn_text_color = get_theme_mod('footer_first_btn_text_color_setting', '');
+    $footer_second_btn_bg_color = get_theme_mod('footer_second_btn_bg_color_setting', '');
+    $footer_second_btn_sub_text_color = get_theme_mod('footer_second_btn_text_color_setting', '');
+
+
     // Font
     $jp_font = get_theme_mod('site_default_jp_fontFamily', false);
     $en_font = get_theme_mod('site_default_en_fontFamily', false);
@@ -92,35 +98,28 @@ function boutiq_customize_css()
         $heading_font = get_theme_mod('site_default_jp_fontFamily', false);
     }
 
-    $follow_button = get_theme_mod('follow_button_setting', '00');
-    if (!($follow_button == 00)) {
-        $follow_button_top_and_bottom = get_theme_mod('follow_button_top_and_bottom', '0');
-        $follow_button_left_and_right = get_theme_mod('follow_button_left_and_right', '0');
-    } else {
-        $follow_button_top_and_bottom = '0';
-        $follow_button_left_and_right = '0';
-    }
-
+    $follow_btn_top_and_bottom = get_theme_mod('follow_btn_top_and_bottom', '50px');
+    $follow_btn_left_and_right = get_theme_mod('follow_btn_left_and_right', '50px');
     // top FV
     $fv_height_pc = esc_attr(get_theme_mod('top_fv_height_size_pc', ''));
     $fv_height_tab = esc_attr(get_theme_mod('top_fv_height_size_tab', ''));
     $fv_height_sp = esc_attr(get_theme_mod('top_fv_height_size_sp', ''));
 
-    // Button for SP
-    $sp_button_first_text_color = get_theme_mod('sp_button_first_text_color_setting', '#393939');
-    $sp_button_first_bg_color = get_theme_mod('sp_button_first_bg_color_setting', '');
-    $sp_button_first_border_color = get_theme_mod('sp_button_first_border_color_setting', '');
-    $sp_button_first_border_width = get_theme_mod('sp_button_first_border_width_setting', '0');
-    $sp_button_first_height = get_theme_mod('sp_button_first_height_setting', '50px');
-    $sp_button_first_image = esc_url(get_theme_mod('sp_button_first_image_setting', ''));
-    $sp_button_first_image_fit = get_theme_mod('sp_button_first_image_fit', false);
-    $sp_button_second_text_color = get_theme_mod('sp_button_second_text_color_setting', '#393939');
-    $sp_button_second_bg_color = get_theme_mod('sp_button_second_bg_color_setting', '');
-    $sp_button_second_border_color = get_theme_mod('sp_button_second_border_color_setting', '');
-    $sp_button_second_border_width = get_theme_mod('sp_button_second_border_width_setting', '0');
-    $sp_button_second_height = get_theme_mod('sp_button_second_height_setting', '50px');
-    $sp_button_second_image = esc_url(get_theme_mod('sp_button_second_image_setting', ''));
-    $sp_button_second_image_fit = get_theme_mod('sp_button_second_image_fit', false);
+    // btn for SP
+    $sp_btn_first_text_color = get_theme_mod('sp_btn_first_text_color_setting', '#393939');
+    $sp_btn_first_bg_color = get_theme_mod('sp_btn_first_bg_color_setting', '');
+    $sp_btn_first_border_color = get_theme_mod('sp_btn_first_border_color_setting', '');
+    $sp_btn_first_border_width = get_theme_mod('sp_btn_first_border_width_setting', '0');
+    $sp_btn_first_height = get_theme_mod('sp_btn_first_height_setting', '50px');
+    $sp_btn_first_image = esc_url(get_theme_mod('sp_btn_first_image_setting', ''));
+    $sp_btn_first_image_fit = get_theme_mod('sp_btn_first_image_fit', false);
+    $sp_btn_second_text_color = get_theme_mod('sp_btn_second_text_color_setting', '#393939');
+    $sp_btn_second_bg_color = get_theme_mod('sp_btn_second_bg_color_setting', '');
+    $sp_btn_second_border_color = get_theme_mod('sp_btn_second_border_color_setting', '');
+    $sp_btn_second_border_width = get_theme_mod('sp_btn_second_border_width_setting', '0');
+    $sp_btn_second_height = get_theme_mod('sp_btn_second_height_setting', '50px');
+    $sp_btn_second_image = esc_url(get_theme_mod('sp_btn_second_image_setting', ''));
+    $sp_btn_second_image_fit = get_theme_mod('sp_btn_second_image_fit', false);
 
     echo '<style type="text/css">' . "\n";
     echo ':root {' . "\n";
@@ -209,6 +208,26 @@ function boutiq_customize_css()
     if ($footer_bg_color) {
         echo '--footer_bg_color: ' . $footer_bg_color . ';' . "\n";
     }
+    if ($footer_first_btn_bg_color) {
+        echo '--footer_first_btn_bg_color: ' . $footer_first_btn_bg_color . ';' . "\n";
+    } else {
+        echo '--footer_first_btn_bg_color: ' . $main_color . ';' . "\n";
+    }
+    if ($footer_first_btn_text_color) {
+        echo '--footer_first_btn_text_color:' . $footer_first_btn_text_color . ';';
+    } else {
+        echo '--footer_first_btn_text_color:' . $footer_text_color . ';';
+    }
+    if ($footer_second_btn_bg_color) {
+        echo '--footer_second_btn_bg_color: ' . $footer_second_btn_bg_color . ';' . "\n";
+    } else {
+        echo '--footer_second_btn_bg_color: ' . $main_color . ';' . "\n";
+    }
+    if ($footer_second_btn_text_color) {
+        echo '--footer_second_btn_text_color:' . $footer_second_btn_text_color . ';';
+    } else {
+        echo '--footer_second_btn_text_color:' . $footer_text_color . ';';
+    }
     if ($jp_font) {
         echo '--jp_font: ' . $jp_font . ';' . "\n";
     }
@@ -218,12 +237,10 @@ function boutiq_customize_css()
     if ($heading_font) {
         echo '--heading_font: ' . $heading_font . ';' . "\n";
     }
-    if ($follow_button_top_and_bottom) {
-        echo '--follow_button_tb: ' . $follow_button_top_and_bottom . ';' . "\n";
-    }
-    if ($follow_button_left_and_right) {
-        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
-    }
+
+    echo '--follow_btn_tb: ' . $follow_btn_top_and_bottom . ';' . "\n";
+    echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
+
     if ($header_btn_bg_color) {
         echo '--header_btn_bg_color: ' . $header_btn_bg_color . ';' . "\n";
     } else {
@@ -244,14 +261,14 @@ function boutiq_customize_css()
     } else {
         echo '--header_btn_sub_text_color:' . $header_text_color . ';';
     }
-    if ($follow_button_left_and_right) {
-        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    if ($follow_btn_left_and_right) {
+        echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
     }
-    if ($follow_button_left_and_right) {
-        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    if ($follow_btn_left_and_right) {
+        echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
     }
-    if ($follow_button_left_and_right) {
-        echo '--follow_button_lr: ' . $follow_button_left_and_right . ';' . "\n";
+    if ($follow_btn_left_and_right) {
+        echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
     }
     if ($fv_height_pc) {
         echo '.p-top { height: ' . $fv_height_pc . ';}' . "\n";
@@ -262,63 +279,63 @@ function boutiq_customize_css()
     if ($fv_height_sp) {
         echo '@media screen and (max-width: 599px) {.p-top { height: ' . $fv_height_sp . ';}}' . "\n";
     }
-    echo '--sp_button_first_text_color: ' . $sp_button_first_text_color . ';' . "\n";
+    echo '--sp_btn_first_text_color: ' . $sp_btn_first_text_color . ';' . "\n";
 
-    if ($sp_button_first_image) {
-        if ($sp_button_first_bg_color) {
-            echo '--sp_button_first_bg: url(' . $sp_button_first_image . ') ' . $sp_button_first_bg_color . ';' . "\n";
+    if ($sp_btn_first_image) {
+        if ($sp_btn_first_bg_color) {
+            echo '--sp_btn_first_bg: url(' . $sp_btn_first_image . ') ' . $sp_btn_first_bg_color . ';' . "\n";
         } else {
-            echo '--sp_button_first_bg: url(' . $sp_button_first_image . ');' . "\n";
+            echo '--sp_btn_first_bg: url(' . $sp_btn_first_image . ');' . "\n";
         }
     } else {
-        if ($sp_button_first_bg_color) {
-            echo '--sp_button_first_bg: ' . $sp_button_first_bg_color . ';' . "\n";
+        if ($sp_btn_first_bg_color) {
+            echo '--sp_btn_first_bg: ' . $sp_btn_first_bg_color . ';' . "\n";
         } else {
-            echo '--sp_button_first_bg: transparent;' . "\n";
+            echo '--sp_btn_first_bg: transparent;' . "\n";
         }
     }
-    if ($sp_button_first_border_color) {
-        echo '--sp_button_first_border_color: ' . $sp_button_first_border_color . ';' . "\n";
+    if ($sp_btn_first_border_color) {
+        echo '--sp_btn_first_border_color: ' . $sp_btn_first_border_color . ';' . "\n";
     } else {
-        echo '--sp_button_first_border_color: transparent;' . "\n";
+        echo '--sp_btn_first_border_color: transparent;' . "\n";
     }
-    echo '--sp_button_first_border_width: ' . $sp_button_first_border_width . ';' . "\n";
-    echo '--sp_button_first_height: ' . $sp_button_first_height . ';' . "\n";
-    if ($sp_button_first_image_fit) {
-        echo '--sp_button_first_image_fit: contain;' . "\n";
-        echo '--sp_button_first_image_position: center bottom;' . "\n";
+    echo '--sp_btn_first_border_width: ' . $sp_btn_first_border_width . ';' . "\n";
+    echo '--sp_btn_first_height: ' . $sp_btn_first_height . ';' . "\n";
+    if ($sp_btn_first_image_fit) {
+        echo '--sp_btn_first_image_fit: contain;' . "\n";
+        echo '--sp_btn_first_image_position: center bottom;' . "\n";
     } else {
-        echo '--sp_button_first_image_fit: cover;' . "\n";
-        echo '--sp_button_first_image_position: center;' . "\n";
+        echo '--sp_btn_first_image_fit: cover;' . "\n";
+        echo '--sp_btn_first_image_position: center;' . "\n";
     }
 
-    echo '--sp_button_second_text_color: ' . $sp_button_second_text_color . ';' . "\n";
-    if ($sp_button_second_image) {
-        if ($sp_button_second_bg_color) {
-            echo '--sp_button_second_bg: url(' . $sp_button_second_image . ') ' . $sp_button_second_bg_color . ';' . "\n";
+    echo '--sp_btn_second_text_color: ' . $sp_btn_second_text_color . ';' . "\n";
+    if ($sp_btn_second_image) {
+        if ($sp_btn_second_bg_color) {
+            echo '--sp_btn_second_bg: url(' . $sp_btn_second_image . ') ' . $sp_btn_second_bg_color . ';' . "\n";
         } else {
-            echo '--sp_button_second_bg: url(' . $sp_button_second_image . ');' . "\n";
+            echo '--sp_btn_second_bg: url(' . $sp_btn_second_image . ');' . "\n";
         }
     } else {
-        if ($sp_button_second_bg_color) {
-            echo '--sp_button_second_bg: ' . $sp_button_second_bg_color . ';' . "\n";
+        if ($sp_btn_second_bg_color) {
+            echo '--sp_btn_second_bg: ' . $sp_btn_second_bg_color . ';' . "\n";
         } else {
-            echo '--sp_button_second_bg: transparent;' . "\n";
+            echo '--sp_btn_second_bg: transparent;' . "\n";
         }
     }
-    if ($sp_button_second_border_color) {
-        echo '--sp_button_second_border_color: ' . $sp_button_second_border_color . ';' . "\n";
+    if ($sp_btn_second_border_color) {
+        echo '--sp_btn_second_border_color: ' . $sp_btn_second_border_color . ';' . "\n";
     } else {
-        echo '--sp_button_second_border_color: transparent;' . "\n";
+        echo '--sp_btn_second_border_color: transparent;' . "\n";
     }
-    echo '--sp_button_second_border_width: ' . $sp_button_second_border_width . ';' . "\n";
-    echo '--sp_button_second_height: ' . $sp_button_second_height . ';' . "\n";
-    if ($sp_button_second_image_fit) {
-        echo '--sp_button_second_image_fit: contain;' . "\n";
-        echo '--sp_button_second_image_position: center bottom;' . "\n";
+    echo '--sp_btn_second_border_width: ' . $sp_btn_second_border_width . ';' . "\n";
+    echo '--sp_btn_second_height: ' . $sp_btn_second_height . ';' . "\n";
+    if ($sp_btn_second_image_fit) {
+        echo '--sp_btn_second_image_fit: contain;' . "\n";
+        echo '--sp_btn_second_image_position: center bottom;' . "\n";
     } else {
-        echo '--sp_button_second_image_fit: cover;' . "\n";
-        echo '--sp_button_second_image_position: center;' . "\n";
+        echo '--sp_btn_second_image_fit: cover;' . "\n";
+        echo '--sp_btn_second_image_position: center;' . "\n";
     }
     echo '}' . "\n" . '</style>' . "\n";
 ?>

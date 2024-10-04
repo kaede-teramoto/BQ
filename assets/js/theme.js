@@ -265,13 +265,29 @@ bgColors.forEach(bgColor => {
 
 // スクロール時にクラスを追加する処理
 window.addEventListener('scroll', function () {
-    const buttonWrapper = document.querySelector('.sp__button__wrapper');
+    const btnWrapper = document.querySelector('.sp__btn__wrapper');
 
     if (window.scrollY > 100) {
         // 100pxスクロールしたらクラスを追加
-        buttonWrapper.classList.add('--active');
+        btnWrapper.classList.add('--active');
     } else {
         // 100px未満の場合、クラスを削除
-        buttonWrapper.classList.remove('--active');
+        btnWrapper.classList.remove('--active');
     }
 });
+
+// スクロール時にクラスを追加する処理
+window.addEventListener('scroll', function () {
+    const followbtns = document.querySelectorAll('.follow_btn');
+
+    followbtns.forEach(function (btn) {
+        if (window.scrollY > 100) {
+            // 100pxスクロールしたらクラスを追加
+            btn.classList.add('--active');
+        } else {
+            // 100px未満の場合、クラスを削除
+            btn.classList.remove('--active');
+        }
+    });
+});
+
