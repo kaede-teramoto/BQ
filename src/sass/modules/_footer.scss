@@ -141,7 +141,7 @@
     }
 }
 
-.footer01__button {
+.footer01__btn {
     display: none;
 
     @include m.mq(pc) {}
@@ -473,7 +473,7 @@
     }
 }
 
-.footer02__button {
+.footer02__btn {
     display: none;
 
     @include m.mq(pc) {}
@@ -717,7 +717,7 @@
     grid-template-columns: auto 330px;
     grid-template-rows: auto auto 1fr 40px 30px;
     grid-template-areas:
-        "footer_logo footer_button"
+        "footer_logo footer_btn"
         "footer_text footer_text"
         "footer_icon footer_icon"
         "footer_nav footer_nav"
@@ -737,7 +737,7 @@
         grid-template-areas:
             "footer_logo footer_logo"
             "footer_text footer_text"
-            "footer_icon footer_button"
+            "footer_icon footer_btn"
             "footer_nav footer_nav"
             "footer_info footer_info";
         grid-template-columns: auto 200px;
@@ -829,8 +829,8 @@
     }
 }
 
-.footer03__button {
-    grid-area: footer_button;
+.footer03__btn {
+    grid-area: footer_btn;
     display: flex;
     justify-content: flex-end;
 

@@ -1,9 +1,9 @@
 @use "../../foundation/variables" as v;
 @use "../../foundation/mixins" as m;
 
-/* Icon_button
+/* Icon_btn
  ----------------------------------------------------------------------------------------------- */
-.c-button__icon {
+.c-btn__icon {
     position: relative;
     z-index: 5;
 
@@ -16,7 +16,7 @@
     @include m.mq(sp) {}
 }
 
-.c-button__icon__wrapper {
+.c-btn__icon__wrapper {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -30,7 +30,7 @@
     icon01
  ----------------------------------------------------------------------------------------------- */
 
-.c-button__icon01 {
+.c-btn__icon01 {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -70,8 +70,8 @@
     }
 }
 
-.c-button05 {
-    .c-button__icon01 {
+.c-btn05 {
+    .c-btn__icon01 {
         background-color: var(--main_color);
 
         &::before {
@@ -89,7 +89,7 @@
     icon02
  ----------------------------------------------------------------------------------------------- */
 
-.c-button__icon02 {
+.c-btn__icon02 {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -122,7 +122,7 @@
     icon03
  ----------------------------------------------------------------------------------------------- */
 
-.c-button__icon03 {
+.c-btn__icon03 {
     width: 7px;
     height: 7px;
     position: relative;
@@ -149,18 +149,18 @@
     }
 }
 
-.c-button03,
-.c-button06,
-.c-button08,
-.c-button09 {
-    .c-button__icon03 {
+.c-btn03,
+.c-btn06,
+.c-btn08,
+.c-btn09 {
+    .c-btn__icon03 {
         &::before {
             border-color: #fff;
         }
     }
 
     &:hover {
-        .c-button__icon03 {
+        .c-btn__icon03 {
             &::before {
                 border-color: var(--text_color);
             }
@@ -168,8 +168,8 @@
     }
 }
 
-.c-button07 {
-    .c-button__icon03 {
+.c-btn07 {
+    .c-btn__icon03 {
         &::before {
             border-color: var(--main_color);
         }
@@ -180,7 +180,7 @@
     icon04
  ----------------------------------------------------------------------------------------------- */
 
-.c-button__icon04 {
+.c-btn__icon04 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,8 +208,8 @@
 }
 
 
-.c-button04 {
-    .c-button__icon04 {
+.c-btn04 {
+    .c-btn__icon04 {
         background-color: var(--main_color);
 
         &::before {
@@ -218,7 +218,7 @@
     }
 
     &:hover {
-        .c-button__icon04 {
+        .c-btn__icon04 {
             background-color: #fff;
 
             &::before {
@@ -228,10 +228,10 @@
     }
 }
 
-.c-button08 {
+.c-btn08 {
 
     &:hover {
-        .c-button__icon04 {
+        .c-btn__icon04 {
             background-color: var(--main_color);
 
             &::before {
@@ -247,7 +247,7 @@
     icon05
  ----------------------------------------------------------------------------------------------- */
 
-.c-button__icon05 {
+.c-btn__icon05 {
     width: 15px;
     height: 8px;
     position: relative;
@@ -286,8 +286,8 @@
     }
 }
 
-.c-button03 {
-    .c-button__icon05 {
+.c-btn03 {
+    .c-btn__icon05 {
         &::before {
             background-color: #fff;
         }
@@ -298,7 +298,7 @@
     }
 
     &:hover {
-        .c-button__icon05 {
+        .c-btn__icon05 {
             &::before {
                 background-color: var(--text_color);
             }
@@ -310,11 +310,11 @@
     }
 }
 
-.c-button06,
-.c-button08,
-.c-button09 {
+.c-btn06,
+.c-btn08,
+.c-btn09 {
 
-    .c-button__icon05 {
+    .c-btn__icon05 {
 
         &::before {
             background-color: #fff;
@@ -326,9 +326,9 @@
     }
 }
 
-.c-button07 {
+.c-btn07 {
 
-    .c-button__icon05 {
+    .c-btn__icon05 {
 
         &::before {
             background-color: var(--main_color);
@@ -344,7 +344,7 @@
     icon06
  ----------------------------------------------------------------------------------------------- */
 
-.c-button__icon06 {
+.c-btn__icon06 {
     width: 48px;
     height: 12px;
     position: relative;
@@ -382,8 +382,8 @@
     }
 }
 
-.c-button03 {
-    .c-button__icon06 {
+.c-btn03 {
+    .c-btn__icon06 {
         &::before {
             background-color: #fff;
         }
@@ -394,7 +394,7 @@
     }
 
     &:hover {
-        .c-button__icon06 {
+        .c-btn__icon06 {
             &::before {
                 background-color: var(--text_color);
             }
@@ -406,11 +406,11 @@
     }
 }
 
-.c-button06,
-.c-button08,
-.c-button09 {
+.c-btn06,
+.c-btn08,
+.c-btn09 {
 
-    .c-button__icon06 {
+    .c-btn__icon06 {
 
         &::before {
             background-color: #fff;
@@ -422,9 +422,9 @@
     }
 }
 
-.c-button07 {
+.c-btn07 {
 
-    .c-button__icon06 {
+    .c-btn__icon06 {
 
         &::before {
             background-color: var(--main_color);

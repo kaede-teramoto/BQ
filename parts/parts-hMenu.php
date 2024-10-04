@@ -35,7 +35,7 @@ if ($hm_banner_target02) {
 $hm_logo_img = esc_url(get_theme_mod('hm_logo_image', ''));
 $header_logo_img = esc_url(get_theme_mod('header_logo_image', ''));
 
-// Button 01
+// btn 01
 $hm_btn_display = get_theme_mod('hm_btn_display_setting', false);
 $hm_btn_text = esc_attr(get_theme_mod('hm_btn_text', false));
 $hm_btn_link = esc_url(get_theme_mod('hm_btn_link', false));
@@ -46,7 +46,7 @@ if ($hm_btn_target) {
     $btn_target = '';
 }
 
-// Button 02
+// btn 02
 $hm_btn_sub_display = get_theme_mod('hm_btn_sub_display_setting', false);
 $hm_btn_sub_text = esc_attr(get_theme_mod('hm_btn_sub_text', false));
 $hm_btn_sub_link = esc_url(get_theme_mod('hm_btn_sub_link', false));
@@ -59,7 +59,7 @@ if ($hm_btn_sub_target) {
 
 
 // 削除予定
-// Button design type
+// btn design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
 $btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 
@@ -80,13 +80,18 @@ if (!($hm_design_type == 100)) :
                 <?php endif; ?>
                 <div class="hm__content hm<?php echo $hm_design_type; ?>__content">
                     <div class="hm__content__inner  hm<?php echo $hm_design_type; ?>__content__inner">
+
                         <?php if ($hm_logo_img) : ?>
                             <div class="hm__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
                             </div>
-                        <?php else : ?>
+                        <?php elseif ($header_logo_img) : ?>
                             <div class="hm__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
+                            </div>
+                        <?php else : ?>
+                            <div class="hm__logo">
+                                <a href="<?php echo $site_url; ?>"><?php echo $site_name; ?></a>
                             </div>
                         <?php endif; ?>
 
@@ -176,15 +181,15 @@ if (!($hm_design_type == 100)) :
                                 <?php endif ?>
 
                                 <?php if ($hm_btn_display) : ?>
-                                    <div class="hm__button  hm__button--first">
-                                        <a class="hm__button__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
+                                    <div class="hm__btn  hm__btn--first">
+                                        <a class="hm__btn__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
                                             <?php echo $hm_btn_text; ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($hm_btn_sub_display) : ?>
-                                    <div class="hm__button  hm__button--second">
-                                        <a class="hm__button__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
+                                    <div class="hm__btn  hm__btn--second">
+                                        <a class="hm__btn__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
                                             <?php echo $hm_btn_sub_text; ?>
                                         </a>
                                     </div>
@@ -298,9 +303,13 @@ if (!($hm_design_type == 100)) :
                             <div class="hm__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
                             </div>
-                        <?php else : ?>
+                        <?php elseif ($header_logo_img) : ?>
                             <div class="hm__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
+                            </div>
+                        <?php else : ?>
+                            <div class="hm__logo">
+                                <a href="<?php echo $site_url; ?>"><?php echo $site_name; ?></a>
                             </div>
                         <?php endif; ?>
 
@@ -327,15 +336,15 @@ if (!($hm_design_type == 100)) :
                             <?php endif ?>
 
                             <?php if ($hm_btn_display) : ?>
-                                <div class="hm__button  hm__button--first">
-                                    <a class="hm__button__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
+                                <div class="hm__btn  hm__btn--first">
+                                    <a class="hm__btn__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
                                         <?php echo $hm_btn_text; ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
                             <?php if ($hm_btn_sub_display) : ?>
-                                <div class="hm__button  hm__button--second">
-                                    <a class="hm__button__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
+                                <div class="hm__btn  hm__btn--second">
+                                    <a class="hm__btn__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
                                         <?php echo $hm_btn_sub_text; ?>
                                     </a>
                                 </div>

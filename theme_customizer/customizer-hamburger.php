@@ -49,7 +49,7 @@ function hm_design_setting($wp_customize)
     $wp_customize->add_section(
         'hm_btn_section',
         array(
-            'title' => __('First button setting for Hamburger', 'boutiq'),
+            'title' => __('First btn setting for Hamburger', 'boutiq'),
             'panel'  => 'hm_panel',
         )
     );
@@ -57,7 +57,7 @@ function hm_design_setting($wp_customize)
     $wp_customize->add_section(
         'hm_btn_sub_section',
         array(
-            'title' => __('Second button setting for Hamburger', 'boutiq'),
+            'title' => __('Second btn setting for Hamburger', 'boutiq'),
             'panel'  => 'hm_panel',
         )
     );
@@ -419,7 +419,7 @@ function hm_design_setting($wp_customize)
 
     // ********************************************************************************************************************************************************************************************
     // ********************************************************************************************************************************************************************************************
-    // Button display ======================================================================================================================================================
+    // btn display ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_display_setting',
         array(
@@ -439,7 +439,7 @@ function hm_design_setting($wp_customize)
         )
     );
 
-    // Button text setting for hm ======================================================================================================================================================
+    // btn text setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_text',
         array(
@@ -453,14 +453,14 @@ function hm_design_setting($wp_customize)
     $wp_customize->add_control(
         'hm_btn_text_control',
         array(
-            'label' => __('Button text', 'boutiq'),
+            'label' => __('btn text', 'boutiq'),
             'section' => 'hm_btn_section',
             'settings' => 'hm_btn_text',
             'type'     => 'text',
         )
     );
 
-    // Button link setting for hm ======================================================================================================================================================
+    // btn link setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_link',
         array(
@@ -474,14 +474,14 @@ function hm_design_setting($wp_customize)
     $wp_customize->add_control(
         'hm_btn_link_control',
         array(
-            'label' => __('Enter the button link destination', 'boutiq'),
+            'label' => __('Enter the btn link destination', 'boutiq'),
             'section' => 'hm_btn_section',
             'settings' => 'hm_btn_link',
             'type'     => 'text',
         )
     );
 
-    // Button target for hm ======================================================================================================================================================
+    // btn target for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_link_target_setting',
         array(
@@ -516,7 +516,7 @@ function hm_design_setting($wp_customize)
             $wp_customize,
             'hm_btn_bg_color_setting_control',
             array(
-                'label' => __('Button background color', 'boutiq'),
+                'label' => __('btn background color', 'boutiq'),
                 'section' => 'hm_btn_section',
                 'settings' => 'hm_btn_bg_color_setting',
             )
@@ -538,14 +538,14 @@ function hm_design_setting($wp_customize)
             $wp_customize,
             'hm_btn_text_color_setting_control',
             array(
-                'label' => __('Button Text Color', 'boutiq'),
+                'label' => __('btn Text Color', 'boutiq'),
                 'section' => 'hm_btn_section',
                 'settings' => 'hm_btn_text_color_setting',
             )
         )
     );
 
-    // Button display ======================================================================================================================================================
+    // btn display ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_border_setting',
         array(
@@ -561,11 +561,11 @@ function hm_design_setting($wp_customize)
             'type' => 'checkbox',
             'section' => 'hm_btn_section',
             'settings' => 'hm_btn_border_setting',
-            'label' => __('Add a line to the button', 'boutiq'),
+            'label' => __('Add a line to the btn', 'boutiq'),
         )
     );
 
-    // Button link setting for hm ======================================================================================================================================================
+    // btn link setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_radius_setting',
         array(
@@ -588,7 +588,7 @@ function hm_design_setting($wp_customize)
 
     // ********************************************************************************************************************************************************************************************
     // ********************************************************************************************************************************************************************************************
-    // Button display ======================================================================================================================================================
+    // btn display ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_sub_display_setting',
         array(
@@ -608,7 +608,7 @@ function hm_design_setting($wp_customize)
         )
     );
 
-    // Button text setting for hm ======================================================================================================================================================
+    // btn text setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_sub_text',
         array(
@@ -622,14 +622,14 @@ function hm_design_setting($wp_customize)
     $wp_customize->add_control(
         'hm_btn_sub_text_control',
         array(
-            'label' => __('Button text', 'boutiq'),
+            'label' => __('btn text', 'boutiq'),
             'section' => 'hm_btn_sub_section',
             'settings' => 'hm_btn_sub_text',
             'type'     => 'text',
         )
     );
 
-    // Button link setting for hm ======================================================================================================================================================
+    // btn link setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_sub_link',
         array(
@@ -643,14 +643,14 @@ function hm_design_setting($wp_customize)
     $wp_customize->add_control(
         'hm_btn_sub_link_control',
         array(
-            'label' => __('Enter the button link destination', 'boutiq'),
+            'label' => __('Enter the btn link destination', 'boutiq'),
             'section' => 'hm_btn_sub_section',
             'settings' => 'hm_btn_sub_link',
             'type'     => 'text',
         )
     );
 
-    // Button target for hm ======================================================================================================================================================
+    // btn target for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_sub_link_target_setting',
         array(
@@ -685,7 +685,7 @@ function hm_design_setting($wp_customize)
             $wp_customize,
             'hm_btn_sub_bg_color_setting_control',
             array(
-                'label' => __('Button background color', 'boutiq'),
+                'label' => __('btn background color', 'boutiq'),
                 'section' => 'hm_btn_sub_section',
                 'settings' => 'hm_btn_sub_bg_color_setting',
             )
@@ -707,14 +707,14 @@ function hm_design_setting($wp_customize)
             $wp_customize,
             'hm_btn_sub_text_color_setting_control',
             array(
-                'label' => __('Button Text Color', 'boutiq'),
+                'label' => __('btn Text Color', 'boutiq'),
                 'section' => 'hm_btn_sub_section',
                 'settings' => 'hm_btn_sub_text_color_setting',
             )
         )
     );
 
-    // Button display ======================================================================================================================================================
+    // btn display ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_sub_border_setting',
         array(
@@ -730,11 +730,11 @@ function hm_design_setting($wp_customize)
             'type' => 'checkbox',
             'section' => 'hm_btn_sub_section',
             'settings' => 'hm_btn_sub_border_setting',
-            'label' => __('Add a line to the button', 'boutiq'),
+            'label' => __('Add a line to the btn', 'boutiq'),
         )
     );
 
-    // Button link setting for hm ======================================================================================================================================================
+    // btn link setting for hm ======================================================================================================================================================
     $wp_customize->add_setting(
         'hm_btn_sub_radius_setting',
         array(

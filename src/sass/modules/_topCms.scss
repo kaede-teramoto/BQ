@@ -21,8 +21,8 @@
 
     @include m.mq(sp) {}
 
-    .c-button {
-        button {
+    .c-btn {
+        btn {
             color: var(--text_color);
             border-color: var(--text_color);
         }
@@ -1212,7 +1212,7 @@
 //         width: 100%;
 //         order: 3;
 
-//         .c-button {
+//         .c-btn {
 //             margin: 0 auto;
 //         }
 //     }
@@ -1523,7 +1523,7 @@
         width: 100%;
         order: 3;
 
-        .c-button {
+        .c-btn {
             margin: 0 auto;
         }
     }
@@ -1850,7 +1850,7 @@
     }
 
     @include m.mq(tab) {
-        .c-button {
+        .c-btn {
             margin: 0 auto;
         }
     }

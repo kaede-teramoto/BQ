@@ -61,7 +61,7 @@ function custom_meta_box_callback($post)
     $settings = array(
       'textarea_name' => 'custom_page_summary',
       'textarea_rows' => 5,
-      'media_buttons' => true,
+      'media_btns' => true,
     );
     wp_editor($pageSummary, 'custom_page_summary', $settings);
     ?>

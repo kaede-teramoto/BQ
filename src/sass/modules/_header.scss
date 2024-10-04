@@ -50,7 +50,7 @@
     }
   }
 
-  .header__wrapper__nav>.c-button {
+  .header__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
@@ -139,7 +139,7 @@
     }
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
@@ -204,7 +204,7 @@
     }
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(sp) {
       display: none;
     }
@@ -237,7 +237,7 @@
     @include m.mq(sp) {}
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
@@ -280,7 +280,7 @@
     @include m.mq(sp) {}
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
@@ -324,7 +324,7 @@
     }
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(sp) {
       display: none;
     }
@@ -371,7 +371,7 @@
     @include m.mq(sp) {}
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
@@ -414,7 +414,7 @@
     @include m.mq(sp) {}
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
@@ -458,7 +458,7 @@
     }
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(sp) {
       display: none;
     }
@@ -473,7 +473,7 @@
   }
 }
 
-.header09__wrapper__nav-button {
+.header09__wrapper__nav-btn {
   position: absolute;
   right: 0;
 }
@@ -481,7 +481,7 @@
 /*header10*/
 
 .header10 {
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     display: none;
   }
 
@@ -522,7 +522,7 @@
     @include m.mq(sp) {}
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(tab) {
       display: none;
     }
@@ -565,7 +565,7 @@
   }
 }
 
-.header11__wrapper__nav-button button {
+.header11__wrapper__nav-btn btn {
   background-color: var(--accent_color);
 }
 
@@ -585,7 +585,7 @@
     @include m.mq(sp) {}
   }
 
-  .header02__wrapper__nav>.c-button {
+  .header02__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }

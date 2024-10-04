@@ -245,9 +245,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
         </ul>
         <div class="swiper-pagination"></div>
         <!-- 前後の矢印 -->
-        <di class="swiper-button">
-            <div class="swiper-button-prev swiper-button-black"></div>
-            <div class="swiper-button-next swiper-button-white"></div>
+        <di class="swiper-btn">
+            <div class="swiper-btn-prev swiper-btn-black"></div>
+            <div class="swiper-btn-next swiper-btn-white"></div>
         </di>
     </section>
 <?php elseif ($fv_type == 03) :

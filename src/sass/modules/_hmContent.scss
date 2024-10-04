@@ -71,7 +71,7 @@
                 transform .2s ease-in-out .1s;
         }
 
-        .hm__button {
+        .hm__btn {
             opacity: 1;
             transform: translateY(0);
             transition: opacity .2s ease-in-out .1s,
@@ -142,7 +142,7 @@
         transform .2s ease-in-out .6s;
 }
 
-.hm__button {
+.hm__btn {
     flex: 1;
     display: inline-block;
     opacity: 0;
@@ -296,7 +296,10 @@
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        height: auto;
+        flex-direction: column;
+    }
 }
 
 .hm__banner__left {
