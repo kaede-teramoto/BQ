@@ -291,3 +291,26 @@ window.addEventListener('scroll', function () {
     });
 });
 
+// 追従コンテンツ用
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('.section__parts__content__wrapper .section__parts');
+    const links = document.querySelectorAll('.section__parts__nav__wrapper ul li a');
+    const offset = 200;  // This is the sticky top offset
+    let foundCurrent = false;
+
+    sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        // 該当セクションが上部から200px以内に来たとき
+        if (sectionTop <= offset && sectionTop + section.offsetHeight > offset) {
+            links.forEach(link => link.classList.remove('current'));
+            links[index].classList.add('current');
+            foundCurrent = true;
+        }
+    });
+
+    // どのセクションも条件を満たさない場合（上に戻った場合）
+    if (!foundCurrent) {
+        links.forEach(link => link.classList.remove('current'));
+    }
+});

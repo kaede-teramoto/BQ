@@ -223,10 +223,10 @@ function boutiq_customize_css()
     } else {
         echo '--footer_second_btn_bg_color: ' . $main_color . ';' . "\n";
     }
-    if ($footer_second_btn_text_color) {
-        echo '--footer_second_btn_text_color:' . $footer_second_btn_text_color . ';';
+    if ($footer_second_btn_sub_text_color) {
+        echo '--footer_second_btn_sub_text_color:' . $footer_second_btn_sub_text_color . ';';
     } else {
-        echo '--footer_second_btn_text_color:' . $footer_text_color . ';';
+        echo '--footer_second_btn_sub_text_color:' . $footer_text_color . ';';
     }
     if ($jp_font) {
         echo '--jp_font: ' . $jp_font . ';' . "\n";
