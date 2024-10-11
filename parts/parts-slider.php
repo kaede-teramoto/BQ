@@ -241,14 +241,13 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                     <?php } ?>
                 </li>
             <?php } ?>
-
         </ul>
         <div class="swiper-pagination"></div>
         <!-- 前後の矢印 -->
-        <di class="swiper-btn">
+        <div class="swiper-btn">
             <div class="swiper-btn-prev swiper-btn-black"></div>
             <div class="swiper-btn-next swiper-btn-white"></div>
-        </di>
+        </div>
     </section>
 <?php elseif ($fv_type == 03) :
     get_template_part('parts/parts', 'originalSlider'); ?>
