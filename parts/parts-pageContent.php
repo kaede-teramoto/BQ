@@ -56,6 +56,7 @@ if (!empty($post->post_content)) {
 if (have_rows('content_block')) : $i = 1;
     while (have_rows('content_block')) : the_row();
         $block_design_type = get_sub_field('block_design_type');
+        $block_class = get_sub_field('block_class');
 
         $block_text_color = get_sub_field('block_text_color');
         $text_color_set = $block_text_color ? 'color:' . $block_text_color . ';' : '';
@@ -73,7 +74,7 @@ if (have_rows('content_block')) : $i = 1;
 
         if ($block_design_type === 'form01' || $block_design_type === 'form02' || $block_design_type === 'form03' || $block_design_type === 'form04') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
@@ -138,104 +139,21 @@ if (have_rows('content_block')) : $i = 1;
 
         elseif ($block_design_type === 'loop01') :
         ?>
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
-                <?php if (have_rows('block_parts')) : ?>
-                    <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
-                        <?php while (have_rows('block_parts')) : the_row(); ?>
-                            <?php if (get_sub_field('block_parts_image')) : ?>
-                                <div class="section__parts__<?php echo $block_design_type; ?>__img parts__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
-                            <?php endif; ?>
-                        <?php endwhile; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (have_rows('block_parts')) : ?>
-                    <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
-                        <?php while (have_rows('block_parts')) : the_row(); ?>
-                            <?php if (get_sub_field('block_parts_image')) : ?>
-                                <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
-                            <?php endif; ?>
-                        <?php endwhile; ?>
-                    </div>
-                <?php endif; ?>
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+                <?php // Content for page
+                get_template_part('page-contents/parts', 'loop'); ?>
             </section>
 
         <?php elseif ($block_design_type === 'cta01' || $block_design_type === 'cta02' || $block_design_type === 'cta03') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
-                <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
-
-                    <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
-
-                            <?php if (get_sub_field('block_title_image')) : ?>
-                                <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if (get_sub_field('block_title')) : ?>
-                                <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text"><?php the_sub_field('block_title'); ?></span>
-                            <?php endif; ?>
-
-                            <?php if (get_sub_field('block_subtitle')) : ?>
-                                <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle section__<?php echo $block_design_type; ?>__block-subtitle"><?php the_sub_field('block_subtitle'); ?></span>
-                            <?php endif; ?>
-                        </h2>
-                    <?php endif; ?>
-
-                    <?php if (have_rows('block_parts')) : ?>
-                        <div class="section__parts__wrapper section__parts__wrapper__<?php echo $block_design_type; ?>" style="<?php echo $text_color_set; ?>">
-                            <?php while (have_rows('block_parts')) : the_row(); ?>
-                                <div class="section__parts section__parts__<?php echo $block_design_type; ?>">
-                                    <?php if (get_sub_field('block_parts_title')) : ?>
-                                        <h3 class="section__parts__title section__parts__<?php echo $block_design_type; ?>__title js-toggle"><?php the_sub_field('block_parts_title'); ?><span class="versatile"></span></h3>
-                                    <?php endif; ?>
-                                    <?php if (get_sub_field('block_parts_subtitle')) : ?>
-                                        <p class="section__parts__subtitle section__parts__<?php echo $block_design_type; ?>__subtitle"><?php the_sub_field('block_parts_subtitle'); ?></p>
-                                    <?php endif; ?>
-                                    <?php if (get_sub_field('block_parts_text')) : ?>
-                                        <div class="section__parts__text section__parts__<?php echo $block_design_type; ?>__text js-target"><?php the_sub_field('block_parts_text'); ?><span class="versatile"></span></div>
-                                    <?php endif; ?>
-                                    <?php if (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
-                                    <?php endif; ?>
-
-                                    <?php if (get_sub_field('block_parts_link_url')) : ?>
-                                        <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
-                                            <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php the_sub_field('block_parts_link_url'); ?>'>
-                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php the_sub_field('block_parts_link_text'); ?></div>
-                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        <?php else : ?>
-                                            <div class="section__parts__<?php echo $block_design_type; ?>__link">
-                                                <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php the_sub_field('block_parts_link_url'); ?>" style="<?php echo $border_color_set; ?>">
-                                                    <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php the_sub_field('block_parts_link_text'); ?></span>
-                                                    <span class="icon<?php echo $text_icon_design; ?>"></span>
-                                                </a>
-                                            </div>
-                                        <?php endif; ?>
-
-                                    <?php endif; ?>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if (get_sub_field('block_free_area')) : ?>
-                        <div class="section__block__lib section__<?php echo $block_design_type; ?>__block__lib">
-                            <?php the_sub_field('block_free_area'); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+                <?php // Content for page
+                get_template_part('parts/parts', 'cta'); ?>
             </section>
 
         <?php elseif ($block_design_type === 'cta04') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
                     <div class="section__<?php echo $block_design_type; ?>__left">
 
@@ -318,7 +236,7 @@ if (have_rows('content_block')) : $i = 1;
 
         <?php elseif ($block_design_type === 'cta05') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
@@ -373,7 +291,7 @@ if (have_rows('content_block')) : $i = 1;
 
         <?php elseif ($block_design_type === 'company01' || $block_design_type === 'company02' || $block_design_type === 'company03' || $block_design_type === 'company04') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
 
 
@@ -414,7 +332,7 @@ if (have_rows('content_block')) : $i = 1;
         <?php elseif ($block_design_type === 'company05') : ?>
             <div class="section__wrapper">
 
-                <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+                <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                     <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
 
                         <?php if (get_sub_field('block_title')) : ?>
@@ -452,7 +370,7 @@ if (have_rows('content_block')) : $i = 1;
 
         <?php elseif ($block_design_type === 'design06') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
@@ -531,7 +449,7 @@ if (have_rows('content_block')) : $i = 1;
             </section>
         <?php elseif ($block_design_type === 'design07' || $block_design_type === 'design08') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
@@ -612,7 +530,7 @@ if (have_rows('content_block')) : $i = 1;
 
         <?php elseif ($block_design_type === 'design15') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
@@ -701,7 +619,7 @@ if (have_rows('content_block')) : $i = 1;
 
         <?php elseif ($block_design_type === 'follow01' || $block_design_type === 'follow02' || $block_design_type === 'follow03') : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
                         <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
@@ -726,7 +644,7 @@ if (have_rows('content_block')) : $i = 1;
                                     <ul class="section__parts__nav__list section__parts__nav__list__<?php echo $block_design_type; ?>">
                                         <?php while (have_rows('block_parts')) : the_row(); ?>
                                             <li class="section__parts__nav__item section__parts__nav__item__<?php echo $block_design_type; ?>" style="<?php echo $title_color_set; ?>">
-                                                <a href="#parts0<?php echo $count; ?>" class="section__parts__nav__link section__parts__nav__link__<?php echo $block_design_type; ?>">
+                                                <a href="#section<?php echo $i; ?>__parts0<?php echo $count; ?>" class="section__parts__nav__link section__parts__nav__link__<?php echo $block_design_type; ?>">
                                                     <?php the_sub_field('block_parts_title'); ?><span class="versatile"></span>
                                                 </a>
                                             </li>
@@ -741,7 +659,7 @@ if (have_rows('content_block')) : $i = 1;
                             <div class="section__parts__content__wrapper section__parts__content__wrapper__<?php echo $block_design_type; ?>">
                                 <div class="section__parts__wrapper section__parts__wrapper__<?php echo $block_design_type; ?>" style="<?php echo $text_color_set; ?>">
                                     <?php while (have_rows('block_parts')) : the_row(); ?>
-                                        <div id="parts0<?php echo $count; ?>" class="section__parts section__parts__<?php echo $block_design_type; ?> js-fadeIn">
+                                        <div id="section<?php echo $i; ?>__parts0<?php echo $count; ?>" class="section__parts section__parts__<?php echo $block_design_type; ?> js-fadeIn">
                                             <?php if (get_sub_field('block_parts_title')) : ?>
                                                 <h3 class="section__parts__title section__parts__<?php echo $block_design_type; ?>__title js-toggle" style="<?php echo $title_color_set; ?>"><?php the_sub_field('block_parts_title'); ?><span class="versatile"></span></h3>
                                             <?php endif; ?>
@@ -794,9 +712,20 @@ if (have_rows('content_block')) : $i = 1;
                 </div>
             </section>
 
+
+        <?php elseif ($block_design_type === 'common') : ?>
+
+            <?php $partsPostID = get_sub_field('block_title');
+            $post = get_post($partsPostID);
+            if ($post && $post->post_type === 'common_parts') :
+                //the_sub_field('block_title', $partsPostID);
+            ?>
+
+            <?php endif; ?>
+
         <?php else : ?>
 
-            <section id="section<?php echo $i; ?>" class="section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
                         <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">

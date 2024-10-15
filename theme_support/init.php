@@ -177,3 +177,50 @@ function disable_visual_editor_filter()
 }
 add_action('load-post.php', 'disable_visual_editor_in_page');
 add_action('load-post-new.php', 'disable_visual_editor_in_page');
+
+
+
+
+/*--------------------------------------------------------------
+  カスタムポストタイプ「common_parts」を登録
+--------------------------------------------------------------*/
+function register_common_parts_post_type()
+{
+  $labels = array(
+    'name'               => '共通パーツ',
+    'singular_name'      => '共通パーツ',
+    'menu_name'          => '共通パーツ',
+    'name_admin_bar'     => '共通パーツ',
+    'add_new'            => '新規追加',
+    'add_new_item'       => '共通パーツを追加',
+    'new_item'           => '新しい共通パーツ',
+    'edit_item'          => '共通パーツを編集',
+    'view_item'          => '共通パーツを表示',
+    'all_items'          => '共通パーツ一覧',
+    'search_items'       => '共通パーツを検索',
+    'not_found'          => '共通パーツが見つかりませんでした',
+    'not_found_in_trash' => 'ゴミ箱に共通パーツはありません',
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => false,  // フロントエンドでは表示しない
+    'exclude_from_search' => true,    // 検索結果に含めない
+    'publicly_queryable' => false,   // クエリで公開しない
+    'show_ui'            => true,    // 管理画面のUIを表示
+    'show_in_menu'       => true,    // 管理画面のメニューに表示
+    'show_in_admin_bar'  => true,    // 管理バーに表示
+    'menu_position'      => 3,       // 管理画面での表示順序
+    'menu_icon'          => 'dashicons-admin-generic',  // アイコン
+    'capability_type'    => 'post',  // 権限を「post」に準拠
+    'supports'           => array('title', 'editor', 'thumbnail'), // サポートする機能
+    'has_archive'        => false,   // アーカイブページは作成しない
+    'rewrite'            => false,   // リライトルールを無効化
+    'query_var'          => false,   // クエリ変数無効
+  );
+
+  register_post_type('common_parts', $args);
+}
+
+// フックに登録
+add_action('init', 'register_common_parts_post_type');
