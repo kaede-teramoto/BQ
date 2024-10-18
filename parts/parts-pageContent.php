@@ -761,6 +761,11 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php if (get_sub_field('block_parts_image')) : ?>
                                         <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
                                     <?php endif; ?>
+
+                                    <?php if (get_sub_field('block_parts_editor')) : ?>
+                                        <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                    <?php endif; ?>
+
                                     <?php if (get_sub_field('block_parts_link_url')) : ?>
 
                                         <?php if (get_sub_field('block_parts_link_type') === 'btn') : ?>
