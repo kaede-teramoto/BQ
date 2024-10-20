@@ -137,11 +137,34 @@ if (have_rows('content_block')) : $i = 1;
 
             get_template_part('parts/parts', 'top_cms');
 
+        elseif ($block_design_type === 'common') :
+
+            $partsPostID = get_sub_field('block_title');
+            $post = get_post($partsPostID);
+
+            the_content($post);
+
         elseif ($block_design_type === 'loop01') :
         ?>
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
-                <?php // Content for page
-                get_template_part('page-contents/parts', 'loop'); ?>
+                <?php if (have_rows('block_parts')) : ?>
+                    <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
+                        <?php while (have_rows('block_parts')) : the_row(); ?>
+                            <?php if (get_sub_field('block_parts_image')) : ?>
+                                <div class="section__parts__<?php echo $block_design_type; ?>__img parts__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (have_rows('block_parts')) : ?>
+                    <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
+                        <?php while (have_rows('block_parts')) : the_row(); ?>
+                            <?php if (get_sub_field('block_parts_image')) : ?>
+                                <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
             </section>
 
         <?php elseif ($block_design_type === 'cta01' || $block_design_type === 'cta02' || $block_design_type === 'cta03') : ?>

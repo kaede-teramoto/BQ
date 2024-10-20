@@ -139,6 +139,7 @@
     align-items: flex-end;
     gap: 30px;
     padding-bottom: 30px;
+    margin: 0;
 
     @include m.mq(pc) {}
 

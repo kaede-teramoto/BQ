@@ -30,24 +30,29 @@ $maxWidth: 1500px;
 $headerWidth: 94%;
 
 @mixin conWidth() {
-  width: $maxWidth;
+  width: 100%;
+  max-width: $maxWidth;
   margin-left: auto;
   margin-right: auto;
 
   @include m.mq(pc) {
-    width: $pcWidth;
+    width: 100%;
+    max-width: $pcWidth;
   }
 
   @include m.mq(miniPc) {
-    width: $miniWidth;
+    width: 100%;
+    max-width: $miniWidth;
   }
 
   @include m.mq(tab) {
-    width: $tabWidth;
+    width: 100%;
+    max-width: $tabWidth;
   }
 
   @include m.mq(sp) {
-    width: $spWidth;
+    width: 100%;
+    max-width: $spWidth;
   }
 }
 
