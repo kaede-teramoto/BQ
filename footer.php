@@ -397,27 +397,6 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
                 clickable: true,
             },
 
-            // //loop: true,
-            // slidesPerView: 1.8,
-            // spaceBetween: 10,
-            // grabCursor: true,
-            // slidesPerView: 1.5,
-            // mousewheel: {
-            //     invert: false,
-            // },
-            // //centeredSlides: true,
-            // centeredSlidesBounds: true,
-            // breakpoints: {
-            //     1599: {
-            //         slidesPerView: 5.5,
-            //     },
-            //     1199: {
-            //         slidesPerView: 4.5,
-            //     },
-            //     849: {
-            //         slidesPerView: 3,
-            //     }
-            // },
         });
     <?php endif; ?>
 </script>

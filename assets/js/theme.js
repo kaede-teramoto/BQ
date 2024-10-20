@@ -263,33 +263,42 @@ bgColors.forEach(bgColor => {
     });
 });
 
-// スクロール時にクラスを追加する処理
-window.addEventListener('scroll', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const btnWrapper = document.querySelector('.sp__btn__wrapper');
 
-    if (window.scrollY > 100) {
-        // 100pxスクロールしたらクラスを追加
-        btnWrapper.classList.add('--active');
-    } else {
-        // 100px未満の場合、クラスを削除
-        btnWrapper.classList.remove('--active');
+    if (btnWrapper) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                // 100pxスクロールしたらクラスを追加
+                btnWrapper.classList.add('--active');
+            } else {
+                // 100px未満の場合、クラスを削除
+                btnWrapper.classList.remove('--active');
+            }
+        });
     }
 });
 
+
 // スクロール時にクラスを追加する処理
-window.addEventListener('scroll', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const followbtns = document.querySelectorAll('.follow_btn');
 
-    followbtns.forEach(function (btn) {
-        if (window.scrollY > 100) {
-            // 100pxスクロールしたらクラスを追加
-            btn.classList.add('--active');
-        } else {
-            // 100px未満の場合、クラスを削除
-            btn.classList.remove('--active');
-        }
-    });
+    if (followbtns.length > 0) {
+        window.addEventListener('scroll', function () {
+            followbtns.forEach(function (btn) {
+                if (window.scrollY > 100) {
+                    // 100pxスクロールしたらクラスを追加
+                    btn.classList.add('--active');
+                } else {
+                    // 100px未満の場合、クラスを削除
+                    btn.classList.remove('--active');
+                }
+            });
+        });
+    }
 });
+
 
 // 追従コンテンツ用
 window.addEventListener('scroll', function () {
