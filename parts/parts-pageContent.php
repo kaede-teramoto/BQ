@@ -53,10 +53,16 @@ $text_icon_design = get_theme_mod('text_link_icon_setting', '01');
 if (!empty($post->post_content)) {
     the_content();
 }
+
+// 繰り返しフィールドの値を格納するための変数
+$block_contents = [];
+$block_titles = [];
+
 if (have_rows('content_block')) : $i = 1;
     while (have_rows('content_block')) : the_row();
         $block_design_type = get_sub_field('block_design_type');
         $block_class = get_sub_field('block_class');
+        $block_title = get_sub_field('block_title');
 
         $block_text_color = get_sub_field('block_text_color');
         $text_color_set = $block_text_color ? 'color:' . $block_text_color . ';' : '';
@@ -137,15 +143,7 @@ if (have_rows('content_block')) : $i = 1;
 
             get_template_part('parts/parts', 'top_cms');
 
-        elseif ($block_design_type === 'common') :
-
-            $partsPostID = get_sub_field('block_title');
-            $post = get_post($partsPostID);
-
-            the_content($post);
-
-        elseif ($block_design_type === 'loop01') :
-        ?>
+        elseif ($block_design_type === 'loop01'): ?>
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <?php if (have_rows('block_parts')) : ?>
                     <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
@@ -166,6 +164,25 @@ if (have_rows('content_block')) : $i = 1;
                     </div>
                 <?php endif; ?>
             </section>
+
+        <?php elseif ($block_design_type === 'common') :
+
+
+
+            if ($block_design_type === 'common' && $block_title) {
+                // 既に $block_title が処理されているかを確認
+                if (!array_key_exists($block_title, $block_contents)) {
+                    // 投稿のコンテンツを取得して $block_contents に格納
+                    $post_content = get_post_field('post_content', $block_title);
+                    $block_contents[$block_title] = $post_content;
+                }
+
+                // コンテンツを出力
+                $block_content = $block_contents[$block_title];
+                echo wp_kses_post($block_content);
+            }
+
+        ?>
 
         <?php elseif ($block_design_type === 'cta01' || $block_design_type === 'cta02' || $block_design_type === 'cta03') : ?>
 
