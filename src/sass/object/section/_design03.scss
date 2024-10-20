@@ -127,6 +127,7 @@
     height: 250px;
     order: 1;
     overflow: hidden;
+    @include v.borderRadius;
 
     @include m.mq(pc) {
         height: 200px
