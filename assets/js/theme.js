@@ -91,7 +91,7 @@ document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
     });
 });
 
-document.querySelectorAll('.hm__nav__wrapper > .hm__nav__list > li:not(.menu-item-has-children) a, .sub-menu a').forEach(link => {
+document.querySelectorAll('.hm__nav__wrapper > .hm__nav__list > li:not(.menu-item-has-children) a, .sub-menu a, .nav__item a').forEach(link => {
     link.addEventListener('click', () => {
         // .js-hm-toggleから.--activeクラスを取り除く
         const toggle = document.querySelector('.js-hm-toggle');
