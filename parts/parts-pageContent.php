@@ -205,7 +205,9 @@ if (have_rows('content_block')) : $i = 1;
                                 <?php endif; ?>
 
                                 <?php if (get_sub_field('block_title')) : ?>
-                                    <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text"><?php the_sub_field('block_title'); ?></span>
+                                    <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text">
+                                        <?php the_sub_field('block_title'); ?>
+                                    </span>
                                 <?php endif; ?>
 
                                 <?php if (get_sub_field('block_subtitle')) : ?>
