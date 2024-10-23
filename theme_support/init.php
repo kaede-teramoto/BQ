@@ -224,3 +224,21 @@ function register_common_parts_post_type()
 
 // フックに登録
 add_action('init', 'register_common_parts_post_type');
+
+/*--------------------------------------------------------------
+  カスタムフィールドのHTMLタグを保持するフィルターを追加
+--------------------------------------------------------------*/
+// ACFのblock_titleフィールドにHTMLタグを許可
+function allow_html_in_acf_textarea($value, $post_id, $field)
+{
+  // フィールド名が 'block_title' の場合にHTMLタグを許可
+  if ($field['name'] === 'block_title') {
+    $value = wp_kses_post($value);  // 基本的なHTMLタグを許可
+  }
+  return $value;
+}
+add_filter('acf/update_value', 'allow_html_in_acf_textarea', 10, 3);
+
+
+// カスタムフィールドのHTMLをそのまま表示
+//echo wp_kses( $block_title, custom_allowed_html_tags() );
