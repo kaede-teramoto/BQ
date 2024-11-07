@@ -46,5 +46,6 @@ get_template_part('theme_customizer/customizer-hamburger');
 get_template_part('theme_customizer/customizer-sp');
 get_template_part('theme_customizer/customizer-top');
 get_template_part('theme_customizer/customizer-404');
+get_template_part('theme_customizer/customizer-loading');
 get_template_part('theme_customizer/customizer-design');
 get_template_part('theme_customizer/customizer-export');

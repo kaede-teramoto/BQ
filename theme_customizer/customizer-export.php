@@ -51,6 +51,10 @@ function boutiq_customize_css()
     $radius_tab = get_theme_mod('boutiq_page_radius_tab_setting', '10px');
     $radius_sp = get_theme_mod('boutiq_page_radius_sp_setting', '8px');
 
+    //loading
+    $loading_text_color = get_theme_mod('loading_text_color_setting', false);
+    $loading_bg_color = get_theme_mod('loading_bg_color_setting', false);
+
     // Hamburger Menu
     $hm_bg_color = get_theme_mod('hm_bg_color_setting',  '#ffffff');
     if ($hm_bg_color) {
@@ -142,6 +146,12 @@ function boutiq_customize_css()
     echo '--heading_fontSize_PC: ' . $heading_size_PC . 'rem;' . "\n";
     echo '--heading_fontSize_TAB: ' . $heading_size_TAB . 'rem;' . "\n";
     echo '--heading_fontSize_SP: ' . $heading_size_SP . 'rem;' . "\n";
+    if ($loading_text_color) {
+        echo '--loading_text_color: ' . $loading_text_color . ';' . "\n";
+    }
+    if ($loading_bg_color) {
+        echo '--loading_bg_color: ' . $loading_bg_color . ';' . "\n";
+    }
     if ($header_text_color) {
         echo '--header_text_color:' . $header_text_color . ';';
         echo "\n";

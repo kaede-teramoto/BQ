@@ -78,6 +78,8 @@ $btn_sub_target_setting = get_theme_mod('header_btn_sub_target_setting', false);
 //page 
 $site_default_background_color = get_theme_mod('site_default_background_color', '#FFFFFF');
 $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
+
+$loading_display = esc_html(get_theme_mod('loading_display_setting', false));
 ?>
 
 <!DOCTYPE html>
@@ -112,6 +114,11 @@ $page_bg = 'style="background-color: ' . $site_default_background_color . ';"';
 
         <body <?php body_class("post-" . $slug); ?>>
         <?php endif; ?>
+
+        <?php if ($loading_display) :
+            get_template_part('parts/parts', 'loading');
+        endif; ?>
+
         <div class="l-container" id="container">
             <?php if ($header_card) : ?>
                 <header class="header header<?php echo $header_design; ?>">
