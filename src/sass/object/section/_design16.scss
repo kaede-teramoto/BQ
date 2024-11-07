@@ -55,26 +55,13 @@
 
 .section__parts__wrapper__design16 {
 
+    @include m.mq(pc) {}
 
+    @include m.mq(miniPc) {}
 
-    @include m.mq(pc) {
-        margin-top: 70px;
-        gap: 90px;
-    }
+    @include m.mq(tab) {}
 
-    @include m.mq(miniPc) {
-        margin-top: 60px;
-        gap: 80px;
-    }
-
-    @include m.mq(tab) {
-        margin-top: 40px;
-        gap: 50px;
-    }
-
-    @include m.mq(sp) {
-        margin-top: 30px;
-    }
+    @include m.mq(sp) {}
 }
 
 .section__parts__design16 {
@@ -93,7 +80,10 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        @include v.columnFlex;
+        align-items: flex-start;
+    }
 
     @include m.mq(sp) {}
 }
@@ -108,7 +98,9 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        order: 2;
+    }
 
     @include m.mq(sp) {}
 }
@@ -125,6 +117,7 @@
 
     @include m.mq(tab) {
         margin-bottom: 5px;
+        order: 1;
     }
 
     @include m.mq(sp) {}
@@ -138,7 +131,9 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        order: 3;
+    }
 
     @include m.mq(sp) {}
 }
@@ -158,21 +153,20 @@
     margin: 60px 0;
     @include v.borderRadius;
 
-    @include m.mq(pc) {
-        margin: 90px 0 60px;
-    }
+    @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
-        margin: 80px 0 50px;
+        margin: 50px 0;
     }
 
     @include m.mq(tab) {
-        margin: 60px 0 30px;
+        margin: 40px 0 30px;
         aspect-ratio: 3 / 1.5;
+        order: 5;
     }
 
     @include m.mq(sp) {
-        margin: 50px 0 30px;
+        margin: 30px 0;
     }
 
     img {
@@ -187,4 +181,27 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    padding-top: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 4;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design16__editor {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 6;
+    }
+
+    @include m.mq(sp) {}
 }

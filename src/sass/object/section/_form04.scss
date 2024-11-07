@@ -55,8 +55,8 @@
             width: 90%;
         }
 
-        p,
-        br {
+        p:not([class]),
+        br:not([class]) {
             display: none;
         }
     }

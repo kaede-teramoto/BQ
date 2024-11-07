@@ -13,9 +13,13 @@
         padding: 80px 0;
     }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        padding: 80px 0;
+    }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        padding: 50px 0;
+    }
 }
 
 *+.section__parts__wrapper {
