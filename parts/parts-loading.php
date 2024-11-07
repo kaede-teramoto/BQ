@@ -45,23 +45,23 @@ $loading_time = $loading_time_setting . '000';
                 loadingBg.classList.add("show"); // クラスを追加
             }, 500);
 
-            // if (sessionStorage.getItem('visit')) {
-            //     // ローディング画面を即座に非表示
-            //     loadingBg.style.display = "none";
-            // } else {
-            // 初めての訪問としてフラグをセット
-            sessionStorage.setItem('visit', 'true');
+            if (sessionStorage.getItem('visit')) {
+                // ローディング画面を即座に非表示
+                loadingBg.style.display = "none";
+            } else {
+                // 初めての訪問としてフラグをセット
+                sessionStorage.setItem('visit', 'true');
 
-            // 4秒後にクラスを追加
-            setTimeout(() => {
-                loadingBg.classList.add("hidden"); // クラスを追加
-
-                // さらに1秒後に非表示にする
+                // 4秒後にクラスを追加
                 setTimeout(() => {
-                    loadingBg.style.display = "none";
-                }, 3000); // 1秒（1000ミリ秒）遅延
-            }, <?php echo $loading_time; ?>); // 4秒（4000ミリ秒）遅延
-            //}
+                    loadingBg.classList.add("hidden"); // クラスを追加
+
+                    // さらに1秒後に非表示にする
+                    setTimeout(() => {
+                        loadingBg.style.display = "none";
+                    }, 3000); // 1秒（1000ミリ秒）遅延
+                }, <?php echo $loading_time; ?>); // 4秒（4000ミリ秒）遅延
+            }
         };
         webStorage();
     });
