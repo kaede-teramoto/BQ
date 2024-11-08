@@ -25,9 +25,6 @@ $footer_company_profile = nl2br(esc_textarea(get_theme_mod('footer_company_profi
 $footer_top_line = get_theme_mod('footer_top_line', false);
 $footer_copyright       = get_theme_mod('footer_copyright', false);
 
-$footer_first_btn_text_setting = esc_attr(get_theme_mod('footer_first_btn_text_setting', false));
-$footer_first_btn_url_setting = esc_url(get_theme_mod('footer_first_btn_url_setting', false));
-
 // btn design type
 $btn_link_design = get_theme_mod('footer_first_btn_setting', '01');
 $btn_icon_design = get_theme_mod('footer_first_btn_icon_setting', '01');
@@ -114,6 +111,39 @@ if ($sp_btn_second_btn_target) {
 } else {
     $sp_btn_second_btn_target = NULL;
 }
+// First btn
+$footer_first_btn_display_setting = get_theme_mod('footer_first_btn_display_setting', false);
+$footer_first_btn_url = esc_attr(get_theme_mod('footer_first_btn_url_setting', ''));
+$footer_first_btn_text = get_theme_mod('footer_first_btn_text_setting', '');
+$footer_first_btn_link_design = get_theme_mod('footer_first_btn_setting', '01');
+$footer_first_btn_bg_color = get_theme_mod('footer_first_btn_bg_color_setting', false);
+$footer_first_btn_icon_design = get_theme_mod('footer_first_btn_icon_setting', '01');
+$footer_first_btn_gradation = get_theme_mod('footer_first_btn_gradation_setting', false);
+
+if ($footer_first_btn_gradation) {
+    $footer_first_btn_bg_color = 'style="' . $footer_first_btn_gradation . '"';
+} else {
+    $footer_first_btn_bg_color = NULL;
+}
+$footer_first_btn_target_setting = get_theme_mod('footer_first_btn_target_setting', false);
+
+// Second btn
+$footer_second_btn_display_setting = get_theme_mod('footer_second_btn_display_setting', false);
+$footer_second_btn_url = esc_attr(get_theme_mod('footer_second_btn_url_setting', ''));
+$footer_second_btn_text = get_theme_mod('footer_second_btn_text_setting', '');
+$footer_second_btn_link_design = get_theme_mod('footer_second_btn_setting', '01');
+$footer_second_btn_bg_color = get_theme_mod('footer_second_btn_bg_color_setting', false);
+$footer_second_btn_icon_design = get_theme_mod('footer_second_btn_icon_setting', '01');
+$footer_second_btn_gradation = get_theme_mod('footer_second_btn_gradation_setting', false);
+
+if ($footer_second_btn_gradation) {
+    $footer_second_btn_bg_color = 'style="' . $footer_second_btn_gradation . '"';
+} else {
+    $footer_second_btn_bg_color = NULL;
+}
+$footer_second_btn_target_setting = get_theme_mod('footer_second_btn_target_setting', false);
+
+
 ?>
 </main>
 
@@ -160,24 +190,40 @@ else : ?>
                 </div>
             <?php endif; ?>
 
-            <?php if ($footer_first_btn_text_setting) : ?>
-                <div class="footer__btn footer<?php echo $footer_design; ?>__btn">
-                    <?php if ($btn_target_setting) : ?>
-                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url_setting; ?>' target="_blank">
-                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $footer_first_btn_text_setting; ?></div>
-                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
-                            </a>
-                        </div>
-                    <?php else : ?>
-                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url_setting; ?>'>
-                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $footer_first_btn_text_setting; ?></div>
-                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
-                            </a>
-                        </div>
-                    <?php endif; ?>
-                </div>
+            <?php if ($footer_first_btn_display_setting) : ?>
+                <?php if ($footer_first_btn_target_setting) : ?>
+                    <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
+                        <a class="c-btn__link c-btn<?php echo $footer_first_btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url; ?>' target="_blank" <?php echo $footer_first_btn_bg_color; ?>>
+                            <div class="c-btn__text c-btn__text<?php echo $footer_first_btn_link_design; ?>"><?php echo $footer_first_btn_text; ?></div>
+                            <div class="c-btn__icon c-btn__icon<?php echo $footer_first_btn_icon_design; ?>"></div>
+                        </a>
+                    </div>
+                <?php else : ?>
+                    <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
+                        <a class="c-btn__link c-btn<?php echo $footer_first_btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url; ?>' <?php echo $footer_first_btn_bg_color; ?>>
+                            <div class="c-btn__text c-btn__text<?php echo $footer_first_btn_link_design; ?>"><?php echo $footer_first_btn_text; ?></div>
+                            <div class="c-btn__icon c-btn__icon<?php echo $footer_first_btn_icon_design; ?>"></div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if ($footer_second_btn_display_setting) : ?>
+                <?php if ($footer_second_btn_target_setting) : ?>
+                    <div class="c-btn c-btn<?php echo $footer_second_btn_link_design; ?> btn<?php echo $footer_second_btn_link_design; ?> btn--second">
+                        <a class="c-btn__link c-btn<?php echo $footer_second_btn_link_design; ?>__link" href='<?php echo $footer_second_btn_url; ?>' target="_blank" <?php echo $footer_second_btn_bg_color; ?>>
+                            <div class="c-btn__text c-btn__text<?php echo $footer_second_btn_link_design; ?>"><?php echo $footer_second_btn_text; ?></div>
+                            <div class="c-btn__icon c-btn__icon<?php echo $footer_second_btn_icon_design; ?>"></div>
+                        </a>
+                    </div>
+                <?php else : ?>
+                    <div class="c-btn c-btn<?php echo $footer_second_btn_link_design; ?> btn<?php echo $footer_second_btn_link_design; ?> btn--second">
+                        <a class="c-btn__link c-btn<?php echo $footer_second_btn_link_design; ?>__link" href='<?php echo $footer_second_btn_url; ?>' <?php echo $footer_second_btn_bg_color; ?>>
+                            <div class="c-btn__text c-btn__text<?php echo $footer_second_btn_link_design; ?>"><?php echo $footer_second_btn_text; ?></div>
+                            <div class="c-btn__icon c-btn__icon<?php echo $footer_second_btn_icon_design; ?>"></div>
+                        </a>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
 
             <?php if (has_nav_menu('footerNavLeft') || has_nav_menu('footerNavRight')) : ?>

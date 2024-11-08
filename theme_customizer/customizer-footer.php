@@ -39,6 +39,16 @@ function footer_design_setting($wp_customize)
         )
     );
 
+    $wp_customize->add_section(
+        'footer_second_btn_section',
+        array(
+            'title' => __('footer second option', 'boutiq'),
+            'priority' => 32,
+            'transport'   => 'refresh',
+            'panel'  => 'footer_panel',
+        )
+    );
+
     // Design setting ======================================================================================================================================================
     $wp_customize->add_setting(
         'footer_design_type',

@@ -84,8 +84,7 @@ function boutiq_customize_css()
     $footer_first_btn_bg_color = get_theme_mod('footer_first_btn_bg_color_setting', '');
     $footer_first_btn_text_color = get_theme_mod('footer_first_btn_text_color_setting', '');
     $footer_second_btn_bg_color = get_theme_mod('footer_second_btn_bg_color_setting', '');
-    $footer_second_btn_sub_text_color = get_theme_mod('footer_second_btn_text_color_setting', '');
-
+    $footer_second_btn_text_color = get_theme_mod('footer_second_btn_text_color_setting', '');
 
     // Font
     $jp_font = get_theme_mod('site_default_jp_fontFamily', false);
@@ -224,19 +223,19 @@ function boutiq_customize_css()
         echo '--footer_first_btn_bg_color: ' . $main_color . ';' . "\n";
     }
     if ($footer_first_btn_text_color) {
-        echo '--footer_first_btn_text_color:' . $footer_first_btn_text_color . ';';
+        echo '--footer_first_btn_text_color:' . $footer_first_btn_text_color . ';' . "\n";
     } else {
-        echo '--footer_first_btn_text_color:' . $footer_text_color . ';';
+        echo '--footer_first_btn_text_color:' . $footer_text_color . ';' . "\n";
     }
     if ($footer_second_btn_bg_color) {
         echo '--footer_second_btn_bg_color: ' . $footer_second_btn_bg_color . ';' . "\n";
     } else {
         echo '--footer_second_btn_bg_color: ' . $main_color . ';' . "\n";
     }
-    if ($footer_second_btn_sub_text_color) {
-        echo '--footer_second_btn_sub_text_color:' . $footer_second_btn_sub_text_color . ';';
+    if ($footer_second_btn_text_color) {
+        echo '--footer_second_btn_text_color:' . $footer_second_btn_text_color . ';' . "\n";
     } else {
-        echo '--footer_second_btn_sub_text_color:' . $footer_text_color . ';';
+        echo '--footer_second_btn_text_color:' . $footer_text_color . ';' . "\n";
     }
     if ($jp_font) {
         echo '--jp_font: ' . $jp_font . ';' . "\n";
@@ -257,9 +256,9 @@ function boutiq_customize_css()
         echo '--header_btn_bg_color: ' . $main_color . ';' . "\n";
     }
     if ($header_btn_text_color) {
-        echo '--header_btn_text_color:' . $header_btn_text_color . ';';
+        echo '--header_btn_text_color:' . $header_btn_text_color . ';' . "\n";
     } else {
-        echo '--header_btn_text_color:' . $header_text_color . ';';
+        echo '--header_btn_text_color:' . $header_text_color . ';' . "\n";
     }
     if ($header_btn_sub_bg_color) {
         echo '--header_btn_sub_bg_color: ' . $header_btn_sub_bg_color . ';' . "\n";
@@ -267,9 +266,9 @@ function boutiq_customize_css()
         echo '--header_btn_sub_bg_color: ' . $main_color . ';' . "\n";
     }
     if ($header_btn_sub_text_color) {
-        echo '--header_btn_sub_text_color:' . $header_btn_sub_text_color . ';';
+        echo '--header_btn_sub_text_color:' . $header_btn_sub_text_color . ';' . "\n";
     } else {
-        echo '--header_btn_sub_text_color:' . $header_text_color . ';';
+        echo '--header_btn_sub_text_color:' . $header_text_color . ';' . "\n";
     }
     if ($follow_btn_left_and_right) {
         echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
