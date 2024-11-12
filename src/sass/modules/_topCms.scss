@@ -1509,6 +1509,10 @@
 
         @include m.mq(sp) {}
     }
+
+    .tab__panel {
+        display: none;
+    }
 }
 
 .top-cms05__link {
@@ -1558,6 +1562,14 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
+    &.tab__panel {
+        display: none;
+    }
+}
+
+.top-cms05__list.tab__panel.--active {
+    display: flex;
 }
 
 .top-cms05__post {
@@ -1860,8 +1872,13 @@
 
 }
 
-.top-cms06__list.tab__panel.--active {
+.top-cms06__list {
+    &.tab__panel {
+        display: none;
+    }
+}
 
+.top-cms06__list.tab__panel.--active {
     display: flex;
 
     @include m.mq(pc) {}
