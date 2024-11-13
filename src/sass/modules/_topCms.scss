@@ -1825,11 +1825,19 @@
 
 .top-cms06__content {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     margin-bottom: 80px;
     grid-area: cms_list;
-    width: 100vw;
+    width: calc(100vw - calc(390px + calc(calc(100vw - 1500px)/2)));
     margin-right: calc(50% - 50vw);
+
+    @include m.mq(pc) {
+        width: calc(100vw - calc(330px + calc(calc(100vw - 1100px)/2)));
+    }
+
+    @include m.mq(miniPc) {
+        width: 100%;
+    }
 
     @include m.mq(tab) {}
 
@@ -1984,6 +1992,7 @@
     display: block;
     font-size: 1.2rem;
     font-weight: 700;
+    margin-top: 20px;
 
     @include m.mq(pc) {}
 
