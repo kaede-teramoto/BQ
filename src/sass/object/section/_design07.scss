@@ -50,6 +50,9 @@
 }
 
 .section__parts__wrapper__design07 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
     @include m.mq(pc) {}
 
@@ -62,6 +65,7 @@
 
 .section__parts__design07 {
     display: grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:

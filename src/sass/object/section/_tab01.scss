@@ -1,0 +1,163 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* tab01
+ ----------------------------------------------------------------------------------------------- */
+
+.section__tab01 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    // タブ パネル------------------------------------------
+    .tab__panels {
+        display: flex;
+        gap: 5px;
+    }
+
+    .tab__panel {
+        background: var(--base_color);
+        padding: 10px 20px;
+
+        &.is-active {
+            background: var(--main_color);
+            color: #fff;
+        }
+    }
+
+    .tab__contents {
+        border-top: 2px solid var(--main_color);
+        margin-top: 0;
+    }
+
+    .tab__content {
+        display: none;
+    }
+
+    .tab__content.is-active {
+        display: block;
+    }
+}
+
+.section__tab01__inner {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__tab01__block-title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__tab01__block-subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__tab01 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__tab01 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__tab01__title {
+
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__tab01__subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__tab01__text {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__tab01__img {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -151,8 +151,7 @@
 
 .c-btn03,
 .c-btn06,
-.c-btn08,
-.c-btn09 {
+.c-btn08 {
     .c-btn__icon03 {
         &::before {
             border-color: #fff;
@@ -172,6 +171,22 @@
     .c-btn__icon03 {
         &::before {
             border-color: var(--main_color);
+        }
+    }
+}
+
+.c-btn09 {
+    .c-btn__icon03 {
+        &::before {
+            border-color: #fff;
+        }
+    }
+
+    &:hover {
+        .c-btn__icon03 {
+            &::before {
+                border-color: var(--main_color);
+            }
         }
     }
 }

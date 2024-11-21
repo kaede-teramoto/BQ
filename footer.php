@@ -145,11 +145,10 @@ $footer_second_btn_target_setting = get_theme_mod('footer_second_btn_target_sett
 
 
 ?>
-</main>
-
 <?php if ($footer_design == 04) :
     get_template_part('parts/parts', 'originalFooter');
 else : ?>
+    </main>
 
     <footer class="footer footer<?php echo $footer_design; ?>" style="<?php echo $footer_text_color_set; ?>">
         <div class="footer__wrapper footer<?php echo $footer_design; ?>__wrapper">
@@ -261,7 +260,7 @@ else : ?>
                 </div>
             <?php endif; ?>
 
-            <?php if (has_nav_menu('footerNavRight')) : ?>
+            <?php if (has_nav_menu('footerNavInfo')) : ?>
                 <div class="footer__info footer<?php echo $footer_design; ?>__info">
                     <small><?php echo $footer_copyright; ?></small>
                     <?php wp_nav_menu(array(

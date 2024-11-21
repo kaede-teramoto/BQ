@@ -72,13 +72,14 @@
 
 .section__parts__design09 {
     display: grid;
-    gap: 0 6%;
+    gap: 30px 6%;
     grid-template-columns: auto 52%;
-    grid-template-rows: 30px auto auto;
+    grid-template-rows: 30px auto auto auto;
     grid-template-areas:
         "parts_sub parts_img"
         "parts_main parts_img"
-        "parts_text parts_img";
+        "parts_text parts_img"
+        "parts_btn parts_img";
     background-color: #fff;
     border-radius: var(--radius_pc);
     padding: 50px 0 50px 80px;
@@ -148,7 +149,6 @@
 
 .section__parts__design09__text {
     grid-area: parts_text;
-    padding-top: 20px;
 
     @include m.mq(pc) {}
 
