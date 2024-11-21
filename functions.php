@@ -9,8 +9,6 @@ if (!isset($content_width)) {
     $content_width = 640;
 }
 
-load_theme_textdomain('boutiq');
-
 function customizer_custom_scripts()
 {
     // カスタマイザーのページでのみスクリプトを読み込む

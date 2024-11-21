@@ -78,8 +78,14 @@ add_filter('excerpt_more', 'boutiq_excerpt_more');
 /*--------------------------------------------------------------
   translation
 --------------------------------------------------------------*/
-load_theme_textdomain('boutiq', get_template_directory() . '/languages');
+//load_theme_textdomain('boutiq', get_template_directory() . '/languages');
 
+// テーマの翻訳ファイルを読み込む
+function boutiq_languages()
+{
+  load_theme_textdomain('boutiq', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'boutiq_languages');
 
 /*--------------------------------------------------------------
   html5

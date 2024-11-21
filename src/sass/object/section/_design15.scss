@@ -18,6 +18,11 @@
 }
 
 .section__design15__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
     @include m.mq(pc) {}
 

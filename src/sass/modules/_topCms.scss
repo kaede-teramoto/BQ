@@ -2039,3 +2039,297 @@
 
     @include m.mq(sp) {}
 }
+
+
+/*  -----------------------------------------------------------------------------------------------
+cms07
+----------------------------------------------------------------------------------------------- */
+.top-cms07__wrapper {
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07 {
+    width: 96%;
+    max-width: v.$pcWidth;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.home .top-cms07 {
+
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__title {
+    order: 1;
+    text-align: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__title--main {
+    font-weight: 700;
+    color: var(--main_color);
+    font-size: var(--heading_fontSize_PC);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: var(--heading_fontSize_TAB);
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        font-size: var(--heading_fontSize_SP);
+    }
+}
+
+.top-cms07__title--sub {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__cat {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__cat__list {
+    display: flex;
+    gap: 20px;
+
+    a {
+
+        &.--active {
+
+            &::before {}
+        }
+    }
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+
+
+        a {
+
+            &.--active {
+
+
+                &::before {}
+            }
+        }
+    }
+
+    @include m.mq(sp) {}
+
+    .children {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.top-cms07__link {
+    order: 3;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__content {
+    order: 2;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__list {
+    &.tab__panel {
+        display: none;
+    }
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &.tab__panel.--active {
+        display: block;
+    }
+}
+
+.top-cms07__post {
+    display: flex;
+    gap: 30px;
+    border-top: 1px solid var(--base_color);
+    padding: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    &:last-of-type {
+        border-bottom: 1px solid var(--base_color);
+    }
+
+    &+.top-cms07__post {}
+
+    img {}
+
+    &:hover {
+        img {}
+
+        .top-cms07__post__title a {}
+    }
+}
+
+.top-cms07__post__thumbnail {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.top-cms07__post__link {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__post__cat {
+    order: 2;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
+        font-size: 1.2rem;
+        display: block;
+        text-align: center;
+        line-height: 20px;
+        min-width: 100px;
+        background-color: var(--main_color);
+        color: #fff;
+        padding: 0 20px;
+        border-radius: 2px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}
+
+.top-cms07__post__data {
+    order: 1;
+    color: var(--main_color);
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.top-cms07__post__title {
+    order: 3;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}

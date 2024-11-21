@@ -160,6 +160,25 @@ window.onload = function () {
     });
 };
 
+// タブ切替
+document.addEventListener('DOMContentLoaded', () => {
+    const panels = document.querySelectorAll('.tab__panel');
+    const contents = document.querySelectorAll('.tab__content');
+
+    panels.forEach((panel, index) => {
+        panel.addEventListener('click', () => {
+            // パネルの active クラスをリセット
+            panels.forEach(p => p.classList.remove('is-active'));
+            panel.classList.add('is-active');
+
+            // コンテンツの active クラスをリセット
+            contents.forEach(c => c.classList.remove('is-active'));
+            contents[index].classList.add('is-active');
+        });
+    });
+});
+
+
 
 // header固定
 // const headerFix = () => {
