@@ -248,6 +248,7 @@ function cms_register($wp_customize)
                 '04'   => __('CMS Archive Type04', 'boutiq'),
                 '05'   => __('CMS Archive Type05', 'boutiq'),
                 '06'   => __('CMS Archive Type06', 'boutiq'),
+                '07'   => __('CMS Archive Type07', 'boutiq'),
             ),
         )
     );

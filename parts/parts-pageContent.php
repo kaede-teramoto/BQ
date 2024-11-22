@@ -84,7 +84,7 @@ if (have_rows('content_block')) : $i = 1;
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -196,7 +196,7 @@ if (have_rows('content_block')) : $i = 1;
                     <div class="section__<?php echo $block_design_type; ?>__left">
 
                         <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                            <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                            <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
 
                                 <?php if (get_sub_field('block_title_image')) : ?>
                                     <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -280,7 +280,7 @@ if (have_rows('content_block')) : $i = 1;
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -336,7 +336,7 @@ if (have_rows('content_block')) : $i = 1;
 
 
                     <?php if (get_sub_field('block_title')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                             <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text"><?php the_sub_field('block_title'); ?></span>
                             <?php if (get_sub_field('block_subtitle')) : ?>
                                 <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle section__<?php echo $block_design_type; ?>__block-subtitle"><?php the_sub_field('block_subtitle'); ?></span>
@@ -376,7 +376,7 @@ if (have_rows('content_block')) : $i = 1;
                     <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
 
                         <?php if (get_sub_field('block_title')) : ?>
-                            <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                            <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                                 <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text"><?php the_sub_field('block_title'); ?></span>
                             </h2>
                         <?php endif; ?>
@@ -414,7 +414,7 @@ if (have_rows('content_block')) : $i = 1;
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -493,7 +493,7 @@ if (have_rows('content_block')) : $i = 1;
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -574,7 +574,7 @@ if (have_rows('content_block')) : $i = 1;
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -664,7 +664,7 @@ if (have_rows('content_block')) : $i = 1;
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -759,7 +759,7 @@ if (have_rows('content_block')) : $i = 1;
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
@@ -854,7 +854,7 @@ if (have_rows('content_block')) : $i = 1;
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
                     <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
