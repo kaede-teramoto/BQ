@@ -112,7 +112,7 @@ if (!is_singular()) :
                                     </div>
                                 <?php endif; ?>
                                 <div class="cms__post__cat cms<?php echo $cms_design; ?>__post__cat">
-                                    <?php the_category(' '); ?>
+                                    <?php cat_link(); ?>
                                 </div>
                                 <div class="cms__post__data cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
                                 <div class="cms__post__title cms<?php echo $cms_design; ?>__post__title">

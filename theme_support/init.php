@@ -143,7 +143,7 @@ function cat_link()
   if (!empty($categories)) {
     echo '<div class="cat">';
     foreach ($categories as $category) {
-      echo '<a class="cat__link" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+      echo '<a class="cat__link cat__' . esc_html($category->slug) . '" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
     }
     echo '</div>';
   }
@@ -161,7 +161,7 @@ function tag_link()
   if (!empty($tags)) {
     echo '<div class="tag">';
     foreach ($tags as $tag) {
-      echo '<a class="tag__link" href="' . esc_url(get_tag_link($tag->term_id)) . '">' . esc_html($tag->name) . '</a>';
+      echo '<a class="tag__link tag__' . esc_html($tag->slug) . '" href="' . esc_url(get_tag_link($tag->term_id)) . '">' . esc_html($tag->name) . '</a>';
     }
     echo '</div>';
   }

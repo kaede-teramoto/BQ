@@ -21,7 +21,7 @@
     padding: 20px 0;
     border-top: 1px solid var(--text_color);
     border-bottom: 1px solid var(--text_color);
-    @include v.conWidth;
+    @include v.miniConWidth;
 
     @include m.mq(miniPc) {}
 
@@ -168,16 +168,21 @@
 }
 
 .entry-footer {
-    padding-top: 20px;
-    border-top: 1px solid var(--text_color);
-    display: flex;
-    justify-content: space-between;
+    display: none;
+
+    &:has(a) {
+        padding-top: 20px;
+        border-top: 1px solid var(--text_color);
+        display: flex;
+        justify-content: space-between;
+    }
 
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
 }
 
 .post-main {
