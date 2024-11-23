@@ -161,7 +161,7 @@ if ($cms_design == 03) : ?>
                                     </div>
                                 <?php endif; ?>
                                 <div class="top-cms<?php echo $cms_design; ?>__post__cat">
-                                    <?php the_category(' '); ?>
+                                    <?php cat_link(); ?>
                                 </div>
                                 <div class="top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
                                 <div class="top-cms<?php echo $cms_design; ?>__post__title">

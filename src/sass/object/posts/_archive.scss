@@ -1994,7 +1994,9 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        margin-top: 30px;
+    }
 
     @include m.mq(sp) {}
 }
@@ -2083,7 +2085,7 @@
 
 .cms07__post {
     width: 100%;
-    border-bottom: 1px solid var(--accent_color);
+    border-top: 1px solid var(--base_color);
     min-height: 90px;
     padding: 10px 0;
     display: flex;
@@ -2094,10 +2096,17 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        flex-wrap: wrap;
+        gap: 20px 0;
+        justify-content: space-between;
+    }
 
     @include m.mq(sp) {}
 
+    &+.cms07__post {
+        border-bottom: 1px solid var(--base_color);
+    }
 }
 
 .cms07__post__thumbnail {
@@ -2138,7 +2147,11 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+    }
 
     @include m.mq(sp) {}
 
@@ -2152,7 +2165,10 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        width: 50%;
+        justify-content: flex-start;
+    }
 
     @include m.mq(sp) {}
 

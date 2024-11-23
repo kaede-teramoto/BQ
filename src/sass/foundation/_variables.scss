@@ -29,6 +29,33 @@ $pcWidth: 1100px;
 $maxWidth: 1500px;
 $headerWidth: 94%;
 
+@mixin miniConWidth() {
+  width: 100%;
+  max-width: $pcWidth;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include m.mq(pc) {
+    width: 100%;
+    max-width: $pcWidth;
+  }
+
+  @include m.mq(miniPc) {
+    width: 100%;
+    max-width: $miniWidth;
+  }
+
+  @include m.mq(tab) {
+    width: 100%;
+    max-width: $tabWidth;
+  }
+
+  @include m.mq(sp) {
+    width: 100%;
+    max-width: $spWidth;
+  }
+}
+
 @mixin conWidth() {
   width: 100%;
   max-width: $maxWidth;
