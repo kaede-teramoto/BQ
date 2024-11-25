@@ -2098,13 +2098,13 @@
 
     @include m.mq(tab) {
         flex-wrap: wrap;
-        gap: 20px 0;
+        gap: 0;
         justify-content: space-between;
     }
 
     @include m.mq(sp) {}
 
-    &+.cms07__post {
+    &:last-of-type {
         border-bottom: 1px solid var(--base_color);
     }
 }
@@ -2181,7 +2181,9 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        width: 100%;
+    }
 
     @include m.mq(sp) {}
 

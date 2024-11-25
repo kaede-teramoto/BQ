@@ -3,6 +3,28 @@
 
 /* Header Nav
  ----------------------------------------------------------------------------------------------- */
+.header__wrapper__nav {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.header__wrapper__nav--wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
 .header__wrapper__nav--wrapper__list {
     height: 100%;
     display: flex;
@@ -14,7 +36,7 @@
         font-size: 1.8rem;
     }
 
-    a {
+    &>.nav__link>a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -173,7 +195,7 @@
     margin: 0 auto;
 }
 
-.header04__wrapper__nav--wrapper__list li {
+.header04__wrapper__nav--wrapper__list>li.nav__item {
     display: inline-block;
     margin-right: 30px;
 
