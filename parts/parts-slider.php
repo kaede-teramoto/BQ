@@ -252,5 +252,180 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
 <?php elseif ($fv_type == 03) :
     get_template_part('parts/parts', 'originalSlider'); ?>
 
+<?php elseif ($fv_type == 04) : ?>
+    <section class="p-top teramoto">
+        <ul class="teramoto-wrapper">
+            <?php if ($fv_img1) { ?>
+                <li class="teramoto-slide">
+                    <?php if ($fv_img1_link) { ?>
+                        <a href="<?php echo $fv_img1_link; ?>" <?php if ($fv_link_target_1) {
+                                                                    echo ' target="_blank"';
+                                                                } ?>>
+                            <?php if ($fv_heading1 || $fv_text1) { ?>
+                                <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color1; ?>;bottom:<?php echo $fv_text_bottom_position1; ?>;left:<?php echo $fv_text_left_position1; ?>;">
+                                    <?php if ($fv_heading1) { ?>
+                                        <h2 class="p-top__subtitle"><?php echo $fv_heading1; ?></h2>
+                                    <?php } ?>
+                                    <?php if ($fv_text1) { ?>
+                                        <p class="p-top__text"><?php echo $fv_text1; ?></p>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+                            <img src="<?php echo $fv_img1; ?>" alt="" />
+                        </a>
+                    <?php } else { ?>
+                        <?php if ($fv_heading1 || $fv_text1) { ?>
+                            <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color1; ?>;bottom:<?php echo $fv_text_bottom_position1; ?>;left:<?php echo $fv_text_left_position1; ?>;">
+                                <?php if ($fv_heading1) { ?>
+                                    <h2 class="p-top__subtitle"><?php echo $fv_heading1; ?></h2>
+                                <?php } ?>
+                                <?php if ($fv_text1) { ?>
+                                    <p class="p-top__text"><?php echo $fv_text1; ?></p>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <img src="<?php echo $fv_img1; ?>" alt="" />
+                    <?php } ?>
+                </li>
+            <?php } ?>
+
+            <?php if ($fv_img2) { ?>
+                <li class="teramoto-slide">
+                    <?php if ($fv_img2_link) { ?>
+                        <a href="<?php echo $fv_img2_link; ?>" <?php if ($fv_link_target_2) {
+                                                                    echo ' target="_blank"';
+                                                                } ?>>
+                            <?php if ($fv_heading2 || $fv_text2) { ?>
+                                <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color2; ?>;bottom:<?php echo $fv_text_bottom_position2; ?>;left:<?php echo $fv_text_left_position2; ?>;">
+                                    <?php if ($fv_heading2) { ?>
+                                        <h2 class="p-top__subtitle"><?php echo $fv_heading2; ?></h2>
+                                    <?php } ?>
+                                    <?php if ($fv_text2) { ?>
+                                        <p class="p-top__text"><?php echo $fv_text2; ?></p>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+                            <img src="<?php echo $fv_img2; ?>" alt="" />
+                        </a>
+                    <?php } else { ?>
+                        <?php if ($fv_heading2 || $fv_text2) { ?>
+                            <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color2; ?>;bottom:<?php echo $fv_text_bottom_position2; ?>;left:<?php echo $fv_text_left_position2; ?>;">
+                                <?php if ($fv_heading2) { ?>
+                                    <h2 class="p-top__subtitle"><?php echo $fv_heading2; ?></h2>
+                                <?php } ?>
+                                <?php if ($fv_text2) { ?>
+                                    <p class="p-top__text"><?php echo $fv_text2; ?></p>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <img src="<?php echo $fv_img2; ?>" alt="" />
+                    <?php } ?>
+                </li>
+            <?php } ?>
+
+            <?php if ($fv_img3) { ?>
+                <li class="teramoto-slide">
+                    <?php if ($fv_img3_link) { ?>
+                        <a href="<?php echo $fv_img3_link; ?>" <?php if ($fv_link_target_3) {
+                                                                    echo ' target="_blank"';
+                                                                } ?>>
+                            <?php if ($fv_heading3 || $fv_text3) { ?>
+                                <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color3; ?>;bottom:<?php echo $fv_text_bottom_position3; ?>;left:<?php echo $fv_text_left_position3; ?>;">
+                                    <?php if ($fv_heading3) { ?>
+                                        <h2 class="p-top__subtitle"><?php echo $fv_heading3; ?></h2>
+                                    <?php } ?>
+                                    <?php if ($fv_text3) { ?>
+                                        <p class="p-top__text"><?php echo $fv_text3; ?></p>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+                            <img src="<?php echo $fv_img3; ?>" alt="">
+                        </a>
+                    <?php } else { ?>
+                        <?php if ($fv_heading3 || $fv_text3) { ?>
+                            <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color3; ?>;bottom:<?php echo $fv_text_bottom_position3; ?>;left:<?php echo $fv_text_left_position3; ?>;">
+                                <?php if ($fv_heading3) { ?>
+                                    <h2 class="p-top__subtitle"><?php echo $fv_heading3; ?></h2>
+                                <?php } ?>
+                                <?php if ($fv_text3) { ?>
+                                    <p class="p-top__text"><?php echo $fv_text3; ?></p>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <img src="<?php echo $fv_img3; ?>" alt="">
+                    <?php } ?>
+                </li>
+            <?php } ?>
+
+            <?php if ($fv_img4) { ?>
+                <li class="teramoto-slide">
+                    <?php if ($fv_img4_link) { ?>
+                        <a href="<?php echo $fv_img4_link; ?>" <?php if ($fv_link_target_4) {
+                                                                    echo ' target="_blank"';
+                                                                } ?>>
+                            <?php if ($fv_heading4 || $fv_text4) { ?>
+                                <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color4; ?>;bottom:<?php echo $fv_text_bottom_position4; ?>;left:<?php echo $fv_text_left_position4; ?>;">
+                                    <?php if ($fv_heading4) { ?>
+                                        <h2 class="p-top__subtitle"><?php echo $fv_heading4; ?></h2>
+                                    <?php } ?>
+                                    <?php if ($fv_text4) { ?>
+                                        <p class="p-top__text"><?php echo $fv_text4; ?></p>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+                            <img src="<?php echo $fv_img4; ?>" alt="">
+                        </a>
+                    <?php } else { ?>
+                        <?php if ($fv_heading4 || $fv_text4) { ?>
+                            <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color4; ?>;bottom:<?php echo $fv_text_bottom_position4; ?>;left:<?php echo $fv_text_left_position4; ?>;">
+                                <?php if ($fv_heading4) { ?>
+                                    <h2 class="p-top__subtitle"><?php echo $fv_heading4; ?></h2>
+                                <?php } ?>
+                                <?php if ($fv_text4) { ?>
+                                    <p class="p-top__text"><?php echo $fv_text4; ?></p>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <img src="<?php echo $fv_img4; ?>" alt="">
+                    <?php } ?>
+                </li>
+            <?php } ?>
+
+            <?php if ($fv_img5) { ?>
+                <li class="teramoto-slide">
+                    <?php if ($fv_img5_link) { ?>
+                        <a href="<?php echo $fv_img5_link; ?>" <?php if ($fv_link_target_5) {
+                                                                    echo ' target="_blank"';
+                                                                } ?>>
+                            <?php if ($fv_heading5 || $fv_text5) { ?>
+                                <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color5; ?>;bottom:<?php echo $fv_text_bottom_position5; ?>;left:<?php echo $fv_text_left_position5; ?>;">
+                                    <?php if ($fv_heading5) { ?>
+                                        <h2 class="p-top__subtitle"><?php echo $fv_heading5; ?></h2>
+                                    <?php } ?>
+                                    <?php if ($fv_text5) { ?>
+                                        <p class="p-top__text"><?php echo $fv_text5; ?></p>
+                                    <?php } ?>
+                                </div>
+                            <?php } ?>
+                            <img src="<?php echo $fv_img5; ?>" alt="">
+                        </a>
+                    <?php } else { ?>
+                        <?php if ($fv_heading5 || $fv_text5) { ?>
+                            <div class="teramoto-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color5; ?>;bottom:<?php echo $fv_text_bottom_position5; ?>;left:<?php echo $fv_text_left_position5; ?>;">
+                                <?php if ($fv_heading5) { ?>
+                                    <h2 class="p-top__subtitle"><?php echo $fv_heading5; ?></h2>
+                                <?php } ?>
+                                <?php if ($fv_text5) { ?>
+                                    <p class="p-top__text"><?php echo $fv_text5; ?></p>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <img src="<?php echo $fv_img5; ?>" alt="">
+                    <?php } ?>
+                </li>
+            <?php } ?>
+        </ul>
+
+    </section>
 <?php else : ?>
 <?php endif; ?>

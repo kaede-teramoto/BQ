@@ -148,6 +148,7 @@ function top_customize_register($wp_customize)
                 '01'     => __('Show Page title', 'boutiq'),
                 '02'     => __('Show default slider', 'boutiq'),
                 '03'      => __('Show the original slider', 'boutiq'),
+                '04'      => __('Image output', 'boutiq'),
                 '00'      => __('Show nothing', 'boutiq'),
             ),
         )
