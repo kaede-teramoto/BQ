@@ -24,7 +24,6 @@ function sanitize_textarea_content($input)
     return wp_kses_post($input);
 }
 
-
 // theme_support
 get_template_part('theme_support/init');
 get_template_part('theme_support/titles');
