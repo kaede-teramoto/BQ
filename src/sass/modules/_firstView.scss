@@ -103,7 +103,7 @@
                 height: 100%;
                 content: "";
                 background-color: #fff;
-                z-index: 1000;
+                z-index: v.getZIndex(mark);
             }
         }
 
@@ -127,7 +127,7 @@
                 height: 100%;
                 content: "";
                 background-color: #fff;
-                z-index: 1000;
+                z-index: v.getZIndex(mark);
             }
         }
     }

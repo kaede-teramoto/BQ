@@ -10,11 +10,11 @@
         list-style: inside;
     }
 
-    h3 {
+    h3:not([class]) {
         color: var(--main_color);
     }
 
-    p {
+    p:not([class]) {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
@@ -30,7 +30,7 @@
         }
     }
 
-    br {
+    br:not([class]) {
         display: none;
     }
 }

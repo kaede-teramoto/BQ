@@ -109,11 +109,11 @@ function add_subtitle_field_to_category($term)
 ?>
   <tr class="form-field">
     <th scope="row" valign="top">
-      <label for="sub_title"><?php _e('Subtitle', 'your-text-domain'); ?></label>
+      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     </th>
     <td>
       <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
-      <p class="description"><?php _e('Enter a subtitle for this category', 'your-text-domain'); ?></p>
+      <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
     </td>
   </tr>
 <?php
@@ -125,9 +125,9 @@ function add_subtitle_field_to_new_category()
 {
 ?>
   <div class="form-field">
-    <label for="sub_title"><?php _e('Subtitle', 'your-text-domain'); ?></label>
+    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php _e('Enter a subtitle for this category', 'your-text-domain'); ?></p>
+    <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
   </div>
 <?php
 }
@@ -159,9 +159,9 @@ function add_subtitle_field_to_new_tag()
 {
 ?>
   <div class="form-field">
-    <label for="sub_title"><?php _e('Subtitle', 'your-text-domain'); ?></label>
+    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php _e('Enter a subtitle for this tag', 'your-text-domain'); ?></p>
+    <p class="description"><?php _e('Enter a subtitle for this tag', 'boutiq'); ?></p>
   </div>
 <?php
 }
@@ -174,11 +174,11 @@ function edit_subtitle_field_for_tag($term)
 ?>
   <tr class="form-field">
     <th scope="row" valign="top">
-      <label for="sub_title"><?php _e('Subtitle', 'your-text-domain'); ?></label>
+      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     </th>
     <td>
       <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
-      <p class="description"><?php _e('Enter a subtitle for this tag', 'your-text-domain'); ?></p>
+      <p class="description"><?php _e('Enter a subtitle for this tag', 'boutiq'); ?></p>
     </td>
   </tr>
 <?php
@@ -198,6 +198,80 @@ add_action('create_post_tag', 'save_tag_subtitle');
 
 // タグのカスタムフィールド「sub_title」を表示するための関数
 function get_tag_subtitle($term_id)
+{
+  return get_term_meta($term_id, 'sub_title', true);
+}
+
+
+/*--------------------------------------------------------------
+  現在のタクソノミーアーカイブでターム名と説明を出力する関数
+--------------------------------------------------------------*/
+/**
+ * 現在のタクソノミーアーカイブでターム名を出力する関数
+ */
+function taxonomy_term_title()
+{
+  $term = get_queried_object();
+
+  if ($term && !is_wp_error($term) && isset($term->name)) {
+    echo esc_html($term->name);
+  }
+}
+
+// 出力方法（以下のコードを出力したいところに記載する
+// タイトル
+// taxonomy_term_title();
+
+
+/*--------------------------------------------------------------
+  sub title for custom taxonomy
+--------------------------------------------------------------*/
+
+// タクソノミー編集画面に「sub_title」カスタムフィールドを追加
+function add_subtitle_field_to_taxonomy($term)
+{
+  $term_id = $term->term_id; // 現在のタクソノミーIDを取得
+  $sub_title = get_term_meta($term_id, 'sub_title', true); // 現在のsub_titleを取得
+?>
+  <tr class="form-field">
+    <th scope="row" valign="top">
+      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
+    </th>
+    <td>
+      <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
+      <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
+    </td>
+  </tr>
+<?php
+}
+add_action('performance_cat_edit_form_fields', 'add_subtitle_field_to_taxonomy');
+
+// 新規タクソノミー作成画面に「sub_title」カスタムフィールドを追加
+function add_subtitle_field_to_new_taxonomy()
+{
+?>
+  <div class="form-field">
+    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
+    <input type="text" name="sub_title" id="sub_title" value="" size="40">
+    <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
+  </div>
+<?php
+}
+add_action('performance_cat_add_form_fields', 'add_subtitle_field_to_new_taxonomy');
+
+// タクソノミーのカスタムフィールドの値を保存
+function save_taxonomy_subtitle($term_id)
+{
+  if (isset($_POST['sub_title'])) {
+    $sub_title = sanitize_text_field($_POST['sub_title']);
+    update_term_meta($term_id, 'sub_title', $sub_title);
+  }
+}
+add_action('edited_performance_cat', 'save_taxonomy_subtitle');
+add_action('create_performance_cat', 'save_taxonomy_subtitle');
+
+// タクソノミーのカスタムフィールド「sub_title」を表示するための関数
+function get_taxonomy_subtitle($term_id)
 {
   return get_term_meta($term_id, 'sub_title', true);
 }
