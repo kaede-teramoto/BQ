@@ -25,6 +25,16 @@ if (is_category()) {
     $tag_id = get_queried_object_id();
     $subTitle = get_term_meta($tag_id, 'sub_title', true);
     $pageSummary = tag_description($tag_id);
+} elseif (is_tax()) {
+    $term = get_queried_object();
+
+    if ($term && isset($term->term_id)) {
+        $term_id = $term->term_id;
+    } else {
+        $term_id = null; // 取得できない場合はnullを設定
+    }
+    $subTitle = get_term_meta($term_id, 'sub_title', true);
+    $pageSummary = wp_kses_post(wpautop($term->description));
 } elseif ($post_type !== 'post') {
     // タグページの場合
     $post_type_id = '';
@@ -50,6 +60,8 @@ if (is_category()) {
                         single_cat_title();
                     } elseif (is_tag()) {
                         single_tag_title();
+                    } elseif (is_tax()) {
+                        taxonomy_term_title();
                     } elseif ($post_type !== 'post') {
                         echo esc_html($post_type_object->labels->name);
                     } else {

@@ -99,6 +99,31 @@ add_theme_support('html5', array(
 ));
 
 /*--------------------------------------------------------------
+  自動的に投稿スラッグを生成する関数。
+--------------------------------------------------------------*/
+/**
+ * @param string $slug       現在のスラッグ。
+ * @param int    $post_ID    投稿ID。
+ * @param string $post_status 投稿ステータス。
+ * @param string $post_type  投稿タイプ。
+ * @return string 修正されたスラッグ。
+ */
+function auto_post_slug_with_date($slug, $post_ID, $post_status, $post_type)
+{
+  // スラッグがURLエンコードされた文字を含む場合にのみ処理。
+  if (preg_match('/(%[0-9a-f]{2})+/', $slug)) {
+    // 投稿の日付を取得し、YYYYMMDD形式にフォーマット。
+    $post_date = get_post_field('post_date', $post_ID);
+    $formatted_date = date('Ymd', strtotime($post_date));
+
+    // 投稿タイプとフォーマットされた日付を組み合わせたスラッグを生成。
+    $slug = sanitize_title($post_type) . '-' . $formatted_date;
+  }
+  return $slug;
+}
+add_filter('wp_unique_post_slug', 'auto_post_slug_with_date', 10, 4);
+
+/*--------------------------------------------------------------
   date set
 --------------------------------------------------------------*/
 function boutiq_the_post()
