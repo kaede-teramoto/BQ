@@ -51,7 +51,9 @@ $text_link_design = get_theme_mod('text_link_setting', '01');
 $text_icon_design = get_theme_mod('text_link_icon_setting', '01');
 
 if (!empty($post->post_content)) {
-    the_content();
+    if (!(is_page_template('page-forform.php'))) {
+        the_content();
+    }
 }
 
 // 繰り返しフィールドの値を格納するための変数
@@ -934,4 +936,12 @@ if (have_rows('content_block')) : $i = 1;
     endwhile;
 
     ?>
-<?php endif; ?>
+<?php endif;
+
+if (!empty($post->post_content)) {
+    if (is_page_template('page-forform.php')) {
+        the_content();
+    }
+}
+
+?>
