@@ -6,7 +6,8 @@
  * @package BOUTiQ
  */
 
-//$site_url  = home_url();
+
+$site_url = get_site_url();
 $theme_url = get_template_directory_uri();
 $blog_url = get_post_type_archive_link('post');
 
@@ -24,72 +25,113 @@ if (!is_singular()) :
         <div class="cms cms<?php echo $cms_design; ?>">
 
             <div class="cms__cat cms<?php echo $cms_design; ?>__cat">
-                <p class="cms__cat__title cms<?php echo $cms_design; ?>__cat__title">カテゴリー</p>
-                <?php
 
-                $catlists = get_categories(array(
-                    'orderby' => 'name',
-                    'order' => 'ASC'
-                ));
-                echo '<ul class="cms__cat__list cms' . $cms_design . '__cat__list">'; ?>
-                <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
-                    <a class="--active" href="<?php echo $blog_url; ?>">
-                        ALL
-                    </a>
-                </li>
                 <?php
-                foreach ($catlists as $catlist) { ?>
-                    <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
-                        <a href="<?php echo get_category_link($catlist->term_id); ?>">
-                            <?php echo $catlist->name; ?>
-                        </a>
-                    </li>
-                <?php
-                }
-                echo '</ul>';
-                ?>
+                if (is_post_type_archive() || is_tax()) :
+                    $post_type = get_post_type(); // 現在の投稿タイプを取得
+                    $taxonomies = get_object_taxonomies($post_type, 'objects'); // 投稿タイプに紐付くタクソノミーを取得
+
+                    foreach ($taxonomies as $taxonomy) {
+                        echo '<p class="cms__cat__title cms' . $cms_design . '__cat__title">' . esc_html($taxonomy->label) . '</p>'; // タクソノミー名の表示
+
+                        // ターム一覧を取得 (記事がないタームを除外)
+                        $terms = get_terms(array(
+                            'taxonomy'   => $taxonomy->name,
+                            'hide_empty' => true, // 記事がないタームを除外
+                        )); ?>
+
+                        <ul class="cms__cat__list cms<?php echo $cms_design; ?>__cat__list">
+                            <li class="cms__cat__item cms<?php echo $cms_design; ?>__cat__item">
+                                <a class="--active" href="<?php echo $site_url; ?>/<?php echo $post_type; ?>">ALL</a>
+                            </li>
+
+                            <?php foreach ($terms as $term) {
+                                // ターム名をリンク付きで表示
+                                $term_link = get_term_link($term); // タームのリンクを取得
+                                if (!is_wp_error($term_link)) { // リンク生成が成功した場合のみ表示 
+                            ?>
+                                    <li class="cms__cat__item cms<?php echo $cms_design; ?>__cat__item">
+                                        <a href="<?php echo esc_url($term_link); ?>"><?php echo esc_html($term->name); ?></a>
+                                    </li>
+                        <?php }
+                            }
+                            echo '</ul>';
+                        }
+
+                        ?>
+
+                    <?php else :
+
+                    $catlists = get_categories(array(
+                        'orderby' => 'name',
+                        'order' => 'ASC'
+                    )); ?>
+                        <p class="cms__cat__title cms<?php echo $cms_design; ?>__cat__title">カテゴリー</p>
+                        <ul class="cms__cat__list cms<?php echo $cms_design; ?>__cat__list">
+                            <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
+                                <a class="--active" href="<?php echo $blog_url; ?>">
+                                    ALL
+                                </a>
+                            </li>
+                            <?php
+                            foreach ($catlists as $catlist) { ?>
+                                <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
+                                    <a href="<?php echo get_category_link($catlist->term_id); ?>">
+                                        <?php echo $catlist->name; ?>
+                                    </a>
+                                </li>
+                            <?php
+                            } ?>
+                        </ul>
+
+                    <?php endif; ?>
             </div>
 
 
             <?php
-            // タグがあるか確認
-            $tags = get_tags(array(
-                'orderby' => 'count', // カウント数で並び替え
-                'order'   => 'DESC'   // 降順
-            ));
-            $current_tag_id = is_tag() ? get_queried_object_id() : null;
 
-            // タグが存在する場合のみ実行
-            if ($tags) {
-                // タグを登録数の多い順にソート
-                $tags = wp_list_sort($tags, 'count', 'DESC');
-                echo '<div class="cms__cat cms' . $cms_design . '__cat cms__tag cms' . $cms_design . '__tag">';
-                echo '<p class="cms__cat__title cms' . $cms_design . '__cat__title">タグ</p>';
-                echo '<ul class="cms__cat__list cms' . $cms_design . '__cat__list cms__tag__list cms' . $cms_design . '__tag__list">'; ?>
-                <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item cms__tag__item cms<?php echo $cms_design ?>__tag__item">
-                    <?php if (is_tag()) { ?>
-                        <a href="<?php echo $blog_url; ?>">
-                            ALL
-                        </a>
+            if (!(is_post_type_archive() || is_tax())) :
 
-                    <?php } else { ?>
-                        <a class="--active" href="<?php echo $blog_url; ?>">
-                            ALL
-                        </a>
-                    <?php } ?>
-                </li>
-                <?php
-                // 各タグをループして表示
-                foreach ($tags as $tag) {
-                    $active_class = ($current_tag_id === $tag->term_id) ? ' --active' : ''; ?>
+                // タグがあるか確認
+                $tags = get_tags(array(
+                    'orderby' => 'count', // カウント数で並び替え
+                    'order'   => 'DESC'   // 降順
+                ));
+                $current_tag_id = is_tag() ? get_queried_object_id() : null;
+
+                // タグが存在する場合のみ実行
+                if ($tags) {
+                    // タグを登録数の多い順にソート
+                    $tags = wp_list_sort($tags, 'count', 'DESC');
+                    echo '<div class="cms__cat cms' . $cms_design . '__cat cms__tag cms' . $cms_design . '__tag">';
+                    echo '<p class="cms__cat__title cms' . $cms_design . '__cat__title">タグ</p>';
+                    echo '<ul class="cms__cat__list cms' . $cms_design . '__cat__list cms__tag__list cms' . $cms_design . '__tag__list">'; ?>
                     <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item cms__tag__item cms<?php echo $cms_design ?>__tag__item">
+                        <?php if (is_tag()) { ?>
+                            <a href="<?php echo $blog_url; ?>">
+                                ALL
+                            </a>
+
+                        <?php } else { ?>
+                            <a class="--active" href="<?php echo $blog_url; ?>">
+                                ALL
+                            </a>
+                        <?php } ?>
+                    </li>
+                    <?php
+                    // 各タグをループして表示
+                    foreach ($tags as $tag) {
+                        $active_class = ($current_tag_id === $tag->term_id) ? ' --active' : ''; ?>
+                        <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item cms__tag__item cms<?php echo $cms_design ?>__tag__item">
                 <?php
-                    echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" class="' . $active_class . '">' . esc_html($tag->name)  . '</a>';
+                        echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" class="' . $active_class . '">' . esc_html($tag->name)  . '</a>';
+                    }
+                    echo '</li>';
+                    echo '</ul>';
+                    echo '</div>';
                 }
-                echo '</li>';
-                echo '</ul>';
-                echo '</div>';
-            }
+
+            endif;
                 ?>
 
                 <div class="cms__content cms<?php echo $cms_design; ?>__content">

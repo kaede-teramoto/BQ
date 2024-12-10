@@ -164,13 +164,32 @@ add_filter('site_option__site_transient_update_plugins', 'disable_plugin_update'
 --------------------------------------------------------------*/
 function cat_link()
 {
-  $categories = get_the_category();
-  if (!empty($categories)) {
-    echo '<div class="cat">';
-    foreach ($categories as $category) {
-      echo '<a class="cat__link cat__' . esc_html($category->slug) . '" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+  if (get_post_type() === 'post') {
+    $categories = get_the_category();
+    if (! empty($categories)) {
+      echo '<div class="cat">';
+      foreach ($categories as $category) {
+        echo '<a class="cat__link cat__' . esc_html($category->slug) . '" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+      }
+      echo '</div>';
     }
-    echo '</div>';
+  } else {
+    // カスタム投稿タイプの場合
+    $post_type = get_post_type(); // 現在の投稿タイプを取得
+    $taxonomies = get_object_taxonomies($post_type, 'objects'); // 投稿タイプに紐付くタクソノミーを取得
+
+    if (! empty($taxonomies)) {
+      foreach ($taxonomies as $taxonomy) {
+        $terms = get_the_terms(get_the_ID(), $taxonomy->name); // 現在の投稿に紐付くタームを取得
+        if (! empty($terms) && ! is_wp_error($terms)) {
+          echo '<div class="cat">';
+          foreach ($terms as $term) {
+            echo '<a class="cat__link cat__' . esc_html($term->slug) . '" href="' . esc_url(get_category_link($term->term_id)) . '">' . esc_html($term->name) . '</a>';
+          }
+          echo '</div>';
+        }
+      }
+    }
   }
 }
 
@@ -273,3 +292,60 @@ add_filter('acf/update_value', 'allow_html_in_acf_textarea', 10, 3);
 
 // カスタムフィールドのHTMLをそのまま表示
 //echo wp_kses( $block_title, custom_allowed_html_tags() );
+
+
+/*--------------------------------------------------------------
+  タクソノミーに画像登録を追加（プラグイン：カスタムフィールドを有効時のみ使用可能）
+--------------------------------------------------------------*/
+if (function_exists('acf_add_local_field_group')):
+
+  acf_add_local_field_group(array(
+    'key' => 'group_67533e80a716f',
+    'title' => 'カテゴリーに画像を追加',
+    'fields' => array(
+      array(
+        'key' => 'field_67533e8ac704a',
+        'label' => 'この項目に画像を登録します。',
+        'name' => 'cat_img',
+        'type' => 'image',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'return_format' => 'array',
+        'preview_size' => 'medium',
+        'library' => 'all',
+        'min_width' => '',
+        'min_height' => '',
+        'min_size' => '',
+        'max_width' => '',
+        'max_height' => '',
+        'max_size' => '',
+        'mime_types' => '',
+      ),
+    ),
+    'location' => array(
+      array(
+        array(
+          'param' => 'taxonomy',
+          'operator' => '==',
+          'value' => 'all',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+    'show_in_rest' => 0,
+  ));
+
+endif;
