@@ -29,6 +29,19 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// trigger
+document.querySelectorAll('.js-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function () {
+        // toggleの次の兄弟要素がjs-targetかどうかをチェック
+        const nextElement = this.nextElementSibling;
+        if (nextElement && nextElement.classList.contains('js-target')) {
+            this.classList.toggle('--active');
+            nextElement.classList.toggle('--active');
+        }
+    });
+});
+
+
 // ハンバーガーメニューコンテンツ内の開閉式メニュー
 document.querySelectorAll('.menu-item-has-children > a').forEach(function (anchor) {
     anchor.addEventListener('click', function (event) {
@@ -50,18 +63,7 @@ document.querySelectorAll('.menu-item-has-children > a').forEach(function (ancho
     });
 });
 
-
-document.querySelectorAll('.js-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function () {
-        // toggleの次の兄弟要素がjs-targetかどうかをチェック
-        const nextElement = this.nextElementSibling;
-        if (nextElement && nextElement.classList.contains('js-target')) {
-            this.classList.toggle('--active');
-            nextElement.classList.toggle('--active');
-        }
-    });
-});
-
+// ハンバーガーメニュー
 document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
     toggle.addEventListener('click', function () {
         const nextElement = this.nextElementSibling;

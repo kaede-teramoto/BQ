@@ -380,33 +380,37 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
     });
 
     <?php if ($cms_design == 01 || $cms_design == 02) : ?>
-        document.querySelectorAll('#itemTab a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
+        document.querySelectorAll('.top-cms').forEach(topCms => {
+            const tabs = topCms.querySelectorAll('#itemTab a'); // この.top-cms内のタブ
+            const panels = topCms.querySelectorAll('.tab__panel'); // この.top-cms内のパネル
 
-                // すべてのタブから "active" クラスを削除する
-                document.querySelectorAll('#itemTab a').forEach(tab => {
-                    tab.classList.remove('--active');
+            tabs.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // この .top-cms 内のすべてのタブから "active" クラスを削除する
+                    tabs.forEach(tab => {
+                        tab.classList.remove('--active');
+                    });
+
+                    // この .top-cms 内のすべてのパネルから "active" クラスを削除する
+                    panels.forEach(panel => {
+                        panel.classList.remove('--active');
+                    });
+
+                    // クリックされたタブに "active" クラスを追加する
+                    this.classList.add('--active');
+
+                    // 関連するタブコンテンツを表示する
+                    const activeTabId = this.getAttribute('href').replace('#', '');
+                    const activeTabContent = topCms.querySelector(`#${activeTabId}`);
+                    if (activeTabContent) {
+                        activeTabContent.classList.add('--active');
+                    }
                 });
-
-                // すべてのPanelから "active" クラスを削除する
-                document.querySelectorAll('.tab__panel').forEach(tabPane => {
-                    tabPane.classList.remove('--active');
-                });
-
-                // クリックされたタブに "active" クラスを追加する
-                this.classList.add('--active');
-
-                // 関連するタブコンテンツを表示する
-                const activeTabId = this.getAttribute('href');
-                const targetChar = "#";
-                const tabId = activeTabId.replace(targetChar, "");
-                const activeTabContent = document.getElementById(tabId);
-                if (activeTabContent) {
-                    activeTabContent.classList.add('--active');
-                }
             });
         });
+
     <?php elseif ($cms_design == 03) : ?>
         const top03Swiper = new Swiper('.top-cms03__content .swiper', {
             slidesPerView: 1.2,

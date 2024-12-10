@@ -129,8 +129,8 @@ function boutiq_register_required_plugins()
 
 		array(
 			'name'               => 'SEO SIMPLE PACK', // The plugin name.
-			'slug'               => 'loos-ssp', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory_uri() . '/plugins/seo-simple-pack.3.5.2.zip', // The plugin source.
+			'slug'               => 'seo-simple-pack', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/plugins/seo-simple-pack.3.6.1.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
