@@ -112,7 +112,7 @@ if ($cms_design == 03) : ?>
 
             <div class="top-cms__cat top-cms<?php echo $cms_design; ?>__cat">
                 <?php
-                echo '<ul id="itemTab" class="top-cms top-cms__cat__list' . $cms_design . '__cat__list">';
+                echo '<ul id="itemTab" class="top-cms__cat__list top-cms' . $cms_design . '__cat__list">';
                 echo '<li class="top-cms__cat__item top-cms' . $cms_design . '__cat__item"><a class="--active" href="#all">ALL</a></li>';
                 foreach ($categories as $category) {
                     echo '<li class="top-cms__cat__item top-cms' . $cms_design . '__cat__item"><a href="#' . $category->slug . '">' . esc_html($category->name) . '</a></li>'; // カテゴリ名を表示
