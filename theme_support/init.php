@@ -147,6 +147,15 @@ function disable_plugin_update_allIn($data)
 add_filter('site_option__site_transient_update_plugins', 'disable_plugin_update_allIn');
 
 /*--------------------------------------------------------------
+  Contact form 7 のpタグ削除
+--------------------------------------------------------------*/
+add_filter('wpcf7_form_elements', function ($content) {
+  $content = preg_replace('/<p[^>]*>/', '', $content);
+  $content = str_replace('</p>', '', $content);
+  return $content;
+});
+
+/*--------------------------------------------------------------
   Stop updating 'Custom Fields'
 --------------------------------------------------------------*/
 function disable_plugin_update($data)
