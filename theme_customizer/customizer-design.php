@@ -477,7 +477,7 @@ function site_design_settings($wp_customize)
   $wp_customize->add_control(
     'common_btn_icon_control',
     array(
-      'label' => __('btn icon design other than page content', 'boutiq'),
+      'label' => __('Icon design for buttons in page content', 'boutiq'),
       'section' => 'common_btn_link',
       'settings' => 'common_btn_icon_setting',
       'type' => 'select',
