@@ -254,7 +254,8 @@
     }
 
     input[type="radio"]:checked+.mwform-radio-field-text::after,
-    input[type="radio"]:checked+.wpcf7-list-item-label::after {
+    input[type="radio"]:checked+.wpcf7-list-item-label::after,
+    input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
         opacity: 1;
         /* 選択時に内側の小さな円を表示 */
     }
@@ -476,7 +477,8 @@
             }
         }
 
-        input[type="checkbox"]:checked+.form_privacy__text::after {
+        input[type="checkbox"]:checked+.form_privacy__text::after,
+        input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
             opacity: 1;
             /* 選択時にチェックマークを表示 */
         }
