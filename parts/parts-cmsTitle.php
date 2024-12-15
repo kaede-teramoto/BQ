@@ -13,9 +13,8 @@ $page_title = esc_html(get_the_title($post_id));
 
 $pageTitle_design   = esc_attr(get_theme_mod('boutiq_page_design_setting', '01'));
 
-$post_type = get_post_type(); // 現在の投稿タイプを取得
+$post_type = get_query_var('post_type'); // 現在の投稿タイプを取得
 $post_type_object = get_post_type_object($post_type); // 投稿タイプのオブジェクトを取得
-
 
 if (is_category()) {
     // カテゴリーページの場合
@@ -37,10 +36,12 @@ if (is_category()) {
     }
     $subTitle = get_term_meta($term_id, 'sub_title', true);
     $pageSummary = wp_kses_post(wpautop($term->description));
-} elseif ($post_type !== 'post') {
-    // タグページの場合
-    $post_type_id = '';
+} elseif (is_post_type_archive()) {
+
+    // カスタムポストページの場合
+    //$post_type_id = '';
     if ($post_type_object && !empty($post_type_object->labels->singular_name)) {
+        $page_title = $post_type_object->labels->name;
         $subTitle = $post_type_object->labels->singular_name;
     } else {
         $subTitle = '';
@@ -64,8 +65,8 @@ if (is_category()) {
                         single_tag_title();
                     } elseif (is_tax()) {
                         taxonomy_term_title();
-                    } elseif ($post_type !== 'post') {
-                        echo esc_html($post_type_object->labels->name);
+                    } elseif (is_post_type_archive()) {
+                        echo esc_html($page_title);
                     } else {
                         echo esc_html($page_title);
                     }
@@ -116,14 +117,14 @@ if (is_category()) {
                 echo '</div>';
             }
         } elseif (is_post_type_archive()) {
-            $post_type_slug = get_query_var('post_type');
 
+            $post_type_slug = get_query_var('post_type');
             // 投稿タイプのオブジェクトを取得
             $post_type_object = get_post_type_object($post_type_slug);
 
             if ($post_type_object) {
                 echo '<div class="page-title__img page-title' . $pageTitle_design . '__img">';
-                echo '<img src="' .  $theme_url . '/assets/images/thumbnails/' . esc_html($post_type_object->name) . '.webp" alt="' . esc_html($post_type_object->labels->name) . '" class="category-image">';
+                display_custom_post_type_image();
                 echo '</div>';
             }
         } else {

@@ -352,7 +352,7 @@
     }
 
     input[type="checkbox"]:checked+.mwform-checkbox-field-text::after,
-    input[type="checkbox"]::checked+.wpcf7-list-item-label::after {
+    input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
         opacity: 1;
         /* 選択時にチェックマークを表示 */
     }

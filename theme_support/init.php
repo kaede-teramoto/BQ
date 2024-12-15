@@ -221,6 +221,25 @@ function tag_link()
 }
 
 /*--------------------------------------------------------------
+  Tag link
+--------------------------------------------------------------*/
+function has_posts_in_custom_post_type($post_type)
+{
+  if (empty($post_type)) {
+    return false; // ポストタイプが無効の場合は false
+  }
+
+  // 指定されたポストタイプに投稿があるか確認
+  $posts = get_posts(array(
+    'post_type'      => $post_type,
+    'posts_per_page' => 1,        // 1件だけ取得
+    'post_status'    => 'publish' // 公開済みの記事のみ
+  ));
+
+  return !empty($posts); // 配列が空でなければ投稿あり
+}
+
+/*--------------------------------------------------------------
   固定ページの編集画面のみビジュアルエディタを非表示にする
 --------------------------------------------------------------*/
 function disable_visual_editor_in_page()
