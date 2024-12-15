@@ -26,6 +26,7 @@ function sanitize_textarea_content($input)
 
 // theme_support
 get_template_part('theme_support/init');
+get_template_part('theme_support/custom-post');
 get_template_part('theme_support/titles');
 get_template_part('theme_support/scripts');
 get_template_part('theme_support/tgm-config');
