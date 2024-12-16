@@ -3,6 +3,10 @@
 
 /* archive
  ----------------------------------------------------------------------------------------------- */
+.page-title__wrapper+.cms__wrapper {
+    margin-top: 100px;
+}
+
 .cms__wrapper {
     padding: 0 0 100px;
 
@@ -107,6 +111,7 @@
 }
 
 .cms__content {
+    width: 100%;
 
     @include m.mq(pc) {}
 

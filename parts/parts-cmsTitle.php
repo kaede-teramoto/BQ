@@ -5,6 +5,8 @@
  * @package BOUTiQ
  */
 
+$theme_url = get_stylesheet_directory_uri();
+
 // 現在の投稿のIDを取得
 $post_id = get_option('page_for_posts');
 $page_title = esc_html(get_the_title($post_id));
@@ -82,11 +84,56 @@ if (is_category()) {
                 </div>
             <?php endif; ?>
         </div>
-        <?php if (has_post_thumbnail($post_id)) :
-            $thumbnail_html = get_the_post_thumbnail($post_id, 'full', ['class' => 'cms__post__thumbnail']); ?>
-            <div class="page-title__img page-title<?php echo $pageTitle_design; ?>__img">
-                <?php echo $thumbnail_html; ?>
-            </div>
-        <?php endif; ?>
+        <?php
+
+        if (is_category()) {
+
+            $category_id = get_queried_object_id();
+            $image = get_field('cat_img', 'category_' . $category_id);
+
+            if ($image) {
+                echo '<div class="page-title__img page-title' . $pageTitle_design . '__img">';
+                echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" class="category-image">';
+                echo '</div>';
+            }
+        } elseif (is_tag()) {
+
+            $tag_id = get_queried_object_id();
+            $image = get_field('cat_img', 'category_' . $tag_id);
+
+            if ($image) {
+                echo '<div class="page-title__img page-title' . $pageTitle_design . '__img">';
+                echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" class="category-image">';
+                echo '</div>';
+            }
+        } elseif (is_tax()) {
+            $term_id = get_queried_object_id(); // タクソノミーアーカイブページの場合
+            $image = get_field('cat_img', 'term_' . $term_id); // 'taxonomy_image' をACFで設定したフィールド名に置き換える
+
+            if ($image) {
+                echo '<div class="page-title__img page-title' . $pageTitle_design . '__img">';
+                echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" class="category-image">';
+                echo '</div>';
+            }
+        } elseif (is_post_type_archive()) {
+            $post_type_slug = get_query_var('post_type');
+
+            // 投稿タイプのオブジェクトを取得
+            $post_type_object = get_post_type_object($post_type_slug);
+
+            if ($post_type_object) {
+                echo '<div class="page-title__img page-title' . $pageTitle_design . '__img">';
+                echo '<img src="' .  $theme_url . '/assets/images/thumbnails/' . esc_html($post_type_object->name) . '.webp" alt="' . esc_html($post_type_object->labels->name) . '" class="category-image">';
+                echo '</div>';
+            }
+        } else {
+
+            if (has_post_thumbnail($post_id)) :
+                $thumbnail_html = get_the_post_thumbnail($post_id, 'full', ['class' => 'cms__post__thumbnail']); ?>
+                <div class="page-title__img page-title<?php echo $pageTitle_design; ?>__img">
+                    <?php echo $thumbnail_html; ?>
+                </div>
+        <?php endif;
+        } ?>
     </div>
 </div>
