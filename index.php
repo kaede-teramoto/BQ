@@ -162,8 +162,16 @@ if (!is_singular()) :
                                     </a>
                                 </div>
                             </div>
-                    <?php endwhile;
-                    endif;
+                        <?php endwhile;
+                    else : ?>
+
+                        <div class="cms__post cms<?php echo $cms_design; ?>__post">
+                            <div class="cms__post__title cms<?php echo $cms_design; ?>__post__title">
+                                投稿はまだありません。
+                            </div>
+                        </div>
+
+                    <?php endif;
                     wp_reset_query(); ?>
                 </div>
 
