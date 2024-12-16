@@ -117,23 +117,14 @@ if (is_category()) {
                 echo '</div>';
             }
         } elseif (is_post_type_archive()) {
-<<<<<<< HEAD
-            $post_type_slug = get_query_var('post_type');
-
-=======
 
             $post_type_slug = get_query_var('post_type');
->>>>>>> origin/main
             // 投稿タイプのオブジェクトを取得
             $post_type_object = get_post_type_object($post_type_slug);
 
             if ($post_type_object) {
                 echo '<div class="page-title__img page-title' . $pageTitle_design . '__img">';
-<<<<<<< HEAD
-                echo '<img src="' .  $theme_url . '/assets/images/thumbnails/' . esc_html($post_type_object->name) . '.webp" alt="' . esc_html($post_type_object->labels->name) . '" class="category-image">';
-=======
                 display_custom_post_type_image();
->>>>>>> origin/main
                 echo '</div>';
             }
         } else {
