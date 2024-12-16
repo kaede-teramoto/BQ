@@ -659,6 +659,7 @@
 // cms02
 // --------------------------------------------------------------------------------------------
 .cms02__wrapper {
+    margin-top: 0 !important;
 
     @include m.mq(pc) {}
 
@@ -1025,7 +1026,7 @@
 .cms03__cat__title {
     font-size: 140%;
     white-space: nowrap;
-    width: 150px;
+    min-width: 150px;
     flex-wrap: wrap;
 
     @include m.mq(pc) {}
@@ -1210,6 +1211,7 @@
 // cms04
 // --------------------------------------------------------------------------------------------
 .cms04__wrapper {
+    margin-top: 0 !important;
 
     @include m.mq(pc) {}
 

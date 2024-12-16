@@ -203,7 +203,8 @@
         margin: 0;
     }
 
-    .mwform-radio-field-text {
+    .mwform-radio-field-text,
+    input[type="radio"]+.wpcf7-list-item-label {
         position: relative;
         display: flex;
         align-items: center;
@@ -214,7 +215,8 @@
         /* カーソルをポインターに */
     }
 
-    .mwform-radio-field-text::before {
+    .mwform-radio-field-text::before,
+    input[type="radio"]+.wpcf7-list-item-label::before {
         content: "";
         display: inline-block;
         width: 20px;
@@ -231,7 +233,8 @@
         /* スムーズなトランジションを設定 */
     }
 
-    .mwform-radio-field-text::after {
+    .mwform-radio-field-text::after,
+    input[type="radio"]+.wpcf7-list-item-label::after {
         content: "";
         display: block;
         width: 12px;
@@ -250,7 +253,9 @@
         transition: opacity 0.3s;
     }
 
-    input[type="radio"]:checked+.mwform-radio-field-text::after {
+    input[type="radio"]:checked+.mwform-radio-field-text::after,
+    input[type="radio"]:checked+.wpcf7-list-item-label::after,
+    input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
         opacity: 1;
         /* 選択時に内側の小さな円を表示 */
     }
@@ -292,7 +297,8 @@
         /* 標準のチェックボックスを非表示に */
     }
 
-    .mwform-checkbox-field-text {
+    .mwform-checkbox-field-text,
+    input[type="checkbox"]+.wpcf7-list-item-label {
         position: relative;
         display: flex;
         align-items: center;
@@ -303,7 +309,8 @@
         /* カーソルをポインターに */
     }
 
-    .mwform-checkbox-field-text::before {
+    .mwform-checkbox-field-text::before,
+    input[type="checkbox"]+.wpcf7-list-item-label::before {
         content: "";
         display: inline-block;
         width: 20px;
@@ -321,7 +328,8 @@
         /* スムーズなトランジションを設定 */
     }
 
-    .mwform-checkbox-field-text::after {
+    .mwform-checkbox-field-text::after,
+    input[type="checkbox"]+.wpcf7-list-item-label::after {
         content: "";
         display: block;
         width: 8px;
@@ -343,7 +351,8 @@
         transition: opacity 0.3s;
     }
 
-    input[type="checkbox"]:checked+.mwform-checkbox-field-text::after {
+    input[type="checkbox"]:checked+.mwform-checkbox-field-text::after,
+    input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
         opacity: 1;
         /* 選択時にチェックマークを表示 */
     }
@@ -422,7 +431,8 @@
             text-decoration: underline;
         }
 
-        .mwform-checkbox-field-text {
+        .mwform-checkbox-field-text,
+        input[type="checkbox"]+.wpcf7-list-item-label {
             position: relative;
             cursor: pointer;
             /* カーソルをポインターに */
@@ -467,7 +477,8 @@
             }
         }
 
-        input[type="checkbox"]:checked+.form_privacy__text::after {
+        input[type="checkbox"]:checked+.form_privacy__text::after,
+        input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
             opacity: 1;
             /* 選択時にチェックマークを表示 */
         }
