@@ -149,18 +149,13 @@ add_filter('site_option__site_transient_update_plugins', 'disable_plugin_update_
 /*--------------------------------------------------------------
   Contact form 7 のpタグ削除
 --------------------------------------------------------------*/
-<<<<<<< HEAD
-add_filter( 'wpcf7_form_elements', function( $content ) {
-    $content = preg_replace( '/<p[^>]*>/', '', $content );
-    $content = str_replace( '</p>', '', $content );
+if (function_exists('is_plugin_active') && is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
+  add_filter('wpcf7_form_elements', function ($content) {
+    $content = preg_replace('/<p[^>]*>/', '', $content);
+    $content = str_replace('</p>', '', $content);
     return $content;
-=======
-add_filter('wpcf7_form_elements', function ($content) {
-  $content = preg_replace('/<p[^>]*>/', '', $content);
-  $content = str_replace('</p>', '', $content);
-  return $content;
->>>>>>> origin/main
-});
+  });
+}
 
 /*--------------------------------------------------------------
   Stop updating 'Custom Fields'
