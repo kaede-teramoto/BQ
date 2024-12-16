@@ -149,6 +149,18 @@ add_filter('site_option__site_transient_update_plugins', 'disable_plugin_update_
 /*--------------------------------------------------------------
   Contact form 7 のpタグ削除
 --------------------------------------------------------------*/
+<<<<<<< HEAD
+add_filter( 'wpcf7_form_elements', function( $content ) {
+    $content = preg_replace( '/<p[^>]*>/', '', $content );
+    $content = str_replace( '</p>', '', $content );
+    return $content;
+=======
+add_filter('wpcf7_form_elements', function ($content) {
+  $content = preg_replace('/<p[^>]*>/', '', $content);
+  $content = str_replace('</p>', '', $content);
+  return $content;
+>>>>>>> origin/main
+});
 if (function_exists('is_plugin_active') && is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
   add_filter('wpcf7_form_elements', function ($content) {
     $content = preg_replace('/<p[^>]*>/', '', $content);
@@ -226,17 +238,16 @@ function tag_link()
 /*--------------------------------------------------------------
   Tag link
 --------------------------------------------------------------*/
-function has_posts_in_custom_post_type($post_type)
-{
+function has_posts_in_custom_post_type($post_type) {
   if (empty($post_type)) {
-    return false; // ポストタイプが無効の場合は false
+      return false; // ポストタイプが無効の場合は false
   }
 
   // 指定されたポストタイプに投稿があるか確認
   $posts = get_posts(array(
-    'post_type'      => $post_type,
-    'posts_per_page' => 1,        // 1件だけ取得
-    'post_status'    => 'publish' // 公開済みの記事のみ
+      'post_type'      => $post_type,
+      'posts_per_page' => 1,        // 1件だけ取得
+      'post_status'    => 'publish' // 公開済みの記事のみ
   ));
 
   return !empty($posts); // 配列が空でなければ投稿あり
