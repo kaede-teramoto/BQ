@@ -1096,6 +1096,7 @@
     @include m.mq(tab) {
         flex-direction: column;
         gap: 80px;
+        padding: 0 20px;
     }
 
     @include m.mq(sp) {}

@@ -156,7 +156,7 @@ if ($cms_design == 03) : ?>
                                 <?php else : /* 登録されていなかったら */ ?>
                                     <div class="top-cms__post__thumbnail top-cms<?php echo $cms_design; ?>__post__thumbnail">
                                         <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.jpg" alt="">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="">
                                         </a>
                                     </div>
                                 <?php endif; ?>
