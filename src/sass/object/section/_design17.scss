@@ -1,0 +1,241 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* design17
+ ----------------------------------------------------------------------------------------------- */
+
+.section__design17 {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design17__inner {
+    padding-inline: 80px;
+
+    @include m.mq(pc) {
+        padding-inline: 60px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding-inline: 0;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__design17__block-title {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__design17__block-subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__design17 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        gap: 20px;
+    }
+
+    @include m.mq(sp) {
+        gap: 15px;
+    }
+}
+
+.section__parts__design17 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 60%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "parts_sub parts_text"
+        "parts_title parts_text";
+    gap: 10px 30px;
+    padding: 70px 90px;
+    background-color: var(--base_color);
+    @include v.borderRadius;
+
+    @include m.mq(pc) {
+        padding: 50px 70px;
+    }
+
+    @include m.mq(miniPc) {
+        padding: 40px 50px;
+        gap: 10px 20px;
+    }
+
+    @include m.mq(tab) {
+        padding: 40px;
+        @include v.columnFlex;
+        align-items: flex-start;
+    }
+
+    @include m.mq(sp) {
+        padding: 30px;
+    }
+}
+
+.section__parts__design17__title {
+    grid-area: parts_title;
+    font-size: 200%;
+    color: var(--text_color);
+    line-height: 1.5;
+    font-weight: 600;
+
+    @include m.mq(pc) {
+        font-size: 170%;
+    }
+
+    @include m.mq(miniPc) {
+        font-size: 185%;
+    }
+
+    @include m.mq(tab) {
+        order: 2;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design17__subtitle {
+    grid-area: parts_sub;
+    color: var(--main_color);
+    font-size: 1.6rem;
+    line-height: 1;
+    font-family: var(--en_font);
+    font-weight: 600;
+    display: flex;
+    align-items: flex-end;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 1.5rem;
+    }
+
+    @include m.mq(tab) {
+        margin-bottom: 5px;
+        order: 1;
+        font-size: 1.4rem;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design17__text {
+    grid-area: parts_text;
+    line-height: 2.0;
+    font-weight: 600;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 1.5rem;
+    }
+
+    @include m.mq(tab) {
+        order: 3;
+        font-size: 1.4rem;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.versatile {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design17__img {
+    grid-area: parts_img;
+    margin: 60px 0;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin: 50px 0;
+    }
+
+    @include m.mq(tab) {
+        margin: 40px 0 30px;
+        aspect-ratio: 3 / 1.5;
+        order: 5;
+    }
+
+    @include m.mq(sp) {
+        margin: 30px 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section__parts__design17__link {
+    grid-area: parts_btn;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-top: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 4;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__design17__editor {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 6;
+    }
+
+    @include m.mq(sp) {}
+}
