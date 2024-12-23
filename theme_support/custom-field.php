@@ -95,6 +95,7 @@ if (function_exists('acf_add_local_field_group')):
                             'flow01' => 'フロー01',
                             'flow02' => 'フロー02',
                             'flow03' => 'フロー03',
+                            'flow04' => 'フロー04',
                             'company01' => '会社概要のみ',
                             'company02' => '会社概要のみ（タイトル左）',
                             'company03' => '沿革',
