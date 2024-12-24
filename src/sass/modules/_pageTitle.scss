@@ -93,7 +93,7 @@
     }
 
     @include m.mq(sp) {
-        margin: 110px 0 30px;
+        margin: 110px auto 30px;
         gap: 20px;
     }
 }
