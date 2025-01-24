@@ -69,6 +69,44 @@
         @include m.mq(sp) {}
     }
 
+    .ctaForm__form-group__wrap {
+        display: flex;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .ctaForm__form-group {
+            &:first-child {
+                position: relative;
+
+                .wpcf7-text {
+                    border-radius: 20px 0 0 20px;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 70px;
+                    border-right: solid 1px #A0A0A0;
+                }
+            }
+
+            &:last-child {
+                .wpcf7-text {
+                    border-radius: 0 20px 20px 0;
+                }
+            }
+        }
+    }
+
     .ctaForm__form-group {
         label {
             display: none;
@@ -79,15 +117,185 @@
         }
     }
 
-    .wpcf7-checkbox,
-    .wpcf7-radio {
+    .checkbox,
+    .radio,
+    .file {
+        margin-bottom: 25px;
+
         label {
             display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 15px;
         }
+    }
+
+    .file {
+        input {
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+
+    .form_file {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    .file_contents {
+        p {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .custom-file-button {
+        background-color: #A0A0A0;
+        margin-bottom: 0 !important;
+        color: #fff;
+        font-size: 1.4rem;
+        padding: 2px 15px;
+        border-radius: 4px;
+    }
+
+    .file-name {
+        font-size: 1.2rem;
+        margin-left: 30px;
+    }
+
+    .ctaForm__comments {
+        font-size: 1.2rem;
+    }
+
+    .wpcf7-list-item {
+        margin: 0;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+
+    .wpcf7-form-control {
+        display: flex;
+        gap: 20px 30px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input[type="radio"]+.wpcf7-list-item-label,
+    input[type="checkbox"]+.wpcf7-list-item-label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        color: var(--text_color);
+        /* テキストの色をカスタマイズ */
+        cursor: pointer;
+        /* カーソルをポインターに */
+    }
+
+    input[type="radio"]+.wpcf7-list-item-label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        border: 1px solid #A0A0A0;
+        /* 外枠の色を設定 */
+        border-radius: 50%;
+        background-color: #fff;
+        /* デフォルトで白い背景 */
+        position: relative;
+        box-sizing: border-box;
+        transition: background-color 0.3s, border-color 0.3s;
+        /* スムーズなトランジションを設定 */
+    }
+
+    input[type="radio"]+.wpcf7-list-item-label::after {
+        content: "";
+        display: block;
+        width: 12px;
+        /* 内側の小さな円の直径 */
+        height: 12px;
+        /* 内側の小さな円の直径 */
+        border-radius: 50%;
+        background-color: var(--main_color);
+        /* 内側の小さな円の色 */
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        /* 初期状態では非表示 */
+        transition: opacity 0.3s;
+    }
+
+    input[type="checkbox"]+.wpcf7-list-item-label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        border: 1px solid #A0A0A0;
+        /* 外枠の色を設定 */
+        border-radius: 4px;
+        /* チェックボックスは角を丸めず、四角に */
+        background-color: #fff;
+        /* デフォルトで白い背景 */
+        position: relative;
+        box-sizing: border-box;
+        transition: background-color 0.3s, border-color 0.3s;
+        /* スムーズなトランジションを設定 */
+    }
+
+    input[type="checkbox"]+.wpcf7-list-item-label::after {
+        content: "";
+        display: block;
+        width: 8px;
+        /* 内側のチェックマークの大きさ */
+        height: 13px;
+        /* 内側のチェックマークの高さ */
+        border: solid var(--main_color);
+        /* チェックマークの色を設定 */
+        border-width: 0 2px 2px 0;
+        /* チェックマークの線の太さを設定 */
+        transform: rotate(45deg);
+        /* チェックマークを45度回転させて表示 */
+        position: absolute;
+        top: 48%;
+        left: 10px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        opacity: 0;
+        /* 初期状態では非表示 */
+        transition: opacity 0.3s;
+    }
+
+    input[type="radio"]:checked+.wpcf7-list-item-label::after,
+    input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
+        opacity: 1;
+        /* 選択時に内側の小さな円を表示 */
     }
 
     .wpcf7-text {
         height: 100px;
+        border-radius: 20px;
+    }
+
+    select {
+        height: 100px;
+    }
+
+    textarea,
+    select {
         border-radius: 20px;
     }
 }
