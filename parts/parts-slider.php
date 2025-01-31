@@ -13,7 +13,16 @@ $subTitle = get_post_meta($post_id, '_custom_subtitle', true);
 $pageSummary = get_post_meta($post_id, '_custom_page_summary', true);
 
 $fv_type = get_theme_mod('top_fv_type', '01');
+$fv_post_show_num = get_theme_mod('top_fv_post_show_num', '3');
 $fv_text_animation = get_theme_mod('top_fv_text_animation', 'fade');
+$show_arrows = get_theme_mod('top_fv_slider_arrow', 'NULL');
+$top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', false);
+$top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', false);
+
+$top_fv_post_title = get_theme_mod('top_fv_post_title', false);
+$top_fv_post_cat = get_theme_mod('top_fv_post_cat', false);
+$top_fv_post_tag = get_theme_mod('top_fv_post_tag', false);
+$top_fv_post_date = get_theme_mod('top_fv_post_date', false);
 
 $fv_img1 = esc_url(get_theme_mod('top_fv_image_setting_1', ''));
 $fv_img2 = esc_url(get_theme_mod('top_fv_image_setting_2', ''));
@@ -248,6 +257,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
             <div class="swiper-btn-prev swiper-btn-black"></div>
             <div class="swiper-btn-next swiper-btn-white"></div>
         </div>
+
     </section>
 <?php elseif ($fv_type == 03) :
     get_template_part('parts/parts', 'originalSlider'); ?>
@@ -426,6 +436,82 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
             <?php } ?>
         </ul>
 
+    </section>
+<?php elseif ($fv_type == 05) :
+    // 最新の投稿を取得
+    $args = array(
+        'post_type'      => 'post',  // 投稿タイプ（通常の投稿）
+        'posts_per_page' => $fv_post_show_num,       // 表示する記事数（変更可能）
+        'orderby'        => 'date',  // 日付順
+        'order'          => 'DESC',  // 新しい順
+    );
+    $query = new WP_Query($args); ?>
+
+    <section class="p-top swiper">
+        <?php if ($query->have_posts()) : ?>
+            <ul class="swiper-wrapper">
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <li class="swiper-slide">
+
+                        <?php if ($top_fv_post_title || $top_fv_post_cat || $top_fv_post_tag || $top_fv_post_date) { ?>
+                            <div class="p-top__postMeta fv-<?php echo $fv_text_animation; ?>">
+
+                                <?php if ($top_fv_post_cat || $top_fv_post_tag || $top_fv_post_date) { ?>
+
+                                    <div class="p-top__postUnit">
+                                        <?php if ($top_fv_post_cat) { ?>
+                                            <div class="post-categories">
+                                                <?php the_category(''); ?>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($top_fv_post_tag) { ?>
+                                            <div class="post-tags">
+                                                <?php the_tags('', '', ''); ?>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if ($top_fv_post_date) { ?>
+                                            <div class="post-date">
+                                                <?php the_date(); ?>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                <?php } ?>
+                                <?php if ($top_fv_post_title) { ?>
+                                    <h2 class="p-top__postTitle">
+                                        <a class="p-top_postLink" href="<?php the_permalink(); ?>">
+                                            <?php the_title(); ?>
+                                        </a>
+                                    </h2>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <!-- アイキャッチ画像 -->
+                        <?php if (has_post_thumbnail()) : ?>
+                            <a class="p-top_postLink" href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail('medium'); ?>
+                            </a>
+                        <?php endif; ?>
+                    </li>
+                <?php endwhile; ?>
+
+            </ul>
+            <?php wp_reset_postdata(); // クエリをリセット 
+            ?>
+        <?php endif; ?>
+
+        <?php if ($top_fv_slider_pagination == 1) { ?>
+            <div class="swiper-pagination"></div>
+        <?php } ?>
+
+        <?php if ($show_arrows == 1) { ?>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        <?php } ?>
+        <?php if ($top_fv_slider_progressbar == 1) { ?>
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        <?php } ?>
     </section>
 <?php else : ?>
 <?php endif; ?>

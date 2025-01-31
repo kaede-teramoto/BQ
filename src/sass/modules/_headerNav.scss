@@ -527,3 +527,37 @@
         display: none;
     }
 }
+
+
+/* Mega Menu
+ ----------------------------------------------------------------------------------------------- */
+.megaMenu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    position: fixed;
+    width: 100vw;
+    top: 60px;
+    left: 0;
+    z-index: v.getZIndex(header);
+
+    .custom-sub-menu {
+        position: relative;
+        background-color: var(--header_bg_color);
+        z-index: calc(v.getZIndex(header) - 5);
+    }
+}
+
+.megaMenu__bg {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(3.5px);
+    background-color: rgba(0, 0, 0, .3);
+    //z-index: calc(v.getZIndex(header) - 10);
+    top: 0;
+    left: 0;
+}

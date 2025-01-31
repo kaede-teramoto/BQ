@@ -189,40 +189,44 @@ else : ?>
                 </div>
             <?php endif; ?>
 
-            <?php if ($footer_first_btn_display_setting) : ?>
-                <?php if ($footer_first_btn_target_setting) : ?>
-                    <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
-                        <a class="c-btn__link c-btn<?php echo $footer_first_btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url; ?>' target="_blank" <?php echo $footer_first_btn_bg_color; ?>>
-                            <div class="c-btn__text c-btn__text<?php echo $footer_first_btn_link_design; ?>"><?php echo $footer_first_btn_text; ?></div>
-                            <div class="c-btn__icon c-btn__icon<?php echo $footer_first_btn_icon_design; ?>"></div>
-                        </a>
-                    </div>
-                <?php else : ?>
-                    <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
-                        <a class="c-btn__link c-btn<?php echo $footer_first_btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url; ?>' <?php echo $footer_first_btn_bg_color; ?>>
-                            <div class="c-btn__text c-btn__text<?php echo $footer_first_btn_link_design; ?>"><?php echo $footer_first_btn_text; ?></div>
-                            <div class="c-btn__icon c-btn__icon<?php echo $footer_first_btn_icon_design; ?>"></div>
-                        </a>
-                    </div>
-                <?php endif; ?>
-            <?php endif; ?>
+            <?php if ($footer_first_btn_display_setting || $footer_second_btn_display_setting) : ?>
+                <div class="footer__btn">
+                    <?php if ($footer_first_btn_display_setting) : ?>
+                        <?php if ($footer_first_btn_target_setting) : ?>
+                            <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
+                                <a class="c-btn__link c-btn<?php echo $footer_first_btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url; ?>' target="_blank" <?php echo $footer_first_btn_bg_color; ?>>
+                                    <div class="c-btn__text c-btn__text<?php echo $footer_first_btn_link_design; ?>"><?php echo $footer_first_btn_text; ?></div>
+                                    <div class="c-btn__icon c-btn__icon<?php echo $footer_first_btn_icon_design; ?>"></div>
+                                </a>
+                            </div>
+                        <?php else : ?>
+                            <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
+                                <a class="c-btn__link c-btn<?php echo $footer_first_btn_link_design; ?>__link" href='<?php echo $footer_first_btn_url; ?>' <?php echo $footer_first_btn_bg_color; ?>>
+                                    <div class="c-btn__text c-btn__text<?php echo $footer_first_btn_link_design; ?>"><?php echo $footer_first_btn_text; ?></div>
+                                    <div class="c-btn__icon c-btn__icon<?php echo $footer_first_btn_icon_design; ?>"></div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
 
-            <?php if ($footer_second_btn_display_setting) : ?>
-                <?php if ($footer_second_btn_target_setting) : ?>
-                    <div class="c-btn c-btn<?php echo $footer_second_btn_link_design; ?> btn<?php echo $footer_second_btn_link_design; ?> btn--second">
-                        <a class="c-btn__link c-btn<?php echo $footer_second_btn_link_design; ?>__link" href='<?php echo $footer_second_btn_url; ?>' target="_blank" <?php echo $footer_second_btn_bg_color; ?>>
-                            <div class="c-btn__text c-btn__text<?php echo $footer_second_btn_link_design; ?>"><?php echo $footer_second_btn_text; ?></div>
-                            <div class="c-btn__icon c-btn__icon<?php echo $footer_second_btn_icon_design; ?>"></div>
-                        </a>
-                    </div>
-                <?php else : ?>
-                    <div class="c-btn c-btn<?php echo $footer_second_btn_link_design; ?> btn<?php echo $footer_second_btn_link_design; ?> btn--second">
-                        <a class="c-btn__link c-btn<?php echo $footer_second_btn_link_design; ?>__link" href='<?php echo $footer_second_btn_url; ?>' <?php echo $footer_second_btn_bg_color; ?>>
-                            <div class="c-btn__text c-btn__text<?php echo $footer_second_btn_link_design; ?>"><?php echo $footer_second_btn_text; ?></div>
-                            <div class="c-btn__icon c-btn__icon<?php echo $footer_second_btn_icon_design; ?>"></div>
-                        </a>
-                    </div>
-                <?php endif; ?>
+                    <?php if ($footer_second_btn_display_setting) : ?>
+                        <?php if ($footer_second_btn_target_setting) : ?>
+                            <div class="c-btn c-btn<?php echo $footer_second_btn_link_design; ?> btn<?php echo $footer_second_btn_link_design; ?> btn--second">
+                                <a class="c-btn__link c-btn<?php echo $footer_second_btn_link_design; ?>__link" href='<?php echo $footer_second_btn_url; ?>' target="_blank" <?php echo $footer_second_btn_bg_color; ?>>
+                                    <div class="c-btn__text c-btn__text<?php echo $footer_second_btn_link_design; ?>"><?php echo $footer_second_btn_text; ?></div>
+                                    <div class="c-btn__icon c-btn__icon<?php echo $footer_second_btn_icon_design; ?>"></div>
+                                </a>
+                            </div>
+                        <?php else : ?>
+                            <div class="c-btn c-btn<?php echo $footer_second_btn_link_design; ?> btn<?php echo $footer_second_btn_link_design; ?> btn--second">
+                                <a class="c-btn__link c-btn<?php echo $footer_second_btn_link_design; ?>__link" href='<?php echo $footer_second_btn_url; ?>' <?php echo $footer_second_btn_bg_color; ?>>
+                                    <div class="c-btn__text c-btn__text<?php echo $footer_second_btn_link_design; ?>"><?php echo $footer_second_btn_text; ?></div>
+                                    <div class="c-btn__icon c-btn__icon<?php echo $footer_second_btn_icon_design; ?>"></div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
             <?php endif; ?>
 
             <?php if (has_nav_menu('footerNavLeft') || has_nav_menu('footerNavRight')) : ?>
@@ -341,44 +345,25 @@ else : ?>
 <!-- // all-container -->
 
 <?php wp_footer();
+
+$fv_type = get_theme_mod('top_fv_type', '01');
+$fv_post_count_pc = get_theme_mod('top_fv_post_count_pc', '3');
+$fv_post_count_tab = get_theme_mod('top_fv_post_count_tab', '2');
+$fv_post_count_sp = get_theme_mod('top_fv_post_count_sp', '1');
+$fv_post_space = get_theme_mod('top_fv_post_space', '0');
+$fv_post_position = get_theme_mod('top_fv_post_position', false);
+
+
 $effect = "'" . esc_attr(get_theme_mod('top_fv_slider_option', 'fade')) . "'";
-$show_arrows = get_theme_mod('top_fv_slider_arrow', '');
-$top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', '');
-$top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', '');
+$show_arrows = get_theme_mod('top_fv_slider_arrow', 'NULL');
+$top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', false);
+$top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', false);
 $top_fv_slider_speed = get_theme_mod('top_fv_slider_speed', '3000');
 $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
+
 ?>
 
 <script>
-    const topPage_slider = new Swiper(".p-top.swiper", {
-        loop: true,
-        autoplay: {
-            delay: <?php echo $top_fv_slider_speed; ?>,
-        },
-        speed: 3000,
-        //spaceBetween: 10,
-        effect: <?php echo $effect; ?>,
-        fadeEffect: { //ここにオプションを指定します。
-            crossFade: true
-        },
-        <?php if ($show_arrows) { ?>
-            navigation: {
-                nextEl: ".swiper-btn-next",
-                prevEl: ".swiper-btn-prev",
-            },
-        <?php } ?>
-
-        <?php if ($top_fv_slider_pagination) { ?>
-            pagination: {
-                el: ".swiper-pagination",
-                <?php if ($top_fv_slider_progressbar) { ?>
-                    type: "progressbar",
-                <?php } ?>
-                clickable: true,
-            },
-        <?php } ?>
-    });
-
     <?php if ($cms_design == 01 || $cms_design == 02) : ?>
         document.querySelectorAll('.top-cms').forEach(topCms => {
             const tabs = topCms.querySelectorAll('#itemTab a'); // この.top-cms内のタブ
@@ -441,10 +426,64 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
                 invert: false,
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: ".cms-pagination",
                 type: "progressbar",
                 clickable: true,
             },
+
+        });
+    <?php endif; ?>
+
+    <?php //echo $top_fv_slider_pagination;
+    if ($fv_type == "02" || $fv_type == "05") : ?>
+
+        const topPage_slider = new Swiper(".p-top.swiper", {
+            loop: true,
+            speed: 2000,
+            autoplay: {
+                delay: <?php echo $top_fv_slider_speed; ?>,
+            },
+            spaceBetween: <?php echo $fv_post_space; ?>,
+            slidesPerView: <?php echo $fv_post_count_pc; ?>,
+            breakpoints: {
+                1199: {
+                    slidesPerView: <?php echo $fv_post_count_pc; ?>,
+                },
+                849: {
+                    slidesPerView: <?php echo $fv_post_count_tab; ?>,
+                },
+                599: {
+                    slidesPerView: <?php echo $fv_post_count_sp; ?>,
+                }
+            },
+            <?php if ($fv_post_position) { ?>
+                centeredSlides: true,
+            <?php } ?>
+
+            effect: <?php echo $effect; ?>,
+            fadeEffect: { //ここにオプションを指定します。
+                crossFade: true,
+            },
+            <?php if ($top_fv_slider_pagination == 1) { ?>
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            <?php } ?>
+
+            <?php if ($show_arrows == 1) { ?>
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            <?php } ?>
+            <?php if ($top_fv_slider_progressbar == 1) { ?>
+                // And if we need scrollbar
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            <?php } ?>
 
         });
     <?php endif; ?>

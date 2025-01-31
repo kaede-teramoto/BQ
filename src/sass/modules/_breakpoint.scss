@@ -18,28 +18,58 @@
 .l-tab {
     display: none;
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        display: none;
+    }
 
     @include m.mq(tab) {
         display: block;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        display: block;
+    }
 }
 
 .l-miniPc {
     display: none;
 
+    @include m.mq(pc) {
+        display: none;
+    }
+
     @include m.mq(miniPc) {
         display: block;
     }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        display: block;
+    }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        display: block;
+    }
 }
 
+.l-pc {
+    display: block;
 
+    @include m.mq(pc) {
+        display: block;
+    }
+
+    @include m.mq(miniPc) {
+        display: block;
+    }
+
+    @include m.mq(tab) {
+        display: block;
+    }
+
+    @include m.mq(sp) {
+        display: block;
+    }
+}
 
 .l-spN {
     display: block;
@@ -56,21 +86,47 @@
 .l-tabN {
     display: block;
 
-    @include m.mq(miniPc) {}
+    @include m.mq(pc) {
+        display: block;
+    }
+
+    @include m.mq(miniPc) {
+        display: block;
+    }
 
     @include m.mq(tab) {
         display: none;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        display: none;
+    }
 }
 
 .l-miniPcN {
     display: block;
 
+    @include m.mq(pc) {
+        display: block;
+    }
+
     @include m.mq(miniPc) {
         display: none;
     }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.l-pcN {
+    display: block;
+
+    @include m.mq(pc) {
+        display: none;
+    }
+
+    @include m.mq(miniPc) {}
 
     @include m.mq(tab) {}
 
