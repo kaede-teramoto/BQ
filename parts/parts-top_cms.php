@@ -25,11 +25,11 @@ $categories = get_categories(array(
 
 if ($cms_design == 03) : ?>
 
-    <div class="top-cms__wrapper top-cms03__wrapper">
+    <div class="top-cms__wrapper top-cms03__wrapper js-fadeIn">
         <div class="top-cms top-cms03">
             <div class="top-cms__title top-cms03__title">
-                <h2 class="top-cms__title--main top-cms03__title--main"><?php echo $main_title; ?></h2>
-                <p class="top-cms__title--sub top-cms03__title--sub"><?php echo $sub_title; ?></p>
+                <h2 class="top-cms__title--main top-cms03__title--main js-fadeIn"><?php echo $main_title; ?></h2>
+                <p class="top-cms__title--sub top-cms03__title--sub js-fadeIn"><?php echo $sub_title; ?></p>
             </div>
 
             <div class="top-cms__content top-cms03__content">
@@ -81,6 +81,7 @@ if ($cms_design == 03) : ?>
                         <?php endif; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
+                    <div class="cms-pagination"></div>
                 </div>
             </div>
 
@@ -103,11 +104,11 @@ if ($cms_design == 03) : ?>
     </div>
 
 <?php else : ?>
-    <div class="top-cms__wrapper top-cms<?php echo $cms_design; ?>__wrapper">
+    <div class="top-cms__wrapper top-cms<?php echo $cms_design; ?>__wrapper js-fadeIn">
         <div class="top-cms top-cms<?php echo $cms_design; ?>">
             <div class="top-cms__title top-cms<?php echo $cms_design; ?>__title">
-                <h2 class="top-cms__title--main top-cms<?php echo $cms_design; ?>__title--main"><?php echo $main_title; ?></h2>
-                <p class="top-cms__title--sub top-cms<?php echo $cms_design; ?>__title--sub"><?php echo $sub_title; ?></p>
+                <h2 class="top-cms__title--main top-cms<?php echo $cms_design; ?>__title--main js-fadeIn"><?php echo $main_title; ?></h2>
+                <p class="top-cms__title--sub top-cms<?php echo $cms_design; ?>__title--sub js-fadeIn"><?php echo $sub_title; ?></p>
             </div>
 
             <div class="top-cms__cat top-cms<?php echo $cms_design; ?>__cat">

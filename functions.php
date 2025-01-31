@@ -30,6 +30,7 @@ get_template_part('theme_support/custom-post');
 get_template_part('theme_support/titles');
 get_template_part('theme_support/scripts');
 get_template_part('theme_support/tgm-config');
+get_template_part('theme_support/mega-menu');
 //get_template_part('theme_support/search'); //検索が不要な時は使用しない
 
 // theme_customizer

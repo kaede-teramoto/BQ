@@ -10,7 +10,6 @@
 --------------------------------------------------------------*/
 add_theme_support('automatic-feed-links');
 
-
 /*--------------------------------------------------------------
   thumbnail
 --------------------------------------------------------------*/
@@ -99,7 +98,7 @@ add_theme_support('html5', array(
 ));
 
 /*--------------------------------------------------------------
-  自動的に投稿スラッグを生成する関数。
+  自動的に投稿スラッグを生成する関数（重複防止対応版）
 --------------------------------------------------------------*/
 /**
  * @param string $slug       現在のスラッグ。
@@ -110,18 +109,16 @@ add_theme_support('html5', array(
  */
 function auto_post_slug_with_date($slug, $post_ID, $post_status, $post_type)
 {
-  // スラッグがURLエンコードされた文字を含む場合にのみ処理。
+
   if (preg_match('/(%[0-9a-f]{2})+/', $slug)) {
-    // 投稿の日付を取得し、YYYYMMDD形式にフォーマット。
     $post_date = get_post_field('post_date', $post_ID);
     $formatted_date = date('Ymd', strtotime($post_date));
-
-    // 投稿タイプとフォーマットされた日付を組み合わせたスラッグを生成。
-    $slug = sanitize_title($post_type) . '-' . $formatted_date;
+    $slug = sanitize_title($post_type) . '-' . $formatted_date . '-' . $post_ID;
   }
   return $slug;
 }
 add_filter('wp_unique_post_slug', 'auto_post_slug_with_date', 10, 4);
+
 
 /*--------------------------------------------------------------
   date set
@@ -379,3 +376,39 @@ if (function_exists('acf_add_local_field_group')):
   ));
 
 endif;
+
+
+/*--------------------------------------------------------------
+  管理画面の「コメント」メニューを削除
+--------------------------------------------------------------*/
+function remove_comments_menu()
+{
+  remove_menu_page('edit-comments.php'); // コメントメニューを削除
+}
+add_action('admin_menu', 'remove_comments_menu');
+
+// コメントに関連する管理バーのリンクを削除
+function remove_comments_from_admin_bar($wp_admin_bar)
+{
+  $wp_admin_bar->remove_node('comments'); // 管理バーからコメントリンクを削除
+}
+add_action('admin_bar_menu', 'remove_comments_from_admin_bar', 999);
+
+// コメント関連のウィジェットを非表示
+function remove_dashboard_widgets()
+{
+  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // ダッシュボードの最近のコメントウィジェットを削除
+}
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+
+// コメント関連の画面オプションを非表示
+function disable_comments_screen_options()
+{
+  global $pagenow;
+
+  if ($pagenow === 'edit-comments.php') {
+    wp_redirect(admin_url()); // コメント一覧ページにアクセスしたらリダイレクト
+    exit;
+  }
+}
+add_action('admin_init', 'disable_comments_screen_options');
