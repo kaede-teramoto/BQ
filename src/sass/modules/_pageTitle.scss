@@ -23,12 +23,16 @@
     @include m.mq(sp) {}
 }
 
-.page-title {
+// .page-title {
+//     @include v.conWidth;
+// }
+
+
+.page-title__feature {
     @include v.conWidth;
 }
 
 .page-title__img {
-
     img {
         object-fit: cover;
         height: 100%;
@@ -54,6 +58,8 @@
 }
 
 .page-title01 {
+    width: 100%;
+
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -87,7 +93,7 @@
     }
 
     @include m.mq(sp) {
-        margin: 110px 0 30px;
+        margin: 110px auto 30px;
         gap: 20px;
     }
 }
@@ -159,12 +165,10 @@
 }
 
 .page-title01__img {
-
     background-size: cover;
     background-position: center;
     height: 460px;
-    width: 100vw;
-    margin: 0 calc(50% - 50vw);
+    width: 100%;
 
     @include m.mq(pc) {}
 
@@ -176,6 +180,10 @@
     }
 
     @include m.mq(sp) {}
+
+    .cms__post__thumbnail {
+        border-radius: 0;
+    }
 }
 
 
@@ -624,6 +632,7 @@
 }
 
 .page-title05 {
+    width: 100%;
     height: 100%;
     display: grid;
 
@@ -737,8 +746,7 @@
     background-size: cover;
     background-position: center;
     height: 540px;
-    width: 100vw;
-    margin: 0 calc(50% - 50vw);
+    width: 100%;
 
     @include m.mq(pc) {}
 
@@ -749,6 +757,11 @@
     @include m.mq(sp) {
         height: 320px;
     }
+
+    .cms__post__thumbnail {
+        border-radius: 0;
+    }
+
 }
 
 /*  -----------------------------------------------------------------------------------------------
@@ -770,6 +783,8 @@
 .page-title06 {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
 
     @include m.mq(pc) {}
 
@@ -880,8 +895,8 @@
     background-size: cover;
     background-position: center;
     height: 450px;
-    width: 100vw;
-    margin: 0 calc(50% - 50vw);
+    width: 100%;
+    //margin: 0 calc(50% - 50vw);
     box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
 
     @include m.mq(pc) {}
@@ -899,7 +914,18 @@
 
 .page-title07__wrapper {
     overflow: hidden;
-    width: 100%;
+    justify-content: flex-start;
+
+    margin-left: calc(calc(100% - v.$maxWidth) / 2);
+
+    @include m.mq(pc) {
+        margin-left: calc(calc(100% - v.$pcWidth) / 2);
+    }
+
+    @include m.mq(miniPc) {
+        margin-left: calc(calc(100% - v.$miniWidth) / 2);
+    }
+
 
     @include m.mq(pc) {}
 
@@ -1036,15 +1062,14 @@
 
 .page-title07__img {
     height: 560px;
-    margin-right: calc(50% - 50vw);
+    margin-right: 0;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
-        width: 100vw;
-        margin: 0 calc(50% - 50vw);
+        width: 100%;
         margin-top: 80px;
         height: 100%;
         aspect-ratio: 849 / 560;
@@ -1053,6 +1078,10 @@
     @include m.mq(sp) {
         margin-top: 40px;
         aspect-ratio: 599 / 395;
+    }
+
+    .cms__post__thumbnail {
+        border-radius: 0;
     }
 }
 

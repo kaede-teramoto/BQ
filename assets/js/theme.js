@@ -347,28 +347,3 @@ window.addEventListener('scroll', function () {
 });
 
 
-// Mega Menu
-document.addEventListener('DOMContentLoaded', () => {
-    // .menu-item-has-childrenが存在するかを確認
-    const menuItems = document.querySelectorAll('.menu-item-has-children');
-    if (menuItems.length > 0) {
-
-        menuItems.forEach(item => {
-            const megaMenu = item.querySelector('.megaMenu');
-
-            if (megaMenu) {
-                // マウスオーバーイベント
-                item.addEventListener('mouseover', () => {
-                    megaMenu.style.opacity = '1';
-                    megaMenu.style.visibility = 'inherit';
-                });
-
-                // マウスアウトイベント
-                item.addEventListener('mouseout', () => {
-                    megaMenu.style.opacity = '0';
-                    megaMenu.style.visibility = 'hidden';
-                });
-            }
-        });
-    }
-});

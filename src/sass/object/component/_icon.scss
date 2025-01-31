@@ -485,17 +485,18 @@
         width: 10px;
         height: 1px;
         top: 50%;
-        left: 9px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
         background-color: var(--main_color);
     }
 
     &::after {
         width: 5px;
         height: 5px;
-        transform: rotate(45deg);
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
         border-top: solid 1px var(--main_color);
         border-right: solid 1px var(--main_color);
-        top: 13px;
         right: 10px;
     }
 }
@@ -511,14 +512,11 @@
 
         &::before {
             background-color: #fff;
-            left: 19px;
-
         }
 
         &::after {
             border-top: solid 1px #fff;
             border-right: solid 1px #fff;
-            top: 22px;
             right: 19px;
         }
     }
