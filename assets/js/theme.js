@@ -346,4 +346,40 @@ window.addEventListener('scroll', function () {
     }
 });
 
+// Mega Menu
+document.addEventListener('DOMContentLoaded', () => {
+    // .menu-item-has-childrenが存在するかを確認
+    const menuItems = document.querySelectorAll('.menu-item-has-children');
+    if (menuItems.length > 0) {
 
+        menuItems.forEach(item => {
+            const megaMenu = item.querySelector('.megaMenu');
+
+            if (megaMenu) {
+                // マウスオーバーイベント
+                item.addEventListener('mouseover', () => {
+                    megaMenu.style.opacity = '1';
+                    megaMenu.style.visibility = 'inherit';
+                });
+
+                // マウスアウトイベント
+                item.addEventListener('mouseout', () => {
+                    megaMenu.style.opacity = '0';
+                    megaMenu.style.visibility = 'hidden';
+                });
+            }
+        });
+    }
+});
+
+// フォームのファイル選択の設定
+document.getElementById("formFileInput").addEventListener("change", function (event) {
+    const fileNameDisplay = document.getElementById("fileName");
+    const files = event.target.files;
+
+    if (files.length > 0) {
+        fileNameDisplay.textContent = files[0].name; // 選択されたファイル名を表示
+    } else {
+        fileNameDisplay.textContent = "選択されたファイル名がここに表示されます"; // 初期メッセージ
+    }
+});
