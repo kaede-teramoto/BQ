@@ -197,6 +197,17 @@
     .p-top_postLink {
         display: block;
         height: auto;
+        color: #fff;
+        font-size: 3.6rem;
+        font-weight: 600;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
     }
 
     .p-top__postMeta {
@@ -205,4 +216,28 @@
         left: 10%;
     }
 
+    ul.post-categories {
+        li {
+            display: flex;
+            align-items: center;
+
+            a {
+                color: #fff;
+                border: none;
+                padding: 5px 15px;
+                font-weight: 600;
+                background-color: var(--main_color);
+                border-radius: 50px;
+                font-size: 1.2rem;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+            }
+        }
+    }
 }
