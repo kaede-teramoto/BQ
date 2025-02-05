@@ -23,14 +23,44 @@ $categories = get_categories(array(
     'hide_empty' => true // 投稿がないカテゴリは除外
 ));
 
+if (is_front_page()) {
+    $content_title_setting = get_theme_mod('boutiq_top_content_title_setting', '01');
+    $content_title_underline = get_theme_mod('top_content_title_underline', false);
+    $content_title_underline_color = get_theme_mod('top_content_title_underline_color', '#999999');
+    $content_title_underline_width = get_theme_mod('top_content_title_underline_width', '2px');
+
+    if ($content_title_underline) {
+        $title_underline = 'margin-bottom: 50px; border-bottom-style: solid;';
+        $title_underline_color = 'border-bottom-color:' . $content_title_underline_color . ';';
+        $title_underline_thickness = 'border-bottom-width:' . $content_title_underline_width . ';';
+    } else {
+        $title_underline = '';
+        $title_underline_color = '';
+        $title_underline_thickness = '';
+    }
+}
+
 if ($cms_design == 03) : ?>
 
     <div class="top-cms__wrapper top-cms03__wrapper js-fadeIn">
         <div class="top-cms top-cms03">
             <div class="top-cms__title top-cms03__title">
-                <h2 class="top-cms__title--main top-cms03__title--main js-fadeIn"><?php echo $main_title; ?></h2>
-                <p class="top-cms__title--sub top-cms03__title--sub js-fadeIn"><?php echo $sub_title; ?></p>
+                <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?>" style="<?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                    <?php if ($main_title) : ?>
+                        <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text">
+                            <?php echo $main_title; ?>
+                        </span>
+                    <?php endif; ?>
+
+                    <?php if ($sub_title) : ?>
+                        <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle">
+                            <?php echo $sub_title; ?>
+                        </span>
+                    <?php endif; ?>
+                </h2>
             </div>
+
+
 
             <div class="top-cms__content top-cms03__content">
                 <div class="swiper">
@@ -81,25 +111,27 @@ if ($cms_design == 03) : ?>
                         <?php endif; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
-                    <div class="cms-pagination"></div>
                 </div>
+                <div class="cms-pagination"></div>
             </div>
 
-            <div class="top-cms<?php echo $cms_design; ?>__link">
-                <?php if ($link_type == 01) : ?>
-                    <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                        <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                            <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                            <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+            <?php if ($btn_text && $topCms_btn_link): ?>
+                <div class="top-cms<?php echo $cms_design; ?>__link">
+                    <?php if ($link_type == 01) : ?>
+                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
+                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="icon<?php echo $text_icon_design; ?>"></span>
                         </a>
-                    </div>
-                <?php else : ?>
-                    <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
-                        <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
-                        <span class="icon<?php echo $text_icon_design; ?>"></span>
-                    </a>
-                <?php endif; ?>
-            </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -107,8 +139,19 @@ if ($cms_design == 03) : ?>
     <div class="top-cms__wrapper top-cms<?php echo $cms_design; ?>__wrapper js-fadeIn">
         <div class="top-cms top-cms<?php echo $cms_design; ?>">
             <div class="top-cms__title top-cms<?php echo $cms_design; ?>__title">
-                <h2 class="top-cms__title--main top-cms<?php echo $cms_design; ?>__title--main js-fadeIn"><?php echo $main_title; ?></h2>
-                <p class="top-cms__title--sub top-cms<?php echo $cms_design; ?>__title--sub js-fadeIn"><?php echo $sub_title; ?></p>
+                <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?>" style="<?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                    <?php if ($main_title) : ?>
+                        <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text">
+                            <?php echo $main_title; ?>
+                        </span>
+                    <?php endif; ?>
+
+                    <?php if ($sub_title) : ?>
+                        <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle">
+                            <?php echo $sub_title; ?>
+                        </span>
+                    <?php endif; ?>
+                </h2>
             </div>
 
             <div class="top-cms__cat top-cms<?php echo $cms_design; ?>__cat">
@@ -121,21 +164,23 @@ if ($cms_design == 03) : ?>
                 echo '</ul>';
                 ?>
             </div>
-            <div class="top-cms__link top-cms<?php echo $cms_design; ?>__link">
-                <?php if ($link_type == 01) : ?>
-                    <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                        <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                            <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                            <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+            <?php if ($btn_text && $topCms_btn_link): ?>
+                <div class="top-cms__link top-cms<?php echo $cms_design; ?>__link">
+                    <?php if ($link_type == 01) : ?>
+                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
+                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="icon<?php echo $text_icon_design; ?>"></span>
                         </a>
-                    </div>
-                <?php else : ?>
-                    <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
-                        <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
-                        <span class="icon<?php echo $text_icon_design; ?>"></span>
-                    </a>
-                <?php endif; ?>
-            </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
 
             <div class="top-cms__content top-cms<?php echo $cms_design; ?>__content">
                 <div id="all" class="top-cms__list top-cms<?php echo $cms_design; ?>__list tab__panel --active">

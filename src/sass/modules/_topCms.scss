@@ -780,6 +780,11 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
+    .cms-pagination {
+        top: auto;
+        bottom: -20px;
+    }
 }
 
 .top-cms03 {
@@ -854,6 +859,7 @@
 }
 
 .top-cms03__content {
+    position: relative;
     //order: 2;
     width: calc(100% - calc(calc(100% - v.$maxWidth) / 2)); //calc(100% - calc(calc(100% - v.$maxWidth) / 2));
     margin-left: calc(calc(100% - v.$maxWidth) / 2);
