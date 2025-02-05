@@ -417,7 +417,6 @@ function top_customize_register($wp_customize)
             'section' => 'top_fv_post_section',
             'settings' => 'top_fv_slider_progressbar',
             'label' => __('Change Progress Bar', 'boutiq'),
-            'description' => __('"Show pagination" must be turned on', 'boutiq'),
         )
     );
 
