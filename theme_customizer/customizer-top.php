@@ -234,21 +234,63 @@ function top_customize_register($wp_customize)
 
     // Set space width ======================================================================================================================================================
     $wp_customize->add_setting(
-        'top_fv_post_space',
+        'top_fv_post_space_pc',
         array(
             'type' => 'theme_mod',
-            'default'     => '20px',
+            'default'     => '30',
             'transport'   => 'refresh',
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
 
     $wp_customize->add_control(
-        'top_fv_post_space_control',
+        'top_fv_post_space_pc_control',
         array(
-            'label' => __('Set space width(Unit not required)', 'boutiq'),
+            'label' => __('Set space width for PC(Unit not required)', 'boutiq'),
             'section' => 'top_fv_post_section',
-            'settings' => 'top_fv_post_space',
+            'settings' => 'top_fv_post_space_pc',
+            'type'     => 'text',
+        )
+    );
+
+    // Set space width ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'top_fv_post_space_tab',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '20',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'top_fv_post_space_tab_control',
+        array(
+            'label' => __('Set space width for TAB(Unit not required)', 'boutiq'),
+            'section' => 'top_fv_post_section',
+            'settings' => 'top_fv_post_space_tab',
+            'type'     => 'text',
+        )
+    );
+
+    // Set space width ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'top_fv_post_space_sp',
+        array(
+            'type' => 'theme_mod',
+            'default'     => '10',
+            'transport'   => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+
+    $wp_customize->add_control(
+        'top_fv_post_space_sp_control',
+        array(
+            'label' => __('Set space width for SP(Unit not required)', 'boutiq'),
+            'section' => 'top_fv_post_section',
+            'settings' => 'top_fv_post_space_sp',
             'type'     => 'text',
         )
     );

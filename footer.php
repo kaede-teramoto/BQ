@@ -350,7 +350,9 @@ $fv_type = get_theme_mod('top_fv_type', '01');
 $fv_post_count_pc = get_theme_mod('top_fv_post_count_pc', '3');
 $fv_post_count_tab = get_theme_mod('top_fv_post_count_tab', '2');
 $fv_post_count_sp = get_theme_mod('top_fv_post_count_sp', '1');
-$fv_post_space = get_theme_mod('top_fv_post_space', '0');
+$fv_post_space_pc = get_theme_mod('top_fv_post_space_pc', '30');
+$fv_post_space_tab = get_theme_mod('top_fv_post_space_tab', '20');
+$fv_post_space_sp = get_theme_mod('top_fv_post_space_sp', '10');
 $fv_post_position = get_theme_mod('top_fv_post_position', false);
 
 
@@ -443,17 +445,20 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             autoplay: {
                 delay: <?php echo $top_fv_slider_speed; ?>,
             },
-            spaceBetween: <?php echo $fv_post_space; ?>,
+            spaceBetween: <?php echo $fv_post_space_pc; ?>,
             slidesPerView: <?php echo $fv_post_count_pc; ?>,
             breakpoints: {
                 1199: {
                     slidesPerView: <?php echo $fv_post_count_pc; ?>,
+                    spaceBetween: <?php echo $fv_post_space_pc; ?>,
                 },
                 849: {
                     slidesPerView: <?php echo $fv_post_count_tab; ?>,
+                    spaceBetween: <?php echo $fv_post_space_tab; ?>,
                 },
                 599: {
                     slidesPerView: <?php echo $fv_post_count_sp; ?>,
+                    spaceBetween: <?php echo $fv_post_space_sp; ?>,
                 }
             },
             <?php if ($fv_post_position) { ?>
