@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format\n"
-"POT-Creation-Date: 2025-01-31 13:44+0900\n"
-"PO-Revision-Date: 2025-01-31 13:45+0900\n"
+"POT-Creation-Date: 2025-02-05 13:21+0900\n"
+"PO-Revision-Date: 2025-02-05 13:21+0900\n"
 "Last-Translator: \n"
 "Language-Team: boutiq\n"
 "Language: ja_JP\n"
@@ -202,6 +202,10 @@ msgstr ""
 msgid "CMS Archive Type07"
 msgstr ""
 
+#: theme_customizer/customizer-cms.php:252
+msgid "CMS Archive Type08"
+msgstr ""
+
 #: theme_customizer/customizer-design.php:18
 msgid "Basic design settings"
 msgstr "デザインの基本設定"
@@ -211,7 +215,7 @@ msgid "Color Settings"
 msgstr "カラー設定"
 
 #: theme_customizer/customizer-design.php:48
-#: theme_customizer/customizer-top.php:690
+#: theme_customizer/customizer-top.php:731
 msgid "Text Color"
 msgstr "テキストカラー"
 
@@ -244,7 +248,6 @@ msgid "Japanese Font"
 msgstr "日本語フォント"
 
 #: theme_customizer/customizer-design.php:205
-#, fuzzy
 msgid "Japanese Font Family"
 msgstr "日本語フォント指定"
 
@@ -253,7 +256,6 @@ msgid "European language Font"
 msgstr "欧文フォント"
 
 #: theme_customizer/customizer-design.php:247
-#, fuzzy
 msgid "European Font Family"
 msgstr "欧文フォント指定"
 
@@ -262,7 +264,6 @@ msgid "Heading Font"
 msgstr "見出しフォント"
 
 #: theme_customizer/customizer-design.php:289
-#, fuzzy
 msgid "Heading Font Family"
 msgstr "見出しフォント指定"
 
@@ -622,25 +623,25 @@ msgstr "アニメーションなし"
 
 #: theme_customizer/customizer-followBtn.php:138
 #: theme_customizer/customizer-followBtn.php:350
-#: theme_customizer/customizer-top.php:276
+#: theme_customizer/customizer-top.php:318
 msgid "From left"
 msgstr "左から表示"
 
 #: theme_customizer/customizer-followBtn.php:139
 #: theme_customizer/customizer-followBtn.php:351
-#: theme_customizer/customizer-top.php:277
+#: theme_customizer/customizer-top.php:319
 msgid "From right"
 msgstr "右から表示"
 
 #: theme_customizer/customizer-followBtn.php:140
 #: theme_customizer/customizer-followBtn.php:352
-#: theme_customizer/customizer-top.php:274
+#: theme_customizer/customizer-top.php:316
 msgid "From top"
 msgstr "上から表示"
 
 #: theme_customizer/customizer-followBtn.php:141
 #: theme_customizer/customizer-followBtn.php:353
-#: theme_customizer/customizer-top.php:275
+#: theme_customizer/customizer-top.php:317
 msgid "From bottom"
 msgstr "下から表示"
 
@@ -1175,47 +1176,47 @@ msgid "Page Title9"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:67
-#: theme_customizer/customizer-top.php:526
+#: theme_customizer/customizer-top.php:567
 msgid "Content Title1"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:68
-#: theme_customizer/customizer-top.php:527
+#: theme_customizer/customizer-top.php:568
 msgid "Content Title2"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:69
-#: theme_customizer/customizer-top.php:528
+#: theme_customizer/customizer-top.php:569
 msgid "Content Title3"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:70
-#: theme_customizer/customizer-top.php:529
+#: theme_customizer/customizer-top.php:570
 msgid "Content Title4"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:71
-#: theme_customizer/customizer-top.php:530
+#: theme_customizer/customizer-top.php:571
 msgid "Content Title5"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:72
-#: theme_customizer/customizer-top.php:531
+#: theme_customizer/customizer-top.php:572
 msgid "Content Title6"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:73
-#: theme_customizer/customizer-top.php:532
+#: theme_customizer/customizer-top.php:573
 msgid "Content Title7"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:74
-#: theme_customizer/customizer-top.php:533
+#: theme_customizer/customizer-top.php:574
 msgid "Content Title8"
 msgstr ""
 
 #: theme_customizer/customizer-page.php:95
-#: theme_customizer/customizer-top.php:554
+#: theme_customizer/customizer-top.php:595
 msgid "Add underline to content title"
 msgstr "コンテンツのタイトルに下線を追加する"
 
@@ -1224,7 +1225,7 @@ msgid "Underline Color"
 msgstr "下線の色"
 
 #: theme_customizer/customizer-page.php:135
-#: theme_customizer/customizer-top.php:594
+#: theme_customizer/customizer-top.php:635
 msgid "Set Underline thickness (px)"
 msgstr "下線の太さを設定する"
 
@@ -1433,109 +1434,113 @@ msgid "Number of pictures to show for SP"
 msgstr "スマホの時に表示する画像枚数"
 
 #: theme_customizer/customizer-top.php:249
-msgid "Set space width(Unit not required)"
-msgstr "画像のスペース（単位は入力しないでください）"
+msgid "Set space width for PC(Unit not required)"
+msgstr "PC時の画像のスペース（単位は入力しないでください）"
 
-#: theme_customizer/customizer-top.php:268
+#: theme_customizer/customizer-top.php:270
+msgid "Set space width for TAB(Unit not required)"
+msgstr "タブレット時の画像のスペース（単位は入力しないでください）"
+
+#: theme_customizer/customizer-top.php:291
+msgid "Set space width for SP(Unit not required)"
+msgstr "スマートフォン時の画像のスペース（単位は入力しないでください）"
+
+#: theme_customizer/customizer-top.php:310
 msgid ""
 "Select the type of animated text you want to place on the first view image"
 msgstr "ファーストビュー画像に配置するテキストのアニメーションを選択します"
 
-#: theme_customizer/customizer-top.php:273
+#: theme_customizer/customizer-top.php:315
 msgid "Fade In"
 msgstr "フェードイン"
 
-#: theme_customizer/customizer-top.php:278
+#: theme_customizer/customizer-top.php:320
 msgid "Text display from solid fill"
 msgstr "塗りつぶしからのテキスト表示"
 
-#: theme_customizer/customizer-top.php:298
+#: theme_customizer/customizer-top.php:340
 msgid "Center slide"
 msgstr "画像をセンターに配置する"
 
-#: theme_customizer/customizer-top.php:315
+#: theme_customizer/customizer-top.php:357
 msgid "Slider speed"
 msgstr "スライドのスピード"
 
-#: theme_customizer/customizer-top.php:316
+#: theme_customizer/customizer-top.php:358
 msgid ""
 "1 second is 1000. If you want to change the slide in 2 seconds, enter 2000."
 msgstr "1 秒は 1000 です。2 秒でスライドを変更する場合は、2000 と入力します。"
 
-#: theme_customizer/customizer-top.php:338
+#: theme_customizer/customizer-top.php:380
 msgid "Show Arrow"
 msgstr "矢印を表示する"
 
-#: theme_customizer/customizer-top.php:357
+#: theme_customizer/customizer-top.php:399
 msgid "Show Pagination"
 msgstr "ページネーションを表示する"
 
-#: theme_customizer/customizer-top.php:377
+#: theme_customizer/customizer-top.php:419
 msgid "Change Progress Bar"
 msgstr "プログレンスバーに変更する"
 
-#: theme_customizer/customizer-top.php:378
-msgid "\"Show pagination\" must be turned on"
-msgstr "「ページネーションを表示」をオンにする必要があります"
-
-#: theme_customizer/customizer-top.php:396
+#: theme_customizer/customizer-top.php:437
 msgid "For posts, number of articles"
 msgstr "最新投稿の場合表示する記事数"
 
-#: theme_customizer/customizer-top.php:419
+#: theme_customizer/customizer-top.php:460
 msgid "Show title"
 msgstr "タイトルを表示する（最新投稿の場合）"
 
-#: theme_customizer/customizer-top.php:439
+#: theme_customizer/customizer-top.php:480
 msgid "Show post category"
 msgstr "カテゴリーを表示する（最新投稿の場合）"
 
-#: theme_customizer/customizer-top.php:458
+#: theme_customizer/customizer-top.php:499
 msgid "Show post tag"
 msgstr "タグを表示する（最新投稿の場合）"
 
-#: theme_customizer/customizer-top.php:477
+#: theme_customizer/customizer-top.php:518
 msgid "Show post date"
 msgstr "日付を表示する（最新投稿の場合）"
 
-#: theme_customizer/customizer-top.php:504
-#: theme_customizer/customizer-top.php:521
+#: theme_customizer/customizer-top.php:545
+#: theme_customizer/customizer-top.php:562
 msgid "Top page title design"
 msgstr "ページタイトルのデザインを設定"
 
-#: theme_customizer/customizer-top.php:573
+#: theme_customizer/customizer-top.php:614
 msgid "Underline Color For Top page"
 msgstr "コンテンツのタイトルに下線の色"
 
-#: theme_customizer/customizer-top.php:608
+#: theme_customizer/customizer-top.php:649
 msgid "Slide Image"
 msgstr "スライド画像の設定"
 
-#: theme_customizer/customizer-top.php:624
+#: theme_customizer/customizer-top.php:665
 msgid "Image"
 msgstr "画像"
 
-#: theme_customizer/customizer-top.php:645
+#: theme_customizer/customizer-top.php:686
 msgid "If you put text for heading on image"
 msgstr "画像に見出しの文字を入れる（空欄可）"
 
-#: theme_customizer/customizer-top.php:666
+#: theme_customizer/customizer-top.php:707
 msgid "If you put text for description on image"
 msgstr "画像に説明文を入れる（空欄可）"
 
-#: theme_customizer/customizer-top.php:711
+#: theme_customizer/customizer-top.php:752
 msgid "Position from bottom of text(%)"
 msgstr "上もしくは下からの位置"
 
-#: theme_customizer/customizer-top.php:733
+#: theme_customizer/customizer-top.php:774
 msgid "Position from left of text(%)"
 msgstr "左もしくは右からの位置"
 
-#: theme_customizer/customizer-top.php:754
+#: theme_customizer/customizer-top.php:795
 msgid "If you put a link to the image"
 msgstr "もしも画像にリンクを設定する場合はURLを記載してください"
 
-#: theme_customizer/customizer-top.php:780
+#: theme_customizer/customizer-top.php:821
 msgid "Open in new tab"
 msgstr "ページを新しいタブで開く"
 
@@ -1859,18 +1864,24 @@ msgstr "…続きを見る"
 
 #: theme_support/titles.php:112 theme_support/titles.php:128
 #: theme_support/titles.php:162 theme_support/titles.php:177
-#: theme_support/titles.php:238 theme_support/titles.php:254
+#: theme_support/titles.php:239 theme_support/titles.php:254
 msgid "Subtitle"
 msgstr "サブタイトル"
 
 #: theme_support/titles.php:116 theme_support/titles.php:130
-#: theme_support/titles.php:242 theme_support/titles.php:256
 msgid "Enter a subtitle for this category"
 msgstr "このカテゴリのサブタイトルを入力してください"
 
 #: theme_support/titles.php:164 theme_support/titles.php:181
 msgid "Enter a subtitle for this tag"
 msgstr "このタグのサブタイトルを入力してください"
+
+#: theme_support/titles.php:243 theme_support/titles.php:256
+msgid "Enter a subtitle for this term"
+msgstr "このカテゴリーのサブタイトルを入力してください"
+
+#~ msgid "\"Show pagination\" must be turned on"
+#~ msgstr "「ページネーションを表示」をオンにする必要があります"
 
 #~ msgid "Set speed"
 #~ msgstr "スライドのスピード"

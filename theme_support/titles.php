@@ -224,14 +224,14 @@ function taxonomy_term_title()
 
 
 /*--------------------------------------------------------------
-  sub title for custom taxonomy
+  Subtitle for Registered Taxonomies Only
 --------------------------------------------------------------*/
 
-// タクソノミー編集画面に「sub_title」カスタムフィールドを追加
+// 編集画面に「sub_title」フィールド追加
 function add_subtitle_field_to_taxonomy($term)
 {
-  $term_id = $term->term_id; // 現在のタクソノミーIDを取得
-  $sub_title = get_term_meta($term_id, 'sub_title', true); // 現在のsub_titleを取得
+  $term_id = $term->term_id;
+  $sub_title = get_term_meta($term_id, 'sub_title', true);
 ?>
   <tr class="form-field">
     <th scope="row" valign="top">
@@ -239,27 +239,25 @@ function add_subtitle_field_to_taxonomy($term)
     </th>
     <td>
       <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
-      <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
+      <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
     </td>
   </tr>
 <?php
 }
-add_action('performance_cat_edit_form_fields', 'add_subtitle_field_to_taxonomy');
 
-// 新規タクソノミー作成画面に「sub_title」カスタムフィールドを追加
+// 新規追加画面に「sub_title」フィールド追加
 function add_subtitle_field_to_new_taxonomy()
 {
 ?>
   <div class="form-field">
     <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
+    <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
   </div>
 <?php
 }
-add_action('performance_cat_add_form_fields', 'add_subtitle_field_to_new_taxonomy');
 
-// タクソノミーのカスタムフィールドの値を保存
+// サブタイトルを保存
 function save_taxonomy_subtitle($term_id)
 {
   if (isset($_POST['sub_title'])) {
@@ -267,10 +265,25 @@ function save_taxonomy_subtitle($term_id)
     update_term_meta($term_id, 'sub_title', $sub_title);
   }
 }
-add_action('edited_performance_cat', 'save_taxonomy_subtitle');
-add_action('create_performance_cat', 'save_taxonomy_subtitle');
 
-// タクソノミーのカスタムフィールド「sub_title」を表示するための関数
+// 登録済みのタクソノミーにのみ適用
+function apply_subtitle_to_registered_taxonomies()
+{
+  $taxonomies = get_taxonomies([], 'names');
+
+  foreach ($taxonomies as $taxonomy) {
+    // タクソノミーが存在する場合のみフックを追加
+    if (taxonomy_exists($taxonomy)) {
+      add_action("{$taxonomy}_edit_form_fields", 'add_subtitle_field_to_taxonomy');
+      add_action("{$taxonomy}_add_form_fields", 'add_subtitle_field_to_new_taxonomy');
+      add_action("edited_{$taxonomy}", 'save_taxonomy_subtitle');
+      add_action("create_{$taxonomy}", 'save_taxonomy_subtitle');
+    }
+  }
+}
+add_action('init', 'apply_subtitle_to_registered_taxonomies');
+
+// サブタイトル取得用関数
 function get_taxonomy_subtitle($term_id)
 {
   return get_term_meta($term_id, 'sub_title', true);
