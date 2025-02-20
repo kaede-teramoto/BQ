@@ -36,26 +36,16 @@
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+        @include m.mq(tab) {
+            width: 540px;
+        }
 
-        @include m.mq(sp) {}
+        @include m.mq(sp) {
+            width: 100%;
+        }
     }
-}
 
-.ctaForm01 {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .ctaForm__form__wrapper {
+    .ctaForm {
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -67,235 +57,529 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
-    }
 
-    .ctaForm__form-group__wrap {
-        display: flex;
+        .ctaForm__form__wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
 
-        @include m.mq(pc) {}
+            @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+            @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+            @include m.mq(tab) {}
 
-        @include m.mq(sp) {}
+            @include m.mq(sp) {}
+        }
+
+        .ctaForm__form-group__wrap {
+            display: flex;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                width: 100%;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+            .ctaForm__form-group {
+                width: 100%;
+
+                //2つ横並びのテキストボックス
+                &:first-child {
+                    position: relative;
+
+                    .wpcf7-text {
+                        border-radius: 20px 0 0 20px;
+
+                        @include m.mq(pc) {}
+
+                        @include m.mq(miniPc) {
+                            border-radius: 15px 0 0 15px;
+                        }
+
+                        @include m.mq(tab) {}
+
+                        @include m.mq(sp) {
+                            border-radius: 10px 0 0 10px;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: 70px;
+                        border-right: solid 1px #A0A0A0;
+
+                        @include m.mq(pc) {}
+
+                        @include m.mq(miniPc) {
+                            height: 50px;
+                        }
+
+                        @include m.mq(tab) {}
+
+                        @include m.mq(sp) {
+                            height: 40px;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .wpcf7-text {
+                        border-radius: 0 20px 20px 0;
+
+                        @include m.mq(pc) {}
+
+                        @include m.mq(miniPc) {
+                            border-radius: 0 15px 15px 0;
+                        }
+
+                        @include m.mq(tab) {}
+
+                        @include m.mq(sp) {
+                            border-radius: 0 10px 10px 0;
+                        }
+                    }
+                }
+            }
+        }
 
         .ctaForm__form-group {
-            &:first-child {
-                position: relative;
+            position: relative;
 
-                .wpcf7-text {
-                    border-radius: 20px 0 0 20px;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    right: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    height: 70px;
-                    border-right: solid 1px #A0A0A0;
-                }
+            label {
+                display: none;
             }
 
-            &:last-child {
-                .wpcf7-text {
-                    border-radius: 0 20px 20px 0;
-                }
+            br {
+                display: none;
             }
         }
-    }
 
-    .ctaForm__form-group {
-        label {
-            display: none;
+        // チェックボックス、ラジオボタン、ファイルの設定
+        .checkbox,
+        .radio,
+        .file {
+            margin-bottom: 25px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                margin-bottom: 20px;
+            }
+
+            @include m.mq(tab) {
+                margin-bottom: 15px;
+            }
+
+            @include m.mq(sp) {
+                margin-bottom: 10px;
+            }
+
+            label {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin-bottom: 15px;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {
+                    margin-bottom: 10px;
+                }
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+            }
         }
 
-        br {
-            display: none;
+        .file {
+            input {
+                background-color: transparent;
+                padding: 0;
+            }
         }
-    }
 
-    .checkbox,
-    .radio,
-    .file {
-        margin-bottom: 25px;
-
-        label {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-    }
-
-    .file {
-        input {
-            background-color: transparent;
+        .form_file {
+            position: absolute;
+            width: 1px;
+            height: 1px;
             padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
-    }
 
-    .form_file {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-    }
-
-    .file_contents {
-        p {
+        .file_contents {
             display: flex;
             align-items: center;
+
+            .wpcf7-form-control-wrap {
+                width: 0;
+            }
         }
-    }
 
-    .custom-file-button {
-        background-color: #A0A0A0;
-        margin-bottom: 0 !important;
-        color: #fff;
-        font-size: 1.4rem;
-        padding: 2px 15px;
-        border-radius: 4px;
-    }
+        .custom-file-button {
+            background-color: #A0A0A0;
+            margin-bottom: 0 !important;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 2px 15px;
+            border-radius: 4px;
 
-    .file-name {
-        font-size: 1.2rem;
-        margin-left: 30px;
-    }
+            @include m.mq(pc) {}
 
-    .ctaForm__comments {
-        font-size: 1.2rem;
-    }
+            @include m.mq(miniPc) {
+                font-size: 1.2rem;
+            }
 
-    .wpcf7-list-item {
-        margin: 0;
+            @include m.mq(tab) {
+                font-size: 1.0rem;
+            }
 
-        label {
-            margin-bottom: 0;
+            @include m.mq(sp) {
+                line-height: 1.5;
+                padding: 2px 10px;
+            }
         }
-    }
 
-    .wpcf7-form-control {
-        display: flex;
-        gap: 20px 30px;
-    }
+        .file-name {
+            font-size: 1.2rem;
+            margin-left: 30px;
 
-    input[type="radio"],
-    input[type="checkbox"] {
-        display: none;
-    }
+            @include m.mq(pc) {}
 
-    input[type="radio"]+.wpcf7-list-item-label,
-    input[type="checkbox"]+.wpcf7-list-item-label {
-        position: relative;
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-        color: var(--text_color);
-        /* テキストの色をカスタマイズ */
-        cursor: pointer;
-        /* カーソルをポインターに */
-    }
+            @include m.mq(miniPc) {}
 
-    input[type="radio"]+.wpcf7-list-item-label::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        border: 1px solid #A0A0A0;
-        /* 外枠の色を設定 */
-        border-radius: 50%;
-        background-color: #fff;
-        /* デフォルトで白い背景 */
-        position: relative;
-        box-sizing: border-box;
-        transition: background-color 0.3s, border-color 0.3s;
-        /* スムーズなトランジションを設定 */
-    }
+            @include m.mq(tab) {
+                font-size: 1.0rem;
+                margin-left: 20px;
+            }
 
-    input[type="radio"]+.wpcf7-list-item-label::after {
-        content: "";
-        display: block;
-        width: 12px;
-        /* 内側の小さな円の直径 */
-        height: 12px;
-        /* 内側の小さな円の直径 */
-        border-radius: 50%;
-        background-color: var(--main_color);
-        /* 内側の小さな円の色 */
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        /* 初期状態では非表示 */
-        transition: opacity 0.3s;
-    }
+            @include m.mq(sp) {
+                line-height: 1.5;
+            }
+        }
 
-    input[type="checkbox"]+.wpcf7-list-item-label::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        border: 1px solid #A0A0A0;
-        /* 外枠の色を設定 */
-        border-radius: 4px;
-        /* チェックボックスは角を丸めず、四角に */
-        background-color: #fff;
-        /* デフォルトで白い背景 */
-        position: relative;
-        box-sizing: border-box;
-        transition: background-color 0.3s, border-color 0.3s;
-        /* スムーズなトランジションを設定 */
-    }
+        .ctaForm__comments {
+            //labelの横のテキスト
+            font-size: 1.2rem;
 
-    input[type="checkbox"]+.wpcf7-list-item-label::after {
-        content: "";
-        display: block;
-        width: 8px;
-        /* 内側のチェックマークの大きさ */
-        height: 13px;
-        /* 内側のチェックマークの高さ */
-        border: solid var(--main_color);
-        /* チェックマークの色を設定 */
-        border-width: 0 2px 2px 0;
-        /* チェックマークの線の太さを設定 */
-        transform: rotate(45deg);
-        /* チェックマークを45度回転させて表示 */
-        position: absolute;
-        top: 48%;
-        left: 10px;
-        transform: translate(-50%, -50%) rotate(45deg);
-        opacity: 0;
-        /* 初期状態では非表示 */
-        transition: opacity 0.3s;
-    }
+            @include m.mq(pc) {}
 
-    input[type="radio"]:checked+.wpcf7-list-item-label::after,
-    input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
-        opacity: 1;
-        /* 選択時に内側の小さな円を表示 */
-    }
+            @include m.mq(miniPc) {}
 
-    .wpcf7-text {
-        height: 100px;
-        border-radius: 20px;
-    }
+            @include m.mq(tab) {
+                font-size: 1.0rem;
+            }
 
-    select {
-        height: 100px;
-    }
+            @include m.mq(sp) {}
+        }
 
-    textarea,
-    select {
-        border-radius: 20px;
+        .wpcf7-list-item {
+            margin: 0;
+
+            label {
+                margin-bottom: 0;
+            }
+        }
+
+        .wpcf7-form-control {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                gap: 10px 20px;
+            }
+        }
+
+        // 日付のカレンダーアイコンの設定
+        .wpcf7-form-control-wrap {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .form_date {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form_date::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: 25px;
+            /* フォームの右端に配置 */
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 2;
+            opacity: 1;
+            /* 必要に応じて表示を調整 */
+            pointer-events: auto;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                right: 20px;
+            }
+        }
+
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="radio"]+.wpcf7-list-item-label,
+        input[type="checkbox"]+.wpcf7-list-item-label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--text_color);
+            /* テキストの色をカスタマイズ */
+            cursor: pointer;
+            /* カーソルをポインターに */
+        }
+
+        input[type="radio"]+.wpcf7-list-item-label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid #A0A0A0;
+            /* 外枠の色を設定 */
+            border-radius: 50%;
+            background-color: #fff;
+            /* デフォルトで白い背景 */
+            position: relative;
+            box-sizing: border-box;
+            transition: background-color 0.3s, border-color 0.3s;
+            /* スムーズなトランジションを設定 */
+        }
+
+        input[type="radio"]+.wpcf7-list-item-label::after {
+            content: "";
+            display: block;
+            width: 12px;
+            /* 内側の小さな円の直径 */
+            height: 12px;
+            /* 内側の小さな円の直径 */
+            border-radius: 50%;
+            background-color: var(--main_color);
+            /* 内側の小さな円の色 */
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            /* 初期状態では非表示 */
+            transition: opacity 0.3s;
+        }
+
+        input[type="checkbox"]+.wpcf7-list-item-label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid #A0A0A0;
+            /* 外枠の色を設定 */
+            border-radius: 4px;
+            /* チェックボックスは角を丸めず、四角に */
+            background-color: #fff;
+            /* デフォルトで白い背景 */
+            position: relative;
+            box-sizing: border-box;
+            transition: background-color 0.3s, border-color 0.3s;
+            /* スムーズなトランジションを設定 */
+        }
+
+        input[type="checkbox"]+.wpcf7-list-item-label::after {
+            content: "";
+            display: block;
+            width: 8px;
+            /* 内側のチェックマークの大きさ */
+            height: 13px;
+            /* 内側のチェックマークの高さ */
+            border: solid var(--main_color);
+            /* チェックマークの色を設定 */
+            border-width: 0 2px 2px 0;
+            /* チェックマークの線の太さを設定 */
+            transform: rotate(45deg);
+            /* チェックマークを45度回転させて表示 */
+            position: absolute;
+            top: 48%;
+            left: 10px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            opacity: 0;
+            /* 初期状態では非表示 */
+            transition: opacity 0.3s;
+        }
+
+        input[type="radio"]:checked+.wpcf7-list-item-label::after,
+        input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
+            opacity: 1;
+            /* 選択時に内側の小さな円を表示 */
+        }
+
+        .wpcf7-text,
+        .wpcf7-date {
+            height: 100px;
+            border-radius: 20px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                height: 75px;
+                border-radius: 15px;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                height: 60px;
+                border-radius: 10px;
+            }
+        }
+
+        select {
+            height: 100px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                height: 75px;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                height: 60px;
+            }
+        }
+
+        textarea,
+        select {
+            border-radius: 20px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                border-radius: 15px;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                border-radius: 10px;
+            }
+        }
+
+        input,
+        select,
+        textarea {
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                padding: 10px;
+            }
+        }
+
+        .form_pull_down {
+            //プルダウンの矢印の設定
+            appearance: none;
+            background-image: url(../../assets/images/ctaForm/form_arrow04.svg);
+            background-repeat: no-repeat;
+            background-position: right 30px center;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                background-position: right 20px center;
+            }
+        }
+
+        .ctaForm__privacypolicy {
+            margin-top: 20px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                margin-top: 15px;
+            }
+
+            @include m.mq(tab) {
+                margin-top: 10px;
+            }
+
+            @include m.mq(sp) {}
+
+            .underline {
+                color: var(--main_color);
+                text-decoration: underline;
+            }
+        }
+
+        .submit-btn {
+            width: 180px;
+            margin: 30px auto 0;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                margin: 20px auto 0;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+            input {
+                border-radius: 50px;
+                color: var(--main_color);
+                border: solid 2px var(--main_color);
+                transition: all .3s ease-out;
+
+                &:hover {
+                    color: #fff;
+                    background-color: var(--main_color);
+                    transition: all .3s ease-out;
+                }
+            }
+
+            .wpcf7-spinner {
+                display: none;
+            }
+        }
     }
 }
