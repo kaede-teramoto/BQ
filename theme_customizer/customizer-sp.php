@@ -357,6 +357,26 @@ function sp_btn_setting($wp_customize)
         )
     );
 
+    // btn target ======================================================================================================================================================
+    $wp_customize->add_setting(
+        'sp_btn_second_btn_target_setting',
+        array(
+            'type'           => 'theme_mod',
+            'default' => false,
+            'sanitize_callback' => 'wp_validate_boolean',
+        )
+    );
+
+    $wp_customize->add_control(
+        'sp_btn_second_btn_target_setting_control',
+        array(
+            'type' => 'checkbox',
+            'section' => 'sp_btn_second_section',
+            'settings' => 'sp_btn_second_btn_target_setting',
+            'label' => __('Display button in separate tab', 'boutiq'),
+        )
+    );
+
     // text color ======================================================================================================================================================
     $wp_customize->add_setting(
         'sp_btn_second_text_color_setting',
