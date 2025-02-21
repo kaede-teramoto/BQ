@@ -67,7 +67,7 @@ $bg_image_set = $block_bg_image ? 'background-image:url(' . $block_bg_image . ')
 
             <?php if (get_sub_field('block_title_image')) : ?>
                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                 </div>
             <?php endif; ?>
 
@@ -95,7 +95,7 @@ $bg_image_set = $block_bg_image ? 'background-image:url(' . $block_bg_image . ')
                         <div class="section__parts__text section__parts__<?php echo $block_design_type; ?>__text js-target"><?php the_sub_field('block_parts_text'); ?><span class="versatile"></span></div>
                     <?php endif; ?>
                     <?php if (get_sub_field('block_parts_image')) : ?>
-                        <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                        <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy"></div>
                     <?php endif; ?>
 
                     <?php if (get_sub_field('block_parts_link_url')) : ?>

@@ -373,13 +373,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // フォームのファイル選択の設定
-document.getElementById("formFileInput").addEventListener("change", function (event) {
-    const fileNameDisplay = document.getElementById("fileName");
-    const files = event.target.files;
+// document.getElementById("formFileInput").addEventListener("change", function (event) {
+//     const fileNameDisplay = document.getElementById("fileName");
+//     const files = event.target.files;
 
-    if (files.length > 0) {
-        fileNameDisplay.textContent = files[0].name; // 選択されたファイル名を表示
-    } else {
-        fileNameDisplay.textContent = "選択されたファイル名がここに表示されます"; // 初期メッセージ
-    }
-});
+//     if (files.length > 0) {
+//         fileNameDisplay.textContent = files[0].name; // 選択されたファイル名を表示
+//     } else {
+//         fileNameDisplay.textContent = "選択されたファイル名がここに表示されます"; // 初期メッセージ
+//     }
+// });

@@ -90,7 +90,7 @@ if (have_rows('content_block')) : $i = 1;
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
                             <?php endif; ?>
 
@@ -151,7 +151,9 @@ if (have_rows('content_block')) : $i = 1;
                     <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
                         <?php while (have_rows('block_parts')) : the_row(); ?>
                             <?php if (get_sub_field('block_parts_image')) : ?>
-                                <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                    <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                </div>
                             <?php endif; ?>
                         <?php endwhile; ?>
                     </div>
@@ -160,7 +162,9 @@ if (have_rows('content_block')) : $i = 1;
                     <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
                         <?php while (have_rows('block_parts')) : the_row(); ?>
                             <?php if (get_sub_field('block_parts_image')) : ?>
-                                <div class="section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                <div class="section__parts__<?php echo $block_design_type; ?>__img">
+                                    <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                </div>
                             <?php endif; ?>
                         <?php endwhile; ?>
                     </div>
@@ -202,7 +206,7 @@ if (have_rows('content_block')) : $i = 1;
 
                                 <?php if (get_sub_field('block_title_image')) : ?>
                                     <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                        <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                        <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                     </div>
                                 <?php endif; ?>
 
@@ -232,7 +236,9 @@ if (have_rows('content_block')) : $i = 1;
                                             <div class="section__parts__text section__parts__<?php echo $block_design_type; ?>__text js-target"><?php the_sub_field('block_parts_text'); ?><span class="versatile"></span></div>
                                         <?php endif; ?>
                                         <?php if (get_sub_field('block_parts_image')) : ?>
-                                            <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                            <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                                <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                            </div>
                                         <?php endif; ?>
                                         <?php if (get_sub_field('block_parts_link_url')) : ?>
 
@@ -269,7 +275,7 @@ if (have_rows('content_block')) : $i = 1;
 
                     <div class="section__<?php echo $block_design_type; ?>__right">
                         <div class="section__img section__<?php echo $block_design_type; ?>__img">
-                            <img src="<?php echo $block_bg_image; ?>" alt="<?php the_sub_field('block_title'); ?>">
+                            <img src="<?php echo $block_bg_image; ?>" alt="<?php the_sub_field('block_title'); ?>" loading="lazy">
                         </div>
                     </div>
 
@@ -286,7 +292,7 @@ if (have_rows('content_block')) : $i = 1;
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
                             <?php endif; ?>
 
@@ -316,7 +322,9 @@ if (have_rows('content_block')) : $i = 1;
                                         <div class="section__parts__text section__parts__<?php echo $block_design_type; ?>__text js-target" style="<?php echo $text_color_set; ?>"><?php the_sub_field('block_parts_text'); ?><span class="versatile"></span></div>
                                     <?php endif; ?>
                                     <?php if (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                            <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                        </div>
                                     <?php endif; ?>
                                 </div>
                             <?php endwhile; ?>
@@ -420,7 +428,7 @@ if (have_rows('content_block')) : $i = 1;
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
 
                             <?php endif; ?>
@@ -474,7 +482,9 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
                                         <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php elseif (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                            <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                        </div>
                                     <?php endif; ?>
 
                                 </div>
@@ -499,7 +509,7 @@ if (have_rows('content_block')) : $i = 1;
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
                             <?php endif; ?>
 
@@ -554,7 +564,9 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
                                         <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php elseif (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                            <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                        </div>
                                     <?php endif; ?>
 
                                 </div>
@@ -580,7 +592,7 @@ if (have_rows('content_block')) : $i = 1;
 
                             <?php if (get_sub_field('block_title_image')) : ?>
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
                             <?php endif; ?>
 
@@ -639,7 +651,9 @@ if (have_rows('content_block')) : $i = 1;
                                         <?php endif; ?>
                                         <div class="section__parts__inner__right">
                                             <?php if (get_sub_field('block_parts_image')) : ?>
-                                                <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                                <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                                    <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                                </div>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -670,7 +684,7 @@ if (have_rows('content_block')) : $i = 1;
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
 
                             <?php endif; ?>
@@ -716,7 +730,9 @@ if (have_rows('content_block')) : $i = 1;
                                             <?php endif; ?>
 
                                             <?php if (get_sub_field('block_parts_image')) : ?>
-                                                <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                                <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                                    <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                                </div>
                                             <?php endif; ?>
                                             <?php if (get_sub_field('block_parts_link_url')) : ?>
 
@@ -765,7 +781,7 @@ if (have_rows('content_block')) : $i = 1;
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
 
                             <?php endif; ?>
@@ -805,7 +821,9 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                            <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                        </div>
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
@@ -860,7 +878,7 @@ if (have_rows('content_block')) : $i = 1;
                             <?php if (get_sub_field('block_title_image')) : ?>
 
                                 <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="">
+                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
                                 </div>
 
                             <?php endif; ?>
@@ -887,7 +905,9 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img"><img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>"></div>
+                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                            <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                        </div>
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>

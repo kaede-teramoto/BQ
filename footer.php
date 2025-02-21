@@ -156,7 +156,7 @@ else : ?>
             <?php if ($footer_logo_image) : ?>
                 <div class="footer__logo footer<?php echo $footer_design; ?>__logo">
                     <a href="<?php echo $site_url; ?>">
-                        <img src="<?php echo $footer_logo_image; ?>" alt="logo">
+                        <img src="<?php echo $footer_logo_image; ?>" alt="logo" loading="lazy">
                     </a>
                 </div>
             <?php endif; ?>
@@ -180,7 +180,7 @@ else : ?>
 
                         if ($sns_img) {
                             echo '<a href="' . $sns_img_link . '" target="_blank">';
-                            echo '<img src="' . $sns_img . '" alt="' . $sns_name . '">';
+                            echo '<img src="' . $sns_img . '" alt="' . $sns_name . '" loading="lazy">';
                             echo '</a>';
                         }
                     }
@@ -291,7 +291,7 @@ else : ?>
             <div class="sp__btn sp__btn__first">
                 <a class="sp__btn__link sp__btn__first__link" href="<?php echo $sp_btn_first_url; ?>" <?php echo $sp_btn_first_btn_target; ?>>
                     <?php if ($sp_btn_first_icon) : ?>
-                        <span class="sp__btn__icon sp__btn__first__icon"><img src="<?php echo $sp_btn_first_icon; ?>" alt="<?php echo $sp_btn_first_text; ?>"></span>
+                        <span class="sp__btn__icon sp__btn__first__icon"><img src="<?php echo $sp_btn_first_icon; ?>" alt="<?php echo $sp_btn_first_text; ?>" loading="lazy"></span>
                     <?php endif;
                     if ($sp_btn_first_text) : ?>
                         <span class="sp__btn__text sp__btn__first__text"><?php echo $sp_btn_first_text; ?></span>
@@ -303,7 +303,7 @@ else : ?>
             <div class="sp__btn sp__btn__second">
                 <a class="sp__btn__link sp__btn__second__link" href="<?php echo $sp_btn_second_url; ?>" <?php echo $sp_btn_second_btn_target; ?>>
                     <?php if ($sp_btn_second_icon) : ?>
-                        <span class="sp__btn__icon sp__btn__second__icon"><img src="<?php echo $sp_btn_second_icon; ?>" alt="<?php echo $sp_btn_second_text; ?>"></span>
+                        <span class="sp__btn__icon sp__btn__second__icon"><img src="<?php echo $sp_btn_second_icon; ?>" alt="<?php echo $sp_btn_second_text; ?>" loading="lazy"></span>
                     <?php endif;
                     if ($sp_btn_second_text) : ?>
                         <span class="sp__btn__text sp__btn__second__text"><?php echo $sp_btn_second_text; ?></span>
@@ -322,7 +322,7 @@ else : ?>
                     <img class="follow_btn__img follow_btn<?php echo $follow_btn_pc_position; ?>__img" src="<?php echo $follow_btn_pc_image; ?>" alt="<?php echo $follow_btn_pc_alt; ?>">
                 </a>
             <?php else : ?>
-                <img class="follow_btn__img follow_btn<?php echo $follow_btn_pc_position; ?>__img" src="<?php echo $follow_btn_pc_image; ?>" alt="<?php echo $follow_btn_pc_alt; ?>">
+                <img class="follow_btn__img follow_btn<?php echo $follow_btn_pc_position; ?>__img" src="<?php echo $follow_btn_pc_image; ?>" alt="<?php echo $follow_btn_pc_alt; ?>" loading="lazy">
             <?php endif; ?>
         </div>
     <?php endif; ?>
@@ -336,7 +336,7 @@ else : ?>
                     <img class="follow_btn__img follow_btn<?php echo $follow_btn_sp_position; ?>__img" src="<?php echo $follow_btn_sp_image; ?>" alt="<?php echo $follow_btn_sp_alt; ?>">
                 </a>
             <?php else : ?>
-                <img class="follow_btn__img follow_btn<?php echo $follow_btn_sp_position; ?>__img" src="<?php echo $follow_btn_sp_image; ?>" alt="<?php echo $follow_btn_sp_alt; ?>">
+                <img class="follow_btn__img follow_btn<?php echo $follow_btn_sp_position; ?>__img" src="<?php echo $follow_btn_sp_image; ?>" alt="<?php echo $follow_btn_sp_alt; ?>" loading="lazy">
             <?php endif; ?>
         </div>
     <?php endif; ?>

@@ -148,7 +148,7 @@ if (!is_singular()) :
                                 <?php else : /* 登録されていなかったら */ ?>
                                     <div class="cms__post__thumbnail cms<?php echo $cms_design; ?>__post__thumbnail">
                                         <a class="cms__post__thumbnail__link cms<?php echo $cms_design; ?>__post__thumbnail__link" href="<?php the_permalink() ?>">
-                                            <img src="<?php echo $theme_url; ?>/assets/images/common/dummy.png" alt="">
+                                            <img src="<?php echo $theme_url; ?>/assets/images/common/dummy.png" alt="<?php the_title() ?>" loading="lazy">
                                         </a>
                                     </div>
                                 <?php endif; ?>
