@@ -83,11 +83,11 @@ if (!($hm_design_type == 100)) :
 
                         <?php if ($hm_logo_img) : ?>
                             <div class="hm__logo">
-                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
+                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php elseif ($header_logo_img) : ?>
                             <div class="hm__logo">
-                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
+                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php else : ?>
                             <div class="hm__logo">
@@ -172,7 +172,7 @@ if (!($hm_design_type == 100)) :
 
                                             if ($sns_img) {
                                                 echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
-                                                echo '<img src="' . $sns_img . '" alt="">';
+                                                echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
                                                 echo '</a>';
                                             }
                                         }
@@ -230,7 +230,7 @@ if (!($hm_design_type == 100)) :
         <div class="hm__inner hm<?php echo $hm_design_type; ?>__inner">
             <?php if ($hm_bg_img) : ?>
                 <div class="hm__img__wrapper hm<?php echo $hm_design_type; ?>__img__wrapper">
-                    <img class="hm__img hm<?php echo $hm_design_type; ?>__img" src="<?php echo $hm_bg_img; ?>" alt="">
+                    <img class="hm__img hm<?php echo $hm_design_type; ?>__img" src="<?php echo $hm_bg_img; ?>" alt="" loading="lazy">
                 </div>
             <?php endif; ?>
             <div class="hm__content hm<?php echo $hm_design_type; ?>__content">
@@ -301,11 +301,11 @@ if (!($hm_design_type == 100)) :
 
                         <?php if ($hm_logo_img) : ?>
                             <div class="hm__logo">
-                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
+                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php elseif ($header_logo_img) : ?>
                             <div class="hm__logo">
-                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>"></a>
+                                <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php else : ?>
                             <div class="hm__logo">
@@ -327,7 +327,7 @@ if (!($hm_design_type == 100)) :
 
                                         if ($sns_img) {
                                             echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
-                                            echo '<img src="' . $sns_img . '" alt="">';
+                                            echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
                                             echo '</a>';
                                         }
                                     }

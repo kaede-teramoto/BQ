@@ -154,7 +154,7 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                 if (!empty($header_logo_img)) : ?>
 
                                     <a href='<?php echo $site_url; ?>' title='<?php echo $site_name; ?>' rel='home'>
-                                        <img class="header__wrapper__logo-image header<?php echo $header_design; ?>__wrapper__logo-image" src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" />
+                                        <img class="header__wrapper__logo-image header<?php echo $header_design; ?>__wrapper__logo-image" src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy">
                                     </a>
 
                                 <?php else :

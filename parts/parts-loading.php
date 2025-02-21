@@ -21,7 +21,7 @@ $loading_time = $loading_time_setting . '000';
     <?php if ($loading_logo_image) : ?>
         <div class="loading__logo">
             <div class="loading__logo__inner">
-                <img src="<?php echo $loading_logo_image; ?>" alt=" <?php echo $loading_alt; ?>">
+                <img src="<?php echo $loading_logo_image; ?>" alt=" <?php echo $loading_alt; ?>" loading="eager">
             </div>
         </div>
     <?php endif; ?>

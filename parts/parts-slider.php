@@ -97,7 +97,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <img src="<?php echo $fv_img1; ?>" alt="" />
+                            <img src="<?php echo $fv_img1; ?>" alt="" loading="eager">
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading1 || $fv_text1) { ?>
@@ -110,7 +110,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img1; ?>" alt="" />
+                        <img src="<?php echo $fv_img1; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -131,7 +131,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <img src="<?php echo $fv_img2; ?>" alt="" />
+                            <img src="<?php echo $fv_img2; ?>" alt="" loading="eager">
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading2 || $fv_text2) { ?>
@@ -144,7 +144,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img2; ?>" alt="" />
+                        <img src="<?php echo $fv_img2; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -165,7 +165,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <img src="<?php echo $fv_img3; ?>" alt="">
+                            <img src="<?php echo $fv_img3; ?>" alt="" loading="eager">
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading3 || $fv_text3) { ?>
@@ -178,7 +178,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img3; ?>" alt="">
+                        <img src="<?php echo $fv_img3; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -199,7 +199,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <img src="<?php echo $fv_img4; ?>" alt="">
+                            <img src="<?php echo $fv_img4; ?>" alt="" loading="eager">
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading4 || $fv_text4) { ?>
@@ -212,7 +212,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img4; ?>" alt="">
+                        <img src="<?php echo $fv_img4; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -233,7 +233,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                     <?php } ?>
                                 </div>
                             <?php } ?>
-                            <img src="<?php echo $fv_img5; ?>" alt="">
+                            <img src="<?php echo $fv_img5; ?>" alt="" loading="eager">
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading5 || $fv_text5) { ?>
@@ -246,7 +246,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img5; ?>" alt="">
+                        <img src="<?php echo $fv_img5; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -294,7 +294,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img1; ?>" alt="" />
+                        <img src="<?php echo $fv_img1; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -328,7 +328,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img2; ?>" alt="" />
+                        <img src="<?php echo $fv_img2; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -362,7 +362,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img3; ?>" alt="">
+                        <img src="<?php echo $fv_img3; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -396,7 +396,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img4; ?>" alt="">
+                        <img src="<?php echo $fv_img4; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
@@ -430,7 +430,7 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                 <?php } ?>
                             </div>
                         <?php } ?>
-                        <img src="<?php echo $fv_img5; ?>" alt="">
+                        <img src="<?php echo $fv_img5; ?>" alt="" loading="eager">
                     <?php } ?>
                 </li>
             <?php } ?>
