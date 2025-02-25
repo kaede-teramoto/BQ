@@ -145,7 +145,7 @@ if (have_rows('content_block')) : $i = 1;
 
             get_template_part('parts/parts', 'top_cms');
 
-        elseif ($block_design_type === 'loop01'): ?>
+        elseif ($block_design_type === 'loop01' || $block_design_type === 'loop02'): ?>
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <?php if (have_rows('block_parts')) : ?>
                     <div class="section__inner section__<?php echo $block_design_type; ?>__inner js-fadeIn">
@@ -480,7 +480,7 @@ if (have_rows('content_block')) : $i = 1;
                                     </div>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
-                                        <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                        <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php elseif (get_sub_field('block_parts_image')) : ?>
                                         <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
                                             <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
@@ -562,7 +562,7 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
-                                        <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                        <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php elseif (get_sub_field('block_parts_image')) : ?>
                                         <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
                                             <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
@@ -659,7 +659,7 @@ if (have_rows('content_block')) : $i = 1;
                                     </div>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
-                                        <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                        <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php endif; ?>
 
                                 </div>
@@ -827,7 +827,7 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
-                                        <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                        <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_link_url')) : ?>
@@ -911,7 +911,7 @@ if (have_rows('content_block')) : $i = 1;
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_editor')) : ?>
-                                        <div class="section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                        <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
                                     <?php endif; ?>
 
                                     <?php if (get_sub_field('block_parts_link_url')) : ?>
