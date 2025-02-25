@@ -193,7 +193,7 @@ function site_design_settings($wp_customize)
     'site_default_jp_fontFamily',
     array(
       'type' => 'theme_mod',
-      'default'     => '"Noto Sans JP", sans-serif',
+      'default'     => '"Noto Sans JP", YuGothic, "游ゴシック", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
       'transport'   => 'refresh',
       'sanitize_callback' => 'sanitize_text_field',
     )

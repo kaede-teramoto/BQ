@@ -87,7 +87,7 @@ function boutiq_customize_css()
     $footer_second_btn_text_color = get_theme_mod('footer_second_btn_text_color_setting', '');
 
     // Font
-    $jp_font = get_theme_mod('site_default_jp_fontFamily', false);
+    $jp_font = get_theme_mod('site_default_jp_fontFamily', '"Noto Sans JP", YuGothic, "游ゴシック", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif');
     $en_font = get_theme_mod('site_default_en_fontFamily', false);
     if ($en_font) {
         $en_font = get_theme_mod('site_default_en_fontFamily', false);
