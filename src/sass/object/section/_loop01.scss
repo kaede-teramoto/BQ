@@ -8,7 +8,6 @@
     width: 100%;
     overflow: hidden;
     display: flex;
-    gap: 30px;
 
     @include m.mq(pc) {}
 

@@ -179,8 +179,8 @@ if (!is_singular()) :
                 // ページネーションを生成する
                 $pagination = get_the_posts_pagination(array(
                     'mid_size'  => 1,
-                    'prev_text' => '前の一覧へ',
-                    'next_text' => '次の一覧へ',
+                    'prev_text' => '',
+                    'next_text' => '',
                     'type'      => 'list', // リスト形式のページネーション
                     'echo'      => false,  // 直接出力せずに、変数に格納
                 ));
