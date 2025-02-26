@@ -20,7 +20,7 @@ body {
   width: 100%;
   //overflow-x: hidden;
   font-family: var(--jp_font);
-  background-color: #FFF;
+  background-color: var(--bg_color);
   -webkit-font-smoothing: antialiased;
   color: var(--text_color);
   position: relative;

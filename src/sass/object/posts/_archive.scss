@@ -201,9 +201,21 @@
         border: 1px solid;
         border-color: var(--text_color);
         border-radius: 20px;
-        font-size: 1.2rem;
         font-weight: 700;
         height: 20px;
+        font-size: calc(var(--font_size_PC) * .8);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            font-size: calc(var(--font_size_TAB) * .8);
+        }
+
+        @include m.mq(sp) {
+            font-size: calc(var(--font_size_SP) * .8);
+        }
     }
 }
 
@@ -2454,5 +2466,412 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
+}
+
+// cms09
+// --------------------------------------------------------------------------------------------
+
+.cms09__wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.cms09 {
+    flex-direction: column;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(tab) {}
+
+    .cms__pagination span.page-numbers,
+    .cms__pagination a.page-numbers {
+        border-radius: 2px;
+        background-color: #fff;
+        color: var(--main_color);
+
+        &:hover {
+            background-color: var(--main_color);
+            color: #fff;
+        }
+
+        font-size: calc(var(--font_size_PC) * .8);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            font-size: calc(var(--font_size_TAB) * .8);
+        }
+
+        @include m.mq(sp) {
+            font-size: calc(var(--font_size_SP) * .8);
+        }
+    }
+
+    .cms__pagination span.page-numbers.current,
+    .cms__pagination a.page-numbers.current {
+        background-color: var(--main_color);
+        color: #fff;
+    }
+
+    .cms__pagination span.page-numbers.next,
+    .cms__pagination span.page-numbers.prev,
+    .cms__pagination a.page-numbers.next,
+    .cms__pagination a.page-numbers.prev {
+        width: 38px;
+        height: 38px;
+        position: relative;
+        border: 1px solid var(--main_color);
+
+        &:hover {
+            background-color: #fff;
+            color: var(--main_color);
+            border-color: #fff;
+        }
+    }
+
+    .cms__pagination span.page-numbers.next::before,
+    .cms__pagination a.page-numbers.next::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 11px;
+        width: 12px;
+        height: 1px;
+        background-color: var(--main_color);
+        transform: translateY(-50%);
+    }
+
+    .cms__pagination span.page-numbers.prev::after,
+    .cms__pagination a.page-numbers.prev::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 11px;
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid var(--main_color);
+        border-right: 1px solid var(--main_color);
+        transform: translateY(-50%) rotate(-135deg);
+    }
+
+    .cms__pagination span.page-numbers.prev::before,
+    .cms__pagination a.page-numbers.prev::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 11px;
+        width: 12px;
+        height: 1px;
+        background-color: var(--main_color);
+        transform: translateY(-50%);
+    }
+
+    .cms__pagination span.page-numbers.next::after,
+    .cms__pagination a.page-numbers.next::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 11px;
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid var(--main_color);
+        border-right: 1px solid var(--main_color);
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+}
+
+.cms09__cat {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__cat__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__cat__item {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__list {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__post {
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    gap: 30px;
+    padding: 15px 30px;
+    position: relative;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        gap: 10px;
+    }
+
+    @include m.mq(sp) {
+        display: grid;
+        justify-content: space-between;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            "date cat"
+            "title title";
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 35px;
+        height: 35px;
+        border-radius: 20px;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        border: 1px solid var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            right: 20px;
+        }
+
+        @include m.mq(sp) {
+            display: none;
+        }
+    }
+}
+
+.cms09__post__thumbnail {
+    display: none;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__post__thumbnail__link {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.cms09__post__cat {
+    order: 2;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        grid-area: cat;
+        justify-content: flex-end;
+    }
+
+    a {
+        border: none;
+        color: var(--accent_color);
+
+        @include m.mq(sp) {
+            padding: 0;
+        }
+    }
+
+}
+
+.cms09__post__data {
+    display: flex;
+    align-items: center;
+    order: 1;
+    color: var(--main_color);
+    line-height: 1;
+    font-size: calc(var(--font_size_PC) * .8);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: calc(var(--font_size_TAB) * .8);
+    }
+
+    @include m.mq(sp) {
+        grid-area: date;
+        justify-content: flex-start;
+        font-size: calc(var(--font_size_SP) * .8);
+    }
+
+}
+
+.cms09__post__title {
+    order: 3;
+    flex: 1;
+    width: 100%;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        grid-area: title;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        top: 50%;
+        right: 42px;
+        transform: translateY(-50%) rotate(45deg);
+        border-top: 1px solid var(--main_color);
+        border-right: 1px solid var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            right: 32px;
+        }
+
+        @include m.mq(sp) {
+            display: none;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 1px;
+        top: 50%;
+        right: 42px;
+        transform: translateY(-50%);
+        background-color: var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            right: 32px;
+        }
+
+        @include m.mq(sp) {
+            display: none;
+        }
+    }
+
+}
+
+.cms09__post__link {
+    display: block;
+    padding-right: 40px;
+    position: relative;
+    z-index: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        line-height: 1.5;
+    }
+
+    @include m.mq(sp) {
+        padding-right: 0;
+    }
 
 }

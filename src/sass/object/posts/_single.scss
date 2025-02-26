@@ -18,10 +18,6 @@
 /* entry
  ----------------------------------------------------------------------------------------------- */
 .entry-wrapper {
-    padding: 20px 0;
-    border-top: 1px solid var(--text_color);
-    border-bottom: 1px solid var(--text_color);
-    @include v.miniConWidth;
 
     @include m.mq(miniPc) {}
 
@@ -172,7 +168,6 @@
 
     &:has(a) {
         padding-top: 20px;
-        border-top: 1px solid var(--text_color);
         display: flex;
         justify-content: space-between;
     }
@@ -190,6 +185,11 @@
     /* entry01
  ----------------------------------------------------------------------------------------------- */
     .entry01-wrapper {
+        padding: 20px 0;
+        border-top: 1px solid var(--text_color);
+        border-bottom: 1px solid var(--text_color);
+        @include v.miniConWidth;
+
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -288,6 +288,9 @@
     }
 
     .entry01-footer {
+        &:has(a) {
+            border-top: 1px solid var(--text_color);
+        }
 
         @include m.mq(pc) {}
 
@@ -302,6 +305,11 @@
     /* entry02
  ----------------------------------------------------------------------------------------------- */
     .entry02-wrapper {
+        padding: 20px 0;
+        border-top: 1px solid var(--text_color);
+        border-bottom: 1px solid var(--text_color);
+        @include v.miniConWidth;
+
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -400,6 +408,9 @@
     }
 
     .entry02-footer {
+        &:has(a) {
+            border-top: 1px solid var(--text_color);
+        }
 
         @include m.mq(pc) {}
 
@@ -553,6 +564,11 @@
     /* entry04
  ----------------------------------------------------------------------------------------------- */
     .entry04-wrapper {
+        padding: 20px 0;
+        border-top: 1px solid var(--text_color);
+        border-bottom: 1px solid var(--text_color);
+        @include v.miniConWidth;
+
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -675,15 +691,22 @@
     }
 
     .entry05-header {
+        color: var(--main_color);
 
         @include m.mq(miniPc) {}
 
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+
+        a {
+            color: var(--main_color);
+        }
     }
 
     .entry05-title {
+        @include v.conWidth;
+
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -694,6 +717,8 @@
     }
 
     .entry05-common {
+        @include v.conWidth;
+
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -721,9 +746,78 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+
+        .entry05-content {
+
+            h2:not([class]) {
+                padding-left: 0;
+                line-height: 1.5;
+                font-weight: 700;
+                font-size: calc(var(--heading_fontSize_PC) * .7);
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {
+                    font-size: calc(var(--heading_fontSize_TAB) * .7);
+                }
+
+                @include m.mq(sp) {
+                    font-size: calc(var(--heading_fontSize_SP) * .7);
+                }
+
+                &::before {
+                    display: none;
+                }
+
+            }
+
+            h3:not([class]) {
+                font-weight: 700;
+                line-height: 1.5;
+                font-size: calc(var(--heading_fontSize_PC) * .5);
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {
+                    font-size: calc(var(--heading_fontSize_TAB) * .5);
+                }
+
+                @include m.mq(sp) {
+                    font-size: calc(var(--heading_fontSize_SP) * .6);
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            a {
+                color: var(--main_color);
+                text-decoration: underline;
+
+                &:hover {
+                    color: var(--accent_color);
+                }
+            }
+
+            strong {
+                font-weight: 700;
+                color: var(--accent_color);
+            }
+
+            img {
+                @include v.borderRadius;
+            }
+        }
     }
 
     .entry05-thumbnail {
+        display: none;
+
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -741,6 +835,7 @@
     }
 
     .entry05-content {
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 
@@ -763,6 +858,10 @@
     }
 
     .entry05-footer {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px 40px;
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 
