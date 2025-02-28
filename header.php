@@ -183,6 +183,7 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                             'items_wrap' => '<ul class="header__wrapper__nav--wrapper__list header' . $header_design . '__wrapper__nav--wrapper__list">%3$s</ul>',
                                             'li_class' => 'header' . $header_design . '__wrapper__nav--wrapper__item',
                                             'a_class' => 'header' . $header_design . '__wrapper__nav--wrapper__link',
+                                            'walker' => new Custom_Walker_Nav_Menu(),
                                         )); ?>
                                     </nav>
                                 <?php endif; ?>

@@ -360,12 +360,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.addEventListener('mouseover', () => {
                     megaMenu.style.opacity = '1';
                     megaMenu.style.visibility = 'inherit';
+                    megaMenu.classList.add('--active');
                 });
 
                 // マウスアウトイベント
                 item.addEventListener('mouseout', () => {
                     megaMenu.style.opacity = '0';
                     megaMenu.style.visibility = 'hidden';
+                    megaMenu.classList.remove('--active');
                 });
             }
         });

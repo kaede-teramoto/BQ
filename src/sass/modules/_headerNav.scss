@@ -534,10 +534,10 @@
 .megaMenu {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.2s, visibility 0.2s;
     position: fixed;
     width: 100vw;
-    top: 60px;
+    top: 80px;
     left: 0;
     z-index: v.getZIndex(header);
 
@@ -548,16 +548,26 @@
     }
 }
 
-.megaMenu__bg {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    filter: blur(3.5px);
-    background-color: rgba(0, 0, 0, .3);
-    //z-index: calc(v.getZIndex(header) - 10);
-    top: 0;
-    left: 0;
+.l-container {
+    &::before {
+        content: "";
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0.2s;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        filter: blur(3.5px);
+        background-color: rgba(0, 0, 0, .3);
+        z-index: 10;
+        top: 0;
+        left: 0;
+    }
+}
+
+.l-container:has(.megaMenu.--active) {
+    &::before {
+        opacity: 1;
+        visibility: inherit;
+    }
 }
