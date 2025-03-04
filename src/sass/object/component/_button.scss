@@ -114,7 +114,7 @@
     .c-btn03__link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: auto;
         height: 100%;
         min-width: 230px;
@@ -123,7 +123,7 @@
         outline-offset: -2px;
         background-color: var(--main_color);
         color: #ffffff;
-        padding: 12px 12px 12px 30px;
+        padding: 12px 25px 12px 35px;
         line-height: 1;
         text-align: center;
         gap: 50px;
@@ -177,7 +177,7 @@
     .c-btn04__link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: auto;
         height: 100%;
         min-width: 230px;
@@ -186,7 +186,7 @@
         outline-offset: -2px;
         background-color: var(--sub_color);
         color: var(--text_color);
-        padding: 12px 12px 12px 30px;
+        padding: 12px 25px 12px 35px;
         line-height: 1;
         text-align: center;
         transition: all .3s ease-out;
@@ -244,13 +244,12 @@
 
 /*btn05*/
 .c-btn05 {
-    height: 70px;
-    margin-top: 10px;
+    height: 80px;
 
     .c-btn05__link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: auto;
         height: 100%;
         min-width: 230px;
@@ -258,7 +257,7 @@
         border: 2px solid;
         border-color: var(--text_color);
         color: var(--text_color);
-        padding: 12px 12px 12px 30px;
+        padding: 12px 25px 12px 35px;
         line-height: 1;
         text-align: center;
         transition: all .3s ease-out;
@@ -284,20 +283,20 @@
 
 /*btn06*/
 .c-btn06 {
-    height: 50px;
+    height: 64px;
 
     .c-btn06__link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: auto;
         height: 100%;
         min-width: 180px;
-        border-radius: 30px;
-        // border: 2px solid;
-        // border-color: var(--main_color);
+        border-radius: 50px;
+        outline: 2px solid rgba(255, 255, 255, 0);
+        outline-offset: -2px;
         color: #fff;
-        padding: 12px 25px 12px 30px;
+        padding: 12px 15px 12px 30px;
         line-height: 1;
         text-align: center;
         transition: all .3s ease-out;
@@ -308,6 +307,7 @@
             background-color: transparent;
             color: var(--main_color);
             transition: all .3s ease-out;
+            outline: 2px solid var(--main_color);
         }
 
         @include m.mq(pc) {}
@@ -326,27 +326,23 @@
 
 /*btn07*/
 .c-btn07 {
-    height: 50px;
+    height: 64px;
 
     .c-btn07__link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: auto;
         height: 100%;
         min-width: 180px;
-        border-radius: 30px;
+        border-radius: 50px;
         color: var(--main_color);
-        padding: 12px 25px 12px 30px;
+        padding: 12px 15px 12px 30px;
         line-height: 1;
         text-align: center;
         transition: all .3s ease-out;
         gap: 70px;
         background-color: var(--sub_color);
-
-        .c-btn__text07 {
-            font-size: 80%;
-        }
 
         &:hover {
             background-color: var(--main_color);
@@ -368,7 +364,7 @@
 
 /*btn08*/
 .c-btn08 {
-    height: 50px;
+    height: 80px;
 
     .c-btn08__link {
         display: flex;
@@ -377,7 +373,7 @@
         width: auto;
         height: 100%;
         min-width: 180px;
-        border-radius: 50px;
+        border-radius: 100px;
         color: #fff;
         padding: 12px 20px 12px 30px;
         line-height: 1;
@@ -392,11 +388,12 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 5px;
+            gap: 10px;
 
             &::after {
                 content: '詳しく見る';
-                font-size: 70%;
+                font-size: 60%;
+                font-weight: 500;
             }
         }
 
@@ -404,7 +401,7 @@
             content: "";
             width: 100%;
             height: 100%;
-            background-color: #fff;
+            background-color: var(--sub_color);
             position: absolute;
             top: 0;
             left: 0;
@@ -439,7 +436,7 @@
 
 /*btn09*/
 .c-btn09 {
-    height: 50px;
+    height: 64px;
 
     .c-btn09__link {
         display: inline-flex;
@@ -456,10 +453,6 @@
         transition: all .3s ease-out;
         gap: 70px;
         background-color: var(--main_color);
-
-        .c-btn__text09 {
-            font-size: 80%;
-        }
 
         &:hover {
             background-color: var(--sub_color);
@@ -500,10 +493,6 @@
         gap: 70px;
         background-color: var(--sub_color);
         border-left: 5px solid var(--main_color);
-
-        .c-btn__text10 {
-            font-size: 80%;
-        }
 
         &:hover {
             opacity: 0.6;
