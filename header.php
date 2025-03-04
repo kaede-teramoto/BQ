@@ -251,7 +251,7 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                     </style>
                                 <?php } ?>
 
-                                <?php if (!($top_fv_slider_pagination)) { ?>
+                                <?php if (!($top_fv_slider_pagination == 1)) { ?>
                                     <style>
                                         .swiper-pagination {
                                             display: none;

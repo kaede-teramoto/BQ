@@ -23,7 +23,7 @@ function footer_design_setting($wp_customize)
         'footer_section',
         array(
             'title' => __('footer option', 'boutiq'),
-            'priority' => 32,
+            'priority' => 33,
             'transport'   => 'refresh',
             'panel'  => 'footer_panel',
         )
@@ -33,7 +33,7 @@ function footer_design_setting($wp_customize)
         'footer_first_btn_section',
         array(
             'title' => __('footer first option', 'boutiq'),
-            'priority' => 32,
+            'priority' => 34,
             'transport'   => 'refresh',
             'panel'  => 'footer_panel',
         )
@@ -43,7 +43,7 @@ function footer_design_setting($wp_customize)
         'footer_second_btn_section',
         array(
             'title' => __('footer second option', 'boutiq'),
-            'priority' => 32,
+            'priority' => 35,
             'transport'   => 'refresh',
             'panel'  => 'footer_panel',
         )
@@ -350,6 +350,7 @@ function footer_design_setting($wp_customize)
             'settings' => 'footer_first_btn_icon_setting',
             'type' => 'select',
             'choices' => array(
+                '00' => __('No Icon', 'boutiq'),
                 '01' => __('Icon Type1', 'boutiq'),
                 '02' => __('Icon  Type2', 'boutiq'),
                 '03' => __('Icon  Type3', 'boutiq'),
@@ -570,6 +571,7 @@ function footer_design_setting($wp_customize)
             'settings' => 'footer_second_btn_icon_setting',
             'type' => 'select',
             'choices' => array(
+                '00' => __('No Icon', 'boutiq'),
                 '01' => __('Icon Type1', 'boutiq'),
                 '02' => __('Icon  Type2', 'boutiq'),
                 '03' => __('Icon  Type3', 'boutiq'),

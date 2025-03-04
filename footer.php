@@ -402,10 +402,11 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
         const top03Swiper = new Swiper('.top-cms03__content .swiper', {
             slidesPerView: 1.2,
             spaceBetween: 20,
+            watchSlidesProgress: true,
             //centeredSlides: true,
             navigation: {
-                nextEl: ".swiper-btn-next",
-                prevEl: ".swiper-btn-prev",
+                nextEl: ".top-cms03__content .swiper-btn-next",
+                prevEl: ".top-cms03__content .swiper-btn-prev",
             },
             breakpoints: {
                 1599: {
@@ -428,7 +429,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
                 invert: false,
             },
             pagination: {
-                el: ".cms-pagination",
+                el: ".top-cms03__content .cms-pagination",
                 type: "progressbar",
                 clickable: true,
             },
@@ -471,7 +472,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             },
             <?php if ($top_fv_slider_pagination == 1) { ?>
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.p-top .swiper-pagination',
                     clickable: true,
                 },
             <?php } ?>
@@ -479,14 +480,14 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             <?php if ($show_arrows == 1) { ?>
                 // Navigation arrows
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.p-top .swiper-button-next',
+                    prevEl: '.p-top .swiper-button-prev',
                 },
             <?php } ?>
             <?php if ($top_fv_slider_progressbar == 1) { ?>
                 // And if we need scrollbar
                 scrollbar: {
-                    el: '.swiper-scrollbar',
+                    el: '.p-top .swiper-scrollbar',
                 },
             <?php } ?>
 
