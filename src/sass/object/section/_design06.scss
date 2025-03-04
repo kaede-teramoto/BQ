@@ -215,7 +215,20 @@
     @include m.mq(sp) {}
 }
 
+
 .section__parts__design06__text {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+
+*+.section__parts__design06__text {
     padding-top: 20px;
 
     @include m.mq(pc) {}

@@ -67,7 +67,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
     public function end_lvl(&$output, $depth = 0, $args = null)
     {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n</div>\n<div class=\"megaMenu__bg\"></div>\n";
+        $output .= "$indent</ul>\n</div>\n";
     }
 
     // メニューアイテムの出力をカスタマイズ

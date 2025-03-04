@@ -19,6 +19,7 @@ $show_arrows = get_theme_mod('top_fv_slider_arrow', 'NULL');
 $top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', false);
 $top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', false);
 
+
 $top_fv_post_title = get_theme_mod('top_fv_post_title', false);
 $top_fv_post_cat = get_theme_mod('top_fv_post_cat', false);
 $top_fv_post_tag = get_theme_mod('top_fv_post_tag', false);
@@ -43,7 +44,8 @@ $fv_link_target_4 = get_theme_mod('top_fv_link_target_4', false);
 $fv_link_target_5 = get_theme_mod('top_fv_link_target_5', false);
 
 
-$fv_heading1 = nl2br(esc_html(get_theme_mod('top_fv_heading_1', '')));
+//$fv_heading1 = nl2br(esc_html(get_theme_mod('top_fv_heading_1', '')));
+$fv_heading1 = nl2br(esc_textarea(get_theme_mod('top_fv_heading_1', '')));
 $fv_heading2 = nl2br(esc_html(get_theme_mod('top_fv_heading_2', '')));
 $fv_heading3 = nl2br(esc_html(get_theme_mod('top_fv_heading_3', '')));
 $fv_heading4 = nl2br(esc_html(get_theme_mod('top_fv_heading_4', '')));
@@ -56,22 +58,97 @@ $fv_text4 = nl2br(esc_html(get_theme_mod('top_fv_text_4', '')));
 $fv_text5 = nl2br(esc_html(get_theme_mod('top_fv_text_5', '')));
 
 $fv_text_color1 = get_theme_mod('top_fv_text_color1', '');
+if ($fv_text_color1) {
+    $fv_text_color1 = 'color: ' . $fv_text_color1 . ';';
+} else {
+    $fv_text_color1 = NULL;
+}
 $fv_text_color2 = get_theme_mod('top_fv_text_color2', '');
+if ($fv_text_color2) {
+    $fv_text_color2 = 'color: ' . $fv_text_color2 . ';';
+} else {
+    $fv_text_color2 = NULL;
+}
 $fv_text_color3 = get_theme_mod('top_fv_text_color3', '');
+if ($fv_text_color3) {
+    $fv_text_color3 = 'color: ' . $fv_text_color3 . ';';
+} else {
+    $fv_text_color3 = NULL;
+}
 $fv_text_color4 = get_theme_mod('top_fv_text_color4', '');
+if ($fv_text_color4) {
+    $fv_text_color4 = 'color: ' . $fv_text_color4 . ';';
+} else {
+    $fv_text_color4 = NULL;
+}
 $fv_text_color5 = get_theme_mod('top_fv_text_color5', '');
+if ($fv_text_color5) {
+    $fv_text_color5 = 'color: ' . $fv_text_color5 . ';';
+} else {
+    $fv_text_color5 = NULL;
+}
 
 $fv_text_bottom_position1 = get_theme_mod('top_fv_text_bottom_position_1', '');
+if ($fv_text_bottom_position1) {
+    $fv_text_bottom_position1 = 'bottom: ' . $fv_text_bottom_position1 . ';';
+} else {
+    $fv_text_bottom_position1 = NULL;
+}
 $fv_text_bottom_position2 = get_theme_mod('top_fv_text_bottom_position_2', '');
+if ($fv_text_bottom_position2) {
+    $fv_text_bottom_position2 = 'bottom: ' . $fv_text_bottom_position2 . ';';
+} else {
+    $fv_text_bottom_position2 = NULL;
+}
 $fv_text_bottom_position3 = get_theme_mod('top_fv_text_bottom_position_3', '');
+if ($fv_text_bottom_position3) {
+    $fv_text_bottom_position3 = 'bottom: ' . $fv_text_bottom_position3 . ';';
+} else {
+    $fv_text_bottom_position3 = NULL;
+}
 $fv_text_bottom_position4 = get_theme_mod('top_fv_text_bottom_position_4', '');
+if ($fv_text_bottom_position4) {
+    $fv_text_bottom_position4 = 'bottom: ' . $fv_text_bottom_position4 . ';';
+} else {
+    $fv_text_bottom_position4 = NULL;
+}
 $fv_text_bottom_position5 = get_theme_mod('top_fv_text_bottom_position_5', '');
+if ($fv_text_bottom_position5) {
+    $fv_text_bottom_position5 = 'bottom: ' . $fv_text_bottom_position5 . ';';
+} else {
+    $fv_text_bottom_position5 = NULL;
+}
 
 $fv_text_left_position1 = get_theme_mod('top_fv_text_left_position_1', '');
+if ($fv_text_left_position1) {
+    $fv_text_left_position1 = 'left: ' . $fv_text_left_position1 . ';';
+} else {
+    $fv_text_left_position1 = NULL;
+}
 $fv_text_left_position2 = get_theme_mod('top_fv_text_left_position_2', '');
+if ($fv_text_left_position2) {
+    $fv_text_left_position2 = 'left: ' . $fv_text_left_position2 . ';';
+} else {
+    $fv_text_left_position2 = NULL;
+}
 $fv_text_left_position3 = get_theme_mod('top_fv_text_left_position_3', '');
+if ($fv_text_left_position3) {
+    $fv_text_left_position3 = 'left: ' . $fv_text_left_position3 . ';';
+} else {
+    $fv_text_left_position3 = NULL;
+}
 $fv_text_left_position4 = get_theme_mod('top_fv_text_left_position_4', '');
+if ($fv_text_left_position4) {
+    $fv_text_left_position4 = 'left: ' . $fv_text_left_position4 . ';';
+} else {
+    $fv_text_left_position4 = NULL;
+}
 $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
+if ($fv_text_left_position5) {
+    $fv_text_left_position5 = 'left: ' . $fv_text_left_position5 . ';';
+} else {
+    $fv_text_left_position5 = NULL;
+}
 
 ?>
 
@@ -88,9 +165,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading1 || $fv_text1) { ?>
-                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color1; ?>;bottom:<?php echo $fv_text_bottom_position1; ?>;left:<?php echo $fv_text_left_position1; ?>;">
+                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
                                     <?php if ($fv_heading1) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading1; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading1; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text1) { ?>
                                         <p class="p-top__text"><?php echo $fv_text1; ?></p>
@@ -101,9 +178,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading1 || $fv_text1) { ?>
-                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color1; ?>;bottom:<?php echo $fv_text_bottom_position1; ?>;left:<?php echo $fv_text_left_position1; ?>;">
+                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>">
                                 <?php if ($fv_heading1) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading1; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading1; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text1) { ?>
                                     <p class="p-top__text"><?php echo $fv_text1; ?></p>
@@ -122,9 +199,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading2 || $fv_text2) { ?>
-                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color2; ?>;bottom:<?php echo $fv_text_bottom_position2; ?>;left:<?php echo $fv_text_left_position2; ?>;">
+                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
                                     <?php if ($fv_heading2) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading2; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading2; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text2) { ?>
                                         <p class="p-top__text"><?php echo $fv_text2; ?></p>
@@ -135,9 +212,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading2 || $fv_text2) { ?>
-                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color2; ?>;bottom:<?php echo $fv_text_bottom_position2; ?>;left:<?php echo $fv_text_left_position2; ?>;">
+                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
                                 <?php if ($fv_heading2) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading2; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading2; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text2) { ?>
                                     <p class="p-top__text"><?php echo $fv_text2; ?></p>
@@ -156,9 +233,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading3 || $fv_text3) { ?>
-                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color3; ?>;bottom:<?php echo $fv_text_bottom_position3; ?>;left:<?php echo $fv_text_left_position3; ?>;">
+                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
                                     <?php if ($fv_heading3) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading3; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading3; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text3) { ?>
                                         <p class="p-top__text"><?php echo $fv_text3; ?></p>
@@ -169,9 +246,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading3 || $fv_text3) { ?>
-                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color3; ?>;bottom:<?php echo $fv_text_bottom_position3; ?>;left:<?php echo $fv_text_left_position3; ?>;">
+                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
                                 <?php if ($fv_heading3) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading3; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading3; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text3) { ?>
                                     <p class="p-top__text"><?php echo $fv_text3; ?></p>
@@ -190,9 +267,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading4 || $fv_text4) { ?>
-                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color4; ?>;bottom:<?php echo $fv_text_bottom_position4; ?>;left:<?php echo $fv_text_left_position4; ?>;">
+                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
                                     <?php if ($fv_heading4) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading4; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading4; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text4) { ?>
                                         <p class="p-top__text"><?php echo $fv_text4; ?></p>
@@ -203,9 +280,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading4 || $fv_text4) { ?>
-                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color4; ?>;bottom:<?php echo $fv_text_bottom_position4; ?>;left:<?php echo $fv_text_left_position4; ?>;">
+                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
                                 <?php if ($fv_heading4) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading4; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading4; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text4) { ?>
                                     <p class="p-top__text"><?php echo $fv_text4; ?></p>
@@ -224,9 +301,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading5 || $fv_text5) { ?>
-                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color5; ?>;bottom:<?php echo $fv_text_bottom_position5; ?>;left:<?php echo $fv_text_left_position5; ?>;">
+                                <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
                                     <?php if ($fv_heading5) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading5; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading5; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text5) { ?>
                                         <p class="p-top__text"><?php echo $fv_text5; ?></p>
@@ -237,9 +314,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading5 || $fv_text5) { ?>
-                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color5; ?>;bottom:<?php echo $fv_text_bottom_position5; ?>;left:<?php echo $fv_text_left_position5; ?>;">
+                            <div class="swiper-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
                                 <?php if ($fv_heading5) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading5; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading5; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text5) { ?>
                                     <p class="p-top__text"><?php echo $fv_text5; ?></p>
@@ -251,7 +328,10 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                 </li>
             <?php } ?>
         </ul>
-        <div class="swiper-pagination"></div>
+        <?php if ($top_fv_slider_pagination == 1) { ?>
+            <div class="pagination"></div>
+        <?php } ?>
+
         <!-- 前後の矢印 -->
         <div class="swiper-btn">
             <div class="swiper-btn-prev swiper-btn-black"></div>
@@ -272,9 +352,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading1 || $fv_text1) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color1; ?>;bottom:<?php echo $fv_text_bottom_position1; ?>;left:<?php echo $fv_text_left_position1; ?>;">
+                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
                                     <?php if ($fv_heading1) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading1; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading1; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text1) { ?>
                                         <p class="p-top__text"><?php echo $fv_text1; ?></p>
@@ -285,9 +365,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading1 || $fv_text1) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color1; ?>;bottom:<?php echo $fv_text_bottom_position1; ?>;left:<?php echo $fv_text_left_position1; ?>;">
+                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
                                 <?php if ($fv_heading1) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading1; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading1; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text1) { ?>
                                     <p class="p-top__text"><?php echo $fv_text1; ?></p>
@@ -306,9 +386,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading2 || $fv_text2) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color2; ?>;bottom:<?php echo $fv_text_bottom_position2; ?>;left:<?php echo $fv_text_left_position2; ?>;">
+                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
                                     <?php if ($fv_heading2) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading2; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading2; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text2) { ?>
                                         <p class="p-top__text"><?php echo $fv_text2; ?></p>
@@ -319,9 +399,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading2 || $fv_text2) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color2; ?>;bottom:<?php echo $fv_text_bottom_position2; ?>;left:<?php echo $fv_text_left_position2; ?>;">
+                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
                                 <?php if ($fv_heading2) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading2; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading2; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text2) { ?>
                                     <p class="p-top__text"><?php echo $fv_text2; ?></p>
@@ -340,9 +420,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading3 || $fv_text3) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color3; ?>;bottom:<?php echo $fv_text_bottom_position3; ?>;left:<?php echo $fv_text_left_position3; ?>;">
+                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
                                     <?php if ($fv_heading3) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading3; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading3; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text3) { ?>
                                         <p class="p-top__text"><?php echo $fv_text3; ?></p>
@@ -353,9 +433,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading3 || $fv_text3) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color3; ?>;bottom:<?php echo $fv_text_bottom_position3; ?>;left:<?php echo $fv_text_left_position3; ?>;">
+                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
                                 <?php if ($fv_heading3) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading3; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading3; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text3) { ?>
                                     <p class="p-top__text"><?php echo $fv_text3; ?></p>
@@ -374,9 +454,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading4 || $fv_text4) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color4; ?>;bottom:<?php echo $fv_text_bottom_position4; ?>;left:<?php echo $fv_text_left_position4; ?>;">
+                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
                                     <?php if ($fv_heading4) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading4; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading4; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text4) { ?>
                                         <p class="p-top__text"><?php echo $fv_text4; ?></p>
@@ -387,9 +467,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading4 || $fv_text4) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color4; ?>;bottom:<?php echo $fv_text_bottom_position4; ?>;left:<?php echo $fv_text_left_position4; ?>;">
+                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
                                 <?php if ($fv_heading4) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading4; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading4; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text4) { ?>
                                     <p class="p-top__text"><?php echo $fv_text4; ?></p>
@@ -408,9 +488,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading5 || $fv_text5) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color5; ?>;bottom:<?php echo $fv_text_bottom_position5; ?>;left:<?php echo $fv_text_left_position5; ?>;">
+                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
                                     <?php if ($fv_heading5) { ?>
-                                        <h2 class="p-top__subtitle"><?php echo $fv_heading5; ?></h2>
+                                        <h2 class="p-top__subtitle"><span><?php echo $fv_heading5; ?></span></h2>
                                     <?php } ?>
                                     <?php if ($fv_text5) { ?>
                                         <p class="p-top__text"><?php echo $fv_text5; ?></p>
@@ -421,9 +501,9 @@ $fv_text_left_position5 = get_theme_mod('top_fv_text_left_position_5', '');
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading5 || $fv_text5) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="color:<?php echo $fv_text_color5; ?>;bottom:<?php echo $fv_text_bottom_position5; ?>;left:<?php echo $fv_text_left_position5; ?>;">
+                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
                                 <?php if ($fv_heading5) { ?>
-                                    <h2 class="p-top__subtitle"><?php echo $fv_heading5; ?></h2>
+                                    <h2 class="p-top__subtitle"><span><?php echo $fv_heading5; ?></span></h2>
                                 <?php } ?>
                                 <?php if ($fv_text5) { ?>
                                     <p class="p-top__text"><?php echo $fv_text5; ?></p>
