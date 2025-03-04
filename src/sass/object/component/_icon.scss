@@ -26,6 +26,64 @@
     @include m.mq(sp) {}
 }
 
+/*通常時（01/05/06）*/
+.c-btn__link {
+
+    .c-btn__icon01,
+    .c-btn__icon05,
+    .c-btn__icon06 {
+
+        &::before,
+        &::after {
+            transition: all .3s ease-out;
+        }
+    }
+}
+
+/*通常時（02/03/04）*/
+.c-btn__link {
+
+    .c-btn__icon02,
+    .c-btn__icon03,
+    .c-btn__icon04 {
+
+        &::before {
+            transition: all .3s ease-out;
+        }
+    }
+}
+
+/*ホバー時（01/05/06）*/
+.c-btn__link {
+    &:hover {
+
+        .c-btn__icon01,
+        .c-btn__icon05,
+        .c-btn__icon06 {
+
+            &::before,
+            &::after {
+                transition: all .3s ease-out;
+            }
+        }
+    }
+}
+
+/*ホバー時（02/03/04）*/
+.c-btn__link {
+    &:hover {
+
+        .c-btn__icon02,
+        .c-btn__icon03,
+        .c-btn__icon04 {
+
+            &::before {
+                transition: all .3s ease-out;
+            }
+        }
+    }
+}
+
 /*  -----------------------------------------------------------------------------------------------
     icon01
  ----------------------------------------------------------------------------------------------- */
@@ -84,6 +142,24 @@
     }
 }
 
+.c-btn06 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon01 {
+                background-color: var(--main_color);
+
+                &::before {
+                    background-color: #fff;
+                }
+
+                &::after {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
 
 /*  -----------------------------------------------------------------------------------------------
     icon02
@@ -114,6 +190,30 @@
         border-radius: 50px;
         top: 8px;
         left: 8px;
+    }
+}
+
+.c-btn05 {
+    .c-btn__icon02 {
+        background-color: var(--main_color);
+
+        &::before {
+            background-color: #fff;
+        }
+    }
+}
+
+.c-btn06 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon02 {
+                background-color: var(--main_color);
+
+                &::before {
+                    background-color: #fff;
+                }
+            }
+        }
     }
 }
 
@@ -150,7 +250,6 @@
 }
 
 .c-btn03,
-.c-btn06,
 .c-btn08 {
     .c-btn__icon03 {
         &::before {
@@ -158,10 +257,56 @@
         }
     }
 
-    &:hover {
-        .c-btn__icon03 {
-            &::before {
-                border-color: var(--text_color);
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon03 {
+                &::before {
+                    border-color: var(--text_color);
+                }
+            }
+        }
+    }
+}
+
+.c-btn04 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon03 {
+                &::before {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.c-btn05 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon03 {
+                &::before {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
+}
+
+.c-btn06 {
+    .c-btn__icon03 {
+        margin-right: 10px;
+
+        &::before {
+            border-color: #fff;
+        }
+    }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon03 {
+                &::before {
+                    border-color: var(--main_color);
+                }
             }
         }
     }
@@ -169,23 +314,40 @@
 
 .c-btn07 {
     .c-btn__icon03 {
+        margin-right: 5px;
+
         &::before {
             border-color: var(--main_color);
         }
     }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon03 {
+                &::before {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
 }
 
+.c-btn08,
 .c-btn09 {
     .c-btn__icon03 {
+        margin-right: 5px;
+
         &::before {
             border-color: #fff;
         }
     }
 
-    &:hover {
-        .c-btn__icon03 {
-            &::before {
-                border-color: var(--main_color);
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon03 {
+                &::before {
+                    border-color: var(--main_color);
+                }
             }
         }
     }
@@ -232,17 +394,30 @@
         }
     }
 
-    &:hover {
-        .c-btn__icon04 {
-            background-color: #fff;
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon04 {
+                background-color: #fff;
 
-            &::before {
-                background-color: var(--main_color);
+                &::before {
+                    background-color: var(--main_color);
+                }
             }
         }
     }
 }
 
+.c-btn05 {
+    .c-btn__icon04 {
+        background-color: var(--main_color);
+
+        &::before {
+            background-color: #fff;
+        }
+    }
+}
+
+.c-btn06,
 .c-btn08 {
 
     &:hover {
@@ -266,7 +441,6 @@
     width: 15px;
     height: 8px;
     position: relative;
-    margin-right: 10px;
 
     @include m.mq(pc) {}
 
@@ -312,24 +486,56 @@
         }
     }
 
-    &:hover {
-        .c-btn__icon05 {
-            &::before {
-                background-color: var(--text_color);
-            }
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon05 {
+                &::before {
+                    background-color: var(--text_color);
+                }
 
-            &::after {
-                border-color: var(--text_color);
+                &::after {
+                    border-color: var(--text_color);
+                }
             }
         }
     }
 }
 
-.c-btn06,
-.c-btn08,
-.c-btn09 {
+.c-btn04 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon05 {
+                &::before {
+                    background-color: #fff;
+                }
 
+                &::after {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.c-btn05 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon05 {
+                &::before {
+                    background-color: var(--main_color);
+                }
+
+                &::after {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
+}
+
+.c-btn06 {
     .c-btn__icon05 {
+        margin-right: 5px;
 
         &::before {
             background-color: #fff;
@@ -339,11 +545,57 @@
             border-color: #fff;
         }
     }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon05 {
+                &::before {
+                    background-color: var(--main_color);
+                }
+
+                &::after {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
+}
+
+.c-btn08,
+.c-btn09 {
+
+    .c-btn__icon05 {
+        margin-right: 5px;
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon05 {
+
+                &::before {
+                    background-color: var(--main_color);
+                }
+
+                &::after {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
 }
 
 .c-btn07 {
 
     .c-btn__icon05 {
+        margin-right: 5px;
 
         &::before {
             background-color: var(--main_color);
@@ -351,6 +603,21 @@
 
         &::after {
             border-color: var(--main_color);
+        }
+    }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon05 {
+
+                &::before {
+                    background-color: #fff;
+                }
+
+                &::after {
+                    border-color: #fff;
+                }
+            }
         }
     }
 }
@@ -409,23 +676,55 @@
     }
 
     &:hover {
-        .c-btn__icon06 {
-            &::before {
-                background-color: var(--text_color);
-            }
+        .c-btn__link {
+            .c-btn__icon06 {
+                &::before {
+                    background-color: var(--text_color);
+                }
 
-            &::after {
-                border-color: var(--text_color);
+                &::after {
+                    border-color: var(--text_color);
+                }
             }
         }
     }
 }
 
-.c-btn06,
-.c-btn08,
-.c-btn09 {
+.c-btn04 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon06 {
+                &::before {
+                    background-color: #fff;
+                }
 
+                &::after {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.c-btn05 {
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon06 {
+                &::before {
+                    background-color: var(--main_color);
+                }
+
+                &::after {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
+}
+
+.c-btn06 {
     .c-btn__icon06 {
+        margin-right: 5px;
 
         &::before {
             background-color: #fff;
@@ -435,11 +734,57 @@
             border-color: #fff;
         }
     }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon06 {
+                &::before {
+                    background-color: var(--main_color);
+                }
+
+                &::after {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
+}
+
+.c-btn08,
+.c-btn09 {
+
+    .c-btn__icon06 {
+        margin-right: 5px;
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &::after {
+            border-color: #fff;
+        }
+    }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon06 {
+
+                &::before {
+                    background-color: var(--main_color);
+                }
+
+                &::after {
+                    border-color: var(--main_color);
+                }
+            }
+        }
+    }
 }
 
 .c-btn07 {
 
     .c-btn__icon06 {
+        margin-right: 5px;
 
         &::before {
             background-color: var(--main_color);
@@ -447,6 +792,21 @@
 
         &::after {
             border-color: var(--main_color);
+        }
+    }
+
+    .c-btn__link {
+        &:hover {
+            .c-btn__icon06 {
+
+                &::before {
+                    background-color: #fff;
+                }
+
+                &::after {
+                    border-color: #fff;
+                }
+            }
         }
     }
 }
