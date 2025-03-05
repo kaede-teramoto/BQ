@@ -134,8 +134,7 @@ if ($cms_design == 03) : ?>
             <?php endif; ?>
         </div>
     </div>
-
-<?php else : ?>
+<?php elseif ($cms_design == 01 || $cms_design == 02) : ?>
     <div class="top-cms__wrapper top-cms<?php echo $cms_design; ?>__wrapper js-fadeIn">
         <div class="top-cms top-cms<?php echo $cms_design; ?>">
             <div class="top-cms__title top-cms<?php echo $cms_design; ?>__title">
@@ -267,6 +266,197 @@ if ($cms_design == 03) : ?>
                     wp_reset_postdata(); // クエリのリセット
                 }
                 ?>
+            </div>
+        </div>
+    </div>
+
+<?php elseif ($cms_design == 04 || $cms_design == 05 || $cms_design == 06) : ?>
+    <div class="top-cms__wrapper top-cms<?php echo $cms_design; ?>__wrapper js-fadeIn">
+        <div class="top-cms top-cms<?php echo $cms_design; ?>">
+            <div class="top-cms__title top-cms<?php echo $cms_design; ?>__title">
+                <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?>" style="<?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                    <?php if ($main_title) : ?>
+                        <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text">
+                            <?php echo $main_title; ?>
+                        </span>
+                    <?php endif; ?>
+
+                    <?php if ($sub_title) : ?>
+                        <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle">
+                            <?php echo $sub_title; ?>
+                        </span>
+                    <?php endif; ?>
+                </h2>
+            </div>
+
+            <?php if ($btn_text && $topCms_btn_link): ?>
+                <div class="top-cms__link top-cms<?php echo $cms_design; ?>__link">
+                    <?php if ($link_type == 01) : ?>
+                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
+                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="icon<?php echo $text_icon_design; ?>"></span>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="top-cms__content top-cms<?php echo $cms_design; ?>__content">
+                <div id="all" class="top-cms__list top-cms<?php echo $cms_design; ?>__list tab__panel --active">
+                    <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => $cms_num,
+                    );
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) : ?>
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
+                            <div class="top-cms__post top-cms<?php echo $cms_design; ?>__post">
+                                <?php if (has_post_thumbnail()) : /* もしアイキャッチが登録されていたら */ ?>
+                                    <div class="top-cms__post__thumbnail top-cms<?php echo $cms_design; ?>__post__thumbnail">
+                                        <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                            <?php the_post_thumbnail(); ?>
+                                        </a>
+                                    </div>
+                                <?php else : /* 登録されていなかったら */ ?>
+                                    <div class="top-cms__post__thumbnail top-cms<?php echo $cms_design; ?>__post__thumbnail">
+                                        <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="" loading="eager">
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
+                                    <?php cat_link(); ?>
+                                </div>
+                                <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
+                                    <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                        <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
+                </div>
+
+                <?php
+                foreach ($categories as $category) {
+
+                    $args = array(
+                        'post_type'      => 'post',
+                        'posts_per_page' => $cms_num,
+                        'category__in'   => array($category->term_id),
+                        'no_found_rows'  => true,
+                    );
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) : ?>
+                        <div id="<?php echo esc_html($category->slug); ?>" class="top-cms<?php echo $cms_design; ?>__list tab__panel">
+
+                            <?php while ($query->have_posts()) :
+                                $query->the_post(); ?>
+                                <div class="top-cms__post top-cms<?php echo $cms_design; ?>__post">
+                                    <?php if (has_post_thumbnail()) : /* もしアイキャッチが登録されていたら */ ?>
+                                        <div class="top-cms__post__thumbnail top-cms<?php echo $cms_design; ?>__post__thumbnail">
+                                            <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                                <?php the_post_thumbnail(); ?>
+                                            </a>
+                                        </div>
+                                    <?php else : /* 登録されていなかったら */ ?>
+                                        <div class="top-cms__post__thumbnail top-cms<?php echo $cms_design; ?>__post__thumbnail">
+                                            <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="" loading="lazy">
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
+                                        <?php the_category(' '); ?>
+                                    </div>
+                                    <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                    <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
+                                        <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                            <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                <?php endif;
+                    wp_reset_postdata(); // クエリのリセット
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+
+<?php else : ?>
+    <div class="top-cms__wrapper top-cms<?php echo $cms_design; ?>__wrapper js-fadeIn">
+        <div class="top-cms top-cms<?php echo $cms_design; ?>">
+            <div class="top-cms__title top-cms<?php echo $cms_design; ?>__title">
+                <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?>" style="<?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+                    <?php if ($main_title) : ?>
+                        <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text">
+                            <?php echo $main_title; ?>
+                        </span>
+                    <?php endif; ?>
+
+                    <?php if ($sub_title) : ?>
+                        <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle">
+                            <?php echo $sub_title; ?>
+                        </span>
+                    <?php endif; ?>
+                </h2>
+            </div>
+
+            <?php if ($btn_text && $topCms_btn_link): ?>
+                <div class="top-cms__link top-cms<?php echo $cms_design; ?>__link">
+                    <?php if ($link_type == 01) : ?>
+                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
+                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
+                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="icon<?php echo $text_icon_design; ?>"></span>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="top-cms__content top-cms<?php echo $cms_design; ?>__content">
+                <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => $cms_num,
+                );
+                $query = new WP_Query($args);
+                if ($query->have_posts()) : ?>
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <div class=" top-cms__post top-cms<?php echo $cms_design; ?>__post">
+
+                            <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
+                                <?php cat_link(); ?>
+                            </div>
+                            <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                            <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
+                                <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                    <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </div>

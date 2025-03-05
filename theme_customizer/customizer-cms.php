@@ -63,6 +63,7 @@ function cms_register($wp_customize)
                 '05'   => __('CMS Type05', 'boutiq'),
                 '06'   => __('CMS Type06', 'boutiq'),
                 '07'   => __('CMS Type07', 'boutiq'),
+                '08'   => __('CMS Type08', 'boutiq'),
             ),
         )
     );
