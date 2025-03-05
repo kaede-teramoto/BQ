@@ -70,19 +70,34 @@ body.error404 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 180px 0 130px;
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        padding-inline: 30px;
+    @include m.mq(miniPc) {
+        padding: 150px 0 110px;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(tab) {
+        padding: 150px 30px 100px;
+    }
+
+    @include m.mq(sp) {
+        padding: 120px 20px 80px;
+    }
 
     .c-btn {
         margin-top: 40px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            margin-top: 30px;
+        }
     }
 }
 
@@ -112,19 +127,22 @@ body.error404 {
 .section__error01__subtitle {
     font-family: var(--en_font);
     font-weight: 600;
-    font-size: 9.6rem;
+    font-size: 9.0rem;
     line-height: 1;
     color: var(--main_color);
     margin-top: 50px;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        margin-top: 40px;
+    }
 
     @include m.mq(miniPc) {
-        font-size: 8.6rem;
+        font-size: 8.0rem;
     }
 
     @include m.mq(tab) {
-        font-size: 8rem;
+        font-size: 7.0rem;
+        margin-top: 30px;
     }
 
     @include m.mq(sp) {
@@ -141,9 +159,521 @@ body.error404 {
 
     @include m.mq(miniPc) {}
 
+    @include m.mq(tab) {
+        margin-top: 40px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 30px;
+    }
+}
+
+
+/* error02
+ ----------------------------------------------------------------------------------------------- */
+.section__error02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 180px 0 130px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding: 150px 0 110px;
+    }
+
+    @include m.mq(tab) {
+        padding: 150px 30px 100px;
+    }
+
+    @include m.mq(sp) {
+        padding: 120px 20px 80px;
+    }
+}
+
+.section__error02__title {
+    font-family: var(--jp_font);
+    font-weight: 500;
+    font-size: 19.2rem;
+    line-height: 0.8;
+    color: var(--text_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: 16rem;
+    }
+
+    @include m.mq(sp) {
+        font-size: 30vw;
+    }
+}
+
+.section__error02__subtitle {
+    font-family: var(--jp_font);
+    font-weight: 500;
+    font-size: 5.6rem;
+    line-height: 1;
+    color: var(--text_color);
+    margin-top: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        font-size: 5.0rem;
+    }
+
+    @include m.mq(sp) {
+        font-size: 9vw;
+        margin-top: 20px;
+    }
+}
+
+.section__error02__text {
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 50px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    &::before {
+        content: "このページはご利用いただけません";
+        display: inline-block;
+        font-weight: 700;
+        font-size: 4.0rem;
+        line-height: 1;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            font-size: 3.2rem;
+        }
+
+        @include m.mq(tab) {
+            font-size: 3.0rem;
+        }
+
+        @include m.mq(sp) {
+            font-size: 2.4rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+.section__error02__btn {
+    margin-top: 60px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 50px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 40px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+
+/* error03
+ ----------------------------------------------------------------------------------------------- */
+.error404 {
+    .l-main:has(.section__error03) {
+        background: linear-gradient(180deg, var(--main_color) 0%, var(--main_color) 50%, #fff 50%, #fff 100%);
+    }
+}
+
+.section__error03 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "error_title error_sub"
+        "error_text error_text"
+        "error_btn error_btn";
+    gap: 50px 10px;
+    background-color: #fff;
+    width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    margin: 180px auto 130px;
+    padding: 150px 0;
+
+    @include m.mq(pc) {
+        width: 900px;
+        padding: 100px 0;
+    }
+
+    @include m.mq(miniPc) {
+        margin: 150px auto 110px;
+        width: 750px;
+        padding: 100px 30px;
+        gap: 30px 10px;
+    }
+
+    @include m.mq(tab) {
+        margin: 150px auto 100px;
+        width: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+        gap: 0;
+    }
+
+    @include m.mq(sp) {
+        margin: 120px auto 80px;
+        width: 90%;
+        height: auto;
+        padding: 30px 20px;
+    }
+}
+
+.section__error03__title {
+    font-family: var(--en_font);
+    font-weight: 500;
+    font-size: 7.2rem;
+    line-height: 0.8;
+    color: var(--main_color);
+    grid-area: error_title;
+    display: flex;
+    justify-content: flex-end;
+
+    @include m.mq(pc) {
+        font-size: 6.8rem;
+    }
+
+    @include m.mq(miniPc) {
+        font-size: 6.0rem;
+    }
+
+    @include m.mq(tab) {
+        justify-content: center;
+    }
+
+    @include m.mq(sp) {
+        font-size: 5.4rem;
+    }
+}
+
+.section__error03__subtitle {
+    grid-area: error_sub;
+    font-family: var(--en_font);
+    font-weight: 500;
+    font-size: 7.2rem;
+    line-height: 0.8;
+    color: var(--main_color);
+
+    @include m.mq(pc) {
+        font-size: 6.8rem;
+    }
+
+    @include m.mq(miniPc) {
+        font-size: 6.0rem;
+    }
+
+    @include m.mq(tab) {
+        font-size: 4.8rem;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    @include m.mq(sp) {
+        font-size: 4.4rem;
+    }
+}
+
+.section__error03__text {
+    text-align: center;
+    font-weight: 500;
+    grid-area: error_text;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 40px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__error03__btn {
+    grid-area: error_btn;
+    display: flex;
+    justify-content: center;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 40px;
+    }
+
+    @include m.mq(sp) {}
+}
+
+
+/* error04
+ ----------------------------------------------------------------------------------------------- */
+.error404 {
+    .l-main:has(.section__error04) {
+        background: var(--base_color);
+    }
+}
+
+.section__error04 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    width: 1000px;
+    border-radius: 20px;
+    margin: 180px auto 130px;
+    padding: 100px 0;
+
+    @include m.mq(pc) {
+        width: 900px;
+    }
+
+    @include m.mq(miniPc) {
+        margin: 150px auto 110px;
+        width: 750px;
+        padding: 80px 30px;
+    }
+
+    @include m.mq(tab) {
+        margin: 150px auto 100px;
+        width: 540px;
+        padding: 50px 30px;
+        grid-template-columns: 32% auto;
+    }
+
+    @include m.mq(sp) {
+        margin: 120px auto 80px;
+        width: 90%;
+        height: auto;
+        padding: 40px 20px;
+        grid-template-columns: 35% auto;
+    }
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 100px;
+        aspect-ratio: 1.1 / 1;
+        background-image: url(../images/common/error04_img.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0 auto;
+    }
+}
+
+.section__error04__title {
+    font-family: var(--en_font);
+    font-weight: 500;
+    font-size: 5.6rem;
+    line-height: 0.8;
+    color: var(--text_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 5.0rem;
+    }
+
+    @include m.mq(tab) {
+        font-size: 4.8rem;
+    }
+
+    @include m.mq(sp) {
+        font-size: 4.0rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
+
+.section__error04__subtitle {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__error04__text {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
     @include m.mq(tab) {}
 
     @include m.mq(sp) {
-        margin-top: 40px;
+        margin-top: 10px;
+    }
+}
+
+.section__error04__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+
+/* error05
+ ----------------------------------------------------------------------------------------------- */
+
+.section__error05 {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "error_title error_sub"
+        "error_text error_text"
+        "error_btn error_btn";
+    gap: 50px 10px;
+    gap: 20px;
+    width: 1000px;
+    border-radius: 20px;
+    margin: 180px auto 130px;
+    padding: 100px 0;
+
+    @include m.mq(pc) {
+        width: 900px;
+    }
+
+    @include m.mq(miniPc) {
+        margin: 150px auto 110px;
+        width: 750px;
+        padding: 80px 30px;
+    }
+
+    @include m.mq(tab) {
+        margin: 150px auto 100px;
+        width: 540px;
+        padding: 50px 30px;
+        grid-template-columns: 32% auto;
+    }
+
+    @include m.mq(sp) {
+        margin: 120px auto 80px;
+        width: 90%;
+        height: auto;
+        padding: 40px 20px;
+        grid-template-columns: 35% auto;
+    }
+}
+
+.section__error05__title {
+    font-family: var(--en_font);
+    font-weight: 500;
+    font-size: 5.6rem;
+    line-height: 0.8;
+    color: var(--text_color);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        font-size: 5.0rem;
+    }
+
+    @include m.mq(tab) {
+        font-size: 4.8rem;
+    }
+
+    @include m.mq(sp) {
+        font-size: 4.0rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
+
+.section__error05__subtitle {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__error05__text {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
+    }
+}
+
+.section__error05__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 10px;
     }
 }
