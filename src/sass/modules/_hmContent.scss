@@ -1800,6 +1800,47 @@
     @include m.mq(sp) {
         margin-top: 80px;
     }
+
+    .hm__logo {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm_externalLink {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm__sns {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            justify-content: center;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
 }
 
 .hm05__img__wrapper {
