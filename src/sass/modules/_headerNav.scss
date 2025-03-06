@@ -569,5 +569,6 @@
     &::before {
         opacity: 1;
         visibility: inherit;
+        z-index: 15;
     }
 }

@@ -1,4 +1,6 @@
 @use "./mixins" as m;
+@use "sass:list";
+
 /* Color
  ----------------------------------------------------------------------------------------------- */
 // Primary Color
@@ -124,7 +126,7 @@ $headerWidth: 94%;
 $z-index: followBtn, spBtn, header, mark, hmContent, hm, loading;
 
 @function getZIndex($name) {
-  @return index($z-index, $name) * 100;
+  @return list.index($z-index, $name) * 100;
 }
 
 // font
