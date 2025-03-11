@@ -403,7 +403,7 @@ function boutiq_scripts()
         }
 
         wp_enqueue_style('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array('OriginalFonts'), NULL);
-        wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme.css', array('swiper-bundle'), NULL, 'all');
+        wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme.min.css', array('swiper-bundle'), NULL, 'all');
 
         //js
         wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array('jquery'), '', true);
