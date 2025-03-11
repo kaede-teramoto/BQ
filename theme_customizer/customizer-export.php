@@ -101,8 +101,13 @@ function boutiq_customize_css()
         $heading_font = get_theme_mod('site_default_jp_fontFamily', false);
     }
 
-    $follow_btn_top_and_bottom = get_theme_mod('follow_btn_top_and_bottom', '50px');
-    $follow_btn_left_and_right = get_theme_mod('follow_btn_left_and_right', '50px');
+    $follow_btn_top_and_bottom = get_theme_mod('follow_btn_pc_top_and_bottom', '50px');
+    $follow_btn_left_and_right = get_theme_mod('follow_btn_pc_left_and_right', '50px');
+
+    $follow_btn_sp_top_and_bottom = get_theme_mod('follow_btn_sp_top_and_bottom', false);
+    $follow_btn_sp_left_and_right = get_theme_mod('follow_btn_sp_left_and_right', false);
+
+
     // top FV
     $fv_height_pc = esc_attr(get_theme_mod('top_fv_height_size_pc', ''));
     $fv_height_tab = esc_attr(get_theme_mod('top_fv_height_size_tab', ''));
@@ -249,6 +254,18 @@ function boutiq_customize_css()
 
     echo '--follow_btn_tb: ' . $follow_btn_top_and_bottom . ';' . "\n";
     echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
+
+    if ($follow_btn_sp_top_and_bottom) {
+        echo '--follow_sp_btn_tb: ' . $follow_btn_sp_top_and_bottom . ';' . "\n";
+    } else {
+        echo '--follow_sp_btn_tb: ' . $follow_btn_top_and_bottom . ';' . "\n";
+    }
+
+    if ($follow_btn_sp_left_and_right) {
+        echo '--follow_sp_btn_lr: ' . $follow_btn_sp_left_and_right . ';' . "\n";
+    } else {
+        echo '--follow_sp_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
+    }
 
     if ($header_btn_bg_color) {
         echo '--header_btn_bg_color: ' . $header_btn_bg_color . ';' . "\n";

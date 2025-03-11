@@ -17,7 +17,7 @@ $error_btn = esc_html(get_theme_mod('error_btn_setting', 'HOME'));
 $error_url = esc_url(get_theme_mod('error_btn_link_setting', $site_url));
 // btn design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_link_icon_setting', '01');
+$btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 
 
 get_header();

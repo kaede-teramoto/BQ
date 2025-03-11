@@ -6,6 +6,7 @@
 .follow_btn {
     position: fixed;
     z-index: v.getZIndex(followBtn);
+    max-width: 300px;
 
     @include m.mq(pc) {}
 
@@ -14,6 +15,38 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
+    &--close {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        background-color: var(--main_color);
+        border-radius: 15px;
+        position: absolute;
+        right: -10px;
+        top: -15px;
+        border: 1px solid #fff;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: "";
+            width: 2px;
+            height: 10px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        &::before {
+            transform: translateY(-50%) translateX(-50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+        }
+    }
 
     &.is-leftIn {
         transform: translateX(-100%);
@@ -115,7 +148,10 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        top: var(--follow_sp_btn_tb);
+        right: var(--follow_sp_btn_lr);
+    }
 
     @include m.mq(sp) {}
 }

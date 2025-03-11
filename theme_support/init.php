@@ -154,6 +154,16 @@ if (function_exists('is_plugin_active') && is_plugin_active('contact-form-7/wp-c
   });
 }
 
+function load_recaptcha_js()
+{
+  if (is_page('contact')) {
+    wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js', [], null, true);
+  } else {
+    wp_deregister_script('google-recaptcha');
+  }
+}
+add_action('wp_enqueue_scripts', 'load_recaptcha_js', 100);
+
 /*--------------------------------------------------------------
   Stop updating 'Custom Fields'
 --------------------------------------------------------------*/
