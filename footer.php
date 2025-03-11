@@ -317,6 +317,7 @@ else : ?>
 <?php if ($follow_btn_pc) : ?>
     <?php if ($follow_btn_pc_image) : ?>
         <div class="l-spN follow_btn follow_btn<?php echo $follow_btn_pc_position; ?><?php echo $follow_btn_pc_animation_set; ?>">
+            <span class="follow_btn--close"></span>
             <?php if ($follow_btn_pc_url) : ?>
                 <a class="follow_btn__link follow_btn<?php echo $follow_btn_pc_position; ?>__link" href="<?php echo $follow_btn_pc_url; ?>" <?php echo $follow_btn_pc_target_set; ?>>
                     <img class="follow_btn__img follow_btn<?php echo $follow_btn_pc_position; ?>__img" src="<?php echo $follow_btn_pc_image; ?>" alt="<?php echo $follow_btn_pc_alt; ?>">
@@ -331,6 +332,7 @@ else : ?>
 <?php if ($follow_btn_sp) : ?>
     <?php if ($follow_btn_sp_image) : ?>
         <div class="l-sp follow_btn follow_btn<?php echo $follow_btn_sp_position; ?><?php echo $follow_btn_sp_animation_set; ?>">
+            <span class="follow_btn--close"></span>
             <?php if ($follow_btn_sp_url) : ?>
                 <a class="follow_btn__link follow_btn<?php echo $follow_btn_sp_position; ?>__link" href="<?php echo $follow_btn_sp_url; ?>" <?php echo $follow_btn_sp_target_set; ?>>
                     <img class="follow_btn__img follow_btn<?php echo $follow_btn_sp_position; ?>__img" src="<?php echo $follow_btn_sp_image; ?>" alt="<?php echo $follow_btn_sp_alt; ?>">

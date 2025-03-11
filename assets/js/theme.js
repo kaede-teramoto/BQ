@@ -305,20 +305,38 @@ document.addEventListener('DOMContentLoaded', function () {
 // スクロール時にクラスを追加する処理
 document.addEventListener('DOMContentLoaded', function () {
     const followbtns = document.querySelectorAll('.follow_btn');
+    let isClosedMap = new Map(); // 各ボタンの状態を管理
 
-    if (followbtns.length > 0) {
-        window.addEventListener('scroll', function () {
-            followbtns.forEach(function (btn) {
+    function toggleActiveClass() {
+        followbtns.forEach(function (btn) {
+            if (!isClosedMap.get(btn)) { // そのボタンが閉じられていない場合のみ処理
                 if (window.scrollY > 100) {
-                    // 100pxスクロールしたらクラスを追加
                     btn.classList.add('--active');
                 } else {
-                    // 100px未満の場合、クラスを削除
                     btn.classList.remove('--active');
                 }
-            });
+            }
         });
     }
+
+    if (followbtns.length > 0) {
+        window.addEventListener('scroll', toggleActiveClass, { passive: true });
+        window.addEventListener('touchmove', toggleActiveClass, { passive: true });
+    }
+
+    followbtns.forEach(function (btn) {
+        const closeBtn = btn.querySelector('.follow_btn--close'); // 各 `follow_btn` 内の `follow_btn--close` を取得
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                isClosedMap.set(btn, true); // そのボタンだけクローズ状態にする
+                btn.classList.remove('--active');
+            });
+            closeBtn.addEventListener('touchend', function () {
+                isClosedMap.set(btn, true);
+                btn.classList.remove('--active');
+            });
+        }
+    });
 });
 
 

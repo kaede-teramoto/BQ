@@ -289,7 +289,7 @@ function follow_btn_design($wp_customize)
         'follow_btn_sp_top_and_bottom',
         array(
             'type' => 'theme_mod',
-            'default'     => '50px',
+            'default'     => '',
             'transport'   => 'refresh',
             'sanitize_callback' => 'sanitize_text_field',
         )
@@ -311,7 +311,7 @@ function follow_btn_design($wp_customize)
         'follow_btn_sp_left_and_right',
         array(
             'type' => 'theme_mod',
-            'default'     => '50px',
+            'default'     => '',
             'transport'   => 'refresh',
             'sanitize_callback' => 'sanitize_text_field',
         )
