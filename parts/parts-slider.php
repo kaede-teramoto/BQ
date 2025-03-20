@@ -558,7 +558,7 @@ if ($fv_text_left_position5) {
                                 <?php } ?>
                                 <?php if ($top_fv_post_title) { ?>
                                     <h2 class="p-top__postTitle">
-                                        <a class="p-top_postLink" href="<?php the_permalink(); ?>">
+                                        <a class="p-top_postTitleLink" href="<?php the_permalink(); ?>">
                                             <?php the_title(); ?>
                                         </a>
                                     </h2>

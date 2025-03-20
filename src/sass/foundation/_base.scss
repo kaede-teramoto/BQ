@@ -280,23 +280,24 @@ optgroup {
   font-weight: bold;
 }
 
-.aligncenter {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+p:has(.aligncenter) {
+  display: flex;
+  justify-content: center;
 }
 
-.alignright {
-  float: right;
-  margin-bottom: 20px;
-  margin-left: 20px;
+p:has(.alignleft) {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.alignleft {
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
+p:has(.alignright) {
+  display: flex;
+  justify-content: flex-end;
 }
+
+.alignright {}
+
+.alignleft {}
 
 .wp-caption,
 [class*='wp-image'] {

@@ -195,6 +195,21 @@
     margin: 0 auto;
 }
 
+.header04__wrapper__nav--wrapper__list {
+    display: flex;
+    gap: 40px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        display: none;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
 .header04__wrapper__nav--wrapper__list>li.nav__item {
     display: inline-block;
     margin-right: 30px;
