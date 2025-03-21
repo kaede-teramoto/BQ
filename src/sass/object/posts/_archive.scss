@@ -178,6 +178,17 @@
 
     @include m.mq(sp) {}
 
+    img {
+        transition: transform .3s;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.1);
+            transition: transform .3s;
+        }
+
+    }
 }
 
 .cms__post__cat {
@@ -219,7 +230,7 @@
     }
 }
 
-.cms__post__data {
+.cms__post__date {
     display: flex;
     justify-content: flex-end;
 
@@ -497,7 +508,7 @@
     grid-template-columns: 260px 1fr 1fr;
     grid-template-rows: 100px 160px;
     grid-template-areas:
-        "post__thumbnail post__cat post__data"
+        "post__thumbnail post__cat post__date"
         "post__thumbnail post__title post__title";
     border-bottom: 1px solid var(--base_color);
 
@@ -622,8 +633,8 @@
 
 }
 
-.cms01__post__data {
-    grid-area: post__data;
+.cms01__post__date {
+    grid-area: post__date;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -850,7 +861,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 60px 60px;
     grid-template-areas:
-        "post__cat post__data"
+        "post__cat post__date"
         "post__title post__title";
 
     @include m.mq(pc) {}
@@ -948,7 +959,7 @@
 
 }
 
-.cms02__post__data {
+.cms02__post__date {
     text-align: end;
 
     @include m.mq(pc) {}
@@ -1124,7 +1135,7 @@
     grid-template-areas:
         "post__thumbnail post__thumbnail"
         "post__title post__title"
-        "post__cat post__data";
+        "post__cat post__date";
 
 
     @include m.mq(pc) {}
@@ -1178,8 +1189,8 @@
 
 }
 
-.cms03__post__data {
-    grid-area: post__data;
+.cms03__post__date {
+    grid-area: post__date;
 
     @include m.mq(pc) {}
 
@@ -1322,7 +1333,7 @@
     grid-template-areas:
         "post__thumbnail post__thumbnail"
         "post__title post__title"
-        "post__cat post__data";
+        "post__cat post__date";
     gap: 20px;
 
     @include m.mq(pc) {}
@@ -1401,8 +1412,8 @@
 
 }
 
-.cms04__post__data {
-    grid-area: post__data;
+.cms04__post__date {
+    grid-area: post__date;
     display: flex;
     justify-content: flex-start;
 
@@ -1542,7 +1553,7 @@
     grid-template-areas:
         "post__thumbnail post__thumbnail"
         "post__title post__title"
-        "post__data post__data";
+        "post__date post__date";
     gap: 20px;
     position: relative;
     margin: 0 20px 72px 0;
@@ -1578,7 +1589,7 @@
         grid-template-rows: auto 40px;
         grid-template-areas:
             "post__thumbnail post__title"
-            "post__thumbnail post__data";
+            "post__thumbnail post__date";
         gap: 40px;
         border-bottom: 1px solid var(--base_color);
         padding: 20px 0;
@@ -1593,7 +1604,7 @@
             grid-template-areas:
                 "post__thumbnail post__thumbnail"
                 "post__title post__title"
-                "post__data post__data";
+                "post__date post__date";
             gap: 20px;
             border-bottom: unset;
             padding: 0;
@@ -1629,7 +1640,7 @@
             }
         }
 
-        .cms05__post__data {
+        .cms05__post__date {
             margin-top: 0;
 
             @include m.mq(pc) {}
@@ -1745,8 +1756,8 @@
 
 }
 
-.cms05__post__data {
-    grid-area: post__data;
+.cms05__post__date {
+    grid-area: post__date;
     display: flex;
     justify-content: flex-start;
     margin-top: 80px;
@@ -1967,7 +1978,7 @@
 
 }
 
-.cms06__post__data {
+.cms06__post__date {
     display: none;
 
     @include m.mq(pc) {}
@@ -2177,7 +2188,7 @@
 
 }
 
-.cms07__post__data {
+.cms07__post__date {
     order: 1;
     color: var(--main_color);
 
@@ -2341,7 +2352,7 @@
     grid-template-areas:
         "post__thumbnail post__thumbnail"
         "post__title post__title"
-        "post__cat post__data";
+        "post__cat post__date";
     gap: 20px;
     background-color: #F5F5F5;
     @include v.borderRadius;
@@ -2422,8 +2433,8 @@
     }
 }
 
-.cms08__post__data {
-    grid-area: post__data;
+.cms08__post__date {
+    grid-area: post__date;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -2768,7 +2779,7 @@
 
 }
 
-.cms09__post__data {
+.cms09__post__date {
     display: flex;
     align-items: center;
     order: 1;

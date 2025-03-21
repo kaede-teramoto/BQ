@@ -114,7 +114,7 @@ if (!is_singular()) :
                                 <div class="cms__post__cat cms<?php echo $cms_design; ?>__post__cat">
                                     <?php cat_link(); ?>
                                 </div>
-                                <div class="cms__post__data cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                <div class="cms__post__date cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
                                 <div class="cms__post__title cms<?php echo $cms_design; ?>__post__title">
                                     <a class="cms__post__link cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
                                         <?php echo mb_substr($post->post_title, 0, 120) . ''; ?>
@@ -186,7 +186,7 @@ if (!is_singular()) :
                     <?php
                     cat_link();
                     ?>
-                    <div class="p-post__entry__data">
+                    <div class="p-post__entry__date">
                         <?php the_time('Y.m.d'); ?>
                     </div>
                     <h1 class="p-post__entry__title"><?php the_title(); ?></h1>
