@@ -6,84 +6,75 @@
  ----------------------------------------------------------------------------------------------- */
 
 .section__design12 {
-    padding: 120px;
 
-    @include m.mq(pc) {
-        padding: 80px;
-    }
-
-    @include m.mq(miniPc) {
-        padding: 60px;
-    }
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        padding: 60px 0px;
-    }
-}
-
-.section__design12__inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-
-    @include m.mq(pc) {
-        @include v.conWidth;
-        width: 100% !important;
-        max-width: 1100px !important;
-    }
+    @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {
-        width: 90% !important;
+    @include m.mq(sp) {}
+}
+
+.section__design12__inner {
+    width: 100%;
+    padding-inline: 100px;
+    @include v.conWidth;
+
+    @include m.mq(pc) {
+        padding-inline: 60px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        padding-inline: 0;
     }
 }
 
 .section__parts__wrapper__design12 {
     display: flex;
-    gap: 80px;
+    flex-wrap: wrap;
+    gap: 80px 60px;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        gap: 70px 60px;
+    }
 
     @include m.mq(miniPc) {
-        gap: 50px;
+        gap: 60px 50px;
     }
 
     @include m.mq(tab) {
-        gap: 30px;
+        gap: 50px;
+        flex-direction: column;
     }
 
     @include m.mq(sp) {
-        flex-direction: column;
+        gap: 40px;
     }
 }
 
 .section__parts__design12 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    width: calc(calc(100% - 60px)/2);
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        width: calc(calc(100% - 50px)/2);
+    }
 
     @include m.mq(tab) {
-        gap: 15px;
+        width: 100%;
     }
 
-    @include m.mq(sp) {
-        gap: 10px
-    }
+    @include m.mq(sp) {}
 }
 
 .section__parts__design12__title {
-    order: 2;
+    order: 3;
     font-size: 2.2rem;
     font-weight: 600;
 
@@ -99,7 +90,7 @@
 }
 
 .section__parts__design12__subtitle {
-    display: none;
+    order: 2;
 
     @include m.mq(pc) {}
 
@@ -111,7 +102,8 @@
 }
 
 .section__parts__design12__text {
-    order: 3;
+    order: 4;
+    margin-top: 10px;
 
     @include m.mq(pc) {}
 
@@ -132,12 +124,15 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__design12__img {
+.section__parts__design12__img,
+.section__parts__design12__editor {
     order: 1;
     width: 100%;
     aspect-ratio: 620 / 270;
     overflow: hidden;
     max-width: 620px;
+    margin-bottom: 30px;
+    @include v.borderRadius;
 
     @include m.mq(pc) {}
 
@@ -145,23 +140,32 @@
         aspect-ratio: unset;
         height: 200px;
         width: 100%;
+        margin-bottom: 20px;
     }
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
+    @include m.mq(tab) {
+        aspect-ratio: 1.8 / 1;
         height: auto;
-        max-height: 160px;
     }
+
+    @include m.mq(sp) {}
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+
+    p,
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .section__parts__design12__link {
+    order: 5;
+    margin-top: 30px;
 
     @include m.mq(pc) {}
 
@@ -169,5 +173,7 @@
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        margin-top: 20px;
+    }
 }
