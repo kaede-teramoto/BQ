@@ -6,7 +6,6 @@
  ----------------------------------------------------------------------------------------------- */
 
 .section__design14 {
-    @include v.conWidth;
 
     @include m.mq(pc) {}
 
@@ -18,14 +17,19 @@
 }
 
 .section__design14__inner {
+    width: 100%;
+    padding-inline: 100px;
+    @include v.conWidth;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        padding-inline: 60px;
+    }
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
+    @include m.mq(tab) {
+        padding-inline: 0;
+    }
 }
 
 .section__design14__block-title {

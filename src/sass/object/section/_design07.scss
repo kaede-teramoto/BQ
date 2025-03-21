@@ -52,55 +52,69 @@
 .section__parts__wrapper__design07 {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 100px;
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        gap: 80px;
+    }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        gap: 60px;
+    }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        gap: 50px;
+    }
 }
 
 .section__parts__design07 {
     display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+    grid-template-columns: auto 50%;
     grid-template-rows: auto;
     grid-template-areas:
-        "design_title design_img"
-        "design_subtitle design_img"
-        "design_text design_img"
-        "design_btn design_img";
+        "design_left design_img";
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        gap: 150px;
+    }
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        gap: 80px;
+    }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
     @include m.mq(sp) {}
 
 }
 
-// .section__parts__design07__left {
-//     width: 50%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
+.section__parts__design07__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: design_left;
+    padding: 200px 0;
 
-//     @include m.mq(pc) {}
+    @include m.mq(pc) {
+        padding: 180px 0;
+    }
 
-//     @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {}
 
-//     @include m.mq(tab) {
-//         width: 100%;
-//         gap: 5px;
-//     }
+    @include m.mq(tab) {
+        padding: 0;
+        order: 2;
+    }
 
-//     @include m.mq(sp) {}
-// }
+    @include m.mq(sp) {}
+}
 
 .section__parts__design07__title {
     grid-area: design_title;
@@ -111,7 +125,9 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        font-size: calc(var(--font_size_PC) * 1.8);
+    }
 
     @include m.mq(tab) {
         font-size: calc(var(--font_size_TAB) * 2);
@@ -163,32 +179,20 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__design07__img {
-    grid-area: design_img;
-    max-height: 600px;
+.section__parts__design07__link {
+    margin-top: 40px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {
-        margin-top: 30px;
-        width: 100%;
-    }
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {}
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 }
 
-.section__parts__design07__editor {
-    aspect-ratio: 1.95 / 1;
-    overflow: hidden;
-    width: 57.9%;
+.section__parts__design07__img {
+    grid-area: design_img;
     @include v.borderRadius;
 
     @include m.mq(pc) {}
@@ -196,13 +200,42 @@
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
-        margin-top: 30px;
-        width: 100%;
+        order: 1;
+        aspect-ratio: 1 / 1.3;
     }
 
     @include m.mq(sp) {}
 
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section__parts__design07__editor {
+    grid-area: design_img;
+    overflow: hidden;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 1;
+        aspect-ratio: 1 / 1.3;
+    }
+
+    @include m.mq(sp) {}
+
+    p {
+        height: 100%;
+    }
+
     iframe {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
