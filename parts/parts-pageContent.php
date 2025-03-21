@@ -418,7 +418,7 @@ if (have_rows('content_block')) : $i = 1;
                 </section>
             </div>
 
-        <?php elseif ($block_design_type === 'design06') : ?>
+            <?php elseif (in_array($block_design_type, ['design06', 'design07'])) : ?>
 
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">

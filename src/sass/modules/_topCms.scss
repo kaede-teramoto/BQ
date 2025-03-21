@@ -276,7 +276,7 @@
     grid-template-columns: 260px 1fr 1fr;
     grid-template-rows: 100px 160px;
     grid-template-areas:
-        "post__thumbnail post__cat post__data"
+        "post__thumbnail post__cat post__date"
         "post__thumbnail post__title post__title";
 
     @include m.mq(pc) {
@@ -381,8 +381,8 @@
     }
 }
 
-.top-cms01__post__data {
-    grid-area: post__data;
+.top-cms01__post__date {
+    grid-area: post__date;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -668,7 +668,7 @@
     grid-template-columns: 260px 1fr;
     grid-template-rows: 60px 60px;
     grid-template-areas:
-        "post__cat post__data"
+        "post__cat post__date"
         "post__title post__title";
 
     @include m.mq(pc) {
@@ -744,7 +744,7 @@
     }
 }
 
-.top-cms02__post__data {
+.top-cms02__post__date {
     text-align: end;
 
     @include m.mq(pc) {}
@@ -1110,7 +1110,7 @@
     @include m.mq(sp) {}
 }
 
-.top-cms03__post__data {
+.top-cms03__post__date {
     font-size: 1.2rem;
     font-weight: 700;
 
@@ -1458,7 +1458,7 @@
 //     }
 // }
 
-// .top-cms04__post__data {
+// .top-cms04__post__date {
 //     grid-area: post_date;
 //     font-size: 1.2rem;
 //     font-weight: 700;
@@ -1683,7 +1683,7 @@
     grid-template-rows: 274px 34px;
     grid-template-areas:
         "post__thumbnail post__title"
-        "post__thumbnail post__data";
+        "post__thumbnail post__date";
     position: relative;
 
     @include m.mq(pc) {
@@ -1779,8 +1779,8 @@
     @include m.mq(sp) {}
 }
 
-.top-cms05__post__data {
-    grid-area: post__data;
+.top-cms05__post__date {
+    grid-area: post__date;
 
     @include m.mq(pc) {}
 
@@ -2111,7 +2111,7 @@
     }
 }
 
-.top-cms06__post__data {
+.top-cms06__post__date {
     display: none;
 
     @include m.mq(pc) {}
@@ -2418,7 +2418,7 @@ cms07
     }
 }
 
-.top-cms07__post__data {
+.top-cms07__post__date {
     order: 1;
     color: var(--main_color);
     font-size: 1.2rem;
@@ -2728,7 +2728,7 @@ cms07
     }
 }
 
-.top-cms08__post__data {
+.top-cms08__post__date {
     display: flex;
     align-items: center;
     order: 1;

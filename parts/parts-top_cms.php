@@ -103,7 +103,7 @@ if ($cms_design == 03) : ?>
                                                 }
                                                 ?>
                                             </div>
-                                            <div class="top-cms__post__data top-cms03__post__data"><?php the_time('Y.m.d'); ?></div>
+                                            <div class="top-cms__post__date top-cms03__post__date"><?php the_time('Y.m.d'); ?></div>
                                         </div>
                                     </a>
                                 </div>
@@ -208,7 +208,7 @@ if ($cms_design == 03) : ?>
                                 <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
                                     <?php cat_link(); ?>
                                 </div>
-                                <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                <div class="top-cms__post__date top-cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
                                 <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
                                     <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
                                         <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
@@ -253,7 +253,7 @@ if ($cms_design == 03) : ?>
                                     <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
                                         <?php the_category(' '); ?>
                                     </div>
-                                    <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                    <div class="top-cms__post__date top-cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
                                     <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
                                         <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
                                             <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
@@ -334,7 +334,7 @@ if ($cms_design == 03) : ?>
                                 <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
                                     <?php cat_link(); ?>
                                 </div>
-                                <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                <div class="top-cms__post__date top-cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
                                 <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
                                     <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
                                         <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
@@ -379,7 +379,7 @@ if ($cms_design == 03) : ?>
                                     <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
                                         <?php the_category(' '); ?>
                                     </div>
-                                    <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                                    <div class="top-cms__post__date top-cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
                                     <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
                                         <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
                                             <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
@@ -447,7 +447,7 @@ if ($cms_design == 03) : ?>
                             <div class="top-cms__post__cat top-cms<?php echo $cms_design; ?>__post__cat">
                                 <?php cat_link(); ?>
                             </div>
-                            <div class="top-cms__post__data top-cms<?php echo $cms_design; ?>__post__data"><?php the_time('Y.m.d'); ?></div>
+                            <div class="top-cms__post__date top-cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
                             <div class="top-cms__post__title top-cms<?php echo $cms_design; ?>__post__title">
                                 <a class="top-cms__post__link top-cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
                                     <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
