@@ -20,9 +20,7 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {
-        width: 90%;
-    }
+    @include m.mq(miniPc) {}
 
     @include m.mq(tab) {}
 
@@ -52,58 +50,71 @@
 }
 
 .section__parts__wrapper__design08 {
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        gap: 80px;
+    }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        gap: 60px;
+    }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        gap: 50px;
+    }
 }
 
 .section__parts__design08 {
     display: grid;
-    gap: 20px 50px;
-    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+    grid-template-columns: 50% auto;
     grid-template-rows: auto;
     grid-template-areas:
-        "design_img design_title"
-        "design_img design_subtitle"
-        "design_img design_text"
-        "design_img design_btn";
+        "design_img design_left";
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        gap: 150px;
+    }
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        gap: 80px;
+    }
 
     @include m.mq(tab) {
         display: flex;
         flex-direction: column;
+        gap: 30px;
     }
 
     @include m.mq(sp) {}
 
 }
 
-// .section__parts__design08__left {
-//     width: 50%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
+.section__parts__design08__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: design_left;
+    padding: 200px 0;
 
-//     @include m.mq(pc) {}
+    @include m.mq(pc) {
+        padding: 180px 0;
+    }
 
-//     @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {}
 
-//     @include m.mq(tab) {
-//         width: 100%;
-//         gap: 5px;
-//     }
+    @include m.mq(tab) {
+        padding: 0;
+        order: 2;
+    }
 
-//     @include m.mq(sp) {}
-// }
+    @include m.mq(sp) {}
+}
 
 .section__parts__design08__title {
     grid-area: design_title;
@@ -114,12 +125,13 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        font-size: calc(var(--font_size_PC) * 1.8);
+    }
 
     @include m.mq(tab) {
         font-size: calc(var(--font_size_TAB) * 2);
         line-height: 1;
-        order: 1;
     }
 
     @include m.mq(sp) {
@@ -129,17 +141,15 @@
 
 .section__parts__design08__subtitle {
     grid-area: design_subtitle;
-    font-size: 90%;
+    font-size: 1.6rem;
+    color: var(--base_color);
     margin-top: 10px;
-    color: var(--main_color);
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {
-        order: 2;
-    }
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {}
 }
@@ -154,7 +164,6 @@
 
     @include m.mq(tab) {
         padding-top: 10px;
-        order: 4;
     }
 
     @include m.mq(sp) {}
@@ -170,47 +179,20 @@
     @include m.mq(sp) {}
 }
 
+.section__parts__design08__link {
+    margin-top: 40px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
 .section__parts__design08__img {
     grid-area: design_img;
-    max-height: 600px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        margin-top: 30px;
-        width: 100%;
-        order: 3;
-
-    }
-
-    @include m.mq(sp) {}
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-}
-
-.section__parts__design08__link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        order: 5;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.section__parts__design08__editor {
-    aspect-ratio: 1.95 / 1;
-    overflow: hidden;
-    width: 57.9%;
     @include v.borderRadius;
 
     @include m.mq(pc) {}
@@ -218,13 +200,42 @@
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
-        margin-top: 30px;
-        width: 100%;
+        order: 1;
+        aspect-ratio: 1 / 1.3;
     }
 
     @include m.mq(sp) {}
 
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.section__parts__design08__editor {
+    grid-area: design_img;
+    overflow: hidden;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        order: 1;
+        aspect-ratio: 1 / 1.3;
+    }
+
+    @include m.mq(sp) {}
+
+    p {
+        height: 100%;
+    }
+
     iframe {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }

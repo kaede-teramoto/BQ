@@ -418,7 +418,7 @@ if (have_rows('content_block')) : $i = 1;
                 </section>
             </div>
 
-            <?php elseif (in_array($block_design_type, ['design06', 'design07'])) : ?>
+            <?php elseif (in_array($block_design_type, ['design06', 'design10'])) : ?>
 
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
@@ -499,35 +499,37 @@ if (have_rows('content_block')) : $i = 1;
                     <?php endif; ?>
                 </div>
             </section>
-        <?php elseif ($block_design_type === 'design07' || $block_design_type === 'design08') : ?>
 
-            <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
-                <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
+            <?php elseif (in_array($block_design_type, ['design07', 'design08'])) : ?>
 
-                    <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
-                        <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
+        <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
+            <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
 
-                            <?php if (get_sub_field('block_title_image')) : ?>
-                                <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
-                                    <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
-                                </div>
-                            <?php endif; ?>
+                <?php if (get_sub_field('block_title') || get_sub_field('block_title_image') || get_sub_field('block_subtitle')) : ?>
+                    <h2 class="js-fadeIn section__block__title section__block__title<?php echo $content_title_setting; ?> section__<?php echo $block_design_type; ?>__block-title" style="<?php echo $title_color_set; ?><?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
 
-                            <?php if (get_sub_field('block_title')) : ?>
-                                <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text"><?php the_sub_field('block_title'); ?></span>
-                            <?php endif; ?>
+                        <?php if (get_sub_field('block_title_image')) : ?>
+                            <div class="section__block__title__image section__block__title<?php echo $content_title_setting; ?>__image section__<?php echo $block_design_type; ?>__block-title__image">
+                                <img src="<?php the_sub_field('block_title_image'); ?>" alt="" loading="lazy">
+                            </div>
+                        <?php endif; ?>
 
-                            <?php if (get_sub_field('block_subtitle')) : ?>
-                                <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle section__<?php echo $block_design_type; ?>__block-subtitle"><?php the_sub_field('block_subtitle'); ?></span>
-                            <?php endif; ?>
-                        </h2>
-                    <?php endif; ?>
+                        <?php if (get_sub_field('block_title')) : ?>
+                            <span class="section__block__title__text section__block__title<?php echo $content_title_setting; ?>__text"><?php the_sub_field('block_title'); ?></span>
+                        <?php endif; ?>
 
-                    <?php if (have_rows('block_parts')) : ?>
-                        <div class="section__parts__wrapper section__parts__wrapper__<?php echo $block_design_type; ?>" style="<?php echo $text_color_set; ?>">
-                            <?php while (have_rows('block_parts')) : the_row(); ?>
-                                <div class="section__parts section__parts__<?php echo $block_design_type; ?> js-fadeIn">
+                        <?php if (get_sub_field('block_subtitle')) : ?>
+                            <span class="section__block__title--subtitle section__block__title<?php echo $content_title_setting; ?>--subtitle section__<?php echo $block_design_type; ?>__block-subtitle"><?php the_sub_field('block_subtitle'); ?></span>
+                        <?php endif; ?>
+                    </h2>
+                <?php endif; ?>
 
+                <?php if (have_rows('block_parts')) : ?>
+                    <div class="section__parts__wrapper section__parts__wrapper__<?php echo $block_design_type; ?>" style="<?php echo $text_color_set; ?>">
+                        <?php while (have_rows('block_parts')) : the_row(); ?>
+                            <div class="section__parts section__parts__<?php echo $block_design_type; ?> js-fadeIn">
+
+                                <div class="section__parts__left section__parts__<?php echo $block_design_type; ?>__left js-fadeIn">
                                     <?php if (get_sub_field('block_parts_title')) : ?>
                                         <h3 class="section__parts__title section__parts__<?php echo $block_design_type; ?>__title js-toggle" style="<?php echo $title_color_set; ?>"><?php the_sub_field('block_parts_title'); ?><span class="versatile"></span></h3>
                                     <?php endif; ?>
@@ -560,27 +562,29 @@ if (have_rows('content_block')) : $i = 1;
                                         <?php endif; ?>
 
                                     <?php endif; ?>
-
-                                    <?php if (get_sub_field('block_parts_editor')) : ?>
-                                        <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
-                                    <?php elseif (get_sub_field('block_parts_image')) : ?>
-                                        <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
-                                            <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
-                                        </div>
-                                    <?php endif; ?>
-
                                 </div>
-                            <?php endwhile; ?>
-                        </div>
-                    <?php endif; ?>
 
-                    <?php if (get_sub_field('block_free_area')) : ?>
-                        <div class="section__block__lib section__<?php echo $block_design_type; ?>__block__lib js-fadeIn">
-                            <?php the_sub_field('block_free_area'); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </section>
+                                <?php if (get_sub_field('block_parts_editor')) : ?>
+                                    <div class="section__parts__editor section__parts__<?php echo $block_design_type; ?>__editor js-target"><?php the_sub_field('block_parts_editor'); ?></div>
+                                <?php elseif (get_sub_field('block_parts_image')) : ?>
+                                    <div class="section__parts__img section__parts__<?php echo $block_design_type; ?>__img">
+                                        <img src="<?php the_sub_field('block_parts_image'); ?>" alt="<?php the_sub_field('block_parts_subtitle'); ?>" loading="lazy">
+                                    </div>
+                                <?php endif; ?>
+
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (get_sub_field('block_free_area')) : ?>
+                    <div class="section__block__lib section__<?php echo $block_design_type; ?>__block__lib js-fadeIn">
+                        <?php the_sub_field('block_free_area'); ?>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+        </section>
 
         <?php elseif ($block_design_type === 'design15') : ?>
 

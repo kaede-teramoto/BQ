@@ -6,7 +6,6 @@
  ----------------------------------------------------------------------------------------------- */
 
 .section__design13 {
-    @include v.conWidth;
 
     @include m.mq(pc) {}
 
@@ -18,14 +17,19 @@
 }
 
 .section__design13__inner {
+    width: 100%;
+    padding-inline: 100px;
+    @include v.conWidth;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        padding-inline: 60px;
+    }
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
+    @include m.mq(tab) {
+        padding-inline: 0;
+    }
 }
 
 .section__design13__block-title {
@@ -57,11 +61,11 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
+    @include m.mq(miniPc) {
         gap: 20px;
     }
+
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {}
 }
@@ -80,19 +84,23 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
+    @include m.mq(miniPc) {
         width: 100%;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .section__parts__design13__title {
     grid-area: parts_title;
     padding: 20px 20px 0;
     font-size: 150%;
+    font-weight: 700;
     color: var(--text_color);
 
     @include m.mq(pc) {}
@@ -103,7 +111,10 @@
         padding: 10px 20px 0;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        order: 2;
+        padding: 15px 20px 0;
+    }
 }
 
 .section__parts__design13__subtitle {
@@ -120,7 +131,9 @@
         padding: 5px 20px 10px;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        order: 4;
+    }
 }
 
 .section__parts__design13__text {
@@ -135,7 +148,9 @@
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        order: 3;
+    }
 }
 
 .versatile {
@@ -148,7 +163,8 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__design13__img {
+.section__parts__design13__img,
+.section__parts__design13__editor {
     grid-area: parts_img;
 
     @include m.mq(pc) {}
@@ -157,11 +173,25 @@
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        order: 1;
+        aspect-ratio: 1.5 / 1;
+        max-height: 230px;
+    }
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+
+    p,
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.section__parts__design13__link {
+    display: none;
 }
