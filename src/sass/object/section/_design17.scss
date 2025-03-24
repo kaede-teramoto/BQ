@@ -6,7 +6,6 @@
  ----------------------------------------------------------------------------------------------- */
 
 .section__design17 {
-    @include v.conWidth;
 
     @include m.mq(pc) {}
 
@@ -18,7 +17,9 @@
 }
 
 .section__design17__inner {
-    padding-inline: 80px;
+    width: 100%;
+    padding-inline: 100px;
+    @include v.conWidth;
 
     @include m.mq(pc) {
         padding-inline: 60px;
@@ -29,8 +30,6 @@
     @include m.mq(tab) {
         padding-inline: 0;
     }
-
-    @include m.mq(sp) {}
 }
 
 .section__design17__block-title {
@@ -58,18 +57,16 @@
 .section__parts__wrapper__design17 {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 30px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {
-        gap: 20px;
-    }
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {
-        gap: 15px;
+        gap: 25px;
     }
 }
 
@@ -157,6 +154,8 @@
     grid-area: parts_text;
     line-height: 2.0;
     font-weight: 600;
+    display: flex;
+    align-items: center;
 
     @include m.mq(pc) {}
 
@@ -183,59 +182,38 @@
 }
 
 .section__parts__design17__img {
-    grid-area: parts_img;
-    margin: 60px 0;
-    @include v.borderRadius;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        margin: 50px 0;
-    }
-
-    @include m.mq(tab) {
-        margin: 40px 0 30px;
-        aspect-ratio: 3 / 1.5;
-        order: 5;
-    }
-
-    @include m.mq(sp) {
-        margin: 30px 0;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-.section__parts__design17__link {
-    grid-area: parts_btn;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-top: 30px;
+    display: none;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {
-        order: 4;
-    }
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+}
+
+.section__parts__design17__link {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {}
 }
 
 .section__parts__design17__editor {
+    display: none;
+
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {
-        order: 6;
-    }
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {}
 }
