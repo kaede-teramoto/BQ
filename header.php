@@ -148,8 +148,8 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                             <div class="header<?php echo $header_design; ?>__wrapper__logo">
                                 <?php
                                 /*----------------------------------------------------------------------
-                        ロゴ画像が登録されていた場合
-                        ----------------------------------------------------------------------*/
+                            ロゴ画像が登録されていた場合
+                            ----------------------------------------------------------------------*/
                                 $header_logo_img = esc_url(get_theme_mod('header_logo_image'));
                                 if (!empty($header_logo_img)) : ?>
 
@@ -159,16 +159,16 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
 
                                 <?php else :
                                     /*----------------------------------------------------------------------
-                            ロゴ画像が登録されていなかった場合
-                            ----------------------------------------------------------------------*/
+                                ロゴ画像が登録されていなかった場合
+                                ----------------------------------------------------------------------*/
                                 ?>
                                     <!-- site_title -->
                                     <a href='<?php echo $site_url; ?>' title='<?php echo $site_name; ?>' rel='home'><?php echo $site_name; ?></a>
                                     <!-- //site_title -->
                                 <?php endif;
                                 /*----------------------------------------------------------------------
-                        ロゴ画像部分ここまで
-                        ----------------------------------------------------------------------*/
+                            ロゴ画像部分ここまで
+                            ----------------------------------------------------------------------*/
                                 ?>
                             </div>
                             <div class="header__wrapper__nav header<?php echo $header_design; ?>__wrapper__nav">
@@ -188,40 +188,45 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                     </nav>
                                 <?php endif; ?>
 
-                                <?php if ($btn_display_setting) : ?>
-                                    <?php if ($btn_target_setting) : ?>
-                                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
-                                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
-                                            </a>
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
-                                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
-                                            </a>
-                                        </div>
-                                    <?php endif; ?>
-                                <?php endif; ?>
+                                <?php if ($header_design !== '13') : // 13以外のときはボタンをここに表示 
+                                ?>
+                                    <div class="header__wrapper__btn header<?php echo $header_design; ?>__wrapper__btn">
+                                        <?php if ($btn_display_setting) : ?>
+                                            <?php if ($btn_target_setting) : ?>
+                                                <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                    </a>
+                                                </div>
+                                            <?php else : ?>
+                                                <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                    </a>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
 
-                                <?php if ($btn_sub_display_setting) : ?>
-                                    <?php if ($btn_sub_target_setting) : ?>
-                                        <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                            <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
-                                                <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
-                                            </a>
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                            <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
-                                                <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
-                                            </a>
-                                        </div>
-                                    <?php endif; ?>
+                                        <?php if ($btn_sub_display_setting) : ?>
+                                            <?php if ($btn_sub_target_setting) : ?>
+                                                <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                    </a>
+                                                </div>
+                                            <?php else : ?>
+                                                <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                                    <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
+                                                        <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                    </a>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
                                 <?php endif; ?>
 
                                 <div class="hamburger hamburger<?php echo $hm_design; ?> header<?php echo $header_design; ?>__hamburger<?php echo $hm_design; ?>  js-hm-toggle">
@@ -234,6 +239,47 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
 
                                 <?php get_template_part('parts/parts', 'hMenu'); ?>
                             </div>
+
+                            <?php if ($header_design === '13') : // 13のときはボタンを外に表示 
+                            ?>
+                                <div class="header__wrapper__btn header<?php echo $header_design; ?>__wrapper__btn">
+                                    <?php if ($btn_display_setting) : ?>
+                                        <?php if ($btn_target_setting) : ?>
+                                            <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                                <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
+                                                    <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                </a>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
+                                                <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
+                                                    <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($btn_sub_display_setting) : ?>
+                                        <?php if ($btn_sub_target_setting) : ?>
+                                            <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                                <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
+                                                    <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                </a>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
+                                                <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
+                                                    <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
                             </div>
                         </header>
 

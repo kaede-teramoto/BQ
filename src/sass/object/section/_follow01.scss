@@ -14,10 +14,25 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
+    .section__parts__follow01+.section__parts {
+        margin-top: 70px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 50px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
 }
 
 .section__follow01__inner {
     @include v.conWidth;
+    max-width: 1100px;
 
     @include m.mq(pc) {}
 
@@ -38,7 +53,10 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        padding-top: 30px;
+        border-top: 2px solid var(--main_color);
+    }
 
     @include m.mq(sp) {}
 }
@@ -47,12 +65,18 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    border-top: 2px solid var(--main_color);
+    padding-top: 40px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        flex-direction: column;
+        border-top: unset;
+        padding-top: 0;
+    }
 
     @include m.mq(sp) {}
 }
@@ -64,10 +88,15 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        width: 230px;
+    }
 
     @include m.mq(tab) {
-        display: none;
+        position: relative;
+        top: 0;
+        width: 100%;
+        padding-bottom: 60px;
     }
 
     @include m.mq(sp) {}
@@ -75,13 +104,15 @@
 
 .section__parts__nav__link__follow01 {
     display: block;
-    padding: 10px 20px 10px 50px;
+    padding: 15px 20px 15px 50px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        font-size: 1.4rem;
+    }
 
     @include m.mq(sp) {}
 
@@ -96,12 +127,9 @@
     &.current {
         font-weight: bold;
         font-size: 110%;
-        background-color: #f0f0f0;
-
-        &::before {}
+        background-color: var(--base_color);
+        color: var(--main_color);
     }
-
-
 }
 
 .section__parts__nav__follow01 {
@@ -129,6 +157,8 @@
 .section__parts__nav__item__follow01 {
     counter-increment: follow_nav;
     position: relative;
+    border: 1px solid var(--base_color);
+    margin-top: -1px;
 
     @include m.mq(pc) {}
 
@@ -140,11 +170,13 @@
 }
 
 .section__parts__content__wrapper__follow01 {
-    width: calc(100% - 300px);
+    width: calc(100% - 350px);
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        width: calc(100% - 300px);
+    }
 
     @include m.mq(tab) {
         width: 100%;
@@ -154,6 +186,15 @@
 }
 
 .section__parts__follow01 {
+    display: grid;
+    grid-template-columns: 45px auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "parts_sub parts_main"
+        "parts_text parts_text"
+        "parts_link parts_link"
+        "parts_img parts_img";
+    gap: 10px;
 
     @include m.mq(pc) {}
 
@@ -169,10 +210,15 @@
 }
 
 .section__parts__follow01__title {
+    grid-area: parts_main;
+    font-size: calc(var(--font_size_PC) * 1.5);
+    color: var(--text_color);
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        font-size: calc(var(--font_size_PC) * 1.3);
+    }
 
     @include m.mq(tab) {}
 
@@ -180,17 +226,32 @@
 }
 
 .section__parts__follow01__subtitle {
+    grid-area: parts_sub;
+    color: var(--main_color);
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--main_color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+    font-weight: 600;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        font-size: 1.4rem;
+    }
 
     @include m.mq(sp) {}
 }
 
 .section__parts__follow01__text {
+    grid-area: parts_text;
+    margin-top: 10px;
 
     @include m.mq(pc) {}
 
@@ -202,6 +263,21 @@
 }
 
 .section__parts__follow01__img {
+    grid-area: parts_img;
+    margin-top: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__follow01__link {
+    grid-area: parts_link;
+    margin-top: 20px;
 
     @include m.mq(pc) {}
 
