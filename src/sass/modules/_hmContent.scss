@@ -424,6 +424,7 @@
 
     @include m.mq(sp) {
         width: 50vw;
+        min-width: 200px;
     }
 }
 
@@ -446,15 +447,22 @@
 .hm__sns {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    margin-right: 10px;
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        gap: 10px;
+        margin-right: 5px;
+    }
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
 .hm__sns__link {
@@ -660,8 +668,6 @@
             display: inline-block;
             @include v.titleH6;
         }
-
-
     }
 
     .hm01__nav__list {
@@ -833,20 +839,48 @@
 
     .hm01__externalLink {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     .hm01__btn--first {
         order: 1;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            width: 100%;
+        }
     }
 
     .hm01__btn--second {
         order: 2;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            width: 100%;
+        }
     }
 
     .hm01__sns {
-        order: 3;
         justify-content: center;
         height: 50px;
 
@@ -939,7 +973,7 @@
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
-        width: 70%;
+        width: 80%;
     }
 
     @include m.mq(sp) {
@@ -1835,12 +1869,7 @@
     .hm__logo {
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        @include m.mq(miniPc) {}
 
         @include m.mq(tab) {}
 
@@ -1851,10 +1880,7 @@
 
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {
-            flex-direction: column;
-            gap: 20px;
-        }
+        @include m.mq(miniPc) {}
 
         @include m.mq(tab) {}
 
@@ -1864,9 +1890,7 @@
     .hm__sns {
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {
-            justify-content: center;
-        }
+        @include m.mq(miniPc) {}
 
         @include m.mq(tab) {}
 
@@ -1875,18 +1899,7 @@
 }
 
 .hm05__img__wrapper {
-    @include m.mq(pc) {
-        /*
-        &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, .4);
-        }*/
-    }
+    @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
@@ -1898,12 +1911,7 @@
 }
 
 .hm05__img {
-    @include m.mq(pc) {
-        /*
-        height: 660px;
-        z-index: 100;
-        position: absolute;*/
-    }
+    @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
@@ -1970,7 +1978,7 @@
     .sub-menu {
         a {
             color: var(--header_text_color);
-            @include v.titleH7;
+            @include v.defaultText;
         }
     }
 }
@@ -2186,7 +2194,7 @@
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
-        width: 70%;
+        width: 80%;
     }
 
     @include m.mq(sp) {
@@ -2243,7 +2251,7 @@
     .sub-menu {
         a {
             color: var(--header_text_color);
-            @include v.titleH7;
+            @include v.defaultText;
         }
     }
 }
@@ -2698,7 +2706,7 @@
     @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
-        width: 70%;
+        width: 80%;
     }
 
     @include m.mq(sp) {

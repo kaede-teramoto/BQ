@@ -27,6 +27,11 @@
             border-color: var(--text_color);
         }
     }
+
+    .cat__link,
+    .top-cms__post__date {
+        font-size: 1.2rem;
+    }
 }
 
 /*  -----------------------------------------------------------------------------------------------
@@ -43,37 +48,13 @@
     @include m.mq(sp) {}
 }
 
-.top-cms01 {
-    gap: 30px;
-    display: grid;
-    grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-rows: 300px 100px auto;
-    grid-template-areas:
-        "cms_cat cms_list"
-        "cms_link cms_list"
-        "cms_link cms_list";
-
-    @include v.conWidth;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        @include v.columnFlex;
-        gap: 20px;
-    }
-
-    @include m.mq(sp) {}
-}
-
 .home .top-cms01 {
     gap: 30px;
     display: grid;
     grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-rows: 180px 300px 100px auto;
+    grid-template-rows: auto 300px 100px auto;
     grid-template-areas:
-        "cms_title cms_list"
+        "cms_title cms_title"
         "cms_cat cms_list"
         "cms_link cms_list"
         "cms_link cms_list";
@@ -82,7 +63,10 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        grid-template-columns: 250px calc(100% - calc(250px + 30px));
+        grid-template-rows: auto 250px 100px auto;
+    }
 
     @include m.mq(tab) {
         @include v.columnFlex;
@@ -137,6 +121,7 @@
 
 .top-cms01__cat {
     grid-area: cms_cat;
+    padding-top: 10px;
 
     @include m.mq(pc) {}
 
@@ -368,6 +353,8 @@
         padding: 3px 20px;
         border-radius: 50px;
         background-color: var(--base_color);
+        line-height: 1.5;
+        font-size: 1.2rem;
 
         @include m.mq(pc) {}
 
@@ -386,6 +373,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    font-size: 1.2rem;
 
     @include m.mq(pc) {}
 
@@ -425,34 +413,11 @@
     @include m.mq(sp) {}
 }
 
-.top-cms02 {
-    gap: 30px;
-    display: grid;
-    grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-rows: 300px 100px auto;
-    grid-template-areas:
-        "cms_cat cms_list"
-        "cms_link cms_list"
-        "cms_link cms_list";
-    @include v.conWidth;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        @include v.columnFlex;
-        gap: 20px;
-    }
-
-    @include m.mq(sp) {}
-}
-
 .home .top-cms02 {
     gap: 30px;
     display: grid;
     grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-rows: 90px 300px 100px auto;
+    grid-template-rows: auto 300px 100px auto;
     grid-template-areas:
         "cms_title cms_title"
         "cms_cat cms_list"
@@ -462,7 +427,10 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        grid-template-columns: 250px calc(100% - calc(250px + 30px));
+        grid-template-rows: auto 250px 100px auto;
+    }
 
     @include m.mq(tab) {
         @include v.columnFlex;
@@ -473,6 +441,7 @@
 }
 
 .top-cms02__title {
+    grid-area: cms_title;
     vertical-align: top;
 
     @include m.mq(pc) {}
@@ -514,7 +483,7 @@
 
 .top-cms02__cat {
     grid-area: cms_cat;
-    padding-top: 40px;
+    padding-top: 30px;
 
     @include m.mq(pc) {}
 
@@ -661,33 +630,27 @@
 }
 
 .top-cms02__post {
-    padding: 40px 0 60px;
+    padding: 50px 0;
     width: 100%;
     display: grid;
-    gap: 0 35px;
-    grid-template-columns: 260px 1fr;
-    grid-template-rows: 60px 60px;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "post__cat post__date"
         "post__title post__title";
 
-    @include m.mq(pc) {
-        grid-template-columns: 230px 1fr;
-    }
+    @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        gap: 0 25px;
-        grid-template-columns: 200px 1fr;
-        grid-template-rows: 50px 40px;
+    @include m.mq(miniPc) {
         padding: 40px 0;
+        gap: 15px;
     }
+
+    @include m.mq(tab) {}
 
     @include m.mq(sp) {
-        gap: 0 20px;
-        grid-template-columns: 200px 1fr;
-        grid-template-rows: 40px auto;
+        padding: 30px 0;
     }
 
     &+.top-cms02__post {
@@ -798,6 +761,21 @@
 
     .swiper {
         overflow: visible; // 1.はみ出させるように visible で上書き
+        margin-right: 2%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-right: clamp(100px, 16%, 200px);
+        }
+
+        @include m.mq(tab) {
+            margin-right: 18%;
+        }
+
+        @include m.mq(sp) {
+            margin-right: 10%;
+        }
     }
 
     .swiper-slide {
@@ -1076,6 +1054,7 @@
 .top-cms03__post__link {
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: column;
     justify-content: space-between;
 
@@ -1192,6 +1171,11 @@
     @include m.mq(sp) {
         margin-bottom: 20px;
     }
+
+    .section__block__title {
+        display: flex;
+        align-items: flex-start;
+    }
 }
 
 .top-cms04__title--main {
@@ -1235,17 +1219,50 @@
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        order: 3;
+        margin-top: 30px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
 }
 
 .top-cms04__content {
     grid-area: cms_list;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        order: 2;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
 }
 
 .top-cms04__list.tab__panel {
     display: none;
     flex-wrap: wrap;
-    gap: 50px 20px;
+    gap: 60px 40px;
     @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        gap: 50px 30px;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        gap: 40px;
+    }
 
     &.--active {
         display: flex;
@@ -1253,12 +1270,35 @@
 }
 
 .top-cms04__post {
-    width: calc(calc(100% - 40px) / 3);
+    width: calc(calc(100% - 80px) / 3);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "post__thumbnail post__thumbnail"
+        "post__title post__title"
+        "post__cat post__date";
+    gap: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        width: calc(calc(100% - 30px) / 2);
+    }
+
+    @include m.mq(tab) {
+        width: 100%;
+    }
+
+    @include m.mq(sp) {
+        gap: 15px;
+    }
 }
 
 .top-cms04__post__link {
     display: block;
     width: 100%;
+    height: 100%;
     overflow: hidden;
     cursor: pointer;
     @include v.borderRadius;
@@ -1270,239 +1310,75 @@
     }
 }
 
-.top-cms04__post__cat {}
+.top-cms04__post__thumbnail {
+    grid-area: post__thumbnail;
+    aspect-ratio: 9 / 5;
 
-// .top-cms04__content {
-//     grid-area: cms_list;
-//     display: flex;
-//     height: 450px;
-//     flex-wrap: wrap;
-//     @include v.conWidth;
+    @include m.mq(pc) {}
 
-//     @include m.mq(pc) {}
+    @include m.mq(miniPc) {}
 
-//     @include m.mq(miniPc) {
-//         height: auto;
-//         width: 100%;
-//         order: 2;
-//         flex-direction: column;
-//     }
+    @include m.mq(tab) {}
 
-//     @include m.mq(tab) {}
+    @include m.mq(sp) {}
+}
 
-//     @include m.mq(sp) {}
-// }
+.top-cms04__post__cat {
+    grid-area: post__cat;
+    width: fit-content;
 
-// .top-cms04__cat__list {
 
-//     @include m.mq(pc) {}
+    @include m.mq(pc) {}
 
-//     @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {}
 
-//     @include m.mq(tab) {}
+    @include m.mq(tab) {}
 
-//     @include m.mq(sp) {}
+    @include m.mq(sp) {}
 
-// }
+    a {
+        padding: 3px 20px;
+        border-radius: 50px;
+        background-color: var(--base_color);
+        line-height: 1.5;
 
-// .top-cms04__link {
-//     grid-area: cms_link;
-//     display: flex;
-//     justify-content: flex-end;
-//     align-items: center;
+        @include m.mq(pc) {}
 
-//     @include m.mq(pc) {}
+        @include m.mq(miniPc) {
+            padding: 3px 10px;
+        }
 
-//     @include m.mq(miniPc) {
-//         width: 100%;
-//         order: 3;
+        @include m.mq(tab) {}
 
-//         .c-btn {
-//             margin: 0 auto;
-//         }
-//     }
+        @include m.mq(sp) {}
+    }
+}
 
-//     @include m.mq(tab) {}
+.top-cms04__post__date {
+    grid-area: post__date;
+    display: flex;
+    align-items: center;
 
-//     @include m.mq(sp) {}
+    @include m.mq(pc) {}
 
-// }
+    @include m.mq(miniPc) {}
 
-// .top-cms04__list {
-//     display: none;
+    @include m.mq(tab) {}
 
-//     &:first-of-type {
-//         display: flex;
-//     }
-// }
+    @include m.mq(sp) {}
+}
 
+.top-cms04__post__title {
+    grid-area: post__title;
 
+    @include m.mq(pc) {}
 
-// .top-cms04__list.tab__panel.--active {
-//     display: flex;
+    @include m.mq(miniPc) {}
 
-//     @include m.mq(pc) {}
+    @include m.mq(tab) {}
 
-//     @include m.mq(miniPc) {
-//         flex-direction: column;
-//         width: 100%;
-//     }
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-
-// }
-
-// .top-cms04 {
-
-//     @include m.mq(pc) {}
-
-//     @include m.mq(miniPc) {}
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-// }
-
-// .top-cms04__post {
-//     width: 470px;
-//     height: 402px;
-//     margin: 0 20px;
-//     position: relative;
-//     display: grid;
-//     grid-template-columns: 151px calc(100% - 151px);
-//     grid-template-rows: 275px 95px 32px;
-//     grid-template-areas:
-//         "post_thumbnail post_thumbnail"
-//         "post_title post_title"
-//         "post_cat post_date";
-
-//     @include m.mq(pc) {
-//         width: 337px;
-//     }
-
-//     @include m.mq(miniPc) {
-//         width: 100%;
-//         margin: 0;
-//         height: 418px;
-//         grid-template-rows: 264px 81px 72px;
-//     }
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-
-//     &:hover {
-//         transition: all 0.5s;
-
-//         .top-cms04__post__title a {
-//             color: var(--main_color);
-//         }
-//     }
-// }
-
-// .top-cms04__post__thumbnail {
-//     height: 275px;
-//     overflow: hidden;
-//     grid-area: post_thumbnail;
-
-//     @include m.mq(pc) {}
-
-//     @include m.mq(miniPc) {
-//         height: 264px;
-//     }
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-// }
-
-// .top-cms04__post__link {
-//     display: block;
-//     height: 250px;
-
-//     @include m.mq(pc) {}
-
-//     @include m.mq(miniPc) {
-//         height: 242px;
-//     }
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-
-//     img {
-//         object-fit: cover;
-//         object-position: 50% 50%;
-//         height: 100%;
-//         width: 100%;
-//     }
-// }
-
-// .top-cms04__post__cat {
-//     grid-area: post_cat;
-//     font-size: 1.2rem;
-//     font-weight: 700;
-
-//     @include m.mq(pc) {}
-
-//     @include m.mq(miniPc) {}
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-
-//     a {
-//         color: var(--text_color);
-//         padding: 4px 28px;
-//         border: 1px solid;
-//         border-color: var(--text_color);
-//         border-radius: 20px;
-//     }
-// }
-
-// .top-cms04__post__date {
-//     grid-area: post_date;
-//     font-size: 1.2rem;
-//     font-weight: 700;
-
-//     @include m.mq(pc) {}
-
-//     @include m.mq(miniPc) {}
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-// }
-
-// .top-cms04__post__title {
-//     grid-area: post_title;
-//     font-size: 1.8rem;
-//     font-weight: 600;
-
-//     @include m.mq(pc) {}
-
-//     @include m.mq(miniPc) {
-//         font-size: 1.6rem;
-//     }
-
-//     @include m.mq(tab) {}
-
-//     @include m.mq(sp) {}
-
-//     .top-cms04__post__link {
-//         height: 127px;
-
-//         @include m.mq(miniPc) {
-//             height: 113px;
-//         }
-
-//         @include m.mq(tab) {}
-
-//         @include m.mq(sp) {}
-//     }
-// }
+    @include m.mq(sp) {}
+}
 
 /*  -----------------------------------------------------------------------------------------------
     cms05
@@ -1555,6 +1431,11 @@
 
     @include m.mq(sp) {
         margin-bottom: 20px;
+    }
+
+    .section__block__title {
+        align-items: flex-start;
+        padding-bottom: 0;
     }
 }
 
@@ -1697,16 +1578,13 @@
     @include m.mq(miniPc) {
         width: 100%;
         margin: 0;
-        height: 487px;
         display: flex;
         flex-direction: column;
     }
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {
-        height: 356px;
-    }
+    @include m.mq(sp) {}
 
     &:hover {
         img {
@@ -1727,15 +1605,15 @@
 
     @include m.mq(miniPc) {
         width: 100%;
-        height: 235px;
+        aspect-ratio: 2 / 1;
         order: 1;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     @include m.mq(tab) {}
 
     @include m.mq(sp) {
-        height: 160px;
+        margin-bottom: 10px;
     }
 
     img {
@@ -1814,6 +1692,7 @@
 
     @include m.mq(sp) {
         height: 50px;
+
     }
 
     .top-cms05__post__link {
