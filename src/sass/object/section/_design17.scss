@@ -63,11 +63,11 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        gap: 25px;
+    @include m.mq(tab) {
+        gap: 20px;
     }
+
+    @include m.mq(sp) {}
 }
 
 .section__parts__design17 {
@@ -88,7 +88,7 @@
     }
 
     @include m.mq(miniPc) {
-        padding: 40px 50px;
+        padding: 40px;
         gap: 10px 20px;
     }
 
@@ -96,10 +96,12 @@
         padding: 40px;
         @include v.columnFlex;
         align-items: flex-start;
+        gap: 0;
     }
 
     @include m.mq(sp) {
         padding: 30px;
+
     }
 }
 
@@ -166,6 +168,7 @@
     @include m.mq(tab) {
         order: 3;
         font-size: 1.4rem;
+        margin-top: 10px;
     }
 
     @include m.mq(sp) {}

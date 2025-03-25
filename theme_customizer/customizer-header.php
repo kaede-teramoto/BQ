@@ -95,6 +95,7 @@ function custom_customize_register($wp_customize)
                 '10' => __('Header Type10', 'boutiq'),
                 '11' => __('Header Type11', 'boutiq'),
                 '12' => __('Header Type12', 'boutiq'),
+                '13' => __('Header Type13', 'boutiq'),
             ),
         )
     );
