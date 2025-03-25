@@ -181,14 +181,14 @@ if (!($hm_design_type == 100)) :
                                 <?php endif ?>
 
                                 <?php if ($hm_btn_display) : ?>
-                                    <div class="hm__btn  hm__btn--first">
+                                    <div class="hm__btn  hm__btn--first hm<?php echo $hm_design_type; ?>__btn--first">
                                         <a class="hm__btn__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
                                             <?php echo $hm_btn_text; ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($hm_btn_sub_display) : ?>
-                                    <div class="hm__btn  hm__btn--second">
+                                    <div class="hm__btn  hm__btn--second hm<?php echo $hm_design_type; ?>__btn--second">
                                         <a class="hm__btn__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
                                             <?php echo $hm_btn_sub_text; ?>
                                         </a>
@@ -336,14 +336,14 @@ if (!($hm_design_type == 100)) :
                             <?php endif ?>
 
                             <?php if ($hm_btn_display) : ?>
-                                <div class="hm__btn  hm__btn--first">
+                                <div class="hm__btn  hm__btn--first hm<?php echo $hm_design_type; ?>__btn--first">
                                     <a class="hm__btn__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
                                         <?php echo $hm_btn_text; ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
                             <?php if ($hm_btn_sub_display) : ?>
-                                <div class="hm__btn  hm__btn--second">
+                                <div class="hm__btn  hm__btn--second hm<?php echo $hm_design_type; ?>__btn--second">
                                     <a class="hm__btn__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
                                         <?php echo $hm_btn_sub_text; ?>
                                     </a>
