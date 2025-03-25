@@ -988,6 +988,7 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 20px 20px;
+    order: 3;
 }
 
 // .top-cms03__cat__list {
@@ -1029,6 +1030,7 @@
     position: relative;
     border: solid 1px;
     border-color: rgba(255, 255, 255, 0);
+    display: flex;
 
     &.swiper-slide {
         height: auto;
@@ -1048,6 +1050,7 @@
     aspect-ratio: 8/5;
     margin-bottom: 20px;
     overflow: hidden;
+    order: 1;
 
 
     @include m.mq(pc) {}
@@ -1126,6 +1129,7 @@
 .top-cms03__post__title {
     padding-inline: 20px;
     padding-bottom: 20px;
+    order: 2;
 
     @include m.mq(pc) {}
 
