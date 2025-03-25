@@ -82,15 +82,15 @@ if (!($hm_design_type == 100)) :
                     <div class="hm__content__inner  hm<?php echo $hm_design_type; ?>__content__inner">
 
                         <?php if ($hm_logo_img) : ?>
-                            <div class="hm__logo">
+                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php elseif ($header_logo_img) : ?>
-                            <div class="hm__logo">
+                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php else : ?>
-                            <div class="hm__logo">
+                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><?php echo $site_name; ?></a>
                             </div>
                         <?php endif; ?>
@@ -158,12 +158,12 @@ if (!($hm_design_type == 100)) :
                                 </div>
                             <?php endif; ?>
 
-                            <div class="hm_externalLink">
+                            <div class="hm__externalLink hm<?php echo $hm_design_type; ?>__externalLink">
                                 <?php
                                 $sns = esc_url(get_theme_mod("sns_1", ''));
                                 if ($sns) :
                                 ?>
-                                    <div class="hm__sns">
+                                    <div class="hm__sns hm<?php echo $hm_design_type; ?>__sns">
                                         <?php
                                         for ($i = 1; $i <= 5; $i++) {
 
@@ -300,25 +300,25 @@ if (!($hm_design_type == 100)) :
                         <?php endif; ?>
 
                         <?php if ($hm_logo_img) : ?>
-                            <div class="hm__logo">
+                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php elseif ($header_logo_img) : ?>
-                            <div class="hm__logo">
+                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php else : ?>
-                            <div class="hm__logo">
+                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><?php echo $site_name; ?></a>
                             </div>
                         <?php endif; ?>
 
-                        <div class="hm_externalLink">
+                        <div class="hm__externalLink hm<?php echo $hm_design_type; ?>__externalLink">
                             <?php
                             $sns = esc_url(get_theme_mod("sns_1", ''));
                             if ($sns) :
                             ?>
-                                <div class="hm__sns">
+                                <div class="hm__sns hm<?php echo $hm_design_type; ?>__sns">
                                     <?php
                                     for ($i = 1; $i <= 5; $i++) {
 

@@ -15,19 +15,23 @@ window.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', e => {
             e.preventDefault();
             const targetId = link.hash;
-            const targetElement = document.querySelector(targetId);
 
-            // ターゲット要素の存在を確認
-            if (targetElement) {
-                const targetOffsetTop = window.scrollY + targetElement.getBoundingClientRect().top - 150; // 余白150px追加
-                window.scrollTo({
-                    top: targetOffsetTop,
-                    behavior: "smooth"
-                });
+            // targetId が空でないことを確認
+            if (targetId && targetId !== "#") {
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const targetOffsetTop = window.scrollY + targetElement.getBoundingClientRect().top - 150; // 余白150px追加
+                    window.scrollTo({
+                        top: targetOffsetTop,
+                        behavior: "smooth"
+                    });
+                }
             }
         });
     });
 });
+
 
 // trigger
 document.querySelectorAll('.js-toggle').forEach(toggle => {

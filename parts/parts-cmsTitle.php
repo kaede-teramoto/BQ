@@ -47,6 +47,9 @@ if (is_category()) {
         $subTitle = '';
     }
     $pageSummary = esc_html($post_type_object->description);
+} elseif (is_search()) {
+    $subTitle =  esc_html('「' . get_search_query() . '」の検索結果は' . $wp_query->found_posts . '件');
+    $pageSummary = NULL;
 } else {
     // その他のページ（投稿など）
     $subTitle = get_post_meta($post_id, '_custom_subtitle', true);
@@ -67,6 +70,8 @@ if (is_category()) {
                         taxonomy_term_title();
                     } elseif (is_post_type_archive()) {
                         echo esc_html($page_title);
+                    } elseif (is_search()) {
+                        echo esc_html('Search results');
                     } else {
                         echo esc_html($page_title);
                     }

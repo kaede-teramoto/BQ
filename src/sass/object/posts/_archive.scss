@@ -1561,6 +1561,8 @@
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
+        display: flex;
+        flex-direction: column;
         width: calc(calc(100% - 20px) / 2);
         margin: 0;
     }
@@ -1579,7 +1581,6 @@
     &:nth-child(3n) {
         margin-right: 0;
     }
-
 
     &:first-child,
     &:nth-child(2),
@@ -1645,13 +1646,9 @@
 
             @include m.mq(pc) {}
 
-            @include m.mq(miniPc) {
-                margin-top: 80px;
-            }
+            @include m.mq(miniPc) {}
 
-            @include m.mq(tab) {
-                margin-top: 0;
-            }
+            @include m.mq(tab) {}
 
             @include m.mq(sp) {}
 
@@ -1677,6 +1674,23 @@
             @include m.mq(sp) {}
 
         }
+    }
+
+    &:first-child {
+        border-top: 1px solid var(--base_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            border-top: none;
+        }
+
+        @include m.mq(tab) {
+            padding-top: 20px;
+            border-top: 1px solid var(--base_color);
+        }
+
+        @include m.mq(sp) {}
     }
 
     &:nth-child(3) {

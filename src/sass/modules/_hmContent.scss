@@ -427,7 +427,7 @@
     }
 }
 
-.hm_externalLink {
+.hm__externalLink {
     display: flex;
     gap: 10px;
     margin-top: 20px;
@@ -510,7 +510,6 @@
 // -----------------------------------------------------------------------------------------------
 // type01
 // -----------------------------------------------------------------------------------------------
-
 .hm01 {
     @include m.mq(pc) {}
 
@@ -519,74 +518,87 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
-}
 
-.hm01__inner {
-    display: flex;
 
-    @include m.mq(pc) {}
+    .hm01__inner {
+        display: flex;
 
-    @include m.mq(miniPc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(tab) {
-        @include v.columnFlex;
-        background-color: #ddd;
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            @include v.columnFlex;
+            background-color: #ddd;
+        }
+
+        @include m.mq(sp) {}
     }
 
-    @include m.mq(sp) {}
-}
+    .hm01__img__wrapper {
 
-.hm01__img__wrapper {
+        @include m.mq(pc) {}
 
-    @include m.mq(pc) {}
+        @include m.mq(miniPc) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(tab) {
+            display: none;
+        }
 
-    @include m.mq(tab) {
-        display: none;
+        @include m.mq(sp) {}
     }
 
-    @include m.mq(sp) {}
-}
+    .hm01__img {
+        @include m.mq(pc) {}
 
-.hm01__img {
-    @include m.mq(pc) {}
+        @include m.mq(miniPc) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(tab) {}
 
-    @include m.mq(tab) {}
+        @include m.mq(sp) {}
+    }
 
-    @include m.mq(sp) {}
-}
+    .hm01__content {
+        @include m.mq(pc) {}
 
-.hm01__content {
-    @include m.mq(pc) {}
+        @include m.mq(miniPc) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(tab) {
+            height: 100%;
+        }
 
-    @include m.mq(tab) {
+        @include m.mq(sp) {}
+    }
+
+    .hm01__content__inner {
+        width: 450px;
         height: 100%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 400px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .hm__logo {
+            margin-top: 0px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
     }
 
-    @include m.mq(sp) {}
-}
-
-.hm01__content__inner {
-    width: 450px;
-    height: 100%;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        width: 400px;
-    }
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .hm__logo {
-        margin-top: 0px;
+    .hm01__top {
+        flex-grow: 2;
 
         @include m.mq(pc) {}
 
@@ -596,241 +608,260 @@
 
         @include m.mq(sp) {}
     }
-}
 
-.hm01__top {
-    flex-grow: 2;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.hm01__bottom {
-    margin-top: 80px;
-
-    @include m.mq(pc) {
-        margin-top: 50px;
-        padding-bottom: 60px;
-    }
-
-    @include m.mq(miniPc) {
+    .hm01__bottom {
         margin-top: 80px;
-        padding-bottom: 100px;
+
+        @include m.mq(pc) {
+            margin-top: 50px;
+            padding-bottom: 60px;
+        }
+
+        @include m.mq(miniPc) {
+            margin-top: 80px;
+            padding-bottom: 100px;
+        }
+
+        @include m.mq(tab) {
+            margin-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        @include m.mq(sp) {
+            margin-top: 80px;
+        }
     }
 
-    @include m.mq(tab) {
-        margin-top: 100px;
-        padding-bottom: 80px;
+    .hm01__nav {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
     }
 
-    @include m.mq(sp) {
-        margin-top: 80px;
-    }
-}
+    .hm01__nav__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0 50px;
 
-.hm01__nav {
-    @include m.mq(pc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+        @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
-}
+        @include m.mq(sp) {}
 
-.hm01__nav__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0 50px;
+        a {
+            color: var(--header_text_color);
+            display: inline-block;
+            @include v.titleH6;
+        }
 
-    @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    a {
-        color: var(--header_text_color);
-        display: inline-block;
-        @include v.titleH6;
     }
 
+    .hm01__nav__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
 
-}
+        @include m.mq(pc) {
+            gap: 20px;
+        }
 
-.hm01__nav__list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+        @include m.mq(miniPc) {}
 
-    @include m.mq(pc) {
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .menu-item-has-children {
+
+            &::before,
+            &::after {
+                grid-area: menu_toggle;
+                content: "";
+                top: 50%;
+                width: 30px;
+                height: 2px;
+                background-color: var(--header_text_color);
+                position: absolute;
+                right: 0;
+                transition: transform .2s linear;
+            }
+
+            &::before {
+                transform: rotate(90deg);
+            }
+
+            &.--active {
+                &::before {
+                    transform: rotate(0);
+                }
+            }
+        }
+
+        &>li {
+            grid-area: menu_main;
+            position: relative;
+            display: grid;
+            grid-template-columns: calc(100% - 30px) 30px;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "menu_main menu_toggle"
+                "menu_sub menu_sub";
+            width: 100%;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+            .sub-menu {
+                grid-area: menu_sub;
+                max-height: 0;
+                overflow: hidden;
+                display: block;
+                height: auto;
+                position: relative;
+                transition: height .2s ease-out,
+                    padding .2s ease-out;
+                padding: 0px;
+
+                &.--active {
+                    max-height: 100%;
+                    width: 100%;
+                    padding: 10px 0px;
+                    transition: height .2s ease-out,
+                        padding .2s ease-out;
+
+                    @include m.mq(pc) {}
+
+                    @include m.mq(miniPc) {}
+
+                    @include m.mq(tab) {
+                        padding: 5px 0px;
+                    }
+
+                    @include m.mq(sp) {}
+                }
+
+                a {
+                    color: var(--header_text_color);
+                    @include v.titleH7;
+                }
+            }
+        }
+    }
+
+    .hm01__nav__list__left {
+        flex: 1;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm01__nav__list__right {
+        flex: 1;
+        margin-top: 30px;
+
+        @include m.mq(pc) {
+            margin-top: 20px;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm01__banner {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm01__info {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm01__info__wrapper {
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm01__info__list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .hm01__externalLink {
+        display: flex;
+        flex-direction: column;
         gap: 20px;
     }
 
-    @include m.mq(miniPc) {}
+    .hm01__btn--first {
+        order: 1;
+    }
 
-    @include m.mq(tab) {}
+    .hm01__btn--second {
+        order: 2;
+    }
 
-    @include m.mq(sp) {}
+    .hm01__sns {
+        order: 3;
+        justify-content: center;
+        height: 50px;
 
-    .menu-item-has-children {
-
-        &::before,
-        &::after {
-            grid-area: menu_toggle;
-            content: "";
-            top: 50%;
-            width: 30px;
-            height: 2px;
-            background-color: var(--header_text_color);
-            position: absolute;
-            right: 0;
-            transition: transform .2s linear;
-        }
-
-        &::before {
-            transform: rotate(90deg);
-        }
-
-        &.--active {
-            &::before {
-                transform: rotate(0);
-            }
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 
-    &>li {
-        grid-area: menu_main;
-        position: relative;
-        display: grid;
-        grid-template-columns: calc(100% - 30px) 30px;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "menu_main menu_toggle"
-            "menu_sub menu_sub";
-        width: 100%;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-
-        .sub-menu {
-            grid-area: menu_sub;
-            max-height: 0;
-            overflow: hidden;
-            display: block;
-            height: auto;
-            position: relative;
-            transition: height .2s ease-out,
-                padding .2s ease-out;
-            padding: 0px;
-
-            &.--active {
-                max-height: 100%;
-                width: 100%;
-                padding: 10px 0px;
-                transition: height .2s ease-out,
-                    padding .2s ease-out;
-
-                @include m.mq(pc) {}
-
-                @include m.mq(miniPc) {}
-
-                @include m.mq(tab) {
-                    padding: 5px 0px;
-                }
-
-                @include m.mq(sp) {}
-            }
-
-            a {
-                color: var(--header_text_color);
-                @include v.titleH7;
-            }
-        }
+    .hm__sns__link {
+        width: auto;
+        height: 100%;
     }
 }
 
-.hm01__nav__list__left {
-    flex: 1;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.hm01__nav__list__right {
-    flex: 1;
-    margin-top: 30px;
-
-    @include m.mq(pc) {
-        margin-top: 20px;
-    }
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.hm01__banner {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.hm01__info {
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.hm01__info__wrapper {
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.hm01__info__list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
 
 
 // -----------------------------------------------------------------------------------------------
@@ -1299,7 +1330,7 @@
 
     @include m.mq(sp) {}
 
-    .hm_externalLink {
+    .hm__externalLink {
         margin-top: 60px;
 
         @include m.mq(pc) {}
@@ -1590,7 +1621,7 @@
 
     @include m.mq(sp) {}
 
-    .hm_externalLink {
+    .hm__externalLink {
         margin-top: 60px;
 
         @include m.mq(pc) {}
@@ -1816,7 +1847,7 @@
         @include m.mq(sp) {}
     }
 
-    .hm_externalLink {
+    .hm__externalLink {
 
         @include m.mq(pc) {}
 
