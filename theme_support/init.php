@@ -41,13 +41,17 @@ Delete the automatically assigned ID and class from the custom menu and add the 
 --------------------------------------------------------------*/
 function custom_nav_item_classes($classes, $item, $args, $depth)
 {
-  $classes = array();
-  if (in_array('current-menu-item', $item->classes)) {
-    $classes[] = 'nav__item current__item';
+  // 既存のクラスを保持する
+  $new_classes = $classes;
+
+  // current-menu-item のチェック
+  if (in_array('current-menu-item', $classes)) {
+    $new_classes[] = 'nav__item current__item';
   } else {
-    $classes[] = 'nav__item';
+    $new_classes[] = 'nav__item';
   }
-  return $classes;
+
+  return $new_classes;
 }
 add_filter('nav_menu_css_class', 'custom_nav_item_classes', 10, 4);
 
@@ -56,6 +60,7 @@ function remove_nav_menu_item_id($id, $item, $args, $depth)
   return '';
 }
 add_filter('nav_menu_item_id', 'remove_nav_menu_item_id', 10, 4);
+
 
 
 /*--------------------------------------------------------------
