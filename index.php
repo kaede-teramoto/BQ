@@ -161,6 +161,14 @@ if (!is_singular()) :
                                         <?php echo mb_substr($post->post_title, 0, 120) . ''; ?>
                                     </a>
                                 </div>
+                                <?php if ($cms_design == '06') : ?>
+                                    <div class="cms__post__excerpt cms<?php echo $cms_design; ?>__post__excerpt">
+                                        <?php
+                                        $excerpt = get_the_excerpt();
+                                        echo wp_trim_words($excerpt, 50, '...'); // 50文字で切り取り、末尾に...を付ける
+                                        ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         <?php endwhile;
                     else : ?>

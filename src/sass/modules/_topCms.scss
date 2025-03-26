@@ -483,7 +483,6 @@
 
 .top-cms02__cat {
     grid-area: cms_cat;
-    padding-top: 30px;
 
     @include m.mq(pc) {}
 
@@ -651,6 +650,24 @@
 
     @include m.mq(sp) {
         padding: 30px 0;
+    }
+
+    &:first-child {
+        padding: 10px 0 50px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            padding: 0 0 40px;
+        }
+
+        @include m.mq(tab) {
+            padding: 40px 0;
+        }
+
+        @include m.mq(sp) {
+            padding: 30px 0;
+        }
     }
 
     &+.top-cms02__post {
@@ -1805,26 +1822,27 @@
     overflow-x: auto;
     grid-area: cms_list;
     width: calc(100vw - calc(390px + calc(calc(100vw - 1500px)/2)));
-    margin-right: calc(calc(calc(100vw - 1500px)/-2));
-    padding-right: calc(calc(calc(100vw - 1500px)/-2));
-
-
+    margin-right: calc((calc(100vw - 1500px)/-2)); // 追加：右マージンをネガティブに設定
 
     @include m.mq(pc) {
         width: calc(100vw - calc(330px + calc(calc(100vw - 1100px)/2)));
+        margin-right: calc((calc(100vw - 1100px)/-2)); // 追加
     }
 
     @include m.mq(miniPc) {
         width: calc(100vw - calc(calc(100vw - 800px)/2));
+        margin-right: calc((calc(100vw - 800px)/-2)); // 追加
         order: 2;
     }
 
     @include m.mq(tab) {
         width: calc(100vw - calc(calc(100vw - 540px)/2));
+        margin-right: calc((calc(100vw - 540px)/-2)); // 追加
     }
 
     @include m.mq(sp) {
         width: 95vw;
+        margin-right: -2.5vw; // 追加
     }
 }
 
@@ -1922,6 +1940,7 @@
     @include m.mq(sp) {
         width: 250px;
         height: 360px;
+        margin: 0 15px;
     }
 
     &:hover {
@@ -2051,15 +2070,20 @@ cms07
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        width: 800px;
+    }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        width: 540px;
+    }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        width: 90%;
+    }
 }
 
 .home .top-cms07 {
-
 
     @include m.mq(pc) {}
 
@@ -2168,12 +2192,17 @@ cms07
 
 .top-cms07__link {
     order: 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        margin-top: 20px;
+    }
 
     @include m.mq(sp) {}
 }
@@ -2210,6 +2239,7 @@ cms07
 
 .top-cms07__post {
     display: flex;
+    align-items: center;
     gap: 30px;
     border-top: 1px solid var(--base_color);
     padding: 20px;
@@ -2220,11 +2250,14 @@ cms07
 
     @include m.mq(tab) {
         flex-wrap: wrap;
-        gap: 20px 0;
+        gap: 15px 0;
         justify-content: space-between;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        gap: 10px 0;
+        padding: 20px 10px;
+    }
 
     &:last-of-type {
         border-bottom: 1px solid var(--base_color);
@@ -2266,7 +2299,7 @@ cms07
 }
 
 .top-cms07__post__cat {
-    order: 2;
+    order: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2277,7 +2310,7 @@ cms07
 
     @include m.mq(tab) {
         width: 50%;
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 
     @include m.mq(sp) {}
@@ -2304,7 +2337,7 @@ cms07
 }
 
 .top-cms07__post__date {
-    order: 1;
+    order: 2;
     color: var(--main_color);
     font-size: 1.2rem;
     font-weight: 700;
@@ -2315,6 +2348,8 @@ cms07
 
     @include m.mq(tab) {
         width: 50%;
+        display: flex;
+        justify-content: flex-end;
     }
 
     @include m.mq(sp) {}
