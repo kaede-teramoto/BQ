@@ -296,26 +296,53 @@ function register_common_parts_post_type()
 
   $args = array(
     'labels'             => $labels,
-    'public'             => false,  // フロントエンドでは表示しない
-    'exclude_from_search' => true,    // 検索結果に含めない
-    'publicly_queryable' => false,   // クエリで公開しない
-    'show_ui'            => true,    // 管理画面のUIを表示
-    'show_in_menu'       => true,    // 管理画面のメニューに表示
-    'show_in_admin_bar'  => true,    // 管理バーに表示
-    'menu_position'      => 3,       // 管理画面での表示順序
-    'menu_icon'          => 'dashicons-admin-generic',  // アイコン
-    'capability_type'    => 'post',  // 権限を「post」に準拠
-    'supports'           => array('title', 'editor', 'thumbnail'), // サポートする機能
-    'has_archive'        => false,   // アーカイブページは作成しない
-    'rewrite'            => false,   // リライトルールを無効化
-    'query_var'          => false,   // クエリ変数無効
+    'public'             => false,
+    'exclude_from_search' => true,
+    'publicly_queryable' => false,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'show_in_admin_bar'  => true,
+    'menu_position'      => 3,
+    'menu_icon'          => 'dashicons-admin-generic',
+    'capability_type'    => 'common_part', // 権限グループを独自のものに変更
+    'capabilities'       => array(
+      'edit_post'          => 'edit_common_part',
+      'edit_posts'         => 'edit_common_parts',
+      'edit_others_posts'  => 'edit_others_common_parts',
+      'publish_posts'      => 'publish_common_parts',
+      'read_post'          => 'read_common_part',
+      'read_private_posts' => 'read_private_common_parts',
+      'delete_post'        => 'delete_common_part',
+    ),
+    'map_meta_cap'       => true, // WordPressのデフォルトの権限設定を適用
+    'supports'           => array('title', 'editor', 'thumbnail'),
+    'has_archive'        => false,
+    'rewrite'            => false,
+    'query_var'          => false,
   );
 
   register_post_type('common_parts', $args);
 }
-
-// フックに登録
 add_action('init', 'register_common_parts_post_type');
+
+/**
+ * 管理者に「common_parts」の権限を付与
+ */
+function add_common_parts_capabilities()
+{
+  $role = get_role('editor');
+  if ($role) {
+    $role->add_cap('edit_common_part');
+    $role->add_cap('edit_common_parts');
+    $role->add_cap('edit_others_common_parts');
+    $role->add_cap('publish_common_parts');
+    $role->add_cap('read_common_part');
+    $role->add_cap('read_private_common_parts');
+    $role->add_cap('delete_common_part');
+  }
+}
+add_action('admin_init', 'add_common_parts_capabilities');
+
 
 /*--------------------------------------------------------------
   カスタムフィールドのHTMLタグを保持するフィルターを追加

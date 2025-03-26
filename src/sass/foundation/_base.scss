@@ -282,30 +282,74 @@ optgroup {
 
 p:has(.aligncenter) {
   display: flex;
+  gap: 20px;
   justify-content: center;
+
+
+  @include m.mq(pc) {}
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include m.mq(sp) {}
 }
 
 p:has(.alignleft) {
+  gap: 20px;
   display: flex;
   justify-content: flex-start;
+
+  @include m.mq(pc) {}
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include m.mq(sp) {}
 }
 
 p:has(.alignright) {
+  gap: 20px;
   display: flex;
   justify-content: flex-end;
+
+  @include m.mq(pc) {}
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include m.mq(sp) {}
 }
 
 .alignright {}
 
 .alignleft {}
 
-.wp-caption,
-[class*='wp-image'] {
+.wp-caption {
   display: block;
   max-width: 100% !important;
   margin-top: 4rem;
   text-align: center;
 }
+
+// .wp-caption,
+// [class*='wp-image'] {
+//   display: block;
+//   max-width: 100% !important;
+//   margin-top: 4rem;
+//   text-align: center;
+// }
 
 .wp-caption-text {
   margin-top: 0;
