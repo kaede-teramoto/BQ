@@ -41,7 +41,9 @@
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        margin-top: 20px;
+    }
 
     @include m.mq(sp) {}
 }
@@ -67,14 +69,17 @@
 }
 
 .entry-body {
-    margin-top: 30px;
-    padding: 20px 0 50px;
+    padding: 40px 0 50px;
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        padding: 30px 0 50px;
+    }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        padding: 20px 0 50px;
+    }
 
     ul:not([class]) {}
 
@@ -135,7 +140,10 @@
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        margin-top: 20px;
+        aspect-ratio: 1.75 / 1;
+    }
 
     img {
         width: 100%;
@@ -289,7 +297,78 @@
 
     .entry01-footer {
         &:has(a) {
-            border-top: 1px solid var(--text_color);
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                position: relative;
+
+                &:nth-child(2) {
+                    order: 1;
+
+                    &::before {
+                        order: 2;
+                    }
+
+                    &::after {
+                        top: 45%;
+                        left: unset;
+                        right: 10px;
+                        transform: rotate(45deg) translateY(-50%);
+
+                        @include m.mq(pc) {}
+
+                        @include m.mq(miniPc) {
+                            top: 50%;
+                        }
+
+                        @include m.mq(tab) {}
+
+                        @include m.mq(sp) {}
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--main_color);
+                    border-radius: 50%;
+
+                    @include m.mq(pc) {}
+
+                    @include m.mq(miniPc) {}
+
+                    @include m.mq(tab) {}
+
+                    @include m.mq(sp) {}
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 5px;
+                    height: 5px;
+                    transform: rotate(225deg) translateY(-50%);
+                    border-top: solid 1px #fff;
+                    border-right: solid 1px #fff;
+                    position: absolute;
+                    top: 35%;
+                    left: 10px;
+                    z-index: 1;
+
+                    @include m.mq(pc) {}
+
+                    @include m.mq(miniPc) {}
+
+                    @include m.mq(tab) {}
+
+                    @include m.mq(sp) {}
+                }
+            }
+
         }
 
         @include m.mq(pc) {}
@@ -427,6 +506,7 @@
     .entry03-wrapper {
         border: none;
         padding-top: 0;
+        @include v.miniConWidth;
 
         @include m.mq(pc) {}
 
@@ -466,11 +546,15 @@
 
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {
+            margin-top: 20px;
+        }
 
         @include m.mq(tab) {}
 
-        @include m.mq(sp) {}
+        @include m.mq(sp) {
+            margin-top: 10px;
+        }
     }
 
     .entry03-data {
@@ -496,6 +580,7 @@
     .entry03-thumbnail {
         order: 1;
         border-radius: 0;
+        margin-top: 0;
 
         @include m.mq(pc) {}
 
@@ -567,15 +652,20 @@
         padding: 20px 0;
         border-top: 1px solid var(--text_color);
         border-bottom: 1px solid var(--text_color);
+        margin-top: 100px;
         @include v.miniConWidth;
 
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {
+            margin-top: 80px;
+        }
 
         @include m.mq(tab) {}
 
-        @include m.mq(sp) {}
+        @include m.mq(sp) {
+            margin-top: 60px;
+        }
     }
 
     .entry04-header {
@@ -667,6 +757,9 @@
     }
 
     .entry04-footer {
+        &:has(a) {
+            border-top: 1px solid var(--text_color);
+        }
 
         @include m.mq(pc) {}
 
