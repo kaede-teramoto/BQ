@@ -1,0 +1,144 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+
+/* plan01
+ ----------------------------------------------------------------------------------------------- */
+
+.section__plan01 {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__plan01__inner {
+    @include v.conWidth;
+    width: 1100px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__plan01__block-title {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__wrapper__plan01 {
+    display: flex;
+    gap: 20px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        flex-direction: column;
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__plan01 {
+    padding: 50px 30px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    @include v.borderRadius;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding: 40px 20px;
+    }
+
+    @include m.mq(tab) {
+        padding: 30px;
+    }
+
+    @include m.mq(sp) {
+        padding: 30px 20px;
+    }
+}
+
+.section__parts__plan01__title {
+    font-size: calc(var(--font_size_PC) * 3);
+    line-height: 1.2;
+    font-weight: 700;
+    order: 2;
+
+    @include m.mq(pc) {
+        font-size: calc(var(--font_size_PC) * 2.5);
+    }
+
+    @include m.mq(miniPc) {
+        font-size: calc(var(--font_size_PC) * 2.0);
+    }
+
+    @include m.mq(tab) {
+        font-size: calc(var(--font_size_TAB) * 2.0);
+    }
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__plan01__subtitle {
+    order: 1;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.section__parts__plan01__text {
+    order: 3;
+    margin-top: 40px;
+
+    @include m.mq(pc) {
+        margin-top: 30px;
+    }
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 20px;
+    }
+
+    @include m.mq(sp) {}
+
+    ul {
+        margin-top: 30px;
+        color: var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 20px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            margin-top: 10px;
+        }
+    }
+}

@@ -21,13 +21,18 @@
 }
 
 .section__flow04__inner {
+    padding-inline: 100px;
     @include v.conWidth;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        padding-inline: 60px;
+    }
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        padding-inline: 0;
+    }
 
     @include m.mq(sp) {}
 }
@@ -68,25 +73,25 @@
     padding: 20px;
     background-color: var(--main_color);
     gap: 20px;
-    height: 320px;
+    height: 400px;
 
     @include m.mq(pc) {
-        height: 300px;
+        height: 380px;
     }
 
     @include m.mq(miniPc) {
-        padding: 15px;
-        height: 280px;
+        height: 350px;
     }
 
     @include m.mq(tab) {
         flex-direction: row;
         height: auto;
         width: 100%;
-        padding: 15px;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        padding: 15px;
+    }
 
     &:nth-of-type(7) {
         background-color: #fff;
@@ -104,7 +109,6 @@
     order: 2;
     font-size: 2.0rem;
     color: #fff !important;
-    text-align: center;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
     font-weight: 600;

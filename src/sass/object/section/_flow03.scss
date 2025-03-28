@@ -21,9 +21,12 @@
 }
 
 .section__flow03__inner {
+    padding-inline: 100px;
     @include v.conWidth;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        padding-inline: 0;
+    }
 
     @include m.mq(miniPc) {}
 
@@ -34,27 +37,29 @@
 
 .section__parts__wrapper__flow03 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    justify-content: center;
     flex-wrap: wrap;
+    gap: 60px 18px;
+    margin: 0 auto;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        gap: 50px 15px;
+    }
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        gap: 40px 15px;
+    }
 
     @include m.mq(tab) {
         flex-direction: column;
-        width: 500px;
-        margin: 0 auto;
+        width: 100%;
+        gap: 0px;
     }
 
-    @include m.mq(sp) {
-        width: 90%;
-    }
-
-
+    @include m.mq(sp) {}
 }
+
 
 .section__parts__flow03 {
     display: flex;
@@ -62,23 +67,33 @@
     justify-content: center;
     align-items: flex-start;
     position: relative;
-    padding-right: 80px;
+    padding-right: 30px;
+    width: calc(280px + 30px);
+    position: relative;
 
-    @include m.mq(pc) {}
+
+    @include m.mq(pc) {
+        padding-right: 27px;
+        width: calc(230px + 27px);
+    }
 
     @include m.mq(miniPc) {
-        padding-right: 40px;
+        padding-right: 25px;
+        width: calc(231px + 25px);
     }
 
     @include m.mq(tab) {
         display: grid;
-        grid-template-columns: 130px auto;
-        grid-template-rows: 32px auto;
+        grid-template-columns: 230px 280px;
+        grid-template-rows: 32px auto 1fr;
         grid-template-areas:
+            "flow_sub flow_sub"
             "flow_img flow_title"
             "flow_img flow_text";
         padding-right: 0px;
-        padding-bottom: 60px;
+        width: 100%;
+        gap: 10px 30px;
+        padding-bottom: 40px;
 
         &:last-child {
             padding-bottom: 0;
@@ -86,60 +101,103 @@
     }
 
     @include m.mq(sp) {
-        grid-template-columns: 120px auto;
-        grid-template-rows: 30px auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 30px;
+        gap: 0px;
+    }
+
+    &:last-child {
+        &::after {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 12px solid var(--main_color);
+        border-right: 0;
+        position: absolute;
+        top: 130px;
+        right: 0;
+
+        @include m.mq(pc) {
+            top: 100px;
+        }
+
+        @include m.mq(miniPc) {
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 10px solid var(--main_color);
+        }
+
+        @include m.mq(tab) {
+            top: unset;
+            right: 50%;
+            bottom: 0;
+            transform: rotate(90deg);
+        }
+
+        @include m.mq(sp) {}
+
     }
 }
 
 .section__parts__flow03__title {
     order: 2;
-    font-size: 2.4rem;
-    line-height: 3.6rem;
+    font-size: 2.2rem;
+    line-height: 3.0rem;
     color: var(--main_color);
-    width: 205px;
-    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
-        font-size: 2.2rem;
-        line-height: 3.2rem;
-        width: 160px;
+        font-size: 2.0rem;
+        line-height: 2.8rem;
+        margin-bottom: 5px;
     }
 
     @include m.mq(tab) {
         grid-area: flow_title;
-        width: 100%;
         text-align: left;
+        margin-bottom: 0;
     }
 
     @include m.mq(sp) {
         font-size: 2.0rem;
         line-height: 3.0rem;
+        margin-bottom: 5px;
     }
 }
 
 .section__parts__flow03__subtitle {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     color: var(--main_color);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
 
-    @include m.mq(pc) {}
+    @include m.mq(pc) {
+        font-size: 2.2rem;
+    }
 
     @include m.mq(miniPc) {
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
-        left: 15px;
+        font-size: 2.0rem;
     }
 
     @include m.mq(tab) {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-        left: -10px;
+        grid-area: flow_sub;
+        font-size: 1.8rem;
+        justify-content: flex-start;
     }
 
     @include m.mq(sp) {}
@@ -149,14 +207,10 @@
 .section__parts__flow03__text {
     order: 3;
     overflow-wrap: break-word;
-    width: 205px;
-    text-align: center;
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {
-        width: 160px;
-    }
+    @include m.mq(miniPc) {}
 
     @include m.mq(tab) {
         grid-area: flow_text;
@@ -166,53 +220,43 @@
         align-items: flex-start;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        line-height: 2;
+    }
 }
 
 .section__parts__flow03__img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 124px;
-    height: 124px;
+    aspect-ratio: 1.63 / 1;
+    width: 100%;
     border-radius: 100px;
     order: 1;
     margin-bottom: 20px;
     position: relative;
+    @include v.borderRadius;
 
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        width: 110px;
-        height: 110px;
+    @include m.mq(pc) {
+        margin-bottom: 15px;
     }
 
+    @include m.mq(miniPc) {}
+
     @include m.mq(tab) {
-        width: 100px;
-        height: 100px;
         grid-area: flow_img;
-        margin-bottom: 0px;
-        margin-right: 30px;
+        margin-bottom: 0;
     }
 
     @include m.mq(sp) {
-        width: 90px;
-        height: 90px;
+        aspect-ratio: 1.6 / 1;
+        margin-bottom: 10px;
+        max-height: 250px;
     }
 
     img {
-        width: 45px;
-        position: absolute;
-        z-index: 2;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {
-            width: 35px;
-        }
-
-        @include m.mq(sp) {}
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
