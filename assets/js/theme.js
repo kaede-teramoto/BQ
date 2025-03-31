@@ -396,14 +396,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// フォームのファイル選択の設定
-// document.getElementById("formFileInput").addEventListener("change", function (event) {
-//     const fileNameDisplay = document.getElementById("fileName");
-//     const files = event.target.files;
+//Plan03の設定
+document.querySelectorAll('.plan_toggle').forEach(toggle => {
+    toggle.addEventListener('click', function () {
+        const section = toggle.closest('.section__parts__plan03');
+        const text = section.querySelector('.section__parts__plan03__text');
+        const openText = section.querySelector('.plan_toggle_open');
+        const closeText = section.querySelector('.plan_toggle_close');
 
-//     if (files.length > 0) {
-//         fileNameDisplay.textContent = files[0].name; // 選択されたファイル名を表示
-//     } else {
-//         fileNameDisplay.textContent = "選択されたファイル名がここに表示されます"; // 初期メッセージ
-//     }
-// });
+        // 現在の高さを取得
+        const currentHeight = window.getComputedStyle(text).maxHeight;
+
+        if (currentHeight === '0px' || currentHeight === 'none') {
+            text.style.paddingTop = '30px'; // パディングを追加
+            text.style.maxHeight = (text.scrollHeight + 30) + 'px'; // パディングの分も高さに加算
+            openText.style.display = 'none';
+            closeText.style.display = 'block';
+        } else {
+            text.style.paddingTop = '0'; // パディングを削除
+            text.style.maxHeight = '0px';
+            openText.style.display = 'block';
+            closeText.style.display = 'none';
+
+            // トランジションが完了するのを待ってからパディングを削除
+            text.addEventListener('transitionend', function removePadding() {
+                text.style.paddingTop = '0';
+                // イベントリスナーを削除（一回きりの実行にする）
+                text.removeEventListener('transitionend', removePadding);
+            });
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
