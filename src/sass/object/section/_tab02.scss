@@ -2,10 +2,11 @@
 @use "../../foundation/mixins" as m;
 
 
-/* tab01
+/* tab02
  ----------------------------------------------------------------------------------------------- */
 
-.section__tab01 {
+.section__tab02 {
+    position: relative;
 
     @include m.mq(pc) {}
 
@@ -26,73 +27,83 @@
         @include m.mq(miniPc) {}
 
         @include m.mq(tab) {
-            // width: 540px; //右側が画面いっぱいの場合
-            // margin: 0 auto;//右側が画面いっぱいの場合
+            // width: 540px; //右側スクロールの場合
+            // margin: 0 auto; //右側スクロールの場合
         }
 
         @include m.mq(sp) {
-            // width: 90%; //右側が画面いっぱいの場合
+            // width: 90%; //右側スクロールの場合
         }
     }
 
     .tab__panel {
         padding: 10px 20px;
-        width: 100%;
-        height: 80px;
+        width: calc(100% / 5);
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: calc(var(--font_size_PC) * 2);
+        font-size: calc(var(--font_size_PC) * 1.2);
         font-weight: 700;
         line-height: 1.2;
-        border-top: 1px solid var(--base_color);
-        border-bottom: 1px solid var(--base_color);
-
-        @include m.mq(pc) {
-            font-size: calc(var(--font_size_PC) * 1.8);
-        }
-
-        @include m.mq(miniPc) {
-            font-size: calc(var(--font_size_PC) * 1.6);
-            height: 70px;
-        }
-
-        @include m.mq(tab) {
-            font-size: calc(var(--font_size_TAB) * 1.5);
-            height: 65px;
-        }
-
-        @include m.mq(sp) {
-            font-size: calc(var(--font_size_SP) * 1.5);
-            height: 60px;
-        }
-
-        &.is-active {
-            border-bottom: 4px solid var(--main_color);
-            color: var(--main_color);
-        }
-    }
-
-    .tab__contents {
-        margin: 30px auto 0;
-        width: 900px;
+        border: 1px solid var(--text_color);
+        border-bottom: none;
+        border-radius: var(--radius_pc) var(--radius_pc) 0 0;
+        background-color: var(--base_color);
+        white-space: nowrap;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {
-            width: 760px;
+            font-size: calc(var(--font_size_PC) * 1.1);
         }
 
         @include m.mq(tab) {
-            margin: 20px auto 0;
-            width: 540px;
-            // width: unset; //右側が画面いっぱいの場合
-            // margin: 20px 0 0 calc(calc(100vw - 540px) / 2); //右側が画面いっぱいの場合
+            width: calc(100% / 4);
+            padding: 5px 10px;
+            font-size: calc(var(--font_size_TAB) * 1.2);
         }
 
         @include m.mq(sp) {
-            width: 100%;
-            // margin: 20px 0 0 calc(calc(100vw - 90%) / 2); //右側が画面いっぱいの場合
+            font-size: calc(var(--font_size_SP) * 1);
+            height: 40px;
+        }
+
+        &.is-active {
+            background-color: #fff;
+        }
+
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(4),
+        &:nth-of-type(5) {
+            margin-left: -1px;
+        }
+    }
+
+    .tab__contents {
+        padding: 30px 100px;
+        margin-top: 0;
+        border: 1px solid var(--text_color);
+        margin-top: -1px;
+        border-radius: 0 var(--radius_pc) var(--radius_pc) var(--radius_pc);
+        background-color: #fff;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            padding: 30px 80px;
+        }
+
+        @include m.mq(tab) {
+            padding: 20px 40px;
+            // width: 540px; //右側スクロールの場合
+            // margin: 0 auto; //右側スクロールの場合
+        }
+
+        @include m.mq(sp) {
+            padding: 20px 30px;
+            // width: 90%; //右側スクロールの場合
         }
     }
 
@@ -105,7 +116,7 @@
     }
 }
 
-.section__tab01__inner {
+.section__tab02__inner {
     width: 100%;
     max-width: 1100px;
     margin-left: auto;
@@ -128,7 +139,7 @@
     }
 }
 
-.section__tab01__block-title {
+.section__tab02__block-title {
 
     @include m.mq(pc) {}
 
@@ -139,7 +150,7 @@
     @include m.mq(sp) {}
 }
 
-.section__tab01__block-subtitle {
+.section__tab02__block-subtitle {
 
     @include m.mq(pc) {}
 
@@ -150,7 +161,7 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__wrapper__tab01 {
+.section__parts__wrapper__tab02 {
 
     @include m.mq(pc) {}
 
@@ -161,7 +172,7 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__tab01 {
+.section__parts__tab02 {
 
     @include m.mq(pc) {}
 
@@ -172,7 +183,7 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__tab01__title {
+.section__parts__tab02__title {
 
 
     @include m.mq(pc) {}
@@ -184,7 +195,7 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__tab01__subtitle {
+.section__parts__tab02__subtitle {
 
     @include m.mq(pc) {}
 
@@ -195,7 +206,7 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__tab01__text {
+.section__parts__tab02__text {
 
     @include m.mq(pc) {}
 
@@ -204,12 +215,10 @@
     @include m.mq(tab) {
         // overflow-x: auto; //右側が画面いっぱいの場合
         /* 横スクロールを許可 */
-        // padding-right: 20px; //右側が画面いっぱいの場合
         // white-space: nowrap; //右側が画面いっぱいの場合
     }
 
     @include m.mq(sp) {}
-
 
     table {
         @include m.mq(pc) {}
@@ -235,7 +244,7 @@
     @include m.mq(sp) {}
 }
 
-.section__parts__tab01__img {
+.section__parts__tab02__img {
 
     @include m.mq(pc) {}
 

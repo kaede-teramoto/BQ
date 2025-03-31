@@ -128,6 +128,7 @@ if (function_exists('acf_add_local_field_group')):
                             'plan02' => '料金・プラン02',
                             'plan03' => '料金・プラン03',
                             'tab01' => 'タブ切替01',
+                            'tab02' => 'タブ切替02',
                         ),
                         'default_value' => false,
                         'allow_null' => 0,

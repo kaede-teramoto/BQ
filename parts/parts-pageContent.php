@@ -858,7 +858,7 @@ if (have_rows('content_block')) : $i = 1;
                 </div>
             </section>
 
-        <?php elseif ($block_design_type === 'tab01') : ?>
+        <?php elseif ($block_design_type === 'tab01' || $block_design_type === 'tab02') : ?>
 
             <section id="section<?php echo $i; ?>" class="<?php echo $block_class; ?> section section__<?php echo $block_design_type; ?>" style="<?php echo $bg_color_set; ?><?php echo $bg_image_set; ?>">
                 <div class="section__inner section__<?php echo $block_design_type; ?>__inner">
