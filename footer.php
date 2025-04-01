@@ -190,7 +190,7 @@ else : ?>
             <?php endif; ?>
 
             <?php if ($footer_first_btn_display_setting || $footer_second_btn_display_setting) : ?>
-                <div class="footer__btn">
+                <div class="footer__btn footer<?php echo $footer_design; ?>__btn">
                     <?php if ($footer_first_btn_display_setting) : ?>
                         <?php if ($footer_first_btn_target_setting) : ?>
                             <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
