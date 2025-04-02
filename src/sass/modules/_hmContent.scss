@@ -1880,7 +1880,9 @@
 
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {
+            flex-direction: column;
+        }
 
         @include m.mq(tab) {}
 
