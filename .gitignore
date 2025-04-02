@@ -6,5 +6,6 @@ Thumbs.db
 *.log
 
 assets/css
+assets/images/common/dummy.png
 package-lock.json
 package.json
