@@ -8,7 +8,7 @@
 $site_url  = home_url();
 $site_name = get_bloginfo();
 
-$hm_design_type = get_theme_mod('hm_design_setting', '100');
+$hm_design_type = get_theme_mod('hm_design_setting', 'hMenuDU');
 $hm_bg_img = esc_url(get_theme_mod('hm_left_image', ''));
 
 $hm_banner01_display = get_theme_mod('hm_banner01_display_setting', false);
@@ -63,42 +63,42 @@ if ($hm_btn_sub_target) {
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');
 $btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 
-if (!($hm_design_type == 100)) :
+if (!($hm_design_type == 'hMenuDU')) :
 ?>
-    <?php if ($hm_design_type == 00) : // オリジナルのハンバーガーを設置
+    <?php if ($hm_design_type == 'hMenuOR') : // オリジナルのハンバーガーを設置
         get_template_part('parts/parts', 'originalHMenu');
     ?>
 
-    <?php elseif (($hm_design_type == 03) || ($hm_design_type == 04)) : // type03,type04の時の表示 
+    <?php elseif (($hm_design_type == 'hMenuBP00') || ($hm_design_type == 'hMenuBS00')) : // hMenuBP00,hMenuBS00の時の表示 
     ?>
-        <div id="hm" class="hm hm<?php echo $hm_design_type; ?> js-hm-target">
-            <div class="hm__inner hm<?php echo $hm_design_type; ?>__inner">
+        <div id="hm" class="hm <?php echo $hm_design_type; ?> js-hm-target">
+            <div class="hm__inner <?php echo $hm_design_type; ?>__inner">
                 <?php if ($hm_bg_img) : ?>
-                    <div class="hm__img__wrapper hm<?php echo $hm_design_type; ?>__img__wrapper">
-                        <img class="hm__img hm<?php echo $hm_design_type; ?>__img" src="<?php echo $hm_bg_img; ?>" alt="">
+                    <div class="hm__img__wrapper <?php echo $hm_design_type; ?>__img__wrapper">
+                        <img class="hm__img <?php echo $hm_design_type; ?>__img" src="<?php echo $hm_bg_img; ?>" alt="">
                     </div>
                 <?php endif; ?>
-                <div class="hm__content hm<?php echo $hm_design_type; ?>__content">
-                    <div class="hm__content__inner  hm<?php echo $hm_design_type; ?>__content__inner">
+                <div class="hm__content <?php echo $hm_design_type; ?>__content">
+                    <div class="hm__content__inner  <?php echo $hm_design_type; ?>__content__inner">
 
                         <?php if ($hm_logo_img) : ?>
-                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
+                            <div class="hm__logo <?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php elseif ($header_logo_img) : ?>
-                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
+                            <div class="hm__logo <?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php else : ?>
-                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
+                            <div class="hm__logo <?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><?php echo $site_name; ?></a>
                             </div>
                         <?php endif; ?>
 
-                        <div class="hm__content__top hm<?php echo $hm_design_type; ?>__top">
+                        <div class="hm__content__top <?php echo $hm_design_type; ?>__top">
                             <?php if ((has_nav_menu('hamburgerNavLeft')) || (has_nav_menu('hamburgerNavRight'))) : ?>
-                                <div class="hm__nav hm<?php echo $hm_design_type; ?>__nav">
-                                    <nav class="hm__nav__wrapper hm<?php echo $hm_design_type; ?>__nav__wrapper">
+                                <div class="hm__nav <?php echo $hm_design_type; ?>__nav">
+                                    <nav class="hm__nav__wrapper <?php echo $hm_design_type; ?>__nav__wrapper">
 
                                         <?php
                                         if (has_nav_menu('hamburgerNavLeft')) {
@@ -108,8 +108,8 @@ if (!($hm_design_type == 100)) :
                                                 'menu_class' => '',
                                                 'link_before' => '',
                                                 'link_after' => '',
-                                                'items_wrap' => '<ul class="hm__nav__list hm__nav__list__left hm' . $hm_design_type . '__nav__list hm' . $hm_design_type . '__nav__list__left">%3$s</ul>',
-                                                'li_class' => 'hm' . $hm_design_type . '__nav__wrap-list__item',
+                                                'items_wrap' => '<ul class="hm__nav__list hm__nav__list__left ' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__left">%3$s</ul>',
+                                                'li_class' => $hm_design_type . '__nav__wrap-list__item',
                                                 'a_class' => 'hm-nav__link',
                                             ));
                                         }
@@ -121,8 +121,8 @@ if (!($hm_design_type == 100)) :
                                                 'menu_class' => '',
                                                 'link_before' => '',
                                                 'link_after' => '',
-                                                'items_wrap' => '<ul class="hm__nav__list hm__nav__list__right hm' . $hm_design_type . '__nav__list hm' . $hm_design_type . '__nav__list__right">%3$s</ul>',
-                                                'li_class' => 'hm' . $hm_design_type . '__nav__wrap-list__item',
+                                                'items_wrap' => '<ul class="hm__nav__list hm__nav__list__right ' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__right">%3$s</ul>',
+                                                'li_class' => $hm_design_type . '__nav__wrap-list__item',
                                                 'a_class' => 'hm-nav__link',
                                             ));
                                         } ?>
@@ -132,9 +132,9 @@ if (!($hm_design_type == 100)) :
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="hm__content__bottom hm<?php echo $hm_design_type; ?>__content__bottom">
+                        <div class="hm__content__bottom <?php echo $hm_design_type; ?>__content__bottom">
                             <?php if ($hm_banner01_display || $hm_banner02_display) : ?>
-                                <div class="hm__banner hm<?php echo $hm_design_type; ?>__banner">
+                                <div class="hm__banner <?php echo $hm_design_type; ?>__banner">
                                     <?php if ($hm_banner01_display) : ?>
                                         <div class="hm__banner__left">
                                             <div class="hm__banner__item">
@@ -158,12 +158,12 @@ if (!($hm_design_type == 100)) :
                                 </div>
                             <?php endif; ?>
 
-                            <div class="hm__externalLink hm<?php echo $hm_design_type; ?>__externalLink">
+                            <div class="hm__externalLink <?php echo $hm_design_type; ?>__externalLink">
                                 <?php
                                 $sns = esc_url(get_theme_mod("sns_1", ''));
                                 if ($sns) :
                                 ?>
-                                    <div class="hm__sns hm<?php echo $hm_design_type; ?>__sns">
+                                    <div class="hm__sns <?php echo $hm_design_type; ?>__sns">
                                         <?php
                                         for ($i = 1; $i <= 5; $i++) {
 
@@ -181,14 +181,14 @@ if (!($hm_design_type == 100)) :
                                 <?php endif ?>
 
                                 <?php if ($hm_btn_display) : ?>
-                                    <div class="hm__btn  hm__btn--first hm<?php echo $hm_design_type; ?>__btn--first">
+                                    <div class="hm__btn  hm__btn--first <?php echo $hm_design_type; ?>__btn--first">
                                         <a class="hm__btn__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
                                             <?php echo $hm_btn_text; ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
                                 <?php if ($hm_btn_sub_display) : ?>
-                                    <div class="hm__btn  hm__btn--second hm<?php echo $hm_design_type; ?>__btn--second">
+                                    <div class="hm__btn  hm__btn--second <?php echo $hm_design_type; ?>__btn--second">
                                         <a class="hm__btn__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
                                             <?php echo $hm_btn_sub_text; ?>
                                         </a>
@@ -198,8 +198,8 @@ if (!($hm_design_type == 100)) :
 
                             <?php
                             if (has_nav_menu('hamburgerNavInfo')) : ?>
-                                <div class="hm__info hm<?php echo $hm_design_type; ?>__info">
-                                    <nav class="hm__info__wrapper hm<?php echo $hm_design_type; ?>__info__wrapper">
+                                <div class="hm__info <?php echo $hm_design_type; ?>__info">
+                                    <nav class="hm__info__wrapper <?php echo $hm_design_type; ?>__info__wrapper">
 
                                         <?php
 
@@ -209,8 +209,8 @@ if (!($hm_design_type == 100)) :
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="hm__info__list hm' . $hm_design_type . '__info__list">%3$s</ul>',
-                                            'li_class' => 'hm' . $hm_design_type . '__info__wrap-list__item',
+                                            'items_wrap' => '<ul class="hm__info__list ' . $hm_design_type . '__info__list">%3$s</ul>',
+                                            'li_class' => $hm_design_type . '__info__wrap-list__item',
                                             'a_class' => 'hm-info__link',
                                         ));
                                         ?>
@@ -226,20 +226,20 @@ if (!($hm_design_type == 100)) :
     <?php endif; // $hm_design_typeが100以外の場合の設定ここまで
     ?>
 
-    <div id="hm" class="hm hm<?php echo $hm_design_type; ?> js-hm-target">
-        <div class="hm__inner hm<?php echo $hm_design_type; ?>__inner">
+    <div id="hm" class="hm <?php echo $hm_design_type; ?> js-hm-target">
+        <div class="hm__inner <?php echo $hm_design_type; ?>__inner">
             <?php if ($hm_bg_img) : ?>
-                <div class="hm__img__wrapper hm<?php echo $hm_design_type; ?>__img__wrapper">
-                    <img class="hm__img hm<?php echo $hm_design_type; ?>__img" src="<?php echo $hm_bg_img; ?>" alt="" loading="lazy">
+                <div class="hm__img__wrapper <?php echo $hm_design_type; ?>__img__wrapper">
+                    <img class="hm__img <?php echo $hm_design_type; ?>__img" src="<?php echo $hm_bg_img; ?>" alt="" loading="lazy">
                 </div>
             <?php endif; ?>
-            <div class="hm__content hm<?php echo $hm_design_type; ?>__content">
-                <div class="hm__content__inner  hm<?php echo $hm_design_type; ?>__content__inner">
+            <div class="hm__content <?php echo $hm_design_type; ?>__content">
+                <div class="hm__content__inner  <?php echo $hm_design_type; ?>__content__inner">
 
-                    <div class="hm__content__top hm<?php echo $hm_design_type; ?>__top">
+                    <div class="hm__content__top <?php echo $hm_design_type; ?>__top">
                         <?php if ((has_nav_menu('hamburgerNavLeft')) || (has_nav_menu('hamburgerNavRight'))) : ?>
-                            <div class="hm__nav hm<?php echo $hm_design_type; ?>__nav">
-                                <nav class="hm__nav__wrapper hm<?php echo $hm_design_type; ?>__nav__wrapper">
+                            <div class="hm__nav <?php echo $hm_design_type; ?>__nav">
+                                <nav class="hm__nav__wrapper <?php echo $hm_design_type; ?>__nav__wrapper">
 
                                     <?php
                                     if (has_nav_menu('hamburgerNavLeft')) {
@@ -249,8 +249,8 @@ if (!($hm_design_type == 100)) :
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="hm' . $hm_design_type . '__nav__list hm' . $hm_design_type . '__nav__list__left">%3$s</ul>',
-                                            'li_class' => 'hm' . $hm_design_type . '__nav__wrap-list__item',
+                                            'items_wrap' => '<ul class="' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__left">%3$s</ul>',
+                                            'li_class' => $hm_design_type . '__nav__wrap-list__item',
                                             'a_class' => 'hm-nav__link',
                                         ));
                                     }
@@ -262,8 +262,8 @@ if (!($hm_design_type == 100)) :
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="hm' . $hm_design_type . '__nav__list hm' . $hm_design_type . '__nav__list__right">%3$s</ul>',
-                                            'li_class' => 'hm' . $hm_design_type . '__nav__wrap-list__item',
+                                            'items_wrap' => '<ul class="' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__right">%3$s</ul>',
+                                            'li_class' => $hm_design_type . '__nav__wrap-list__item',
                                             'a_class' => 'hm-nav__link',
                                         ));
                                     } ?>
@@ -273,9 +273,9 @@ if (!($hm_design_type == 100)) :
                             </div>
                         <?php endif; ?>
                     </div>
-                    <div class="hm__content__bottom hm<?php echo $hm_design_type; ?>__bottom">
+                    <div class="hm__content__bottom <?php echo $hm_design_type; ?>__bottom">
                         <?php if ($hm_banner01_display || $hm_banner02_display) : ?>
-                            <div class="hm__banner hm<?php echo $hm_design_type; ?>__banner">
+                            <div class="hm__banner <?php echo $hm_design_type; ?>__banner">
                                 <?php if ($hm_banner01_display) : ?>
                                     <div class="hm__banner__left">
                                         <div class="hm__banner__item">
@@ -300,25 +300,25 @@ if (!($hm_design_type == 100)) :
                         <?php endif; ?>
 
                         <?php if ($hm_logo_img) : ?>
-                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
+                            <div class="hm__logo <?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $hm_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php elseif ($header_logo_img) : ?>
-                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
+                            <div class="hm__logo <?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><img src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy"></a>
                             </div>
                         <?php else : ?>
-                            <div class="hm__logo hm<?php echo $hm_design_type; ?>__logo">
+                            <div class="hm__logo <?php echo $hm_design_type; ?>__logo">
                                 <a href="<?php echo $site_url; ?>"><?php echo $site_name; ?></a>
                             </div>
                         <?php endif; ?>
 
-                        <div class="hm__externalLink hm<?php echo $hm_design_type; ?>__externalLink">
+                        <div class="hm__externalLink <?php echo $hm_design_type; ?>__externalLink">
                             <?php
                             $sns = esc_url(get_theme_mod("sns_1", ''));
                             if ($sns) :
                             ?>
-                                <div class="hm__sns hm<?php echo $hm_design_type; ?>__sns">
+                                <div class="hm__sns <?php echo $hm_design_type; ?>__sns">
                                     <?php
                                     for ($i = 1; $i <= 5; $i++) {
 
@@ -336,14 +336,14 @@ if (!($hm_design_type == 100)) :
                             <?php endif ?>
 
                             <?php if ($hm_btn_display) : ?>
-                                <div class="hm__btn  hm__btn--first hm<?php echo $hm_design_type; ?>__btn--first">
+                                <div class="hm__btn  hm__btn--first <?php echo $hm_design_type; ?>__btn--first">
                                     <a class="hm__btn__link" href="<?php echo $hm_btn_link; ?>" <?php echo $btn_target; ?>>
                                         <?php echo $hm_btn_text; ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
                             <?php if ($hm_btn_sub_display) : ?>
-                                <div class="hm__btn  hm__btn--second hm<?php echo $hm_design_type; ?>__btn--second">
+                                <div class="hm__btn  hm__btn--second <?php echo $hm_design_type; ?>__btn--second">
                                     <a class="hm__btn__link" href="<?php echo $hm_btn_sub_link; ?>" <?php echo $btn_sub_target; ?>>
                                         <?php echo $hm_btn_sub_text; ?>
                                     </a>
@@ -353,8 +353,8 @@ if (!($hm_design_type == 100)) :
 
                         <?php
                         if (has_nav_menu('hamburgerNavInfo')) : ?>
-                            <div class="hm__info hm<?php echo $hm_design_type; ?>__info">
-                                <nav class="hm__info__wrapper hm<?php echo $hm_design_type; ?>__info__wrapper">
+                            <div class="hm__info <?php echo $hm_design_type; ?>__info">
+                                <nav class="hm__info__wrapper <?php echo $hm_design_type; ?>__info__wrapper">
 
                                     <?php
 
@@ -364,8 +364,8 @@ if (!($hm_design_type == 100)) :
                                         'menu_class' => '',
                                         'link_before' => '',
                                         'link_after' => '',
-                                        'items_wrap' => '<ul class="hm__info__list hm' . $hm_design_type . '__info__list">%3$s</ul>',
-                                        'li_class' => 'hm' . $hm_design_type . '__info__wrap-list__item',
+                                        'items_wrap' => '<ul class="hm__info__list ' . $hm_design_type . '__info__list">%3$s</ul>',
+                                        'li_class' => $hm_design_type . '__info__wrap-list__item',
                                         'a_class' => 'hm-info__link',
                                     ));
                                     ?>

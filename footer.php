@@ -9,7 +9,7 @@
 $site_url  = home_url();
 $theme_url = get_template_directory_uri();
 
-$footer_design   = get_theme_mod('footer_design_type', '01');
+$footer_design   = get_theme_mod('footer_design_type', 'footerAN00');
 $footer_logo_image      = esc_url(get_theme_mod('footer_logo_image', false));
 $footer_bg_color_option = get_theme_mod('footer_bg_color_option', false);
 $footer_bg_color = get_theme_mod('footer_bg_color_set', false);
@@ -145,16 +145,16 @@ $footer_second_btn_target_setting = get_theme_mod('footer_second_btn_target_sett
 
 
 ?>
-<?php if ($footer_design == 04) :
+<?php if ($footer_design == 'footerOR') :
     get_template_part('parts/parts', 'originalFooter');
 else : ?>
     </main>
 
-    <footer class="footer footer<?php echo $footer_design; ?>" style="<?php echo $footer_text_color_set; ?>">
-        <div class="footer__wrapper footer<?php echo $footer_design; ?>__wrapper">
+    <footer class="footer <?php echo $footer_design; ?>" style="<?php echo $footer_text_color_set; ?>">
+        <div class="footer__wrapper <?php echo $footer_design; ?>__wrapper">
 
             <?php if ($footer_logo_image) : ?>
-                <div class="footer__logo footer<?php echo $footer_design; ?>__logo">
+                <div class="footer__logo <?php echo $footer_design; ?>__logo">
                     <a href="<?php echo $site_url; ?>">
                         <img src="<?php echo $footer_logo_image; ?>" alt="logo" loading="lazy">
                     </a>
@@ -163,14 +163,14 @@ else : ?>
 
             <?php
             if ($footer_company_profile) : ?>
-                <div class="footer__text footer<?php echo $footer_design; ?>__text" style="<?php echo $footer_text_color_set; ?>">
+                <div class="footer__text <?php echo $footer_design; ?>__text" style="<?php echo $footer_text_color_set; ?>">
                     <?php echo $footer_company_profile; ?>
                 </div>
             <?php endif; ?>
 
             <?php $sns_check = get_theme_mod('sns_1');
             if ($sns_check) : ?>
-                <div class="footer__sns footer<?php echo $footer_design; ?>__sns">
+                <div class="footer__sns <?php echo $footer_design; ?>__sns">
                     <?php
                     for ($i = 1; $i <= 5; $i++) {
 
@@ -190,7 +190,7 @@ else : ?>
             <?php endif; ?>
 
             <?php if ($footer_first_btn_display_setting || $footer_second_btn_display_setting) : ?>
-                <div class="footer__btn footer<?php echo $footer_design; ?>__btn">
+                <div class="footer__btn <?php echo $footer_design; ?>__btn">
                     <?php if ($footer_first_btn_display_setting) : ?>
                         <?php if ($footer_first_btn_target_setting) : ?>
                             <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
@@ -230,8 +230,8 @@ else : ?>
             <?php endif; ?>
 
             <?php if (has_nav_menu('footerNavLeft') || has_nav_menu('footerNavRight')) : ?>
-                <div class="footer__nav footer<?php echo $footer_design; ?>__nav">
-                    <nav class="footer__nav__wrapper footer<?php echo $footer_design; ?>__nav__wrapper">
+                <div class="footer__nav <?php echo $footer_design; ?>__nav">
+                    <nav class="footer__nav__wrapper <?php echo $footer_design; ?>__nav__wrapper">
 
                         <?php
                         if (has_nav_menu('footerNavLeft')) {
@@ -241,8 +241,8 @@ else : ?>
                                 'menu_class' => '',
                                 'link_before' => '',
                                 'link_after' => '',
-                                'items_wrap' => '<ul class="footer__nav__wrap-list__left footer' . $footer_design . '__nav__wrap-list__left">%3$s</ul>',
-                                'li_class' => 'footer' . $footer_design . '__nav__wrap-list__item',
+                                'items_wrap' => '<ul class="footer__nav__wrap-list__left ' . $footer_design . '__nav__wrap-list__left">%3$s</ul>',
+                                'li_class' => $footer_design . '__nav__wrap-list__item',
                                 'a_class' => 'footer-nav__link',
                             ));
                         }
@@ -254,8 +254,8 @@ else : ?>
                                 'menu_class' => '',
                                 'link_before' => '',
                                 'link_after' => '',
-                                'items_wrap' => '<ul class="footer__textlink footer' . $footer_design . '__nav__wrap-list__right">%3$s</ul>',
-                                'li_class' => 'footer' . $footer_design . '__nav__wrap-list__item',
+                                'items_wrap' => '<ul class="footer__textlink ' . $footer_design . '__nav__wrap-list__right">%3$s</ul>',
+                                'li_class' => $footer_design . '__nav__wrap-list__item',
                                 'a_class' => 'footer-nav__link',
                             ));
                         } ?>
@@ -265,7 +265,7 @@ else : ?>
             <?php endif; ?>
 
             <?php if (has_nav_menu('footerNavInfo')) : ?>
-                <div class="footer__info footer<?php echo $footer_design; ?>__info">
+                <div class="footer__info <?php echo $footer_design; ?>__info">
                     <small><?php echo $footer_copyright; ?></small>
                     <?php wp_nav_menu(array(
                         'theme_location' => 'footerNavInfo',
@@ -273,8 +273,8 @@ else : ?>
                         'menu_class' => '',
                         'link_before' => '',
                         'link_after' => '',
-                        'items_wrap' => '<ul class="footer__textlink footer' . $footer_design . '__textlink">%3$s</ul>',
-                        'li_class' => 'footer' . $footer_design . '__textlink__item',
+                        'items_wrap' => '<ul class="footer__textlink ' . $footer_design . '__textlink">%3$s</ul>',
+                        'li_class' => $footer_design . '__textlink__item',
                         'a_class' => 'footer-nav__link',
                     )); ?>
                 </div>
