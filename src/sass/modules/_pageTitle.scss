@@ -42,10 +42,10 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle01
+    titleAS00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title01__wrapper {
+.titleAS00__wrapper {
     width: 100%;
 
     @include m.mq(pc) {}
@@ -57,7 +57,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title01 {
+.titleAS00 {
     width: 100%;
 
     @include m.mq(pc) {}
@@ -69,7 +69,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title01__feature {
+.titleAS00__feature {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 243px auto;
@@ -94,11 +94,10 @@
 
     @include m.mq(sp) {
         margin: 110px auto 30px;
-        gap: 20px;
     }
 }
 
-.page-title01__main {
+.titleAS00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -112,7 +111,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title01__title--main {
+.titleAS00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -124,7 +123,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title01__sub {
+.titleAS00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -136,7 +135,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title01__title--sub {
+.titleAS00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -148,7 +147,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title01__text {
+.titleAS00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -164,7 +163,7 @@
     }
 }
 
-.page-title01__img {
+.titleAS00__img {
     background-size: cover;
     background-position: center;
     height: 460px;
@@ -188,10 +187,10 @@
 
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle02
+    titleAC00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title02__wrapper {
+.titleAC00__wrapper {
     width: 100%;
 
     @include m.mq(pc) {}
@@ -203,7 +202,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title02 {
+.titleAC00 {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -213,7 +212,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title02__feature {
+.titleAC00__feature {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 243px auto;
@@ -237,12 +236,11 @@
     }
 
     @include m.mq(sp) {
-        margin: 110px 0 30px;
-        gap: 20px;
+        margin: 110px auto 30px;
     }
 }
 
-.page-title02__main {
+.titleAC00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -256,7 +254,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title02__title--main {
+.titleAC00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -268,7 +266,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title02__sub {
+.titleAC00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -280,7 +278,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title02__title--sub {
+.titleAC00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -292,7 +290,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title02__text {
+.titleAC00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -308,8 +306,7 @@
     }
 }
 
-.page-title02__img {
-
+.titleAC00__img {
     background-size: cover;
     background-position: center;
     height: 460px;
@@ -317,22 +314,30 @@
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+        width: 800px;
+    }
 
     @include m.mq(tab) {
         aspect-ratio: 540 / 460;
         height: 100%;
+        width: 540px;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        width: 90%;
+        aspect-ratio: 14 / 13;
+        max-height: 400px;
+        margin: 0 auto;
+    }
 }
 
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle03
+    titleAR00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title03__wrapper {
+.titleAR00__wrapper {
     width: 100%;
     overflow-x: hidden;
 
@@ -345,7 +350,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title03 {
+.titleAR00 {
 
     @include m.mq(pc) {}
 
@@ -356,7 +361,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title03__feature {
+.titleAR00__feature {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 243px auto;
@@ -380,12 +385,12 @@
     }
 
     @include m.mq(sp) {
-        margin: 110px 0 30px;
-        gap: 20px;
+        margin-top: 110px;
+        margin-bottom: 30px;
     }
 }
 
-.page-title03__main {
+.titleAR00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -399,7 +404,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title03__title--main {
+.titleAR00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -411,7 +416,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title03__sub {
+.titleAR00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -423,7 +428,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title03__title--sub {
+.titleAR00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -435,7 +440,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title03__text {
+.titleAR00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -451,7 +456,7 @@
     }
 }
 
-.page-title03__img {
+.titleAR00__img {
 
     background-size: cover;
     background-position: center;
@@ -467,14 +472,18 @@
         height: 100%;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        aspect-ratio: 19 / 13;
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(10% / 2);
+    }
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle04
+    titleAL00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title04__wrapper {
+.titleAL00__wrapper {
     width: 100%;
     overflow-x: hidden;
 
@@ -487,7 +496,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title04 {
+.titleAL00 {
 
     @include m.mq(pc) {}
 
@@ -498,7 +507,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title04__feature {
+.titleAL00__feature {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 243px auto;
@@ -522,12 +531,11 @@
     }
 
     @include m.mq(sp) {
-        margin: 110px 0 30px;
-        gap: 20px;
+        margin: 110px auto 30px;
     }
 }
 
-.page-title04__main {
+.titleAL00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -541,7 +549,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title04__title--main {
+.titleAL00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -553,7 +561,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title04__sub {
+.titleAL00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -565,7 +573,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title04__title--sub {
+.titleAL00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -577,7 +585,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title04__text {
+.titleAL00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -593,7 +601,7 @@
     }
 }
 
-.page-title04__img {
+.titleAL00__img {
 
     background-size: cover;
     background-position: center;
@@ -609,14 +617,17 @@
         height: 100%;
     }
 
-    @include m.mq(sp) {}
+    @include m.mq(sp) {
+        aspect-ratio: 19 / 13;
+        margin-right: calc(10% / 2);
+    }
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle05
+    titleAP00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title05__wrapper {
+.titleAP00__wrapper {
     width: 100%;
     height: 540px;
 
@@ -627,11 +638,11 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {
-        height: 320px;
+        height: 480px;
     }
 }
 
-.page-title05 {
+.titleAP00 {
     width: 100%;
     height: 100%;
     display: grid;
@@ -645,7 +656,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title05__feature {
+.titleAP00__feature {
     grid-area: 1 / 1;
     z-index: 10;
     display: grid;
@@ -669,12 +680,10 @@
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {
-        gap: 20px;
-    }
+    @include m.mq(sp) {}
 }
 
-.page-title05__main {
+.titleAP00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -688,7 +697,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title05__title--main {
+.titleAP00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -700,7 +709,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title05__sub {
+.titleAP00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -712,7 +721,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title05__title--sub {
+.titleAP00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -724,7 +733,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title05__text {
+.titleAP00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -740,9 +749,8 @@
     }
 }
 
-.page-title05__img {
+.titleAP00__img {
     grid-area: 1 / 1;
-
     background-size: cover;
     background-position: center;
     height: 540px;
@@ -755,7 +763,7 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {
-        height: 320px;
+        height: 100%;
     }
 
     .cms__post__thumbnail {
@@ -765,10 +773,10 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle06
+    titleAT00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title06__wrapper {
+.titleAT00__wrapper {
     width: 100%;
 
     @include m.mq(pc) {}
@@ -780,7 +788,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title06 {
+.titleAT00 {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -795,7 +803,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title06__feature {
+.titleAT00__feature {
     order: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -810,19 +818,16 @@
     @include m.mq(miniPc) {
         @include v.columnFlex;
         align-items: flex-start;
-        margin-top: 20px;
+        margin-top: 30px;
         gap: 10px;
     }
 
     @include m.mq(tab) {}
 
-    @include m.mq(sp) {
-        margin-top: 30px;
-        gap: 20px;
-    }
+    @include m.mq(sp) {}
 }
 
-.page-title06__main {
+.titleAT00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -836,7 +841,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title06__title--main {
+.titleAT00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -848,7 +853,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title06__sub {
+.titleAT00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -860,7 +865,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title06__title--sub {
+.titleAT00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -872,7 +877,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title06__text {
+.titleAT00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -888,7 +893,7 @@
     }
 }
 
-.page-title06__img {
+.titleAT00__img {
     display: flex;
     order: 1;
 
@@ -909,187 +914,10 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle07
+    titleAText00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title07__wrapper {
-    overflow: hidden;
-    justify-content: flex-start;
-
-    margin-left: calc(calc(100% - v.$maxWidth) / 2);
-
-    @include m.mq(pc) {
-        margin-left: calc(calc(100% - v.$pcWidth) / 2);
-    }
-
-    @include m.mq(miniPc) {
-        margin-left: calc(calc(100% - v.$miniWidth) / 2);
-    }
-
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.page-title07 {
-    display: flex;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        display: inline-block;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.page-title07__feature {
-    margin-right: 100px;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        max-width: 420px;
-        margin-right: 80px;
-    }
-
-    @include m.mq(tab) {
-        margin-right: 0px;
-        max-width: 100%;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.page-title07__main {
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        margin-top: 80px;
-    }
-
-    @include m.mq(sp) {
-        margin-top: 60px;
-    }
-
-    &::after {
-        content: "";
-        display: inline-block;
-        width: 80px;
-        height: 2px;
-        background-color: var(--main_color);
-        margin-top: 50px;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {
-            width: 60px;
-        }
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {
-            margin-top: 40px;
-        }
-    }
-}
-
-.page-title07__title--main {
-    color: var(--main_color);
-    @include v.pageTitle;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.page-title07__sub {
-    margin-top: 56px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        margin-top: 50px;
-    }
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        margin-top: 40px;
-    }
-}
-
-.page-title07__title--sub {
-    @include v.titleH4;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.page-title07__text {
-    margin-top: 30px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.page-title07__img {
-    height: 560px;
-    margin-right: 0;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        width: 100%;
-        margin-top: 80px;
-        height: 100%;
-        aspect-ratio: 849 / 560;
-    }
-
-    @include m.mq(sp) {
-        margin-top: 40px;
-        aspect-ratio: 599 / 395;
-    }
-
-    .cms__post__thumbnail {
-        border-radius: 0;
-    }
-}
-
-/*  -----------------------------------------------------------------------------------------------
-    pageTitle08
- ----------------------------------------------------------------------------------------------- */
-
-.page-title08__wrapper {
+.titleAText00__wrapper {
     width: 100%;
 
     @include m.mq(pc) {}
@@ -1101,7 +929,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title08 {
+.titleAText00 {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -1111,7 +939,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title08__feature {
+.titleAText00__feature {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 217px auto;
@@ -1133,11 +961,10 @@
 
     @include m.mq(sp) {
         margin-top: 110px;
-        gap: 20px;
     }
 }
 
-.page-title08__main {
+.titleAText00__main {
     grid-area: page-title_main;
     display: flex;
     align-items: flex-end;
@@ -1151,7 +978,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title08__title--main {
+.titleAText00__title--main {
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -1163,7 +990,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title08__sub {
+.titleAText00__sub {
     grid-area: page-title_sub;
 
     @include m.mq(pc) {}
@@ -1175,7 +1002,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title08__title--sub {
+.titleAText00__title--sub {
     @include v.titleH6;
 
     @include m.mq(pc) {}
@@ -1187,7 +1014,7 @@
     @include m.mq(sp) {}
 }
 
-.page-title08__text {
+.titleAText00__text {
     grid-area: page-title_text;
 
     @include m.mq(pc) {}
@@ -1203,7 +1030,7 @@
     }
 }
 
-.page-title08__img {
+.titleAText00__img {
     display: none;
 
     @include m.mq(pc) {}
@@ -1216,65 +1043,105 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    pageTitle09
+    titleBN00
  ----------------------------------------------------------------------------------------------- */
 
-.page-title09__wrapper {
-    margin-top: 200px;
-    @include v.conWidth;
+.titleBN00__wrapper {
+    overflow: hidden;
+    justify-content: flex-start;
 
-    @include m.mq(pc) {}
+    margin-left: calc(calc(100% - v.$maxWidth) / 2);
 
-    @include m.mq(miniPc) {}
+    @include m.mq(pc) {
+        margin-left: calc(calc(100% - v.$pcWidth) / 2);
+    }
 
-    @include m.mq(tab) {}
+    @include m.mq(miniPc) {
+        margin-left: calc(calc(100% - v.$miniWidth) / 2);
+    }
 
-    @include m.mq(sp) {}
-}
-
-.page-title09 {
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        margin-left: 0;
+    }
 
     @include m.mq(sp) {}
 }
 
-.page-title09__feature {
-    text-align: center;
-
+.titleBN00 {
     display: flex;
-    gap: 30px;
-    flex-direction: column;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        display: inline-block;
+    }
 
     @include m.mq(sp) {}
 }
 
-.page-title09__main {
-    margin-bottom: 20px;
+.titleBN00__feature {
+    margin-right: 100px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
-        margin-bottom: 10px;
+        max-width: 420px;
+        margin-right: 80px;
     }
 
-    @include m.mq(tab) {}
+    @include m.mq(tab) {
+        max-width: 540px;
+        margin: 0 auto;
+    }
 
     @include m.mq(sp) {
-        margin-bottom: 20px;
+        max-width: 90%;
     }
 }
 
-.page-title09__title--main {
+.titleBN00__main {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        margin-top: 130px;
+    }
+
+    @include m.mq(sp) {}
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 80px;
+        height: 2px;
+        background-color: var(--main_color);
+        margin-top: 50px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 60px;
+        }
+
+        @include m.mq(tab) {
+            margin-top: 40px;
+        }
+
+        @include m.mq(sp) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.titleBN00__title--main {
+    color: var(--main_color);
     @include v.pageTitle;
 
     @include m.mq(pc) {}
@@ -1286,7 +1153,26 @@
     @include m.mq(sp) {}
 }
 
-.page-title09__sub {
+.titleBN00__sub {
+    margin-top: 56px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 50px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 30px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 20px
+    }
+}
+
+.titleBN00__title--sub {
+    @include v.titleH4;
 
     @include m.mq(pc) {}
 
@@ -1297,7 +1183,135 @@
     @include m.mq(sp) {}
 }
 
-.page-title09__title--sub {
+.titleBN00__text {
+    margin-top: 30px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleBN00__img {
+    height: 560px;
+    margin-right: 0;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        width: 100%;
+        margin-top: 60px;
+        height: 100%;
+        aspect-ratio: 849 / 560;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 40px;
+        aspect-ratio: 599 / 395;
+    }
+
+    .cms__post__thumbnail {
+        border-radius: 0;
+    }
+}
+
+
+/*  -----------------------------------------------------------------------------------------------
+    titleCN00
+ ----------------------------------------------------------------------------------------------- */
+
+.titleCN00__wrapper {
+    margin-top: 200px;
+    margin-bottom: 160px;
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        margin-top: 180px;
+    }
+
+    @include m.mq(tab) {
+        margin-top: 160px;
+        margin-bottom: 140px;
+    }
+
+    @include m.mq(sp) {
+        margin-top: 120px;
+        margin-bottom: 100px;
+    }
+}
+
+.titleCN00 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCN00__feature {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        gap: 10px
+    }
+
+    @include m.mq(sp) {
+        max-width: unset;
+    }
+}
+
+.titleCN00__main {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCN00__title--main {
+    white-space: nowrap;
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCN00__sub {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCN00__title--sub {
 
 
     @include m.mq(pc) {}
@@ -1309,19 +1323,154 @@
     @include m.mq(sp) {}
 }
 
-.page-title09__text {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.page-title09__img {
+.titleCN00__text {
     display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCN00__img {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+/*  -----------------------------------------------------------------------------------------------
+    titleCP00
+ ----------------------------------------------------------------------------------------------- */
+
+.titleCP00__wrapper {
+    padding-top: 200px;
+    padding-bottom: 160px;
+    position: relative;
+    overflow: hidden;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+        padding-top: 180px;
+    }
+
+    @include m.mq(tab) {
+        padding-top: 160px;
+        padding-bottom: 140px;
+    }
+
+    @include m.mq(sp) {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+}
+
+.titleCP00 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCP00__feature {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    color: #fff;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {
+        gap: 10px
+    }
+
+    @include m.mq(sp) {
+        max-width: unset;
+    }
+}
+
+.titleCP00__main {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCP00__title--main {
+    white-space: nowrap;
+    @include v.pageTitle;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCP00__sub {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCP00__title--sub {
+
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCP00__text {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.titleCP00__img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
 
     @include m.mq(pc) {}
 

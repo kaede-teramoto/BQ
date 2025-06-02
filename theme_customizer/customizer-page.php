@@ -22,7 +22,7 @@ function boutiq_page_design($wp_customize)
         'boutiq_page_design_setting',
         array(
             'type'           => 'theme_mod',
-            'default' => '01',
+            'default' => 'titleAS00',
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
@@ -34,15 +34,16 @@ function boutiq_page_design($wp_customize)
             'settings' => 'boutiq_page_design_setting',
             'type' => 'select',
             'choices' => array(
-                '01' => __('Page Title1', 'boutiq'),
-                '02' => __('Page Title2', 'boutiq'),
-                '03' => __('Page Title3', 'boutiq'),
-                '04' => __('Page Title4', 'boutiq'),
-                '05' => __('Page Title5', 'boutiq'),
-                '06' => __('Page Title6', 'boutiq'),
-                '07' => __('Page Title7', 'boutiq'),
-                '08' => __('Page Title8', 'boutiq'),
-                '09' => __('Page Title9', 'boutiq'),
+                'titleAS00' => __('Title_A-Screen_00', 'boutiq'),
+                'titleAC00' => __('Title_A-Contents_00', 'boutiq'),
+                'titleAR00' => __('Title_A-Right_00', 'boutiq'),
+                'titleAL00' => __('Title_A-Left_00', 'boutiq'),
+                'titleAP00' => __('Title_A-Photo_00', 'boutiq'),
+                'titleAT00' => __('Title_A-Top_00', 'boutiq'),
+                'titleAText00' => __('Title_A-Text_00', 'boutiq'),
+                'titleBN00' => __('Title_B-Normal_00', 'boutiq'),
+                'titleCN00' => __('Title_C-Normal_00', 'boutiq'),
+                'titleCP00' => __('Title_C-Photo_00', 'boutiq'),
             ),
         )
     );

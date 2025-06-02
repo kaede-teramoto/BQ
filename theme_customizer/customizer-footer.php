@@ -67,10 +67,11 @@ function footer_design_setting($wp_customize)
             'settings' => 'footer_design_type',
             'type' => 'select',
             'choices' => array(
-                '01' => __('Footer Type1', 'boutiq'),
-                '02' => __('Footer Type2', 'boutiq'),
-                '03' => __('Footer Type3', 'boutiq'),
-                '04' => __('Set Original Footer', 'boutiq'),
+                'footerAN00' => __('Footer_A-Nomal_00', 'boutiq'),
+                'footerAD00' => __('Footer_A-Detail_00', 'boutiq'),
+                'footerBN00' => __('Footer_B-Nomal_00', 'boutiq'),
+                'footerCN00' => __('Footer_C-Nomal_00', 'boutiq'),
+                'footerOR' => __('Set Original Footer', 'boutiq'),
             ),
         )
     );
