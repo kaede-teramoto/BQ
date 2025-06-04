@@ -42,7 +42,7 @@ function cms_register($wp_customize)
     $wp_customize->add_setting(
         'cms_top_design_setting',
         array(
-            'default' => '01',
+            'default' => 'newsAN00',
             'sanitize_callback' => 'sanitize_text_field',
             'type' => 'theme_mod',
         )
@@ -56,14 +56,14 @@ function cms_register($wp_customize)
             'settings' => 'cms_top_design_setting',
             'type'     => 'select',
             'choices'  => array(
-                '01'   => __('CMS Type01', 'boutiq'),
-                '02'   => __('CMS Type02', 'boutiq'),
-                '03'   => __('CMS Type03', 'boutiq'),
-                '04'   => __('CMS Type04', 'boutiq'),
-                '05'   => __('CMS Type05', 'boutiq'),
-                '06'   => __('CMS Type06', 'boutiq'),
-                '07'   => __('CMS Type07', 'boutiq'),
-                '08'   => __('CMS Type08', 'boutiq'),
+                'newsAN00'   => __('News_A-Normal_00', 'boutiq'),
+                'newsAT00'   => __('News_A-Text_00', 'boutiq'),
+                'newsBN00'   => __('News_B-Normal_00', 'boutiq'),
+                'newsCN00'   => __('News_C-Normal_00', 'boutiq'),
+                'newsDN00'   => __('News_D-Normal_00', 'boutiq'),
+                'newsEN00'   => __('News_E-Normal_00', 'boutiq'),
+                'newsFN00'   => __('News_F-Normal_00', 'boutiq'),
+                'newsGN00'   => __('News_G-Normal_00', 'boutiq'),
             ),
         )
     );
