@@ -249,8 +249,8 @@ if (!($hm_design_type == 'hMenuDU')) :
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__left">%3$s</ul>',
-                                            'li_class' => $hm_design_type . '__nav__wrap-list__item',
+                                            'items_wrap' => '<ul class="hm__nav__list ' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__left">%3$s</ul>',
+                                            'li_class' => 'hm__nav__wrap-list__item' . $hm_design_type . '__nav__wrap-list__item',
                                             'a_class' => 'hm-nav__link',
                                         ));
                                     }
@@ -262,7 +262,7 @@ if (!($hm_design_type == 'hMenuDU')) :
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__right">%3$s</ul>',
+                                            'items_wrap' => '<ul class="hm__nav__list ' . $hm_design_type . '__nav__list ' . $hm_design_type . '__nav__list__right">%3$s</ul>',
                                             'li_class' => $hm_design_type . '__nav__wrap-list__item',
                                             'a_class' => 'hm-nav__link',
                                         ));

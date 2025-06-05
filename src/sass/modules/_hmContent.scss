@@ -21,9 +21,10 @@
     height: 100vh;
     z-index: v.getZIndex(hmContent);
     overflow: hidden;
-    display: none;
+    // display: none;
     opacity: 0;
     transition: opacity .2s ease-in-out;
+    pointer-events: none;
     /* トランジションを指定 */
 
     @include m.mq(pc) {}
@@ -35,6 +36,9 @@
     @include m.mq(sp) {}
 
     &.--active {
+        opacity: 1;
+        pointer-events: initial;
+
         .hm__img__wrapper {
             opacity: 1;
             transform: translateY(0);
@@ -267,6 +271,89 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+}
+
+.hm__nav__list {
+
+    .menu-item-has-children {
+
+        &>a {
+            position: relative;
+            display: flex;
+
+            &::before,
+            &::after {
+                grid-area: menu_toggle;
+                content: "";
+                top: 50%;
+                width: 30px;
+                height: 2px;
+                background-color: var(--header_text_color);
+                position: absolute;
+                right: 0;
+                transition: transform .2s linear;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {
+                    width: 26px;
+                }
+            }
+
+            &::before {
+                transform: rotate(90deg);
+            }
+        }
+
+
+
+
+
+        &.--active>a {
+            &::before {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    .sub-menu {
+        grid-area: menu_sub;
+        max-height: 0;
+        overflow: hidden;
+        display: block;
+        height: auto;
+        position: relative;
+        transition: height .2s ease-out,
+            padding .2s ease-out;
+        padding: 0px;
+
+        &.--active {
+            max-height: 100%;
+            width: 100%;
+            padding: 10px 0px;
+            transition: height .2s ease-out,
+                padding .2s ease-out;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                padding: 5px 0px;
+            }
+
+            @include m.mq(sp) {}
+        }
+
+        a {
+            color: var(--header_text_color);
+            @include v.titleH7;
+        }
+    }
 }
 
 
@@ -695,42 +782,6 @@
 
         @include m.mq(sp) {}
 
-        .menu-item-has-children {
-
-            &::before,
-            &::after {
-                grid-area: menu_toggle;
-                content: "";
-                top: 50%;
-                width: 30px;
-                height: 2px;
-                background-color: var(--header_text_color);
-                position: absolute;
-                right: 0;
-                transition: transform .2s linear;
-
-                @include m.mq(pc) {}
-
-                @include m.mq(miniPc) {}
-
-                @include m.mq(tab) {}
-
-                @include m.mq(sp) {
-                    width: 26px;
-                }
-            }
-
-            &::before {
-                transform: rotate(90deg);
-            }
-
-            &.--active {
-                &::before {
-                    transform: rotate(0);
-                }
-            }
-        }
-
         &>li {
             grid-area: menu_main;
             position: relative;
@@ -1113,24 +1164,28 @@
 
     .menu-item-has-children {
 
-        &::before,
-        &::after {
-            grid-area: menu_toggle;
-            content: "";
-            top: 50%;
-            width: 30px;
-            height: 2px;
-            background-color: var(--header_text_color);
-            position: absolute;
-            right: 0;
-            transition: transform .2s linear;
+        &>a {
+
+            &::before,
+            &::after {
+                grid-area: menu_toggle;
+                content: "";
+                top: 50%;
+                width: 30px;
+                height: 2px;
+                background-color: var(--header_text_color);
+                position: absolute;
+                right: 0;
+                transition: transform .2s linear;
+            }
+
+            &::before {
+                transform: rotate(90deg);
+            }
         }
 
-        &::before {
-            transform: rotate(90deg);
-        }
 
-        &.--active {
+        &.--active>a {
             &::before {
                 transform: rotate(0);
             }
@@ -1156,40 +1211,7 @@
 
         @include m.mq(sp) {}
 
-        .sub-menu {
-            grid-area: menu_sub;
-            max-height: 0;
-            overflow: hidden;
-            display: block;
-            height: auto;
-            position: relative;
-            transition: height .2s ease-out,
-                padding .2s ease-out;
-            padding: 0px;
 
-            &.--active {
-                max-height: 100%;
-                width: 100%;
-                padding: 10px 0px;
-                transition: height .2s ease-out,
-                    padding .2s ease-out;
-
-                @include m.mq(pc) {}
-
-                @include m.mq(miniPc) {}
-
-                @include m.mq(tab) {
-                    padding: 5px 0px;
-                }
-
-                @include m.mq(sp) {}
-            }
-
-            a {
-                color: var(--header_text_color);
-                @include v.titleH7;
-            }
-        }
     }
 }
 
@@ -1427,9 +1449,7 @@
         @include v.titleH6;
     }
 
-    .sub-menu {
-        display: none;
-    }
+
 }
 
 .hMenuBP00__nav__list {
@@ -1715,9 +1735,7 @@
         @include v.titleH6;
     }
 
-    .sub-menu {
-        display: none;
-    }
+
 }
 
 .hMenuBS00__nav__list {
@@ -2517,9 +2535,7 @@
         @include v.titleH6;
     }
 
-    .sub-menu {
-        display: none;
-    }
+
 }
 
 .hMenuDP00__nav__list {
@@ -2788,9 +2804,7 @@
         @include v.titleH6;
     }
 
-    .sub-menu {
-        display: none;
-    }
+
 }
 
 .hMenuDS00__nav__list {

@@ -1,3 +1,5 @@
+'use strict';
+
 const setVw = function () {
     const vw = document.documentElement.clientWidth / 100;
     document.documentElement.style.setProperty('--vw', `${vw}px`);
@@ -45,76 +47,129 @@ document.querySelectorAll('.js-toggle').forEach(toggle => {
     });
 });
 
+// ハンバーガーメニュー：トグル処理
+document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const target = toggle.nextElementSibling;
+        if (!target?.classList.contains('js-hm-target')) return;
 
-// ハンバーガーメニューコンテンツ内の開閉式メニュー
-document.querySelectorAll('.menu-item-has-children > a').forEach(function (anchor) {
-    anchor.addEventListener('click', function (event) {
+        toggle.classList.toggle('--active');
+        target.classList.toggle('--active');
+    });
+});
+
+// サブメニュー開閉：メニュー内に子メニューがある場合
+document.querySelectorAll('.menu-item-has-children > a').forEach(anchor => {
+    anchor.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
 
-        var subMenu = anchor.nextElementSibling;
-        var parentMenuItem = anchor.parentElement;
+        const subMenu = anchor.nextElementSibling;
+        const parent = anchor.parentElement;
 
-        if (subMenu && subMenu.classList.contains('sub-menu')) {
-            if (subMenu.classList.contains('--active')) {
-                subMenu.classList.remove('--active');
-                parentMenuItem.classList.remove('--active');
-            } else {
-                subMenu.classList.add('--active');
-                parentMenuItem.classList.add('--active');
+        if (subMenu?.classList.contains('sub-menu')) {
+            subMenu.classList.toggle('--active');
+            parent.classList.toggle('--active');
+        }
+    });
+});
+
+// アンカーリンククリック時：ハンバーガーメニューとサブメニューを閉じる + スクロール
+document.querySelectorAll('.menu-item a').forEach(link => {
+    link.addEventListener('click', event => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        let url;
+        try {
+            url = new URL(href, window.location.origin);
+        } catch {
+            return;
+        }
+
+        const isSamePageAnchor =
+            url.origin === window.location.origin &&
+            url.pathname === window.location.pathname &&
+            url.hash?.startsWith('#') &&
+            url.hash.length > 1;
+
+        if (isSamePageAnchor) {
+            event.preventDefault();
+
+            const targetId = url.hash.slice(1);
+            const anchorEl = document.getElementById(targetId);
+            if (anchorEl) {
+                anchorEl.scrollIntoView({ behavior: 'smooth' });
             }
-        }
-    });
-});
 
-// ハンバーガーメニュー
-document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function () {
-        const nextElement = this.nextElementSibling;
-        if (nextElement && nextElement.classList.contains('js-hm-target')) {
-            if (getComputedStyle(nextElement).display === 'none') {
-                // 表示する場合
-                nextElement.style.display = 'block';
-                requestAnimationFrame(() => {
-                    nextElement.style.opacity = '1';
-                    toggle.classList.add('--active');
-                });
-                nextElement.addEventListener('transitionend', function handleTransitionEnd() {
-                    nextElement.classList.add('--active');
-                    nextElement.removeEventListener('transitionend', handleTransitionEnd);
-                });
-            } else {
-                // 非表示にする場合
-                nextElement.style.opacity = '0';
-                toggle.classList.remove('--active');
-                nextElement.addEventListener('transitionend', function handleTransitionEnd() {
-                    nextElement.style.display = 'none';
-                    nextElement.classList.remove('--active');
-                    nextElement.removeEventListener('transitionend', handleTransitionEnd);
-                });
-            }
+            document.querySelectorAll('.js-hm-toggle.--active, .js-hm-target.--active, .sub-menu.--active')
+                .forEach(el => el.classList.remove('--active'));
         }
     });
 });
 
 
-document.querySelectorAll('.hm__nav__wrapper > .hm__nav__list > li:not(.menu-item-has-children) a, .sub-menu a, .nav__item a, .hm__btn a').forEach(link => {
-    link.addEventListener('click', () => {
-        // .js-hm-toggleから.--activeクラスを取り除く
-        const toggle = document.querySelector('.js-hm-toggle');
-        if (toggle) {
-            toggle.classList.remove('--active');
-        }
 
-        // .js-hm-targetから.--activeクラスを取り除き、スタイルを設定
-        const target = document.querySelector('.js-hm-target');
-        if (target) {
-            target.classList.remove('--active');
-            target.style.display = 'none';
-            target.style.opacity = '0';
-        }
-    });
-});
+// // ハンバーガーメニューコンテンツ内の開閉式メニュー
+// document.querySelectorAll('.menu-item-has-children > a').forEach(function (anchor) {
+//     anchor.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         event.stopPropagation();
+
+//         var subMenu = anchor.nextElementSibling;
+//         var parentMenuItem = anchor.parentElement;
+
+//         if (subMenu && subMenu.classList.contains('sub-menu')) {
+//             if (subMenu.classList.contains('--active')) {
+//                 subMenu.classList.remove('--active');
+//                 parentMenuItem.classList.remove('--active');
+//             } else {
+//                 subMenu.classList.add('--active');
+//                 parentMenuItem.classList.add('--active');
+//             }
+//         }
+//     });
+// });
+
+// document.querySelectorAll('.menu-item a').forEach(link => {
+//     link.addEventListener('click', event => {
+//         const href = link.getAttribute('href');
+//         if (!href) return;
+
+//         let url;
+//         try {
+//             url = new URL(href, window.location.origin);
+//         } catch (e) {
+//             return;
+//         }
+
+//         const isSamePageAnchor = (
+//             url.origin === window.location.origin &&
+//             url.pathname === window.location.pathname &&
+//             url.hash.startsWith('#') &&
+//             url.hash.length > 1
+//         );
+
+//         if (isSamePageAnchor) {
+//             document.querySelectorAll('.js-hm-toggle.--active').forEach(el => el.classList.remove('--active'));
+//             document.querySelectorAll('.js-hm-target.--active').forEach(el => el.classList.remove('--active'));
+//             document.querySelectorAll('.sub-menu.--active').forEach(el => el.classList.remove('--active'));
+//         }
+//     });
+// });
+
+
+// document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
+//     toggle.addEventListener('click', function () {
+
+//         const nextElement = this.nextElementSibling;
+
+//         if (nextElement && nextElement.classList.contains('js-hm-target')) {
+//             this.classList.toggle('--active');
+//             nextElement.classList.toggle('--active');
+//         }
+//     });
+// });
 
 // marker
 document.addEventListener("DOMContentLoaded", () => {
