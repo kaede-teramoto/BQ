@@ -54,6 +54,7 @@ class Custom_Page_Repeater_Meta_Box
         if (empty($parents)) {
             $parents[] = array(
                 'block_name' => '',
+                'content_type'  => 'r_content',
                 'block_class' => '',
                 'title' => '',
                 'title_image' => '',
@@ -71,7 +72,7 @@ class Custom_Page_Repeater_Meta_Box
 
         echo '</div>'; // .parent-repeater-wrapper
         echo '<div class="add-parent-repeater">';
-        echo '<button type="button" class="button add-parent-button">＋ ブロックを追加</button>';
+        echo '<button type="button" class="button button-primary button-large add-parent-button">ブロックを追加</button>';
         echo '</div>'; // .add-parent-repeater
     }
 
@@ -85,6 +86,11 @@ class Custom_Page_Repeater_Meta_Box
         }
 
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+            return $post_id;
+        }
+
+        // 🔸 プレビュー時は保存スキップ
+        if (isset($_POST['wp-preview']) && $_POST['wp-preview'] === 'dopreview') {
             return $post_id;
         }
 
@@ -151,6 +157,7 @@ class Custom_Page_Repeater_Meta_Box
 
                 $parents[] = array(
                     'block_name'          => sanitize_text_field($block_name),
+                    'content_type'        => sanitize_text_field($parent_item['content_type'] ?? ''),
                     'block_class'         => sanitize_text_field($parent_item['block_class'] ?? ''),
                     'title'               => sanitize_textarea_field($parent_item['title'] ?? ''),
                     'title_image'         => esc_url_raw($parent_item['title_image'] ?? ''),
@@ -216,6 +223,7 @@ class Custom_Page_Repeater_Meta_Box
 
         $parent = array(
             'block_name' => '',
+            'content_type' => 'r_content',
             'block_class' => '',
             'title' => '',
             'title_image' => '',

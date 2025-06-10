@@ -44,6 +44,9 @@
 
         .parent-repeater-header-option {
             margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .parent-repeater-content {}
@@ -75,6 +78,7 @@
             background-color: #fff;
             border: 1px solid #ddd;
             margin: 10px 0;
+            border-radius: 4px;
 
             &>h3 {
                 width: 100%;
@@ -83,7 +87,6 @@
                 border-bottom: 1px solid #ddd;
                 padding: 10px;
                 box-sizing: border-box;
-                background-color: #e2e2e2;
             }
         }
 
@@ -104,7 +107,7 @@
 
         .parent-block-header-text {
             border-right: 1px solid #ddd;
-            padding: 0 10px;
+            padding: 0 10px 5px;
         }
 
         @media (max-width: 1200px) {
@@ -114,12 +117,51 @@
             }
         }
 
+        .content-type-field {
+            display: flex;
+            align-items: center;
+            gap: 0 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+
+            p {
+                display: flex;
+                gap: 10px;
+                margin: 0;
+            }
+
+            label {
+                display: inline-flex;
+                padding: 5px 10px;
+                border: 1px solid #2271b1;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                font-weight: normal;
+                color: #2271b1;
+
+                &:has(input:checked) {
+                    background-color: #2271b1;
+                    color: #fff;
+                }
+
+                input[type=radio] {
+                    display: none;
+                }
+            }
+        }
+
+        .content-type-field-title {
+            font-weight: bold;
+        }
+
         .parent-block-title {
             display: flex;
             flex-direction: column;
             background-color: #fff;
             border: 1px solid #ddd;
             margin-bottom: 10px;
+            border-radius: 4px;
 
             &>h3 {
                 width: 100%;
@@ -128,7 +170,6 @@
                 border-bottom: 1px solid #ddd;
                 padding: 10px;
                 box-sizing: border-box;
-                background-color: #e2e2e2;
             }
         }
 
@@ -248,7 +289,6 @@
                     align-items: center;
                     border-bottom: 1px solid #ddd;
                     padding: 10px;
-                    background-color: #e2e2e2;
 
                     &>h3 {
                         width: 100%;
@@ -269,6 +309,7 @@
                 border-radius: 4px;
                 margin-top: 10px;
                 flex-direction: column;
+                border-radius: 4px;
 
                 .child-repeater-image-header {
                     display: flex;
@@ -277,7 +318,6 @@
                     border-bottom: 1px solid #ddd;
                     max-height: 41px;
                     box-sizing: border-box;
-                    background-color: #e2e2e2;
 
                     &>h3 {
                         width: 100%;
@@ -305,6 +345,8 @@
 
     .add-parent-repeater {
         padding: 10px;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .add-child-repeater {
@@ -315,5 +357,13 @@
         border: 1px solid #ddd;
         background-color: #fff;
         box-sizing: border-box;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .custom-repeater-editor.wp-editor-area {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+
     }
 }

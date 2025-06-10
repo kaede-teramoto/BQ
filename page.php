@@ -13,7 +13,15 @@ get_header(); ?>
 <?php // Content for page
 get_template_part('parts/parts', 'pageTitle'); ?>
 
-<?php // Content for page
-get_template_part('parts/parts', 'pageContent'); ?>
+<?php
+if (have_posts()) : while (have_posts()) : the_post();
+        echo '<section class="section">';
+        echo '<div class="section-inner">';
+        the_content();
+        echo '</div>';
+        echo '</section>';
+    endwhile;
+endif;
+?>
 
 <?php get_footer(); ?>

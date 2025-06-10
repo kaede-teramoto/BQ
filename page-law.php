@@ -15,7 +15,16 @@ get_header(); ?>
         </h1>
     </div>
 
-    <?php // Content for page
-    get_template_part('parts/parts', 'pageContent'); ?>
+    <?php
+    if (have_posts()) : while (have_posts()) : the_post();
+            echo '<section class="section">';
+            echo '<div class="section-inner">';
+            the_content();
+            echo '</div>';
+            echo '</section>';
+        endwhile;
+    endif;
+    ?>
+
 </div>
 <?php get_footer(); ?>

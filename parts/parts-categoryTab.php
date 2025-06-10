@@ -10,10 +10,6 @@ $categories = get_categories(array(
     'hide_empty' => true // 投稿がないカテゴリは除外
 ));
 
-
-
-
-
 if (is_post_type_archive()) : ?>
     <div class="cms__cat cms<?php echo $cms_design; ?>__cat">
         <p class="cms__cat__title cms<?php echo $cms_design; ?>__cat__title">カテゴリー</p>
