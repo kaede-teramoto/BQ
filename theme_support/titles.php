@@ -96,114 +96,6 @@ add_action('save_post', 'custom_save_meta_box_data');
 
 
 /*--------------------------------------------------------------
-  sub title for category
---------------------------------------------------------------*/
-// カテゴリー編集画面に「sub_title」カスタムフィールドを追加
-function add_subtitle_field_to_category($term)
-{
-  // 現在のカテゴリーのIDを取得
-  $term_id = $term->term_id;
-
-  // 現在の「sub_title」の値を取得
-  $sub_title = get_term_meta($term_id, 'sub_title', true);
-?>
-  <tr class="form-field">
-    <th scope="row" valign="top">
-      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
-    </th>
-    <td>
-      <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
-      <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
-    </td>
-  </tr>
-<?php
-}
-add_action('category_edit_form_fields', 'add_subtitle_field_to_category');
-
-// 新規カテゴリー作成画面に「sub_title」カスタムフィールドを追加
-function add_subtitle_field_to_new_category()
-{
-?>
-  <div class="form-field">
-    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
-    <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php _e('Enter a subtitle for this category', 'boutiq'); ?></p>
-  </div>
-<?php
-}
-add_action('category_add_form_fields', 'add_subtitle_field_to_new_category');
-
-// カテゴリーのカスタムフィールドの値を保存
-function save_category_subtitle($term_id)
-{
-  if (isset($_POST['sub_title'])) {
-    $sub_title = sanitize_text_field($_POST['sub_title']);
-    update_term_meta($term_id, 'sub_title', $sub_title);
-  }
-}
-add_action('edited_category', 'save_category_subtitle');
-add_action('create_category', 'save_category_subtitle');
-
-// カテゴリーのカスタムフィールド「sub_title」を表示するための関数
-function get_category_subtitle($term_id)
-{
-  return get_term_meta($term_id, 'sub_title', true);
-}
-
-
-/*--------------------------------------------------------------
-  sub title for tag
---------------------------------------------------------------*/
-// 新規タグ作成画面に「sub_title」カスタムフィールドを追加
-function add_subtitle_field_to_new_tag()
-{
-?>
-  <div class="form-field">
-    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
-    <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php _e('Enter a subtitle for this tag', 'boutiq'); ?></p>
-  </div>
-<?php
-}
-add_action('post_tag_add_form_fields', 'add_subtitle_field_to_new_tag');
-
-// タグ編集画面に「sub_title」カスタムフィールドを追加
-function edit_subtitle_field_for_tag($term)
-{
-  $sub_title = get_term_meta($term->term_id, 'sub_title', true);
-?>
-  <tr class="form-field">
-    <th scope="row" valign="top">
-      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
-    </th>
-    <td>
-      <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
-      <p class="description"><?php _e('Enter a subtitle for this tag', 'boutiq'); ?></p>
-    </td>
-  </tr>
-<?php
-}
-add_action('post_tag_edit_form_fields', 'edit_subtitle_field_for_tag');
-
-// タグのカスタムフィールドの値を保存
-function save_tag_subtitle($term_id)
-{
-  if (isset($_POST['sub_title'])) {
-    $sub_title = sanitize_text_field($_POST['sub_title']);
-    update_term_meta($term_id, 'sub_title', $sub_title);
-  }
-}
-add_action('edited_post_tag', 'save_tag_subtitle');
-add_action('create_post_tag', 'save_tag_subtitle');
-
-// タグのカスタムフィールド「sub_title」を表示するための関数
-function get_tag_subtitle($term_id)
-{
-  return get_term_meta($term_id, 'sub_title', true);
-}
-
-
-/*--------------------------------------------------------------
   現在のタクソノミーアーカイブでターム名と説明を出力する関数
 --------------------------------------------------------------*/
 /**
@@ -224,29 +116,45 @@ function taxonomy_term_title()
 
 
 /*--------------------------------------------------------------
-  Subtitle for Registered Taxonomies Only
+  Taxonomy Subtitle + Image Upload Field (for Category, Tag, CPT Taxonomies)
 --------------------------------------------------------------*/
 
-// 編集画面に「sub_title」フィールド追加
-function add_subtitle_field_to_taxonomy($term)
+// フォーム出力（編集画面）
+function add_custom_fields_to_taxonomy_edit_form($term)
 {
   $term_id = $term->term_id;
-  $sub_title = get_term_meta($term_id, 'sub_title', true);
+  $subtitle = get_term_meta($term_id, 'sub_title', true);
+  $image_url = get_term_meta($term_id, 'sub_image', true);
 ?>
   <tr class="form-field">
     <th scope="row" valign="top">
       <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     </th>
     <td>
-      <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($sub_title); ?>" size="40">
+      <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($subtitle); ?>" size="40">
       <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
+    </td>
+  </tr>
+  <tr class="form-field">
+    <th scope="row" valign="top">
+      <label for="sub_image"><?php _e('Image', 'boutiq'); ?></label>
+    </th>
+    <td>
+      <input type="hidden" name="sub_image" id="sub_image" value="<?php echo esc_attr($image_url); ?>">
+      <button class="button sub-image-upload"><?php _e('Select Image', 'boutiq'); ?></button>
+      <button class="button sub-image-remove"><?php _e('Remove Image', 'boutiq'); ?></button>
+      <div class="sub-image-preview" style="margin-top:10px;">
+        <?php if ($image_url): ?>
+          <img src="<?php echo esc_url($image_url); ?>" style="max-width:150px; height:auto;">
+        <?php endif; ?>
+      </div>
     </td>
   </tr>
 <?php
 }
 
-// 新規追加画面に「sub_title」フィールド追加
-function add_subtitle_field_to_new_taxonomy()
+// フォーム出力（新規追加画面）
+function add_custom_fields_to_taxonomy_add_form()
 {
 ?>
   <div class="form-field">
@@ -254,37 +162,48 @@ function add_subtitle_field_to_new_taxonomy()
     <input type="text" name="sub_title" id="sub_title" value="" size="40">
     <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
   </div>
+  <div class="form-field">
+    <label for="sub_image"><?php _e('Image', 'boutiq'); ?></label>
+    <input type="hidden" name="sub_image" id="sub_image" value="">
+    <button class="button sub-image-upload"><?php _e('Select Image', 'boutiq'); ?></button>
+    <button class="button sub-image-remove"><?php _e('Remove Image', 'boutiq'); ?></button>
+    <div class="sub-image-preview" style="margin-top:10px;"></div>
+  </div>
 <?php
 }
 
-// サブタイトルを保存
-function save_taxonomy_subtitle($term_id)
+// 保存処理
+function save_taxonomy_custom_fields($term_id)
 {
   if (isset($_POST['sub_title'])) {
-    $sub_title = sanitize_text_field($_POST['sub_title']);
-    update_term_meta($term_id, 'sub_title', $sub_title);
+    update_term_meta($term_id, 'sub_title', sanitize_text_field($_POST['sub_title']));
+  }
+  if (isset($_POST['sub_image'])) {
+    update_term_meta($term_id, 'sub_image', esc_url_raw($_POST['sub_image']));
   }
 }
 
-// 登録済みのタクソノミーにのみ適用
-function apply_subtitle_to_registered_taxonomies()
+// JS読み込み
+function enqueue_taxonomy_custom_field_scripts($hook)
 {
-  $taxonomies = get_taxonomies([], 'names');
+  if (!in_array($hook, ['edit-tags.php', 'term.php'])) return;
+  wp_enqueue_media();
+  wp_enqueue_script('taxonomy-image-field', get_template_directory_uri() . '/theme_support/js/taxonomy-image-field.js', ['jquery'], null, true);
+}
+add_action('admin_enqueue_scripts', 'enqueue_taxonomy_custom_field_scripts');
 
+// 適用タクソノミーにフックを追加
+function apply_custom_fields_to_taxonomies()
+{
+  $excluded = ['category', 'post_tag'];
+  $taxonomies = get_taxonomies([], 'names');
   foreach ($taxonomies as $taxonomy) {
-    // タクソノミーが存在する場合のみフックを追加
     if (taxonomy_exists($taxonomy)) {
-      add_action("{$taxonomy}_edit_form_fields", 'add_subtitle_field_to_taxonomy');
-      add_action("{$taxonomy}_add_form_fields", 'add_subtitle_field_to_new_taxonomy');
-      add_action("edited_{$taxonomy}", 'save_taxonomy_subtitle');
-      add_action("create_{$taxonomy}", 'save_taxonomy_subtitle');
+      add_action("{$taxonomy}_edit_form_fields", 'add_custom_fields_to_taxonomy_edit_form');
+      add_action("{$taxonomy}_add_form_fields", 'add_custom_fields_to_taxonomy_add_form');
+      add_action("edited_{$taxonomy}", 'save_taxonomy_custom_fields');
+      add_action("create_{$taxonomy}", 'save_taxonomy_custom_fields');
     }
   }
 }
-add_action('init', 'apply_subtitle_to_registered_taxonomies');
-
-// サブタイトル取得用関数
-function get_taxonomy_subtitle($term_id)
-{
-  return get_term_meta($term_id, 'sub_title', true);
-}
+add_action('init', 'apply_custom_fields_to_taxonomies');
