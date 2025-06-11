@@ -201,7 +201,7 @@ if ($cms_design == 'newsBN00') : ?>
                                 <?php else : /* 登録されていなかったら */ ?>
                                     <div class="top-cms__post__thumbnail <?php echo $cms_design; ?>__post__thumbnail">
                                         <a class="top-cms__post__link <?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="" loading="eager">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbnails/thumbnail.webp" alt="" loading="eager">
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -246,7 +246,7 @@ if ($cms_design == 'newsBN00') : ?>
                                     <?php else : /* 登録されていなかったら */ ?>
                                         <div class="top-cms__post__thumbnail <?php echo $cms_design; ?>__post__thumbnail">
                                             <a class="top-cms__post__link <?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="" loading="lazy">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbnails/thumbnail.webp" alt="" loading="lazy">
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -327,7 +327,7 @@ if ($cms_design == 'newsBN00') : ?>
                                 <?php else : /* 登録されていなかったら */ ?>
                                     <div class="top-cms__post__thumbnail <?php echo $cms_design; ?>__post__thumbnail">
                                         <a class="top-cms__post__link <?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="" loading="eager">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbnails/thumbnail.webp" alt="" loading="eager">
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -372,7 +372,7 @@ if ($cms_design == 'newsBN00') : ?>
                                     <?php else : /* 登録されていなかったら */ ?>
                                         <div class="top-cms__post__thumbnail <?php echo $cms_design; ?>__post__thumbnail">
                                             <a class="top-cms__post__link <?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/dummy.png" alt="" loading="lazy">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbnails/thumbnail.webp" alt="" loading="lazy">
                                             </a>
                                         </div>
                                     <?php endif; ?>

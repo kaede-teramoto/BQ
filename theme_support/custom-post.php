@@ -5,8 +5,6 @@
  * @package BOUTiQ
  */
 
-
-
 /*--------------------------------------------------------------
   custom post
 --------------------------------------------------------------*/
@@ -113,9 +111,9 @@ function display_custom_post_type_image()
 
   // 画像を表示
   if ($image_url) {
-    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_html($post_type_object->labels->name) . '" class="category-image">';
+    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_html($post_type_object->labels->name) . '">';
   } else {
     $theme_url = get_template_directory_uri();
-    echo '<img src="' .  $theme_url . '/assets/images/thumbnails/thumbnail.webp" alt="' . esc_html($post_type_object->labels->name) . '" class="category-image">';
+    echo '<img src="' .  $theme_url . '/assets/images/thumbnails/thumbnail.webp" alt="' . esc_html($post_type_object->labels->name) . '">';
   }
 }
