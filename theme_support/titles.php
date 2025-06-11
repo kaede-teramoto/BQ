@@ -31,23 +31,23 @@ if (!function_exists('_wp_render_title_tag')) {
   sub title for page
 --------------------------------------------------------------*/
 // カスタムメタボックスを追加
-function custom_add_meta_box()
+function page_subtitle_add_meta_box()
 {
   add_meta_box(
-    'custom_meta_box', // メタボックスID
+    'page_subtitle_meta_box', // メタボックスID
     'サブタイトルとページ概要', // メタボックスタイトル
-    'custom_meta_box_callback', // コールバック関数
+    'page_subtitle_meta_box_callback', // コールバック関数
     'page', // 投稿タイプ（ここではページ）
     'normal', // 表示位置
     'high' // 表示優先度
   );
 }
-add_action('add_meta_boxes', 'custom_add_meta_box');
+add_action('add_meta_boxes', 'page_subtitle_add_meta_box');
 
 // メタボックスの内容を表示するコールバック関数
-function custom_meta_box_callback($post)
+function page_subtitle_meta_box_callback($post)
 {
-  wp_nonce_field(basename(__FILE__), 'custom_meta_box_nonce'); // セキュリティフィールド
+  wp_nonce_field(basename(__FILE__), 'page_subtitle_meta_box_nonce'); // セキュリティフィールド
   $subTitle = get_post_meta($post->ID, '_custom_subtitle', true);
   $pageSummary = get_post_meta($post->ID, '_custom_page_summary', true);
   ?>
@@ -72,7 +72,7 @@ function custom_meta_box_callback($post)
 // メタボックスのデータを保存
 function custom_save_meta_box_data($post_id)
 {
-  if (!isset($_POST['custom_meta_box_nonce']) || !wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__))) {
+  if (!isset($_POST['page_subtitle_meta_box_nonce']) || !wp_verify_nonce($_POST['page_subtitle_meta_box_nonce'], basename(__FILE__))) {
     return;
   }
 
@@ -106,7 +106,7 @@ function taxonomy_term_title()
   $term = get_queried_object();
 
   if ($term && !is_wp_error($term) && isset($term->name)) {
-    echo esc_html($term->name);
+    esc_html($term->name);
   }
 }
 
@@ -207,3 +207,29 @@ function apply_custom_fields_to_taxonomies()
   }
 }
 add_action('init', 'apply_custom_fields_to_taxonomies');
+
+// サブタイトルの出力関数
+function get_taxonomy_subtitle($term_id)
+{
+  return get_term_meta($term_id, 'sub_title', true);
+}
+
+// 呼び出しコード
+// $subtitle = get_taxonomy_subtitle($term_id);
+
+// if ($subtitle) {
+//     echo '<h2 class="taxonomy-subtitle">' . esc_html($subtitle) . '</h2>';
+// }
+
+// 画像の出力関数
+function get_taxonomy_image_url($term_id)
+{
+  return get_term_meta($term_id, 'sub_image', true);
+}
+
+// 呼び出しコード
+// $image_url = get_taxonomy_image_url($term_id);
+
+// if ($image_url) {
+//   echo '<img src="' . esc_url($image_url) . '" alt="" style="max-width:100%; height:auto;">';
+// }

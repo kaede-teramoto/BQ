@@ -10,12 +10,7 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            var blockName = $(this).find('input[name="page_custom_repeater[parents][' + parentIndex + '][block_name]"]').val();
-            if (blockName && blockName.trim() !== '') {
-                $(this).find('.parent-repeater-header').contents().first()[0].textContent = blockName.trim();
-            } else {
-                $(this).find('.parent-repeater-header').contents().first()[0].textContent = 'ブロック ' + (parentIndex + 1);
-            }
+            updateParentHeaderTitle($(this), parentIndex);
 
             var postId = $('input#post_ID').val();
             var key = 'custom_repeater_parent_' + postId + '_' + parentIndex;
@@ -38,12 +33,7 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            var subtitle = $(this).find('input[name="page_custom_repeater[parents][' + parentIndex + '][children][' + childIndex + '][subtitle]"]').val();
-            if (subtitle && subtitle.trim() !== '') {
-                $(this).find('.child-repeater-header').contents().first()[0].textContent = subtitle.trim();
-            } else {
-                $(this).find('.child-repeater-header').contents().first()[0].textContent = '子ブロック ' + (childIndex + 1);
-            }
+            updateChildHeaderTitle($(this), parentIndex, childIndex);
 
             var postId = $('input#post_ID').val();
             var key = 'custom_repeater_child_' + postId + '_' + parentIndex + '_' + childIndex;
@@ -63,37 +53,11 @@ jQuery(document).ready(function ($) {
     }
 
     function reinitTinyMCE(editorId) {
-        if (!editorId) return;
-
         if (typeof tinymce !== 'undefined') {
-            const existing = tinymce.get(editorId);
-            if (existing) existing.remove();
-        }
-
-        if (typeof wp !== 'undefined' && wp.editor && wp.editor.initialize) {
-            // Gutenberg (WP 5以降)
-            wp.editor.initialize(editorId, {
-                tinymce: {
-                    toolbar1: 'bold italic underline | bullist | link unlink | removeformat',
-                    menubar: false,
-                    statusbar: false
-                },
-                quicktags: true,
-                mediaButtons: false
-            });
-        } else if (typeof tinyMCEPreInit !== 'undefined' && tinyMCEPreInit.mceInit) {
-            // Classic editor
-            if (typeof tinymce !== 'undefined') {
-                setTimeout(function () {
-                    tinymce.init(Object.assign({}, tinyMCEPreInit.mceInit[editorId] || {}, {
-                        selector: '#' + editorId,
-                        menubar: false,
-                        toolbar1: 'bold italic underline | bullist | link unlink | removeformat',
-                        toolbar2: '',
-                        statusbar: false
-                    }));
-                }, 100);
+            if (tinymce.get(editorId)) {
+                tinymce.get(editorId).remove();
             }
+            tinymce.execCommand('mceAddEditor', false, editorId);
         }
     }
 
@@ -107,6 +71,18 @@ jQuery(document).ready(function ($) {
                 img.attr('src', '').hide();
             }
         });
+    }
+
+    function updateParentHeaderTitle($parentGroup, parentIndex) {
+        var blockName = $parentGroup.find('input[name="page_custom_repeater[parents][' + parentIndex + '][block_name]"]').val();
+        var title = blockName && blockName.trim() !== '' ? blockName.trim() : 'ブロック ' + (parentIndex + 1);
+        $parentGroup.find('.parent-repeater-header').contents().first()[0].textContent = title;
+    }
+
+    function updateChildHeaderTitle($childGroup, parentIndex, childIndex) {
+        var subtitle = $childGroup.find('input[name="page_custom_repeater[parents][' + parentIndex + '][children][' + childIndex + '][subtitle]"]').val();
+        var title = subtitle && subtitle.trim() !== '' ? subtitle.trim() : '子ブロック ' + (childIndex + 1);
+        $childGroup.find('.child-repeater-header').contents().first()[0].textContent = title;
     }
 
     // 初期ロード時 → 折りたたみ状態復元
@@ -129,8 +105,11 @@ jQuery(document).ready(function ($) {
             } else {
                 childContent.hide();
             }
+
+            updateChildHeaderTitle($(this), parentIndex, childIndex);
         });
 
+        updateParentHeaderTitle($(this), parentIndex);
         refreshImagePreviews($(this));
     });
 
@@ -147,7 +126,6 @@ jQuery(document).ready(function ($) {
             });
         }
     });
-
 
     // ブロック 削除
     $('.parent-repeater-wrapper').on('click', '.remove-parent-repeater', function (e) {
@@ -191,7 +169,6 @@ jQuery(document).ready(function ($) {
             });
         }
     });
-
 
     // 子ブロック 削除
     $('.parent-repeater-wrapper').on('click', '.remove-child-repeater', function (e) {
@@ -260,33 +237,25 @@ jQuery(document).ready(function ($) {
         refreshImagePreviews(button.closest('.parent-repeater-group, .child-repeater-group'));
     });
 
-
     // 親セッット複製ボタン
     $('.parent-repeater-wrapper').on('click', '.copy-parent-repeater', function (e) {
         e.preventDefault();
 
         var parentGroup = $(this).closest('.parent-repeater-group');
-        var clonedGroup = parentGroup.clone();
 
-        // clonedGroup.find('textarea').each(function () {
-        //     var editorId = $(this).attr('id');
-        //     if (typeof tinymce !== 'undefined' && tinymce.get(editorId)) {
-        //         tinymce.get(editorId).remove();
-        //     }
-        // });
+        // ★ 複製元 → checked 状態を value として保存
+        var radioCheckedValue = parentGroup.find('input[type="radio"][name$="[content_type]"]:checked').val();
+
+        var clonedGroup = parentGroup.clone(true, true);
 
         clonedGroup.find('.wp-editor-wrap').each(function () {
             var textarea = $(this).find('textarea');
             var baseName = textarea.attr('name');
             var newId = baseName.replace(/\[|\]/g, '_').replace(/__+/g, '_').replace(/^_|_$/g, '');
 
-            // .wp-editor-wrap ごと remove → textareaだけ残す
             $(this).replaceWith(textarea);
-
-            // textareaに新しい id を付与
             textarea.attr('id', newId);
         });
-
 
         clonedGroup.find('.mce-tinymce, .wp-editor-tools').remove();
 
@@ -294,9 +263,18 @@ jQuery(document).ready(function ($) {
 
         refreshParentIndexes();
 
+        if (radioCheckedValue !== undefined) {
+            // 複製元 復元
+            parentGroup.find('input[type="radio"][name$="[content_type]"]').each(function () {
+                $(this).prop('checked', $(this).val() === radioCheckedValue);
+            });
+
+            // 複製先 同じものを checked にする
+            clonedGroup.find('input[type="radio"][name$="[content_type]"]').each(function () {
+                $(this).prop('checked', $(this).val() === radioCheckedValue);
+            });
+        }
         var newParentIndex = $('.parent-repeater-group').length - 1;
-        // var parentEditorId = 'page_custom_repeater_parents_' + newParentIndex + '_content';
-        // reinitTinyMCE(parentEditorId);
 
         var newChildrenWrapper = $('.parent-repeater-wrapper .parent-repeater-group').last().find('.children-wrapper')[0];
         new Sortable(newChildrenWrapper, {
@@ -308,7 +286,8 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        // スクロール移動
+        updateParentBlockBodyVisibility($('.parent-repeater-wrapper .parent-repeater-group').last());
+
         $('html, body, .edit-post-layout__content, .interface-interface-skeleton__content').animate({
             scrollTop: $('.parent-repeater-group').last().offset().top - 20
         }, -100);
@@ -342,6 +321,8 @@ jQuery(document).ready(function ($) {
         var newChildIndex = parentGroup.find('.children-wrapper .child-repeater-group').length - 1;
         var childKey = 'custom_repeater_child_' + postId + '_' + parentIndex + '_' + newChildIndex;
         var newChildGroup = parentGroup.find('.children-wrapper .child-repeater-group').last();
+        refreshImagePreviews(newChildGroup);
+
         newChildGroup.find('.child-repeater-content').show(); // 開く
         saveToggleState(childKey, true); // localStorageに保存
 
@@ -393,6 +374,8 @@ jQuery(document).ready(function ($) {
 
                     // 親セット 自動展開＋スクロール
                     var newParentGroup = $('.parent-repeater-wrapper .parent-repeater-group').last();
+                    refreshImagePreviews(newParentGroup);
+
                     newParentGroup.find('.parent-repeater-content').hide().slideDown('fast');
                     $('html, body').animate({
                         scrollTop: newParentGroup.offset().top - 100
@@ -437,6 +420,10 @@ jQuery(document).ready(function ($) {
                     // TinyMCE再初期化（子セット）
                     //var childEditorId = 'page_custom_repeater_parents_' + parentIndex + '_children_' + nextChildIndex + '_subcontent';
                     //reinitTinyMCE(childEditorId);
+
+                    // ✅ ★★★ ここに↓追加すればOKです！★★★
+                    var newChildGroup = parentGroup.find('.children-wrapper .child-repeater-group').last();
+                    refreshImagePreviews(newChildGroup); // ← 追加
 
                 } else {
                     alert('エラー: ' + response.data);
@@ -546,5 +533,219 @@ jQuery(document).ready(function ($) {
         }
 
     });
+
+    // ★ TinyMCE 全保存 on previewクリック対応
+    $('form#post').on('click', 'input#post-preview', function () {
+        if (typeof tinymce !== 'undefined') {
+            tinymce.triggerSave();
+        }
+    });
+
+    // ★ コンテンツ種別 切り替え時に .parent-block-body を表示/非表示
+    function updateParentBlockBodyVisibility(parentGroup) {
+        var selectedValue = parentGroup.find('input[name^="page_custom_repeater"][name$="[content_type]"]:checked').val();
+        var parentBlockBody = parentGroup.find('.parent-block-body');
+
+        if (selectedValue === 'r_news' || selectedValue === 'r_common') {
+            parentBlockBody.hide();
+        } else {
+            parentBlockBody.show();
+        }
+    }
+
+    // ★ イベントリスナー
+    $('.parent-repeater-wrapper').on('change', 'input[name^="page_custom_repeater"][name$="[content_type]"]', function () {
+        var parentGroup = $(this).closest('.parent-repeater-group');
+        updateParentBlockBodyVisibility(parentGroup);
+    });
+
+    // ★ 初期ロード時に全親ブロックで実行
+    $('.parent-repeater-wrapper .parent-repeater-group').each(function () {
+        updateParentBlockBodyVisibility($(this));
+    });
+
+    // Previewボタン押下時 → TinyMCE保存 + savePost実行
+    // function handlePreviewClick(e) {
+    //     // TinyMCE全保存
+    //     if (typeof tinymce !== 'undefined') {
+    //         tinymce.triggerSave();
+    //     }
+
+    //     // savePost({isPreview:true})を実行（metaがREST APIに乗る）
+    //     if (typeof wp !== 'undefined' && wp.data && wp.data.dispatch) {
+    //         e.preventDefault(); // デフォルトの遷移は止める（savePost完了後に遷移）
+
+    //         wp.data.dispatch('core/editor').savePost({ isPreview: true }).then(() => {
+    //             // savePost完了後に previewページへリダイレクト
+    //             const previewButton = e.currentTarget;
+    //             if (previewButton && previewButton.href) {
+    //                 window.location.href = previewButton.href;
+    //             }
+    //         });
+    //     }
+    // }
+
+    // // editor-post-preview ボタン対応
+    // $(document).on('click', '.editor-post-preview', handlePreviewClick);
+
+    // // editor-post-publish-panel__header-preview ボタン対応
+    // $(document).on('click', '.editor-post-publish-panel__header-preview', handlePreviewClick);
+
+
+    //
+    // $(document).on('click', '.editor-post-preview, .editor-post-publish-panel__header-preview', function (e) {
+    //     console.log('📢 Preview clicked');
+
+    //     // 一時的に sortable を無効化して影響確認
+    //     document.querySelectorAll('.parent-repeater-wrapper .children-wrapper').forEach(function (el) {
+    //         if (el._sortable) {
+    //             el._sortable.option('disabled', true);
+    //         }
+    //     });
+    //     if ($('.parent-repeater-wrapper')[0]._sortable) {
+    //         $('.parent-repeater-wrapper')[0]._sortable.option('disabled', true);
+    //     }
+
+    //     // TinyMCE 全保存
+    //     if (typeof tinymce !== 'undefined') {
+    //         console.log('📢 TinyMCE triggerSave');
+    //         tinymce.triggerSave();
+    //     }
+
+    //     if (typeof wp !== 'undefined' && wp.data && wp.data.dispatch) {
+    //         e.preventDefault();
+    //         console.log('📢 wp.data.dispatch savePost');
+    //         wp.data.dispatch('core/editor').savePost({ isPreview: true }).then(() => {
+    //             console.log('📢 savePost complete, redirect to preview');
+    //             const previewButton = e.currentTarget;
+    //             if (previewButton && previewButton.href) {
+    //                 window.location.href = previewButton.href;
+    //             }
+    //         });
+    //     }
+    // });
+
+    // ★ Previewボタン押下時 → TinyMCE保存 + savePost({isPreview:true}) + Sortable disable テスト版
+    // $(document).on('click', '.editor-post-preview', function (e) {
+
+    //     // TinyMCE全保存
+    //     if (typeof tinymce !== 'undefined') {
+    //         tinymce.triggerSave();
+    //     }
+
+    //     // SortableJS 全disable（テスト用）
+    //     window.__previewSortables = []; // グローバルに保持
+    //     $('.parent-repeater-wrapper').each(function () {
+    //         var sortable = Sortable.get(this);
+    //         if (sortable) {
+    //             sortable.option("disabled", true); // 無効化
+    //             window.__previewSortables.push(sortable);
+    //         }
+    //     });
+    //     $('.parent-repeater-wrapper .children-wrapper').each(function () {
+    //         var sortable = Sortable.get(this);
+    //         if (sortable) {
+    //             sortable.option("disabled", true); // 無効化
+    //             window.__previewSortables.push(sortable);
+    //         }
+    //     });
+
+    //     console.log('✅ [Preview Test] Sortable disabled → savePost(isPreview:true) 開始');
+
+    //     // savePost({isPreview:true})を実行（metaがREST APIに乗る）
+    //     if (typeof wp !== 'undefined' && wp.data && wp.data.dispatch) {
+    //         e.preventDefault(); // デフォルトの遷移は止める（savePost完了後に遷移）
+
+    //         wp.data.dispatch('core/editor').savePost({ isPreview: true }).then(() => {
+
+    //             console.log('✅ [Preview Test] savePost 完了 → Sortable再有効化');
+
+    //             // Sortable再有効化（念のため）
+    //             if (window.__previewSortables) {
+    //                 window.__previewSortables.forEach(s => {
+    //                     s.option("disabled", false);
+    //                 });
+    //             }
+
+    //             // previewページへリダイレクト
+    //             const previewButton = document.querySelector('.editor-post-preview');
+    //             if (previewButton && previewButton.href) {
+    //                 window.location.href = previewButton.href;
+    //             }
+    //         });
+    //     }
+    // });
+
+    // ✅ Gutenberg公式対応 Preview 完全版 hook (修正版)
+    if (typeof wp !== 'undefined' && wp.data && wp.data.subscribe) {
+        let isPreviewing = false;
+        let previewClicked = false; // ⭐️ フラグ追加
+
+        // ⭐️ Previewボタン click時にフラグ立てる
+        $(document).on('click', '.editor-post-preview, .editor-post-publish-panel__header-preview', function (e) {
+            e.preventDefault(); // ⭐️ デフォルト遷移防止
+            if (typeof tinymce !== 'undefined') {
+                tinymce.triggerSave();
+            }
+            previewClicked = true; // ⭐️ フラグ ON
+
+            // SortableJS disable（念のため）
+            window.__previewSortables = [];
+            $('.parent-repeater-wrapper').each(function () {
+                var sortable = Sortable.get(this);
+                if (sortable) {
+                    sortable.option("disabled", true);
+                    window.__previewSortables.push(sortable);
+                }
+            });
+            $('.parent-repeater-wrapper .children-wrapper').each(function () {
+                var sortable = Sortable.get(this);
+                if (sortable) {
+                    sortable.option("disabled", true);
+                    window.__previewSortables.push(sortable);
+                }
+            });
+
+            console.log('✅ Preview click → savePost(isPreview:true) 開始');
+
+            // savePost 呼び出し
+            wp.data.dispatch('core/editor').savePost({ isPreview: true });
+        });
+
+        wp.data.subscribe(() => {
+            const isSaving = wp.data.select('core/editor').isSavingPost();
+            const isAutosaving = wp.data.select('core/editor').isAutosavingPost();
+            const isPreview = wp.data.select('core/editor').isPreviewingPost();
+
+            if (previewClicked && isPreview && !isSaving && !isAutosaving && !isPreviewing) {
+                isPreviewing = true;
+                console.log('✅ Preview save complete → do redirect');
+
+                // SortableJS 再有効化
+                if (window.__previewSortables) {
+                    window.__previewSortables.forEach(s => {
+                        s.option("disabled", false);
+                    });
+                }
+
+                // TinyMCE 全保存
+                if (typeof tinymce !== 'undefined') {
+                    tinymce.triggerSave();
+                }
+
+                // previewページへリダイレクト
+                const previewButton = document.querySelector('.editor-post-preview');
+                if (previewButton && previewButton.href) {
+                    window.location.href = previewButton.href;
+                }
+            }
+
+            // Savingが終わったら isPreviewing / previewClicked をリセット
+            if (!isSaving && !isAutosaving) {
+                isPreviewing = false;
+                previewClicked = false;
+            }
+        });
+    }
 
 });

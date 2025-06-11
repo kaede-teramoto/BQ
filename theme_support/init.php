@@ -170,19 +170,6 @@ function load_recaptcha_js()
 add_action('wp_enqueue_scripts', 'load_recaptcha_js', 100);
 
 /*--------------------------------------------------------------
-  Stop updating 'Custom Fields'
---------------------------------------------------------------*/
-function disable_plugin_update($data)
-{
-  $plugin_path = 'advanced-custom-fields/acf.php';
-  if (isset($data->response[$plugin_path])) {
-    unset($data->response[$plugin_path]);
-  }
-  return $data;
-}
-add_filter('site_option__site_transient_update_plugins', 'disable_plugin_update');
-
-/*--------------------------------------------------------------
   Category link
 --------------------------------------------------------------*/
 function cat_link()
@@ -304,18 +291,24 @@ function register_common_parts_post_type()
     'show_in_admin_bar'  => true,
     'menu_position'      => 3,
     'menu_icon'          => 'dashicons-admin-generic',
-    'capability_type'    => 'common_part', // 権限グループを独自のものに変更
+    'capability_type'    => 'common_part',
     'capabilities'       => array(
-      'edit_post'          => 'edit_common_part',
-      'edit_posts'         => 'edit_common_parts',
-      'edit_others_posts'  => 'edit_others_common_parts',
-      'publish_posts'      => 'publish_common_parts',
-      'read_post'          => 'read_common_part',
-      'read_private_posts' => 'read_private_common_parts',
-      'delete_post'        => 'delete_common_part',
+      'edit_post'              => 'edit_common_part',
+      'edit_posts'             => 'edit_common_parts',
+      'edit_others_posts'      => 'edit_others_common_parts',
+      'edit_private_posts'     => 'edit_private_common_parts', // 追加
+      'publish_posts'          => 'publish_common_parts',
+      'read_post'              => 'read_common_part',
+      'read_private_posts'     => 'read_private_common_parts',
+      'delete_post'            => 'delete_common_part',
+      'delete_posts'           => 'delete_common_parts',
+      'delete_others_posts'    => 'delete_others_common_parts',
+      'delete_private_posts'   => 'delete_private_common_parts', // 追加
+      'edit_published_posts' => 'edit_published_common_parts',
+      'delete_published_posts' => 'delete_published_common_parts',
     ),
-    'map_meta_cap'       => true, // WordPressのデフォルトの権限設定を適用
-    'supports'           => array('title', 'editor', 'thumbnail'),
+    'map_meta_cap'       => true,
+    'supports'           => array('title', 'editor', 'thumbnail', 'author'),
     'has_archive'        => false,
     'rewrite'            => false,
     'query_var'          => false,
@@ -326,99 +319,32 @@ function register_common_parts_post_type()
 add_action('init', 'register_common_parts_post_type');
 
 /**
- * 管理者に「common_parts」の権限を付与
+ * 管理者・編集者に「common_parts」の全権限を付与
  */
 function add_common_parts_capabilities()
 {
-  $role = get_role('editor');
-  if ($role) {
-    $role->add_cap('edit_common_part');
-    $role->add_cap('edit_common_parts');
-    $role->add_cap('edit_others_common_parts');
-    $role->add_cap('publish_common_parts');
-    $role->add_cap('read_common_part');
-    $role->add_cap('read_private_common_parts');
-    $role->add_cap('delete_common_part');
+  $roles = ['administrator', 'editor'];
+
+  foreach ($roles as $role_name) {
+    $role = get_role($role_name);
+    if ($role) {
+      $role->add_cap('edit_common_part');
+      $role->add_cap('edit_common_parts');
+      $role->add_cap('edit_others_common_parts');
+      $role->add_cap('edit_private_common_parts'); // 追加
+      $role->add_cap('publish_common_parts');
+      $role->add_cap('read_common_part');
+      $role->add_cap('read_private_common_parts');
+      $role->add_cap('delete_common_part');
+      $role->add_cap('delete_common_parts');
+      $role->add_cap('delete_others_common_parts');
+      $role->add_cap('delete_private_common_parts'); // 追加
+      $role->add_cap('edit_published_common_parts');
+      $role->add_cap('delete_published_common_parts');
+    }
   }
 }
 add_action('admin_init', 'add_common_parts_capabilities');
-
-
-/*--------------------------------------------------------------
-  カスタムフィールドのHTMLタグを保持するフィルターを追加
---------------------------------------------------------------*/
-// ACFのblock_titleフィールドにHTMLタグを許可
-function allow_html_in_acf_textarea($value, $post_id, $field)
-{
-  // フィールド名が 'block_title' の場合にHTMLタグを許可
-  if ($field['name'] === 'block_title') {
-    $value = wp_kses_post($value);  // 基本的なHTMLタグを許可
-  }
-  return $value;
-}
-add_filter('acf/update_value', 'allow_html_in_acf_textarea', 10, 3);
-
-
-// カスタムフィールドのHTMLをそのまま表示
-//echo wp_kses( $block_title, custom_allowed_html_tags() );
-
-
-/*--------------------------------------------------------------
-  タクソノミーに画像登録を追加（プラグイン：カスタムフィールドを有効時のみ使用可能）
---------------------------------------------------------------*/
-if (function_exists('acf_add_local_field_group')):
-
-  acf_add_local_field_group(array(
-    'key' => 'group_67533e80a716f',
-    'title' => 'カテゴリーに画像を追加',
-    'fields' => array(
-      array(
-        'key' => 'field_67533e8ac704a',
-        'label' => 'この項目に画像を登録します。',
-        'name' => 'cat_img',
-        'type' => 'image',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'return_format' => 'array',
-        'preview_size' => 'medium',
-        'library' => 'all',
-        'min_width' => '',
-        'min_height' => '',
-        'min_size' => '',
-        'max_width' => '',
-        'max_height' => '',
-        'max_size' => '',
-        'mime_types' => '',
-      ),
-    ),
-    'location' => array(
-      array(
-        array(
-          'param' => 'taxonomy',
-          'operator' => '==',
-          'value' => 'all',
-        ),
-      ),
-    ),
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => '',
-    'active' => true,
-    'description' => '',
-    'show_in_rest' => 0,
-  ));
-
-endif;
-
 
 /*--------------------------------------------------------------
   管理画面の「コメント」メニューを削除

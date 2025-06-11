@@ -14,6 +14,8 @@ class Custom_Page_Repeater_Meta_Box
         add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_assets']);
         add_action('wp_ajax_get_parent_repeater_template', [__CLASS__, 'ajax_get_parent_template']);
         add_action('wp_ajax_get_child_repeater_template', [__CLASS__, 'ajax_get_child_template']);
+        add_filter('get_post_metadata', [__CLASS__, 'filter_preview_custom_repeater_meta'], 10, 4);
+        add_action('init', [__CLASS__, 'register_custom_meta']);
     }
 
     public static function register_meta_box()
@@ -54,6 +56,7 @@ class Custom_Page_Repeater_Meta_Box
         if (empty($parents)) {
             $parents[] = array(
                 'block_name' => '',
+                'content_type'  => 'r_content',
                 'block_class' => '',
                 'title' => '',
                 'title_image' => '',
@@ -71,12 +74,13 @@ class Custom_Page_Repeater_Meta_Box
 
         echo '</div>'; // .parent-repeater-wrapper
         echo '<div class="add-parent-repeater">';
-        echo '<button type="button" class="button add-parent-button">＋ ブロックを追加</button>';
+        echo '<button type="button" class="button button-primary button-large add-parent-button">ブロックを追加</button>';
         echo '</div>'; // .add-parent-repeater
     }
 
     public static function save_meta_box($post_id)
     {
+
         if (
             ! isset($_POST['custom_meta_box_nonce']) ||
             ! wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__))
@@ -84,13 +88,26 @@ class Custom_Page_Repeater_Meta_Box
             return $post_id;
         }
 
-        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        if (wp_is_post_autosave($post_id)) {
+            // autosaveはOK
+        } elseif (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return $post_id;
         }
 
         if ('page' !== $_POST['post_type'] || ! current_user_can('edit_page', $post_id)) {
             return $post_id;
         }
+
+        // 判定用
+        $is_preview = (
+            (defined('REST_REQUEST') && REST_REQUEST && isset($_GET['context']) && $_GET['context'] === 'edit')
+            || (isset($_POST['wp-preview']) && $_POST['wp-preview'] === 'dopreview')
+            || (isset($_REQUEST['preview']) && $_REQUEST['preview'] === 'true')
+        );
+
+        // ここは return しない！ ↓↓↓ この判定だけでOK
+        // $meta_key_to_save を判定
+        $meta_key_to_save = $is_preview ? '_page_custom_repeater_preview' : '_page_custom_repeater';
 
         $value = $_POST['page_custom_repeater'] ?? array();
 
@@ -99,20 +116,17 @@ class Custom_Page_Repeater_Meta_Box
         if (isset($value['parents']) && is_array($value['parents'])) {
             foreach ($value['parents'] as $parent_index => $parent_item) {
 
-                // === バリデーション ===
                 $block_name = trim($parent_item['block_name'] ?? '');
                 if ($block_name === '') {
-                    // ブロック名が空 → スキップ
                     continue;
                 }
 
                 $children = array();
                 if (isset($parent_item['children']) && is_array($parent_item['children'])) {
-                    $child_limit = 10; // 最大10件
+                    $child_limit = 10;
                     $child_count = 0;
 
                     foreach ($parent_item['children'] as $child_item) {
-                        // 子項目 いずれかが入力されている場合のみ保存
                         $has_value = false;
 
                         if (
@@ -127,11 +141,11 @@ class Custom_Page_Repeater_Meta_Box
                         }
 
                         if (! $has_value) {
-                            continue; // 完全空なら skip
+                            continue;
                         }
 
                         if ($child_count >= $child_limit) {
-                            break; // 最大件数超えたら終了
+                            break;
                         }
 
                         $children[] = array(
@@ -151,11 +165,12 @@ class Custom_Page_Repeater_Meta_Box
 
                 $parents[] = array(
                     'block_name'          => sanitize_text_field($block_name),
+                    'content_type'        => sanitize_text_field($parent_item['content_type'] ?? ''),
                     'block_class'         => sanitize_text_field($parent_item['block_class'] ?? ''),
                     'title'               => sanitize_textarea_field($parent_item['title'] ?? ''),
                     'title_image'         => esc_url_raw($parent_item['title_image'] ?? ''),
                     'subtitle'            => sanitize_textarea_field($parent_item['subtitle'] ?? ''),
-                    'child_count'         => count($children), // 保存時は **実際の子セット数に上書き**
+                    'child_count'         => count($children),
                     'children'            => $children,
                     'content'             => wp_kses_post($parent_item['content'] ?? ''),
                     'background_image'    => esc_url_raw($parent_item['background_image'] ?? ''),
@@ -167,9 +182,13 @@ class Custom_Page_Repeater_Meta_Box
             'parents' => $parents,
         );
 
-        update_post_meta($post_id, '_page_custom_repeater', $new_value);
-    }
+        update_post_meta($post_id, $meta_key_to_save, $new_value);
 
+        // ⭐️ 本体保存時は preview用metaを削除しておく（後始末）
+        if (!$is_preview) {
+            delete_post_meta($post_id, '_page_custom_repeater_preview');
+        }
+    }
 
     public static function enqueue_assets($hook)
     {
@@ -216,6 +235,7 @@ class Custom_Page_Repeater_Meta_Box
 
         $parent = array(
             'block_name' => '',
+            'content_type' => 'r_content',
             'block_class' => '',
             'title' => '',
             'title_image' => '',
@@ -254,6 +274,81 @@ class Custom_Page_Repeater_Meta_Box
 
         wp_send_json_success(array('html' => $html));
     }
+
+    public static function filter_preview_custom_repeater_meta($value, $object_id, $meta_key, $single)
+    {
+        if ($meta_key !== '_page_custom_repeater') {
+            return $value;
+        }
+
+        // ⭐️ REST API Preview Request → php://input から読み取る
+        if (defined('REST_REQUEST') && REST_REQUEST && isset($_GET['context']) && $_GET['context'] === 'edit') {
+            // php://input 読み込み (最初の1回だけグローバル変数にキャッシュ)
+            static $rest_request_body = null;
+            if ($rest_request_body === null) {
+                $rest_request_body = json_decode(file_get_contents('php://input'), true);
+            }
+
+            if (isset($rest_request_body['meta']['_page_custom_repeater'])) {
+                return array($rest_request_body['meta']['_page_custom_repeater']);
+            }
+
+            // fallbackとして _page_custom_repeater_preview
+            $preview_meta = get_metadata('post', $object_id, '_page_custom_repeater_preview', true);
+            if (! empty($preview_meta)) {
+                return array($preview_meta);
+            }
+        }
+
+        // クラシック preview
+        if (isset($_POST['wp-preview']) && $_POST['wp-preview'] === 'dopreview' && isset($_POST['page_custom_repeater'])) {
+            $custom_repeater = $_POST['page_custom_repeater'];
+            $parents = $custom_repeater['parents'] ?? [];
+
+            return array(array(
+                'parents' => $parents,
+            ));
+        }
+
+        // fallback
+        return $value;
+    }
+
+    public static function register_custom_meta()
+    {
+        register_meta('post', '_page_custom_repeater', array(
+            'show_in_rest' => array(
+                'schema' => array(
+                    'type'  => 'object',
+                ),
+                'prepare_callback' => function ($meta_value, $request, $object_type) {
+                    $post_id = $request->get_param('id');
+                    // Gutenberg Preview時は _page_custom_repeater_preview を返す
+                    if (isset($_GET['preview']) && $_GET['preview'] === 'true') {
+                        $preview_meta = get_post_meta($post_id, '_page_custom_repeater_preview', true);
+                        if (!empty($preview_meta)) {
+                            return $preview_meta;
+                        }
+                    }
+                    // 通常は本体meta
+                    return $meta_value;
+                },
+            ),
+            'single' => true,
+            'auth_callback' => function () {
+                return current_user_can('edit_posts');
+            },
+        ));
+
+        register_meta('post', '_page_custom_repeater_preview', array(
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'object',
+            'auth_callback' => function () {
+                return current_user_can('edit_posts');
+            },
+        ));
+    }
 }
 
 /*--------------------------------------------------------------
@@ -269,11 +364,12 @@ function render_parent_block($parent, $parent_index = 0)
     return ob_get_clean();
 }
 
-
-function render_child_block($child)
+function render_child_block($child, $parent_index = 0, $child_index = 0)
 {
     ob_start();
-    get_template_part('template-parts/custom/child-block', null, array('child' => $child));
+    get_template_part('template-parts/custom/child-block', null, array(
+        'child' => $child,
+    ));
     return ob_get_clean();
 }
 

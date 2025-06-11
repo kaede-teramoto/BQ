@@ -36,12 +36,33 @@ echo '<div class="parent-block-header">';
 echo '<h3>ブロック設定</h3>';
 echo '<div class="parent-block-header-box">';
 echo '<div class="parent-block-header-text">';
+
+$content_type = $parent['content_type'] ?? '';
+
+echo '<div class="content-type-field">';
+echo '<p class="content-type-field-title">コンテンツ種別：</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_content" ' . checked($content_type, 'r_content', false) . '> コンテンツ';
+echo '</label>';
+
+echo '<label>';
+echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_news" ' . checked($content_type, 'r_news', false) . '> お知らせ';
+echo '</label>';
+
+echo '<label>';
+echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_common" ' . checked($content_type, 'r_common', false) . '> 共通パーツ';
+echo '</label>';
+echo '</p>';
+
+echo '</div>';
+
 // ブロック名
 echo '<p><label>ブロック名</label><br />';
 echo '<input type="text" name="page_custom_repeater[parents][' . $parentIndex . '][block_name]" value="' . esc_attr($parent['block_name'] ?? '') . '" /></p>';
 
 // ブロッククラス名
-echo '<p><label>ブロッククラス名</label><br />';
+echo '<p><label>ブロッククラス名（共通パーツ使用の場合投稿IDを入力）</label><br />';
 echo '<input type="text" name="page_custom_repeater[parents][' . $parentIndex . '][block_class]" value="' . esc_attr($parent['block_class'] ?? '') . '" /></p>';
 
 echo '</div>'; // .parent-block-header-text
@@ -55,7 +76,7 @@ echo '<div class="image-block">';
 echo '<div class="image-block-button">';
 echo '<input type="hidden" name="page_custom_repeater[parents][' . $parentIndex . '][background_image]" value="' . $bg_img_url . '" class="image-url-field" />';
 echo '<button type="button" class="button select-image-button">メディアを追加</button> ';
-echo '<button type="button" class="button remove-image-button">画像をクリア</button>';
+echo '<button type="button" class="button remove-image-button">メディアをクリア</button>';
 echo '</div>'; // .image-block-button
 
 if ($bg_img_url) {
@@ -74,6 +95,7 @@ echo '</div>';
 
 echo '</div>';
 
+echo '<div class="parent-block-body">';
 // ブロックタイトルBOX
 echo '<div class="parent-block-title">';
 echo '<h3>ブロックタイトル</h3>';
@@ -97,7 +119,7 @@ echo '<div class="image-block">';
 echo '<div class="image-block-button">';
 echo '<input type="hidden" name="page_custom_repeater[parents][' . $parentIndex . '][title_image]" value="' . $title_img_url . '" class="image-url-field" />';
 echo '<button type="button" class="button select-image-button">メディアを追加</button> ';
-echo '<button type="button" class="button remove-image-button">画像をクリア</button>';
+echo '<button type="button" class="button remove-image-button">メディアをクリア</button>';
 echo '</div>'; // /image-block-button
 
 if ($title_img_url) {
@@ -128,7 +150,7 @@ echo '</div>'; // .children-wrapper
 
 // 子ブロック追加ボタン
 echo '<div class="add-child-repeater">';
-echo '<button type="button" class="button add-child-button">＋ 子ブロックを追加</button>';
+echo '<button type="button" class="button button-primary button-large add-child-button">子ブロックを追加</button>';
 echo '</div>'; // .add-child-repeater
 
 // コンテンツ
@@ -147,5 +169,6 @@ wp_editor(
     )
 );
 
+echo '</div>'; // .parent-block-body
 echo '</div>'; // .parent-repeater-content
 echo '</div>'; // .parent-repeater-group
