@@ -54,7 +54,7 @@ function footer_design_setting($wp_customize)
         'footer_design_type',
         array(
             'type'           => 'theme_mod',
-            'default' => '01',
+            'default' => 'footer-a-normal00',
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
@@ -67,11 +67,11 @@ function footer_design_setting($wp_customize)
             'settings' => 'footer_design_type',
             'type' => 'select',
             'choices' => array(
-                'footerAN00' => __('Footer_A-Nomal_00', 'boutiq'),
-                'footerAD00' => __('Footer_A-Detail_00', 'boutiq'),
-                'footerBN00' => __('Footer_B-Nomal_00', 'boutiq'),
-                'footerCN00' => __('Footer_C-Nomal_00', 'boutiq'),
-                'footerOR' => __('Set Original Footer', 'boutiq'),
+                'footer-a-normal00' => __('Footer_A-Normal_00', 'boutiq'),
+                'footer-a-detail00' => __('Footer_A-Detail_00', 'boutiq'),
+                'footer-b-normal00' => __('Footer_B-Normal_00', 'boutiq'),
+                'footer-c-normal00' => __('Footer_C-Normal_00', 'boutiq'),
+                'footer-original' => __('Set Original Footer', 'boutiq'),
             ),
         )
     );
