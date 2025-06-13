@@ -20,12 +20,12 @@ class Footer_Customizer extends Base_Customizer
     protected function add_controls($wp_customize)
     {
         $this->add_select_field($wp_customize, 'footer_design_type', __('Footer Design Type', 'boutiq'), array(
-            'footerAN00' => __('Footer_A-Nomal_00', 'boutiq'),
-            'footerAD00' => __('Footer_A-Detail_00', 'boutiq'),
-            'footerBN00' => __('Footer_B-Nomal_00', 'boutiq'),
-            'footerCN00' => __('Footer_C-Nomal_00', 'boutiq'),
-            'footerOR'   => __('Set Original Footer', 'boutiq'),
-        ), 'footerAN00');
+            'footer-a-normal00' => __('Footer_A-Normal_00', 'boutiq'),
+            'footer-a-detail00' => __('Footer_A-Detail_00', 'boutiq'),
+            'footer-b-normal00' => __('Footer_B-Normal_00', 'boutiq'),
+            'footer-c-normal00' => __('Footer_C-Normal_00', 'boutiq'),
+            'footer-original' => __('Set Original Footer', 'boutiq'),
+        ), 'footer-a-normal00');
 
         $this->add_image_field($wp_customize, 'footer_logo_image', __('Footer Logo Image', 'boutiq'));
 

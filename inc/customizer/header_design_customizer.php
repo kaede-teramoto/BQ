@@ -21,20 +21,32 @@ class Header_Design_Customizer extends Base_Customizer
     {
         $this->add_image_field($wp_customize, 'header_logo_image', __('Logo Image', 'boutiq'));
         $this->add_select_field($wp_customize, 'header_design_setting', __('Design Type', 'boutiq'), array(
+            'header-a-normal00' => __('Header_A-Normal_00', 'boutiq'),
             'headerAN00' => __('Header_A-Nomal_00', 'boutiq'),
+            'header-a-base00' => __('Header_A-Base_00', 'boutiq'),
             'headerAB00' => __('Header_A-Base_00', 'boutiq'),
+            'header-a-square00' => __('Header_A-Square_00', 'boutiq'),
             'headerAS00' => __('Header_A-Square_00', 'boutiq'),
+            'header-b-normal00' => __('Header_B-Normal_00', 'boutiq'),
             'headerBN00' => __('Header_B-Nomal_00', 'boutiq'),
+            'header-b-base00' => __('Header_B-Base_00', 'boutiq'),
             'headerBB00' => __('Header_B-Base_00', 'boutiq'),
+            'header-b-square00' => __('Header_B-Square_00', 'boutiq'),
             'headerBS00' => __('Header_B-Square_00', 'boutiq'),
+            'header-b-logo00' => __('Header_B-Logo_00', 'boutiq'),
             'headerBL00' => __('Header_B-Logo_00', 'boutiq'),
+            'header-c-normal00' => __('Header_C-Normal_00', 'boutiq'),
             'headerCN00' => __('Header_C-Nomal_00', 'boutiq'),
+            'header-c-square00' => __('Header_C-Square_00', 'boutiq'),
             'headerCS00' => __('Header_C-Square_00', 'boutiq'),
+            'header-d-normal00' => __('Header_D-Normal_00', 'boutiq'),
             'headerDN00' => __('Header_D-Nomal_00', 'boutiq'),
+            'header-e-normal00' => __('Header_E-Normal_00', 'boutiq'),
             'headerEN00' => __('Header_E-Nomal_00', 'boutiq'),
+            'header-e-base00' => __('Header_E-Base_00', 'boutiq'),
             'headerEB00' => __('Header_E-Base_00', 'boutiq'),
-            'headerFS00' => __('Header_F-Square_00', 'boutiq'),
-        ), 'type1');
+            'header-f-square00' => __('Header_F-Square_00', 'boutiq'),
+        ), 'header-a-normal00');
 
         $this->add_checkbox_field($wp_customize, 'header_card', __('Set to card type', 'boutiq'), false);
 
