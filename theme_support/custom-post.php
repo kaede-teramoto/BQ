@@ -6,6 +6,92 @@
  */
 
 /*--------------------------------------------------------------
+  カスタムポストタイプ「common_parts」を登録
+--------------------------------------------------------------*/
+function register_common_parts_post_type()
+{
+  $labels = array(
+    'name'               => '共通パーツ',
+    'singular_name'      => '共通パーツ',
+    'menu_name'          => '共通パーツ',
+    'name_admin_bar'     => '共通パーツ',
+    'add_new'            => '新規追加',
+    'add_new_item'       => '共通パーツを追加',
+    'new_item'           => '新しい共通パーツ',
+    'edit_item'          => '共通パーツを編集',
+    'view_item'          => '共通パーツを表示',
+    'all_items'          => '共通パーツ一覧',
+    'search_items'       => '共通パーツを検索',
+    'not_found'          => '共通パーツが見つかりませんでした',
+    'not_found_in_trash' => 'ゴミ箱に共通パーツはありません',
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => false,
+    'exclude_from_search' => true,
+    'publicly_queryable' => false,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'show_in_admin_bar'  => true,
+    'menu_position'      => 3,
+    'menu_icon'          => 'dashicons-admin-generic',
+    'capability_type'    => 'common_part',
+    'capabilities'       => array(
+      'edit_post'              => 'edit_common_part',
+      'edit_posts'             => 'edit_common_parts',
+      'edit_others_posts'      => 'edit_others_common_parts',
+      'edit_private_posts'     => 'edit_private_common_parts', // 追加
+      'publish_posts'          => 'publish_common_parts',
+      'read_post'              => 'read_common_part',
+      'read_private_posts'     => 'read_private_common_parts',
+      'delete_post'            => 'delete_common_part',
+      'delete_posts'           => 'delete_common_parts',
+      'delete_others_posts'    => 'delete_others_common_parts',
+      'delete_private_posts'   => 'delete_private_common_parts', // 追加
+      'edit_published_posts' => 'edit_published_common_parts',
+      'delete_published_posts' => 'delete_published_common_parts',
+    ),
+    'map_meta_cap'       => true,
+    'supports'           => array('title', 'editor', 'thumbnail', 'author'),
+    'has_archive'        => false,
+    'rewrite'            => false,
+    'query_var'          => false,
+  );
+
+  register_post_type('common_parts', $args);
+}
+add_action('init', 'register_common_parts_post_type');
+
+/**
+ * 管理者・編集者に「common_parts」の全権限を付与
+ */
+function add_common_parts_capabilities()
+{
+  $roles = ['administrator', 'editor'];
+
+  foreach ($roles as $role_name) {
+    $role = get_role($role_name);
+    if ($role) {
+      $role->add_cap('edit_common_part');
+      $role->add_cap('edit_common_parts');
+      $role->add_cap('edit_others_common_parts');
+      $role->add_cap('edit_private_common_parts'); // 追加
+      $role->add_cap('publish_common_parts');
+      $role->add_cap('read_common_part');
+      $role->add_cap('read_private_common_parts');
+      $role->add_cap('delete_common_part');
+      $role->add_cap('delete_common_parts');
+      $role->add_cap('delete_others_common_parts');
+      $role->add_cap('delete_private_common_parts'); // 追加
+      $role->add_cap('edit_published_common_parts');
+      $role->add_cap('delete_published_common_parts');
+    }
+  }
+}
+add_action('admin_init', 'add_common_parts_capabilities');
+
+/*--------------------------------------------------------------
   custom post
 --------------------------------------------------------------*/
 // 管理画面に設定ページを追加

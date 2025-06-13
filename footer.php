@@ -348,7 +348,7 @@ else : ?>
 
 <?php wp_footer();
 
-$fv_type = get_theme_mod('top_fv_type', '01');
+$fv_type = get_theme_mod('top_fv_type_setting', '01');
 $fv_post_count_pc = get_theme_mod('top_fv_post_count_pc', '3');
 $fv_post_count_tab = get_theme_mod('top_fv_post_count_tab', '2');
 $fv_post_count_sp = get_theme_mod('top_fv_post_count_sp', '1');
@@ -442,11 +442,21 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
     <?php //echo $top_fv_slider_pagination;
     if ($fv_type == "02" || $fv_type == "05") : ?>
 
+        // import Swiper, {
+        //     Autoplay,
+        //     Navigation,
+        //     Pagination,
+        //     EffectFade,
+        //     Scrollbar
+        // } from 'swiper';
+        // Swiper.use([Autoplay, Navigation, Pagination, EffectFade, Scrollbar]);
+
         const topPage_slider = new Swiper(".p-top.swiper", {
             loop: true,
             speed: 2000,
             autoplay: {
                 delay: <?php echo $top_fv_slider_speed; ?>,
+                disableOnInteraction: false,
             },
             spaceBetween: <?php echo $fv_post_space_pc; ?>,
             slidesPerView: <?php echo $fv_post_count_pc; ?>,

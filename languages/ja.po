@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format\n"
-"POT-Creation-Date: 2025-06-10 22:17+0900\n"
-"PO-Revision-Date: 2025-06-10 22:19+0900\n"
+"POT-Creation-Date: 2025-06-12 10:50+0900\n"
+"PO-Revision-Date: 2025-06-12 10:52+0900\n"
 "Last-Translator: \n"
 "Language-Team: boutiq\n"
 "Language: ja_JP\n"
@@ -16,63 +16,921 @@ msgstr ""
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: theme_customizer/customizer-404.php:15
+#: inc/customizer/error_customizer.php:10
 msgid "404 Setting"
 msgstr "404（エラーページ）の設定"
 
-#: theme_customizer/customizer-404.php:33
+#: inc/customizer/error_customizer.php:15
 msgid "404 Design Setting"
 msgstr "404（エラーページ）のデザイン設定"
 
-#: theme_customizer/customizer-404.php:38
+#: inc/customizer/error_customizer.php:16
 msgid "404 Type01"
 msgstr ""
 
-#: theme_customizer/customizer-404.php:39
+#: inc/customizer/error_customizer.php:17
 msgid "404 Type02"
 msgstr ""
 
-#: theme_customizer/customizer-404.php:40
+#: inc/customizer/error_customizer.php:18
 msgid "404 Type03"
 msgstr ""
 
-#: theme_customizer/customizer-404.php:41
+#: inc/customizer/error_customizer.php:19
 msgid "404 Type04"
 msgstr ""
 
-#: theme_customizer/customizer-404.php:42
+#: inc/customizer/error_customizer.php:20
 msgid "404 Type05"
 msgstr ""
 
-#: theme_customizer/customizer-404.php:43
+#: inc/customizer/error_customizer.php:21
 msgid "404 Type06"
 msgstr ""
 
-#: theme_customizer/customizer-404.php:62
+#: inc/customizer/error_customizer.php:24
 msgid "404 Main Title"
 msgstr "404（エラーページ）のメインタイトル"
 
-#: theme_customizer/customizer-404.php:83
+#: inc/customizer/error_customizer.php:25
 msgid "404 Sub Title"
 msgstr "404（エラーページ）のサブタイトル"
 
-#: theme_customizer/customizer-404.php:103
+#: inc/customizer/error_customizer.php:27
 msgid "404 Text"
 msgstr "404（エラーページ）の説明文"
 
-#: theme_customizer/customizer-404.php:115
-msgid "HOME"
-msgstr "ホーム"
+#: inc/customizer/error_customizer.php:27
+msgid ""
+"The page you are looking for may be temporarily unavailable or may have been "
+"moved or deleted. Return to the top of the website."
+msgstr ""
+"お探しのページは一時的にアクセスができない状況にあるか、移動または削除された"
+"可能性があります。Webサイトのトップに戻ります。"
 
-#: theme_customizer/customizer-404.php:124
+#: inc/customizer/error_customizer.php:29
 #: theme_customizer/customizer-cms.php:148
 msgid "btn Text"
 msgstr "ボタンテキスト"
 
-#: theme_customizer/customizer-404.php:146
+#: inc/customizer/error_customizer.php:29
+msgid "Back to the top"
+msgstr "トップページに戻る"
+
+#: inc/customizer/error_customizer.php:32
 #: theme_customizer/customizer-cms.php:169
 msgid "btn Link"
 msgstr "ボタンリンク"
+
+#: inc/customizer/footer_customizer.php:12
+msgid "footer option"
+msgstr "フッターの設定"
+
+#: inc/customizer/footer_customizer.php:22
+msgid "Footer Design Type"
+msgstr "フッターデザインを選択する"
+
+#: inc/customizer/footer_customizer.php:23
+msgid "Footer_A-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:24
+msgid "Footer_A-Detail_00"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:25
+msgid "Footer_B-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:26
+msgid "Footer_C-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:27
+msgid "Set Original Footer"
+msgstr "オリジナルのフッターを設定する"
+
+#: inc/customizer/footer_customizer.php:30
+msgid "Footer Logo Image"
+msgstr "フッターのロゴ画像"
+
+#: inc/customizer/footer_customizer.php:32
+msgid "Simple company profile"
+msgstr "簡単な会社概要"
+
+#: inc/customizer/footer_customizer.php:34
+msgid "Set background color"
+msgstr "背景にカラーを追加する"
+
+#: inc/customizer/footer_customizer.php:36
+msgid "Footer Background Color"
+msgstr "フッターの背景カラー"
+
+#: inc/customizer/footer_customizer.php:37
+msgid "Footer Text Color"
+msgstr "フッターテキストカラー"
+
+#: inc/customizer/footer_customizer.php:39
+msgid "Set copyright"
+msgstr "コピーライトを入力します"
+
+#: inc/customizer/footer_customizer.php:49
+msgid "footer first option"
+msgstr "フッターの第1ボタン"
+
+#: inc/customizer/footer_customizer.php:59
+#: inc/customizer/footer_customizer.php:112
+#: inc/customizer/footer_design_customizer.php:99
+#: inc/customizer/footer_design_customizer.php:151
+#: inc/customizer/header_design_customizer.php:99
+#: inc/customizer/header_design_customizer.php:151
+#: theme_customizer/customizer-followBtn.php:45
+#: theme_customizer/customizer-followBtn.php:257
+#: theme_customizer/customizer-hamburger.php:438
+#: theme_customizer/customizer-hamburger.php:607
+#: theme_customizer/customizer-sp.php:57 theme_customizer/customizer-sp.php:314
+msgid "Show button"
+msgstr "ボタンを表示する"
+
+#: inc/customizer/footer_customizer.php:61
+#: inc/customizer/footer_customizer.php:114
+msgid "ボタンのテキスト"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:62
+#: inc/customizer/footer_customizer.php:115
+msgid "ボタンのリンク"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:64
+#: inc/customizer/footer_customizer.php:117
+#: inc/customizer/footer_design_customizer.php:104
+#: inc/customizer/footer_design_customizer.php:183
+#: inc/customizer/header_design_customizer.php:104
+#: inc/customizer/header_design_customizer.php:183
+#: theme_customizer/customizer-hamburger.php:282
+#: theme_customizer/customizer-hamburger.php:500
+#: theme_customizer/customizer-hamburger.php:669
+#: theme_customizer/customizer-sp.php:119
+#: theme_customizer/customizer-sp.php:376
+msgid "Display button in separate tab"
+msgstr "ボタンを別タブに表示する"
+
+#: inc/customizer/footer_customizer.php:66
+#: inc/customizer/footer_customizer.php:119
+#: inc/customizer/footer_design_customizer.php:106
+#: inc/customizer/footer_design_customizer.php:153
+#: inc/customizer/header_design_customizer.php:106
+#: inc/customizer/header_design_customizer.php:153
+msgid "btn Link Design Type"
+msgstr "ボタンのデザインタイプ"
+
+#: inc/customizer/footer_customizer.php:67
+#: inc/customizer/footer_customizer.php:120
+#: inc/customizer/footer_design_customizer.php:107
+#: inc/customizer/footer_design_customizer.php:154
+#: inc/customizer/header_design_customizer.php:107
+#: inc/customizer/header_design_customizer.php:154
+#: inc/customizer/site_default_design_customizer.php:79
+msgid "btn Link Type1"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:68
+#: inc/customizer/footer_customizer.php:121
+#: inc/customizer/footer_design_customizer.php:108
+#: inc/customizer/footer_design_customizer.php:155
+#: inc/customizer/header_design_customizer.php:108
+#: inc/customizer/header_design_customizer.php:155
+#: inc/customizer/site_default_design_customizer.php:80
+msgid "btn Link Type2"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:69
+#: inc/customizer/footer_customizer.php:122
+#: inc/customizer/footer_design_customizer.php:109
+#: inc/customizer/footer_design_customizer.php:156
+#: inc/customizer/header_design_customizer.php:109
+#: inc/customizer/header_design_customizer.php:156
+#: inc/customizer/site_default_design_customizer.php:81
+msgid "btn Link Type3"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:70
+#: inc/customizer/footer_customizer.php:123
+#: inc/customizer/footer_design_customizer.php:110
+#: inc/customizer/footer_design_customizer.php:157
+#: inc/customizer/header_design_customizer.php:110
+#: inc/customizer/header_design_customizer.php:157
+#: inc/customizer/site_default_design_customizer.php:82
+msgid "btn Link Type4"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:71
+#: inc/customizer/footer_customizer.php:124
+#: inc/customizer/footer_design_customizer.php:111
+#: inc/customizer/footer_design_customizer.php:158
+#: inc/customizer/header_design_customizer.php:111
+#: inc/customizer/header_design_customizer.php:158
+#: inc/customizer/site_default_design_customizer.php:83
+msgid "btn Link Type5"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:72
+#: inc/customizer/footer_customizer.php:125
+#: inc/customizer/footer_design_customizer.php:112
+#: inc/customizer/footer_design_customizer.php:159
+#: inc/customizer/header_design_customizer.php:112
+#: inc/customizer/header_design_customizer.php:159
+#: inc/customizer/site_default_design_customizer.php:84
+msgid "btn Link Type6"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:73
+#: inc/customizer/footer_customizer.php:126
+#: inc/customizer/footer_design_customizer.php:113
+#: inc/customizer/footer_design_customizer.php:160
+#: inc/customizer/header_design_customizer.php:113
+#: inc/customizer/header_design_customizer.php:160
+#: inc/customizer/site_default_design_customizer.php:85
+msgid "btn Link Type7"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:74
+#: inc/customizer/footer_customizer.php:127
+#: inc/customizer/footer_design_customizer.php:114
+#: inc/customizer/footer_design_customizer.php:161
+#: inc/customizer/header_design_customizer.php:114
+#: inc/customizer/header_design_customizer.php:161
+#: inc/customizer/site_default_design_customizer.php:86
+msgid "btn Link Type8"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:75
+#: inc/customizer/footer_customizer.php:128
+#: inc/customizer/footer_design_customizer.php:115
+#: inc/customizer/footer_design_customizer.php:162
+#: inc/customizer/header_design_customizer.php:115
+#: inc/customizer/header_design_customizer.php:162
+#: inc/customizer/site_default_design_customizer.php:87
+msgid "btn Link Type9"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:76
+#: inc/customizer/footer_customizer.php:129
+#: inc/customizer/footer_design_customizer.php:116
+#: inc/customizer/footer_design_customizer.php:163
+#: inc/customizer/header_design_customizer.php:116
+#: inc/customizer/header_design_customizer.php:163
+#: inc/customizer/site_default_design_customizer.php:88
+msgid "btn Link Type10"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:79
+#: inc/customizer/footer_customizer.php:132
+#: inc/customizer/footer_design_customizer.php:119
+#: inc/customizer/footer_design_customizer.php:166
+#: inc/customizer/header_design_customizer.php:119
+#: inc/customizer/header_design_customizer.php:166
+msgid "btn Link Icon Type"
+msgstr "ボタンのアイコンタイプ"
+
+#: inc/customizer/footer_customizer.php:80
+#: inc/customizer/footer_customizer.php:133
+msgid "No Icon"
+msgstr ""
+
+#: inc/customizer/footer_customizer.php:81
+#: inc/customizer/footer_customizer.php:134
+#: inc/customizer/footer_design_customizer.php:120
+#: inc/customizer/footer_design_customizer.php:167
+#: inc/customizer/header_design_customizer.php:120
+#: inc/customizer/header_design_customizer.php:167
+#: inc/customizer/site_default_design_customizer.php:92
+#: inc/customizer/site_default_design_customizer.php:134
+#, fuzzy
+msgid "Icon Type1"
+msgstr "Icon Type1"
+
+#: inc/customizer/footer_customizer.php:82
+#: inc/customizer/footer_customizer.php:135
+#: inc/customizer/footer_design_customizer.php:121
+#: inc/customizer/footer_design_customizer.php:168
+#: inc/customizer/header_design_customizer.php:121
+#: inc/customizer/header_design_customizer.php:168
+#, fuzzy
+msgid "Icon  Type2"
+msgstr "Icon Type2"
+
+#: inc/customizer/footer_customizer.php:83
+#: inc/customizer/footer_customizer.php:136
+#: inc/customizer/footer_design_customizer.php:122
+#: inc/customizer/footer_design_customizer.php:169
+#: inc/customizer/header_design_customizer.php:122
+#: inc/customizer/header_design_customizer.php:169
+#, fuzzy
+msgid "Icon  Type3"
+msgstr "Icon Type3"
+
+#: inc/customizer/footer_customizer.php:84
+#: inc/customizer/footer_customizer.php:137
+#: inc/customizer/footer_design_customizer.php:123
+#: inc/customizer/footer_design_customizer.php:170
+#: inc/customizer/header_design_customizer.php:123
+#: inc/customizer/header_design_customizer.php:170
+#, fuzzy
+msgid "Icon  Type4"
+msgstr "Icon Type4"
+
+#: inc/customizer/footer_customizer.php:85
+#: inc/customizer/footer_customizer.php:138
+#: inc/customizer/footer_design_customizer.php:124
+#: inc/customizer/footer_design_customizer.php:171
+#: inc/customizer/header_design_customizer.php:124
+#: inc/customizer/header_design_customizer.php:171
+#, fuzzy
+msgid "Icon  Type5"
+msgstr "Icon Type5"
+
+#: inc/customizer/footer_customizer.php:86
+#: inc/customizer/footer_customizer.php:139
+#: inc/customizer/footer_design_customizer.php:125
+#: inc/customizer/footer_design_customizer.php:172
+#: inc/customizer/header_design_customizer.php:125
+#: inc/customizer/header_design_customizer.php:172
+#, fuzzy
+msgid "Icon  Type6"
+msgstr "Icon Type6"
+
+#: inc/customizer/footer_customizer.php:89
+#: inc/customizer/footer_customizer.php:142
+#: inc/customizer/footer_design_customizer.php:128
+#: inc/customizer/footer_design_customizer.php:175
+#: inc/customizer/header_design_customizer.php:128
+#: inc/customizer/header_design_customizer.php:175
+msgid "btn color for header"
+msgstr "ボタンの背景色"
+
+#: inc/customizer/footer_customizer.php:90
+#: inc/customizer/footer_customizer.php:143
+#: inc/customizer/footer_design_customizer.php:129
+#: inc/customizer/footer_design_customizer.php:176
+#: inc/customizer/header_design_customizer.php:129
+#: inc/customizer/header_design_customizer.php:176
+msgid "btn text color for header"
+msgstr "ボタンの文字色"
+
+#: inc/customizer/footer_customizer.php:92
+#: inc/customizer/footer_customizer.php:145
+#: inc/customizer/footer_design_customizer.php:131
+#: inc/customizer/footer_design_customizer.php:178
+#: inc/customizer/header_design_customizer.php:131
+#: inc/customizer/header_design_customizer.php:178
+msgid "Gradation for button color"
+msgstr "ボタンカラーのグラデーション"
+
+#: inc/customizer/footer_customizer.php:102
+msgid "footer second option"
+msgstr "フッターの第2ボタン"
+
+#: inc/customizer/footer_design_customizer.php:12
+#: inc/customizer/header_design_customizer.php:12
+msgid "Design setting for header"
+msgstr "ヘッダーのデザイン設定"
+
+#: inc/customizer/footer_design_customizer.php:22
+#: inc/customizer/header_design_customizer.php:22
+msgid "Logo Image"
+msgstr "ロゴ画像"
+
+#: inc/customizer/footer_design_customizer.php:23
+#: inc/customizer/header_design_customizer.php:23
+msgid "Design Type"
+msgstr "ヘッダーデザインを選択する"
+
+#: inc/customizer/footer_design_customizer.php:24
+#: inc/customizer/header_design_customizer.php:24
+msgid "Header_A-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:25
+#: inc/customizer/header_design_customizer.php:25
+msgid "Header_A-Base_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:26
+#: inc/customizer/header_design_customizer.php:26
+msgid "Header_A-Square_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:27
+#: inc/customizer/header_design_customizer.php:27
+msgid "Header_B-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:28
+#: inc/customizer/header_design_customizer.php:28
+msgid "Header_B-Base_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:29
+#: inc/customizer/header_design_customizer.php:29
+msgid "Header_B-Square_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:30
+#: inc/customizer/header_design_customizer.php:30
+msgid "Header_B-Logo_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:31
+#: inc/customizer/header_design_customizer.php:31
+msgid "Header_C-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:32
+#: inc/customizer/header_design_customizer.php:32
+msgid "Header_C-Square_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:33
+#: inc/customizer/header_design_customizer.php:33
+msgid "Header_D-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:34
+#: inc/customizer/header_design_customizer.php:34
+msgid "Header_E-Nomal_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:35
+#: inc/customizer/header_design_customizer.php:35
+msgid "Header_E-Base_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:36
+#: inc/customizer/header_design_customizer.php:36
+msgid "Header_F-Square_00"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:39
+#: inc/customizer/header_design_customizer.php:39
+msgid "Set to card type"
+msgstr "背景をカードタイプにする"
+
+#: inc/customizer/footer_design_customizer.php:41
+#: inc/customizer/header_design_customizer.php:41
+msgid "Set card corner radius for PC (px)"
+msgstr "カードタイプ時の角度（PC）"
+
+#: inc/customizer/footer_design_customizer.php:42
+#: inc/customizer/header_design_customizer.php:42
+msgid "Set card corner radius for Tablet (px)"
+msgstr "カードタイプ時の角度（タブレット）"
+
+#: inc/customizer/footer_design_customizer.php:43
+#: inc/customizer/header_design_customizer.php:43
+msgid "Set card corner radius for SP (px)"
+msgstr "カードタイプ時の角度（スマホ）"
+
+#: inc/customizer/footer_design_customizer.php:45
+#: inc/customizer/header_design_customizer.php:45
+msgid "Header Link Text Color"
+msgstr "ヘッダーリンクカラー"
+
+#: inc/customizer/footer_design_customizer.php:46
+#: inc/customizer/header_design_customizer.php:46
+msgid "Header Background Color"
+msgstr "ヘッダーの背景カラー"
+
+#: inc/customizer/footer_design_customizer.php:48
+#: inc/customizer/header_design_customizer.php:48
+msgid "Gradation for BG"
+msgstr ""
+
+#: inc/customizer/footer_design_customizer.php:50
+#: inc/customizer/header_design_customizer.php:50
+msgid "Add an underline"
+msgstr "ヘッダーに下線を追加する"
+
+#: inc/customizer/footer_design_customizer.php:51
+#: inc/customizer/header_design_customizer.php:51
+msgid "Add blur processing"
+msgstr ""
+"ヘッダーにぼかしをかける\n"
+"（背景からーを設定している場合は利用できません）"
+
+#: inc/customizer/footer_design_customizer.php:74
+#: inc/customizer/header_design_customizer.php:74
+msgid "Adjust the blur ratio"
+msgstr "ぼかし度合いを設定する"
+
+#: inc/customizer/footer_design_customizer.php:89
+#: inc/customizer/header_design_customizer.php:89
+msgid "btn setting for header"
+msgstr "ヘッダーのボタン設定"
+
+#: inc/customizer/footer_design_customizer.php:101
+#: inc/customizer/footer_design_customizer.php:180
+#: inc/customizer/header_design_customizer.php:101
+#: inc/customizer/header_design_customizer.php:180
+msgid "Text for button"
+msgstr "ボタンのテキスト"
+
+#: inc/customizer/footer_design_customizer.php:102
+#: inc/customizer/footer_design_customizer.php:181
+#: inc/customizer/header_design_customizer.php:102
+#: inc/customizer/header_design_customizer.php:181
+msgid "Link for button"
+msgstr "ボタンのリンク"
+
+#: inc/customizer/footer_design_customizer.php:141
+#: inc/customizer/header_design_customizer.php:141
+msgid "Another btn setting for header"
+msgstr "ヘッダーの別のボタン設定"
+
+#: inc/customizer/page_customizer.php:13
+msgid "Page option"
+msgstr "ページの設定"
+
+#: inc/customizer/page_customizer.php:18
+msgid "Page Title Design"
+msgstr "ページタイトルのデザインを設定"
+
+#: inc/customizer/page_customizer.php:19
+msgid "Title_A-Screen_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:20
+msgid "Title_A-Contents_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:21
+msgid "Title_A-Right_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:22
+msgid "Title_A-Left_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:23
+msgid "Title_A-Photo_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:24
+msgid "Title_A-Top_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:25
+msgid "Title_A-Text_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:26
+msgid "Title_B-Normal_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:27
+msgid "Title_C-Normal_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:28
+msgid "Title_C-Photo_00"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:31
+msgid "Content Title Design"
+msgstr "コンテンツのタイトルデザインを設定"
+
+#: inc/customizer/page_customizer.php:32
+#: theme_customizer/customizer-top.php:567
+msgid "Content Title1"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:33
+#: theme_customizer/customizer-top.php:568
+msgid "Content Title2"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:34
+#: theme_customizer/customizer-top.php:569
+msgid "Content Title3"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:35
+#: theme_customizer/customizer-top.php:570
+msgid "Content Title4"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:36
+#: theme_customizer/customizer-top.php:571
+msgid "Content Title5"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:37
+#: theme_customizer/customizer-top.php:572
+msgid "Content Title6"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:38
+#: theme_customizer/customizer-top.php:573
+msgid "Content Title7"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:39
+#: theme_customizer/customizer-top.php:574
+msgid "Content Title8"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:40
+msgid "Custom Original"
+msgstr ""
+
+#: inc/customizer/page_customizer.php:43
+#: theme_customizer/customizer-top.php:595
+msgid "Add underline to content title"
+msgstr "コンテンツのタイトルに下線を追加する"
+
+#: inc/customizer/page_customizer.php:45
+msgid "Underline Color"
+msgstr "下線の色"
+
+#: inc/customizer/page_customizer.php:47
+#: theme_customizer/customizer-top.php:635
+msgid "Set Underline thickness (px)"
+msgstr "下線の太さを設定する"
+
+#: inc/customizer/page_customizer.php:49
+msgid "Set corner radius for PC (px)"
+msgstr "PC用のコーナーの角度"
+
+#: inc/customizer/page_customizer.php:51
+msgid "Set corner radius for Tablet (px)"
+msgstr "タブレット用のコーナーの角度"
+
+#: inc/customizer/page_customizer.php:53
+msgid "Set corner radius for SP (px)"
+msgstr "スマートフォン用のコーナーの角度"
+
+#: inc/customizer/panels/footer_panel.php:12
+msgid "Footer option"
+msgstr "フッターの設定"
+
+#: inc/customizer/panels/header_panel.php:12
+msgid "Header option"
+msgstr "ヘッダーの設定"
+
+#: inc/customizer/panels/site_default_panel.php:12
+msgid "Basic design settings"
+msgstr "デザインの基本設定"
+
+#: inc/customizer/site_color_customizer.php:12
+#: inc/customizer/site_default_design_customizer.php:12
+msgid "Color Settings"
+msgstr "カラー設定"
+
+#: inc/customizer/site_color_customizer.php:22
+#: inc/customizer/site_default_design_customizer.php:22
+#: theme_customizer/customizer-top.php:731
+msgid "Text Color"
+msgstr "テキストカラー"
+
+#: inc/customizer/site_color_customizer.php:23
+#: inc/customizer/site_default_design_customizer.php:23
+msgid "Main Color"
+msgstr "メインカラー"
+
+#: inc/customizer/site_color_customizer.php:24
+#: inc/customizer/site_default_design_customizer.php:24
+msgid "Accent Color"
+msgstr "アクセントカラー"
+
+#: inc/customizer/site_color_customizer.php:25
+#: inc/customizer/site_default_design_customizer.php:25
+msgid "Base Color"
+msgstr "ベースカラー"
+
+#: inc/customizer/site_color_customizer.php:26
+#: inc/customizer/site_default_design_customizer.php:26
+msgid "Sub Color"
+msgstr "サブカラー"
+
+#: inc/customizer/site_color_customizer.php:27
+#: inc/customizer/site_default_design_customizer.php:27
+msgid "Background Color"
+msgstr "背景カラー"
+
+#: inc/customizer/site_default_design_customizer.php:37
+msgid "Font Settings"
+msgstr "フォントの設定"
+
+#: inc/customizer/site_default_design_customizer.php:47
+msgid "Japanese Font"
+msgstr "日本語フォント"
+
+#: inc/customizer/site_default_design_customizer.php:48
+msgid "Japanese Font Family"
+msgstr "日本語フォント指定"
+
+#: inc/customizer/site_default_design_customizer.php:49
+msgid "European language Font"
+msgstr "欧文フォント"
+
+#: inc/customizer/site_default_design_customizer.php:50
+msgid "European Font Family"
+msgstr "欧文フォント指定"
+
+#: inc/customizer/site_default_design_customizer.php:51
+msgid "Heading Font"
+msgstr "見出しフォント"
+
+#: inc/customizer/site_default_design_customizer.php:52
+msgid "Heading Font Family"
+msgstr "見出しフォント指定"
+
+#: inc/customizer/site_default_design_customizer.php:53
+msgid "Normal text font size for PC"
+msgstr "PC用本文のテキストサイズ"
+
+#: inc/customizer/site_default_design_customizer.php:54
+msgid "Normal text font size for TAB"
+msgstr "タブレット用本文のテキストサイズ"
+
+#: inc/customizer/site_default_design_customizer.php:55
+msgid "Normal text font size for SP"
+msgstr "スマートフォン用本文のテキストサイズ"
+
+#: inc/customizer/site_default_design_customizer.php:56
+msgid "H1 text font size for PC"
+msgstr "PC用大見出しサイズ"
+
+#: inc/customizer/site_default_design_customizer.php:57
+msgid "H1 text font size for TAB"
+msgstr "タブレット用大見出しサイズ"
+
+#: inc/customizer/site_default_design_customizer.php:58
+msgid "H1 text font size for SP"
+msgstr "スマートフォン用大見出しサイズ"
+
+#: inc/customizer/site_default_design_customizer.php:68
+msgid "Btn Link Settings"
+msgstr "ボタンリンクの設定"
+
+#: inc/customizer/site_default_design_customizer.php:78
+msgid "btn Link Design Type For common"
+msgstr "ボタンリンクデザインタイプ 共通用"
+
+#: inc/customizer/site_default_design_customizer.php:91
+msgid "Icon design for buttons in page content"
+msgstr "ページコンテンツ内のボタンアイコンのデザインを選択する"
+
+#: inc/customizer/site_default_design_customizer.php:93
+#: inc/customizer/site_default_design_customizer.php:135
+#, fuzzy
+msgid "Icon Type2"
+msgstr "Icon Type2"
+
+#: inc/customizer/site_default_design_customizer.php:94
+#: inc/customizer/site_default_design_customizer.php:136
+#, fuzzy
+msgid "Icon Type3"
+msgstr "Icon Type3"
+
+#: inc/customizer/site_default_design_customizer.php:95
+#: inc/customizer/site_default_design_customizer.php:137
+#, fuzzy
+msgid "Icon Type4"
+msgstr "Icon Type4"
+
+#: inc/customizer/site_default_design_customizer.php:96
+#: inc/customizer/site_default_design_customizer.php:138
+#, fuzzy
+msgid "Icon Type5"
+msgstr "Icon Type5"
+
+#: inc/customizer/site_default_design_customizer.php:97
+#: inc/customizer/site_default_design_customizer.php:139
+#, fuzzy
+msgid "Icon Type6"
+msgstr "Icon Type6"
+
+#: inc/customizer/site_default_design_customizer.php:108
+msgid "Text Link Settings"
+msgstr "テキストリンクの設定"
+
+#: inc/customizer/site_default_design_customizer.php:118
+msgid "Text Link Design Type"
+msgstr "テキストリンクのデザインを選択する"
+
+#: inc/customizer/site_default_design_customizer.php:119
+#, fuzzy
+msgid "Text Link Type1"
+msgstr "Text Link Type1"
+
+#: inc/customizer/site_default_design_customizer.php:120
+#, fuzzy
+msgid "Text Link Type2"
+msgstr "Text Link Type2"
+
+#: inc/customizer/site_default_design_customizer.php:121
+#, fuzzy
+msgid "Text Link Type3"
+msgstr "Text Link Type3"
+
+#: inc/customizer/site_default_design_customizer.php:122
+#, fuzzy
+msgid "Text Link Type4"
+msgstr "Text Link Type4"
+
+#: inc/customizer/site_default_design_customizer.php:123
+#, fuzzy
+msgid "Text Link Type5"
+msgstr "Text Link Type5"
+
+#: inc/customizer/site_default_design_customizer.php:124
+#, fuzzy
+msgid "Text Link Type6"
+msgstr "Text Link Type6"
+
+#: inc/customizer/site_default_design_customizer.php:125
+#, fuzzy
+msgid "Text Link Type7"
+msgstr "Text Link Type7"
+
+#: inc/customizer/site_default_design_customizer.php:126
+#, fuzzy
+msgid "Text Link Type8"
+msgstr "Text Link Type8"
+
+#: inc/customizer/site_default_design_customizer.php:127
+#, fuzzy
+msgid "Text Link Type9"
+msgstr "Text Link Type9"
+
+#: inc/customizer/site_default_design_customizer.php:128
+#, fuzzy
+msgid "Text Link Type10"
+msgstr "Text Link Type10"
+
+#: inc/customizer/site_default_design_customizer.php:129
+#, fuzzy
+msgid "Text Link Type11"
+msgstr "Text Link Type11"
+
+#: inc/customizer/site_default_design_customizer.php:130
+#, fuzzy
+msgid "Text Link Type12"
+msgstr "Text Link Type12"
+
+#: inc/customizer/site_default_design_customizer.php:133
+msgid "Text Link Icon Type"
+msgstr "テキストリンクのアイコンを選択する"
+
+#: inc/customizer/site_default_design_customizer.php:140
+#, fuzzy
+#| msgid "Icon  Type7"
+msgid "Icon Type7"
+msgstr "Icon Type7"
+
+#: inc/customizer/site_default_design_customizer.php:141
+#, fuzzy
+#| msgid "Icon  Type8"
+msgid "Icon Type8"
+msgstr "Icon Type8"
+
+#: inc/customizer/site_default_design_customizer.php:142
+#, fuzzy
+#| msgid "Icon  Type9"
+msgid "Icon Type9"
+msgstr "Icon Type9"
+
+#: inc/customizer/site_default_design_customizer.php:143
+#, fuzzy
+#| msgid "Icon  Type10"
+msgid "Icon Type10"
+msgstr "Icon Type10"
+
+#: inc/customizer/site_default_design_customizer.php:144
+#, fuzzy
+#| msgid "Icon  Type11"
+msgid "Icon Type11"
+msgstr "Icon Type11"
+
+#: inc/customizer/site_default_design_customizer.php:145
+#, fuzzy
+#| msgid "Icon  Type12"
+msgid "Icon Type12"
+msgstr "Icon Type12"
+
+#: inc/customizer/site_default_design_customizer.php:146
+#, fuzzy
+#| msgid "Icon  Type13"
+msgid "Icon Type13"
+msgstr "Icon Type13"
+
+#: inc/customizer/site_default_design_customizer.php:147
+#, fuzzy
+#| msgid "Icon  Type14"
+msgid "Icon Type14"
+msgstr "Icon Type14"
 
 #: theme_customizer/customizer-cms.php:15
 msgid "CMS Setting"
@@ -214,347 +1072,6 @@ msgstr ""
 msgid "CMS Archive Type09"
 msgstr ""
 
-#: theme_customizer/customizer-design.php:18
-msgid "Basic design settings"
-msgstr "デザインの基本設定"
-
-#: theme_customizer/customizer-design.php:28
-msgid "Color Settings"
-msgstr "カラー設定"
-
-#: theme_customizer/customizer-design.php:48
-#: theme_customizer/customizer-top.php:731
-msgid "Text Color"
-msgstr "テキストカラー"
-
-#: theme_customizer/customizer-design.php:69
-msgid "Main Color"
-msgstr "メインカラー"
-
-#: theme_customizer/customizer-design.php:89
-msgid "Accent Color"
-msgstr "アクセントカラー"
-
-#: theme_customizer/customizer-design.php:110
-msgid "Base Color"
-msgstr "ベースカラー"
-
-#: theme_customizer/customizer-design.php:131
-msgid "Sub Color"
-msgstr "サブカラー"
-
-#: theme_customizer/customizer-design.php:152
-msgid "Background Color"
-msgstr "背景カラー"
-
-#: theme_customizer/customizer-design.php:164
-msgid "Font Settings"
-msgstr "フォントの設定"
-
-#: theme_customizer/customizer-design.php:184
-msgid "Japanese Font"
-msgstr "日本語フォント"
-
-#: theme_customizer/customizer-design.php:205
-msgid "Japanese Font Family"
-msgstr "日本語フォント指定"
-
-#: theme_customizer/customizer-design.php:226
-msgid "European language Font"
-msgstr "欧文フォント"
-
-#: theme_customizer/customizer-design.php:247
-msgid "European Font Family"
-msgstr "欧文フォント指定"
-
-#: theme_customizer/customizer-design.php:268
-msgid "Heading Font"
-msgstr "見出しフォント"
-
-#: theme_customizer/customizer-design.php:289
-msgid "Heading Font Family"
-msgstr "見出しフォント指定"
-
-#: theme_customizer/customizer-design.php:310
-msgid "Normal text font size for PC"
-msgstr "PC用本文のテキストサイズ"
-
-#: theme_customizer/customizer-design.php:331
-msgid "Normal text font size for TAB"
-msgstr "タブレット用本文のテキストサイズ"
-
-#: theme_customizer/customizer-design.php:352
-msgid "Normal text font size for SP"
-msgstr "スマートフォン用本文のテキストサイズ"
-
-#: theme_customizer/customizer-design.php:373
-msgid "H1 text font size for PC"
-msgstr "PC用大見出しサイズ"
-
-#: theme_customizer/customizer-design.php:394
-msgid "H1 text font size for TAB"
-msgstr "タブレット用大見出しサイズ"
-
-#: theme_customizer/customizer-design.php:415
-msgid "H1 text font size for SP"
-msgstr "スマートフォン用大見出しサイズ"
-
-#: theme_customizer/customizer-design.php:427
-msgid "btn Link Settings"
-msgstr "ボタンリンクの設定"
-
-#: theme_customizer/customizer-design.php:447
-msgid "btn Link Design Type For common"
-msgstr "ボタンリンクデザインタイプ 共通用"
-
-#: theme_customizer/customizer-design.php:452
-#: theme_customizer/customizer-footer.php:321
-#: theme_customizer/customizer-footer.php:542
-#: theme_customizer/customizer-header.php:426
-#: theme_customizer/customizer-header.php:581
-msgid "btn Link Type1"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:453
-#: theme_customizer/customizer-footer.php:322
-#: theme_customizer/customizer-footer.php:543
-#: theme_customizer/customizer-header.php:427
-#: theme_customizer/customizer-header.php:582
-msgid "btn Link Type2"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:454
-#: theme_customizer/customizer-footer.php:323
-#: theme_customizer/customizer-footer.php:544
-#: theme_customizer/customizer-header.php:428
-#: theme_customizer/customizer-header.php:583
-msgid "btn Link Type3"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:455
-#: theme_customizer/customizer-footer.php:324
-#: theme_customizer/customizer-footer.php:545
-#: theme_customizer/customizer-header.php:429
-#: theme_customizer/customizer-header.php:584
-msgid "btn Link Type4"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:456
-#: theme_customizer/customizer-footer.php:325
-#: theme_customizer/customizer-footer.php:546
-#: theme_customizer/customizer-header.php:430
-#: theme_customizer/customizer-header.php:585
-msgid "btn Link Type5"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:457
-#: theme_customizer/customizer-footer.php:326
-#: theme_customizer/customizer-footer.php:547
-#: theme_customizer/customizer-header.php:431
-#: theme_customizer/customizer-header.php:586
-msgid "btn Link Type6"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:458
-#: theme_customizer/customizer-footer.php:327
-#: theme_customizer/customizer-footer.php:548
-#: theme_customizer/customizer-header.php:432
-#: theme_customizer/customizer-header.php:587
-msgid "btn Link Type7"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:459
-#: theme_customizer/customizer-footer.php:328
-#: theme_customizer/customizer-footer.php:549
-#: theme_customizer/customizer-header.php:433
-#: theme_customizer/customizer-header.php:588
-msgid "btn Link Type8"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:460
-#: theme_customizer/customizer-footer.php:329
-#: theme_customizer/customizer-footer.php:550
-#: theme_customizer/customizer-header.php:434
-#: theme_customizer/customizer-header.php:589
-msgid "btn Link Type9"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:461
-#: theme_customizer/customizer-footer.php:330
-#: theme_customizer/customizer-footer.php:551
-#: theme_customizer/customizer-header.php:435
-#: theme_customizer/customizer-header.php:590
-msgid "btn Link Type10"
-msgstr ""
-
-#: theme_customizer/customizer-design.php:480
-msgid "Icon design for buttons in page content"
-msgstr "ページコンテンツ内のボタンアイコンのデザインを選択する"
-
-#: theme_customizer/customizer-design.php:485
-#: theme_customizer/customizer-design.php:561
-#: theme_customizer/customizer-footer.php:355
-#: theme_customizer/customizer-footer.php:576
-#: theme_customizer/customizer-header.php:459
-#: theme_customizer/customizer-header.php:614
-#, fuzzy
-msgid "Icon Type1"
-msgstr "Icon Type1"
-
-#: theme_customizer/customizer-design.php:486
-#: theme_customizer/customizer-design.php:562
-#: theme_customizer/customizer-footer.php:356
-#: theme_customizer/customizer-footer.php:577
-#: theme_customizer/customizer-header.php:460
-#: theme_customizer/customizer-header.php:615
-#, fuzzy
-msgid "Icon  Type2"
-msgstr "Icon Type2"
-
-#: theme_customizer/customizer-design.php:487
-#: theme_customizer/customizer-design.php:563
-#: theme_customizer/customizer-footer.php:357
-#: theme_customizer/customizer-footer.php:578
-#: theme_customizer/customizer-header.php:461
-#: theme_customizer/customizer-header.php:616
-#, fuzzy
-msgid "Icon  Type3"
-msgstr "Icon Type3"
-
-#: theme_customizer/customizer-design.php:488
-#: theme_customizer/customizer-design.php:564
-#: theme_customizer/customizer-footer.php:358
-#: theme_customizer/customizer-footer.php:579
-#: theme_customizer/customizer-header.php:462
-#: theme_customizer/customizer-header.php:617
-#, fuzzy
-msgid "Icon  Type4"
-msgstr "Icon Type4"
-
-#: theme_customizer/customizer-design.php:489
-#: theme_customizer/customizer-design.php:565
-#: theme_customizer/customizer-footer.php:359
-#: theme_customizer/customizer-footer.php:580
-#: theme_customizer/customizer-header.php:463
-#: theme_customizer/customizer-header.php:618
-#, fuzzy
-msgid "Icon  Type5"
-msgstr "Icon Type5"
-
-#: theme_customizer/customizer-design.php:490
-#: theme_customizer/customizer-design.php:566
-#: theme_customizer/customizer-footer.php:360
-#: theme_customizer/customizer-footer.php:581
-#: theme_customizer/customizer-header.php:464
-#: theme_customizer/customizer-header.php:619
-#, fuzzy
-msgid "Icon  Type6"
-msgstr "Icon Type6"
-
-#: theme_customizer/customizer-design.php:501
-msgid "Text Link Settings"
-msgstr "テキストリンクの設定"
-
-#: theme_customizer/customizer-design.php:521
-msgid "Text Link Design Type"
-msgstr "テキストリンクのデザインを選択する"
-
-#: theme_customizer/customizer-design.php:526
-#, fuzzy
-msgid "Text Link Type1"
-msgstr "Text Link Type1"
-
-#: theme_customizer/customizer-design.php:527
-#, fuzzy
-msgid "Text Link Type2"
-msgstr "Text Link Type2"
-
-#: theme_customizer/customizer-design.php:528
-#, fuzzy
-msgid "Text Link Type3"
-msgstr "Text Link Type3"
-
-#: theme_customizer/customizer-design.php:529
-#, fuzzy
-msgid "Text Link Type4"
-msgstr "Text Link Type4"
-
-#: theme_customizer/customizer-design.php:530
-#, fuzzy
-msgid "Text Link Type5"
-msgstr "Text Link Type5"
-
-#: theme_customizer/customizer-design.php:531
-#, fuzzy
-msgid "Text Link Type6"
-msgstr "Text Link Type6"
-
-#: theme_customizer/customizer-design.php:532
-#, fuzzy
-msgid "Text Link Type7"
-msgstr "Text Link Type7"
-
-#: theme_customizer/customizer-design.php:533
-#, fuzzy
-msgid "Text Link Type8"
-msgstr "Text Link Type8"
-
-#: theme_customizer/customizer-design.php:534
-#, fuzzy
-msgid "Text Link Type9"
-msgstr "Text Link Type9"
-
-#: theme_customizer/customizer-design.php:535
-#, fuzzy
-msgid "Text Link Type10"
-msgstr "Text Link Type10"
-
-#: theme_customizer/customizer-design.php:536
-#, fuzzy
-msgid "Text Link Type11"
-msgstr "Text Link Type11"
-
-#: theme_customizer/customizer-design.php:537
-#, fuzzy
-msgid "Text Link Type12"
-msgstr "Text Link Type12"
-
-#: theme_customizer/customizer-design.php:556
-msgid "Text Link Icon Type"
-msgstr "テキストリンクのアイコンを選択する"
-
-#: theme_customizer/customizer-design.php:567
-msgid "Icon  Type7"
-msgstr "Icon Type7"
-
-#: theme_customizer/customizer-design.php:568
-msgid "Icon  Type8"
-msgstr "Icon Type8"
-
-#: theme_customizer/customizer-design.php:569
-msgid "Icon  Type9"
-msgstr "Icon Type9"
-
-#: theme_customizer/customizer-design.php:570
-msgid "Icon  Type10"
-msgstr "Icon Type10"
-
-#: theme_customizer/customizer-design.php:571
-msgid "Icon  Type11"
-msgstr "Icon Type11"
-
-#: theme_customizer/customizer-design.php:572
-msgid "Icon  Type12"
-msgstr "Icon Type12"
-
-#: theme_customizer/customizer-design.php:573
-msgid "Icon  Type13"
-msgstr "Icon Type13"
-
-#: theme_customizer/customizer-design.php:574
-msgid "Icon  Type14"
-msgstr "Icon Type14"
-
 #: theme_customizer/customizer-followBtn.php:17
 msgid "Follow button"
 msgstr "追従ボタン"
@@ -562,18 +1079,6 @@ msgstr "追従ボタン"
 #: theme_customizer/customizer-followBtn.php:25
 msgid "Follow button for PC"
 msgstr "PC用追従ボタン"
-
-#: theme_customizer/customizer-followBtn.php:45
-#: theme_customizer/customizer-followBtn.php:257
-#: theme_customizer/customizer-footer.php:234
-#: theme_customizer/customizer-footer.php:455
-#: theme_customizer/customizer-hamburger.php:438
-#: theme_customizer/customizer-hamburger.php:607
-#: theme_customizer/customizer-header.php:339
-#: theme_customizer/customizer-header.php:557
-#: theme_customizer/customizer-sp.php:57 theme_customizer/customizer-sp.php:314
-msgid "Show button"
-msgstr "ボタンを表示する"
 
 #: theme_customizer/customizer-followBtn.php:62
 #: theme_customizer/customizer-followBtn.php:274
@@ -681,133 +1186,6 @@ msgstr "ページを新しいタブで開く"
 #: theme_customizer/customizer-followBtn.php:237
 msgid "Follow button for SP"
 msgstr "スマホ用追従ボタン"
-
-#: theme_customizer/customizer-footer.php:17
-#: theme_customizer/customizer-footer.php:25
-msgid "footer option"
-msgstr "フッターの設定"
-
-#: theme_customizer/customizer-footer.php:35
-msgid "footer first option"
-msgstr "フッターの第1ボタン"
-
-#: theme_customizer/customizer-footer.php:45
-msgid "footer second option"
-msgstr "フッターの第2ボタン"
-
-#: theme_customizer/customizer-footer.php:65
-msgid "Footer Design Type"
-msgstr "フッターデザインを選択する"
-
-#: theme_customizer/customizer-footer.php:70
-msgid "Footer_A-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-footer.php:71
-msgid "Footer_A-Detail_00"
-msgstr ""
-
-#: theme_customizer/customizer-footer.php:72
-msgid "Footer_B-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-footer.php:73
-msgid "Footer_C-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-footer.php:74
-msgid "Set Original Footer"
-msgstr "オリジナルのフッターを設定する"
-
-#: theme_customizer/customizer-footer.php:95
-msgid "Footer Logo Image"
-msgstr "フッターのロゴ画像"
-
-#: theme_customizer/customizer-footer.php:117
-msgid "Simple company profile"
-msgstr "簡単な会社概要"
-
-#: theme_customizer/customizer-footer.php:141
-msgid "Set background color"
-msgstr "背景にカラーを追加する"
-
-#: theme_customizer/customizer-footer.php:161
-msgid "Footer Background Color"
-msgstr "フッターの背景カラー"
-
-#: theme_customizer/customizer-footer.php:184
-msgid "Footer Text Color"
-msgstr "フッターテキストカラー"
-
-#: theme_customizer/customizer-footer.php:205
-msgid "Set copyright"
-msgstr "コピーライトを入力します"
-
-#: theme_customizer/customizer-footer.php:297
-#: theme_customizer/customizer-footer.php:518
-#: theme_customizer/customizer-hamburger.php:282
-#: theme_customizer/customizer-hamburger.php:500
-#: theme_customizer/customizer-hamburger.php:669
-#: theme_customizer/customizer-header.php:402
-#: theme_customizer/customizer-header.php:751
-#: theme_customizer/customizer-sp.php:119
-#: theme_customizer/customizer-sp.php:376
-msgid "Display button in separate tab"
-msgstr "ボタンを別タブに表示する"
-
-#: theme_customizer/customizer-footer.php:316
-#: theme_customizer/customizer-footer.php:537
-#: theme_customizer/customizer-header.php:421
-#: theme_customizer/customizer-header.php:576
-msgid "btn Link Design Type"
-msgstr "ボタンのデザインタイプ"
-
-#: theme_customizer/customizer-footer.php:349
-#: theme_customizer/customizer-footer.php:570
-#: theme_customizer/customizer-header.php:454
-#: theme_customizer/customizer-header.php:609
-msgid "btn Link Icon Type"
-msgstr "ボタンのアイコンタイプ"
-
-#: theme_customizer/customizer-footer.php:354
-#: theme_customizer/customizer-footer.php:575
-msgid "No Icon"
-msgstr ""
-
-#: theme_customizer/customizer-footer.php:380
-#: theme_customizer/customizer-footer.php:601
-#: theme_customizer/customizer-header.php:484
-#: theme_customizer/customizer-header.php:639
-msgid "btn color for header"
-msgstr "ボタンの背景色"
-
-#: theme_customizer/customizer-footer.php:383
-#: theme_customizer/customizer-footer.php:604
-#: theme_customizer/customizer-header.php:487
-#: theme_customizer/customizer-header.php:642
-msgid "If not selected, the main color will be set."
-msgstr "入力しない場合は初期設定色となります。"
-
-#: theme_customizer/customizer-footer.php:403
-#: theme_customizer/customizer-footer.php:624
-#: theme_customizer/customizer-header.php:507
-#: theme_customizer/customizer-header.php:662
-msgid "btn text color for header"
-msgstr "ボタンの文字色"
-
-#: theme_customizer/customizer-footer.php:406
-#: theme_customizer/customizer-footer.php:627
-#: theme_customizer/customizer-header.php:510
-#: theme_customizer/customizer-header.php:665
-msgid "If not selected, the text color will be set."
-msgstr "入力しない場合は初期設定色となります。"
-
-#: theme_customizer/customizer-footer.php:425
-#: theme_customizer/customizer-footer.php:646
-#: theme_customizer/customizer-header.php:529
-#: theme_customizer/customizer-header.php:684
-msgid "If you would like to set a gradation for the btn color, enter it here."
-msgstr "ボタンの色にグラデーションを設定したい場合はここに入力します。"
 
 #: theme_customizer/customizer-hamburger.php:19
 msgid "Hamburger option"
@@ -998,125 +1376,6 @@ msgstr "ボタンに線を追加"
 msgid "Set border corner radius"
 msgstr "ボタンの角の角度"
 
-#: theme_customizer/customizer-header.php:16
-msgid "Header option"
-msgstr "ヘッダーの設定"
-
-#: theme_customizer/customizer-header.php:24
-msgid "Design setting for header"
-msgstr "ヘッダーのデザイン設定"
-
-#: theme_customizer/customizer-header.php:32
-msgid "btn setting for header"
-msgstr "ヘッダーのボタン設定"
-
-#: theme_customizer/customizer-header.php:40
-msgid "Another btn setting for header"
-msgstr "ヘッダーの別のボタン設定"
-
-#: theme_customizer/customizer-header.php:61
-msgid "Logo Image"
-msgstr "ロゴ画像"
-
-#: theme_customizer/customizer-header.php:81
-msgid "Design Type"
-msgstr "ヘッダーデザインを選択する"
-
-#: theme_customizer/customizer-header.php:86
-msgid "Header_A-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:87
-msgid "Header_A-Base_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:88
-msgid "Header_A-Square_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:89
-msgid "Header_B-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:90
-msgid "Header_B-Base_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:91
-msgid "Header_B-Square_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:92
-msgid "Header_B-Logo_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:93
-msgid "Header_C-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:94
-msgid "Header_C-Square_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:95
-msgid "Header_D-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:96
-msgid "Header_E-Nomal_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:97
-msgid "Header_E-Base_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:98
-msgid "Header_F-Square_00"
-msgstr ""
-
-#: theme_customizer/customizer-header.php:119
-msgid "Set to card type"
-msgstr "背景をカードタイプにする"
-
-#: theme_customizer/customizer-header.php:137
-msgid "Set card corner radius for PC (px)"
-msgstr "カードタイプ時の角度（PC）"
-
-#: theme_customizer/customizer-header.php:158
-msgid "Set card corner radius for Tablet (px)"
-msgstr "カードタイプ時の角度（タブレット）"
-
-#: theme_customizer/customizer-header.php:179
-msgid "Set card corner radius for SP (px)"
-msgstr "カードタイプ時の角度（スマホ）"
-
-#: theme_customizer/customizer-header.php:201
-msgid "Header Link Text Color"
-msgstr "ヘッダーリンクカラー"
-
-#: theme_customizer/customizer-header.php:223
-msgid "Header Background Color"
-msgstr "ヘッダーの背景カラー"
-
-#: theme_customizer/customizer-header.php:244
-msgid ""
-"If you would like to set a gradation for the background color, enter it here."
-msgstr "背景色のグラデーションを設定したい場合はここに入力します。"
-
-#: theme_customizer/customizer-header.php:268
-msgid "Add an underline"
-msgstr "ヘッダーに下線を追加する"
-
-#: theme_customizer/customizer-header.php:288
-msgid "Add blur processing"
-msgstr ""
-"ヘッダーにぼかしをかける\n"
-"（背景からーを設定している場合は利用できません）"
-
-#: theme_customizer/customizer-header.php:308
-msgid "Adjust the blur ratio"
-msgstr "ぼかし度合いを設定する"
-
 #: theme_customizer/customizer-loading.php:15
 msgid "Loading Setting"
 msgstr "ローディング画面設定"
@@ -1152,120 +1411,6 @@ msgstr "ローディング画面の背景色"
 #: theme_customizer/customizer-loading.php:193
 msgid "Time to display loading screen (seconds)"
 msgstr "ローディング画面を表示する時間"
-
-#: theme_customizer/customizer-page.php:14
-msgid "Page option"
-msgstr "ページの設定"
-
-#: theme_customizer/customizer-page.php:32
-msgid "Page Title Design"
-msgstr "ページタイトルのデザインを設定"
-
-#: theme_customizer/customizer-page.php:37
-msgid "Title_A-Screen_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:38
-msgid "Title_A-Contents_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:39
-msgid "Title_A-Right_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:40
-msgid "Title_A-Left_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:41
-msgid "Title_A-Photo_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:42
-msgid "Title_A-Top_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:43
-msgid "Title_A-Text_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:44
-msgid "Title_B-Normal_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:45
-msgid "Title_C-Normal_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:46
-msgid "Title_C-Photo_00"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:68
-#: theme_customizer/customizer-top.php:567
-msgid "Content Title1"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:69
-#: theme_customizer/customizer-top.php:568
-msgid "Content Title2"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:70
-#: theme_customizer/customizer-top.php:569
-msgid "Content Title3"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:71
-#: theme_customizer/customizer-top.php:570
-msgid "Content Title4"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:72
-#: theme_customizer/customizer-top.php:571
-msgid "Content Title5"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:73
-#: theme_customizer/customizer-top.php:572
-msgid "Content Title6"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:74
-#: theme_customizer/customizer-top.php:573
-msgid "Content Title7"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:75
-#: theme_customizer/customizer-top.php:574
-msgid "Content Title8"
-msgstr ""
-
-#: theme_customizer/customizer-page.php:96
-#: theme_customizer/customizer-top.php:595
-msgid "Add underline to content title"
-msgstr "コンテンツのタイトルに下線を追加する"
-
-#: theme_customizer/customizer-page.php:115
-msgid "Underline Color"
-msgstr "下線の色"
-
-#: theme_customizer/customizer-page.php:136
-#: theme_customizer/customizer-top.php:635
-msgid "Set Underline thickness (px)"
-msgstr "下線の太さを設定する"
-
-#: theme_customizer/customizer-page.php:157
-msgid "Set corner radius for PC (px)"
-msgstr "PC用のコーナーの角度"
-
-#: theme_customizer/customizer-page.php:177
-msgid "Set corner radius for Tablet (px)"
-msgstr "タブレット用のコーナーの角度"
-
-#: theme_customizer/customizer-page.php:197
-msgid "Set corner radius for SP (px)"
-msgstr "スマートフォン用のコーナーの角度"
 
 #: theme_customizer/customizer-sns.php:22
 msgid "SNS Settings"
@@ -1885,7 +2030,7 @@ msgstr "ハンバーガーメニュー内 右側"
 msgid "HAMBURGER MENU INFO MENU"
 msgstr "フッターナビゲーションハンバーガーメニュー内 下部"
 
-#: theme_support/init.php:77
+#: theme_support/init.php:75
 msgid "...more"
 msgstr "…続きを見る"
 
@@ -1904,6 +2049,51 @@ msgstr "メディアを追加"
 #: theme_support/titles.php:145 theme_support/titles.php:169
 msgid "Remove Image"
 msgstr "メディアをクリア"
+
+#~ msgid "btn Link Settings"
+#~ msgstr "ボタンリンクの設定"
+
+#~ msgid "Icon  Type7"
+#~ msgstr "Icon Type7"
+
+#~ msgid "Icon  Type8"
+#~ msgstr "Icon Type8"
+
+#~ msgid "Icon  Type9"
+#~ msgstr "Icon Type9"
+
+#~ msgid "Icon  Type10"
+#~ msgstr "Icon Type10"
+
+#~ msgid "Icon  Type11"
+#~ msgstr "Icon Type11"
+
+#~ msgid "Icon  Type12"
+#~ msgstr "Icon Type12"
+
+#~ msgid "Icon  Type13"
+#~ msgstr "Icon Type13"
+
+#~ msgid "Icon  Type14"
+#~ msgstr "Icon Type14"
+
+#~ msgid "If not selected, the main color will be set."
+#~ msgstr "入力しない場合は初期設定色となります。"
+
+#~ msgid "If not selected, the text color will be set."
+#~ msgstr "入力しない場合は初期設定色となります。"
+
+#~ msgid ""
+#~ "If you would like to set a gradation for the btn color, enter it here."
+#~ msgstr "ボタンの色にグラデーションを設定したい場合はここに入力します。"
+
+#~ msgid ""
+#~ "If you would like to set a gradation for the background color, enter it "
+#~ "here."
+#~ msgstr "背景色のグラデーションを設定したい場合はここに入力します。"
+
+#~ msgid "HOME"
+#~ msgstr "ホーム"
 
 #~ msgid "Enter a subtitle for this category"
 #~ msgstr "このカテゴリーのサブタイトルを入力してください"
