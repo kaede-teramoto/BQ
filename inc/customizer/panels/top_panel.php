@@ -1,7 +1,7 @@
 <?php
 // /inc/customizer/panels/top_panel.php
 
-require_once __DIR__ . '/../base_panel_customizer.php';
+require_once __DIR__ . '/../base/base_panel_customizer.php';
 
 class Top_Panel_Customizer extends Base_Panel_Customizer
 {
@@ -10,7 +10,7 @@ class Top_Panel_Customizer extends Base_Panel_Customizer
         parent::__construct(
             'top_page_panel',
             __('Top Page Settings', 'boutiq'),
-            34,
+            60,
             array(
                 'description' => '',
             )

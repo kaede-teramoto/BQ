@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/follow_button_customizer.php
+// /inc/customizer/section/follow_button_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Follow_Button_Pc_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Follow_Button_Pc_Customizer extends Base_Customizer
         parent::__construct(
             'follow_button_pc_section',
             __('Follow button for PC', 'boutiq'),
-            39,
+            101,
             array(
                 'panel' => 'follow_button_panel',
             )
@@ -51,7 +51,7 @@ class Follow_Button_Sp_Customizer extends Base_Customizer
         parent::__construct(
             'follow_button_sp_section',
             __('Follow button for SP', 'boutiq'),
-            39,
+            102,
             array(
                 'panel' => 'follow_button_panel',
             )
@@ -84,7 +84,6 @@ class Follow_Button_Sp_Customizer extends Base_Customizer
         $this->add_checkbox_field($wp_customize, 'follow_btn_sp_target_setting', __('Open link in a new tab', 'boutiq'), false);
     }
 }
-
 
 new Follow_Button_Pc_Customizer();
 new Follow_Button_Sp_Customizer();

@@ -32,7 +32,7 @@
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once get_template_directory() . '/theme_support/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'boutiq_register_required_plugins');
 

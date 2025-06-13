@@ -1,16 +1,13 @@
 <?php
-/*
- * Page Customizer Class
- * @package BOUTiQ
- */
+// /inc/customizer/section/page_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Page_Customizer extends Base_Customizer
 {
     public function __construct()
     {
-        parent::__construct('boutiq_page_section', __('Page option', 'boutiq'), 33);
+        parent::__construct('boutiq_page_section', __('Page option', 'boutiq'), 50);
     }
 
     protected function add_controls($wp_customize)

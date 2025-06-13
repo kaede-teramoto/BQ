@@ -49,7 +49,7 @@ function enqueue_menu_image_uploader($hook)
 {
     if ('nav-menus.php' !== $hook) return;
     wp_enqueue_media();
-    wp_enqueue_script('menu-image-uploader', get_template_directory_uri() . '/theme_support/js/mega-menu.js', ['jquery'], null, true);
+    wp_enqueue_script('menu-image-uploader', get_template_directory_uri() . '/inc/theme_setting/admin_parts/js/mega-menu.js', ['jquery'], null, true);
 }
 add_action('admin_enqueue_scripts', 'enqueue_menu_image_uploader');
 

@@ -1,13 +1,17 @@
 <?php
-// /inc/customizer/cms_customizer.php
+// /inc/customizer/section/cms_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Cms_Customizer extends Base_Customizer
 {
     public function __construct()
     {
-        parent::__construct('cms_section', __('CMS Setting', 'boutiq'), 35);
+        parent::__construct(
+            'cms_section',
+            __('CMS Setting', 'boutiq'),
+            70
+        );
     }
 
     protected function add_controls($wp_customize)

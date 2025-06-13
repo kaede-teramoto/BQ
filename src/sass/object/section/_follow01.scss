@@ -32,7 +32,6 @@
 
 .section__follow01__inner {
     @include v.conWidth;
-    max-width: 1100px;
 
     @include m.mq(pc) {}
 

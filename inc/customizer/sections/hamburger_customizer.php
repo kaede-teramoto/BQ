@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/hamburger_customizer.php
+// /inc/customizer/section/hamburger_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Hamburger_Design_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Hamburger_Design_Customizer extends Base_Customizer
         parent::__construct(
             'hm_design_section',
             __('Design setting for Hamburger', 'boutiq'),
-            10,
+            31,
             array(
                 'panel' => 'hm_panel',
             )
@@ -58,7 +58,7 @@ class Hamburger_Banner_First_Customizer extends Base_Customizer
         parent::__construct(
             'hm_banner_first_section',
             __('First banner setting for Hamburger', 'boutiq'),
-            20,
+            32,
             array(
                 'panel' => 'hm_panel',
             )
@@ -82,7 +82,7 @@ class Hamburger_Banner_Second_Customizer extends Base_Customizer
         parent::__construct(
             'hm_banner_second_section',
             __('Second banner setting for Hamburger', 'boutiq'),
-            30,
+            33,
             array(
                 'panel' => 'hm_panel',
             )
@@ -106,7 +106,7 @@ class Hamburger_Btn_Customizer extends Base_Customizer
         parent::__construct(
             'hm_btn_section',
             __('First btn setting for Hamburger', 'boutiq'),
-            40,
+            34,
             array(
                 'panel' => 'hm_panel',
             )
@@ -133,7 +133,7 @@ class Hamburger_Btn_Sub_Customizer extends Base_Customizer
         parent::__construct(
             'hm_btn_sub_section',
             __('Second btn setting for Hamburger', 'boutiq'),
-            50,
+            35,
             array(
                 'panel' => 'hm_panel',
             )

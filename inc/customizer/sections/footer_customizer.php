@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/footer_customizer.php
+// /inc/customizer/section/footer_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Footer_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Footer_Customizer extends Base_Customizer
         parent::__construct(
             'footer_section',
             __('footer option', 'boutiq'),
-            33,
+            41,
             array(
                 'panel' => 'footer_panel',
             )
@@ -47,7 +47,7 @@ class Footer_First_Btn_Customizer extends Base_Customizer
         parent::__construct(
             'footer_first_btn_section',
             __('footer first option', 'boutiq'),
-            34,
+            42,
             array(
                 'panel' => 'footer_panel',
             )
@@ -105,7 +105,7 @@ class Footer_Second_Btn_Customizer extends Base_Customizer
         parent::__construct(
             'footer_second_btn_section',
             __('footer second option', 'boutiq'),
-            35,
+            43,
             array(
                 'panel' => 'footer_panel',
             )

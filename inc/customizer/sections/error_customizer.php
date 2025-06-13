@@ -1,13 +1,17 @@
 <?php
-// /inc/customizer/error_customizer.php
+// /inc/customizer/section/error_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Error_Customizer extends Base_Customizer
 {
     public function __construct()
     {
-        parent::__construct('error_section', __('404 Setting', 'boutiq'), 37);
+        parent::__construct(
+            'error_section',
+            __('404 Setting', 'boutiq'),
+            80
+        );
     }
 
     protected function add_controls($wp_customize)

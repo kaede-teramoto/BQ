@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/header_design_customizer.php
+// /inc/customizer/section/header_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Header_Design_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Header_Design_Customizer extends Base_Customizer
         parent::__construct(
             'header_design_section',
             __('Design setting for header', 'boutiq'),
-            10,
+            21,
             array(
                 'panel' => 'header_panel',
             )
@@ -60,7 +60,7 @@ class Header_Design_Customizer extends Base_Customizer
         $this->add_text_field(
             $wp_customize,
             'header_bg_gradation_setting',
-            __('If you would like to set a gradation for the btn color, enter it here.', 'boutiq'),
+            __('If you would like to set a gradation for the header background color, enter it here.', 'boutiq'),
             '',
             wp_kses_post('Get the gradation from here: <br><a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Gradient Generator</a><br>Example:<br><span style="color: #000">background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);</span>')
         );
@@ -104,7 +104,7 @@ class Header_Btn_Customizer extends Base_Customizer
         parent::__construct(
             'header_btn_section',
             __('btn setting for header', 'boutiq'),
-            20,
+            22,
             array(
                 'panel' => 'header_panel',
             )
@@ -160,7 +160,7 @@ class Header_Btn_Sub_Customizer extends Base_Customizer
         parent::__construct(
             'header_btn_sub_section',
             __('Another btn setting for header', 'boutiq'),
-            30,
+            23,
             array(
                 'panel' => 'header_panel',
             )

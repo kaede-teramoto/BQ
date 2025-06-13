@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/sp_button_customizer.php
+// /inc/customizer/section/sp_button_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class SP_Button_First_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class SP_Button_First_Customizer extends Base_Customizer
         parent::__construct(
             'sp_btn_first_section',
             __('SP first button Settings', 'boutiq'),
-            39,
+            121,
             array(
                 'panel' => 'sp_button_panel',
             )
@@ -42,7 +42,7 @@ class SP_Button_Second_Customizer extends Base_Customizer
         parent::__construct(
             'sp_btn_second_section',
             __('SP second button Settings', 'boutiq'),
-            39,
+            122,
             array(
                 'panel' => 'sp_button_panel',
             )

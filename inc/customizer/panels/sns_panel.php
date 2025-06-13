@@ -1,7 +1,7 @@
 <?php
 // /inc/customizer/panels/sns_panel.php
 
-require_once __DIR__ . '/../base_panel_customizer.php';
+require_once __DIR__ . '/../base/base_panel_customizer.php';
 
 class Sns_Panel_Customizer extends Base_Panel_Customizer
 {
@@ -10,7 +10,7 @@ class Sns_Panel_Customizer extends Base_Panel_Customizer
         parent::__construct(
             'sns_panel',
             __('SNS Settings', 'boutiq'),
-            38,
+            110,
             array(
                 'description' => '',
             )

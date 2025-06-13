@@ -9,14 +9,6 @@ if (!isset($content_width)) {
     $content_width = 640;
 }
 
-function customizer_custom_scripts()
-{
-    // カスタマイザーのページでのみスクリプトを読み込む
-    if (is_customize_preview()) {
-        wp_enqueue_script('customizer-custom-script', get_template_directory_uri() . '/theme_customizer/customizer.js', array('jquery', 'customize-controls'), '', true);
-    }
-}
-add_action('customize_controls_enqueue_scripts', 'customizer_custom_scripts');
 
 function sanitize_textarea_content($input)
 {
@@ -25,13 +17,15 @@ function sanitize_textarea_content($input)
 }
 
 // theme_support
-get_template_part('theme_support/init');
-get_template_part('theme_support/custom-post');
-get_template_part('theme_support/titles');
-get_template_part('theme_support/scripts');
-get_template_part('theme_support/tgm-config');
+//get_template_part('theme_support/init');
 
-require_once get_template_directory() . '/theme_support/mega-menu.php';
-require_once get_template_directory() . '/theme_support/page-custom.php';
+
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/init.php';
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/scripts.php';
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/custom-post.php';
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/titles.php';
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/tgm-config.php';
+require_once get_template_directory() . '/inc/theme_setting/admin_parts/mega-menu.php';
+require_once get_template_directory() . '/inc/page_custom_field/admin_parts/page_custom_fild.php';
 require_once get_template_directory() . '/inc/customizer/init_customizer.php';
-require_once get_template_directory() . '/inc/customizer/base_export_customizer.php';
+require_once get_template_directory() . '/inc/customizer/base/base_export_customizer.php';

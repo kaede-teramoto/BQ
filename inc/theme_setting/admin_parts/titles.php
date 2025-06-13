@@ -188,7 +188,7 @@ function enqueue_taxonomy_custom_field_scripts($hook)
 {
   if (!in_array($hook, ['edit-tags.php', 'term.php'])) return;
   wp_enqueue_media();
-  wp_enqueue_script('taxonomy-image-field', get_template_directory_uri() . '/theme_support/js/taxonomy-image-field.js', ['jquery'], null, true);
+  wp_enqueue_script('taxonomy-image-field', get_template_directory_uri() . '/inc/theme_setting/admin_parts/js/taxonomy-image-field.js', ['jquery'], null, true);
 }
 add_action('admin_enqueue_scripts', 'enqueue_taxonomy_custom_field_scripts');
 
