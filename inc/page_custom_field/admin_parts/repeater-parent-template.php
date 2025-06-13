@@ -143,7 +143,7 @@ $children = $parent['children'] ?? array();
 echo '<div class="children-wrapper">';
 
 foreach ($children as $childIndex => $child) {
-    require get_template_directory() . '/theme_support/child-repeater-template.php';
+    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
 }
 
 echo '</div>'; // .children-wrapper

@@ -69,7 +69,7 @@ class Custom_Page_Repeater_Meta_Box
         }
 
         foreach ($parents as $parentIndex => $parent) {
-            require get_template_directory() . '/theme_support/parent-repeater-template.php';
+            require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-parent-template.php';
         }
 
         echo '</div>'; // .parent-repeater-wrapper
@@ -203,7 +203,7 @@ class Custom_Page_Repeater_Meta_Box
 
             wp_enqueue_script(
                 'custom-meta-repeater',
-                get_template_directory_uri() . '/theme_support/js/custom-meta-repeater.js',
+                get_template_directory_uri() . '/inc/page_custom_field/admin_parts/js/custom-meta-repeater.js',
                 array('jquery'),
                 null,
                 true
@@ -220,7 +220,7 @@ class Custom_Page_Repeater_Meta_Box
 
             wp_enqueue_style(
                 'custom-meta-repeater-style',
-                get_template_directory_uri() . '/theme_support/css/custom-meta-repeater.css',
+                get_template_directory_uri() . '/inc/page_custom_field/admin_parts/css/custom-meta-repeater.css',
                 array(),
                 null
             );
@@ -247,7 +247,7 @@ class Custom_Page_Repeater_Meta_Box
         );
 
         ob_start();
-        require get_template_directory() . '/theme_support/parent-repeater-template.php';
+        require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-parent-template.php';
         $html = ob_get_clean();
 
         wp_send_json_success(array('html' => $html));
@@ -269,7 +269,7 @@ class Custom_Page_Repeater_Meta_Box
         );
 
         ob_start();
-        require get_template_directory() . '/theme_support/child-repeater-template.php';
+        require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
         $html = ob_get_clean();
 
         wp_send_json_success(array('html' => $html));
@@ -357,7 +357,7 @@ class Custom_Page_Repeater_Meta_Box
 function render_parent_block($parent, $parent_index = 0)
 {
     ob_start();
-    get_template_part('template-parts/custom/parent-block', null, array(
+    get_template_part('inc/page_custom_field/template_parts/parent-block', null, array(
         'parent' => $parent,
         'parent_index' => $parent_index,
     ));
@@ -367,7 +367,7 @@ function render_parent_block($parent, $parent_index = 0)
 function render_child_block($child, $parent_index = 0, $child_index = 0)
 {
     ob_start();
-    get_template_part('template-parts/custom/child-block', null, array(
+    get_template_part('inc/page_custom_field/template_parts/child-block', null, array(
         'child' => $child,
     ));
     return ob_get_clean();

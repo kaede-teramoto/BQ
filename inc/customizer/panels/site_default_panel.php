@@ -1,7 +1,7 @@
 <?php
 // /inc/customizer/panels/site_default_panel.php
 
-require_once __DIR__ . '/../base_panel_customizer.php';
+require_once __DIR__ . '/../base/base_panel_customizer.php';
 
 class Site_Default_Panel_Customizer extends Base_Panel_Customizer
 {

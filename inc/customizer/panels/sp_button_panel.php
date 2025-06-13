@@ -1,7 +1,7 @@
 <?php
 // /inc/customizer/panels/sp_button_panel.php
 
-require_once __DIR__ . '/../base_panel_customizer.php';
+require_once __DIR__ . '/../base/base_panel_customizer.php';
 
 class Sp_Button_Panel_Customizer extends Base_Panel_Customizer
 {
@@ -10,7 +10,7 @@ class Sp_Button_Panel_Customizer extends Base_Panel_Customizer
         parent::__construct(
             'sp_button_panel',
             __('SP button Settings', 'boutiq'),
-            39,
+            120,
             array(
                 'description' => '',
             )

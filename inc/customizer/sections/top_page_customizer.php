@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/top_page_customizer.php
+// /inc/customizer/section/top_page_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Top_Page_Fv_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Top_Page_Fv_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_image_section',
             __('Slide Image Setting', 'boutiq'),
-            33,
+            61,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -41,7 +41,7 @@ class Top_Page_FV_Setting_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_post_section',
             __('Setting to slide the latest posts', 'boutiq'),
-            34,
+            62,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -96,7 +96,7 @@ class Top_Page_Title_Customizer extends Base_Customizer
         parent::__construct(
             'top_content_title_section',
             __('Top page title design', 'boutiq'),
-            35,
+            63,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -130,7 +130,7 @@ class Top_Page_Fv_Image1_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_image_setting_1',
             __('Slide Image1', 'boutiq'),
-            36,
+            64,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -157,7 +157,7 @@ class Top_Page_Fv_Image2_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_image_setting_2',
             __('Slide Image2', 'boutiq'),
-            36,
+            65,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -184,7 +184,7 @@ class Top_Page_Fv_Image3_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_image_setting_3',
             __('Slide Image3', 'boutiq'),
-            36,
+            66,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -211,7 +211,7 @@ class Top_Page_Fv_Image4_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_image_setting_4',
             __('Slide Image4', 'boutiq'),
-            36,
+            67,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -238,7 +238,7 @@ class Top_Page_Fv_Image5_Customizer extends Base_Customizer
         parent::__construct(
             'top_fv_image_setting_5',
             __('Slide Image5', 'boutiq'),
-            36,
+            68,
             array(
                 'panel' => 'top_page_panel',
             )
@@ -257,7 +257,6 @@ class Top_Page_Fv_Image5_Customizer extends Base_Customizer
         $this->add_checkbox_field($wp_customize, 'top_fv_link_target_5', __('Open in new tab', 'boutiq'), false);
     }
 }
-
 
 new Top_Page_Fv_Customizer();
 new Top_Page_FV_Setting_Customizer();

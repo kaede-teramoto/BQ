@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/sns_customizer.php
+// /inc/customizer/section/sns_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Sns_1_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Sns_1_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_1',
             __('SNS 01', 'boutiq'),
-            39,
+            111,
             array(
                 'panel' => 'sns_panel',
             )
@@ -33,7 +33,7 @@ class Sns_2_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_2',
             __('SNS 02', 'boutiq'),
-            39,
+            102,
             array(
                 'panel' => 'sns_panel',
             )
@@ -56,7 +56,7 @@ class Sns_3_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_3',
             __('SNS 03', 'boutiq'),
-            39,
+            103,
             array(
                 'panel' => 'sns_panel',
             )
@@ -79,7 +79,7 @@ class Sns_4_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_4',
             __('SNS 04', 'boutiq'),
-            39,
+            104,
             array(
                 'panel' => 'sns_panel',
             )
@@ -102,7 +102,7 @@ class Sns_5_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_5',
             __('SNS 05', 'boutiq'),
-            39,
+            105,
             array(
                 'panel' => 'sns_panel',
             )

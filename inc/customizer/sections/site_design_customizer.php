@@ -1,7 +1,7 @@
 <?php
-// /inc/customizer/site_default_design_customizer.php
+// /inc/customizer/section/site_design_customizer.php
 
-require_once __DIR__ . '/base_customizer.php';
+require_once __DIR__ . '/../base/base_customizer.php';
 
 class Site_Color_Customizer extends Base_Customizer
 {
@@ -10,7 +10,7 @@ class Site_Color_Customizer extends Base_Customizer
         parent::__construct(
             'site_default_setting',
             __('Color Settings', 'boutiq'),
-            10,
+            11,
             array(
                 'panel' => 'site_default_panel',
             )
@@ -35,7 +35,7 @@ class Site_Font_Customizer extends Base_Customizer
         parent::__construct(
             'font_setting',
             __('Font Settings', 'boutiq'),
-            20,
+            12,
             array(
                 'panel' => 'site_default_panel',
             )
@@ -60,7 +60,7 @@ class Site_Font_Siza_Customizer extends Base_Customizer
         parent::__construct(
             'font_size_setting',
             __('Font Size Settings', 'boutiq'),
-            20,
+            13,
             array(
                 'panel' => 'site_default_panel',
             )
@@ -85,7 +85,7 @@ class Site_Button_Customizer extends Base_Customizer
         parent::__construct(
             'common_btn_link',
             __('Btn Link Settings', 'boutiq'),
-            30,
+            14,
             array(
                 'panel' => 'site_default_panel',
             )
@@ -125,7 +125,7 @@ class Site_Text_Link_Customizer extends Base_Customizer
         parent::__construct(
             'font_link',
             __('Text Link Settings', 'boutiq'),
-            40,
+            15,
             array(
                 'panel' => 'site_default_panel',
             )
