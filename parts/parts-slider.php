@@ -12,7 +12,7 @@ $post_id = get_the_ID();
 $subTitle = get_post_meta($post_id, '_custom_subtitle', true);
 $pageSummary = get_post_meta($post_id, '_custom_page_summary', true);
 
-$fv_type = get_theme_mod('top_fv_type', '01');
+$fv_type = get_theme_mod('top_fv_type_setting', '01');
 $fv_post_show_num = get_theme_mod('top_fv_post_show_num', '3');
 $fv_text_animation = get_theme_mod('top_fv_text_animation', 'fade');
 $show_arrows = get_theme_mod('top_fv_slider_arrow', 'NULL');
@@ -25,11 +25,11 @@ $top_fv_post_cat = get_theme_mod('top_fv_post_cat', false);
 $top_fv_post_tag = get_theme_mod('top_fv_post_tag', false);
 $top_fv_post_date = get_theme_mod('top_fv_post_date', false);
 
-$fv_img1 = esc_url(get_theme_mod('top_fv_image_setting_1', ''));
-$fv_img2 = esc_url(get_theme_mod('top_fv_image_setting_2', ''));
-$fv_img3 = esc_url(get_theme_mod('top_fv_image_setting_3', ''));
-$fv_img4 = esc_url(get_theme_mod('top_fv_image_setting_4', ''));
-$fv_img5 = esc_url(get_theme_mod('top_fv_image_setting_5', ''));
+$fv_img1 = esc_url(get_theme_mod('top_fv_image_1', ''));
+$fv_img2 = esc_url(get_theme_mod('top_fv_image_2', ''));
+$fv_img3 = esc_url(get_theme_mod('top_fv_image_3', ''));
+$fv_img4 = esc_url(get_theme_mod('top_fv_image_4', ''));
+$fv_img5 = esc_url(get_theme_mod('top_fv_image_5', ''));
 
 $fv_img1_link = esc_url(get_theme_mod('top_fv_link_1', ''));
 $fv_img2_link = esc_url(get_theme_mod('top_fv_link_2', ''));
@@ -57,31 +57,31 @@ $fv_text3 = nl2br(esc_html(get_theme_mod('top_fv_text_3', '')));
 $fv_text4 = nl2br(esc_html(get_theme_mod('top_fv_text_4', '')));
 $fv_text5 = nl2br(esc_html(get_theme_mod('top_fv_text_5', '')));
 
-$fv_text_color1 = get_theme_mod('top_fv_text_color1', '');
+$fv_text_color1 = get_theme_mod('top_fv_text_color_1', '');
 if ($fv_text_color1) {
     $fv_text_color1 = 'color: ' . $fv_text_color1 . ';';
 } else {
     $fv_text_color1 = NULL;
 }
-$fv_text_color2 = get_theme_mod('top_fv_text_color2', '');
+$fv_text_color2 = get_theme_mod('top_fv_text_color_2', '');
 if ($fv_text_color2) {
     $fv_text_color2 = 'color: ' . $fv_text_color2 . ';';
 } else {
     $fv_text_color2 = NULL;
 }
-$fv_text_color3 = get_theme_mod('top_fv_text_color3', '');
+$fv_text_color3 = get_theme_mod('top_fv_text_color_3', '');
 if ($fv_text_color3) {
     $fv_text_color3 = 'color: ' . $fv_text_color3 . ';';
 } else {
     $fv_text_color3 = NULL;
 }
-$fv_text_color4 = get_theme_mod('top_fv_text_color4', '');
+$fv_text_color4 = get_theme_mod('top_fv_text_color_4', '');
 if ($fv_text_color4) {
     $fv_text_color4 = 'color: ' . $fv_text_color4 . ';';
 } else {
     $fv_text_color4 = NULL;
 }
-$fv_text_color5 = get_theme_mod('top_fv_text_color5', '');
+$fv_text_color5 = get_theme_mod('top_fv_text_color_5', '');
 if ($fv_text_color5) {
     $fv_text_color5 = 'color: ' . $fv_text_color5 . ';';
 } else {
@@ -328,17 +328,24 @@ if ($fv_text_left_position5) {
                 </li>
             <?php } ?>
         </ul>
+
         <?php if ($top_fv_slider_pagination == 1) { ?>
-            <div class="pagination"></div>
+            <div class="swiper-pagination"></div>
         <?php } ?>
 
-        <!-- 前後の矢印 -->
-        <div class="swiper-btn">
-            <div class="swiper-btn-prev swiper-btn-black"></div>
-            <div class="swiper-btn-next swiper-btn-white"></div>
-        </div>
+        <?php if ($show_arrows == 1) { ?>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        <?php } ?>
+
+        <?php if ($top_fv_slider_progressbar == 1) { ?>
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        <?php } ?>
 
     </section>
+
 <?php elseif ($fv_type == 03) :
     get_template_part('parts/parts', 'originalSlider'); ?>
 
@@ -570,12 +577,16 @@ if ($fv_text_left_position5) {
                             <a class="p-top_postLink" href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail('medium'); ?>
                             </a>
+                        <?php else : ?>
+                            <a class="p-top_postLink" href="<?php the_permalink(); ?>">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbnails/thumbnail.webp" alt="<?php the_title(); ?>" loading="eager">
+                            </a>
                         <?php endif; ?>
                     </li>
                 <?php endwhile; ?>
 
             </ul>
-            <?php wp_reset_postdata(); // クエリをリセット 
+            <?php wp_reset_postdata(); // クエリをリセット
             ?>
         <?php endif; ?>
 
@@ -588,6 +599,7 @@ if ($fv_text_left_position5) {
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         <?php } ?>
+
         <?php if ($top_fv_slider_progressbar == 1) { ?>
             <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
