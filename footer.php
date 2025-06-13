@@ -9,7 +9,7 @@
 $site_url  = home_url();
 $theme_url = get_template_directory_uri();
 
-$footer_design   = get_theme_mod('footer_design_type', 'footer-a-normal00');
+$footer_design   = get_theme_mod('footer_design_type', 'footerAN00');
 $footer_logo_image      = esc_url(get_theme_mod('footer_logo_image', false));
 $footer_bg_color_option = get_theme_mod('footer_bg_color_option', false);
 $footer_bg_color = get_theme_mod('footer_bg_color_set', false);
@@ -145,16 +145,16 @@ $footer_second_btn_target_setting = get_theme_mod('footer_second_btn_target_sett
 
 
 ?>
-<?php if ($footer_design == 'footer-original') :
+<?php if ($footer_design == 'footerOR') :
     get_template_part('parts/parts', 'originalFooter');
 else : ?>
     </main>
 
     <footer class="footer <?php echo $footer_design; ?>" style="<?php echo $footer_text_color_set; ?>">
-        <div class="footer-wrapper">
+        <div class="footer__wrapper <?php echo $footer_design; ?>__wrapper">
 
             <?php if ($footer_logo_image) : ?>
-                <div class="footer-logo">
+                <div class="footer__logo <?php echo $footer_design; ?>__logo">
                     <a href="<?php echo $site_url; ?>">
                         <img src="<?php echo $footer_logo_image; ?>" alt="logo" loading="lazy">
                     </a>
@@ -163,14 +163,14 @@ else : ?>
 
             <?php
             if ($footer_company_profile) : ?>
-                <div class="footer-text" style="<?php echo $footer_text_color_set; ?>">
+                <div class="footer__text <?php echo $footer_design; ?>__text" style="<?php echo $footer_text_color_set; ?>">
                     <?php echo $footer_company_profile; ?>
                 </div>
             <?php endif; ?>
 
             <?php $sns_check = get_theme_mod('sns_1');
             if ($sns_check) : ?>
-                <div class="footer-sns">
+                <div class="footer__sns <?php echo $footer_design; ?>__sns">
                     <?php
                     for ($i = 1; $i <= 5; $i++) {
 
@@ -190,7 +190,7 @@ else : ?>
             <?php endif; ?>
 
             <?php if ($footer_first_btn_display_setting || $footer_second_btn_display_setting) : ?>
-                <div class="footer-btn">
+                <div class="footer__btn <?php echo $footer_design; ?>__btn">
                     <?php if ($footer_first_btn_display_setting) : ?>
                         <?php if ($footer_first_btn_target_setting) : ?>
                             <div class="c-btn c-btn<?php echo $footer_first_btn_link_design; ?> btn<?php echo $footer_first_btn_link_design; ?> btn--first">
@@ -230,8 +230,8 @@ else : ?>
             <?php endif; ?>
 
             <?php if (has_nav_menu('footerNavLeft') || has_nav_menu('footerNavRight')) : ?>
-                <div class="footer-nav">
-                    <nav class="footer-nav-wrapper">
+                <div class="footer__nav <?php echo $footer_design; ?>__nav">
+                    <nav class="footer__nav__wrapper <?php echo $footer_design; ?>__nav__wrapper">
 
                         <?php
                         if (has_nav_menu('footerNavLeft')) {
@@ -241,9 +241,9 @@ else : ?>
                                 'menu_class' => '',
                                 'link_before' => '',
                                 'link_after' => '',
-                                'items_wrap' => '<ul class="footer-nav-list ' . 'footer-nav-left">%3$s</ul>',
-                                'li_class' => '',
-                                'a_class' => '',
+                                'items_wrap' => '<ul class="footer__nav__wrap-list__left ' . $footer_design . '__nav__wrap-list__left">%3$s</ul>',
+                                'li_class' => $footer_design . '__nav__wrap-list__item',
+                                'a_class' => 'footer-nav__link',
                             ));
                         }
 
@@ -254,9 +254,9 @@ else : ?>
                                 'menu_class' => '',
                                 'link_before' => '',
                                 'link_after' => '',
-                                'items_wrap' => '<ul class="footer-nav-list ' . 'footer-nav-right">%3$s</ul>',
-                                'li_class' => '',
-                                'a_class' => '',
+                                'items_wrap' => '<ul class="footer__textlink ' . $footer_design . '__nav__wrap-list__right">%3$s</ul>',
+                                'li_class' => $footer_design . '__nav__wrap-list__item',
+                                'a_class' => 'footer-nav__link',
                             ));
                         } ?>
 
@@ -265,7 +265,7 @@ else : ?>
             <?php endif; ?>
 
             <?php if (has_nav_menu('footerNavInfo')) : ?>
-                <div class="footer-info">
+                <div class="footer__info <?php echo $footer_design; ?>__info">
                     <small><?php echo $footer_copyright; ?></small>
                     <?php wp_nav_menu(array(
                         'theme_location' => 'footerNavInfo',
@@ -273,9 +273,9 @@ else : ?>
                         'menu_class' => '',
                         'link_before' => '',
                         'link_after' => '',
-                        'items_wrap' => '<ul class="footer-textlink">%3$s</ul>',
-                        'li_class' => '',
-                        'a_class' => '',
+                        'items_wrap' => '<ul class="footer__textlink ' . $footer_design . '__textlink">%3$s</ul>',
+                        'li_class' => $footer_design . '__textlink__item',
+                        'a_class' => 'footer-nav__link',
                     )); ?>
                 </div>
             <?php else : ?>
@@ -348,7 +348,7 @@ else : ?>
 
 <?php wp_footer();
 
-$fv_type = get_theme_mod('top_fv_type', '01');
+$fv_type = get_theme_mod('top_fv_type_setting', '01');
 $fv_post_count_pc = get_theme_mod('top_fv_post_count_pc', '3');
 $fv_post_count_tab = get_theme_mod('top_fv_post_count_tab', '2');
 $fv_post_count_sp = get_theme_mod('top_fv_post_count_sp', '1');
@@ -442,11 +442,21 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
     <?php //echo $top_fv_slider_pagination;
     if ($fv_type == "02" || $fv_type == "05") : ?>
 
+        // import Swiper, {
+        //     Autoplay,
+        //     Navigation,
+        //     Pagination,
+        //     EffectFade,
+        //     Scrollbar
+        // } from 'swiper';
+        // Swiper.use([Autoplay, Navigation, Pagination, EffectFade, Scrollbar]);
+
         const topPage_slider = new Swiper(".p-top.swiper", {
             loop: true,
             speed: 2000,
             autoplay: {
                 delay: <?php echo $top_fv_slider_speed; ?>,
+                disableOnInteraction: false,
             },
             spaceBetween: <?php echo $fv_post_space_pc; ?>,
             slidesPerView: <?php echo $fv_post_count_pc; ?>,
