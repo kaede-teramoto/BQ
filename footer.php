@@ -174,7 +174,7 @@ else : ?>
                     <?php
                     for ($i = 1; $i <= 5; $i++) {
 
-                        $sns_img = esc_url(get_theme_mod("sns_$i", ''));
+                        $sns_img = esc_url(get_theme_mod("sns_image_$i", ''));
                         $sns_name = esc_attr(get_theme_mod("sns_name_$i", ''));
                         $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
 

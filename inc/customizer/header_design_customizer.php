@@ -57,7 +57,13 @@ class Header_Design_Customizer extends Base_Customizer
         $this->add_color_picker_field($wp_customize, 'header_text_color_setting', __('Header Link Text Color', 'boutiq'));
         $this->add_color_picker_field($wp_customize, 'header_bg_color_setting', __('Header Background Color', 'boutiq'));
 
-        $this->add_text_field($wp_customize, 'header_bg_gradation_setting', __('Gradation for BG', 'boutiq'), '');
+        $this->add_text_field(
+            $wp_customize,
+            'header_bg_gradation_setting',
+            __('If you would like to set a gradation for the btn color, enter it here.', 'boutiq'),
+            '',
+            wp_kses_post('Get the gradation from here: <br><a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Gradient Generator</a><br>Example:<br><span style="color: #000">background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);</span>')
+        );
 
         $this->add_checkbox_field($wp_customize, 'header_under_line', __('Add an underline', 'boutiq'), false);
         $this->add_checkbox_field($wp_customize, 'header_filter', __('Add blur processing', 'boutiq'), false);
@@ -137,13 +143,12 @@ class Header_Btn_Customizer extends Base_Customizer
 
         $this->add_color_picker_field($wp_customize, 'header_btn_bg_color_setting', __('btn color for header', 'boutiq'));
         $this->add_color_picker_field($wp_customize, 'header_btn_text_color_setting', __('btn text color for header', 'boutiq'));
-
         $this->add_text_field(
             $wp_customize,
             'header_btn_gradation_setting',
             __('If you would like to set a gradation for the btn color, enter it here.', 'boutiq'),
             '',
-            wp_kses_post('Get the gradation from here: <br><a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Gradient Generator</a>')
+            wp_kses_post('Get the gradation from here: <br><a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Gradient Generator</a><br>Example:<br><span style="color: #000">background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);</span>')
         );
     }
 }
@@ -190,8 +195,13 @@ class Header_Btn_Sub_Customizer extends Base_Customizer
 
         $this->add_color_picker_field($wp_customize, 'header_btn_sub_bg_color_setting', __('btn color for header', 'boutiq'));
         $this->add_color_picker_field($wp_customize, 'header_btn_sub_text_color_setting', __('btn text color for header', 'boutiq'));
-
-        $this->add_text_field($wp_customize, 'header_btn_sub_gradation_setting', __('Gradation for button color', 'boutiq'));
+        $this->add_text_field(
+            $wp_customize,
+            'header_btn_sub_gradation_setting',
+            __('If you would like to set a gradation for the btn color, enter it here.', 'boutiq'),
+            '',
+            wp_kses_post('Get the gradation from here: <br><a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Gradient Generator</a><br>Example:<br><span style="color: #000">background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);</span>')
+        );
 
         $this->add_text_field($wp_customize, 'header_btn_sub_text_setting', __('Text for button', 'boutiq'));
         $this->add_text_field($wp_customize, 'header_btn_sub_url_setting', __('Link for button', 'boutiq'));
