@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuItems.length > 0) {
 
         menuItems.forEach(item => {
-            const megaMenu = item.querySelector('.megaMenu');
+            const megaMenu = item.querySelector('.mega-menu');
 
             if (megaMenu) {
                 // マウスオーバーイベント

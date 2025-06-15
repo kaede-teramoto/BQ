@@ -10,6 +10,9 @@ require_once __DIR__ . '/sections/header_customizer.php';
 require_once __DIR__ . '/panels/footer_panel.php';
 require_once __DIR__ . '/sections/footer_customizer.php';
 
+require_once __DIR__ . '/panels/page_panel.php';
+require_once __DIR__ . '/sections/page_customizer.php';
+
 require_once __DIR__ . '/panels/top_panel.php';
 require_once __DIR__ . '/sections/top_page_customizer.php';
 
@@ -27,12 +30,10 @@ require_once __DIR__ . '/sections/hamburger_customizer.php';
 
 require_once __DIR__ . '/sections/cms_customizer.php';
 
-require_once __DIR__ . '/sections/page_customizer.php';
 require_once __DIR__ . '/sections/error_customizer.php';
 require_once __DIR__ . '/sections/loading_customizer.php';
 
 
-new Page_Customizer();
 new Error_Customizer();
 new Cms_Customizer();
 new loading_Customizer();

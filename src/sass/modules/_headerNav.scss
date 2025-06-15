@@ -510,7 +510,7 @@
 
 /* Mega Menu
  ----------------------------------------------------------------------------------------------- */
-.megaMenu {
+.mega-menu {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s;
@@ -522,6 +522,7 @@
 
     .custom-sub-menu {
         position: relative;
+        visibility: hidden;
         background-color: var(--header_bg_color);
         z-index: calc(v.getZIndex(header) - 5);
     }
@@ -544,7 +545,7 @@
     }
 }
 
-.l-container:has(.megaMenu.--active) {
+.l-container:has(.mega-menu.--active) {
     &::before {
         opacity: 1;
         visibility: inherit;

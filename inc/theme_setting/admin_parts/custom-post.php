@@ -5,7 +5,7 @@
  * @package BOUTiQ
  */
 /*--------------------------------------------------------------
-  カスタムポストタイプ「common_parts」を登録
+  Register custom post type "common_parts
 --------------------------------------------------------------*/
 function register_common_parts_post_type()
 {
@@ -67,7 +67,7 @@ function register_common_parts_post_type()
 add_action('init', 'register_common_parts_post_type');
 
 /*--------------------------------------------------------------
-  管理者・編集者に「common_parts」の全権限を付与
+  Grant all “common_parts” permissions to administrators and editors
 --------------------------------------------------------------*/
 function add_common_parts_capabilities()
 {
@@ -101,7 +101,7 @@ add_action('admin_init', 'add_common_parts_capabilities');
 
 
 /*--------------------------------------------------------------
-  custom post
+  Setting an image for a custom post type
 --------------------------------------------------------------*/
 function add_dynamic_custom_post_type_image_settings()
 {
@@ -122,13 +122,13 @@ function render_dynamic_custom_post_type_image_settings()
   );
   $custom_post_types = get_post_types($args, 'objects');
 
-  // 1件以上のカスタム投稿タイプがある場合のみ表示
+  // Show only if there is more than 1 custom post type
   if (count($custom_post_types) === 0) {
     echo '<div class="notice notice-warning"><p>' . __('No custom post types registered. Please register at least one custom post type.', 'boutiq') . '</p></div>';
     return;
   }
 
-  // 保存処理
+  // Save process
   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['custom_post_type_images_nonce'])) {
     if (wp_verify_nonce($_POST['custom_post_type_images_nonce'], 'custom_post_type_images')) {
       foreach ($custom_post_types as $post_type => $post_type_obj) {
@@ -148,7 +148,7 @@ function render_dynamic_custom_post_type_image_settings()
     }
   }
 
-  // 出力
+  // Export
 ?>
   <div class="wrap">
     <h1><?php echo __('Custom Post Type Image Settings', 'boutiq'); ?></h1>
@@ -176,30 +176,30 @@ function render_dynamic_custom_post_type_image_settings()
 <?php
 }
 
-// カスタム投稿タイプの画像URLを取得する関数
+// Function to get the image URL for a custom post type
 function get_dynamic_custom_post_type_image($post_type)
 {
   $image_id = get_option("custom_post_type_image_{$post_type}");
   if ($image_id) {
     return wp_get_attachment_url($image_id);
   }
-  return false; // 明示的にfalseを返す
+  return false;
 }
 
 // 画像を表示する関数（修正版）
 function display_custom_post_type_image()
 {
-  // 現在の投稿タイプを取得
+  // Function to display an image
   $current_post_type = get_post_type();
   if (!$current_post_type && is_archive()) {
-    $current_post_type = get_query_var('post_type'); // アーカイブの場合はクエリ変数を使用
+    $current_post_type = get_query_var('post_type'); // Use query variable for archive
   }
 
-  // 画像URLを取得
+  // Get image URL
   $image_url = get_dynamic_custom_post_type_image($current_post_type);
   $post_type_object = get_post_type_object($current_post_type);
 
-  // 画像を表示
+  // Show Image
   if ($image_url) {
     echo '<img src="' . esc_url($image_url) . '" alt="' . esc_html($post_type_object->labels->name) . '">';
   } else {

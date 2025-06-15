@@ -10,7 +10,6 @@
 --------------------------------------------------------------*/
 add_theme_support('title-tag');
 
-
 /*--------------------------------------------------------------
   title　tag
 --------------------------------------------------------------*/
@@ -24,27 +23,24 @@ if (!function_exists('_wp_render_title_tag')) {
   add_action('wp_head', 'theme_slug_render_title');
 }
 
-
-
-
 /*--------------------------------------------------------------
   sub title for page
 --------------------------------------------------------------*/
-// カスタムメタボックスを追加
+// Add custom metabox
 function page_subtitle_add_meta_box()
 {
   add_meta_box(
-    'page_subtitle_meta_box', // メタボックスID
-    'サブタイトルとページ概要', // メタボックスタイトル
-    'page_subtitle_meta_box_callback', // コールバック関数
-    'page', // 投稿タイプ（ここではページ）
-    'normal', // 表示位置
-    'high' // 表示優先度
+    'page_subtitle_meta_box', // metabox ID
+    'サブタイトルとページ概要', // metabox title
+    'page_subtitle_meta_box_callback', // callback function
+    'page', // post type
+    'normal', // start position
+    'high' // display priority
   );
 }
 add_action('add_meta_boxes', 'page_subtitle_add_meta_box');
 
-// メタボックスの内容を表示するコールバック関数
+// Callback function to display the contents of the metabox
 function page_subtitle_meta_box_callback($post)
 {
   wp_nonce_field(basename(__FILE__), 'page_subtitle_meta_box_nonce'); // セキュリティフィールド
@@ -52,11 +48,11 @@ function page_subtitle_meta_box_callback($post)
   $pageSummary = get_post_meta($post->ID, '_custom_page_summary', true);
   ?>
   <p>
-    <label for="custom_subtitle">サブタイトル（ページデザイン07の時はコピーになります）</label>
+    <label for="custom_subtitle"><?php echo __('Subtitle (will be a copy when page design 07)', 'boutiq'); ?></label>
     <input type="text" name="custom_subtitle" id="custom_subtitle" value="<?php echo esc_attr($subTitle); ?>" style="width:100%;" />
   </p>
   <p>
-    <label for="custom_page_summary">ページ概要</label>
+    <label for="custom_page_summary"><?php echo __('Page summary', 'boutiq'); ?></label>
     <?php
     $settings = array(
       'textarea_name' => 'custom_page_summary',
@@ -69,7 +65,7 @@ function page_subtitle_meta_box_callback($post)
 <?php
 }
 
-// メタボックスのデータを保存
+// Save the metabox data
 function custom_save_meta_box_data($post_id)
 {
   if (!isset($_POST['page_subtitle_meta_box_nonce']) || !wp_verify_nonce($_POST['page_subtitle_meta_box_nonce'], basename(__FILE__))) {
@@ -96,11 +92,9 @@ add_action('save_post', 'custom_save_meta_box_data');
 
 
 /*--------------------------------------------------------------
-  現在のタクソノミーアーカイブでターム名と説明を出力する関数
+  A function that outputs the term names and descriptions for the current taxonomy archive.
 --------------------------------------------------------------*/
-/**
- * 現在のタクソノミーアーカイブでターム名を出力する関数
- */
+// A function that outputs the term names in the current taxonomy archive.
 function taxonomy_term_title()
 {
   $term = get_queried_object();
@@ -110,8 +104,7 @@ function taxonomy_term_title()
   }
 }
 
-// 出力方法（以下のコードを出力したいところに記載する
-// タイトル
+// Export title
 // taxonomy_term_title();
 
 
@@ -119,7 +112,7 @@ function taxonomy_term_title()
   Taxonomy Subtitle + Image Upload Field (for Category, Tag, CPT Taxonomies)
 --------------------------------------------------------------*/
 
-// フォーム出力（編集画面）
+// Form output (edit screen)
 function add_custom_fields_to_taxonomy_edit_form($term)
 {
   $term_id = $term->term_id;
@@ -128,21 +121,21 @@ function add_custom_fields_to_taxonomy_edit_form($term)
 ?>
   <tr class="form-field">
     <th scope="row" valign="top">
-      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
+      <label for="sub_title"><?php __('Subtitle', 'boutiq'); ?></label>
     </th>
     <td>
       <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($subtitle); ?>" size="40">
-      <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
+      <p class="description"><?php __('Enter a subtitle for this term', 'boutiq'); ?></p>
     </td>
   </tr>
   <tr class="form-field">
     <th scope="row" valign="top">
-      <label for="sub_image"><?php _e('Image', 'boutiq'); ?></label>
+      <label for="sub_image"><?php __('Image', 'boutiq'); ?></label>
     </th>
     <td>
       <input type="hidden" name="sub_image" id="sub_image" value="<?php echo esc_attr($image_url); ?>">
-      <button class="button sub-image-upload"><?php _e('Select Image', 'boutiq'); ?></button>
-      <button class="button sub-image-remove"><?php _e('Remove Image', 'boutiq'); ?></button>
+      <button class="button sub-image-upload"><?php __('Select Image', 'boutiq'); ?></button>
+      <button class="button sub-image-remove"><?php __('Remove Image', 'boutiq'); ?></button>
       <div class="sub-image-preview" style="margin-top:10px;">
         <?php if ($image_url): ?>
           <img src="<?php echo esc_url($image_url); ?>" style="max-width:150px; height:auto;">
@@ -153,26 +146,26 @@ function add_custom_fields_to_taxonomy_edit_form($term)
 <?php
 }
 
-// フォーム出力（新規追加画面）
+// Form output (new addition screen)
 function add_custom_fields_to_taxonomy_add_form()
 {
 ?>
   <div class="form-field">
-    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
+    <label for="sub_title"><?php __('Subtitle', 'boutiq'); ?></label>
     <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
+    <p class="description"><?php __('Enter a subtitle for this term', 'boutiq'); ?></p>
   </div>
   <div class="form-field">
-    <label for="sub_image"><?php _e('Image', 'boutiq'); ?></label>
+    <label for="sub_image"><?php __('Image', 'boutiq'); ?></label>
     <input type="hidden" name="sub_image" id="sub_image" value="">
-    <button class="button sub-image-upload"><?php _e('Select Image', 'boutiq'); ?></button>
-    <button class="button sub-image-remove"><?php _e('Remove Image', 'boutiq'); ?></button>
+    <button class="button sub-image-upload"><?php __('Select Image', 'boutiq'); ?></button>
+    <button class="button sub-image-remove"><?php __('Remove Image', 'boutiq'); ?></button>
     <div class="sub-image-preview" style="margin-top:10px;"></div>
   </div>
 <?php
 }
 
-// 保存処理
+// Save process
 function save_taxonomy_custom_fields($term_id)
 {
   if (isset($_POST['sub_title'])) {
@@ -183,7 +176,7 @@ function save_taxonomy_custom_fields($term_id)
   }
 }
 
-// JS読み込み
+// JS loading
 function enqueue_taxonomy_custom_field_scripts($hook)
 {
   if (!in_array($hook, ['edit-tags.php', 'term.php'])) return;
@@ -192,7 +185,7 @@ function enqueue_taxonomy_custom_field_scripts($hook)
 }
 add_action('admin_enqueue_scripts', 'enqueue_taxonomy_custom_field_scripts');
 
-// 適用タクソノミーにフックを追加
+// Add a hook to the applicable taxonomy
 function apply_custom_fields_to_taxonomies()
 {
   $excluded = ['category', 'post_tag'];
@@ -208,28 +201,30 @@ function apply_custom_fields_to_taxonomies()
 }
 add_action('init', 'apply_custom_fields_to_taxonomies');
 
-// サブタイトルの出力関数
+// Subtitle output function
 function get_taxonomy_subtitle($term_id)
 {
   return get_term_meta($term_id, 'sub_title', true);
 }
 
-// 呼び出しコード
+// Export ---------------------------------------------------------------------
 // $subtitle = get_taxonomy_subtitle($term_id);
 
 // if ($subtitle) {
 //     echo '<h2 class="taxonomy-subtitle">' . esc_html($subtitle) . '</h2>';
 // }
+// ----------------------------------------------------------------------------
 
-// 画像の出力関数
+// Image output function
 function get_taxonomy_image_url($term_id)
 {
   return get_term_meta($term_id, 'sub_image', true);
 }
 
-// 呼び出しコード
+// Export ---------------------------------------------------------------------
 // $image_url = get_taxonomy_image_url($term_id);
 
 // if ($image_url) {
 //   echo '<img src="' . esc_url($image_url) . '" alt="" style="max-width:100%; height:auto;">';
 // }
+// ----------------------------------------------------------------------------

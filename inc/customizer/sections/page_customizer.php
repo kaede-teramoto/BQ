@@ -3,11 +3,19 @@
 
 require_once __DIR__ . '/../base/base_customizer.php';
 
-class Page_Customizer extends Base_Customizer
+class Page_Title_Customizer extends Base_Customizer
 {
     public function __construct()
     {
-        parent::__construct('boutiq_page_section', __('Page option', 'boutiq'), 50);
+
+        parent::__construct(
+            'boutiq_page_section',
+            __('Page title setting', 'boutiq'),
+            51,
+            array(
+                'panel' => 'page_panel',
+            )
+        );
     }
 
     protected function add_controls($wp_customize)
@@ -42,7 +50,26 @@ class Page_Customizer extends Base_Customizer
         $this->add_color_picker_field($wp_customize, 'content_title_underline_color', __('Underline Color', 'boutiq'), '#999999');
 
         $this->add_text_field($wp_customize, 'content_title_underline_width', __('Set Underline thickness (px)', 'boutiq'), '2px');
+    }
+}
 
+class Page_Radius_Customizer extends Base_Customizer
+{
+    public function __construct()
+    {
+
+        parent::__construct(
+            'boutiq_page_radius_section',
+            __('Page corner setting', 'boutiq'),
+            52,
+            array(
+                'panel' => 'page_panel',
+            )
+        );
+    }
+
+    protected function add_controls($wp_customize)
+    {
         $this->add_text_field($wp_customize, 'boutiq_page_radius_pc_setting', __('Set corner radius for PC (px)', 'boutiq'), '12px');
 
         $this->add_text_field($wp_customize, 'boutiq_page_radius_tab_setting', __('Set corner radius for Tablet (px)', 'boutiq'), '10px');
@@ -52,4 +79,5 @@ class Page_Customizer extends Base_Customizer
 }
 
 // Initialize Page Customizer
-new Page_Customizer();
+new Page_Title_Customizer();
+new Page_Radius_Customizer();

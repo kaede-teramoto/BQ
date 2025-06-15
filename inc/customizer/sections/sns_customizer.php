@@ -33,7 +33,7 @@ class Sns_2_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_2',
             __('SNS 02', 'boutiq'),
-            102,
+            112,
             array(
                 'panel' => 'sns_panel',
             )
@@ -56,7 +56,7 @@ class Sns_3_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_3',
             __('SNS 03', 'boutiq'),
-            103,
+            113,
             array(
                 'panel' => 'sns_panel',
             )
@@ -79,7 +79,7 @@ class Sns_4_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_4',
             __('SNS 04', 'boutiq'),
-            104,
+            114,
             array(
                 'panel' => 'sns_panel',
             )
@@ -102,7 +102,7 @@ class Sns_5_Customizer extends Base_Customizer
         parent::__construct(
             'sns_section_5',
             __('SNS 05', 'boutiq'),
-            105,
+            115,
             array(
                 'panel' => 'sns_panel',
             )
