@@ -160,20 +160,29 @@ if (!($hm_design_type == 'hMenuDU')) :
 
                             <div class="hm__externalLink <?php echo $hm_design_type; ?>__externalLink">
                                 <?php
-                                $sns = esc_url(get_theme_mod("sns_1", ''));
-                                if ($sns) :
+                                $sns_check_1 = get_theme_mod('sns_1') ?: null;
+                                $sns_check_2 = get_theme_mod('sns_2') ?: null;
+                                $sns_check_3 = get_theme_mod('sns_3') ?: null;
+                                $sns_check_4 = get_theme_mod('sns_4') ?: null;
+                                $sns_check_5 = get_theme_mod('sns_5') ?: null;
+
+                                if (array_filter([$sns_check_1, $sns_check_2, $sns_check_3, $sns_check_4, $sns_check_5])) :
                                 ?>
                                     <div class="hm__sns <?php echo $hm_design_type; ?>__sns">
                                         <?php
                                         for ($i = 1; $i <= 5; $i++) {
+                                            $sns_check = get_theme_mod("sns_{$i}") ?: null;
 
-                                            $sns_img = esc_url(get_theme_mod("sns_$i", ''));
-                                            $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
+                                            if ($sns_check) {
+                                                $sns_img = esc_url(get_theme_mod("sns_image_{$i}", '')) ?: null;
+                                                $sns_name = esc_attr(get_theme_mod("sns_name_{$i}", '')) ?: null;
+                                                $sns_img_link = esc_url(get_theme_mod("sns_link_{$i}", '')) ?: null;
 
-                                            if ($sns_img) {
-                                                echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
-                                                echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
-                                                echo '</a>';
+                                                if ($sns_img) {
+                                                    echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
+                                                    echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
+                                                    echo '</a>';
+                                                }
                                             }
                                         }
                                         ?>
@@ -315,20 +324,29 @@ if (!($hm_design_type == 'hMenuDU')) :
 
                         <div class="hm__externalLink <?php echo $hm_design_type; ?>__externalLink">
                             <?php
-                            $sns = esc_url(get_theme_mod("sns_1", ''));
-                            if ($sns) :
+                            $sns_check_1 = get_theme_mod('sns_1') ?: null;
+                            $sns_check_2 = get_theme_mod('sns_2') ?: null;
+                            $sns_check_3 = get_theme_mod('sns_3') ?: null;
+                            $sns_check_4 = get_theme_mod('sns_4') ?: null;
+                            $sns_check_5 = get_theme_mod('sns_5') ?: null;
+
+                            if (array_filter([$sns_check_1, $sns_check_2, $sns_check_3, $sns_check_4, $sns_check_5])) :
                             ?>
                                 <div class="hm__sns <?php echo $hm_design_type; ?>__sns">
                                     <?php
                                     for ($i = 1; $i <= 5; $i++) {
+                                        $sns_check = get_theme_mod("sns_{$i}") ?: null;
 
-                                        $sns_img = esc_url(get_theme_mod("sns_$i", ''));
-                                        $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
+                                        if ($sns_check) {
+                                            $sns_img = esc_url(get_theme_mod("sns_image_{$i}", '')) ?: null;
+                                            $sns_name = esc_attr(get_theme_mod("sns_name_{$i}", '')) ?: null;
+                                            $sns_img_link = esc_url(get_theme_mod("sns_link_{$i}", '')) ?: null;
 
-                                        if ($sns_img) {
-                                            echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
-                                            echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
-                                            echo '</a>';
+                                            if ($sns_img) {
+                                                echo '<a class="hm__sns__link hm__sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
+                                                echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
+                                                echo '</a>';
+                                            }
                                         }
                                     }
                                     ?>

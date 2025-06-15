@@ -26,6 +26,6 @@ require_once get_template_directory() . '/inc/theme_setting/admin_parts/custom-p
 require_once get_template_directory() . '/inc/theme_setting/admin_parts/titles.php';
 require_once get_template_directory() . '/inc/theme_setting/admin_parts/tgm-config.php';
 require_once get_template_directory() . '/inc/theme_setting/admin_parts/mega-menu.php';
-require_once get_template_directory() . '/inc/page_custom_field/admin_parts/page_custom_fild.php';
+require_once get_template_directory() . '/inc/page_custom_field/admin_parts/page_custom_field.php';
 require_once get_template_directory() . '/inc/customizer/init_customizer.php';
 require_once get_template_directory() . '/inc/customizer/base/base_export_customizer.php';

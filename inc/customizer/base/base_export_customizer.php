@@ -297,13 +297,13 @@ function boutiq_customize_css()
         echo '--follow_btn_lr: ' . $follow_btn_left_and_right . ';' . "\n";
     }
     if ($fv_height_pc) {
-        echo '.p-top { height: ' . $fv_height_pc . ';}' . "\n";
+        echo '.section-fv { height: ' . $fv_height_pc . ';}' . "\n";
     }
     if ($fv_height_tab) {
-        echo '@media screen and (max-width: 849px) {.p-top { height: ' . $fv_height_tab . ';}}' . "\n";
+        echo '@media screen and (max-width: 849px) {.section-fv { height: ' . $fv_height_tab . ';}}' . "\n";
     }
     if ($fv_height_sp) {
-        echo '@media screen and (max-width: 599px) {.p-top { height: ' . $fv_height_sp . ';}}' . "\n";
+        echo '@media screen and (max-width: 599px) {.section-fv { height: ' . $fv_height_sp . ';}}' . "\n";
     }
     echo '--sp_btn_first_text_color: ' . $sp_btn_first_text_color . ';' . "\n";
 

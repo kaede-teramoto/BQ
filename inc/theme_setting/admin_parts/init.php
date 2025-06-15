@@ -39,7 +39,7 @@ register_nav_menus(array(
 /*--------------------------------------------------------------
 Delete the automatically assigned ID and class from the custom menu and add the specified class.
 --------------------------------------------------------------*/
-function my_custom_nav_menu_classes($classes, $item)
+function custom_nav_menu_classes($classes, $item)
 {
   $new_classes = array('nav-item');
 
@@ -58,7 +58,7 @@ function my_custom_nav_menu_classes($classes, $item)
 
   return $new_classes;
 }
-add_filter('nav_menu_css_class', 'my_custom_nav_menu_classes', 10, 2);
+add_filter('nav_menu_css_class', 'custom_nav_menu_classes', 10, 2);
 
 function remove_nav_menu_item_id($id, $item, $args, $depth)
 {
@@ -85,7 +85,6 @@ add_filter('excerpt_more', 'boutiq_excerpt_more');
 /*--------------------------------------------------------------
   translation
 --------------------------------------------------------------*/
-// テーマの翻訳ファイルを読み込む
 function boutiq_languages()
 {
   load_theme_textdomain('boutiq', get_template_directory() . '/languages');
@@ -106,14 +105,14 @@ add_theme_support('html5', array(
 ));
 
 /*--------------------------------------------------------------
-  自動的に投稿スラッグを生成する関数（重複防止対応版）
+  Function to automatically generate post slugs (duplicate-proof version)
 --------------------------------------------------------------*/
 /**
- * @param string $slug       現在のスラッグ。
- * @param int    $post_ID    投稿ID。
- * @param string $post_status 投稿ステータス。
- * @param string $post_type  投稿タイプ。
- * @return string 修正されたスラッグ。
+ * @param string $slug
+ * @param int    $post_ID
+ * @param string $post_status
+ * @param string $post_type
+ * @return string
  */
 function auto_post_slug_with_date($slug, $post_ID, $post_status, $post_type)
 {
@@ -152,7 +151,7 @@ function disable_plugin_update_allIn($data)
 add_filter('site_option__site_transient_update_plugins', 'disable_plugin_update_allIn');
 
 /*--------------------------------------------------------------
-  Contact form 7 のpタグ削除
+  Delete p tag from contact form 7
 --------------------------------------------------------------*/
 if (function_exists('is_plugin_active') && is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
   add_filter('wpcf7_form_elements', function ($content) {
@@ -187,13 +186,13 @@ function cat_link()
       echo '</div>';
     }
   } else {
-    // カスタム投稿タイプの場合
-    $post_type = get_post_type(); // 現在の投稿タイプを取得
-    $taxonomies = get_object_taxonomies($post_type, 'objects'); // 投稿タイプに紐付くタクソノミーを取得
+    // For custom post types
+    $post_type = get_post_type();
+    $taxonomies = get_object_taxonomies($post_type, 'objects');
 
     if (! empty($taxonomies)) {
       foreach ($taxonomies as $taxonomy) {
-        $terms = get_the_terms(get_the_ID(), $taxonomy->name); // 現在の投稿に紐付くタームを取得
+        $terms = get_the_terms(get_the_ID(), $taxonomy->name);
         if (! empty($terms) && ! is_wp_error($terms)) {
           echo '<div class="cat">';
           foreach ($terms as $term) {
@@ -211,10 +210,9 @@ function cat_link()
 --------------------------------------------------------------*/
 function tag_link()
 {
-  // 現在の投稿に関連付けられたタグを取得
+  // Get the tags associated with the current post
   $tags = get_the_tags();
 
-  // タグが存在するかチェック
   if (!empty($tags)) {
     echo '<div class="tag">';
     foreach ($tags as $tag) {
@@ -225,71 +223,75 @@ function tag_link()
 }
 
 /*--------------------------------------------------------------
-  カスタム投稿タイプ（または通常投稿タイプ）に「投稿が1件以上存在するか」 を確認する関数
+  Function to check if “at least one post exists” for a custom post type (or normal post type)
 --------------------------------------------------------------*/
 function has_posts_in_custom_post_type($post_type)
 {
   if (empty($post_type)) {
-    return false; // ポストタイプが無効の場合は false
+    return false;
   }
 
-  // 指定されたポストタイプに投稿があるか確認
+  // Check if there is a post in the specified post type
   $posts = get_posts(array(
     'post_type'      => $post_type,
-    'posts_per_page' => 1,        // 1件だけ取得
-    'post_status'    => 'publish' // 公開済みの記事のみ
+    'posts_per_page' => 1,
+    'post_status'    => 'publish'
   ));
 
-  return !empty($posts); // 配列が空でなければ投稿あり
+  return !empty($posts);
 }
 
 /*--------------------------------------------------------------
-  固定ページの編集画面のみビジュアルエディタを非表示にする
+  Hide the visual editor only on fixed page edit screens
 --------------------------------------------------------------*/
-// function disable_visual_editor_in_page()
-// {
-//   global $typenow;
-//   if ($typenow == 'page') {
-//     add_filter('user_can_richedit', 'disable_visual_editor_filter');
-//   }
-// }
-// function disable_visual_editor_filter()
-// {
-//   return false;
-// }
-// add_action('load-post.php', 'disable_visual_editor_in_page');
-// add_action('load-post-new.php', 'disable_visual_editor_in_page');
+function disable_visual_editor_in_page()
+{
+  global $typenow;
+
+  if ($typenow === 'page') {
+    $post_id = isset($_GET['post']) ? (int) $_GET['post'] : 0;
+    if ($post_id > 0) {
+      $template = get_page_template_slug($post_id);
+      if ($template === 'page-customfield.php') {
+        add_filter('user_can_richedit', '__return_false');
+      }
+    }
+  }
+}
+add_action('load-post.php', 'disable_visual_editor_in_page');
+add_action('load-post-new.php', 'disable_visual_editor_in_page');
+
 
 /*--------------------------------------------------------------
-  管理画面の「コメント」メニューを削除
+  Removed “Comments” menu from the admin page.
 --------------------------------------------------------------*/
 function remove_comments_menu()
 {
-  remove_menu_page('edit-comments.php'); // コメントメニューを削除
+  remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'remove_comments_menu');
 
-// コメントに関連する管理バーのリンクを削除
+// Remove admin bar links related to comments
 function remove_comments_from_admin_bar($wp_admin_bar)
 {
-  $wp_admin_bar->remove_node('comments'); // 管理バーからコメントリンクを削除
+  $wp_admin_bar->remove_node('comments');
 }
 add_action('admin_bar_menu', 'remove_comments_from_admin_bar', 999);
 
-// コメント関連のウィジェットを非表示
+// hide comment-related widgets
 function remove_dashboard_widgets()
 {
-  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // ダッシュボードの最近のコメントウィジェットを削除
+  remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
 }
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
 
-// コメント関連の画面オプションを非表示
+// Hide comment-related screen options
 function disable_comments_screen_options()
 {
   global $pagenow;
 
   if ($pagenow === 'edit-comments.php') {
-    wp_redirect(admin_url()); // コメント一覧ページにアクセスしたらリダイレクト
+    wp_redirect(admin_url());
     exit;
   }
 }
