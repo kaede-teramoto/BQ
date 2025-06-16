@@ -13,7 +13,7 @@ $blog_url = get_post_type_archive_link('post');
 
 get_header();
 if (!is_singular()) :
-    $cms_design = esc_attr(get_theme_mod('archive_cms_design', '01'));
+    $cms_design = esc_attr(get_theme_mod('archive_cms_design_setting', '01'));
     $categories = get_categories(array(
         'hide_empty' => true // 投稿がないカテゴリは除外
     ));

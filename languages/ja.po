@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format\n"
-"POT-Creation-Date: 2025-06-13 22:55+0900\n"
-"PO-Revision-Date: 2025-06-13 22:56+0900\n"
+"POT-Creation-Date: 2025-06-16 08:45+0900\n"
+"PO-Revision-Date: 2025-06-16 08:48+0900\n"
 "Last-Translator: \n"
 "Language-Team: boutiq\n"
 "Language: ja_JP\n"
@@ -31,6 +31,10 @@ msgstr "ハンバーガーメニューの設定"
 #: inc/customizer/panels/header_panel.php:12
 msgid "Header option"
 msgstr "ヘッダーの設定"
+
+#: inc/customizer/panels/page_panel.php:12
+msgid "Page option"
+msgstr "ページの設定"
 
 #: inc/customizer/panels/site_default_panel.php:12
 msgid "Basic design settings"
@@ -990,125 +994,129 @@ msgstr "ローディング画面の背景色"
 msgid "Time to display loading screen (seconds)"
 msgstr "ローディング画面を表示する時間"
 
-#: inc/customizer/sections/page_customizer.php:10
-msgid "Page option"
-msgstr "ページの設定"
+#: inc/customizer/sections/page_customizer.php:13
+msgid "Page title setting"
+msgstr "ページタイトルのデザインを設定"
 
-#: inc/customizer/sections/page_customizer.php:15
+#: inc/customizer/sections/page_customizer.php:23
 msgid "Page Title Design"
 msgstr "ページタイトルのデザインを設定"
 
-#: inc/customizer/sections/page_customizer.php:16
+#: inc/customizer/sections/page_customizer.php:24
 msgid "Title_A-Screen_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:17
+#: inc/customizer/sections/page_customizer.php:25
 msgid "Title_A-Contents_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:18
+#: inc/customizer/sections/page_customizer.php:26
 msgid "Title_A-Right_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:19
+#: inc/customizer/sections/page_customizer.php:27
 msgid "Title_A-Left_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:20
+#: inc/customizer/sections/page_customizer.php:28
 msgid "Title_A-Photo_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:21
+#: inc/customizer/sections/page_customizer.php:29
 msgid "Title_A-Top_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:22
+#: inc/customizer/sections/page_customizer.php:30
 msgid "Title_A-Text_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:23
+#: inc/customizer/sections/page_customizer.php:31
 msgid "Title_B-Normal_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:24
+#: inc/customizer/sections/page_customizer.php:32
 msgid "Title_C-Normal_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:25
+#: inc/customizer/sections/page_customizer.php:33
 msgid "Title_C-Photo_00"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:28
+#: inc/customizer/sections/page_customizer.php:36
 msgid "Content Title Design"
 msgstr "コンテンツのタイトルデザインを設定"
 
-#: inc/customizer/sections/page_customizer.php:29
+#: inc/customizer/sections/page_customizer.php:37
 #: inc/customizer/sections/top_page_customizer.php:109
 msgid "Content Title1"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:30
+#: inc/customizer/sections/page_customizer.php:38
 #: inc/customizer/sections/top_page_customizer.php:110
 msgid "Content Title2"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:31
+#: inc/customizer/sections/page_customizer.php:39
 #: inc/customizer/sections/top_page_customizer.php:111
 msgid "Content Title3"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:32
+#: inc/customizer/sections/page_customizer.php:40
 #: inc/customizer/sections/top_page_customizer.php:112
 msgid "Content Title4"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:33
+#: inc/customizer/sections/page_customizer.php:41
 #: inc/customizer/sections/top_page_customizer.php:113
 msgid "Content Title5"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:34
+#: inc/customizer/sections/page_customizer.php:42
 #: inc/customizer/sections/top_page_customizer.php:114
 msgid "Content Title6"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:35
+#: inc/customizer/sections/page_customizer.php:43
 #: inc/customizer/sections/top_page_customizer.php:115
 msgid "Content Title7"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:36
+#: inc/customizer/sections/page_customizer.php:44
 #: inc/customizer/sections/top_page_customizer.php:116
 msgid "Content Title8"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:37
+#: inc/customizer/sections/page_customizer.php:45
 msgid "Custom Original"
 msgstr ""
 
-#: inc/customizer/sections/page_customizer.php:40
+#: inc/customizer/sections/page_customizer.php:48
 #: inc/customizer/sections/top_page_customizer.php:120
 msgid "Add underline to content title"
 msgstr "コンテンツのタイトルに下線を追加する"
 
-#: inc/customizer/sections/page_customizer.php:42
+#: inc/customizer/sections/page_customizer.php:50
 msgid "Underline Color"
 msgstr "下線の色"
 
-#: inc/customizer/sections/page_customizer.php:44
+#: inc/customizer/sections/page_customizer.php:52
 #: inc/customizer/sections/top_page_customizer.php:122
 msgid "Set Underline thickness (px)"
 msgstr "下線の太さを設定する"
 
-#: inc/customizer/sections/page_customizer.php:46
+#: inc/customizer/sections/page_customizer.php:63
+msgid "Page corner setting"
+msgstr "ページの角丸の角度を設定する"
+
+#: inc/customizer/sections/page_customizer.php:73
 msgid "Set corner radius for PC (px)"
 msgstr "PC用のコーナーの角度"
 
-#: inc/customizer/sections/page_customizer.php:48
+#: inc/customizer/sections/page_customizer.php:75
 msgid "Set corner radius for Tablet (px)"
 msgstr "タブレット用のコーナーの角度"
 
-#: inc/customizer/sections/page_customizer.php:50
+#: inc/customizer/sections/page_customizer.php:77
 msgid "Set corner radius for SP (px)"
 msgstr "スマートフォン用のコーナーの角度"
 
@@ -1657,10 +1665,9 @@ msgstr "1枚目のスライド画像の設定"
 #: inc/customizer/sections/top_page_customizer.php:196
 #: inc/customizer/sections/top_page_customizer.php:223
 #: inc/customizer/sections/top_page_customizer.php:250
-#: inc/theme_setting/admin_parts/titles.php:140
-#: inc/theme_setting/admin_parts/titles.php:166
-#: theme_support/custom-post.php:163 theme_support/titles.php:140
-#: theme_support/titles.php:166
+#: inc/theme_setting/admin_parts/custom-post.php:163
+#: inc/theme_setting/admin_parts/titles.php:133
+#: inc/theme_setting/admin_parts/titles.php:159
 msgid "Image"
 msgstr "画像"
 
@@ -1729,58 +1736,46 @@ msgid "Slide Image5"
 msgstr "5枚目のスライド画像の設定"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:340
-#: theme_support/class-tgm-plugin-activation.php:334
 msgid "Install Required Plugins"
 msgstr "必要なプラグインをインストールする"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:341
-#: theme_support/class-tgm-plugin-activation.php:335
 msgid "Install Plugins"
 msgstr "プラグインのインストール"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:343
-#: theme_support/class-tgm-plugin-activation.php:337
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "プラグインをインストールしています: %s"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:345
-#: theme_support/class-tgm-plugin-activation.php:339
 #, php-format
 msgid "Updating Plugin: %s"
 msgstr "プラグインを更新中: %s"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:346
-#: theme_support/class-tgm-plugin-activation.php:340
 msgid "Something went wrong with the plugin API."
 msgstr "プラグイン API で問題が発生しました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:398
-#: theme_support/class-tgm-plugin-activation.php:392
 msgid "Return to Required Plugins Installer"
 msgstr "必要なプラグイン インストーラーに戻る"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:399
-#: theme_support/class-tgm-plugin-activation.php:393
 msgid "Return to the Dashboard"
 msgstr "ダッシュボードに戻る"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:400
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3340
-#: theme_support/class-tgm-plugin-activation.php:394
-#: theme_support/class-tgm-plugin-activation.php:3252
 msgid "Plugin activated successfully."
 msgstr "プラグインが正常に有効化されました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:401
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3129
-#: theme_support/class-tgm-plugin-activation.php:395
-#: theme_support/class-tgm-plugin-activation.php:3045
 msgid "The following plugin was activated successfully:"
 msgstr "次のプラグインは正常に有効化されました:"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:403
-#: theme_support/class-tgm-plugin-activation.php:397
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
@@ -1788,7 +1783,6 @@ msgstr ""
 "た。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:405
-#: theme_support/class-tgm-plugin-activation.php:399
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -1798,18 +1792,15 @@ msgstr ""
 "す。プラグインを更新してください。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:407
-#: theme_support/class-tgm-plugin-activation.php:401
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "すべてのプラグインが正常にインストールされ、有効化されました。 %1$s"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:408
-#: theme_support/class-tgm-plugin-activation.php:402
 msgid "Dismiss this notice"
 msgstr "この通知を無視する"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:409
-#: theme_support/class-tgm-plugin-activation.php:403
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
@@ -1818,211 +1809,172 @@ msgstr ""
 "ンが 1 つ以上あります。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:410
-#: theme_support/class-tgm-plugin-activation.php:404
 msgid "Please contact the administrator of this site for help."
 msgstr "このサイトの管理者にお問い合わせください。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2133
-#: theme_support/class-tgm-plugin-activation.php:2075
 #, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2434
-#: theme_support/class-tgm-plugin-activation.php:2366
 msgid "Required"
 msgstr "必須"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2437
-#: theme_support/class-tgm-plugin-activation.php:2369
 msgid "Recommended"
 msgstr "推奨"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2454
-#: theme_support/class-tgm-plugin-activation.php:2385
 msgid "WordPress Repository"
 msgstr "WordPressリポジトリ"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2457
-#: theme_support/class-tgm-plugin-activation.php:2388
 msgid "External Source"
 msgstr "外部ソース"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2460
-#: theme_support/class-tgm-plugin-activation.php:2391
 msgid "Pre-Packaged"
 msgstr ""
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2478
-#: theme_support/class-tgm-plugin-activation.php:2408
 msgid "Not Installed"
 msgstr "インストールされていない"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2482
-#: theme_support/class-tgm-plugin-activation.php:2412
 msgid "Installed But Not Activated"
 msgstr "インストールされているがアクティベートされていない"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2484
-#: theme_support/class-tgm-plugin-activation.php:2414
 msgid "Active"
 msgstr "有効"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2490
-#: theme_support/class-tgm-plugin-activation.php:2420
 msgid "Required Update not Available"
 msgstr "必要なアップデートが利用できない"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2492
-#: theme_support/class-tgm-plugin-activation.php:2423
 msgid "Requires Update"
 msgstr "アップデートが必要です"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2494
-#: theme_support/class-tgm-plugin-activation.php:2426
 msgid "Update recommended"
 msgstr "アップデートを推奨"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2555
-#: theme_support/class-tgm-plugin-activation.php:2485
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgstr ""
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2559
-#: theme_support/class-tgm-plugin-activation.php:2489
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgstr ""
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2563
-#: theme_support/class-tgm-plugin-activation.php:2493
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgstr ""
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2657
-#: theme_support/class-tgm-plugin-activation.php:2583
 msgid "Installed version:"
 msgstr "インストールされているバージョン:"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2665
-#: theme_support/class-tgm-plugin-activation.php:2591
 msgid "Minimum required version:"
 msgstr "最低限必要なバージョン:"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2677
-#: theme_support/class-tgm-plugin-activation.php:2603
 msgid "Available version:"
 msgstr "利用可能なバージョン:"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2716
-#: theme_support/class-tgm-plugin-activation.php:2640
 msgid "Plugin"
 msgstr "プラグイン"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2717
-#: theme_support/class-tgm-plugin-activation.php:2641
 msgid "Source"
 msgstr "ソース"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2718
-#: theme_support/class-tgm-plugin-activation.php:2642
 msgid "Type"
 msgstr "タイプ"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2722
-#: theme_support/class-tgm-plugin-activation.php:2646
 msgid "Version"
 msgstr "バージョン"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2723
-#: theme_support/class-tgm-plugin-activation.php:2647
 msgid "Status"
 msgstr "ステータス"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2775
-#: theme_support/class-tgm-plugin-activation.php:2696
 #, php-format
 msgid "Install %2$s"
 msgstr "%2$sをインストールします"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2780
-#: theme_support/class-tgm-plugin-activation.php:2701
 #, php-format
 msgid "Update %2$s"
 msgstr "%2$sを更新します"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2786
-#: theme_support/class-tgm-plugin-activation.php:2707
 #, php-format
 msgid "Activate %2$s"
 msgstr "%2$sを有効化します"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2893
-#: theme_support/class-tgm-plugin-activation.php:2810
 msgid "Install"
 msgstr "インストール"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2899
-#: theme_support/class-tgm-plugin-activation.php:2816
 msgid "Update"
 msgstr "更新"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2902
-#: theme_support/class-tgm-plugin-activation.php:2819
 msgid "Activate"
 msgstr "有効化"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2934
-#: theme_support/class-tgm-plugin-activation.php:2850
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 "インストールするプラグインが選択されていません。何もアクションは取られません"
 "でした。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2936
-#: theme_support/class-tgm-plugin-activation.php:2852
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 "更新するプラグインが選択されていませんでした。何もアクションは取られませんで"
 "した。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2977
-#: theme_support/class-tgm-plugin-activation.php:2893
 msgid "No plugins are available to be installed at this time."
 msgstr "現時点ではインストールできるプラグインはありません。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:2979
-#: theme_support/class-tgm-plugin-activation.php:2895
 msgid "No plugins are available to be updated at this time."
 msgstr "現時点では更新できるプラグインはありません。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3339
-#: theme_support/class-tgm-plugin-activation.php:3251
 msgid "Plugin activation failed."
 msgstr "プラグインの有効化に失敗しました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3686
-#: theme_support/class-tgm-plugin-activation.php:3591
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr "プラグイン %1$s を更新しています (%2$d/%3$d)"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3689
-#: theme_support/class-tgm-plugin-activation.php:3594
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr "%1$s のインストール中にエラーが発生しました <strong>%2$s</strong>."
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3691
-#: theme_support/class-tgm-plugin-activation.php:3596
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr "%1$s のインストールに失敗しました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3695
-#: theme_support/class-tgm-plugin-activation.php:3600
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
@@ -2031,24 +1983,20 @@ msgstr ""
 "のプロセスに時間がかかる場合がありますので、しばらくお待ちください。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3697
-#: theme_support/class-tgm-plugin-activation.php:3602
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr "%1$s は正常にインストールされ、アクティブ化されました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3698
-#: theme_support/class-tgm-plugin-activation.php:3603
 msgid "All installations and activations have been completed."
 msgstr "すべてのインストールとアクティベーションが完了しました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3700
-#: theme_support/class-tgm-plugin-activation.php:3605
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3703
-#: theme_support/class-tgm-plugin-activation.php:3608
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
@@ -2057,142 +2005,157 @@ msgstr ""
 "る場合がありますので、しばらくお待ちください。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3706
-#: theme_support/class-tgm-plugin-activation.php:3611
 msgid "All installations have been completed."
 msgstr "すべてのインストールが完了しました。"
 
 #: inc/theme_setting/admin_parts/class-tgm-plugin-activation.php:3708
-#: theme_support/class-tgm-plugin-activation.php:3613
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "プラグイン %1$s をインストールしています (%2$d/%3$d)"
 
-#: inc/theme_setting/admin_parts/init.php:28 theme_support/init.php:28
-msgid "HEADER MENU"
-msgstr "ヘッダーナビゲーション"
-
-#: inc/theme_setting/admin_parts/init.php:29 theme_support/init.php:29
-msgid "HEADER SUB MENU"
-msgstr "ヘッダーサブナビゲーション"
-
-#: inc/theme_setting/admin_parts/init.php:30 theme_support/init.php:30
-msgid "FOOTER MENU"
-msgstr "フッターナビゲーション"
-
-#: inc/theme_setting/admin_parts/init.php:31 theme_support/init.php:31
-msgid "FOOTER LEFT MENU"
-msgstr "フッターナビゲーション 左側"
-
-#: inc/theme_setting/admin_parts/init.php:32 theme_support/init.php:32
-msgid "FOOTER RIGHT MENU"
-msgstr "フッターナビゲーション 右側"
-
-#: inc/theme_setting/admin_parts/init.php:33 theme_support/init.php:33
-msgid "FOOTER INFO MENU"
-msgstr "フッターナビゲーション 下部"
-
-#: inc/theme_setting/admin_parts/init.php:34 theme_support/init.php:34
-msgid "HAMBURGER MENU LEFT MENU"
-msgstr "ハンバーガーメニュー内 左側"
-
-#: inc/theme_setting/admin_parts/init.php:35 theme_support/init.php:35
-msgid "HAMBURGER MENU RIGHT MENU"
-msgstr "ハンバーガーメニュー内 右側"
-
-#: inc/theme_setting/admin_parts/init.php:36 theme_support/init.php:36
-msgid "HAMBURGER MENU INFO MENU"
-msgstr "フッターナビゲーションハンバーガーメニュー内 下部"
-
-#: inc/theme_setting/admin_parts/init.php:80 theme_support/init.php:80
-msgid "...more"
-msgstr "…続きを見る"
-
-#: inc/theme_setting/admin_parts/titles.php:131
-#: inc/theme_setting/admin_parts/titles.php:161 theme_support/titles.php:131
-#: theme_support/titles.php:161
-msgid "Subtitle"
-msgstr "サブタイトル"
-
-#: inc/theme_setting/admin_parts/titles.php:135
-#: inc/theme_setting/admin_parts/titles.php:163 theme_support/titles.php:135
-#: theme_support/titles.php:163
-msgid "Enter a subtitle for this term"
-msgstr "このカテゴリーのサブタイトルを入力してください"
-
-#: inc/theme_setting/admin_parts/titles.php:144
-#: inc/theme_setting/admin_parts/titles.php:168 theme_support/titles.php:144
-#: theme_support/titles.php:168
-msgid "Select Image"
-msgstr "メディアを追加"
-
-#: inc/theme_setting/admin_parts/titles.php:145
-#: inc/theme_setting/admin_parts/titles.php:169 theme_support/titles.php:145
-#: theme_support/titles.php:169
-msgid "Remove Image"
-msgstr "メディアをクリア"
-
-#: theme_support/custom-post.php:13 theme_support/custom-post.php:14
-#: theme_support/custom-post.php:15 theme_support/custom-post.php:16
+#: inc/theme_setting/admin_parts/custom-post.php:13
+#: inc/theme_setting/admin_parts/custom-post.php:14
+#: inc/theme_setting/admin_parts/custom-post.php:15
+#: inc/theme_setting/admin_parts/custom-post.php:16
 msgid "Common parts"
 msgstr "共通パーツ"
 
-#: theme_support/custom-post.php:17
+#: inc/theme_setting/admin_parts/custom-post.php:17
 msgid "New common parts added"
 msgstr "共通パーツを新規追加"
 
-#: theme_support/custom-post.php:18
+#: inc/theme_setting/admin_parts/custom-post.php:18
 msgid "Add common parts"
 msgstr "共通パーツを追加"
 
-#: theme_support/custom-post.php:19
+#: inc/theme_setting/admin_parts/custom-post.php:19
 msgid "New common parts"
 msgstr "新しい共通パーツ"
 
-#: theme_support/custom-post.php:20
+#: inc/theme_setting/admin_parts/custom-post.php:20
 msgid "Edit common parts"
 msgstr "共通パーツを編集"
 
-#: theme_support/custom-post.php:21
+#: inc/theme_setting/admin_parts/custom-post.php:21
 msgid "Show common parts"
 msgstr "共通パーツを表示"
 
-#: theme_support/custom-post.php:22
+#: inc/theme_setting/admin_parts/custom-post.php:22
 msgid "List of common parts"
 msgstr "共通パーツ一覧"
 
-#: theme_support/custom-post.php:23
+#: inc/theme_setting/admin_parts/custom-post.php:23
 msgid "Find common parts"
 msgstr "共通パーツを検索"
 
-#: theme_support/custom-post.php:24
+#: inc/theme_setting/admin_parts/custom-post.php:24
 msgid "No common parts found"
 msgstr "共通パーツが見つかりませんでした"
 
-#: theme_support/custom-post.php:25
+#: inc/theme_setting/admin_parts/custom-post.php:25
 msgid "Trash cans have no common parts"
 msgstr "ゴミ箱に共通パーツはありません"
 
-#: theme_support/custom-post.php:109 theme_support/custom-post.php:154
+#: inc/theme_setting/admin_parts/custom-post.php:109
+#: inc/theme_setting/admin_parts/custom-post.php:154
 msgid "Custom Post Type Image Settings"
 msgstr "カスタム投稿タイプの画像設定"
 
-#: theme_support/custom-post.php:110
+#: inc/theme_setting/admin_parts/custom-post.php:110
 msgid "Post Type Image Settings"
 msgstr "投稿タイプの画像設定"
 
-#: theme_support/custom-post.php:127
+#: inc/theme_setting/admin_parts/custom-post.php:127
 msgid ""
 "No custom post types registered. Please register at least one custom post "
 "type."
 msgstr ""
+"カスタム投稿タイプが登録されていません。少なくとも 1 つのカスタム投稿タイプを"
+"登録してください。"
 
-#: theme_support/custom-post.php:167
+#: inc/theme_setting/admin_parts/custom-post.php:167
 msgid "delete image"
 msgstr "画像を削除"
 
-#: theme_support/custom-post.php:173
+#: inc/theme_setting/admin_parts/custom-post.php:173
 msgid "Save"
-msgstr ""
+msgstr "保存"
+
+#: inc/theme_setting/admin_parts/init.php:28
+msgid "HEADER MENU"
+msgstr "ヘッダーナビゲーション"
+
+#: inc/theme_setting/admin_parts/init.php:29
+msgid "HEADER SUB MENU"
+msgstr "ヘッダーサブナビゲーション"
+
+#: inc/theme_setting/admin_parts/init.php:30
+msgid "FOOTER MENU"
+msgstr "フッターナビゲーション"
+
+#: inc/theme_setting/admin_parts/init.php:31
+msgid "FOOTER LEFT MENU"
+msgstr "フッターナビゲーション 左側"
+
+#: inc/theme_setting/admin_parts/init.php:32
+msgid "FOOTER RIGHT MENU"
+msgstr "フッターナビゲーション 右側"
+
+#: inc/theme_setting/admin_parts/init.php:33
+msgid "FOOTER INFO MENU"
+msgstr "フッターナビゲーション 下部"
+
+#: inc/theme_setting/admin_parts/init.php:34
+msgid "HAMBURGER MENU LEFT MENU"
+msgstr "ハンバーガーメニュー内 左側"
+
+#: inc/theme_setting/admin_parts/init.php:35
+msgid "HAMBURGER MENU RIGHT MENU"
+msgstr "ハンバーガーメニュー内 右側"
+
+#: inc/theme_setting/admin_parts/init.php:36
+msgid "HAMBURGER MENU INFO MENU"
+msgstr "フッターナビゲーションハンバーガーメニュー内 下部"
+
+#: inc/theme_setting/admin_parts/init.php:80
+msgid "...more"
+msgstr "…続きを見る"
+
+#: inc/theme_setting/admin_parts/mega-menu.php:17
+msgid "Image URL"
+msgstr "画像URL"
+
+#: inc/theme_setting/admin_parts/mega-menu.php:18
+msgid "Select image"
+msgstr "画像を選択"
+
+#: inc/theme_setting/admin_parts/titles.php:51
+msgid "Subtitle (will be a copy when page design 07)"
+msgstr "サブタイトル（ページデザイン07の際のコピーになります）"
+
+#: inc/theme_setting/admin_parts/titles.php:55
+msgid "Page summary"
+msgstr "ページ概要"
+
+#: inc/theme_setting/admin_parts/titles.php:124
+#: inc/theme_setting/admin_parts/titles.php:154
+msgid "Subtitle"
+msgstr "サブタイトル"
+
+#: inc/theme_setting/admin_parts/titles.php:128
+#: inc/theme_setting/admin_parts/titles.php:156
+msgid "Enter a subtitle for this term"
+msgstr "このカテゴリーのサブタイトルを入力してください"
+
+#: inc/theme_setting/admin_parts/titles.php:137
+#: inc/theme_setting/admin_parts/titles.php:161
+msgid "Select Image"
+msgstr "メディアを追加"
+
+#: inc/theme_setting/admin_parts/titles.php:138
+#: inc/theme_setting/admin_parts/titles.php:162
+msgid "Remove Image"
+msgstr "メディアをクリア"
 
 #~ msgid "Gradation for button color"
 #~ msgstr "ボタンカラーのグラデーション"
@@ -2285,9 +2248,6 @@ msgstr ""
 
 #~ msgid "Animation Settings"
 #~ msgstr "アニメーションの設定"
-
-#~ msgid "Hamburger Icon Design Settings"
-#~ msgstr "ハンバーガーメニューのアイコンデザインを選択する"
 
 #~ msgid "Set the banner background image"
 #~ msgstr "バナーの背景画像を設定します"

@@ -350,16 +350,16 @@ if ($fv_text_left_position5) {
     get_template_part('parts/parts', 'originalSlider'); ?>
 
 <?php elseif ($fv_type == 04) : ?>
-    <section class="section-fv static_fv">
-        <ul class="static_fv-wrapper">
+    <section class="section-fv">
+        <ul class="static-fv-wrapper">
             <?php if ($fv_img1) { ?>
-                <li class="static_fv-slide">
+                <li class="static-fv-slide">
                     <?php if ($fv_img1_link) { ?>
                         <a href="<?php echo $fv_img1_link; ?>" <?php if ($fv_link_target_1) {
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading1 || $fv_text1) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
+                                <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
                                     <?php if ($fv_heading1) { ?>
                                         <h2 class="fv-subtitle"><span><?php echo $fv_heading1; ?></span></h2>
                                     <?php } ?>
@@ -372,7 +372,7 @@ if ($fv_text_left_position5) {
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading1 || $fv_text1) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
+                            <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color1; ?><?php echo $fv_text_bottom_position1; ?><?php echo $fv_text_left_position1; ?>;">
                                 <?php if ($fv_heading1) { ?>
                                     <h2 class="fv-subtitle"><span><?php echo $fv_heading1; ?></span></h2>
                                 <?php } ?>
@@ -387,13 +387,13 @@ if ($fv_text_left_position5) {
             <?php } ?>
 
             <?php if ($fv_img2) { ?>
-                <li class="static_fv-slide">
+                <li class="static-fv-slide">
                     <?php if ($fv_img2_link) { ?>
                         <a href="<?php echo $fv_img2_link; ?>" <?php if ($fv_link_target_2) {
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading2 || $fv_text2) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
+                                <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
                                     <?php if ($fv_heading2) { ?>
                                         <h2 class="fv-subtitle"><span><?php echo $fv_heading2; ?></span></h2>
                                     <?php } ?>
@@ -406,7 +406,7 @@ if ($fv_text_left_position5) {
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading2 || $fv_text2) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
+                            <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color2; ?><?php echo $fv_text_bottom_position2; ?><?php echo $fv_text_left_position2; ?>;">
                                 <?php if ($fv_heading2) { ?>
                                     <h2 class="fv-subtitle"><span><?php echo $fv_heading2; ?></span></h2>
                                 <?php } ?>
@@ -421,13 +421,13 @@ if ($fv_text_left_position5) {
             <?php } ?>
 
             <?php if ($fv_img3) { ?>
-                <li class="static_fv-slide">
+                <li class="static-fv-slide">
                     <?php if ($fv_img3_link) { ?>
                         <a href="<?php echo $fv_img3_link; ?>" <?php if ($fv_link_target_3) {
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading3 || $fv_text3) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
+                                <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
                                     <?php if ($fv_heading3) { ?>
                                         <h2 class="fv-subtitle"><span><?php echo $fv_heading3; ?></span></h2>
                                     <?php } ?>
@@ -440,7 +440,7 @@ if ($fv_text_left_position5) {
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading3 || $fv_text3) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
+                            <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color3; ?><?php echo $fv_text_bottom_position3; ?><?php echo $fv_text_left_position3; ?>;">
                                 <?php if ($fv_heading3) { ?>
                                     <h2 class="fv-subtitle"><span><?php echo $fv_heading3; ?></span></h2>
                                 <?php } ?>
@@ -455,13 +455,13 @@ if ($fv_text_left_position5) {
             <?php } ?>
 
             <?php if ($fv_img4) { ?>
-                <li class="static_fv-slide">
+                <li class="static-fv-slide">
                     <?php if ($fv_img4_link) { ?>
                         <a href="<?php echo $fv_img4_link; ?>" <?php if ($fv_link_target_4) {
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading4 || $fv_text4) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
+                                <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
                                     <?php if ($fv_heading4) { ?>
                                         <h2 class="fv-subtitle"><span><?php echo $fv_heading4; ?></span></h2>
                                     <?php } ?>
@@ -474,7 +474,7 @@ if ($fv_text_left_position5) {
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading4 || $fv_text4) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
+                            <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color4; ?><?php echo $fv_text_bottom_position4; ?><?php echo $fv_text_left_position4; ?>;">
                                 <?php if ($fv_heading4) { ?>
                                     <h2 class="fv-subtitle"><span><?php echo $fv_heading4; ?></span></h2>
                                 <?php } ?>
@@ -489,13 +489,13 @@ if ($fv_text_left_position5) {
             <?php } ?>
 
             <?php if ($fv_img5) { ?>
-                <li class="static_fv-slide">
+                <li class="static-fv-slide">
                     <?php if ($fv_img5_link) { ?>
                         <a href="<?php echo $fv_img5_link; ?>" <?php if ($fv_link_target_5) {
                                                                     echo ' target="_blank"';
                                                                 } ?>>
                             <?php if ($fv_heading5 || $fv_text5) { ?>
-                                <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
+                                <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
                                     <?php if ($fv_heading5) { ?>
                                         <h2 class="fv-subtitle"><span><?php echo $fv_heading5; ?></span></h2>
                                     <?php } ?>
@@ -508,7 +508,7 @@ if ($fv_text_left_position5) {
                         </a>
                     <?php } else { ?>
                         <?php if ($fv_heading5 || $fv_text5) { ?>
-                            <div class="static_fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
+                            <div class="static-fv-catch fv-<?php echo $fv_text_animation; ?>" style="<?php echo $fv_text_color5; ?><?php echo $fv_text_bottom_position5; ?><?php echo $fv_text_left_position5; ?>;">
                                 <?php if ($fv_heading5) { ?>
                                     <h2 class="fv-subtitle"><span><?php echo $fv_heading5; ?></span></h2>
                                 <?php } ?>

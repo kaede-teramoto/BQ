@@ -48,11 +48,11 @@ function page_subtitle_meta_box_callback($post)
   $pageSummary = get_post_meta($post->ID, '_custom_page_summary', true);
   ?>
   <p>
-    <label for="custom_subtitle"><?php echo __('Subtitle (will be a copy when page design 07)', 'boutiq'); ?></label>
+    <label for="custom_subtitle"><?php _e('Subtitle (will be a copy when page design 07)', 'boutiq'); ?></label>
     <input type="text" name="custom_subtitle" id="custom_subtitle" value="<?php echo esc_attr($subTitle); ?>" style="width:100%;" />
   </p>
   <p>
-    <label for="custom_page_summary"><?php echo __('Page summary', 'boutiq'); ?></label>
+    <label for="custom_page_summary"><?php _e('Page summary', 'boutiq'); ?></label>
     <?php
     $settings = array(
       'textarea_name' => 'custom_page_summary',
@@ -121,21 +121,21 @@ function add_custom_fields_to_taxonomy_edit_form($term)
 ?>
   <tr class="form-field">
     <th scope="row" valign="top">
-      <label for="sub_title"><?php __('Subtitle', 'boutiq'); ?></label>
+      <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     </th>
     <td>
       <input type="text" name="sub_title" id="sub_title" value="<?php echo esc_attr($subtitle); ?>" size="40">
-      <p class="description"><?php __('Enter a subtitle for this term', 'boutiq'); ?></p>
+      <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
     </td>
   </tr>
   <tr class="form-field">
     <th scope="row" valign="top">
-      <label for="sub_image"><?php __('Image', 'boutiq'); ?></label>
+      <label for="sub_image"><?php _e('Image', 'boutiq'); ?></label>
     </th>
     <td>
       <input type="hidden" name="sub_image" id="sub_image" value="<?php echo esc_attr($image_url); ?>">
-      <button class="button sub-image-upload"><?php __('Select Image', 'boutiq'); ?></button>
-      <button class="button sub-image-remove"><?php __('Remove Image', 'boutiq'); ?></button>
+      <button class="button sub-image-upload"><?php _e('Select Image', 'boutiq'); ?></button>
+      <button class="button sub-image-remove"><?php _e('Remove Image', 'boutiq'); ?></button>
       <div class="sub-image-preview" style="margin-top:10px;">
         <?php if ($image_url): ?>
           <img src="<?php echo esc_url($image_url); ?>" style="max-width:150px; height:auto;">
@@ -151,15 +151,15 @@ function add_custom_fields_to_taxonomy_add_form()
 {
 ?>
   <div class="form-field">
-    <label for="sub_title"><?php __('Subtitle', 'boutiq'); ?></label>
+    <label for="sub_title"><?php _e('Subtitle', 'boutiq'); ?></label>
     <input type="text" name="sub_title" id="sub_title" value="" size="40">
-    <p class="description"><?php __('Enter a subtitle for this term', 'boutiq'); ?></p>
+    <p class="description"><?php _e('Enter a subtitle for this term', 'boutiq'); ?></p>
   </div>
   <div class="form-field">
-    <label for="sub_image"><?php __('Image', 'boutiq'); ?></label>
+    <label for="sub_image"><?php _e('Image', 'boutiq'); ?></label>
     <input type="hidden" name="sub_image" id="sub_image" value="">
-    <button class="button sub-image-upload"><?php __('Select Image', 'boutiq'); ?></button>
-    <button class="button sub-image-remove"><?php __('Remove Image', 'boutiq'); ?></button>
+    <button class="button sub-image-upload"><?php _e('Select Image', 'boutiq'); ?></button>
+    <button class="button sub-image-remove"><?php _e('Remove Image', 'boutiq'); ?></button>
     <div class="sub-image-preview" style="margin-top:10px;"></div>
   </div>
 <?php
