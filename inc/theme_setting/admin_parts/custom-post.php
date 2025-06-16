@@ -101,109 +101,130 @@ add_action('admin_init', 'add_common_parts_capabilities');
 
 
 /*--------------------------------------------------------------
-  Setting an image for a custom post type
+  Custom post type image, subtitle and description settings
 --------------------------------------------------------------*/
-function add_dynamic_custom_post_type_image_settings()
-{
-  add_options_page(
-    __('Custom Post Type Image Settings', 'boutiq'),
-    __('Post Type Image Settings', 'boutiq'),
-    'manage_options',
-    'dynamic-custom-post-type-images',
-    'render_dynamic_custom_post_type_image_settings'
-  );
-}
-add_action('admin_menu', 'add_dynamic_custom_post_type_image_settings');
-function render_dynamic_custom_post_type_image_settings()
-{
-  $args = array(
-    'public'   => true,
-    '_builtin' => false
-  );
-  $custom_post_types = get_post_types($args, 'objects');
+/*--------------------------------------------------------------
+  カスタム投稿タイプ画像・サブタイトル・説明文設定
+--------------------------------------------------------------*/
+add_action('admin_menu', function () {
+  $post_types = get_post_types(['public' => true, '_builtin' => false], 'objects');
 
-  // Show only if there is more than 1 custom post type
-  if (count($custom_post_types) === 0) {
-    echo '<div class="notice notice-warning"><p>' . __('No custom post types registered. Please register at least one custom post type.', 'boutiq') . '</p></div>';
-    return;
-  }
-
-  // Save process
-  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['custom_post_type_images_nonce'])) {
-    if (wp_verify_nonce($_POST['custom_post_type_images_nonce'], 'custom_post_type_images')) {
-      foreach ($custom_post_types as $post_type => $post_type_obj) {
-        if (isset($_FILES["custom_post_type_image_{$post_type}"]) && $_FILES["custom_post_type_image_{$post_type}"]['size'] > 0) {
-          $image_id = media_handle_upload("custom_post_type_image_{$post_type}", 0);
-          if (!is_wp_error($image_id)) {
-            update_option("custom_post_type_image_{$post_type}", $image_id);
-          } else {
-            error_log("Image upload error: " . $image_id->get_error_message());
-          }
-        }
-
-        if (isset($_POST["delete_custom_post_type_image_{$post_type}"])) {
-          delete_option("custom_post_type_image_{$post_type}");
-        }
+  foreach ($post_types as $post_type => $obj) {
+    add_submenu_page(
+      "edit.php?post_type={$post_type}",
+      __('Image Settings', 'your-textdomain'),
+      __('画像設定', 'your-textdomain'),
+      'manage_options',
+      "custom-image-settings-{$post_type}",
+      function () use ($post_type, $obj) {
+        render_custom_post_type_image_settings($post_type, $obj);
       }
+    );
+  }
+});
+
+function render_custom_post_type_image_settings($post_type, $obj)
+{
+  // 保存処理
+  if (
+    isset($_POST['custom_post_type_image_nonce']) &&
+    wp_verify_nonce($_POST['custom_post_type_image_nonce'], 'save_image_' . $post_type)
+  ) {
+
+    if (isset($_POST['custom_post_type_image_id'])) {
+      update_option("custom_post_type_image_{$post_type}", intval($_POST['custom_post_type_image_id']));
     }
+
+    if (isset($_POST['delete_custom_post_type_image'])) {
+      delete_option("custom_post_type_image_{$post_type}");
+    }
+
+    update_option("custom_post_type_subtitle_{$post_type}", sanitize_text_field($_POST['custom_post_type_subtitle'] ?? ''));
+    update_option("custom_post_type_description_{$post_type}", sanitize_textarea_field($_POST['custom_post_type_description'] ?? ''));
   }
 
-  // Export
+  // 値を取得
+  $image_id   = get_option("custom_post_type_image_{$post_type}");
+  $image_url  = $image_id ? wp_get_attachment_url($image_id) : '';
+  $subtitle   = get_option("custom_post_type_subtitle_{$post_type}", '');
+  $description = get_option("custom_post_type_description_{$post_type}", '');
 ?>
+
   <div class="wrap">
-    <h1><?php echo __('Custom Post Type Image Settings', 'boutiq'); ?></h1>
-    <form method="post" enctype="multipart/form-data">
-      <?php wp_nonce_field('custom_post_type_images', 'custom_post_type_images_nonce'); ?>
+    <h1><?php echo esc_html($obj->labels->name); ?> <?php _e('設定', 'your-textdomain'); ?></h1>
+    <form method="post">
+      <?php wp_nonce_field('save_image_' . $post_type, 'custom_post_type_image_nonce'); ?>
 
-      <?php foreach ($custom_post_types as $post_type => $post_type_obj): ?>
-        <?php
-        $image_id = get_option("custom_post_type_image_{$post_type}");
-        $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
-        ?>
-        <h2><?php echo esc_html($post_type_obj->label); ?> <?php echo __('Image', 'boutiq') ?></h2>
+      <!-- サブタイトル -->
+      <h2><?php _e('サブタイトル', 'your-textdomain'); ?></h2>
+      <textarea name="custom_post_type_subtitle" rows="2" style="width:100%;"><?php echo esc_textarea($subtitle); ?></textarea>
+
+      <!-- 説明文 -->
+      <h2><?php _e('説明文', 'your-textdomain'); ?></h2>
+      <textarea name="custom_post_type_description" rows="5" style="width:100%;"><?php echo esc_textarea($description); ?></textarea>
+
+      <!-- 画像プレビュー -->
+      <h2><?php _e('画像設定', 'your-textdomain'); ?></h2>
+      <div id="custom-image-preview" style="margin-bottom: 15px;">
         <?php if ($image_url): ?>
-          <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_html($post_type); ?>" style="max-width: 300px;"><br>
-          <label>
-            <input type="checkbox" name="delete_custom_post_type_image_<?php echo esc_attr($post_type); ?>"> <?php echo __('delete image', 'boutiq'); ?>
-          </label><br>
+          <img src="<?php echo esc_url($image_url); ?>" style="max-width:300px;" id="image-preview">
+        <?php else: ?>
+          <img src="" style="max-width:300px; display:none;" id="image-preview">
         <?php endif; ?>
-        <input type="file" name="custom_post_type_image_<?php echo esc_attr($post_type); ?>"><br><br>
-      <?php endforeach; ?>
+      </div>
 
-      <input type="submit" value="<?php echo __('Save', 'boutiq') ?>" class="button-primary">
+      <input type="hidden" name="custom_post_type_image_id" id="custom-image-id" value="<?php echo esc_attr($image_id); ?>">
+      <button type="button" class="button" id="custom-upload-button"><?php _e('メディアを追加', 'your-textdomain'); ?></button>
+      <?php if ($image_url): ?>
+        <button type="submit" class="button" name="delete_custom_post_type_image" value="1"><?php _e('画像を削除', 'your-textdomain'); ?></button>
+      <?php endif; ?>
+
+      <p><input type="submit" class="button button-primary" value="<?php _e('保存', 'your-textdomain'); ?>"></p>
     </form>
   </div>
+
+  <script>
+    jQuery(document).ready(function($) {
+      $('#custom-upload-button').on('click', function(e) {
+        e.preventDefault();
+
+        const mediaUploader = wp.media({
+          title: '画像を選択',
+          button: {
+            text: 'この画像を使う'
+          },
+          multiple: false
+        });
+
+        mediaUploader.on('select', function() {
+          const attachment = mediaUploader.state().get('selection').first().toJSON();
+          $('#custom-image-id').val(attachment.id);
+          $('#image-preview').attr('src', attachment.url).show();
+        });
+
+        mediaUploader.open();
+      });
+    });
+  </script>
 <?php
 }
 
-// Function to get the image URL for a custom post type
+// メディアライブラリ有効化
+add_action('admin_enqueue_scripts', function () {
+  wp_enqueue_media();
+});
+
+// フロント表示用：画像・サブタイトル・説明を取得
 function get_dynamic_custom_post_type_image($post_type)
 {
   $image_id = get_option("custom_post_type_image_{$post_type}");
-  if ($image_id) {
-    return wp_get_attachment_url($image_id);
-  }
-  return false;
+  return $image_id ? wp_get_attachment_url($image_id) : false;
 }
-
-// 画像を表示する関数（修正版）
-function display_custom_post_type_image()
+function get_dynamic_custom_post_type_subtitle($post_type)
 {
-  // Function to display an image
-  $current_post_type = get_post_type();
-  if (!$current_post_type && is_archive()) {
-    $current_post_type = get_query_var('post_type'); // Use query variable for archive
-  }
-
-  // Get image URL
-  $image_url = get_dynamic_custom_post_type_image($current_post_type);
-  $post_type_object = get_post_type_object($current_post_type);
-
-  // Show Image
-  if ($image_url) {
-    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_html($post_type_object->labels->name) . '">';
-  } else {
-    $theme_url = get_template_directory_uri();
-    echo '<img src="' .  $theme_url . '/assets/images/thumbnails/thumbnail.webp" alt="' . esc_html($post_type_object->labels->name) . '">';
-  }
+  return get_option("custom_post_type_subtitle_{$post_type}", '');
+}
+function get_dynamic_custom_post_type_description($post_type)
+{
+  return get_option("custom_post_type_description_{$post_type}", '');
 }
