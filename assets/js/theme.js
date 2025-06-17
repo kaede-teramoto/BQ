@@ -483,6 +483,18 @@ document.querySelectorAll('.plan_toggle').forEach(toggle => {
     });
 });
 
+// Mega-menuのからリンクの非表示
+// document.addEventListener("DOMContentLoaded", function () {
+//     const links = document.querySelectorAll(".menu-link");
+
+//     links.forEach((link) => {
+//         const href = link.getAttribute("href");
+
+//         if (!href || href === "#" || href.trim() === "") {
+//             link.style.display = "none"; // または link.remove();
+//         }
+//     });
+// });
 
 
 

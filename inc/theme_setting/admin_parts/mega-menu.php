@@ -10,21 +10,17 @@
 --------------------------------------------------------------*/
 function add_menu_image_field($item_id, $item, $depth, $args)
 {
+    // 深さが0でなければ何もしない
+    if ($depth !== 0) return;
+
     $menu_image = get_post_meta($item_id, '_menu_item_image', true);
 ?>
-    <p class="description description-wide">
+    <p class="description description-wide menu-item-image-field">
         <label for="edit-menu-item-image-<?php echo $item_id; ?>">
-            <?php echo __('Image URL', 'boutiq') ?><br>
-            <input placeholder="<?php echo __('Select image', 'boutiq') ?>" type="text" id="edit-menu-item-image-<?php echo $item_id; ?>" class="widefat edit-menu-item-image" name="menu-item-image[<?php echo $item_id; ?>]" value="<?php echo esc_attr($menu_image); ?>" /><br>
+            <?php _e('Image URL', 'boutiq') ?><br>
+            <input placeholder="<?php _e('Select image', 'boutiq') ?>" type="text" id="edit-menu-item-image-<?php echo $item_id; ?>" class="widefat edit-menu-item-image" name="menu-item-image[<?php echo $item_id; ?>]" value="<?php echo esc_attr($menu_image); ?>" /><br>
         </label>
     </p>
-    <style>
-        .menu-item-image {
-            max-width: 50px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-    </style>
 <?php
 }
 add_action('wp_nav_menu_item_custom_fields', 'add_menu_image_field', 10, 4);
@@ -54,21 +50,16 @@ add_action('admin_enqueue_scripts', 'enqueue_menu_image_uploader');
 
 class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
 {
-    // change the start tag of "sub-menu"
     public function start_lvl(&$output, $depth = 0, $args = null)
     {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class=\"mega-menu\">\n<ul class=\"custom-sub-menu\">\n";
+        // sub-menu UL は親項目の mega-menu 内部に移動するため、ここでは何も出力しない
     }
 
-    // change end tag of "sub-menu"
     public function end_lvl(&$output, $depth = 0, $args = null)
     {
-        $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n</div>\n";
+        // 閉じタグ不要。sub-menu UL の終了は親項目内に含める
     }
 
-    // Customize menu item output
     public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
     {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
@@ -76,26 +67,41 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
         $class_names = esc_attr($class_names);
 
         $output .= "$indent<li class=\"menu-item $class_names\">";
-        $menu_image = get_post_meta($item->ID, '_menu_item_image', true);
         $item_output = '';
 
-        if (!empty($menu_image)) {
-            $item_output .= '<div class="mega__menu__img">';
-            $item_output .= '<img src="' . esc_url($menu_image) . '" alt="' . esc_attr($item->title) . '" class="menu-item-image" />';
-            $item_output .= '</div>';
-        } else {
-            error_log('メニュー画像が取得できませんでした: ID=' . $item->ID);
-        }
+        $menu_image = get_post_meta($item->ID, '_menu_item_image', true);
 
+        // リンク出力（常に先頭）
         $item_output .= '<a href="' . esc_url($item->url) . '" class="menu-link">';
         $item_output .= esc_html($item->title);
         $item_output .= '</a>';
+
+        // 親項目（depth=0 かつ子を持つ）だけ mega-menu ブロックを追加
+        if ($depth === 0 && in_array('menu-item-has-children', $item->classes)) {
+            $item_output .= '<div class="mega-menu">';
+
+            if (!empty($menu_image)) {
+                $item_output .= '<div class="mega-menu-img">';
+                $item_output .= '<img src="' . esc_url($menu_image) . '" alt="' . esc_attr($item->title) . '" class="menu-item-image" />';
+                $item_output .= '</div>';
+            }
+
+            $item_output .= '<ul class="custom-sub-menu"><li><p class="sub-nav-title">' . esc_attr($item->title) . '</p></li>'; // UL 開始タグはここで出力
+        }
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 
     public function end_el(&$output, $item, $depth = 0, $args = null)
     {
-        $output .= "</li>\n";
+        $item_output = '';
+
+        if ($depth === 0 && in_array('menu-item-has-children', $item->classes)) {
+            $item_output .= '</ul>'; // custom-sub-menu
+            $item_output .= '</div>'; // mega-menu
+        }
+
+        $item_output .= "</li>\n";
+        $output .= $item_output;
     }
 }
