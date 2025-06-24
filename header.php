@@ -13,7 +13,7 @@ $site_name = get_bloginfo();
 //slug取得
 $slug = get_post_field('post_name', get_the_ID());
 // design type
-$header_design = esc_attr(get_theme_mod('header_design_setting', 'headerAN00')); // デフォルト値は 'headerAN00'
+$header_design = esc_attr(get_theme_mod('header_design_setting', 'header-a-normal00')); // デフォルト値は 'header-a-normal00'
 $hm_design = esc_attr(get_theme_mod('hm_icon_design_setting', '01')); // デフォルト値は 'type1'
 
 
@@ -30,7 +30,7 @@ if ($header_bg_gradation) {
 // Setting underline
 $header_under_line = get_theme_mod('header_under_line', false);
 if ($header_under_line) {
-    $header_under_line = ' header__underline';
+    $header_under_line = ' header-underline';
 } else {
     $header_under_line = null;
 }
@@ -122,30 +122,30 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
         <div class="l-container" id="container">
             <?php if ($header_card) : ?>
                 <header class="header <?php echo $header_design; ?>">
-                    <div class="header__wrapper <?php echo $header_design; ?>__wrapper header__card header__card<?php echo $header_filter; ?>" <?php echo $header_bg_color; ?>>
+                    <div class="header-wrapper header-card" <?php echo $header_bg_color; ?>>
                     <?php else : ?>
                         <header class="header <?php echo $header_design; ?><?php echo $header_filter; ?><?php echo $header_under_line; ?>" <?php echo $header_bg_color; ?>>
-                            <div class="header__wrapper <?php echo $header_design; ?>__wrapper">
+                            <div class="header-wrapper">
                             <?php endif; ?>
 
                             <?php if (has_nav_menu('headerNavSub')) : ?>
-                                <div class="<?php echo $header_design; ?>__wrapper__nav--left">
-                                    <nav class="<?php echo $header_design; ?>__wrapper__nav--wrapper" role="navigation">
+                                <div class="header-nav-left">
+                                    <nav class="header-nav-wrapper" role="navigation">
                                         <?php wp_nav_menu(array(
                                             'theme_location' => 'headerNavSub',
                                             'container' => '',
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="header__wrapper__nav--wrapper__list ' . $header_design . '__wrapper__nav--wrapper__list">%3$s</ul>',
-                                            'li_class' => $header_design . '__wrapper__nav--wrapper__item',
-                                            'a_class' => $header_design . '__wrapper__nav--wrapper__link',
+                                            'items_wrap' => '<ul class="header-nav-list">%3$s</ul>',
+                                            'li_class' => '',
+                                            'a_class' => '',
                                         )); ?>
                                     </nav>
                                 </div>
                             <?php endif; ?>
 
-                            <div class="<?php echo $header_design; ?>__wrapper__logo">
+                            <div class="header-logo">
                                 <?php
                                 /*----------------------------------------------------------------------
                             ロゴ画像が登録されていた場合
@@ -154,7 +154,7 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                 if (!empty($header_logo_img)) : ?>
 
                                     <a href='<?php echo $site_url; ?>' title='<?php echo $site_name; ?>' rel='home'>
-                                        <img class="header__wrapper__logo-image <?php echo $header_design; ?>__wrapper__logo-image" src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy">
+                                        <img class="header-logo-image" src="<?php echo $header_logo_img; ?>" alt="<?php echo $site_name; ?>" loading="lazy">
                                     </a>
 
                                 <?php else :
@@ -171,26 +171,26 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                             ----------------------------------------------------------------------*/
                                 ?>
                             </div>
-                            <div class="header__wrapper__nav <?php echo $header_design; ?>__wrapper__nav">
+                            <div class="header-nav">
                                 <?php if (has_nav_menu('headerNav')) : ?>
-                                    <nav class="header__wrapper__nav--wrapper <?php echo $header_design; ?>__wrapper__nav--wrapper" role="navigation">
+                                    <nav class="header-nav-wrapper" role="navigation">
                                         <?php wp_nav_menu(array(
                                             'theme_location' => 'headerNav',
                                             'container' => '',
                                             'menu_class' => '',
                                             'link_before' => '',
                                             'link_after' => '',
-                                            'items_wrap' => '<ul class="header__wrapper__nav--wrapper__list ' . $header_design . '__wrapper__nav--wrapper__list">%3$s</ul>',
-                                            'li_class' => $header_design . '__wrapper__nav--wrapper__item',
-                                            'a_class' => $header_design . '__wrapper__nav--wrapper__link',
+                                            'items_wrap' => '<ul class="header-nav-list">%3$s</ul>',
+                                            'li_class' => '',
+                                            'a_class' => '',
                                             'walker' => new Custom_Walker_Nav_Menu(),
                                         )); ?>
                                     </nav>
                                 <?php endif; ?>
 
-                                <?php if ($header_design !== 'headerFS00') : // headerFS00以外のときはボタンをここに表示 
+                                <?php if ($header_design !== 'header-f-square00') : // header-f-square00以外のときはボタンをここに表示 
                                 ?>
-                                    <div class="header__wrapper__btn <?php echo $header_design; ?>__wrapper__btn">
+                                    <div class="header-btn">
                                         <?php if ($btn_display_setting) : ?>
                                             <?php if ($btn_target_setting) : ?>
                                                 <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
@@ -240,9 +240,9 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                 <?php get_template_part('parts/parts', 'hMenu'); ?>
                             </div>
 
-                            <?php if ($header_design === 'headerFS00') : // headerFS00のときはボタンを外に表示 
+                            <?php if ($header_design === 'header-f-square00') : // header-f-square00のときはボタンを外に表示 
                             ?>
-                                <div class="header__wrapper__btn <?php echo $header_design; ?>__wrapper__btn">
+                                <div class="header-btn">
                                     <?php if ($btn_display_setting) : ?>
                                         <?php if ($btn_target_setting) : ?>
                                             <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
