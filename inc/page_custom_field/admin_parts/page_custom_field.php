@@ -148,10 +148,27 @@ class Custom_Page_Repeater_Meta_Box
                             break;
                         }
 
+                        $allowed_iframe_tags = array(
+                            'iframe' => array(
+                                'src'             => true,
+                                'width'           => true,
+                                'height'          => true,
+                                'frameborder'     => true,
+                                'allowfullscreen' => true,
+                                'allow'           => true,
+                                'loading'         => true,
+                                'referrerpolicy'  => true,
+                            ),
+                        );
+
+                        // 既存の許可タグに iframe を追加
+                        $allowed_tags = wp_kses_allowed_html('post');
+                        $allowed_tags = array_merge($allowed_tags, $allowed_iframe_tags);
+
                         $children[] = array(
                             'subtitle'     => sanitize_text_field($child_item['subtitle'] ?? ''),
                             'subtitle_sub' => sanitize_textarea_field($child_item['subtitle_sub'] ?? ''),
-                            'subcontent'   => wp_kses_post($child_item['subcontent'] ?? ''),
+                            'subcontent' => wp_kses($child_item['subcontent'] ?? '', $allowed_tags),
                             'image'        => esc_url_raw($child_item['image'] ?? ''),
                             'image_inline' => !empty($child_item['image_inline']) ? '1' : '',
                             'button_text'  => sanitize_text_field($child_item['button_text'] ?? ''),
