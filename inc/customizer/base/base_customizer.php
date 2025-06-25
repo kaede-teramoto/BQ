@@ -178,7 +178,7 @@ if (! class_exists('Base_Customizer')) {
             ));
         }
 
-        protected function add_number_field($wp_customize, $id, $label, $default = 0, $min = null, $max = null, $step = null, $description = '')
+        protected function add_number_field($wp_customize, $id, $label, $default = 0, $description = '', $min = null, $max = null, $step = null, $priority = null)
         {
             $this->add_setting($wp_customize, $id, array(
                 'type'              => 'theme_mod',
@@ -198,14 +198,21 @@ if (! class_exists('Base_Customizer')) {
                 $attrs['step'] = $step;
             }
 
-            $this->add_control($wp_customize, $id, array(
+            $control_args = array(
                 'label'       => $label,
                 'type'        => 'number',
                 'input_attrs' => $attrs,
-                'description' => $description,
-            ));
-        }
+            );
 
+            if ($description !== '') {
+                $control_args['description'] = $description;
+            }
+            if ($priority !== null) {
+                $control_args['priority'] = $priority;
+            }
+
+            $this->add_control($wp_customize, $id, $control_args);
+        }
 
         protected function add_url_field($wp_customize, $id, $label, $default = '', $description = '')
         {
