@@ -27,6 +27,7 @@ class Cms_Customizer extends Base_Customizer
             'newsEN00'   => __('News_E-Normal_00', 'boutiq'),
             'newsFN00'   => __('News_F-Normal_00', 'boutiq'),
             'newsGN00'   => __('News_G-Normal_00', 'boutiq'),
+            'news-original'   => __('original', 'boutiq'),
         ), 'newsAN00');
 
         $this->add_text_field($wp_customize, 'cms_top_num_setting', __('Number of articles displayed', '10'), '');

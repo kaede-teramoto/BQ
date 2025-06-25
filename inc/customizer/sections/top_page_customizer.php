@@ -77,7 +77,30 @@ class Top_Page_FV_Setting_Customizer extends Base_Customizer
         ), 'fade');
 
         $this->add_checkbox_field($wp_customize, 'top_fv_post_position', __('Center slide', 'boutiq'), false);
-        $this->add_number_field($wp_customize, 'top_fv_slider_speed', __('1 second is 1000. If you want to change the slide in 2 seconds, enter 2000.', 'boutiq'), 3000, 100, null, 100);
+        $this->add_number_field(
+            $wp_customize,
+            'top_fv_slider_move_speed',
+            __('Move time', 'boutiq'),
+            3000,
+            __('Enter the time to move the slide. 1 second is 1000.', 'boutiq'),
+            100,
+            5000,
+            100,
+            10
+        );
+
+        $this->add_number_field(
+            $wp_customize,
+            'top_fv_slider_speed',
+            __('Display time', 'boutiq'),
+            3000,
+            __('Enter the time you want the slide to be displayed. 1 second is 1000.', 'boutiq'),
+            100,
+            5000,
+            100,
+            10
+        );
+
         $this->add_checkbox_field($wp_customize, 'top_fv_slider_arrow', __('Show Arrow', 'boutiq'), false);
         $this->add_checkbox_field($wp_customize, 'top_fv_slider_pagination', __('Show Pagination', 'boutiq'), false);
         $this->add_checkbox_field($wp_customize, 'top_fv_slider_progressbar', __('Change Progress Bar', 'boutiq'), false);

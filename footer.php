@@ -371,6 +371,7 @@ $effect = "'" . esc_attr(get_theme_mod('top_fv_slider_option', 'fade')) . "'";
 $show_arrows = get_theme_mod('top_fv_slider_arrow', 'NULL');
 $top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', false);
 $top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', false);
+$top_fv_slider_move_speed = get_theme_mod('top_fv_slider_move_speed', '3000');
 $top_fv_slider_speed = get_theme_mod('top_fv_slider_speed', '3000');
 $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
 
@@ -453,7 +454,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
 
         const topPage_slider = new Swiper(".section-fv.swiper", {
             loop: true,
-            speed: 2000,
+            speed: <?php echo $top_fv_slider_move_speed; ?>,
             autoplay: {
                 delay: <?php echo $top_fv_slider_speed; ?>,
                 disableOnInteraction: false,
