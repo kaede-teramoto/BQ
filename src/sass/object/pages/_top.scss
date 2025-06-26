@@ -20,11 +20,11 @@
     @include m.mq(sp) {}
 }
 
-.p-top__subtitle {
+.fv-subtitle {
     @include v.pageTitle;
 }
 
-.p-top__text {
+.fv-text {
     margin-top: 20px;
 }
 
@@ -91,7 +91,7 @@
     transform: translateX(-50px);
     transition: all 0.8s ease 1s;
 
-    .p-top__subtitle {
+    .fv-subtitle {
         position: relative;
         overflow: hidden;
 
@@ -106,7 +106,7 @@
         }
     }
 
-    .p-top__text {}
+    .fv-text {}
 }
 
 .swiper-slide-active .swiper-catch.fv-fill {
@@ -114,7 +114,7 @@
     transform: translateX(0);
     transition: all 0.8s ease 1s;
 
-    .p-top__subtitle {
+    .fv-subtitle {
         position: relative;
 
         &::before {
@@ -317,7 +317,7 @@
 
     }
 
-    .p-top__fv__title {
+    .section-fv__fv__title {
         font-size: 6rem;
         font-weight: 100;
         line-height: 1.2;
@@ -335,7 +335,7 @@
         }
     }
 
-    .p-top__fv__text {
+    .section-fv__fv__text {
         font-size: 2.6rem;
         font-weight: normal;
         margin-top: 20px;

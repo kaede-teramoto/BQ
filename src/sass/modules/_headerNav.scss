@@ -15,6 +15,7 @@
 }
 
 .header-nav-wrapper {
+    height: 50px;
 
     @include m.mq(pc) {}
 
@@ -36,11 +37,18 @@
         font-size: 1.8rem;
     }
 
-    &>.nav__link>a {
+    &>li {
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80px;
+    }
+
+    &>li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 50px;
 
         &:hover {
             color: var(--main_color);
@@ -62,7 +70,7 @@
     }
 
     .header-nav-list li {
-        display: inline-block;
+        display: inline-flex;
         font-weight: 600;
         font-size: 1.8rem;
         margin-right: 30px;
@@ -602,6 +610,99 @@
 }
 
 .l-container:has(.megaMenu.--active) {
+    &::before {
+        opacity: 1;
+        visibility: inherit;
+        z-index: 15;
+    }
+}
+
+/* Mega Menu
+ ----------------------------------------------------------------------------------------------- */
+.menu-item-has-children:has(.mega-menu) {
+    position: relative;
+}
+
+.mega-menu {
+    display: flex;
+    gap: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    position: absolute;
+    width: auto;
+    top: 50px;
+    right: 0;
+    z-index: v.getZIndex(header);
+    padding: 30px;
+    pointer-events: none;
+    background-color: #fff;
+
+    &.--active {
+        pointer-events: fill;
+    }
+
+    .custom-sub-menu {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        min-width: 300px;
+        border-radius: 8px;
+        position: relative;
+
+        li {
+            padding: 10px 0;
+        }
+
+        li,
+        li a {
+            height: auto;
+            line-height: 1.2;
+        }
+
+        li:first-child {
+            padding-top: 0;
+            font-size: 120%;
+        }
+
+        li:nth-child(n+2) {
+            margin-left: 20px;
+        }
+    }
+
+    a {
+        white-space: nowrap
+    }
+
+    .mega-menu-img {
+        width: 300px;
+
+        img {
+            border-radius: 8px;
+        }
+    }
+
+
+}
+
+.l-container {
+    &::before {
+        content: "";
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s, visibility 0.2s;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        filter: blur(3.5px);
+        background-color: rgba(0, 0, 0, .3);
+        z-index: 10;
+        top: 0;
+        left: 0;
+    }
+}
+
+.l-container:has(.mega-menu.--active) {
     &::before {
         opacity: 1;
         visibility: inherit;

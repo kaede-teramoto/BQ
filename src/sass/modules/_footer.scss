@@ -1,6 +1,10 @@
 @use "../foundation/variables" as v;
 @use "../foundation/mixins" as m;
 
+/*最後削除します*/
+.footer+.footer {
+    margin-top: 100px;
+}
 
 /* Footer
 ----------------------------------------------------------------------------------------------- */
@@ -36,6 +40,7 @@
 
     @include m.mq(sp) {}
 
+
     .footer-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -46,7 +51,7 @@
             "footer_icon footer_nav"
             "footer_icon footer_info";
         gap: 40px;
-        padding: 80px 0 20px;
+        padding: 80px 0 40px;
 
         @include m.mq(pc) {}
 
@@ -58,11 +63,11 @@
         }
 
         @include m.mq(tab) {
-            padding: 60px 0 20px;
+            padding: 60px 0 30px;
         }
 
         @include m.mq(sp) {
-            padding: 50px 0 20px;
+            padding: 50px 0 30px;
         }
     }
 
@@ -194,7 +199,7 @@
         @include m.mq(sp) {}
     }
 
-    .footer-nav-left {
+    .footer-nav-wrap-list-left {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -213,7 +218,7 @@
         }
     }
 
-    .footer-nav-right {
+    .footer-nav-wrap-list-right {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -233,28 +238,51 @@
         }
     }
 
-    .sub-menu {
-        font-family: var(--heading_font);
-        font-size: 1.8rem;
-        line-height: 3.4rem;
-        padding-top: 5px;
+    .footer-nav-wrap-list-item {
+        width: auto;
+        max-width: 300px;
+        height: auto;
+        align-self: baseline;
+
+        @include m.mq(pc) {
+            max-width: 230px;
+        }
+
+        @include m.mq(miniPc) {
+            width: 28vw;
+            max-width: 280px;
+        }
+
+        @include m.mq(tab) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .footer-nav-list {
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            font-size: 1.6rem;
-        }
+        @include m.mq(tab) {}
 
-        @include m.mq(sp) {
-            font-size: 1.4rem;
-            line-height: 2;
-            padding-top: 0;
-        }
+        @include m.mq(sp) {}
 
         a {
-            color: var(--footer_text_color);
+            color: var(--main_color);
+        }
+
+        .sub-menu {
+            margin-left: 10px;
+            font-size: 85%;
+
+            a {
+                color: var(--text_color);
+            }
         }
     }
 
@@ -351,8 +379,6 @@
     }
 }
 
-
-
 /*  -----------------------------------------------------------------------------------------------
     footer-a-detail00
  ----------------------------------------------------------------------------------------------- */
@@ -367,6 +393,7 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
 
     .footer-wrapper {
         display: grid;
@@ -437,7 +464,7 @@
         @include m.mq(sp) {
             max-width: 100%;
             order: 4;
-            margin: 10px 0;
+            margin: 10px 0 20px;
         }
     }
 
@@ -541,7 +568,7 @@
         }
     }
 
-    .footer-nav-left {
+    .footer-nav-wrap-list-left {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -561,7 +588,7 @@
         }
     }
 
-    .footer-nav-right {
+    .footer-nav-wrap-list-right {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -578,6 +605,32 @@
 
         a {
             color: var(--footer_text_color);
+        }
+    }
+
+    .footer-nav-wrap-list-item {
+        width: auto;
+        max-width: 300px;
+        height: auto;
+        align-self: baseline;
+
+        @include m.mq(pc) {
+            max-width: 230px;
+        }
+
+        @include m.mq(miniPc) {
+            width: 22vw;
+            max-width: 265px;
+        }
+
+        @include m.mq(tab) {
+            width: 30vw;
+            max-width: 235px;
+        }
+
+        @include m.mq(sp) {
+            width: 33vw;
+            max-width: 200px;
         }
     }
 
@@ -694,6 +747,7 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
 
     .footer-wrapper {
         display: grid;
@@ -889,7 +943,7 @@
         }
     }
 
-    .footer-nav-left {
+    .footer-nav-wrap-list-left {
         display: flex;
         gap: 40px;
 
@@ -913,7 +967,7 @@
         }
     }
 
-    .footer-nav-right {
+    .footer-nav-wrap-list-right {
         display: flex;
         gap: 40px;
 
@@ -939,6 +993,41 @@
         a {
             color: var(--footer_text_color);
         }
+    }
+
+    .footer-nav-wrap-list-item {
+        width: auto;
+        max-width: 200px;
+
+        @include m.mq(pc) {
+            max-width: 230px;
+        }
+
+        @include m.mq(miniPc) {
+            max-width: 200px;
+        }
+
+        @include m.mq(tab) {
+            max-width: 235px;
+        }
+
+        @include m.mq(sp) {
+            width: 33vw;
+            max-width: 200px;
+        }
+
+    }
+
+    .footer-nav-list {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
     }
 
     .footer-info {
@@ -1013,7 +1102,6 @@
     }
 }
 
-
 /*  -----------------------------------------------------------------------------------------------
     footer-c-normal00
  ----------------------------------------------------------------------------------------------- */
@@ -1062,7 +1150,6 @@
         @include m.mq(sp) {
             order: 1;
             width: 20vw;
-            min-width: 120px;
         }
     }
 
@@ -1130,7 +1217,7 @@
         }
     }
 
-    .footer-nav-left {
+    .footer-nav-wrap-list-left {
 
         @include m.mq(pc) {}
 
@@ -1142,7 +1229,18 @@
 
     }
 
-    .footer-nav-right {
+    .footer-nav-wrap-list-right {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .footer-nav-wrap-list-item {
 
         @include m.mq(pc) {}
 

@@ -168,20 +168,29 @@ else : ?>
                 </div>
             <?php endif; ?>
 
-            <?php $sns_check = get_theme_mod('sns_1');
-            if ($sns_check) : ?>
+            <?php
+            $sns_check_1 = get_theme_mod('sns_1') ?: null;
+            $sns_check_2 = get_theme_mod('sns_2') ?: null;
+            $sns_check_3 = get_theme_mod('sns_3') ?: null;
+            $sns_check_4 = get_theme_mod('sns_4') ?: null;
+            $sns_check_5 = get_theme_mod('sns_5') ?: null;
+
+            if (array_filter([$sns_check_1, $sns_check_2, $sns_check_3, $sns_check_4, $sns_check_5])) : ?>
                 <div class="footer-sns">
                     <?php
                     for ($i = 1; $i <= 5; $i++) {
+                        $sns_check = get_theme_mod("sns_{$i}") ?: null;
 
-                        $sns_img = esc_url(get_theme_mod("sns_$i", ''));
-                        $sns_name = esc_attr(get_theme_mod("sns_name_$i", ''));
-                        $sns_img_link = esc_url(get_theme_mod("sns_link_$i", ''));
+                        if ($sns_check) {
+                            $sns_img = esc_url(get_theme_mod("sns_image_{$i}", '')) ?: null;
+                            $sns_name = esc_attr(get_theme_mod("sns_name_{$i}", '')) ?: null;
+                            $sns_img_link = esc_url(get_theme_mod("sns_link_{$i}", '')) ?: null;
 
-                        if ($sns_img) {
-                            echo '<a href="' . $sns_img_link . '" target="_blank">';
-                            echo '<img src="' . $sns_img . '" alt="' . $sns_name . '" loading="lazy">';
-                            echo '</a>';
+                            if ($sns_img) {
+                                echo '<a href="' . $sns_img_link . '" target="_blank">';
+                                echo '<img src="' . $sns_img . '" alt="' . $sns_name . '" loading="lazy">';
+                                echo '</a>';
+                            }
                         }
                     }
                     ?>
@@ -348,7 +357,7 @@ else : ?>
 
 <?php wp_footer();
 
-$fv_type = get_theme_mod('top_fv_type', '01');
+$fv_type = get_theme_mod('top_fv_type_setting', '01');
 $fv_post_count_pc = get_theme_mod('top_fv_post_count_pc', '3');
 $fv_post_count_tab = get_theme_mod('top_fv_post_count_tab', '2');
 $fv_post_count_sp = get_theme_mod('top_fv_post_count_sp', '1');
@@ -362,6 +371,7 @@ $effect = "'" . esc_attr(get_theme_mod('top_fv_slider_option', 'fade')) . "'";
 $show_arrows = get_theme_mod('top_fv_slider_arrow', 'NULL');
 $top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', false);
 $top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', false);
+$top_fv_slider_move_speed = get_theme_mod('top_fv_slider_move_speed', '3000');
 $top_fv_slider_speed = get_theme_mod('top_fv_slider_speed', '3000');
 $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
 
@@ -442,11 +452,12 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
     <?php //echo $top_fv_slider_pagination;
     if ($fv_type == "02" || $fv_type == "05") : ?>
 
-        const topPage_slider = new Swiper(".p-top.swiper", {
+        const topPage_slider = new Swiper(".section-fv.swiper", {
             loop: true,
-            speed: 2000,
+            speed: <?php echo $top_fv_slider_move_speed; ?>,
             autoplay: {
                 delay: <?php echo $top_fv_slider_speed; ?>,
+                disableOnInteraction: false,
             },
             spaceBetween: <?php echo $fv_post_space_pc; ?>,
             slidesPerView: <?php echo $fv_post_count_pc; ?>,
@@ -474,7 +485,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             },
             <?php if ($top_fv_slider_pagination == 1) { ?>
                 pagination: {
-                    el: '.p-top .swiper-pagination',
+                    el: '.section-fv .swiper-pagination',
                     clickable: true,
                 },
             <?php } ?>
@@ -482,14 +493,14 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             <?php if ($show_arrows == 1) { ?>
                 // Navigation arrows
                 navigation: {
-                    nextEl: '.p-top .swiper-button-next',
-                    prevEl: '.p-top .swiper-button-prev',
+                    nextEl: '.section-fv .swiper-button-next',
+                    prevEl: '.section-fv .swiper-button-prev',
                 },
             <?php } ?>
             <?php if ($top_fv_slider_progressbar == 1) { ?>
                 // And if we need scrollbar
                 scrollbar: {
-                    el: '.p-top .swiper-scrollbar',
+                    el: '.section-fv .swiper-scrollbar',
                 },
             <?php } ?>
 

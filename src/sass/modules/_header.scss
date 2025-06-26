@@ -15,7 +15,7 @@
   justify-content: center;
   z-index: v.getZIndex(header);
 
-  &.header__underline {
+  &.header-underline {
     border-bottom: 1px solid var(--text_color);
   }
 
@@ -23,37 +23,40 @@
   @include m.mq(sp) {
     height: 65px;
   }
-}
 
-.header-wrapper {
-  width: v.$headerWidth;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  max-width: v.$maxWidth;
+  .header-wrapper {
+    width: v.$headerWidth;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: v.$maxWidth;
 
-  &.header-card {
-    margin-top: 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
-    width: calc(v.$headerWidth + 60px);
-    padding: 10px 30px;
-    border-radius: var(--card_radius_pc);
+    &.header-card {
+      margin-top: 20px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
+      width: calc(v.$headerWidth + 60px);
+      padding: 10px 30px;
+      border-radius: var(--card_radius_pc);
 
-    @include m.mq(pc) {
-      width: 94%;
+      @include m.mq(tab) {
+        border-radius: var(--card_radius_tab);
+      }
+
+      @include m.mq(sp) {
+        border-radius: var(--card_radius_sp);
+        margin-top: 10px;
+      }
     }
+  }
 
-    @include m.mq(miniPc) {}
+  .header-nav {
+    flex-wrap: wrap;
+    @include v.rowFlex;
+  }
 
-    @include m.mq(tab) {
-      border-radius: var(--card_radius_tab);
-    }
-
-    @include m.mq(sp) {
-      border-radius: var(--card_radius_sp);
-      margin-top: 10px;
-    }
+  .header-nav-list {
+    @include v.rowFlex;
   }
 
   .header-btn {
@@ -64,9 +67,8 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-a-normal00
+  header-a-normal00
  ----------------------------------------------------------------------------------------------- */
-
 .header-a-normal00 {
   @include m.mq(miniPc) {
     display: flex;
@@ -88,7 +90,7 @@
     @include m.mq(sp) {}
   }
 
-  .header-logo {
+  .wrapper-logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -98,10 +100,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-a-base00
+  header-a-base00
  ----------------------------------------------------------------------------------------------- */
-
-.header-a-base00 {
+.headerAB00 {
   height: 120px;
 
   @include m.mq(pc) {}
@@ -118,14 +119,12 @@
     margin-top: 15px;
   }
 
-  .header-wrapper {
+  .header__wrapper {
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
       padding: 20px 50px;
-      background-color: var(--base_color);
-      border-radius: 70px;
     }
 
     @include m.mq(sp) {
@@ -152,20 +151,25 @@
     }
   }
 
-  .header-nav {
-    background-color: var(--base_color);
-    border-radius: var(--card_radius_pc);
 
-    @include m.mq(tab) {
-      border-radius: var(--card_radius_tab);
+  .headerAB00__wrapper {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+      background-color: var(--base_color);
+      border-radius: 70px;
     }
 
-    @include m.mq(sp) {
-      border-radius: var(--card_radius_sp);
-    }
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
   }
 
-  .header-logo {
+  .headerAB00__wrapper__nav {
+    background-color: var(--base_color);
+  }
+
+  .headerAB00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -175,10 +179,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-a-square00
+  header-a-square00
  ----------------------------------------------------------------------------------------------- */
-
-.header-a-square00 {
+.headerAS00 {
   padding-top: 20px;
 
   @include m.mq(sp) {
@@ -211,7 +214,8 @@
     }
   }
 
-  .header-logo {
+
+  .headerAS00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -221,10 +225,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-b-normal00
+  header-b-normal00
  ----------------------------------------------------------------------------------------------- */
-
-.header-b-normal00 {
+.headerBN00 {
 
   .hamburger {
     display: none;
@@ -240,7 +243,8 @@
     @include m.mq(sp) {}
   }
 
-  .header-logo {
+
+  .headerBN00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -248,13 +252,13 @@
     }
   }
 
-  .header-nav {
+  .headerBN00__wrapper__nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
 
-  .header-nav-wrapper {
+  .headerBN00__wrapper__nav--wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -262,11 +266,11 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-b-base00
+  header-b-base00
  ----------------------------------------------------------------------------------------------- */
-
-.header-b-base00 {
+.headerBB00 {
   padding: 15px 0;
+  position: relative;
 
   .hamburger {
     display: none;
@@ -276,7 +280,7 @@
     @include m.mq(miniPc) {
       display: flex;
       margin-left: auto;
-      background-color: var(--header_bg_color);
+      background-color: var(--accent_color);
       border-radius: 50px;
       height: 54px;
       width: 54px;
@@ -288,7 +292,8 @@
     @include m.mq(sp) {}
   }
 
-  .header-logo {
+
+  .headerBB00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -296,15 +301,15 @@
     }
   }
 
-  .header-nav {
+  .headerBB00__wrapper__nav {
     display: flex;
     justify-content: flex-end;
   }
 
-  .header-nav-wrapper {
+  .headerBB00__wrapper__nav--wrapper {
     height: 50px;
     background-color: var(--header_bg_color);
-    border-radius: var(--card_radius_pc);
+    border-radius: 50px;
     padding: 10px 26px;
     position: absolute;
     left: 50%;
@@ -312,24 +317,16 @@
 
     @include m.mq(miniPc) {
       display: none;
-
-      @include m.mq(tab) {
-        border-radius: var(--card_radius_tab);
-      }
-
-      @include m.mq(sp) {
-        border-radius: var(--card_radius_sp);
-      }
     }
+
   }
 }
 
-
 /*  -----------------------------------------------------------------------------------------------
-    header-b-square00
+  header-b-square00
  ----------------------------------------------------------------------------------------------- */
-
-.header-b-square00 {
+.headerBS00 {
+  position: relative;
 
   .hamburger {
     display: none;
@@ -357,7 +354,8 @@
     }
   }
 
-  .header-logo {
+
+  .headerBS00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -365,7 +363,7 @@
     }
   }
 
-  .header-nav {
+  .headerBS00__wrapper__nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -376,7 +374,7 @@
     }
   }
 
-  .header-nav-wrapper {
+  .headerBS00__wrapper__nav--wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -384,10 +382,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-b-logo00
+  header-b-logo00
  ----------------------------------------------------------------------------------------------- */
-
-.header-b-logo00 {
+.headerBL00 {
   height: 120px;
 
   @include m.mq(tab) {
@@ -398,7 +395,7 @@
     height: 80px;
   }
 
-  .header-wrapper {
+  .header__wrapper {
     position: relative;
     justify-content: space-between;
   }
@@ -417,13 +414,14 @@
     @include m.mq(sp) {}
   }
 
-  .header-nav>.c-btn {
+  .headerAB00__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
   }
 
-  .header-logo {
+
+  .headerBL00__wrapper__logo {
     height: 80px;
     max-width: 250px;
     position: absolute;
@@ -444,10 +442,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-c-normal00
+  header-c-normal00
  ----------------------------------------------------------------------------------------------- */
-
-.header-c-normal00 {
+.headerCN00 {
   .hamburger {
     display: none;
 
@@ -462,13 +459,14 @@
     @include m.mq(sp) {}
   }
 
-  .header-nav>.c-btn {
+  .headerAB00__wrapper__nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
   }
 
-  .header-logo {
+
+  .headerCN00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -478,10 +476,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-c-square00
+  header-c-square00
  ----------------------------------------------------------------------------------------------- */
-
-.header-c-square00 {
+.headerCS00 {
   .hamburger {
     display: none;
 
@@ -508,7 +505,8 @@
     }
   }
 
-  .header-logo {
+
+  .headerCS00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -516,7 +514,7 @@
     }
   }
 
-  .header-nav-list {
+  .headerCS00__wrapper__nav--wrapper__list {
     li {
       text-align: center;
       vertical-align: middle;
@@ -524,13 +522,12 @@
   }
 }
 
-
 /*  -----------------------------------------------------------------------------------------------
-    header-d-normal00
+  header-d-normal00
  ----------------------------------------------------------------------------------------------- */
 
-.header-d-normal00 {
-  .header-btn {
+.headerDN00 {
+  .headerDN00__wrapper__btn {
     display: none;
   }
 
@@ -546,7 +543,8 @@
     @include m.mq(sp) {}
   }
 
-  .header-logo {
+
+  .headerDN00__wrapper__logo {
     width: 180px;
 
     @include m.mq(sp) {
@@ -556,10 +554,10 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-e-normal00
+  header-e-normal00
  ----------------------------------------------------------------------------------------------- */
 
-.header-e-normal00 {
+.headerEN00 {
   height: 120px;
 
   @include m.mq(sp) {
@@ -580,19 +578,11 @@
     @include m.mq(sp) {}
   }
 
-  .header-logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
-
-  .header-wrapper {
+  .headerEN00__wrapper {
     margin: 20px 198px;
     background-color: var(--header_bg_color);
     padding-inline: 30px;
-    border-radius: var(--card_radius_pc);
+    border-radius: 70px;
     max-width: v.$pcWidth;
     height: 80px;
 
@@ -607,7 +597,6 @@
     @include m.mq(tab) {
       padding-inline: 34px;
       max-width: v.$tabWidth;
-      border-radius: var(--card_radius_tab);
     }
 
     @include m.mq(sp) {
@@ -615,17 +604,22 @@
       height: 65px;
       margin: 10px 0px;
       max-width: v.$spWidth;
-      border-radius: var(--card_radius_sp);
+    }
+  }
+
+  .headerEN00__wrapper__logo {
+    width: 180px;
+
+    @include m.mq(sp) {
+      width: 120px;
     }
   }
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-e-base00
+  header-e-base00
  ----------------------------------------------------------------------------------------------- */
-
-.header-e-base00 {
-
+.headerEB00 {
   .hamburger {
     display: none;
 
@@ -640,30 +634,27 @@
     @include m.mq(sp) {}
   }
 
-  .header-wrapper {
-    margin: 20px auto 0;
+  .headerEB00__wrapper {
+    margin: 0 auto;
     padding-inline: 30px;
     max-width: v.$pcWidth;
     background-color: var(--header_bg_color);
-    border-radius: var(--card_radius_pc);
 
     @include m.mq(miniPc) {
+      padding-inline: 0px;
       max-width: v.$miniWidth;
     }
 
     @include m.mq(tab) {
       max-width: v.$tabWidth;
-      border-radius: var(--card_radius_tab);
-      padding-inline: 20px;
     }
 
     @include m.mq(sp) {
       max-width: v.$spWidth;
-      border-radius: var(--card_radius_sp);
     }
   }
 
-  .header-logo {
+  .headerEB00__wrapper__logo {
     width: 206px;
 
     @include m.mq(miniPc) {
@@ -677,10 +668,9 @@
 }
 
 /*  -----------------------------------------------------------------------------------------------
-    header-f-square00
+  header-f-square00
  ----------------------------------------------------------------------------------------------- */
-
-.header-f-square00 {
+.headerFS00 {
   height: 160px;
 
   @include m.mq(pc) {}
@@ -695,24 +685,14 @@
     height: 65px;
   }
 
-  .header-wrapper {
+  .headerFS00__wrapper {
     width: 1100px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "header_logo header_btn"
-      "header_nav header_nav";
-    gap: 10px;
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
       width: 800px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
     @include m.mq(tab) {
@@ -724,7 +704,29 @@
     }
   }
 
-  .header-logo {
+  .header__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header_logo header_btn"
+      "header_nav header_nav";
+    gap: 10px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+  }
+
+  .headerFS00__wrapper__logo {
     grid-area: header_logo;
 
     @include m.mq(sp) {
@@ -732,7 +734,7 @@
     }
   }
 
-  .header-btn {
+  .headerFS00__wrapper__btn {
     grid-area: header_btn;
     display: flex;
     align-items: center;
@@ -749,7 +751,7 @@
     @include m.mq(sp) {}
   }
 
-  .header-nav {
+  .headerFS00__wrapper__nav {
     grid-area: header_nav;
 
     @include m.mq(pc) {}
@@ -762,7 +764,7 @@
 
   }
 
-  .header-nav-wrapper {
+  .headerFS00__wrapper__nav--wrapper {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
@@ -774,7 +776,7 @@
     @include m.mq(sp) {}
   }
 
-  .header-nav-list {
+  .headerFS00__wrapper__nav--wrapper__list {
     display: flex;
     align-items: center;
     justify-content: center;

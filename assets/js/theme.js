@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuItems.length > 0) {
 
         menuItems.forEach(item => {
-            const megaMenu = item.querySelector('.megaMenu');
+            const megaMenu = item.querySelector('.mega-menu');
 
             if (megaMenu) {
                 // マウスオーバーイベント
@@ -483,6 +483,18 @@ document.querySelectorAll('.plan_toggle').forEach(toggle => {
     });
 });
 
+// Mega-menuのからリンクの非表示
+// document.addEventListener("DOMContentLoaded", function () {
+//     const links = document.querySelectorAll(".menu-link");
+
+//     links.forEach((link) => {
+//         const href = link.getAttribute("href");
+
+//         if (!href || href === "#" || href.trim() === "") {
+//             link.style.display = "none"; // または link.remove();
+//         }
+//     });
+// });
 
 
 

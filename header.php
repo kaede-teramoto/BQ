@@ -30,7 +30,7 @@ if ($header_bg_gradation) {
 // Setting underline
 $header_under_line = get_theme_mod('header_under_line', false);
 if ($header_under_line) {
-    $header_under_line = ' header__underline';
+    $header_under_line = ' header-underline';
 } else {
     $header_under_line = null;
 }

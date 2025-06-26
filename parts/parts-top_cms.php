@@ -17,7 +17,7 @@ $btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
 $text_link_design = get_theme_mod('text_link_setting', '01');
 $text_icon_design = get_theme_mod('text_link_icon_setting', '01');
 
-$link_type = get_theme_mod('cms_link_type', '01');
+$link_type = get_theme_mod('cms_link_type_setting', '01');
 $topCms_btn_link   = esc_url(get_theme_mod('cms_top_btn_link_setting'));
 $categories = get_categories(array(
     'hide_empty' => true // 投稿がないカテゴリは除外
@@ -39,8 +39,9 @@ if (is_front_page()) {
         $title_underline_thickness = '';
     }
 }
-
-if ($cms_design == 'newsBN00') : ?>
+if ($cms_design == 'news-original') :
+    get_template_part('parts/parts', 'originalCms');
+elseif ($cms_design == 'newsBN00') : ?>
 
     <div class="top-cms__wrapper <?php echo $cms_design; ?>__wrapper js-fadeIn">
         <div class="top-cms <?php echo $cms_design; ?>">
@@ -69,6 +70,8 @@ if ($cms_design == 'newsBN00') : ?>
                         $args = array(
                             'post_type' => 'post',
                             'posts_per_page' => $cms_num,
+                            'orderby'   => 'date',
+                            'order'     => 'ASC'
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()) : ?>
@@ -187,6 +190,8 @@ if ($cms_design == 'newsBN00') : ?>
                     $args = array(
                         'post_type' => 'post',
                         'posts_per_page' => $cms_num,
+                        'orderby'   => 'date',
+                        'order'     => 'ASC'
                     );
                     $query = new WP_Query($args);
                     if ($query->have_posts()) : ?>
@@ -313,6 +318,8 @@ if ($cms_design == 'newsBN00') : ?>
                     $args = array(
                         'post_type' => 'post',
                         'posts_per_page' => $cms_num,
+                        'orderby'   => 'date',
+                        'order'     => 'ASC'
                     );
                     $query = new WP_Query($args);
                     if ($query->have_posts()) : ?>
@@ -438,6 +445,8 @@ if ($cms_design == 'newsBN00') : ?>
                 $args = array(
                     'post_type' => 'post',
                     'posts_per_page' => $cms_num,
+                    'orderby'   => 'date',
+                    'order'     => 'ASC'
                 );
                 $query = new WP_Query($args);
                 if ($query->have_posts()) : ?>
