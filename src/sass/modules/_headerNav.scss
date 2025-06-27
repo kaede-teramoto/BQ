@@ -104,15 +104,11 @@
         justify-content: flex-end;
         margin-left: auto;
         height: 80px;
-        padding: 0 32px 0 42px;
+        padding: 0 15px 0 30px;
 
-        @include m.mq(pc) {
-            padding-left: 35px;
-        }
+        @include m.mq(pc) {}
 
         @include m.mq(miniPc) {
-            height: 54px;
-            width: 54px;
             padding: 0;
         }
     }
