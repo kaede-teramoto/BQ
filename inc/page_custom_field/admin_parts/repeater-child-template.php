@@ -23,6 +23,23 @@ echo '</div>'; // .child-repeater-header
 
 echo '<div class="child-repeater-content">';
 
+$content_display = $child['content_display'] ?? 'on';
+
+echo '<div class="content-type-field">';
+echo '<p class="content-type-field-title">コンテンツの表示</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex  . '][content_display]" value="on" ' . checked($content_display, 'on', false) . '> 表示';
+echo '</label>';
+
+echo '<label>';
+echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex  . '][content_display]" value="off" ' . checked($content_display, 'off', false) . '> 非表示';
+echo '</label>';
+
+echo '</p>';
+
+echo '</div>';
+
 // 小タイトル
 echo '<p><label>小タイトル</label><br />';
 echo '<input type="text" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex . '][subtitle]" value="' . esc_attr($child['subtitle'] ?? '') . '" /></p>';
