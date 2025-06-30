@@ -48,6 +48,14 @@
         margin-top: 10px;
       }
     }
+
+    .header-logo {
+      width: 180px;
+
+      @include m.mq(sp) {
+        width: 120px;
+      }
+    }
   }
 
   .header-nav {
@@ -90,19 +98,12 @@
     @include m.mq(sp) {}
   }
 
-  .wrapper-logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
 }
 
 /*  -----------------------------------------------------------------------------------------------
   header-a-base00
  ----------------------------------------------------------------------------------------------- */
-.headerAB00 {
+.header-a-base00 {
   height: 120px;
 
   @include m.mq(pc) {}
@@ -119,19 +120,41 @@
     margin-top: 15px;
   }
 
-  .header__wrapper {
+  .header-wrapper {
 
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
-      padding: 20px 50px;
+      padding: 20px 30px;
+      background-color: var(--header_bg_color);
+      border-radius: var(--card_radius_pc);
+    }
+
+    @include m.mq(tab) {
+      border-radius: var(--card_radius_tab);
     }
 
     @include m.mq(sp) {
       height: 65px;
       padding-inline: 19px;
-      border-radius: 50px;
+      border-radius: var(--card_radius_sp);
     }
+  }
+
+  .header-nav {
+    background-color: var(--header_bg_color);
+    border-radius: var(--card_radius_pc);
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {
+      background-color: transparent;
+      border-radius: unset;
+    }
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
   }
 
   .hamburger {
@@ -150,38 +173,12 @@
       margin: 0;
     }
   }
-
-
-  .headerAB00__wrapper {
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-      background-color: var(--base_color);
-      border-radius: 70px;
-    }
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-  }
-
-  .headerAB00__wrapper__nav {
-    background-color: var(--base_color);
-  }
-
-  .headerAB00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
 }
 
 /*  -----------------------------------------------------------------------------------------------
   header-a-square00
  ----------------------------------------------------------------------------------------------- */
-.headerAS00 {
+.header-a-square00 {
   padding-top: 20px;
 
   @include m.mq(sp) {
@@ -213,21 +210,12 @@
       padding: 22.5px 12px;
     }
   }
-
-
-  .headerAS00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
 }
 
 /*  -----------------------------------------------------------------------------------------------
   header-b-normal00
  ----------------------------------------------------------------------------------------------- */
-.headerBN00 {
+.header-b-normal00 {
 
   .hamburger {
     display: none;
@@ -243,22 +231,13 @@
     @include m.mq(sp) {}
   }
 
-
-  .headerBN00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
-
-  .headerBN00__wrapper__nav {
+  .header-nav {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
+    align-items: center;
   }
 
-  .headerBN00__wrapper__nav--wrapper {
+  .header-nav-wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -268,9 +247,8 @@
 /*  -----------------------------------------------------------------------------------------------
   header-b-base00
  ----------------------------------------------------------------------------------------------- */
-.headerBB00 {
+.header-b-base00 {
   padding: 15px 0;
-  position: relative;
 
   .hamburger {
     display: none;
@@ -280,7 +258,7 @@
     @include m.mq(miniPc) {
       display: flex;
       margin-left: auto;
-      background-color: var(--accent_color);
+      background-color: var(--header_bg_color);
       border-radius: 50px;
       height: 54px;
       width: 54px;
@@ -292,24 +270,15 @@
     @include m.mq(sp) {}
   }
 
-
-  .headerBB00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
-
-  .headerBB00__wrapper__nav {
+  .header-nav {
     display: flex;
     justify-content: flex-end;
   }
 
-  .headerBB00__wrapper__nav--wrapper {
+  .header-nav-wrapper {
     height: 50px;
     background-color: var(--header_bg_color);
-    border-radius: 50px;
+    border-radius: var(--card_radius_pc);
     padding: 10px 26px;
     position: absolute;
     left: 50%;
@@ -325,8 +294,7 @@
 /*  -----------------------------------------------------------------------------------------------
   header-b-square00
  ----------------------------------------------------------------------------------------------- */
-.headerBS00 {
-  position: relative;
+.header-b-square00 {
 
   .hamburger {
     display: none;
@@ -354,16 +322,7 @@
     }
   }
 
-
-  .headerBS00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
-
-  .headerBS00__wrapper__nav {
+  .header-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -374,7 +333,7 @@
     }
   }
 
-  .headerBS00__wrapper__nav--wrapper {
+  .header-nav-wrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -384,7 +343,7 @@
 /*  -----------------------------------------------------------------------------------------------
   header-b-logo00
  ----------------------------------------------------------------------------------------------- */
-.headerBL00 {
+.header-b-logo00 {
   height: 120px;
 
   @include m.mq(tab) {
@@ -395,7 +354,7 @@
     height: 80px;
   }
 
-  .header__wrapper {
+  .header-wrapper {
     position: relative;
     justify-content: space-between;
   }
@@ -414,14 +373,13 @@
     @include m.mq(sp) {}
   }
 
-  .headerAB00__wrapper__nav>.c-btn {
+  .header-nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
     }
   }
 
-
-  .headerBL00__wrapper__logo {
+  .header-logo {
     height: 80px;
     max-width: 250px;
     position: absolute;
@@ -444,7 +402,7 @@
 /*  -----------------------------------------------------------------------------------------------
   header-c-normal00
  ----------------------------------------------------------------------------------------------- */
-.headerCN00 {
+.header-c-normal00 {
   .hamburger {
     display: none;
 
@@ -459,18 +417,9 @@
     @include m.mq(sp) {}
   }
 
-  .headerAB00__wrapper__nav>.c-btn {
+  .header-nav>.c-btn {
     @include m.mq(miniPc) {
       display: none;
-    }
-  }
-
-
-  .headerCN00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
     }
   }
 }
@@ -478,7 +427,7 @@
 /*  -----------------------------------------------------------------------------------------------
   header-c-square00
  ----------------------------------------------------------------------------------------------- */
-.headerCS00 {
+.header-c-square00 {
   .hamburger {
     display: none;
 
@@ -505,16 +454,7 @@
     }
   }
 
-
-  .headerCS00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
-
-  .headerCS00__wrapper__nav--wrapper__list {
+  .header-nav-list {
     li {
       text-align: center;
       vertical-align: middle;
@@ -526,8 +466,8 @@
   header-d-normal00
  ----------------------------------------------------------------------------------------------- */
 
-.headerDN00 {
-  .headerDN00__wrapper__btn {
+.header-d-normal00 {
+  .header-btn {
     display: none;
   }
 
@@ -542,22 +482,13 @@
 
     @include m.mq(sp) {}
   }
-
-
-  .headerDN00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
-  }
 }
 
 /*  -----------------------------------------------------------------------------------------------
   header-e-normal00
  ----------------------------------------------------------------------------------------------- */
 
-.headerEN00 {
+.header-e-normal00 {
   height: 120px;
 
   @include m.mq(sp) {
@@ -578,11 +509,11 @@
     @include m.mq(sp) {}
   }
 
-  .headerEN00__wrapper {
+  .header-wrapper {
     margin: 20px 198px;
     background-color: var(--header_bg_color);
-    padding-inline: 30px;
-    border-radius: 70px;
+    padding: 0 15px 0 30px;
+    border-radius: var(--card_radius_pc);
     max-width: v.$pcWidth;
     height: 80px;
 
@@ -604,14 +535,6 @@
       height: 65px;
       margin: 10px 0px;
       max-width: v.$spWidth;
-    }
-  }
-
-  .headerEN00__wrapper__logo {
-    width: 180px;
-
-    @include m.mq(sp) {
-      width: 120px;
     }
   }
 }
