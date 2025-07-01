@@ -58,6 +58,17 @@ document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
     });
 });
 
+//ハンバーガーメニュー内：サブメニューがある場合
+document.addEventListener('DOMContentLoaded', () => {
+    const hmMenuItems = document.querySelectorAll('.hm .nav-item');
+
+    hmMenuItems.forEach(item => {
+        if (item.querySelector('.sub-menu')) {
+            item.classList.add('menu-item-has-children');
+        }
+    });
+});
+
 // サブメニュー開閉：メニュー内に子メニューがある場合
 document.querySelectorAll('.menu-item-has-children > a').forEach(anchor => {
     anchor.addEventListener('click', event => {
@@ -75,7 +86,7 @@ document.querySelectorAll('.menu-item-has-children > a').forEach(anchor => {
 });
 
 // アンカーリンククリック時：ハンバーガーメニューとサブメニューを閉じる + スクロール
-document.querySelectorAll('.menu-item a').forEach(link => {
+document.querySelectorAll('.nav-item a').forEach(link => {
     link.addEventListener('click', event => {
         const href = link.getAttribute('href');
         if (!href) return;
