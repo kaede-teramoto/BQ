@@ -19,16 +19,16 @@ class Cms_Customizer extends Base_Customizer
         $this->add_checkbox_field($wp_customize, 'cms_top_display', __('Show CMS', 'boutiq'), false);
 
         $this->add_select_field($wp_customize, 'cms_top_design_setting', __('CMS TOP Design Setting', 'boutiq'), array(
-            'newsAN00'   => __('News_A-Normal_00', 'boutiq'),
-            'newsAT00'   => __('News_A-Text_00', 'boutiq'),
-            'newsBN00'   => __('News_B-Normal_00', 'boutiq'),
-            'newsCN00'   => __('News_C-Normal_00', 'boutiq'),
-            'newsDN00'   => __('News_D-Normal_00', 'boutiq'),
-            'newsEN00'   => __('News_E-Normal_00', 'boutiq'),
-            'newsFN00'   => __('News_F-Normal_00', 'boutiq'),
-            'newsGN00'   => __('News_G-Normal_00', 'boutiq'),
+            'news-a-normal00'   => __('News_A-Normal_00', 'boutiq'),
+            'news-a-text00'   => __('News_A-Text_00', 'boutiq'),
+            'news-b-normal00'   => __('News_B-Normal_00', 'boutiq'),
+            'news-c-normal00'   => __('News_C-Normal_00', 'boutiq'),
+            'news-d-normal00'   => __('News_D-Normal_00', 'boutiq'),
+            'news-e-normal00'   => __('News_E-Normal_00', 'boutiq'),
+            'news-f-normal00'   => __('News_F-Normal_00', 'boutiq'),
+            'news-g-normal00'   => __('News_G-Normal_00', 'boutiq'),
             'news-original'   => __('original', 'boutiq'),
-        ), 'newsAN00');
+        ), 'news-a-normal00');
 
         $this->add_text_field($wp_customize, 'cms_top_num_setting', __('Number of articles displayed', '10'), '');
         $this->add_text_field($wp_customize, 'cms_top_main_title_setting', __('CMS Main Title', 'boutiq'), '');

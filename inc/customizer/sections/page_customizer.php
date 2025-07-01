@@ -21,17 +21,17 @@ class Page_Title_Customizer extends Base_Customizer
     protected function add_controls($wp_customize)
     {
         $this->add_select_field($wp_customize, 'boutiq_page_design_setting', __('Page Title Design', 'boutiq'), array(
-            'title-as00' => __('Title_A-Screen_00', 'boutiq'),
-            'title-ac00' => __('Title_A-Contents_00', 'boutiq'),
-            'title-ar00' => __('Title_A-Right_00', 'boutiq'),
-            'title-al00' => __('Title_A-Left_00', 'boutiq'),
-            'title-ap00' => __('Title_A-Photo_00', 'boutiq'),
-            'title-at00' => __('Title_A-Top_00', 'boutiq'),
+            'title-a-screen00' => __('Title_A-Screen_00', 'boutiq'),
+            'title-a-contents00' => __('Title_A-Contents_00', 'boutiq'),
+            'title-a-right00' => __('Title_A-Right_00', 'boutiq'),
+            'title-a-left00' => __('Title_A-Left_00', 'boutiq'),
+            'title-a-photo00' => __('Title_A-Photo_00', 'boutiq'),
+            'title-a-top00' => __('Title_A-Top_00', 'boutiq'),
             'title-a-text00' => __('Title_A-Text_00', 'boutiq'),
-            'title-bn00' => __('Title_B-Normal_00', 'boutiq'),
-            'title-cn00' => __('Title_C-Normal_00', 'boutiq'),
-            'title-cp00' => __('Title_C-Photo_00', 'boutiq'),
-        ), 'title-as00');
+            'title-b-normal00' => __('Title_B-Normal_00', 'boutiq'),
+            'title-c-normal00' => __('Title_C-Normal_00', 'boutiq'),
+            'title-c-photo00' => __('Title_C-Photo_00', 'boutiq'),
+        ), 'title-a-screen00');
 
         $this->add_select_field($wp_customize, 'content_title_setting', __('Content Title Design', 'boutiq'), array(
             '01' => __('Content Title1', 'boutiq'),

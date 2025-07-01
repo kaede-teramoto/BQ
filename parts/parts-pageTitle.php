@@ -8,7 +8,7 @@
 // 現在の投稿のIDを取得
 $post_id = get_the_ID();
 
-$pageTitle_design   = esc_attr(get_theme_mod('boutiq_page_design_setting', 'title-as00'));
+$pageTitle_design   = esc_attr(get_theme_mod('boutiq_page_design_setting', 'title-a-screen00'));
 
 // サブタイトルとページ概要を取得
 $subTitle = get_post_meta($post_id, '_custom_subtitle', true);
