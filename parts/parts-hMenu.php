@@ -138,19 +138,19 @@ if (!($hm_design_type == 'hmenu-dont-use')) :
                                     <?php if ($hm_banner01_display) : ?>
                                         <div class="hm-banner-left">
                                             <div class="hm-banner-item">
-                                                <a class="hm-banner__link" href="<?php echo $hm_banner_link01; ?>" <?php echo $banner01_target; ?>>
-                                                    <div class="hm-banner__bg" style="background-image: url(<?php echo $hm_banner_img01; ?>);"></div>
-                                                    <span class="hm-banner__text"><?php echo $hm_banner_text01; ?></span>
+                                                <a class="hm-banner-link" href="<?php echo $hm_banner_link01; ?>" <?php echo $banner01_target; ?>>
+                                                    <div class="hm-banner-bg" style="background-image: url(<?php echo $hm_banner_img01; ?>);"></div>
+                                                    <span class="hm-banner-text"><?php echo $hm_banner_text01; ?></span>
                                                 </a>
                                             </div>
                                         </div>
                                     <?php endif; ?>
                                     <?php if ($hm_banner02_display) : ?>
-                                        <div class="hm-banner__right">
-                                            <div class="hm-banner__item">
-                                                <a class="hm-banner__link" href="<?php echo $hm_banner_link02; ?>" <?php echo $banner02_target; ?>>
-                                                    <div class="hm-banner__bg" style="background-image: url(<?php echo $hm_banner_img02; ?>);"></div>
-                                                    <span class="hm-banner__text"><?php echo $hm_banner_text02; ?></span>
+                                        <div class="hm-banner-right">
+                                            <div class="hm-banner-item">
+                                                <a class="hm-banner-link" href="<?php echo $hm_banner_link02; ?>" <?php echo $banner02_target; ?>>
+                                                    <div class="hm-banner-bg" style="background-image: url(<?php echo $hm_banner_img02; ?>);"></div>
+                                                    <span class="hm-banner-text"><?php echo $hm_banner_text02; ?></span>
                                                 </a>
                                             </div>
                                         </div>
@@ -168,7 +168,7 @@ if (!($hm_design_type == 'hmenu-dont-use')) :
 
                                 if (array_filter([$sns_check_1, $sns_check_2, $sns_check_3, $sns_check_4, $sns_check_5])) :
                                 ?>
-                                    <div class="hm-sns <?php echo $hm_design_type; ?>__sns">
+                                    <div class="hm-sns">
                                         <?php
                                         for ($i = 1; $i <= 5; $i++) {
                                             $sns_check = get_theme_mod("sns_{$i}") ?: null;
@@ -179,7 +179,7 @@ if (!($hm_design_type == 'hmenu-dont-use')) :
                                                 $sns_img_link = esc_url(get_theme_mod("sns_link_{$i}", '')) ?: null;
 
                                                 if ($sns_img) {
-                                                    echo '<a class="hm-sns__link hm-sns__link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
+                                                    echo '<a class="hm-sns-link hm-sns-link0' . $i . '" href="' . $sns_img_link . '" target="_blank">';
                                                     echo '<img src="' . $sns_img . '" alt="" loading="lazy">';
                                                     echo '</a>';
                                                 }
