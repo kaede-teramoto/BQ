@@ -523,18 +523,20 @@
 
     @include m.mq(miniPc) {
       max-width: v.$miniWidth;
+      padding: 0 30px;
     }
 
     @include m.mq(tab) {
-      padding-inline: 34px;
+      padding: 0 20px;
       max-width: v.$tabWidth;
+      border-radius: var(--card_radius_tab);
     }
 
     @include m.mq(sp) {
-      padding-inline: 30px;
       height: 65px;
       margin: 10px 0px;
       max-width: v.$spWidth;
+      border-radius: var(--card_radius_sp);
     }
   }
 }
@@ -542,7 +544,21 @@
 /*  -----------------------------------------------------------------------------------------------
   header-e-base00
  ----------------------------------------------------------------------------------------------- */
-.headerEB00 {
+.header-e-base00 {
+  margin-top: 20px;
+
+  @include m.mq(pc) {}
+
+  @include m.mq(miniPc) {}
+
+  @include m.mq(tab) {
+    margin-top: 15px;
+  }
+
+  @include m.mq(sp) {
+    margin-top: 10px;
+  }
+
   .hamburger {
     display: none;
 
@@ -557,27 +573,32 @@
     @include m.mq(sp) {}
   }
 
-  .headerEB00__wrapper {
+  .header-wrapper {
     margin: 0 auto;
-    padding-inline: 30px;
+    padding: 0 15px 0 30px;
     max-width: v.$pcWidth;
     background-color: var(--header_bg_color);
+    border-radius: var(--card_radius_pc);
+    justify-content: space-between;
 
     @include m.mq(miniPc) {
-      padding-inline: 0px;
       max-width: v.$miniWidth;
+      padding: 0 30px;
     }
 
     @include m.mq(tab) {
       max-width: v.$tabWidth;
+      border-radius: var(--card_radius_tab);
+      padding: 0 20px;
     }
 
     @include m.mq(sp) {
       max-width: v.$spWidth;
+      border-radius: var(--card_radius_sp);
     }
   }
 
-  .headerEB00__wrapper__logo {
+  .header-logo {
     width: 206px;
 
     @include m.mq(miniPc) {
@@ -593,7 +614,7 @@
 /*  -----------------------------------------------------------------------------------------------
   header-f-square00
  ----------------------------------------------------------------------------------------------- */
-.headerFS00 {
+.header-f-square00 {
   height: 160px;
 
   @include m.mq(pc) {}
@@ -608,7 +629,7 @@
     height: 65px;
   }
 
-  .headerFS00__wrapper {
+  .header-wrapper {
     width: 1100px;
     margin: 0 auto;
 
@@ -627,7 +648,7 @@
     }
   }
 
-  .header__wrapper {
+  .header-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -649,15 +670,11 @@
     @include m.mq(sp) {}
   }
 
-  .headerFS00__wrapper__logo {
+  .header-logo {
     grid-area: header_logo;
-
-    @include m.mq(sp) {
-      width: 120px;
-    }
   }
 
-  .headerFS00__wrapper__btn {
+  .header-btn {
     grid-area: header_btn;
     display: flex;
     align-items: center;
@@ -674,12 +691,16 @@
     @include m.mq(sp) {}
   }
 
-  .headerFS00__wrapper__nav {
+  .header-nav {
     grid-area: header_nav;
+    width: 100%;
 
     @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {
+      justify-content: flex-end;
+      width: auto;
+    }
 
     @include m.mq(tab) {}
 
@@ -687,7 +708,9 @@
 
   }
 
-  .headerFS00__wrapper__nav--wrapper {
+  .header-nav-wrapper {
+    width: 100%;
+
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {
@@ -699,7 +722,7 @@
     @include m.mq(sp) {}
   }
 
-  .headerFS00__wrapper__nav--wrapper__list {
+  .header-nav-list {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -709,6 +732,7 @@
       padding: 0 30px;
       position: relative;
       text-align: center;
+      white-space: nowrap;
 
       &:not(:first-child)::before {
         display: none;
