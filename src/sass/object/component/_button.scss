@@ -677,9 +677,9 @@
     }
 }
 
-.hm__btn {}
+.hm-btn {}
 
-.hm__btn__link {
+.hm-btn-link {
     width: 100%;
     display: inline-flex;
     justify-content: center;
@@ -688,8 +688,8 @@
     line-height: 50px;
 }
 
-.hm__btn.hm__btn--first {
-    .hm__btn__link {
+.hm-btn.hm-btn--first {
+    .hm-btn-link {
         border-radius: var(--hm_btn_radius);
         background-color: var(--hm_btn_bg_color);
         color: var(--hm_btn_text_color);
@@ -705,8 +705,8 @@
     }
 }
 
-.hm__btn.hm__btn--second {
-    .hm__btn__link {
+.hm-btn.hm-btn--second {
+    .hm-btn-link {
         border-radius: var(--hm_btn_sub_radius);
         background-color: var(--hm_btn_sub_bg_color);
         color: var(--hm_btn_sub_text_color);
