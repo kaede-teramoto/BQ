@@ -20,17 +20,17 @@ class Hamburger_Design_Customizer extends Base_Customizer
     protected function add_controls($wp_customize)
     {
         $this->add_select_field($wp_customize, 'hm_design_setting', __('Hamburger menu Design Type', 'boutiq'), array(
-            'hMenuDU'  => __("Don't use hamburger menu", 'boutiq'),
-            'hMenuOR'  => __('Set Original Hamburger menu', 'boutiq'),
-            'hMenuAP00' => __('HMenu_A-Photo_00', 'boutiq'),
-            'hMenuAS00' => __('HMenu_A-Shade_00', 'boutiq'),
-            'hMenuBP00' => __('HMenu_B-Photo_00', 'boutiq'),
-            'hMenuBS00' => __('HMenu_B-Shade_00', 'boutiq'),
-            'hMenuCP00' => __('HMenu_C-Photo_00', 'boutiq'),
-            'hMenuCS00' => __('HMenu_C-Shade_00', 'boutiq'),
-            'hMenuDP00' => __('HMenu_D-Photo_00', 'boutiq'),
-            'hMenuDS00' => __('HMenu_D-Shade_00', 'boutiq'),
-        ), 'hMenuDU');
+            'hmenu-dont-use'  => __("Don't use hamburger menu", 'boutiq'),
+            'hmenu-original'  => __('Set Original Hamburger menu', 'boutiq'),
+            'hmenu-a-photo00' => __('HMenu_A-Photo_00', 'boutiq'),
+            'hmenu-a-shade00' => __('HMenu_A-Shade_00', 'boutiq'),
+            'hmenu-b-photo00' => __('HMenu_B-Photo_00', 'boutiq'),
+            'hmenu-b-shade00' => __('HMenu_B-Shade_00', 'boutiq'),
+            'hmenu-c-photo00' => __('HMenu_C-Photo_00', 'boutiq'),
+            'hmenu-c-shade00' => __('HMenu_C-Shade_00', 'boutiq'),
+            'hmenu-d-photo00' => __('HMenu_D-Photo_00', 'boutiq'),
+            'hmenu-d-shade00' => __('HMenu_D-Shade_00', 'boutiq'),
+        ), 'hmenu-dont-use');
 
         $this->add_select_field($wp_customize, 'hm_icon_design_setting', __('Hamburger Icon Design Type', 'boutiq'), array(
             '01' => __('Hamburger Icon Design Type1', 'boutiq'),

@@ -539,6 +539,8 @@
     flex-wrap: wrap;
     gap: 15px;
     margin-right: 10px;
+    justify-content: center;
+    height: 50px;
 
     @include m.mq(pc) {}
 
@@ -555,9 +557,12 @@
     }
 }
 
+
 .hm-sns-link {
     display: flex;
     align-items: center;
+    width: auto;
+    height: 100%;
 
     @include m.mq(pc) {}
 
@@ -566,6 +571,11 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .hm-info {
@@ -945,21 +955,6 @@
         @include m.mq(sp) {
             width: 100%;
         }
-    }
-
-    .hm-sns {
-        justify-content: center;
-        height: 50px;
-
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .hm-sns-link {
-        width: auto;
-        height: 100%;
     }
 }
 
