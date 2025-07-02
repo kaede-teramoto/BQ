@@ -1,6 +1,12 @@
 @use "../../foundation/variables" as v;
 @use "../../foundation/mixins" as m;
 
+section {
+    iframe {
+        max-width: 100%;
+    }
+}
+
 .section {
     padding: 100px 0;
     background-repeat: no-repeat;

@@ -80,7 +80,10 @@ if ($content_display === 'on') {
         }
 
         echo '</div>'; // .section-parts
-        echo '<div class="block-lib">' . apply_filters('the_content', $parent['content'] ?? '') . '</div>';
+
+        if (!empty($parent['content'])) {
+            echo '<div class="block-lib">' . apply_filters('the_content', $parent['content'] ?? '') . '</div>';
+        }
         echo '</div>'; // .section-inner
         echo '</section>'; // .parent-block
     } elseif ($content_type === 'r_news') {
