@@ -181,7 +181,7 @@ function cat_link()
     if (! empty($categories)) {
       echo '<div class="cat">';
       foreach ($categories as $category) {
-        echo '<a class="cat__link cat__' . esc_html($category->slug) . '" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+        echo '<a class="cat-link cat-' . esc_html($category->slug) . '" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
       }
       echo '</div>';
     }
@@ -196,7 +196,7 @@ function cat_link()
         if (! empty($terms) && ! is_wp_error($terms)) {
           echo '<div class="cat">';
           foreach ($terms as $term) {
-            echo '<a class="cat__link cat__' . esc_html($term->slug) . '" href="' . esc_url(get_category_link($term->term_id)) . '">' . esc_html($term->name) . '</a>';
+            echo '<a class="cat-link cat-' . esc_html($term->slug) . '" href="' . esc_url(get_category_link($term->term_id)) . '">' . esc_html($term->name) . '</a>';
           }
           echo '</div>';
         }

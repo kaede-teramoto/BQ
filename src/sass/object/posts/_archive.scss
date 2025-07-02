@@ -3,13 +3,12 @@
 
 /* archive
  ----------------------------------------------------------------------------------------------- */
-.page-title-wrapper+.cms__wrapper {
+.page-title-wrapper+.cms-wrapper {
     margin-top: 100px;
 }
 
-.cms__wrapper {
+.cms-wrapper {
     padding: 0 0 100px;
-
 
     @include m.mq(pc) {}
 
@@ -33,7 +32,7 @@
     @include m.mq(sp) {}
 }
 
-.cms__cat {
+.cms-cat {
 
     @include m.mq(pc) {}
 
@@ -45,7 +44,7 @@
 
 }
 
-.cms__cat__list {
+.cms-cat-list {
 
     @include m.mq(pc) {}
 
@@ -57,7 +56,7 @@
 
 }
 
-.cms__cat__item {
+.cms-cat-item {
 
     @include m.mq(pc) {}
 
@@ -73,7 +72,7 @@
 
 }
 
-.cms__tag {
+.cms-tag {
     margin-top: 20px;
 
     @include m.mq(pc) {}
@@ -86,7 +85,7 @@
 
 }
 
-.cms__tag__list {
+.cms-tag-list {
 
     @include m.mq(pc) {}
 
@@ -98,7 +97,7 @@
 
 }
 
-.cms__tag__item {
+.cms-tag-item {
 
     @include m.mq(pc) {}
 
@@ -110,7 +109,7 @@
 
 }
 
-.cms__content {
+.cms-content {
     width: 100%;
 
     @include m.mq(pc) {}
@@ -123,7 +122,7 @@
 
 }
 
-.cms__list {
+.cms-list {
 
     @include m.mq(pc) {}
 
@@ -135,7 +134,7 @@
 
 }
 
-.cms__post {
+.cms-post {
 
     @include m.mq(pc) {}
 
@@ -147,7 +146,7 @@
 
 }
 
-.cms__post__thumbnail {
+.cms-post-thumbnail {
     width: 100%;
     aspect-ratio: 16 / 9;
     @include v.borderRadius;
@@ -168,7 +167,7 @@
 
 }
 
-.cms__post__thumbnail__link {
+.cms-post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -191,8 +190,8 @@
     }
 }
 
-.cms__post__cat {
-    grid-area: post__cat;
+.cms-post-cat {
+    grid-area: post-cat;
 
     @include m.mq(pc) {}
 
@@ -226,7 +225,7 @@
     }
 }
 
-.cms__post__date {
+.cms-post-date {
     display: flex;
     justify-content: flex-end;
     font-size: 1.2rem;
@@ -241,8 +240,8 @@
 
 }
 
-.cms__post__title {
-    grid-area: post__title;
+.cms-post-title {
+    grid-area: post-title;
 
     @include m.mq(pc) {}
 
@@ -254,7 +253,7 @@
 
 }
 
-.cms__post__link {
+.cms-post-link {
 
     @include m.mq(pc) {}
 
@@ -266,7 +265,7 @@
 
 }
 
-.cms__pagination {
+.cms-pagination {
     width: 100%;
     margin-top: 80px;
     padding: 20px;
@@ -374,11 +373,11 @@
 
 }
 
-.cms01__cat__title {
+.cms01__cat-title {
     display: none;
 }
 
-.cms01__cat__list {
+.cms01__cat-list {
 
     a {
         display: block;
@@ -446,7 +445,7 @@
 
 }
 
-.cms01__cat__item {
+.cms01__cat-item {
 
     @include m.mq(pc) {}
 
@@ -505,8 +504,8 @@
     grid-template-columns: 260px 1fr 1fr;
     grid-template-rows: 100px 160px;
     grid-template-areas:
-        "post__thumbnail post__cat post__date"
-        "post__thumbnail post__title post__title";
+        "post-thumbnail post-cat post-date"
+        "post-thumbnail post-title post-title";
     border-bottom: 1px solid var(--base_color);
 
     @include m.mq(pc) {
@@ -548,15 +547,15 @@
             transform: scale(1.2);
         }
 
-        .top-cms01__post__title a {
+        .top-cms01__post-title a {
             transition: all 0.3s;
             color: var(--main_color);
         }
     }
 }
 
-.cms01__post__thumbnail {
-    grid-area: post__thumbnail;
+.cms01__post-thumbnail {
+    grid-area: post-thumbnail;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -586,7 +585,7 @@
 
 }
 
-.cms01__post__thumbnail__link {
+.cms01__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -598,8 +597,8 @@
 
 }
 
-.cms01__post__cat {
-    grid-area: post__cat;
+.cms01__post-cat {
+    grid-area: post-cat;
     display: flex;
     align-items: flex-end;
 
@@ -630,8 +629,8 @@
 
 }
 
-.cms01__post__date {
-    grid-area: post__date;
+.cms01__post-date {
+    grid-area: post-date;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -647,8 +646,8 @@
 
 }
 
-.cms01__post__title {
-    grid-area: post__title;
+.cms01__post-title {
+    grid-area: post-title;
     margin-top: 30px;
 
     @include m.mq(pc) {}
@@ -664,7 +663,7 @@
     }
 }
 
-.cms01__post__link {
+.cms01__post-link {
 
     @include m.mq(pc) {}
 
@@ -729,11 +728,11 @@
 
 }
 
-.cms02__cat__title {
+.cms02__cat-title {
     display: none;
 }
 
-.cms02__cat__list {
+.cms02__cat-list {
     a {
         display: block;
         position: relative;
@@ -799,7 +798,7 @@
     }
 }
 
-.cms02__cat__item {
+.cms02__cat-item {
 
     @include m.mq(pc) {}
 
@@ -838,8 +837,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "post__cat post__date"
-        "post__title post__title";
+        "post-cat post-date"
+        "post-title post-title";
 
     @include m.mq(pc) {}
 
@@ -879,7 +878,7 @@
     }
 
     &:hover {
-        .top-cms02__post__title a {
+        .top-cms02__post-title a {
             transition: all 0.3s;
             color: var(--main_color);
         }
@@ -887,7 +886,7 @@
 
 }
 
-.cms02__post__thumbnail {
+.cms02__post-thumbnail {
     display: none;
 
     @include m.mq(pc) {}
@@ -900,7 +899,7 @@
 
 }
 
-.cms02__post__thumbnail__link {
+.cms02__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -912,7 +911,7 @@
 
 }
 
-.cms02__post__cat {
+.cms02__post-cat {
     font-size: 1.2rem;
     font-weight: 700;
 
@@ -943,7 +942,7 @@
 
 }
 
-.cms02__post__date {
+.cms02__post-date {
     text-align: end;
 
     @include m.mq(pc) {}
@@ -956,8 +955,8 @@
 
 }
 
-.cms02__post__title {
-    grid-area: post__title;
+.cms02__post-title {
+    grid-area: post-title;
 
     @include m.mq(pc) {}
 
@@ -969,7 +968,7 @@
 
 }
 
-.cms02__post__link {
+.cms02__post-link {
 
     @include m.mq(pc) {}
 
@@ -1005,7 +1004,7 @@
 
     @include m.mq(sp) {}
 
-    .cms__pagination {
+    .cms-pagination {
         margin-top: 20px;
 
         @include m.mq(pc) {}
@@ -1031,7 +1030,7 @@
 
 }
 
-.cms03__cat__list {
+.cms03__cat-list {
 
     @include m.mq(pc) {}
 
@@ -1043,7 +1042,7 @@
 
 }
 
-.cms03__cat__item {
+.cms03__cat-item {
 
     @include m.mq(pc) {}
 
@@ -1098,9 +1097,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "post__thumbnail post__thumbnail"
-        "post__title post__title"
-        "post__cat post__date";
+        "post-thumbnail post-thumbnail"
+        "post-title post-title"
+        "post-cat post-date";
     gap: 20px;
     background-color: #F5F5F5;
     @include v.borderRadius;
@@ -1119,14 +1118,14 @@
 
 }
 
-.cms03__post__thumbnail {
+.cms03__post-thumbnail {
     display: block;
     width: 100%;
     aspect-ratio: 8 / 5;
     overflow: hidden;
     cursor: pointer;
     border-radius: var(--radius_pc) var(--radius_pc) 0 0;
-    grid-area: post__thumbnail;
+    grid-area: post-thumbnail;
 
     img {
         width: 100%;
@@ -1151,7 +1150,7 @@
 
 }
 
-.cms03__post__thumbnail__link {
+.cms03__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -1163,8 +1162,8 @@
 
 }
 
-.cms03__post__cat {
-    grid-area: post__cat;
+.cms03__post-cat {
+    grid-area: post-cat;
     padding: 5px 0 25px 20px;
 
     @include m.mq(pc) {}
@@ -1181,8 +1180,8 @@
     }
 }
 
-.cms03__post__date {
-    grid-area: post__date;
+.cms03__post-date {
+    grid-area: post-date;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -1200,8 +1199,8 @@
 
 }
 
-.cms03__post__title {
-    grid-area: post__title;
+.cms03__post-title {
+    grid-area: post-title;
     padding-inline: 20px;
     padding-bottom: 10px;
 
@@ -1215,7 +1214,7 @@
 
 }
 
-.cms03__post__link {
+.cms03__post-link {
     font-weight: 600;
 
     @include m.mq(pc) {}
@@ -1265,7 +1264,7 @@
 
 }
 
-.cms04__cat__list {
+.cms04__cat-list {
 
     @include m.mq(pc) {}
 
@@ -1277,7 +1276,7 @@
 
 }
 
-.cms04__cat__item {
+.cms04__cat-item {
 
     @include m.mq(pc) {}
 
@@ -1329,9 +1328,9 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "post__thumbnail post__thumbnail"
-        "post__title post__title"
-        "post__cat post__date";
+        "post-thumbnail post-thumbnail"
+        "post-title post-title"
+        "post-cat post-date";
     gap: 20px;
 
     @include m.mq(pc) {}
@@ -1349,13 +1348,13 @@
 
 }
 
-.cms04__post__thumbnail {
+.cms04__post-thumbnail {
     display: block;
     width: 100%;
     aspect-ratio: 1.88 / 1;
     overflow: hidden;
     cursor: pointer;
-    grid-area: post__thumbnail;
+    grid-area: post-thumbnail;
     @include v.borderRadius;
 
     img {
@@ -1380,7 +1379,7 @@
 
 }
 
-.cms04__post__thumbnail__link {
+.cms04__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -1392,8 +1391,8 @@
 
 }
 
-.cms04__post__cat {
-    grid-area: post__cat;
+.cms04__post-cat {
+    grid-area: post-cat;
 
     @include m.mq(pc) {}
 
@@ -1405,8 +1404,8 @@
 
 }
 
-.cms04__post__date {
-    grid-area: post__date;
+.cms04__post-date {
+    grid-area: post-date;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1421,8 +1420,8 @@
 
 }
 
-.cms04__post__title {
-    grid-area: post__title;
+.cms04__post-title {
+    grid-area: post-title;
 
     @include m.mq(pc) {}
 
@@ -1434,7 +1433,7 @@
 
 }
 
-.cms04__post__link {
+.cms04__post-link {
 
     @include m.mq(pc) {}
 
@@ -1482,7 +1481,7 @@
 
 }
 
-.cms05__cat__list {
+.cms05__cat-list {
 
     @include m.mq(pc) {}
 
@@ -1494,7 +1493,7 @@
 
 }
 
-.cms05__cat__item {
+.cms05__cat-item {
 
     @include m.mq(pc) {}
 
@@ -1545,9 +1544,9 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "post__thumbnail post__thumbnail"
-        "post__title post__title"
-        "post__date post__date";
+        "post-thumbnail post-thumbnail"
+        "post-title post-title"
+        "post-date post-date";
     gap: 20px;
     position: relative;
     margin: 0 20px 72px 0;
@@ -1583,8 +1582,8 @@
         grid-template-columns: 524px auto;
         grid-template-rows: auto 40px;
         grid-template-areas:
-            "post__thumbnail post__title"
-            "post__thumbnail post__date";
+            "post-thumbnail post-title"
+            "post-thumbnail post-date";
         gap: 40px;
         border-bottom: 1px solid var(--base_color);
         padding: 20px 0;
@@ -1597,9 +1596,9 @@
             grid-template-columns: auto 1fr;
             grid-template-rows: auto auto;
             grid-template-areas:
-                "post__thumbnail post__thumbnail"
-                "post__title post__title"
-                "post__date post__date";
+                "post-thumbnail post-thumbnail"
+                "post-title post-title"
+                "post-date post-date";
             gap: 20px;
             border-bottom: unset;
             padding: 0;
@@ -1616,7 +1615,7 @@
             gap: 10px;
         }
 
-        .cms05__post__thumbnail {
+        .cms05__post-thumbnail {
             max-width: 524px;
 
             @include m.mq(pc) {}
@@ -1635,7 +1634,7 @@
             }
         }
 
-        .cms05__post__date {
+        .cms05__post-date {
             margin-top: 0;
 
             @include m.mq(pc) {}
@@ -1649,7 +1648,7 @@
 
         }
 
-        .cms05__post__cat {
+        .cms05__post-cat {
             top: 30px;
             right: 991px;
 
@@ -1699,13 +1698,13 @@
     }
 }
 
-.cms05__post__thumbnail {
+.cms05__post-thumbnail {
     display: block;
     width: 100%;
     aspect-ratio: 1.7 / 1;
     overflow: hidden;
     cursor: pointer;
-    grid-area: post__thumbnail;
+    grid-area: post-thumbnail;
     @include v.borderRadius;
 
     img {
@@ -1729,7 +1728,7 @@
 
 }
 
-.cms05__post__thumbnail__link {
+.cms05__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -1741,7 +1740,7 @@
 
 }
 
-.cms05__post__cat {
+.cms05__post-cat {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -1759,8 +1758,8 @@
 
 }
 
-.cms05__post__date {
-    grid-area: post__date;
+.cms05__post-date {
+    grid-area: post-date;
     display: flex;
     justify-content: flex-start;
     margin-top: 80px;
@@ -1779,8 +1778,8 @@
 
 }
 
-.cms05__post__title {
-    grid-area: post__title;
+.cms05__post-title {
+    grid-area: post-title;
 
     @include m.mq(pc) {}
 
@@ -1794,7 +1793,7 @@
 
 }
 
-.cms05__post__link {
+.cms05__post-link {
 
     @include m.mq(pc) {}
 
@@ -1842,7 +1841,7 @@
 
 }
 
-.cms06__cat__list {
+.cms06__cat-list {
 
     @include m.mq(pc) {}
 
@@ -1854,7 +1853,7 @@
 
 }
 
-.cms06__cat__item {
+.cms06__cat-item {
 
     @include m.mq(pc) {}
 
@@ -1910,10 +1909,10 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "post__thumbnail post__thumbnail"
-        "post__title post__title"
-        "post__cat post__cat"
-        "post__text post__text";
+        "post-thumbnail post-thumbnail"
+        "post-title post-title"
+        "post-cat post-cat"
+        "post-text post-text";
     gap: 15px;
 
     @include m.mq(pc) {
@@ -1936,13 +1935,13 @@
 
 }
 
-.cms06__post__thumbnail {
+.cms06__post-thumbnail {
     display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     cursor: pointer;
-    grid-area: post__thumbnail;
+    grid-area: post-thumbnail;
     @include v.borderRadius;
 
     img {
@@ -1961,7 +1960,7 @@
 
 }
 
-.cms06__post__thumbnail__link {
+.cms06__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -1973,8 +1972,8 @@
 
 }
 
-.cms06__post__cat {
-    grid-area: post__cat;
+.cms06__post-cat {
+    grid-area: post-cat;
 
     @include m.mq(pc) {}
 
@@ -1986,7 +1985,7 @@
 
 }
 
-.cms06__post__date {
+.cms06__post-date {
     display: none;
 
     @include m.mq(pc) {}
@@ -1999,8 +1998,8 @@
 
 }
 
-.cms06__post__title {
-    grid-area: post__title;
+.cms06__post-title {
+    grid-area: post-title;
     font-size: 2.0rem;
     line-height: 1.5;
     margin-top: 10px;
@@ -2019,7 +2018,7 @@
 
 }
 
-.cms06__post__link {
+.cms06__post-link {
 
     @include m.mq(pc) {}
 
@@ -2030,8 +2029,8 @@
     @include m.mq(sp) {}
 }
 
-.cms06__post__excerpt {
-    grid-area: post__text;
+.cms06__post-excerpt {
+    grid-area: post-text;
 
     @include m.mq(pc) {}
 
@@ -2090,7 +2089,7 @@
 
 }
 
-.cms07__cat__list {
+.cms07__cat-list {
 
     @include m.mq(pc) {}
 
@@ -2102,7 +2101,7 @@
 
 }
 
-.cms07__cat__item {
+.cms07__cat-item {
 
     @include m.mq(pc) {}
 
@@ -2165,7 +2164,7 @@
     }
 }
 
-.cms07__post__thumbnail {
+.cms07__post-thumbnail {
     display: none;
 
     img {
@@ -2184,7 +2183,7 @@
 
 }
 
-.cms07__post__thumbnail__link {
+.cms07__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -2196,7 +2195,7 @@
 
 }
 
-.cms07__post__cat {
+.cms07__post-cat {
     order: 2;
 
     @include m.mq(pc) {}
@@ -2214,7 +2213,7 @@
 
 }
 
-.cms07__post__date {
+.cms07__post-date {
     order: 1;
     color: var(--main_color);
 
@@ -2232,7 +2231,7 @@
 
 }
 
-.cms07__post__title {
+.cms07__post-title {
     order: 3;
 
     @include m.mq(pc) {}
@@ -2247,7 +2246,7 @@
 
 }
 
-.cms07__post__link {
+.cms07__post-link {
 
     @include m.mq(pc) {}
 
@@ -2284,7 +2283,7 @@
 
     @include m.mq(sp) {}
 
-    .cms__pagination {
+    .cms-pagination {
         margin-top: 20px;
 
         @include m.mq(pc) {}
@@ -2310,7 +2309,7 @@
 
 }
 
-.cms08__cat__list {
+.cms08__cat-list {
 
     @include m.mq(pc) {}
 
@@ -2322,7 +2321,7 @@
 
 }
 
-.cms08__cat__item {
+.cms08__cat-item {
 
     @include m.mq(pc) {}
 
@@ -2377,9 +2376,9 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-        "post__thumbnail post__thumbnail"
-        "post__title post__title"
-        "post__cat post__date";
+        "post-thumbnail post-thumbnail"
+        "post-title post-title"
+        "post-cat post-date";
     gap: 20px;
     background-color: #F5F5F5;
     @include v.borderRadius;
@@ -2398,14 +2397,14 @@
 
 }
 
-.cms08__post__thumbnail {
+.cms08__post-thumbnail {
     display: block;
     width: 100%;
     aspect-ratio: 8 / 5;
     overflow: hidden;
     cursor: pointer;
     border-radius: var(--radius_pc) var(--radius_pc) 0 0;
-    grid-area: post__thumbnail;
+    grid-area: post-thumbnail;
 
     img {
         width: 100%;
@@ -2430,7 +2429,7 @@
 
 }
 
-.cms08__post__thumbnail__link {
+.cms08__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -2442,8 +2441,8 @@
 
 }
 
-.cms08__post__cat {
-    grid-area: post__cat;
+.cms08__post-cat {
+    grid-area: post-cat;
     padding: 5px 0 25px 20px;
 
     @include m.mq(pc) {}
@@ -2460,8 +2459,8 @@
     }
 }
 
-.cms08__post__date {
-    grid-area: post__date;
+.cms08__post-date {
+    grid-area: post-date;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -2479,8 +2478,8 @@
 
 }
 
-.cms08__post__title {
-    grid-area: post__title;
+.cms08__post-title {
+    grid-area: post-title;
     padding-inline: 20px;
     padding-bottom: 10px;
 
@@ -2494,7 +2493,7 @@
 
 }
 
-.cms08__post__link {
+.cms08__post-link {
     font-weight: 600;
 
     @include m.mq(pc) {}
@@ -2532,8 +2531,8 @@
 
     @include m.mq(tab) {}
 
-    .cms__pagination span.page-numbers,
-    .cms__pagination a.page-numbers {
+    .cms-pagination span.page-numbers,
+    .cms-pagination a.page-numbers {
         border-radius: 2px;
         background-color: #fff;
         color: var(--main_color);
@@ -2558,16 +2557,16 @@
         }
     }
 
-    .cms__pagination span.page-numbers.current,
-    .cms__pagination a.page-numbers.current {
+    .cms-pagination span.page-numbers.current,
+    .cms-pagination a.page-numbers.current {
         background-color: var(--main_color);
         color: #fff;
     }
 
-    .cms__pagination span.page-numbers.next,
-    .cms__pagination span.page-numbers.prev,
-    .cms__pagination a.page-numbers.next,
-    .cms__pagination a.page-numbers.prev {
+    .cms-pagination span.page-numbers.next,
+    .cms-pagination span.page-numbers.prev,
+    .cms-pagination a.page-numbers.next,
+    .cms-pagination a.page-numbers.prev {
         width: 38px;
         height: 38px;
         position: relative;
@@ -2580,8 +2579,8 @@
         }
     }
 
-    .cms__pagination span.page-numbers.next::before,
-    .cms__pagination a.page-numbers.next::before {
+    .cms-pagination span.page-numbers.next::before,
+    .cms-pagination a.page-numbers.next::before {
         position: absolute;
         content: "";
         top: 50%;
@@ -2592,8 +2591,8 @@
         transform: translateY(-50%);
     }
 
-    .cms__pagination span.page-numbers.prev::after,
-    .cms__pagination a.page-numbers.prev::after {
+    .cms-pagination span.page-numbers.prev::after,
+    .cms-pagination a.page-numbers.prev::after {
         position: absolute;
         content: "";
         top: 50%;
@@ -2605,8 +2604,8 @@
         transform: translateY(-50%) rotate(-135deg);
     }
 
-    .cms__pagination span.page-numbers.prev::before,
-    .cms__pagination a.page-numbers.prev::before {
+    .cms-pagination span.page-numbers.prev::before,
+    .cms-pagination a.page-numbers.prev::before {
         position: absolute;
         content: "";
         top: 50%;
@@ -2617,8 +2616,8 @@
         transform: translateY(-50%);
     }
 
-    .cms__pagination span.page-numbers.next::after,
-    .cms__pagination a.page-numbers.next::after {
+    .cms-pagination span.page-numbers.next::after,
+    .cms-pagination a.page-numbers.next::after {
         position: absolute;
         content: "";
         top: 50%;
@@ -2645,7 +2644,7 @@
 
 }
 
-.cms09__cat__list {
+.cms09__cat-list {
 
     @include m.mq(pc) {}
 
@@ -2657,7 +2656,7 @@
 
 }
 
-.cms09__cat__item {
+.cms09__cat-item {
 
     @include m.mq(pc) {}
 
@@ -2747,7 +2746,7 @@
     }
 }
 
-.cms09__post__thumbnail {
+.cms09__post-thumbnail {
     display: none;
 
     img {
@@ -2766,7 +2765,7 @@
 
 }
 
-.cms09__post__thumbnail__link {
+.cms09__post-thumbnail-link {
 
     @include m.mq(pc) {}
 
@@ -2778,7 +2777,7 @@
 
 }
 
-.cms09__post__cat {
+.cms09__post-cat {
     order: 2;
     display: flex;
     align-items: center;
@@ -2806,7 +2805,7 @@
 
 }
 
-.cms09__post__date {
+.cms09__post-date {
     display: flex;
     align-items: center;
     order: 1;
@@ -2830,7 +2829,7 @@
 
 }
 
-.cms09__post__title {
+.cms09__post-title {
     order: 3;
     flex: 1;
     width: 100%;
@@ -2894,7 +2893,7 @@
 
 }
 
-.cms09__post__link {
+.cms09__post-link {
     display: block;
     padding-right: 40px;
     position: relative;
