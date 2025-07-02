@@ -57,6 +57,7 @@ class Custom_Page_Repeater_Meta_Box
             $parents[] = array(
                 'block_name' => '',
                 'content_type'  => 'r_content',
+                'content_display' => 'on',
                 'block_class' => '',
                 'title' => '',
                 'title_image' => '',
@@ -130,6 +131,7 @@ class Custom_Page_Repeater_Meta_Box
                         $has_value = false;
 
                         if (
+                            ! empty(trim($child_item['content_display'] ?? '')) ||
                             ! empty(trim($child_item['subtitle'] ?? '')) ||
                             ! empty(trim($child_item['subtitle_sub'] ?? '')) ||
                             ! empty(trim($child_item['subcontent'] ?? '')) ||
@@ -166,9 +168,10 @@ class Custom_Page_Repeater_Meta_Box
                         $allowed_tags = array_merge($allowed_tags, $allowed_iframe_tags);
 
                         $children[] = array(
+                            'content_display' => sanitize_text_field($child_item['content_display'] ?? 'on'),
                             'subtitle'     => sanitize_text_field($child_item['subtitle'] ?? ''),
-                            'subtitle_sub' => sanitize_textarea_field($child_item['subtitle_sub'] ?? ''),
-                            'subcontent' => wp_kses($child_item['subcontent'] ?? '', $allowed_tags),
+                            'subtitle_sub' => wp_kses($child_item['subtitle_sub'] ?? '', 'post'),
+                            'subcontent'   => wp_kses($child_item['subcontent'] ?? '', $allowed_tags),
                             'image'        => esc_url_raw($child_item['image'] ?? ''),
                             'image_inline' => !empty($child_item['image_inline']) ? '1' : '',
                             'button_text'  => sanitize_text_field($child_item['button_text'] ?? ''),
@@ -180,16 +183,31 @@ class Custom_Page_Repeater_Meta_Box
                     }
                 }
 
+                $allowed_iframe_tags = array(
+                    'iframe' => array(
+                        'src'             => true,
+                        'width'           => true,
+                        'height'          => true,
+                        'frameborder'     => true,
+                        'allowfullscreen' => true,
+                        'allow'           => true,
+                        'loading'         => true,
+                        'referrerpolicy'  => true,
+                    ),
+                );
+                $allowed_tags = array_merge(wp_kses_allowed_html('post'), $allowed_iframe_tags);
+
                 $parents[] = array(
                     'block_name'          => sanitize_text_field($block_name),
                     'content_type'        => sanitize_text_field($parent_item['content_type'] ?? ''),
+                    'content_display'     => sanitize_text_field($parent_item['content_display'] ?? ''),
                     'block_class'         => sanitize_text_field($parent_item['block_class'] ?? ''),
-                    'title'               => sanitize_textarea_field($parent_item['title'] ?? ''),
+                    'title'               => wp_kses($parent_item['title'] ?? '', 'post'),
                     'title_image'         => esc_url_raw($parent_item['title_image'] ?? ''),
-                    'subtitle'            => sanitize_textarea_field($parent_item['subtitle'] ?? ''),
+                    'subtitle'            => wp_kses($parent_item['subtitle'] ?? '', 'post'),
                     'child_count'         => count($children),
                     'children'            => $children,
-                    'content'             => wp_kses_post($parent_item['content'] ?? ''),
+                    'content'             => wp_kses($parent_item['content'] ?? '', $allowed_tags),
                     'background_image'    => esc_url_raw($parent_item['background_image'] ?? ''),
                 );
             }
@@ -253,6 +271,7 @@ class Custom_Page_Repeater_Meta_Box
         $parent = array(
             'block_name' => '',
             'content_type' => 'r_content',
+            'content_display' => 'on',
             'block_class' => '',
             'title' => '',
             'title_image' => '',
@@ -280,6 +299,7 @@ class Custom_Page_Repeater_Meta_Box
         $child = array(
             'subtitle' => '',
             'subcontent' => '',
+            'content_display' => 'on',
             'image' => '',
             'button_text' => '',
             'button_url' => '',

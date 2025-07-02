@@ -50,46 +50,51 @@ if ($block_bg_image) {
     $block_bg_image_style = '';
 }
 
-$content_type = $args['parent']['content_type'] ?? '';
-if ($content_type === 'r_content') {
+$content_display = $args['parent']['content_display'] ?? 'on';
+if ($content_display === 'on') {
 
-    echo '<section id="section' . ($parent_index + 1) . '" class="section ' . $block_class . '" ' . $block_bg_image_style . '>';
-    echo '<div class="section-inner">';
+    $content_type = $args['parent']['content_type'] ?? '';
+    if ($content_type === 'r_content') {
 
-    echo '<h2 class="js-fadeIn block-title block-title' . $content_title_setting . '" ' . $title_style . '>';
-    echo '<span class="block-title-text">' . nl2br(esc_html($parent['title'] ?? '')) . '</span>';
-    echo '<span class="block-subtitle-text">' . nl2br(esc_html($parent['subtitle'] ?? '')) . '</span>';
+        echo '<section id="section' . ($parent_index + 1) . '" class="section ' . $block_class . '" ' . $block_bg_image_style . '>';
+        echo '<div class="section-inner">';
+        if (!empty($parent['title'])) {
+            echo '<h2 class="js-fadeIn block-title block-title' . $content_title_setting . '" ' . $title_style . '>';
+            echo '<span class="block-title-text">' . apply_filters('the_content', $parent['title'] ?? '') . '</span>';
+            echo '<span class="block-subtitle-text">' . apply_filters('the_content', $parent['subtitle'] ?? '') . '</span>';
 
-    if (!empty($parent['title_image'])) {
-        echo '<img class="block-title-image" src="' . esc_url($parent['title_image']) . '" alt="' . nl2br(esc_html($parent['title'] ?? '')) . '" loading="lazy">';
-    }
+            if (!empty($parent['title_image'])) {
+                echo '<img class="block-title-image" src="' . esc_url($parent['title_image']) . '" alt="' . nl2br(esc_html($parent['title'] ?? '')) . '" loading="lazy">';
+            }
 
-    echo '</h2>';
-
-    echo '<div class="block-parts">';
-
-    // 子セット
-    if (!empty($parent['children']) && is_array($parent['children'])) {
-        foreach ($parent['children'] as $child) {
-            echo render_child_block($child);
+            echo '</h2>';
         }
-    }
 
-    echo '</div>'; // .section-parts
-    echo '<div class="block-lib">' . apply_filters('the_content', $parent['content'] ?? '') . '</div>';
-    echo '</div>'; // .section-inner
-    echo '</section>'; // .parent-block
-} elseif ($content_type === 'r_news') {
-    get_template_part('parts/parts', 'top_cms');
-} else {
-    $post_id = $block_class;
+        echo '<div class="block-parts">';
 
-    // ポスト情報を取得
-    $post = get_post($post_id);
+        // 子セット
+        if (!empty($parent['children']) && is_array($parent['children'])) {
+            foreach ($parent['children'] as $child) {
+                echo render_child_block($child);
+            }
+        }
 
-    // ポストが存在するか確認
-    if ($post) {
-        // 本文を出力（エスケープ推奨）
-        echo apply_filters('the_content', $post->post_content);
+        echo '</div>'; // .section-parts
+        echo '<div class="block-lib">' . apply_filters('the_content', $parent['content'] ?? '') . '</div>';
+        echo '</div>'; // .section-inner
+        echo '</section>'; // .parent-block
+    } elseif ($content_type === 'r_news') {
+        get_template_part('parts/parts', 'top_cms');
+    } else {
+        $post_id = $block_class;
+
+        // ポスト情報を取得
+        $post = get_post($post_id);
+
+        // ポストが存在するか確認
+        if ($post) {
+            // 本文を出力（エスケープ推奨）
+            echo apply_filters('the_content', $post->post_content);
+        }
     }
 }

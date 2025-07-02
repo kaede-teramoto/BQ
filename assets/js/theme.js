@@ -7,7 +7,6 @@ const setVw = function () {
 window.addEventListener('DOMContentLoaded', setVw);
 window.addEventListener('resize', setVw);
 
-
 // smooth scroll
 window.addEventListener('DOMContentLoaded', () => {
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -34,7 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 // trigger
 document.querySelectorAll('.js-toggle').forEach(toggle => {
     toggle.addEventListener('click', function () {
@@ -58,31 +56,32 @@ document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
     });
 });
 
-//ハンバーガーメニュー内：サブメニューがある場合
+// Mega Menu
 document.addEventListener('DOMContentLoaded', () => {
-    const hmMenuItems = document.querySelectorAll('.hm .nav-item');
+    // .menu-item-has-childrenが存在するかを確認
+    const menuItems = document.querySelectorAll('.menu-item-has-children');
+    if (menuItems.length > 0) {
 
-    hmMenuItems.forEach(item => {
-        if (item.querySelector('.sub-menu')) {
-            item.classList.add('menu-item-has-children');
-        }
-    });
-});
+        menuItems.forEach(item => {
+            const megaMenu = item.querySelector('.mega-menu');
 
-// サブメニュー開閉：メニュー内に子メニューがある場合
-document.querySelectorAll('.menu-item-has-children > a').forEach(anchor => {
-    anchor.addEventListener('click', event => {
-        event.preventDefault();
-        event.stopPropagation();
+            if (megaMenu) {
+                // マウスオーバーイベント
+                item.addEventListener('mouseover', () => {
+                    megaMenu.style.opacity = '1';
+                    megaMenu.style.visibility = 'inherit';
+                    megaMenu.classList.add('--active');
+                });
 
-        const subMenu = anchor.nextElementSibling;
-        const parent = anchor.parentElement;
-
-        if (subMenu?.classList.contains('sub-menu')) {
-            subMenu.classList.toggle('--active');
-            parent.classList.toggle('--active');
-        }
-    });
+                // マウスアウトイベント
+                item.addEventListener('mouseout', () => {
+                    megaMenu.style.opacity = '0';
+                    megaMenu.style.visibility = 'hidden';
+                    megaMenu.classList.remove('--active');
+                });
+            }
+        });
+    }
 });
 
 // アンカーリンククリック時：ハンバーガーメニューとサブメニューを閉じる + スクロール
@@ -119,68 +118,26 @@ document.querySelectorAll('.nav-item a').forEach(link => {
     });
 });
 
-
-
 // // ハンバーガーメニューコンテンツ内の開閉式メニュー
-// document.querySelectorAll('.menu-item-has-children > a').forEach(function (anchor) {
-//     anchor.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         event.stopPropagation();
+document.querySelectorAll('.nav-item:has(.sub-menu) > a').forEach(function (anchor) {
+    anchor.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-//         var subMenu = anchor.nextElementSibling;
-//         var parentMenuItem = anchor.parentElement;
+        var subMenu = anchor.nextElementSibling;
+        var parentMenuItem = anchor.parentElement;
 
-//         if (subMenu && subMenu.classList.contains('sub-menu')) {
-//             if (subMenu.classList.contains('--active')) {
-//                 subMenu.classList.remove('--active');
-//                 parentMenuItem.classList.remove('--active');
-//             } else {
-//                 subMenu.classList.add('--active');
-//                 parentMenuItem.classList.add('--active');
-//             }
-//         }
-//     });
-// });
-
-// document.querySelectorAll('.menu-item a').forEach(link => {
-//     link.addEventListener('click', event => {
-//         const href = link.getAttribute('href');
-//         if (!href) return;
-
-//         let url;
-//         try {
-//             url = new URL(href, window.location.origin);
-//         } catch (e) {
-//             return;
-//         }
-
-//         const isSamePageAnchor = (
-//             url.origin === window.location.origin &&
-//             url.pathname === window.location.pathname &&
-//             url.hash.startsWith('#') &&
-//             url.hash.length > 1
-//         );
-
-//         if (isSamePageAnchor) {
-//             document.querySelectorAll('.js-hm-toggle.--active').forEach(el => el.classList.remove('--active'));
-//             document.querySelectorAll('.js-hm-target.--active').forEach(el => el.classList.remove('--active'));
-//             document.querySelectorAll('.sub-menu.--active').forEach(el => el.classList.remove('--active'));
-//         }
-//     });
-// });
-
-
-// document.querySelectorAll('.js-hm-toggle').forEach(toggle => {
-//     toggle.addEventListener('click', function () {
-
-//         const nextElement = this.nextElementSibling;
-
-//         if (nextElement && nextElement.classList.contains('js-hm-target')) {
-//             this.classList.toggle('--active');
-//             nextElement.classList.toggle('--active');
-//         }
-//     });
-// });
+        if (subMenu && subMenu.classList.contains('sub-menu')) {
+            if (subMenu.classList.contains('--active')) {
+                subMenu.classList.remove('--active');
+                parentMenuItem.classList.remove('--active');
+            } else {
+                subMenu.classList.add('--active');
+                parentMenuItem.classList.add('--active');
+            }
+        }
+    });
+});
 
 // marker
 document.addEventListener("DOMContentLoaded", () => {
@@ -205,33 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
     handleScroll();
 });
 
-
-window.onload = function () {
-    // 全てのmenu__drop要素を取得
-    const menuDrops = document.querySelectorAll('.menu__drop');
-
-    // 各menu__drop要素にクリックイベントを設定
-    menuDrops.forEach(function (menuDrop) {
-        menuDrop.addEventListener('click', function () {
-            // クリックされたmenu__drop要素の直下の.menuSub要素を取得
-            const menuSub = this.querySelector('.menuSub');
-            if (menuSub) {
-                // スライドトグルの効果を再現するために、表示/非表示を切り替える
-                if (menuSub.style.display === 'none' || menuSub.style.display === '') {
-                    menuSub.style.display = 'block';
-                    menuSub.style.maxHeight = menuSub.scrollHeight + 'px';
-                    menuSub.style.transition = 'max-height 0.5s ease-in-out';
-                } else {
-                    menuSub.style.maxHeight = '0';
-                    setTimeout(function () {
-                        menuSub.style.display = 'none';
-                    }, 500); // アニメーションの時間と一致させる
-                }
-            }
-        });
-    });
-};
-
 // タブ切替
 document.addEventListener('DOMContentLoaded', () => {
     const panels = document.querySelectorAll('.tab__panel');
@@ -249,41 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-
-
-// header固定
-// const headerFix = () => {
-//     var header = document.getElementById('header');
-//     if (window.scrollY >= 100) {
-//         header.classList.add('is-hide');
-//     } else {
-//         header.classList.remove('is-hide');
-//     }
-
-//     if (window.scrollY >= 200) {
-//         header.classList.add('is-fixed');
-//     } else {
-//         header.classList.remove('is-fixed');
-//     }
-
-// };
-// window.addEventListener('scroll', headerFix);
-// window.addEventListener('resize', headerFix);
-// window.addEventListener('load', headerFix);
-
-// gsap.to(".slideBg_blue", {
-//     x: -1000, // 下に100px移動
-//     duration: .5, // 2秒間アニメーション
-//     ease: "back.out(5)", // イージングなし(等速)
-//     stagger: .2, // 0.5秒遅れて順番に再生
-//     scrollTrigger: {
-//         trigger: ".slideBg_blue",
-//         start: "top 80%",
-//         end: "top 20%",
-//         toggleActions: "play none none none",
-//     }
-// });
 
 // fadeIn
 const fadeIns = document.querySelectorAll('.js-fadeIn');
@@ -331,15 +226,6 @@ leftIns.forEach(leftIn => {
 });
 
 // bgColor
-// const setBgColors = document.querySelectorAll('.js-bgColor');
-// setBgColors.forEach(bgColor => {
-//     gsap.set(bgColor, {
-//         backgroundColor: 'transparent', // Fully transparent
-//     });
-// });
-
-
-// bgColor
 const bgColors = document.querySelectorAll('.js-bgColor');
 bgColors.forEach(bgColor => {
     gsap.from(bgColor, {
@@ -370,7 +256,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
 
 // スクロール時にクラスを追加する処理
 document.addEventListener('DOMContentLoaded', function () {
@@ -409,7 +294,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
 // 追従コンテンツ用
 window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('.section__parts__content__wrapper .section__parts');
@@ -431,34 +315,6 @@ window.addEventListener('scroll', function () {
     // どのセクションも条件を満たさない場合（上に戻った場合）
     if (!foundCurrent) {
         links.forEach(link => link.classList.remove('current'));
-    }
-});
-
-// Mega Menu
-document.addEventListener('DOMContentLoaded', () => {
-    // .menu-item-has-childrenが存在するかを確認
-    const menuItems = document.querySelectorAll('.menu-item-has-children');
-    if (menuItems.length > 0) {
-
-        menuItems.forEach(item => {
-            const megaMenu = item.querySelector('.mega-menu');
-
-            if (megaMenu) {
-                // マウスオーバーイベント
-                item.addEventListener('mouseover', () => {
-                    megaMenu.style.opacity = '1';
-                    megaMenu.style.visibility = 'inherit';
-                    megaMenu.classList.add('--active');
-                });
-
-                // マウスアウトイベント
-                item.addEventListener('mouseout', () => {
-                    megaMenu.style.opacity = '0';
-                    megaMenu.style.visibility = 'hidden';
-                    megaMenu.classList.remove('--active');
-                });
-            }
-        });
     }
 });
 
@@ -493,27 +349,3 @@ document.querySelectorAll('.plan_toggle').forEach(toggle => {
         }
     });
 });
-
-// Mega-menuのからリンクの非表示
-// document.addEventListener("DOMContentLoaded", function () {
-//     const links = document.querySelectorAll(".menu-link");
-
-//     links.forEach((link) => {
-//         const href = link.getAttribute("href");
-
-//         if (!href || href === "#" || href.trim() === "") {
-//             link.style.display = "none"; // または link.remove();
-//         }
-//     });
-// });
-
-
-
-
-
-
-
-
-
-
-

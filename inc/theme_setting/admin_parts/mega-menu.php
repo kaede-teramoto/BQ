@@ -78,7 +78,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
 
         // 親項目（depth=0 かつ子を持つ）だけ mega-menu ブロックを追加
         if ($depth === 0 && in_array('menu-item-has-children', $item->classes)) {
-            $item_output .= '<div class="mega-menu">';
+            $item_output .= '<div class="mega-menu sub-menu">';
 
             if (!empty($menu_image)) {
                 $item_output .= '<div class="mega-menu-img">';
