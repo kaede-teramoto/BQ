@@ -23,7 +23,7 @@ if (!is_singular()) :
     <?php // Content for page
     get_template_part('parts/parts', 'cmsTitle'); ?>
 
-    <div class="cms__wrapper cms<?php echo $cms_design; ?>__wrapper">
+    <div class="cms__wrapper <?php echo $cms_design; ?>__wrapper">
         <div class="cms cms<?php echo $cms_design; ?>">
 
             <div class="cms__cat cms<?php echo $cms_design; ?>__cat">

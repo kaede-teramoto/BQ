@@ -410,15 +410,15 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
             });
         });
 
-    <?php elseif ($cms_design == 'newsBN00') : ?>
-        const top03Swiper = new Swiper('.newsBN00__content .swiper', {
+    <?php elseif ($cms_design == 'news-b-normal00') : ?>
+        const top03Swiper = new Swiper('.top-cms-content .swiper', {
             slidesPerView: 1.2,
             spaceBetween: 20,
             watchSlidesProgress: true,
             //centeredSlides: true,
             navigation: {
-                nextEl: ".newsBN00__content .swiper-btn-next",
-                prevEl: ".newsBN00__content .swiper-btn-prev",
+                nextEl: ".top-cms-content .swiper-btn-next",
+                prevEl: ".top-cms-content .swiper-btn-prev",
             },
             breakpoints: {
                 1599: {
@@ -441,7 +441,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
                 invert: false,
             },
             pagination: {
-                el: ".newsBN00__content .cms-pagination",
+                el: ".top-cms-content .cms-pagination",
                 type: "progressbar",
                 clickable: true,
             },

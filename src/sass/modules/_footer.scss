@@ -199,7 +199,7 @@
         @include m.mq(sp) {}
     }
 
-    .footer-nav-wrap-list-left {
+    .footer-nav-left {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -218,7 +218,7 @@
         }
     }
 
-    .footer-nav-wrap-list-right {
+    .footer-nav-right {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -238,7 +238,7 @@
         }
     }
 
-    .footer-nav-wrap-list-item {
+    .nav-item {
         width: auto;
         max-width: 300px;
         height: auto;
@@ -568,7 +568,7 @@
         }
     }
 
-    .footer-nav-wrap-list-left {
+    .footer-nav-left {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -588,7 +588,7 @@
         }
     }
 
-    .footer-nav-wrap-list-right {
+    .footer-nav-right {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
@@ -608,7 +608,7 @@
         }
     }
 
-    .footer-nav-wrap-list-item {
+    .nav-item {
         width: auto;
         max-width: 300px;
         height: auto;
@@ -747,7 +747,6 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
-
 
     .footer-wrapper {
         display: grid;
@@ -943,7 +942,7 @@
         }
     }
 
-    .footer-nav-wrap-list-left {
+    .footer-nav-left {
         display: flex;
         gap: 40px;
 
@@ -967,7 +966,7 @@
         }
     }
 
-    .footer-nav-wrap-list-right {
+    .footer-nav-right {
         display: flex;
         gap: 40px;
 
@@ -995,7 +994,7 @@
         }
     }
 
-    .footer-nav-wrap-list-item {
+    .nav-item {
         width: auto;
         max-width: 200px;
 
@@ -1012,14 +1011,12 @@
         }
 
         @include m.mq(sp) {
-            width: 33vw;
             max-width: 200px;
         }
 
     }
 
     .footer-nav-list {
-        display: none;
 
         @include m.mq(pc) {}
 
@@ -1150,6 +1147,7 @@
         @include m.mq(sp) {
             order: 1;
             width: 20vw;
+            min-width: 100px;
         }
     }
 
@@ -1217,7 +1215,7 @@
         }
     }
 
-    .footer-nav-wrap-list-left {
+    .footer-nav-left {
 
         @include m.mq(pc) {}
 
@@ -1229,7 +1227,7 @@
 
     }
 
-    .footer-nav-wrap-list-right {
+    .footer-nav-right {
 
         @include m.mq(pc) {}
 
@@ -1240,7 +1238,7 @@
         @include m.mq(sp) {}
     }
 
-    .footer-nav-wrap-list-item {
+    .nav-item {
 
         @include m.mq(pc) {}
 
