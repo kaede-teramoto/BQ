@@ -3,6 +3,20 @@
    ========================================================================== */
 
 @use "section-common";
+@use "_image-an00";
+@use "_image-an01";
+@use "_image-an02";
+@use "_image-an03";
+@use "_lead-as00";
+@use "_lead-ac00";
+@use "_lead-bs00";
+@use "_lead-bc00";
+@use "_lead-bsep00";
+@use "_lead-cs00";
+@use "_lead-cc00";
+@use "_lead-csep00";
+
+
 @use "features01";
 @use "original";
 @use "tab01";
@@ -10,7 +24,7 @@
 @use "design01";
 @use "design02";
 @use "design03";
-@use "design04";
+@use "_design04";
 @use "design05";
 @use "design06";
 @use "design07";
@@ -34,14 +48,6 @@
 @use "faq03";
 @use "loop01";
 @use "loop02";
-@use "lead01";
-@use "lead02";
-@use "lead03";
-@use "lead04";
-@use "lead05";
-@use "lead06";
-@use "lead07";
-@use "lead08";
 @use "company01";
 @use "company02";
 @use "company03";
