@@ -112,7 +112,7 @@ document.querySelectorAll('.nav-item a').forEach(link => {
                 anchorEl.scrollIntoView({ behavior: 'smooth' });
             }
 
-            document.querySelectorAll('.js-hm-toggle.--active, .js-hm-target.--active, .sub-menu.--active, .menu-item-has-children.--active')
+            document.querySelectorAll('.js-hm-toggle.--active, .js-hm-target.--active, .sub-menu.--active, .nav-item.--active')
                 .forEach(el => el.classList.remove('--active'));
         }
     });
