@@ -57,7 +57,6 @@ if ($hm_btn_sub_target) {
     $btn_sub_target = '';
 }
 
-
 // 削除予定
 // btn design type
 $btn_link_design = get_theme_mod('common_btn_design_setting', '01');

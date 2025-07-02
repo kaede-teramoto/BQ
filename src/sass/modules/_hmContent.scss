@@ -274,10 +274,23 @@
 }
 
 .hm-nav-list {
+    .nav-item {
+        display: flex;
 
-    .menu-item-has-children {
+        a {
+            width: 100%;
+            flex: 1;
+        }
+
+    }
+
+    .nav-item:has(.sub-menu) {
+        display: flex;
+        flex-direction: column;
 
         &>a {
+            width: 100%;
+            flex: 1;
             position: relative;
             display: flex;
 
