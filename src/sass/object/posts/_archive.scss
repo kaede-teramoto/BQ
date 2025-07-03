@@ -518,7 +518,7 @@
         }
 
         @include m.mq(tab) {
-            gap: 0 25px;
+            gap: 20px 25px;
         }
 
         @include m.mq(sp) {
@@ -681,10 +681,9 @@
 
 
 
-// cms02
+// archive-a-text00
 // --------------------------------------------------------------------------------------------
-.cms02__wrapper {
-    margin-top: 0 !important;
+.archive-a-text00-wrapper {
 
     @include m.mq(pc) {}
 
@@ -693,325 +692,205 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
-}
 
-.cms02 {
-    gap: 30px;
-    display: grid;
-    grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-areas:
-        "archive_cat archive_content";
-    @include v.conWidth;
+    .archive-a-text00 {
+        gap: 30px;
+        display: grid;
+        grid-template-columns: 300px calc(100% - calc(300px + 30px));
+        grid-template-areas:
+            "archive_cat archive_content";
+        @include v.conWidth;
 
-    @include m.mq(pc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {
-        grid-template-columns: 200px calc(100% - calc(200px + 30px));
-    }
-
-    @include m.mq(tab) {
-        @include v.columnFlex;
-        gap: 20px;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.cms02__cat {
-    grid-area: archive_cat;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        width: 100%;
-        order: 2;
-        padding-top: 0px;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms02__cat-title {
-    display: none;
-}
-
-.cms02__cat-list {
-    a {
-        display: block;
-        position: relative;
-        padding-left: 20px;
-
-        &.--active {
-            color: var(--main_color);
-
-            &::before {
-                content: "●";
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
+        @include m.mq(miniPc) {
+            grid-template-columns: 200px calc(100% - calc(200px + 30px));
         }
-    }
 
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-
-        a {
-            color: var(--base_color);
-            display: block;
-            padding: 0 20px;
-            border: 1px solid var(--base_color);
-            border-radius: 20px;
-
-            &.--active {
-                color: #fff;
-                background-color: var(--main_color);
-                border: 1px solid var(--main_color);
-
-                &::before {
-                    display: none;
-                }
-            }
+        @include m.mq(tab) {
+            @include v.columnFlex;
+            gap: 20px;
         }
+
+        @include m.mq(sp) {}
     }
 
-    @include m.mq(sp) {}
+    .cms-cat {
+        grid-area: archive_cat;
 
-    .children {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
         @include m.mq(tab) {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            width: 100%;
+            order: 2;
+            padding-top: 0px;
         }
 
         @include m.mq(sp) {}
+
     }
-}
 
-.cms02__cat-item {
+    .cms-cat-title {
+        display: none;
+    }
 
-    @include m.mq(pc) {}
+    .cms-cat-list {
+        a {
+            display: block;
+            position: relative;
+            padding-left: 20px;
 
-    @include m.mq(miniPc) {}
+            &.--active {
+                color: var(--main_color);
 
-    @include m.mq(tab) {}
+                &::before {
+                    content: "●";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
 
-    @include m.mq(sp) {}
+        @include m.mq(pc) {}
 
-}
+        @include m.mq(miniPc) {}
 
-.cms02__content {
-    grid-area: archive_content;
+        @include m.mq(tab) {
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
 
-    @include m.mq(pc) {}
+            a {
+                color: var(--base_color);
+                display: block;
+                padding: 0 20px;
+                border: 1px solid var(--base_color);
+                border-radius: 20px;
 
-    @include m.mq(miniPc) {}
+                &.--active {
+                    color: #fff;
+                    background-color: var(--main_color);
+                    border: 1px solid var(--main_color);
 
-    @include m.mq(tab) {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        @include m.mq(sp) {}
+
+        .children {
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                margin-top: 10px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            @include m.mq(sp) {}
+        }
+    }
+
+    .cms-cat-item {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-content {
+        grid-area: archive_content;
+        border-bottom: 1px solid var(--base_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            width: 100%;
+            order: 3;
+            margin-bottom: 20px;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post {
+        padding: 50px 0;
         width: 100%;
-        order: 3;
-        margin-bottom: 20px;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-
-
-.cms02__post {
-    padding: 50px 0;
-    width: 100%;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "post-cat post-date"
-        "post-title post-title";
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        padding: 40px 0;
-        gap: 15px;
-    }
-
-    @include m.mq(tab) {
-        border-top: 1px solid var(--base_color);
-    }
-
-    @include m.mq(sp) {
-        padding: 30px 0;
-    }
-
-    &:first-child {
-        padding: 10px 0 50px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "post-cat post-date"
+            "post-title post-title";
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {
-            padding: 0 0 40px;
+            padding: 40px 0;
+            gap: 15px;
         }
 
         @include m.mq(tab) {
-            padding: 40px 0;
+            border-top: 1px solid var(--base_color);
         }
 
         @include m.mq(sp) {
             padding: 30px 0;
         }
-    }
 
-    &+.cms02__post {
-        border-top: 1px solid var(--base_color);
-    }
+        &:first-child {
+            padding: 10px 0 50px;
 
-    &:hover {
-        .top-cms02__post-title a {
-            transition: all 0.3s;
-            color: var(--main_color);
-        }
-    }
+            @include m.mq(pc) {}
 
-}
+            @include m.mq(miniPc) {
+                padding: 0 0 40px;
+            }
 
-.cms02__post-thumbnail {
-    display: none;
+            @include m.mq(tab) {
+                padding: 40px 0;
+            }
 
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms02__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms02__post-cat {
-    font-size: 1.2rem;
-    font-weight: 700;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    a {
-        padding: 3px 28px;
-        border-radius: 20px;
-        background-color: var(--base_color);
-        border: unset;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {
-            padding: 3px 10px;
+            @include m.mq(sp) {
+                padding: 30px 0;
+            }
         }
 
-        @include m.mq(tab) {}
+        &+.cms-post {
+            border-top: 1px solid var(--base_color);
+        }
 
-        @include m.mq(sp) {}
+        &:hover {
+            .top-cms-post-title a {
+                transition: all 0.3s;
+                color: var(--main_color);
+            }
+        }
+
     }
 
-}
-
-.cms02__post-date {
-    text-align: end;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms02__post-title {
-    grid-area: post-title;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms02__post-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-// cms03
-// --------------------------------------------------------------------------------------------
-.cms03__wrapper {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.cms03 {
-    flex-direction: column;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .cms-pagination {
-        margin-top: 20px;
+    .cms-post-thumbnail {
+        display: none;
 
         @include m.mq(pc) {}
 
@@ -1020,245 +899,94 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-cat {
+        font-size: 1.2rem;
+        font-weight: 700;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        a {
+            padding: 3px 28px;
+            border-radius: 20px;
+            background-color: var(--base_color);
+            border: unset;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                padding: 3px 10px;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
+
+    }
+
+    .cms-post-date {
+        text-align: end;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-title {
+        grid-area: post-title;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
     }
 }
 
-.cms03__cat {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        max-width: 720px;
-    }
-
-    @include m.mq(tab) {
-        flex-wrap: nowrap;
-        flex-direction: column;
-        width: 100%;
-        gap: 25px;
-        max-width: 340px;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__post {
-    width: calc(calc(100% - 80px) / 3);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "post-thumbnail post-thumbnail"
-        "post-title post-title"
-        "post-cat post-date";
-    gap: 20px;
-    background-color: #F5F5F5;
-    @include v.borderRadius;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        width: calc(calc(100% - 40px) / 2);
-    }
-
-    @include m.mq(tab) {
-        width: 100%;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__post-thumbnail {
-    display: block;
-    width: 100%;
-    aspect-ratio: 8 / 5;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: var(--radius_pc) var(--radius_pc) 0 0;
-    grid-area: post-thumbnail;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        aspect-ratio: unset;
-        height: 242px;
-    }
-
-    @include m.mq(sp) {
-        aspect-ratio: 1.8 / 1;
-        height: auto;
-        max-height: 242px;
-    }
-
-}
-
-.cms03__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__post-cat {
-    grid-area: post-cat;
-    padding: 5px 0 25px 20px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .cat {
-        display: flex;
-        align-items: center;
-    }
-}
-
-.cms03__post-date {
-    grid-area: post-date;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 5px 20px 25px 0;
-    font-family: var(--en_font);
-    font-size: 1.2rem;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__post-title {
-    grid-area: post-title;
-    padding-inline: 20px;
-    padding-bottom: 10px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms03__post-link {
-    font-weight: 600;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-// cms04
+// archive-b-normal00
 // --------------------------------------------------------------------------------------------
-.cms04__wrapper {
-    margin-top: 0 !important;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.cms04 {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-}
-
-.cms04__cat {
-    display: none;
+.archive-b-normal00-wrapper {
 
     @include m.mq(pc) {}
 
@@ -1268,346 +996,585 @@
 
     @include m.mq(sp) {}
 
-}
-
-.cms04__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 80px 45px;
-
-    @include m.mq(pc) {
-        gap: 70px 45px;
-    }
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        flex-wrap: nowrap;
+    .archive-b-normal00 {
         flex-direction: column;
-        width: 100%;
-        gap: 40px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .cms-pagination {
+            margin-top: 20px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
     }
 
-    @include m.mq(sp) {}
+    .cms-cat {
+        display: none;
 
-}
+        @include m.mq(pc) {}
 
-.cms04__list {
+        @include m.mq(miniPc) {}
 
-    @include m.mq(pc) {}
+        @include m.mq(tab) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(sp) {}
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__post {
-    width: calc(calc(100% - 90px) / 3);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "post-thumbnail post-thumbnail"
-        "post-title post-title"
-        "post-cat post-date";
-    gap: 20px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        width: calc(calc(100% - 45px) / 2);
     }
 
-    @include m.mq(tab) {
-        width: 100%;
-        gap: 15px;
+    .cms-cat-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
     }
 
-    @include m.mq(sp) {}
+    .cms-cat-item {
 
-}
+        @include m.mq(pc) {}
 
-.cms04__post-thumbnail {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1.88 / 1;
-    overflow: hidden;
-    cursor: pointer;
-    grid-area: post-thumbnail;
-    @include v.borderRadius;
+        @include m.mq(miniPc) {}
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
     }
 
-    @include m.mq(pc) {
-        aspect-ratio: 1.34 / 1;
-    }
-
-    @include m.mq(miniPc) {
-        aspect-ratio: 1.5 / 1;
-    }
-
-    @include m.mq(tab) {
-        height: 242px;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__post-cat {
-    grid-area: post-cat;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__post-date {
-    grid-area: post-date;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__post-title {
-    grid-area: post-title;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms04__post-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-// cms05
-// --------------------------------------------------------------------------------------------
-.cms05__wrapper {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.cms05 {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-}
-
-.cms05__cat {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__content {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        gap: 40px 20px;
-    }
-
-    @include m.mq(tab) {
-        flex-wrap: nowrap;
-        flex-direction: column;
-        width: 100%;
-        gap: 24px;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.cms05__list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__post {
-    width: calc(calc(100% - 40px) / 3);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "post-thumbnail post-thumbnail"
-        "post-title post-title"
-        "post-date post-date";
-    gap: 20px;
-    position: relative;
-    margin: 0 20px 72px 0;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
+    .cms-content {
         display: flex;
-        flex-direction: column;
-        width: calc(calc(100% - 20px) / 2);
-        margin: 0;
-    }
-
-    @include m.mq(tab) {
-        width: 100%;
-        gap: 15px;
-        border-bottom: 1px solid var(--base_color);
-        padding-bottom: 20px;
-    }
-
-    @include m.mq(sp) {
-        gap: 10px;
-    }
-
-    &:nth-child(3n) {
-        margin-right: 0;
-    }
-
-    &:first-child,
-    &:nth-child(2),
-    &:nth-child(3) {
-        width: 100%;
-        grid-template-columns: 524px auto;
-        grid-template-rows: auto 40px;
-        grid-template-areas:
-            "post-thumbnail post-title"
-            "post-thumbnail post-date";
+        flex-wrap: wrap;
         gap: 40px;
-        border-bottom: 1px solid var(--base_color);
-        padding: 20px 0;
-        margin: 0;
+        max-width: 1100px;
+        margin: 0 auto;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {
+            max-width: 720px;
+        }
+
+        @include m.mq(tab) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 100%;
+            gap: 25px;
+            max-width: 340px;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post {
+        width: calc(calc(100% - 80px) / 3);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "post-thumbnail post-thumbnail"
+            "post-title post-title"
+            "post-cat post-date";
+        gap: 20px;
+        background-color: #F5F5F5;
+        @include v.borderRadius;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: calc(calc(100% - 40px) / 2);
+        }
+
+        @include m.mq(tab) {
+            width: 100%;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail {
+        display: block;
+        width: 100%;
+        aspect-ratio: 8 / 5;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: var(--radius_pc) var(--radius_pc) 0 0;
+        grid-area: post-thumbnail;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            aspect-ratio: unset;
+            height: 210px;
+        }
+
+        @include m.mq(sp) {
+            aspect-ratio: 1.8 / 1;
+            height: auto;
+            max-height: 210px;
+        }
+
+    }
+
+    .cms-post-thumbnail-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-cat {
+        grid-area: post-cat;
+        padding: 5px 0 25px 20px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .cat {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .cms-post-date {
+        grid-area: post-date;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5px 20px 25px 0;
+        font-family: var(--en_font);
+        font-size: 1.2rem;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-title {
+        grid-area: post-title;
+        padding-inline: 20px;
+        padding-bottom: 10px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-link {
+        font-weight: 600;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+}
+
+// archive-c-normal00
+// --------------------------------------------------------------------------------------------
+.archive-c-normal00-wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .archive-c-normal00 {
+        flex-direction: column;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-item {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 80px 45px;
+
+        @include m.mq(pc) {
+            gap: 70px 45px;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 100%;
+            gap: 40px;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post {
+        width: calc(calc(100% - 90px) / 3);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "post-thumbnail post-thumbnail"
+            "post-title post-title"
+            "post-cat post-date";
+        gap: 20px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: calc(calc(100% - 45px) / 2);
+        }
+
+        @include m.mq(tab) {
+            width: 100%;
+            gap: 15px;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.88 / 1;
+        overflow: hidden;
+        cursor: pointer;
+        grid-area: post-thumbnail;
+        @include v.borderRadius;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(pc) {
+            aspect-ratio: 1.34 / 1;
+        }
+
+        @include m.mq(miniPc) {
+            aspect-ratio: 1.5 / 1;
+        }
+
+        @include m.mq(tab) {
+            height: 242px;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-cat {
+        grid-area: post-cat;
+        display: flex;
+        align-items: center;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .cat {
+            display: flex;
+            gap: 5px;
+        }
+    }
+
+    .cms-post-date {
+        grid-area: post-date;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-title {
+        grid-area: post-title;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+}
+
+
+
+// archive-d-normal00
+// --------------------------------------------------------------------------------------------
+.archive-d-normal00-wrapper {
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .archive-d-normal00 {
+        display: flex;
+        flex-direction: column;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-item {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            gap: 40px 20px;
+        }
+
+        @include m.mq(tab) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 100%;
+            gap: 24px;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .cms-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post {
+        width: calc(calc(100% - 40px) / 3);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "post-thumbnail post-thumbnail"
+            "post-title post-title"
+            "post-date post-date";
+        gap: 20px;
+        position: relative;
+        margin: 0 20px 72px 0;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            display: flex;
+            flex-direction: column;
             width: calc(calc(100% - 20px) / 2);
-            grid-template-columns: auto 1fr;
-            grid-template-rows: auto auto;
-            grid-template-areas:
-                "post-thumbnail post-thumbnail"
-                "post-title post-title"
-                "post-date post-date";
-            gap: 20px;
-            border-bottom: unset;
-            padding: 0;
+            margin: 0;
         }
 
         @include m.mq(tab) {
@@ -1621,221 +1588,247 @@
             gap: 10px;
         }
 
-        .cms05__post-thumbnail {
-            max-width: 524px;
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+            width: 100%;
+            grid-template-columns: 524px auto;
+            grid-template-rows: auto 40px;
+            grid-template-areas:
+                "post-thumbnail post-title"
+                "post-thumbnail post-date";
+            gap: 40px;
+            border-bottom: 1px solid var(--base_color);
+            padding: 20px 0;
+            margin: 0;
 
             @include m.mq(pc) {}
 
-            @include m.mq(miniPc) {}
+            @include m.mq(miniPc) {
+                width: calc(calc(100% - 20px) / 2);
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto;
+                grid-template-areas:
+                    "post-thumbnail post-thumbnail"
+                    "post-title post-title"
+                    "post-date post-date";
+                gap: 20px;
+                border-bottom: unset;
+                padding: 0;
+            }
 
             @include m.mq(tab) {
-                max-width: 100%;
-                height: 210px;
+                width: 100%;
+                gap: 15px;
+                border-bottom: 1px solid var(--base_color);
+                padding-bottom: 20px;
             }
 
             @include m.mq(sp) {
-                aspect-ratio: 2 / 1;
-                height: auto;
-                max-height: 200px;
+                gap: 10px;
+            }
+
+            .cms-post-thumbnail {
+                max-width: 524px;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {
+                    max-width: 100%;
+                    height: 210px;
+                }
+
+                @include m.mq(sp) {
+                    aspect-ratio: 2 / 1;
+                    height: auto;
+                    max-height: 200px;
+                }
+            }
+
+            .cms-post-date {
+                margin-top: 0;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+
+
+            }
+
+            .cms-post-cat {
+                top: 35px;
+                right: 991px;
+
+                @include m.mq(pc) {
+                    right: 592px;
+                }
+
+                @include m.mq(miniPc) {
+                    top: 10px;
+                    right: 10px;
+                }
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
             }
         }
 
-        .cms05__post-date {
-            margin-top: 0;
+        &:first-child {
+            border-top: 1px solid var(--base_color);
 
             @include m.mq(pc) {}
 
-            @include m.mq(miniPc) {}
+            @include m.mq(miniPc) {
+                border-top: none;
+            }
 
             @include m.mq(tab) {}
 
             @include m.mq(sp) {}
-
-
         }
 
-        .cms05__post-cat {
-            top: 30px;
-            right: 991px;
+        &:nth-child(3) {
+            margin-bottom: 20px;
 
-            @include m.mq(pc) {
-                top: 30px;
-                right: 592px;
-            }
+            @include m.mq(pc) {}
 
             @include m.mq(miniPc) {
-                top: 10px;
-                right: 10px;
+                margin-bottom: 0;
             }
 
             @include m.mq(tab) {}
 
             @include m.mq(sp) {}
-
         }
     }
 
-    &:first-child {
-        border-top: 1px solid var(--base_color);
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {
-            border-top: none;
-        }
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    &:nth-child(3) {
-        margin-bottom: 20px;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {
-            margin-bottom: 0;
-        }
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-}
-
-.cms05__post-thumbnail {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1.7 / 1;
-    overflow: hidden;
-    cursor: pointer;
-    grid-area: post-thumbnail;
-    @include v.borderRadius;
-
-    img {
+    .cms-post-thumbnail {
+        display: block;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        aspect-ratio: 1.7 / 1;
+        overflow: hidden;
+        cursor: pointer;
+        grid-area: post-thumbnail;
+        @include v.borderRadius;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            aspect-ratio: 2 / 1;
+            order: 1;
+        }
+
+        @include m.mq(sp) {
+            max-height: 200px;
+        }
+
     }
 
-    @include m.mq(pc) {}
+    .cms-post-thumbnail-link {
 
-    @include m.mq(miniPc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(tab) {
-        aspect-ratio: 2 / 1;
-        order: 1;
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
     }
 
-    @include m.mq(sp) {
-        max-height: 200px;
+    .cms-post-cat {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            top: 10px;
+            right: 10px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .cat {
+            display: flex;
+            gap: 5px;
+        }
+
     }
 
+    .cms-post-date {
+        grid-area: post-date;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 80px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 0;
+        }
+
+        @include m.mq(tab) {
+            order: 3;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-title {
+        grid-area: post-title;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            order: 2;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
 }
 
-.cms05__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__post-cat {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-
-    @include m.mq(pc) {
-        top: 10px;
-        right: 10px;
-    }
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__post-date {
-    grid-area: post-date;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 80px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        margin-top: 0;
-    }
-
-    @include m.mq(tab) {
-        order: 3;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__post-title {
-    grid-area: post-title;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        order: 2;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms05__post-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-// cms06
+// archive-e-normal00
 // --------------------------------------------------------------------------------------------
-.cms06__wrapper {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.cms06 {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-}
-
-.cms06__cat {
-    display: none;
+.archive-e-normal00-wrapper {
 
     @include m.mq(pc) {}
 
@@ -1845,211 +1838,239 @@
 
     @include m.mq(sp) {}
 
-}
-
-.cms06__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 80px 45px;
-
-    @include m.mq(pc) {
-        gap: 80px 35px;
-    }
-
-    @include m.mq(miniPc) {
-        gap: 60px 30px;
-    }
-
-    @include m.mq(tab) {
-        gap: 50px 15px;
-    }
-
-    @include m.mq(sp) {
-        flex-wrap: nowrap;
+    .archive-e-normal00 {
+        display: flex;
         flex-direction: column;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+    }
+
+    .cms-cat {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-item {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 80px 45px;
+
+        @include m.mq(pc) {
+            gap: 80px 35px;
+        }
+
+        @include m.mq(miniPc) {
+            gap: 60px 30px;
+        }
+
+        @include m.mq(tab) {
+            gap: 50px 20px;
+        }
+
+        @include m.mq(sp) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 100%;
+            gap: 40px;
+        }
+
+    }
+
+    .cms-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post {
+        width: calc(calc(100% - 90px) / 3);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "post-thumbnail post-thumbnail"
+            "post-title post-title"
+            "post-cat post-cat"
+            "post-text post-text";
+        gap: 15px;
+
+        @include m.mq(pc) {
+            width: calc(calc(100% - 70px) / 3);
+        }
+
+        @include m.mq(miniPc) {
+            width: calc(calc(100% - 30px) / 2);
+            gap: 10px;
+        }
+
+        @include m.mq(tab) {
+            width: calc(calc(100% - 20px) / 2);
+            gap: 10px 0;
+        }
+
+        @include m.mq(sp) {
+            width: 100%;
+        }
+
+    }
+
+    .cms-post-thumbnail {
+        display: block;
         width: 100%;
-        gap: 40px;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        cursor: pointer;
+        grid-area: post-thumbnail;
+        @include v.borderRadius;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-cat {
+        grid-area: post-cat;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .cat {
+            display: flex;
+            gap: 5px;
+        }
+    }
+
+    .cms-post-date {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-title {
+        grid-area: post-title;
+        font-size: 2.0rem;
+        line-height: 1.5;
+        margin-top: 10px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            font-size: 1.8rem;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            font-size: 1.6rem;
+        }
+    }
+
+    .cms-post-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .cms-post-excerpt {
+        grid-area: post-text;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
     }
 
 }
 
-.cms06__list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__post {
-    width: calc(calc(100% - 90px) / 3);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "post-thumbnail post-thumbnail"
-        "post-title post-title"
-        "post-cat post-cat"
-        "post-text post-text";
-    gap: 15px;
-
-    @include m.mq(pc) {
-        width: calc(calc(100% - 70px) / 3);
-    }
-
-    @include m.mq(miniPc) {
-        width: calc(calc(100% - 30px) / 2);
-        gap: 10px;
-    }
-
-    @include m.mq(tab) {
-        width: calc(calc(100% - 15px) / 2);
-        gap: 10px 0;
-    }
-
-    @include m.mq(sp) {
-        width: 100%;
-    }
-
-}
-
-.cms06__post-thumbnail {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    cursor: pointer;
-    grid-area: post-thumbnail;
-    @include v.borderRadius;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__post-cat {
-    grid-area: post-cat;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__post-date {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms06__post-title {
-    grid-area: post-title;
-    font-size: 2.0rem;
-    line-height: 1.5;
-    margin-top: 10px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        font-size: 1.8rem;
-    }
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        font-size: 1.6rem;
-    }
-
-}
-
-.cms06__post-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.cms06__post-excerpt {
-    grid-area: post-text;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-// cms07
+// archive-f-normal00
 // --------------------------------------------------------------------------------------------
-.cms07__wrapper {
+.archive-f-normal00-wrapper {
 
     @include m.mq(pc) {}
 
@@ -2060,237 +2081,29 @@
     }
 
     @include m.mq(sp) {}
-}
 
-.cms07 {
-    width: 950px;
-    flex-direction: column;
+    .archive-f-normal00 {
+        width: 950px;
+        flex-direction: column;
 
-    @include m.mq(pc) {
-        width: 80%;
+        @include m.mq(pc) {
+            width: 80%;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            width: 90%;
+        }
+
+        @include m.mq(tab) {
+            width: 94%;
+        }
+
     }
 
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        width: 90%;
-    }
-
-    @include m.mq(tab) {
-        width: 94%;
-    }
-
-}
-
-.cms07__cat {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__content {
-    width: 100%;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__post {
-    width: 100%;
-    border-top: 1px solid var(--base_color);
-    min-height: 90px;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        flex-wrap: wrap;
-        gap: 0;
-        justify-content: space-between;
-    }
-
-    @include m.mq(sp) {}
-
-    &:last-of-type {
-        border-bottom: 1px solid var(--base_color);
-    }
-}
-
-.cms07__post-thumbnail {
-    display: none;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__post-cat {
-    order: 2;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        display: flex;
-        width: 50%;
-        justify-content: flex-start;
-        order: 1;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__post-date {
-    order: 1;
-    color: var(--main_color);
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        width: 50%;
-        justify-content: flex-end;
-        order: 2;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__post-title {
-    order: 3;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        width: 100%;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms07__post-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-
-// cms08
-// --------------------------------------------------------------------------------------------
-.cms08__wrapper {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.cms08 {
-    flex-direction: column;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .cms-pagination {
-        margin-top: 20px;
+    .cms-cat {
+        display: none;
 
         @include m.mq(pc) {}
 
@@ -2299,223 +2112,191 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
-    }
-}
 
-.cms08__cat {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        max-width: 720px;
     }
 
-    @include m.mq(tab) {
-        flex-wrap: nowrap;
-        flex-direction: column;
+    .cms-cat-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-item {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-content {
         width: 100%;
-        gap: 25px;
-        max-width: 340px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
     }
 
-    @include m.mq(sp) {}
+    .cms-list {
 
-}
+        @include m.mq(pc) {}
 
-.cms08__list {
+        @include m.mq(miniPc) {}
 
-    @include m.mq(pc) {}
+        @include m.mq(tab) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(sp) {}
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__post {
-    width: calc(calc(100% - 80px) / 3);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "post-thumbnail post-thumbnail"
-        "post-title post-title"
-        "post-cat post-date";
-    gap: 20px;
-    background-color: #F5F5F5;
-    @include v.borderRadius;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {
-        width: calc(calc(100% - 40px) / 2);
     }
 
-    @include m.mq(tab) {
+    .cms-post {
         width: 100%;
-    }
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__post-thumbnail {
-    display: block;
-    width: 100%;
-    aspect-ratio: 8 / 5;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: var(--radius_pc) var(--radius_pc) 0 0;
-    grid-area: post-thumbnail;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        aspect-ratio: unset;
-        height: 242px;
-    }
-
-    @include m.mq(sp) {
-        aspect-ratio: 1.8 / 1;
-        height: auto;
-        max-height: 242px;
-    }
-
-}
-
-.cms08__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__post-cat {
-    grid-area: post-cat;
-    padding: 5px 0 25px 20px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .cat {
+        border-top: 1px solid var(--base_color);
+        min-height: 90px;
+        padding: 10px 0;
         display: flex;
         align-items: center;
+        gap: 20px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            flex-wrap: wrap;
+            gap: 0;
+            justify-content: space-between;
+        }
+
+        @include m.mq(sp) {}
+
+        &:last-of-type {
+            border-bottom: 1px solid var(--base_color);
+        }
+    }
+
+    .cms-post-thumbnail {
+        display: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-cat {
+        order: 2;
+        display: flex;
+        align-items: center;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            display: flex;
+            width: 50%;
+            justify-content: flex-start;
+            order: 1;
+        }
+
+        @include m.mq(sp) {}
+
+        .cat {
+            display: flex;
+            gap: 5px;
+        }
+
+    }
+
+    .cms-post-date {
+        order: 1;
+        color: var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            width: 50%;
+            justify-content: flex-end;
+            order: 2;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-title {
+        order: 3;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            width: 100%;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
     }
 }
 
-.cms08__post-date {
-    grid-area: post-date;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 5px 20px 25px 0;
-    font-family: var(--en_font);
-    font-size: 1.2rem;
 
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__post-title {
-    grid-area: post-title;
-    padding-inline: 20px;
-    padding-bottom: 10px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms08__post-link {
-    font-weight: 600;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-// cms09
+// archive-g-normal00
 // --------------------------------------------------------------------------------------------
 
-.cms09__wrapper {
+.archive-g-normal00-wrapper {
 
     @include m.mq(pc) {}
 
@@ -2524,30 +2305,298 @@
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
-}
 
-.cms09 {
-    flex-direction: column;
+    .archive-g-normal00 {
+        flex-direction: column;
 
-    @include m.mq(pc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
+        @include m.mq(tab) {}
 
-    @include m.mq(tab) {}
+        @include m.mq(tab) {}
 
-    .cms-pagination span.page-numbers,
-    .cms-pagination a.page-numbers {
-        border-radius: 2px;
-        background-color: #fff;
-        color: var(--main_color);
+        .cms-pagination span.page-numbers,
+        .cms-pagination a.page-numbers {
+            border-radius: 2px;
+            background-color: #fff;
+            color: var(--main_color);
 
-        &:hover {
+            &:hover {
+                background-color: var(--main_color);
+                color: #fff;
+            }
+
+            font-size: calc(var(--font_size_PC) * .8);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                font-size: calc(var(--font_size_TAB) * .8);
+            }
+
+            @include m.mq(sp) {
+                font-size: calc(var(--font_size_SP) * .8);
+            }
+        }
+
+        .cms-pagination span.page-numbers.current,
+        .cms-pagination a.page-numbers.current {
             background-color: var(--main_color);
             color: #fff;
         }
 
+        .cms-pagination span.page-numbers.next,
+        .cms-pagination span.page-numbers.prev,
+        .cms-pagination a.page-numbers.next,
+        .cms-pagination a.page-numbers.prev {
+            width: 38px;
+            height: 38px;
+            position: relative;
+            border: 1px solid var(--main_color);
+
+            &:hover {
+                background-color: #fff;
+                color: var(--main_color);
+                border-color: #fff;
+            }
+        }
+
+        .cms-pagination span.page-numbers.next::before,
+        .cms-pagination a.page-numbers.next::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            right: 11px;
+            width: 12px;
+            height: 1px;
+            background-color: var(--main_color);
+            transform: translateY(-50%);
+        }
+
+        .cms-pagination span.page-numbers.prev::after,
+        .cms-pagination a.page-numbers.prev::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 11px;
+            width: 6px;
+            height: 6px;
+            border-top: 1px solid var(--main_color);
+            border-right: 1px solid var(--main_color);
+            transform: translateY(-50%) rotate(-135deg);
+        }
+
+        .cms-pagination span.page-numbers.prev::before,
+        .cms-pagination a.page-numbers.prev::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 11px;
+            width: 12px;
+            height: 1px;
+            background-color: var(--main_color);
+            transform: translateY(-50%);
+        }
+
+        .cms-pagination span.page-numbers.next::after,
+        .cms-pagination a.page-numbers.next::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            right: 11px;
+            width: 6px;
+            height: 6px;
+            border-top: 1px solid var(--main_color);
+            border-right: 1px solid var(--main_color);
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+    }
+
+    .cms-cat {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-cat-item {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-list {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post {
+        background-color: #fff;
+        border-radius: 6px;
+        display: flex;
+        gap: 30px;
+        padding: 15px 30px;
+        position: relative;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            gap: 10px;
+        }
+
+        @include m.mq(sp) {
+            display: grid;
+            justify-content: space-between;
+            grid-template-rows: auto auto;
+            grid-template-columns: auto auto;
+            grid-template-areas:
+                "date cat"
+                "title title";
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 35px;
+            height: 35px;
+            border-radius: 20px;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            border: 1px solid var(--main_color);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                right: 20px;
+            }
+
+            @include m.mq(sp) {
+                display: none;
+            }
+        }
+    }
+
+    .cms-post-thumbnail {
+        display: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-thumbnail-link {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .cms-post-cat {
+        order: 2;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            grid-area: cat;
+            justify-content: flex-end;
+        }
+
+        a {
+            border: none;
+            color: var(--accent_color);
+
+            @include m.mq(sp) {
+                padding: 0;
+            }
+        }
+
+    }
+
+    .cms-post-date {
+        display: flex;
+        align-items: center;
+        order: 1;
+        color: var(--main_color);
+        line-height: 1;
         font-size: calc(var(--font_size_PC) * .8);
 
         @include m.mq(pc) {}
@@ -2559,362 +2608,94 @@
         }
 
         @include m.mq(sp) {
+            grid-area: date;
+            justify-content: flex-start;
             font-size: calc(var(--font_size_SP) * .8);
         }
+
     }
 
-    .cms-pagination span.page-numbers.current,
-    .cms-pagination a.page-numbers.current {
-        background-color: var(--main_color);
-        color: #fff;
-    }
-
-    .cms-pagination span.page-numbers.next,
-    .cms-pagination span.page-numbers.prev,
-    .cms-pagination a.page-numbers.next,
-    .cms-pagination a.page-numbers.prev {
-        width: 38px;
-        height: 38px;
-        position: relative;
-        border: 1px solid var(--main_color);
-
-        &:hover {
-            background-color: #fff;
-            color: var(--main_color);
-            border-color: #fff;
-        }
-    }
-
-    .cms-pagination span.page-numbers.next::before,
-    .cms-pagination a.page-numbers.next::before {
-        position: absolute;
-        content: "";
-        top: 50%;
-        right: 11px;
-        width: 12px;
-        height: 1px;
-        background-color: var(--main_color);
-        transform: translateY(-50%);
-    }
-
-    .cms-pagination span.page-numbers.prev::after,
-    .cms-pagination a.page-numbers.prev::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        left: 11px;
-        width: 6px;
-        height: 6px;
-        border-top: 1px solid var(--main_color);
-        border-right: 1px solid var(--main_color);
-        transform: translateY(-50%) rotate(-135deg);
-    }
-
-    .cms-pagination span.page-numbers.prev::before,
-    .cms-pagination a.page-numbers.prev::before {
-        position: absolute;
-        content: "";
-        top: 50%;
-        left: 11px;
-        width: 12px;
-        height: 1px;
-        background-color: var(--main_color);
-        transform: translateY(-50%);
-    }
-
-    .cms-pagination span.page-numbers.next::after,
-    .cms-pagination a.page-numbers.next::after {
-        position: absolute;
-        content: "";
-        top: 50%;
-        right: 11px;
-        width: 6px;
-        height: 6px;
-        border-top: 1px solid var(--main_color);
-        border-right: 1px solid var(--main_color);
-        transform: translateY(-50%) rotate(45deg);
-    }
-
-}
-
-.cms09__cat {
-    display: none;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__cat-item {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__post {
-    background-color: #fff;
-    border-radius: 6px;
-    display: flex;
-    gap: 30px;
-    padding: 15px 30px;
-    position: relative;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        gap: 10px;
-    }
-
-    @include m.mq(sp) {
-        display: grid;
-        justify-content: space-between;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
-        grid-template-areas:
-            "date cat"
-            "title title";
-    }
-
-    &::before {
-        position: absolute;
-        content: "";
-        width: 35px;
-        height: 35px;
-        border-radius: 20px;
-        top: 50%;
-        right: 30px;
-        transform: translateY(-50%);
-        border: 1px solid var(--main_color);
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {
-            right: 20px;
-        }
-
-        @include m.mq(sp) {
-            display: none;
-        }
-    }
-}
-
-.cms09__post-thumbnail {
-    display: none;
-
-    img {
+    .cms-post-title {
+        order: 3;
+        flex: 1;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
-    @include m.mq(pc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {}
 
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__post-thumbnail-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-}
-
-.cms09__post-cat {
-    order: 2;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        grid-area: cat;
-        justify-content: flex-end;
-    }
-
-    a {
-        border: none;
-        color: var(--accent_color);
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {
-            padding: 0;
+            grid-area: title;
         }
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 6px;
+            height: 6px;
+            top: 50%;
+            right: 42px;
+            transform: translateY(-50%) rotate(45deg);
+            border-top: 1px solid var(--main_color);
+            border-right: 1px solid var(--main_color);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                right: 32px;
+            }
+
+            @include m.mq(sp) {
+                display: none;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 12px;
+            height: 1px;
+            top: 50%;
+            right: 42px;
+            transform: translateY(-50%);
+            background-color: var(--main_color);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                right: 32px;
+            }
+
+            @include m.mq(sp) {
+                display: none;
+            }
+        }
+
     }
 
-}
-
-.cms09__post-date {
-    display: flex;
-    align-items: center;
-    order: 1;
-    color: var(--main_color);
-    line-height: 1;
-    font-size: calc(var(--font_size_PC) * .8);
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        font-size: calc(var(--font_size_TAB) * .8);
-    }
-
-    @include m.mq(sp) {
-        grid-area: date;
-        justify-content: flex-start;
-        font-size: calc(var(--font_size_SP) * .8);
-    }
-
-}
-
-.cms09__post-title {
-    order: 3;
-    flex: 1;
-    width: 100%;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        grid-area: title;
-    }
-
-    &::before {
-        position: absolute;
-        content: "";
-        width: 6px;
-        height: 6px;
-        top: 50%;
-        right: 42px;
-        transform: translateY(-50%) rotate(45deg);
-        border-top: 1px solid var(--main_color);
-        border-right: 1px solid var(--main_color);
+    .cms-post-link {
+        display: block;
+        padding-right: 40px;
+        position: relative;
+        z-index: 1;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
         @include m.mq(tab) {
-            right: 32px;
+            line-height: 1.5;
         }
 
         @include m.mq(sp) {
-            display: none;
-        }
-    }
-
-    &::after {
-        position: absolute;
-        content: "";
-        width: 12px;
-        height: 1px;
-        top: 50%;
-        right: 42px;
-        transform: translateY(-50%);
-        background-color: var(--main_color);
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {
-            right: 32px;
+            padding-right: 0;
         }
 
-        @include m.mq(sp) {
-            display: none;
-        }
     }
-
-}
-
-.cms09__post-link {
-    display: block;
-    padding-right: 40px;
-    position: relative;
-    z-index: 1;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        line-height: 1.5;
-    }
-
-    @include m.mq(sp) {
-        padding-right: 0;
-    }
-
 }
