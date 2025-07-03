@@ -15,7 +15,7 @@ $category_slug = $category->slug;
 
 get_header();
 if (!is_singular()) :
-    $cms_design = esc_attr(get_theme_mod('archive_cms_design_setting', '01'));
+    $cms_design = esc_attr(get_theme_mod('archive_cms_design_setting', 'archive-a-normal00'));
     $categories = get_categories(array(
         'hide_empty' => true // 投稿がないカテゴリは除外
     ));
@@ -23,18 +23,18 @@ if (!is_singular()) :
     <?php // Content for page
     get_template_part('parts/parts', 'cmsTitle'); ?>
 
-    <div class="cms__wrapper <?php echo $cms_design; ?>__wrapper">
-        <div class="cms cms<?php echo $cms_design; ?>">
+    <div class="cms-wrapper <?php echo $cms_design; ?>-wrapper">
+        <div class="cms <?php echo $cms_design; ?>">
 
-            <div class="cms__cat cms<?php echo $cms_design; ?>__cat">
-                <p class="cms__cat__title cms<?php echo $cms_design; ?>__cat__title">カテゴリー</p>
+            <div class="cms-cat">
+                <p class="cms-cat-title">カテゴリー</p>
                 <?php
                 $catlists = get_categories(array(
                     'orderby' => 'name',
                     'order' => 'ASC'
                 ));
-                echo '<ul class="cms__cat__list cms' . $cms_design . '__cat__list">'; ?>
-                <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
+                echo '<ul class="cms-cat-list">'; ?>
+                <li class="cms-cat-item">
                     <a href="<?php echo $blog_url; ?>">
                         ALL
                     </a>
@@ -42,14 +42,14 @@ if (!is_singular()) :
                 <?php
                 foreach ($catlists as $catlist) {
                     if ($catlist->slug == $category_slug) : ?>
-                        <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
+                        <li class="cms-cat-item">
                             <a class="--active" href="<?php echo get_category_link($catlist->term_id); ?>">
                                 <?php echo $catlist->name; ?>
                             </a>
                         </li>
                     <?php
                     else : ?>
-                        <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item">
+                        <li class="cms-cat-item">
                             <a href="<?php echo get_category_link($catlist->term_id); ?>">
                                 <?php echo $catlist->name; ?>
                             </a>
@@ -71,10 +71,10 @@ if (!is_singular()) :
             if ($tags) {
                 // タグを登録数の多い順にソート
                 $tags = wp_list_sort($tags, 'count', 'DESC');
-                echo '<div class="cms__cat cms' . $cms_design . '__cat cms__tag cms' . $cms_design . '__tag">';
-                echo '<p class="cms__cat__title cms' . $cms_design . '__cat__title">タグ</p>';
-                echo '<ul class="cms__cat__list cms' . $cms_design . '__cat__list cms__tag__list cms' . $cms_design . '__tag__list">'; ?>
-                <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item cms__tag__item cms<?php echo $cms_design ?>__tag__item">
+                echo '<div class="cms-cat cms-tag">';
+                echo '<p class="cms-cat-title">タグ</p>';
+                echo '<ul class="cms-cat-list cms-tag-list">'; ?>
+                <li class="cms-cat-item cms-tag-item">
                     <a class="--active" href="<?php echo $blog_url; ?>">
                         ALL
                     </a>
@@ -83,7 +83,7 @@ if (!is_singular()) :
                 // 各タグをループして表示
                 foreach ($tags as $tag) {
                     $active_class = ($current_tag_id === $tag->term_id) ? ' --active' : ''; ?>
-                    <li class="cms__cat__item cms<?php echo $cms_design ?>__cat__item cms__tag__item cms<?php echo $cms_design ?>__tag__item">
+                    <li class="cms-cat-item cms-tag-item">
                 <?php
                     echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" class="' . $active_class . '">' . esc_html($tag->name) . '</a>';
                 }
@@ -93,30 +93,30 @@ if (!is_singular()) :
             }
                 ?>
 
-                <div class="cms__content cms<?php echo $cms_design; ?>__content">
+                <div class="cms-content">
 
                     <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
-                            <div class="cms__post cms<?php echo $cms_design; ?>__post">
+                            <div class="cms-post">
                                 <?php if (has_post_thumbnail()) : /* もしアイキャッチが登録されていたら */ ?>
-                                    <div class="cms__post__thumbnail cms<?php echo $cms_design; ?>__post__thumbnail">
-                                        <a class="cms__post__thumbnail__link cms<?php echo $cms_design; ?>__post__thumbnail__link" href="<?php the_permalink() ?>">
+                                    <div class="cms-post-thumbnail">
+                                        <a class="cms-post-thumbnail-link" href="<?php the_permalink() ?>">
                                             <?php the_post_thumbnail(); ?>
                                         </a>
                                     </div>
                                 <?php else : /* 登録されていなかったら */ ?>
-                                    <div class="cms__post__thumbnail cms<?php echo $cms_design; ?>__post__thumbnail">
-                                        <a class="cms__post__thumbnail__link cms<?php echo $cms_design; ?>__post__thumbnail__link" href="<?php the_permalink() ?>">
+                                    <div class="cms-post-thumbnail">
+                                        <a class="cms-post-thumbnail-link" href="<?php the_permalink() ?>">
                                             <img src="<?php echo $theme_url; ?>/assets/images/thumbnails/thumbnail.webp" alt="" loading="lazy">
                                         </a>
                                     </div>
                                 <?php endif; ?>
-                                <div class="cms__post__cat cms<?php echo $cms_design; ?>__post__cat">
+                                <div class="cms-post-cat">
                                     <?php cat_link(); ?>
                                 </div>
-                                <div class="cms__post__date cms<?php echo $cms_design; ?>__post__date"><?php the_time('Y.m.d'); ?></div>
-                                <div class="cms__post__title cms<?php echo $cms_design; ?>__post__title">
-                                    <a class="cms__post__link cms<?php echo $cms_design; ?>__post__link" href="<?php the_permalink() ?>">
+                                <div class="cms-post-date"><?php the_time('Y.m.d'); ?></div>
+                                <div class="cms-post-title">
+                                    <a class="cms-post-link" href="<?php the_permalink() ?>">
                                         <?php echo mb_substr($post->post_title, 0, 120) . ''; ?>
                                     </a>
                                 </div>
@@ -137,7 +137,7 @@ if (!is_singular()) :
 
                 // ページネーションが存在する場合、<div>で囲んで出力
                 if (! empty($pagination)) {
-                    echo '<div class="cms__pagination">';
+                    echo '<div class="cms-pagination">';
                     echo $pagination;
                     echo '</div>';
                 }
@@ -179,18 +179,18 @@ if (!is_singular()) :
     <?php if (have_posts()) : ?>
         <div class="p-post">
             <?php while (have_posts()) : the_post(); ?>
-                <article class="p-post__entry">
+                <article class="p-post-entry">
                     <?php if (has_post_thumbnail()) : ?>
-                        <div class="p-post__entry__img"><?php the_post_thumbnail('full'); ?></div>
+                        <div class="p-post-entry-img"><?php the_post_thumbnail('full'); ?></div>
                     <?php endif; ?>
                     <?php
                     cat_link();
                     ?>
-                    <div class="p-post__entry__date">
+                    <div class="p-post-entry-date">
                         <?php the_time('Y.m.d'); ?>
                     </div>
-                    <h1 class="p-post__entry__title"><?php the_title(); ?></h1>
-                    <div class="p-post__entry__content">
+                    <h1 class="p-post-entry-title"><?php the_title(); ?></h1>
+                    <div class="p-post-entry-content">
                         <?php the_content(); ?>
                     </div>
                 </article>
