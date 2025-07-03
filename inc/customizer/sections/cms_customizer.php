@@ -59,8 +59,7 @@ class Cms_Customizer extends Base_Customizer
             'archive-d-normal00'   => __('Archive_D-Normal_00', 'boutiq'),
             'archive-e-normal00'   => __('Archive_E-Normal_00', 'boutiq'),
             'archive-f-normal00'   => __('Archive_F-Normal_00', 'boutiq'),
-            '08'   => __('CMS Archive Type08', 'boutiq'),
-            '09'   => __('CMS Archive Type09', 'boutiq'),
+            'archive-g-normal00'   => __('Archive_G-Normal_00', 'boutiq')
         ), 'archive-a-normal00');
     }
 }

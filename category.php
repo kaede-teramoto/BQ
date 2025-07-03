@@ -120,6 +120,14 @@ if (!is_singular()) :
                                         <?php echo mb_substr($post->post_title, 0, 120) . ''; ?>
                                     </a>
                                 </div>
+                                <?php if ($cms_design === 'archive-e-normal00') : /* archive-e-normal00の場合だけ本文を表示 */ ?>
+                                    <div class="cms-post-excerpt">
+                                        <?php
+                                        $excerpt = get_the_excerpt();
+                                        echo wp_trim_words($excerpt, 50, '...');
+                                        ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                     <?php endwhile;
                     endif;
