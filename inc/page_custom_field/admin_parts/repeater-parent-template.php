@@ -170,8 +170,8 @@ $children = $parent['children'] ?? array();
 echo '<div class="children-wrapper">';
 
 foreach ($children as $childIndex => $child) {
-    echo render_child_block($child, $parentIndex, $childIndex, $parent);
-    //    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
+    //echo render_child_block($child, $parentIndex, $childIndex, $parent);
+    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
 }
 
 echo '</div>'; // .children-wrapper
@@ -190,10 +190,10 @@ wp_editor(
         'textarea_name' => 'page_custom_repeater[parents][' . $parentIndex . '][content]',
         'textarea_rows' => 6,
         'media_buttons' => true,
-        'teeny' => false,          // 簡易エディタは false → 完全に QuickTags のみ
-        'quicktags' => true,       // QuickTags 有効 → テキストエリアにボタン（b, i, link など）
-        'tinymce' => false,        // ★ TinyMCE 完全OFF（ここがポイント）
-        'editor_class' => 'custom-repeater-editor',  // 任意のクラス
+        'teeny' => false,
+        'quicktags' => true,
+        'tinymce' => false,
+        'editor_class' => 'custom-repeater-editor',
     )
 );
 
