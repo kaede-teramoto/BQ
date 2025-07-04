@@ -57,7 +57,7 @@ echo '</div>';
 $content_type = $parent['content_type'] ?? '';
 
 echo '<div class="content-type-field">';
-echo '<p class="content-type-field-title">コンテンツ種別：</p>';
+echo '<p class="content-type-field-title">コンテンツ種別</p>';
 echo '<p>';
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_content" ' . checked($content_type, 'r_content', false) . '> コンテンツ';
@@ -72,6 +72,16 @@ echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex .
 echo '</label>';
 echo '</p>';
 
+echo '</div>';
+
+$content_tab = $parent['content_tab'] ?? '';
+echo '<div class="content-type-field">';
+echo '<p class="content-type-field-title">タブを使用する</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="checkbox" name="page_custom_repeater[parents][' . $parentIndex . '][content_tab]" value="1" ' . checked($content_tab, '1', false) . '>ON';
+echo '</label>';
+echo '</p>';
 echo '</div>';
 
 // ブロック名
@@ -160,7 +170,8 @@ $children = $parent['children'] ?? array();
 echo '<div class="children-wrapper">';
 
 foreach ($children as $childIndex => $child) {
-    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
+    echo render_child_block($child, $parentIndex, $childIndex, $parent);
+    //    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
 }
 
 echo '</div>'; // .children-wrapper

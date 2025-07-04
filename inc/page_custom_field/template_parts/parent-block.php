@@ -74,8 +74,8 @@ if ($content_display === 'on') {
 
         // 子セット
         if (!empty($parent['children']) && is_array($parent['children'])) {
-            foreach ($parent['children'] as $child) {
-                echo render_child_block($child);
+            foreach ($parent['children'] as $childIndex => $child) {
+                echo render_child_block($child, $parent, $childIndex);
             }
         }
 
