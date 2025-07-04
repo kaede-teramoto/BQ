@@ -1,0 +1,104 @@
+@use "../../foundation/variables" as v;
+@use "../../foundation/mixins" as m;
+
+// tab-an00 ----------------------------------------------------------------------------------------------- */
+.tab-an00 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .section-inner {
+        @include v.conWidth;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        width: 100%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        &>label.tab-title {
+            font-size: 120%;
+            flex: 1;
+            order: -1;
+            min-width: 50px;
+            padding: 10px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-bottom: var(--sub_color) 3px solid;
+            transition: all .5s ease;
+        }
+
+        &>label.tab-title:hover {
+            border-bottom-color: var(--accent_color);
+        }
+
+        input {
+            display: none;
+        }
+
+        &>div.tab-content {
+            display: none;
+            width: 100%;
+            padding: 30px;
+            background-color: #fff;
+            flex-direction: column;
+
+            * {
+                opacity: 0;
+                transition: all .5s ease 1s;
+            }
+        }
+
+        &>label:has(:checked) {
+            color: var(--main_color);
+            border-bottom-color: var(--main_color);
+        }
+
+        &>label:has(:checked)+div {
+            display: flex;
+
+            * {
+                opacity: 1;
+                transition: all .5s ease 1s;
+            }
+        }
+    }
+
+    .parts-image {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

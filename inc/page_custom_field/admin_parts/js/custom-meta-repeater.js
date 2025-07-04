@@ -288,14 +288,6 @@ jQuery(document).ready(function ($) {
 
         refreshParentIndexes();
 
-        const newParentIndex = $('.parent-repeater-group').index(clonedGroup);
-
-        const blockNameField = clonedGroup.find('input[name="page_custom_repeater[parents][' + newParentIndex + '][block_name]"]');
-        const originalValue = blockNameField.val();
-        if (originalValue && !originalValue.includes('コピー')) {
-            blockNameField.val(originalValue + ' コピー');
-        }
-
         const newChildrenWrapper = clonedGroup.find('.children-wrapper')[0];
         new Sortable(newChildrenWrapper, {
             handle: '.child-repeater-header',

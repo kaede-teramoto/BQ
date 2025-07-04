@@ -145,7 +145,8 @@
                     color: #fff;
                 }
 
-                input[type=radio] {
+                input[type=radio],
+                input[type=checkbox] {
                     display: none;
                 }
             }

@@ -57,6 +57,7 @@ class Custom_Page_Repeater_Meta_Box
             $parents[] = array(
                 'block_name' => '',
                 'content_type'  => 'r_content',
+                'content_tab'  => '',
                 'content_display' => 'on',
                 'block_class' => '',
                 'title' => '',
@@ -118,9 +119,9 @@ class Custom_Page_Repeater_Meta_Box
             foreach ($value['parents'] as $parent_index => $parent_item) {
 
                 $block_name = trim($parent_item['block_name'] ?? '');
-                if ($block_name === '') {
-                    continue;
-                }
+                // if ($block_name === '') {
+                //     continue;
+                // }
 
                 $children = array();
                 if (isset($parent_item['children']) && is_array($parent_item['children'])) {
@@ -200,6 +201,7 @@ class Custom_Page_Repeater_Meta_Box
                 $parents[] = array(
                     'block_name'          => sanitize_text_field($block_name),
                     'content_type'        => sanitize_text_field($parent_item['content_type'] ?? ''),
+                    'content_tab' => isset($parent_item['content_tab']) ? '1' : '0',
                     'content_display'     => sanitize_text_field($parent_item['content_display'] ?? ''),
                     'block_class'         => sanitize_text_field($parent_item['block_class'] ?? ''),
                     'title'               => wp_kses($parent_item['title'] ?? '', 'post'),
@@ -271,6 +273,7 @@ class Custom_Page_Repeater_Meta_Box
         $parent = array(
             'block_name' => '',
             'content_type' => 'r_content',
+            'content_tab' => '',
             'content_display' => 'on',
             'block_class' => '',
             'title' => '',
@@ -401,14 +404,18 @@ function render_parent_block($parent, $parent_index = 0)
     return ob_get_clean();
 }
 
-function render_child_block($child, $parent_index = 0, $child_index = 0)
+function render_child_block($child, $parent = [], $child_index = 0)
 {
     ob_start();
     get_template_part('inc/page_custom_field/template_parts/child-block', null, array(
+        'parent' => $parent,
         'child' => $child,
+        'child_index' => $child_index,
     ));
     return ob_get_clean();
 }
+
+
 
 /*--------------------------------------------------------------
  クラス初期化
