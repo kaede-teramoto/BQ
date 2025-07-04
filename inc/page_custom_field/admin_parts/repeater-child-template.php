@@ -7,8 +7,6 @@ if (!isset($childIndex)) {
     $childIndex = 0;
 }
 
-// 小ブロックデータ → $child, $childIndex が上から渡っている前提
-
 echo '<div class="child-repeater-group">';
 
 echo '<div class="child-repeater-header">';
@@ -57,10 +55,10 @@ wp_editor(
         'textarea_name' => 'page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex . '][subcontent]',
         'textarea_rows' => 6,
         'media_buttons' => true,
-        'teeny' => false,          // 簡易エディタは false → 完全に QuickTags のみ
-        'quicktags' => true,       // QuickTags 有効 → テキストエリアにボタン（b, i, link など）
-        'tinymce' => false,        // ★ TinyMCE 完全OFF（ここがポイント）
-        'editor_class' => 'custom-repeater-editor',  // 任意のクラス
+        'teeny' => false,
+        'quicktags' => true,
+        'tinymce' => false,
+        'editor_class' => 'custom-repeater-editor',
     )
 );
 
@@ -111,7 +109,7 @@ echo '<p><label>ボタンURL</label><br />';
 echo '<input type="text" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex . '][button_url]" value="' . esc_attr($child['button_url'] ?? '') . '" /></p>';
 
 // ボタン形状 ラジオボタン
-$button_type = $child['button_type'] ?? 'button'; // デフォルトは 'button'
+$button_type = $child['button_type'] ?? 'button';
 
 echo '<p><label>ボタン形状</label><br />';
 echo '<label><input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex . '][button_type]" value="button" ' . checked($button_type, 'button', false) . '> ボタンタイプ</label>　';

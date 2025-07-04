@@ -96,7 +96,6 @@ if ($content_display === 'on') {
 
         // ポストが存在するか確認
         if ($post) {
-            // 本文を出力（エスケープ推奨）
             echo apply_filters('the_content', $post->post_content);
         }
     }

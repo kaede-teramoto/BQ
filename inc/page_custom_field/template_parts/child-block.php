@@ -11,7 +11,7 @@ $text_icon_design = get_theme_mod('text_link_icon_setting', '01');
 $parent = $args['parent'] ?? array();
 // Child
 $child = $args['child'] ?? array();
-$child_index = $args['child_index'] ?? 0; // ← index を取得
+$child_index = $args['child_index'] ?? 0;
 
 $child_content_display = $args['child']['content_display'] ?? '';
 if ($child_content_display === 'on') {

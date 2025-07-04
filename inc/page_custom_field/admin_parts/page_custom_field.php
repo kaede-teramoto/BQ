@@ -415,9 +415,7 @@ function render_child_block($child, $parent = [], $child_index = 0)
     return ob_get_clean();
 }
 
-
-
 /*--------------------------------------------------------------
- クラス初期化
+クラス初期化
 --------------------------------------------------------------*/
 Custom_Page_Repeater_Meta_Box::init();
