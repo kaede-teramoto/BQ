@@ -170,8 +170,8 @@ $children = $parent['children'] ?? array();
 echo '<div class="children-wrapper">';
 
 foreach ($children as $childIndex => $child) {
-    echo render_child_block($child, $parentIndex, $childIndex, $parent);
-    //    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
+    //echo render_child_block($child, $parentIndex, $childIndex, $parent);
+    require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
 }
 
 echo '</div>'; // .children-wrapper
