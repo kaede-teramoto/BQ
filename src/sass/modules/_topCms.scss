@@ -725,6 +725,8 @@
     .cms-pagination {
         top: auto;
         bottom: -20px;
+        height: 5px;
+        padding: 0;
     }
 
     .news-b-normal00 {
@@ -735,6 +737,7 @@
         overflow: hidden;
 
         .swiper {
+            width: 100%;
             overflow: visible; // 1.はみ出させるように visible で上書き
             margin-right: 2%;
 
@@ -926,6 +929,7 @@
     }
 
     .top-cms-post {
+        padding: 0;
         background-color: var(--base_color);
         border-radius: 10px;
         overflow: hidden;

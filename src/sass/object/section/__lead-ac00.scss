@@ -39,12 +39,12 @@
     }
 
     .parts-inner {
-        @include v.conWidth;
         position: relative;
         height: 500px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 

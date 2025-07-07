@@ -35,43 +35,39 @@ echo '<div class="parent-block-header">';
 
 echo '<h3>ブロック設定</h3>';
 echo '<div class="parent-block-header-box">';
+
 echo '<div class="parent-block-header-text">';
+
+
 
 $content_display = $parent['content_display'] ?? '';
 
 echo '<div class="content-type-field">';
-echo '<p class="content-type-field-title">コンテンツの表示</p>';
+echo '<p class="content-type-field-title">コンテンツ表示</p>';
 echo '<p>';
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_display]" value="on" ' . checked($content_display, 'on', false) . '> 表示';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_display]" value="off" ' . checked($content_display, 'off', false) . '> 非表示';
 echo '</label>';
-
 echo '</p>';
-
 echo '</div>';
 
 $content_type = $parent['content_type'] ?? '';
-
 echo '<div class="content-type-field">';
 echo '<p class="content-type-field-title">コンテンツ種別</p>';
 echo '<p>';
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_content" ' . checked($content_type, 'r_content', false) . '> コンテンツ';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_news" ' . checked($content_type, 'r_news', false) . '> お知らせ';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_common" ' . checked($content_type, 'r_common', false) . '> 共通パーツ';
 echo '</label>';
 echo '</p>';
-
 echo '</div>';
 
 $content_tab = $parent['content_tab'] ?? '';

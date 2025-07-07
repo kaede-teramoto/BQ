@@ -373,12 +373,12 @@ $top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', false);
 $top_fv_slider_progressbar = get_theme_mod('top_fv_slider_progressbar', false);
 $top_fv_slider_move_speed = get_theme_mod('top_fv_slider_move_speed', '3000');
 $top_fv_slider_speed = get_theme_mod('top_fv_slider_speed', '3000');
-$cms_design = esc_attr(get_theme_mod('cms_top_design_setting', '01'));
+$cms_design = esc_attr(get_theme_mod('cms_top_design_setting', 'news-a-normal00'));
 
 ?>
 
 <script>
-    <?php if ($cms_design == 01 || $cms_design == 02) : ?>
+    <?php if ($cms_design == 'news-a-normal00' || $cms_design == 'news-a-text00') : ?>
         document.querySelectorAll('.top-cms').forEach(topCms => {
             const tabs = topCms.querySelectorAll('#itemTab a'); // この.top-cms内のタブ
             const panels = topCms.querySelectorAll('.tab__panel'); // この.top-cms内のパネル

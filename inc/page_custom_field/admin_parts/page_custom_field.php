@@ -133,6 +133,7 @@ class Custom_Page_Repeater_Meta_Box
 
                         if (
                             ! empty(trim($child_item['content_display'] ?? '')) ||
+                            ! empty(trim($child_item['content_toggle'] ?? '')) ||
                             ! empty(trim($child_item['subtitle'] ?? '')) ||
                             ! empty(trim($child_item['subtitle_sub'] ?? '')) ||
                             ! empty(trim($child_item['subcontent'] ?? '')) ||
@@ -170,7 +171,8 @@ class Custom_Page_Repeater_Meta_Box
 
                         $children[] = array(
                             'content_display' => sanitize_text_field($child_item['content_display'] ?? 'on'),
-                            'subtitle'     => sanitize_text_field($child_item['subtitle'] ?? ''),
+                            'content_toggle' => isset($child_item['content_toggle']) ? '1' : '0',
+                            'subtitle'     => wp_kses($child_item['subtitle'] ?? '', 'post'),
                             'subtitle_sub' => wp_kses($child_item['subtitle_sub'] ?? '', 'post'),
                             'subcontent'   => wp_kses($child_item['subcontent'] ?? '', $allowed_tags),
                             'image'        => esc_url_raw($child_item['image'] ?? ''),
@@ -201,7 +203,7 @@ class Custom_Page_Repeater_Meta_Box
                 $parents[] = array(
                     'block_name'          => sanitize_text_field($block_name),
                     'content_type'        => sanitize_text_field($parent_item['content_type'] ?? ''),
-                    'content_tab' => isset($parent_item['content_tab']) ? '1' : '0',
+                    'content_tab'         => isset($parent_item['content_tab']) ? '1' : '0',
                     'content_display'     => sanitize_text_field($parent_item['content_display'] ?? ''),
                     'block_class'         => sanitize_text_field($parent_item['block_class'] ?? ''),
                     'title'               => wp_kses($parent_item['title'] ?? '', 'post'),
@@ -303,6 +305,7 @@ class Custom_Page_Repeater_Meta_Box
             'subtitle' => '',
             'subcontent' => '',
             'content_display' => 'on',
+            'content_toggle' => '0',
             'image' => '',
             'button_text' => '',
             'button_url' => '',

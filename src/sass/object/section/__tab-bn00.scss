@@ -70,16 +70,10 @@
             margin-top: -1px;
             display: none;
             width: 100%;
-            padding: 1.5em 1em;
+            padding: 30px;
             background-color: #fff;
             border: var(--text_color) 1px solid;
             border-radius: 0 4px 4px 4px;
-            flex-direction: column;
-
-            * {
-                opacity: 0;
-                transition: all .5s ease 1s;
-            }
         }
 
         &>label:has(:checked) {
@@ -88,10 +82,10 @@
 
         &>label:has(:checked)+div {
             display: flex;
+            gap: 30px;
 
             * {
-                opacity: 1;
-                transition: all .5s ease 1s;
+                flex: 1;
             }
         }
     }
