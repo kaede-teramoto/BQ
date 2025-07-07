@@ -1,10 +1,9 @@
-@use "../../foundation/variables" as v;
-@use "../../foundation/mixins" as m;
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
 
-
-/* lead-as00
+/* lead-csep00
  ----------------------------------------------------------------------------------------------- */
-.lead-as00 {
+.lead-csep00 {
     width: 100%;
     overflow: hidden;
     padding: 0;
@@ -29,10 +28,15 @@
     }
 
     .block-parts {
+        display: flex;
+        gap: 20px;
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+        @include m.mq(miniPc) {
+            flex-direction: column;
+        }
 
         @include m.mq(tab) {}
 
@@ -43,7 +47,7 @@
         position: relative;
         height: 500px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
 
         @include m.mq(pc) {}
@@ -56,7 +60,7 @@
     }
 
     .parts-text {
-        @include v.conWidth;
+        width: 80%;
 
         @include m.mq(pc) {}
 
@@ -70,17 +74,17 @@
     .parts-title {
         position: relative;
         z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         @include v.titleH3;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {}
     }
@@ -89,16 +93,15 @@
         position: relative;
         z-index: 1;
         font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {}
     }
@@ -107,6 +110,7 @@
         position: relative;
         z-index: 1;
         margin-top: 10px;
+        text-align: center;
 
         @include m.mq(pc) {}
 
@@ -121,16 +125,15 @@
         position: relative;
         z-index: 1;
         margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {}
     }

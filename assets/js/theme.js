@@ -162,6 +162,50 @@ document.addEventListener("DOMContentLoaded", () => {
     handleScroll();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.block-nav');
+    if (!nav) {
+        return; // nav がなければ以降の処理をキャンセル
+    }
+
+    const links = nav.querySelectorAll('li a');
+    const sections = document.querySelectorAll('[id^="parts-"]');
+    if (!sections.length) {
+        return;
+    }
+
+    function onScroll() {
+        // .block-nav の top の位置 + オフセット 20px を閾値 A とする
+        const A = nav.getBoundingClientRect().top + 20;
+
+        // 閾値 A が入る最初のセクション index を探す
+        let activeIndex = Array.from(sections).findIndex(sec => {
+            const rect = sec.getBoundingClientRect();
+            return rect.top <= A && rect.bottom > A;
+        });
+
+        // 見つからない場合は先頭 or 末尾を判定
+        if (activeIndex === -1) {
+            const firstRect = sections[0].getBoundingClientRect();
+            activeIndex = firstRect.top > A
+                ? 0
+                : sections.length - 1;
+        }
+
+        // n 番目だけ .is-active を付与
+        links.forEach((a, i) => {
+            a.classList.toggle('is-active', i === activeIndex);
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    // 初回実行
+    onScroll();
+});
+
+
 // // タブ切替
 // document.addEventListener('DOMContentLoaded', () => {
 //     const panels = document.querySelectorAll('.tab__panel');

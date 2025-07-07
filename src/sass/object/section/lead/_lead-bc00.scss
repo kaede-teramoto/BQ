@@ -1,9 +1,9 @@
-@use "../../foundation/variables" as v;
-@use "../../foundation/mixins" as m;
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
 
-/* lead-bsep00
+/* lead-bc00
  ----------------------------------------------------------------------------------------------- */
-.lead-bsep00 {
+.lead-bc00 {
     width: 100%;
     overflow: hidden;
     padding: 0;
@@ -29,7 +29,6 @@
 
     .block-parts {
         display: flex;
-        gap: 30px;
         @include v.conWidth;
 
         @include m.mq(pc) {}
@@ -49,7 +48,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex: 1;
 
         @include m.mq(pc) {}
 

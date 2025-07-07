@@ -1,8 +1,8 @@
-@use "../../foundation/variables" as v;
-@use "../../foundation/mixins" as m;
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
 
-// image-an02 ----------------------------------------------------------------------------------------------- */
-.image-an02 {
+// image-an00 ----------------------------------------------------------------------------------------------- */
+.image-an00 {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -37,7 +37,6 @@
     }
 
     .parts-image {
-        height: 300px;
 
         @include m.mq(pc) {}
 
@@ -46,11 +45,5 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 }

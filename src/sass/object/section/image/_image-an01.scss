@@ -1,8 +1,8 @@
-@use "../../foundation/variables" as v;
-@use "../../foundation/mixins" as m;
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
 
-// image-an00 ----------------------------------------------------------------------------------------------- */
-.image-an00 {
+// image-an01 ----------------------------------------------------------------------------------------------- */
+.image-an01 {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -12,6 +12,7 @@
     @include m.mq(sp) {}
 
     .section-inner {
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 

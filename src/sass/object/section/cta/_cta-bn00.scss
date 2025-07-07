@@ -1,22 +1,19 @@
-@use "../../foundation/variables" as v;
-@use "../../foundation/mixins" as m;
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
 
-/* lead-as01
- ----------------------------------------------------------------------------------------------- */
-.lead-as01 {
+// cta-bn00 -----------------------------------------------------------------------------------------------
+.cta-bn00 {
     width: 100%;
-    overflow: hidden;
-    padding: 0;
 
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
+    /* cta01
+ ----------------------------------------------------------------------------------------------- */
     .section-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
 
         @include m.mq(pc) {}
 
@@ -28,6 +25,8 @@
     }
 
     .block-parts {
+        width: 100%;
+        position: relative;
 
         @include m.mq(pc) {}
 
@@ -40,11 +39,9 @@
 
     .parts-inner {
         position: relative;
-        height: 500px;
+        padding: 100px;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        @include v.conWidth;
+        flex-direction: column;
 
         @include m.mq(pc) {}
 
@@ -56,6 +53,12 @@
     }
 
     .parts-text {
+        order: 2;
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         @include v.conWidth;
 
         @include m.mq(pc) {}
@@ -68,45 +71,29 @@
     }
 
     .parts-title {
-        position: relative;
-        z-index: 1;
-        @include v.titleH3;
+        @include v.titleH2;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {}
     }
 
     .parts-subtitle {
-        position: relative;
-        z-index: 1;
-        font-weight: bold;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {}
     }
 
     .parts-content {
-        position: relative;
-        z-index: 1;
-        margin-top: 10px;
 
         @include m.mq(pc) {}
 
@@ -118,30 +105,7 @@
     }
 
     .parts-button {
-        position: relative;
-        z-index: 1;
-        margin-top: 30px;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @include m.mq(sp) {}
-    }
-
-    .parts-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
+        margin-top: 50px;
 
         @include m.mq(pc) {}
 
@@ -150,11 +114,27 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+    }
+
+    .parts-image {
+        width: 100%;
+        height: 100%;
+        order: 1;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
     }
+
 }
