@@ -70,6 +70,24 @@ if ($content_display === 'on') {
             echo '</h2>';
         }
 
+        $follow_menu = $args['parent']['follow_menu'];
+
+        if ($follow_menu === '1') {
+            // 子セット
+            if (!empty($parent['children']) && is_array($parent['children'])) {
+
+                echo '<div class="block-nav">';
+                echo '<ul>';
+                foreach ($parent['children'] as $childIndex => $child) {
+                    echo '<li>';
+                    echo '<a href="#parts-' . $childIndex . '">' . strip_tags(apply_filters('the_content', $child['subtitle'] ?? ''), '<br><span>') . '</a>';
+                    echo '</li>';
+                }
+                echo '</ul>';
+                echo '</div>';
+            }
+        }
+
         echo '<div class="block-parts">';
 
         // 子セット
