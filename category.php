@@ -153,36 +153,6 @@ if (!is_singular()) :
         </div>
     </div>
 
-    <script>
-        document.querySelectorAll('#itemTab a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                // すべてのタブから "active" クラスを削除する
-                document.querySelectorAll('#itemTab a').forEach(tab => {
-                    tab.classList.remove('--active');
-                });
-
-                // すべてのPanelから "active" クラスを削除する
-                document.querySelectorAll('.tab__panel').forEach(tabPane => {
-                    tabPane.classList.remove('--active');
-                });
-
-                // クリックされたタブに "active" クラスを追加する
-                this.classList.add('--active');
-
-                // 関連するタブコンテンツを表示する
-                const activeTabId = this.getAttribute('href');
-                const targetChar = "#";
-                const tabId = activeTabId.replace(targetChar, "");
-                const activeTabContent = document.getElementById(tabId);
-                if (activeTabContent) {
-                    activeTabContent.classList.add('--active');
-                }
-            });
-        });
-    </script>
-
 <?php else : ?>
     <?php if (have_posts()) : ?>
         <div class="p-post">

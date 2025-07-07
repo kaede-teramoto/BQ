@@ -99,6 +99,10 @@
             }
         }
 
+        .parent-block-header-image {
+            padding-top: 0;
+        }
+
         @media (max-width: 1200px) {
             .parent-block-header-box {
                 flex-direction: column;

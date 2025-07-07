@@ -29,18 +29,23 @@ echo '<p>';
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex  . '][content_display]" value="on" ' . checked($content_display, 'on', false) . '> 表示';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex  . '][content_display]" value="off" ' . checked($content_display, 'off', false) . '> 非表示';
 echo '</label>';
-
 echo '</p>';
 
+$content_toggle = $child['content_toggle'] ?? '';
+echo '<p class="content-type-field-title">開閉式にする</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="checkbox" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex  . '][content_toggle]" value="0" ' . checked($content_toggle, '1', false) . '>ON';
+echo '</label>';
+echo '</p>';
 echo '</div>';
 
 // 小タイトル
 echo '<p><label>小タイトル</label><br />';
-echo '<input type="text" name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex . '][subtitle]" value="' . esc_attr($child['subtitle'] ?? '') . '" /></p>';
+echo '<textarea name="page_custom_repeater[parents][' . $parentIndex . '][children][' . $childIndex . '][subtitle]" rows="2">' . esc_textarea($child['subtitle'] ?? '') . '</textarea></p>';
 
 // サブタイトル
 echo '<p><label>サブタイトル</label><br />';

@@ -166,6 +166,7 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                 echo '</ul>';
                 ?>
             </div>
+
             <?php if ($btn_text && $topCms_btn_link): ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
