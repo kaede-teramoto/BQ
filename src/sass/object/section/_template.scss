@@ -1,21 +1,11 @@
 @use "../../foundation/variables" as v;
 @use "../../foundation/mixins" as m;
 
-/* lead-bs00
+// template-an00 -----------------------------------------------------------------------------------------------
+.template-an00 {
+
+    /* cta01
  ----------------------------------------------------------------------------------------------- */
-.lead-bs00 {
-    width: 100%;
-    overflow: hidden;
-    padding: 0;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
     .section-inner {
 
         @include m.mq(pc) {}
@@ -28,25 +18,17 @@
     }
 
     .block-parts {
-        display: flex;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {
-            flex-direction: column;
-        }
+        @include m.mq(tab) {}
 
         @include m.mq(sp) {}
     }
 
     .parts-inner {
-        position: relative;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         @include m.mq(pc) {}
 
@@ -58,7 +40,6 @@
     }
 
     .parts-text {
-        width: 80%;
 
         @include m.mq(pc) {}
 
@@ -70,12 +51,6 @@
     }
 
     .parts-title {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include v.titleH3;
 
         @include m.mq(pc) {}
 
@@ -87,12 +62,6 @@
     }
 
     .parts-subtitle {
-        position: relative;
-        z-index: 1;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         @include m.mq(pc) {}
 
@@ -104,10 +73,6 @@
     }
 
     .parts-content {
-        position: relative;
-        z-index: 1;
-        margin-top: 10px;
-        text-align: center;
 
         @include m.mq(pc) {}
 
@@ -119,12 +84,6 @@
     }
 
     .parts-button {
-        position: relative;
-        z-index: 1;
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         @include m.mq(pc) {}
 
@@ -136,12 +95,6 @@
     }
 
     .parts-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
 
         @include m.mq(pc) {}
 
@@ -150,11 +103,6 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
+
 }

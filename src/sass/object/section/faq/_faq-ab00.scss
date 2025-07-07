@@ -1,8 +1,8 @@
-@use "../../foundation/variables" as v;
-@use "../../foundation/mixins" as m;
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
 
 // faq-an00 ----------------------------------------------------------------------------------------------- */
-.faq-bn00 {
+.faq-ab00 {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -31,6 +31,7 @@
     .block-parts {
         display: flex;
         flex-direction: column;
+        gap: 20px;
 
         @include m.mq(pc) {}
 
@@ -42,12 +43,9 @@
 
 
         .parts-inner {
+            background-color: var(--sub_color);
             padding: 30px;
-            border-top: 1px solid var(--sub_color);
-
-            &:last-of-type {
-                border-bottom: 1px solid var(--sub_color);
-            }
+            @include v.borderRadius;
         }
 
         .parts-content {
@@ -113,10 +111,11 @@
                 font-weight: bold;
                 display: block;
                 position: absolute;
-                top: -5px;
+                top: 49%;
                 left: -30px;
                 border-radius: 50px;
                 display: block;
+                transform: translateY(-50%);
 
                 @include m.mq(pc) {
                     left: -25px;
@@ -138,11 +137,12 @@
                 height: 30px;
                 display: block;
                 position: absolute;
-                top: 0;
+                top: 50%;
                 right: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transform: translateY(-50%);
 
                 @include m.mq(pc) {
                     width: 25px;

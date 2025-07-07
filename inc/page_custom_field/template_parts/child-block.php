@@ -9,6 +9,7 @@ $text_icon_design = get_theme_mod('text_link_icon_setting', '01');
 
 // Parent
 $parent = $args['parent'] ?? array();
+$parent_index = $args['parent_index'] ?? 0;
 
 // Child
 $child = $args['child'] ?? array();
@@ -95,7 +96,7 @@ if ($child_content_display === 'on') {
             }
         } else {
 
-            echo '<div id="parts-' . $child_index . '" class="parts-inner js-fadeIn">';
+            echo '<div id="section' . ($parent_index + 1) . '-parts' . ($child_index + 1) . '" class="parts-inner js-fadeIn">';
 
 
             if (!empty($child['image_inline'])) {

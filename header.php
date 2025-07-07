@@ -194,16 +194,16 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                         <?php if ($btn_display_setting) : ?>
                                             <?php if ($btn_target_setting) : ?>
                                                 <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
-                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                    <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
+                                                        <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                        <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             <?php else : ?>
                                                 <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                                    <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
-                                                        <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                    <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
+                                                        <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                        <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             <?php endif; ?>
@@ -212,16 +212,16 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                         <?php if ($btn_sub_display_setting) : ?>
                                             <?php if ($btn_sub_target_setting) : ?>
                                                 <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                                    <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
-                                                        <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                    <a class="c-btn-link c-btn<?php echo $btn_sub_link_design; ?>-link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
+                                                        <div class="c-btn-text c-btn-text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                        <div class="c-btn-icon c-btn-icon<?php echo $btn_sub_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             <?php else : ?>
                                                 <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                                    <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
-                                                        <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                        <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                    <a class="c-btn-link c-btn<?php echo $btn_sub_link_design; ?>-link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
+                                                        <div class="c-btn-text c-btn-text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                        <div class="c-btn-icon c-btn-icon<?php echo $btn_sub_icon_design; ?>"></div>
                                                     </a>
                                                 </div>
                                             <?php endif; ?>
@@ -246,16 +246,16 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                     <?php if ($btn_display_setting) : ?>
                                         <?php if ($btn_target_setting) : ?>
                                             <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                                <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
-                                                    <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' target="_blank" <?php echo $btn_bg_color; ?>>
+                                                    <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                    <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                                                 </a>
                                             </div>
                                         <?php else : ?>
                                             <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?> btn--first">
-                                                <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
-                                                    <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                                                <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $btn_url; ?>' <?php echo $btn_bg_color; ?>>
+                                                    <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                                    <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                                                 </a>
                                             </div>
                                         <?php endif; ?>
@@ -264,16 +264,16 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
                                     <?php if ($btn_sub_display_setting) : ?>
                                         <?php if ($btn_sub_target_setting) : ?>
                                             <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                                <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
-                                                    <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                <a class="c-btn-link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' target="_blank" <?php echo $btn_sub_bg_color; ?>>
+                                                    <div class="c-btn-text c-btn-text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                    <div class="c-btn-icon c-btn-icon<?php echo $btn_sub_icon_design; ?>"></div>
                                                 </a>
                                             </div>
                                         <?php else : ?>
                                             <div class="c-btn c-btn<?php echo $btn_sub_link_design; ?> btn<?php echo $btn_sub_link_design; ?> btn--second">
-                                                <a class="c-btn__link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
-                                                    <div class="c-btn__text c-btn__text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
-                                                    <div class="c-btn__icon c-btn__icon<?php echo $btn_sub_icon_design; ?>"></div>
+                                                <a class="c-btn-link c-btn<?php echo $btn_sub_link_design; ?>__link" href='<?php echo $btn_sub_url; ?>' <?php echo $btn_sub_bg_color; ?>>
+                                                    <div class="c-btn-text c-btn-text<?php echo $btn_sub_link_design; ?>"><?php echo $btn_sub_text; ?></div>
+                                                    <div class="c-btn-icon c-btn-icon<?php echo $btn_sub_icon_design; ?>"></div>
                                                 </a>
                                             </div>
                                         <?php endif; ?>

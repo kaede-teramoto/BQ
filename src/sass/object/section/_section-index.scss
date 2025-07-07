@@ -3,33 +3,20 @@
    ========================================================================== */
 
 @use "section-common";
-@use "_image-an00";
-@use "_image-an01";
-@use "_image-an02";
-@use "_image-an03";
-@use "_lead-as00";
-@use "_lead-ac00";
-@use "_lead-bs00";
-@use "_lead-bc00";
-@use "_lead-bsep00";
-@use "_lead-cs00";
-@use "_lead-cc00";
-@use "_lead-csep00";
-@use "_tab-an00";
-@use "_tab-bn00";
-@use "_faq-an00";
-@use "_faq-ab00";
-@use "_faq-bn00";
 
+@use "image/image-index";
+@use "lead/lead-index";
+@use "tab/tab-index";
+@use "faq/faq-index";
+@use "cta/cta-index";
+@use "follow_menu/fmenu-index";
+@use "design/design-index";
 
 @use "features01";
-@use "original";
-@use "tab01";
-@use "tab02";
+
 @use "design01";
 @use "design02";
 @use "design03";
-@use "_design04";
 @use "design05";
 @use "design06";
 @use "design07";
@@ -48,9 +35,6 @@
 @use "cta03";
 @use "cta04";
 @use "cta05";
-@use "faq01";
-@use "faq02";
-@use "faq03";
 @use "loop01";
 @use "loop02";
 @use "company01";

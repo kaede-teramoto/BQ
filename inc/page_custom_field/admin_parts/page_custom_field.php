@@ -410,16 +410,33 @@ function render_parent_block($parent, $parent_index = 0)
     return ob_get_clean();
 }
 
-function render_child_block($child, $parent = [], $child_index = 0)
+function render_child_block($child, $parent = [], $parent_index = 0, $child_index = 0)
 {
     ob_start();
-    get_template_part('inc/page_custom_field/template_parts/child-block', null, array(
-        'parent' => $parent,
-        'child' => $child,
-        'child_index' => $child_index,
-    ));
+    get_template_part(
+        'inc/page_custom_field/template_parts/child-block',
+        null,
+        [
+            'parent'       => $parent,
+            'child'        => $child,
+            'parent_index' => $parent_index,
+            'child_index'  => $child_index,
+        ]
+    );
     return ob_get_clean();
 }
+
+// function render_child_block($child, $parent = [], $parent_index = 0, $child_index = 0)
+// {
+//     ob_start();
+//     get_template_part('inc/page_custom_field/template_parts/child-block', null, array(
+//         'parent' => $parent,
+//         'child' => $child,
+//         'parent_index' => $parent_index,
+//         'child_index' => $child_index,
+//     ));
+//     return ob_get_clean();
+// }
 
 /*--------------------------------------------------------------
 クラス初期化

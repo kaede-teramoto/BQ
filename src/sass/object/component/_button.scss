@@ -5,7 +5,7 @@
 ----------------------------------------------------------------------------------------------- */
 
 .c-btn {
-    display: inline-block;
+    display: inline-flex;
     width: auto;
 
     p:not([class]) {
@@ -13,7 +13,7 @@
     }
 }
 
-.c-btn__text {
+.c-btn-text {
     font-weight: 700;
     font-size: 1.6rem;
     position: relative;
@@ -25,7 +25,7 @@
 .c-btn01 {
     height: 50px;
 
-    .c-btn01__link {
+    .c-btn01-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -57,7 +57,7 @@
         }
     }
 
-    .c-btn__icon {
+    .c-btn-icon {
         display: none;
     }
 }
@@ -66,7 +66,7 @@
 .c-btn02 {
     height: 50px;
 
-    .c-btn02__link {
+    .c-btn02-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -102,7 +102,7 @@
         }
     }
 
-    .c-btn__icon {
+    .c-btn-icon {
         display: none;
     }
 }
@@ -111,7 +111,7 @@
 .c-btn03 {
     height: 80px;
 
-    .c-btn03__link {
+    .c-btn03-link {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -174,7 +174,7 @@
 .c-btn04 {
     height: 80px;
 
-    .c-btn04__link {
+    .c-btn04-link {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -246,7 +246,7 @@
 .c-btn05 {
     height: 80px;
 
-    .c-btn05__link {
+    .c-btn05-link {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -285,7 +285,7 @@
 .c-btn06 {
     height: 64px;
 
-    .c-btn06__link {
+    .c-btn06-link {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -328,7 +328,7 @@
 .c-btn07 {
     height: 64px;
 
-    .c-btn07__link {
+    .c-btn07-link {
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
@@ -366,7 +366,7 @@
 .c-btn08 {
     height: 80px;
 
-    .c-btn08__link {
+    .c-btn08-link {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -384,7 +384,7 @@
         position: relative;
         overflow: hidden;
 
-        .c-btn__text08 {
+        .c-btn-text08 {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -438,7 +438,7 @@
 .c-btn09 {
     height: 64px;
 
-    .c-btn09__link {
+    .c-btn09-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -477,7 +477,7 @@
 .c-btn10 {
     height: 50px;
 
-    .c-btn10__link {
+    .c-btn10-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -514,7 +514,7 @@
 
 .header {
     .c-btn01 {
-        .c-btn01__link {
+        .c-btn01-link {
             color: var(--header_btn_text_color);
             background: var(--header_btn_bg_color);
             transition: background .3s ease-out,
@@ -536,7 +536,7 @@
     .c-btn01.btn--second {
         margin-left: 5px;
 
-        .c-btn01__link {
+        .c-btn01-link {
             color: var(--header_btn_sub_text_color);
             background: var(--header_btn_sub_bg_color);
             transition: background .3s ease-out,
@@ -557,7 +557,7 @@
 
     .c-btn02 {
 
-        .c-btn02__link {
+        .c-btn02-link {
             border-color: var(--header_btn_text_color);
             color: var(--header_btn_text_color);
             position: relative;
@@ -588,10 +588,10 @@
     }
 
     .c-btn03 {
-        .c-btn03__link {
+        .c-btn03-link {
             color: var(--header_btn_text_color);
 
-            .c-btn__icon01 {
+            .c-btn-icon01 {
                 &::before {
                     background-color: var(--header_btn_bg_color);
                 }
@@ -601,8 +601,8 @@
                 }
             }
 
-            .c-btn__icon02,
-            .c-btn__icon04 {
+            .c-btn-icon02,
+            .c-btn-icon04 {
                 background-color: var(--header_btn_text_color);
 
                 &::before {
@@ -613,7 +613,7 @@
             &:hover {
                 color: var(--header_btn_bg_color);
 
-                .c-btn__icon01 {
+                .c-btn-icon01 {
                     background-color: var(--header_btn_bg_color);
 
                     &::before {
@@ -625,8 +625,8 @@
                     }
                 }
 
-                .c-btn__icon02,
-                .c-btn__icon04 {
+                .c-btn-icon02,
+                .c-btn-icon04 {
                     background-color: var(--header_btn_bg_color);
 
                     &::before {
@@ -634,13 +634,13 @@
                     }
                 }
 
-                .c-btn__icon03 {
+                .c-btn-icon03 {
                     &::before {
                         border-color: var(--header_btn_bg_color);
                     }
                 }
 
-                .c-btn__icon05 {
+                .c-btn-icon05 {
                     &::before {
                         background-color: var(--header_btn_bg_color);
                     }
@@ -650,7 +650,7 @@
                     }
                 }
 
-                .c-btn__icon06 {
+                .c-btn-icon06 {
                     &::before {
                         background-color: var(--header_btn_bg_color);
                     }
@@ -664,14 +664,14 @@
     }
 
     .c-btn05 {
-        .c-btn05__link {
+        .c-btn05-link {
             border-color: var(--header_btn_text_color);
             color: var(--header_btn_text_color);
         }
     }
 
     .c-btn06 {
-        .c-btn06__link {
+        .c-btn06-link {
             color: var(--header_btn_text_color);
         }
     }
@@ -725,7 +725,7 @@
 
 .footer {
     .c-btn01 {
-        .c-btn01__link {
+        .c-btn01-link {
             color: var(--footer_first_btn_text_color);
             background: var(--footer_first_btn_bg_color);
             transition: background .3s ease-out,
@@ -747,7 +747,7 @@
     .c-btn01.btn--second {
         margin-left: 5px;
 
-        .c-btn01__link {
+        .c-btn01-link {
             color: var(--footer_second_btn_text_color);
             background: var(--footer_second_btn_bg_color);
             transition: background .3s ease-out,
@@ -768,7 +768,7 @@
 
     .c-btn02 {
 
-        .c-btn02__link {
+        .c-btn02-link {
             border-color: var(--footer_first_btn_text_color);
             color: var(--footer_first_btn_text_color);
             position: relative;
@@ -799,11 +799,11 @@
     }
 
     .c-btn03 {
-        .c-btn03__link {
+        .c-btn03-link {
             color: var(--footer_first_btn_text_color);
             background-color: var(--footer_first_btn_bg_color);
 
-            .c-btn__icon01 {
+            .c-btn-icon01 {
                 &::before {
                     background-color: var(--footer_first_btn_bg_color);
                 }
@@ -813,8 +813,8 @@
                 }
             }
 
-            .c-btn__icon02,
-            .c-btn__icon04 {
+            .c-btn-icon02,
+            .c-btn-icon04 {
                 background-color: var(--footer_first_btn_text_color);
 
                 &::before {
@@ -825,7 +825,7 @@
             &:hover {
                 color: var(--footer_first_btn_bg_color);
 
-                .c-btn__icon01 {
+                .c-btn-icon01 {
                     background-color: var(--footer_first_btn_bg_color);
 
                     &::before {
@@ -837,8 +837,8 @@
                     }
                 }
 
-                .c-btn__icon02,
-                .c-btn__icon04 {
+                .c-btn-icon02,
+                .c-btn-icon04 {
                     background-color: var(--footer_first_btn_bg_color);
 
                     &::before {
@@ -846,13 +846,13 @@
                     }
                 }
 
-                .c-btn__icon03 {
+                .c-btn-icon03 {
                     &::before {
                         border-color: var(--footer_first_btn_bg_color);
                     }
                 }
 
-                .c-btn__icon05 {
+                .c-btn-icon05 {
                     &::before {
                         background-color: var(--footer_first_btn_bg_color);
                     }
@@ -862,7 +862,7 @@
                     }
                 }
 
-                .c-btn__icon06 {
+                .c-btn-icon06 {
                     &::before {
                         background-color: var(--footer_first_btn_bg_color);
                     }
@@ -877,11 +877,11 @@
 
     .c-btn04 {
 
-        .c-btn04__link {
+        .c-btn04-link {
             background-color: var(--footer_first_btn_bg_color);
 
             &:hover {
-                .c-btn__icon03::before {
+                .c-btn-icon03::before {
                     border-color: #fff;
                 }
 
@@ -890,14 +890,14 @@
     }
 
     .c-btn05 {
-        .c-btn05__link {
+        .c-btn05-link {
             border-color: var(--footer_first_btn_text_color);
             color: var(--footer_first_btn_text_color);
         }
     }
 
     .c-btn06 {
-        .c-btn06__link {
+        .c-btn06-link {
             color: var(--footer_first_btn_text_color);
         }
     }
