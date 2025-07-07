@@ -71,11 +71,19 @@ echo '</p>';
 echo '</div>';
 
 $content_tab = $parent['content_tab'] ?? '';
+$follow_menu = $parent['follow_menu'] ?? '';
 echo '<div class="content-type-field">';
 echo '<p class="content-type-field-title">タブを使用する</p>';
 echo '<p>';
 echo '<label>';
 echo '<input type="checkbox" name="page_custom_repeater[parents][' . $parentIndex . '][content_tab]" value="1" ' . checked($content_tab, '1', false) . '>ON';
+echo '</label>';
+echo '</p>';
+
+echo '<p class="content-type-field-title">追従メニュー</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="checkbox" name="page_custom_repeater[parents][' . $parentIndex . '][follow_menu]" value="1" ' . checked($follow_menu, '1', false) . '>ON';
 echo '</label>';
 echo '</p>';
 echo '</div>';

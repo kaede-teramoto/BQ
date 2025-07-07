@@ -95,7 +95,7 @@ if ($child_content_display === 'on') {
             }
         } else {
 
-            echo '<div class="parts-inner js-fadeIn">';
+            echo '<div id="parts-' . $child_index . '" class="parts-inner js-fadeIn">';
 
 
             if (!empty($child['image_inline'])) {
