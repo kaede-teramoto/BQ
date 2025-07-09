@@ -9,8 +9,12 @@
 @use "tab/tab-index";
 @use "faq/faq-index";
 @use "cta/cta-index";
+@use "plan/plan-index";
+@use "flow/flow-index";
+@use "company/company-index";
 @use "follow_menu/fmenu-index";
 @use "design/design-index";
+
 
 @use "features01";
 
@@ -30,11 +34,6 @@
 @use "design15";
 @use "design16";
 @use "design17";
-@use "cta01";
-@use "cta02";
-@use "cta03";
-@use "cta04";
-@use "cta05";
 @use "loop01";
 @use "loop02";
 @use "company01";
@@ -43,10 +42,6 @@
 @use "company04";
 @use "privacyPolicy01";
 @use "privacyPolicy02";
-@use "flow01";
-@use "flow02";
-@use "flow03";
-@use "flow04";
 @use "follow01";
 @use "follow02";
 @use "follow03";
@@ -54,6 +49,3 @@
 @use "form02";
 @use "form03";
 @use "form04";
-@use "plan01";
-@use "plan02";
-@use "plan03";

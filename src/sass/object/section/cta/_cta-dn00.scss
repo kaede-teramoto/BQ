@@ -1,12 +1,18 @@
 @use "../../../foundation/variables" as v;
 @use "../../../foundation/mixins" as m;
 
-// template-an00 -----------------------------------------------------------------------------------------------
-.template-an00 {
+// cta-dn00 -----------------------------------------------------------------------------------------------
+.cta-dn00 {
+    width: 100%;
 
-    /* cta01
- ----------------------------------------------------------------------------------------------- */
     .section-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 
@@ -18,17 +24,29 @@
     }
 
     .block-parts {
+        width: 100%;
+        position: relative;
+        display: flex;
+        gap: 80px;
+        flex-direction: column;
 
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+        @include m.mq(tab) {
+            gap: 50px;
+        }
 
         @include m.mq(sp) {}
     }
 
     .parts-inner {
+        width: 100%;
+        position: relative;
+        padding: 0;
+        display: flex;
+        gap: 30px;
 
         @include m.mq(pc) {}
 
@@ -40,6 +58,13 @@
     }
 
     .parts-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 30px 0;
+        @include v.conWidth;
 
         @include m.mq(pc) {}
 
@@ -51,6 +76,7 @@
     }
 
     .parts-title {
+        @include v.titleH2;
 
         @include m.mq(pc) {}
 
@@ -62,6 +88,7 @@
     }
 
     .parts-subtitle {
+        font-size: 85%;
 
         @include m.mq(pc) {}
 
@@ -73,6 +100,7 @@
     }
 
     .parts-content {
+        text-align: left;
 
         @include m.mq(pc) {}
 
@@ -84,6 +112,7 @@
     }
 
     .parts-button {
+        margin-top: 30px;
 
         @include m.mq(pc) {}
 
@@ -95,6 +124,13 @@
     }
 
     .parts-image {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
         @include m.mq(pc) {}
 

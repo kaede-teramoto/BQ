@@ -381,7 +381,7 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', 'news-a-normal00'
     <?php if ($cms_design == 'news-a-normal00' || $cms_design == 'news-a-text00') : ?>
         document.querySelectorAll('.top-cms').forEach(topCms => {
             const tabs = topCms.querySelectorAll('#itemTab a'); // この.top-cms内のタブ
-            const panels = topCms.querySelectorAll('.tab__panel'); // この.top-cms内のパネル
+            const panels = topCms.querySelectorAll('.tab-panel'); // この.top-cms内のパネル
 
             tabs.forEach(link => {
                 link.addEventListener('click', function(event) {
@@ -412,6 +412,44 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', 'news-a-normal00'
 
     <?php elseif ($cms_design == 'news-b-normal00') : ?>
         const top03Swiper = new Swiper('.top-cms-content .swiper', {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            watchSlidesProgress: true,
+            //centeredSlides: true,
+            navigation: {
+                nextEl: ".top-cms-content .swiper-btn-next",
+                prevEl: ".top-cms-content .swiper-btn-prev",
+            },
+            breakpoints: {
+                1599: {
+                    slidesPerView: 5.2,
+                },
+                1199: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                },
+                849: {
+                    slidesPerView: 3,
+                },
+                599: {
+                    slidesPerView: 2,
+                    centeredSlides: false,
+                }
+            },
+            speed: 2000,
+            mousewheel: {
+                invert: false,
+            },
+            pagination: {
+                el: ".top-cms-content .cms-pagination",
+                type: "progressbar",
+                clickable: true,
+            },
+
+        });
+
+    <?php elseif ($cms_design == '.news-c-normal00') : ?>
+        const cNormalSwiper = new Swiper('.top-cms-content .swiper', {
             slidesPerView: 1.2,
             spaceBetween: 20,
             watchSlidesProgress: true,

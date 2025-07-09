@@ -336,6 +336,10 @@
             line-height: 1.5;
             font-size: 1.2rem;
 
+            &::after {
+                display: none;
+            }
+
             @include m.mq(pc) {}
 
             @include m.mq(miniPc) {
@@ -381,7 +385,6 @@
         }
     }
 }
-
 
 /*  -----------------------------------------------------------------------------------------------
     news-a-text00
@@ -666,6 +669,9 @@
     .top-cms-post-cat {
         font-size: 1.2rem;
         font-weight: 700;
+        grid-area: post__cat;
+        display: flex;
+        justify-content: flex-start;
 
         @include m.mq(pc) {}
 
@@ -679,11 +685,18 @@
             padding: 3px 28px;
             border-radius: 20px;
             background-color: var(--base_color);
+
+            &::after {
+                display: none;
+            }
         }
     }
 
     .top-cms-post-date {
         text-align: end;
+        grid-area: post__date;
+        display: flex;
+        justify-content: flex-end;
 
         @include m.mq(pc) {}
 
@@ -738,21 +751,22 @@
 
         .swiper {
             width: 100%;
-            overflow: visible; // 1.はみ出させるように visible で上書き
-            margin-right: 2%;
+            overflow: visible;
+            // padding-right: clamp(100px, 10%, 200px);
+            padding-right: 5%;
 
             @include m.mq(pc) {}
 
             @include m.mq(miniPc) {
-                margin-right: clamp(100px, 16%, 200px);
+                padding-right: clamp(100px, 16%, 200px);
             }
 
             @include m.mq(tab) {
-                margin-right: 18%;
+                padding-right: 18%;
             }
 
             @include m.mq(sp) {
-                margin-right: 10%;
+                padding-right: 10%;
             }
         }
 
@@ -902,10 +916,13 @@
     }
 
     .top-cms-post-footer {
+        gap: 20px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 5px 20px 20px;
         order: 3;
+        flex-wrap: wrap;
     }
 
     .top-cms-link {
@@ -937,9 +954,18 @@
         border: solid 1px;
         border-color: rgba(255, 255, 255, 0);
         display: flex;
+        flex-direction: column;
 
         &.swiper-slide {
             height: auto;
+        }
+
+        &:hover {
+            .top-cms-post-thumbnail {
+                img {
+                    transform: scale(1.1);
+                }
+            }
         }
 
         @include m.mq(pc) {}
@@ -958,6 +984,9 @@
         overflow: hidden;
         order: 1;
 
+        img {
+            transition: all .5s ease;
+        }
 
         @include m.mq(pc) {}
 
@@ -984,7 +1013,6 @@
         height: 100%;
         width: 100%;
         flex-direction: column;
-        justify-content: space-between;
 
         @include m.mq(pc) {}
 
@@ -1018,6 +1046,12 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+
+        a {
+            &::after {
+                display: none;
+            }
+        }
     }
 
     .top-cms-post-date {
@@ -1077,7 +1111,8 @@
 
         @include m.mq(miniPc) {
             gap: 20px;
-            @include v.columnFlex;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         @include m.mq(tab) {
@@ -1154,7 +1189,7 @@
         @include m.mq(sp) {}
     }
 
-    .top-cms-list.tab__panel {
+    .top-cms-list.tab-panel {
         display: none;
         flex-wrap: wrap;
         gap: 60px 40px;
@@ -1221,8 +1256,8 @@
 
     .top-cms-post-thumbnail {
         grid-area: post__thumbnail;
-        aspect-ratio: 9 / 5;
-        @include v.borderRadius;
+        aspect-ratio: 47 / 25;
+        border-radius: 4px;
 
         @include m.mq(pc) {}
 
@@ -1257,6 +1292,10 @@
             border-radius: 50px;
             background-color: var(--base_color);
             line-height: 1.5;
+
+            &::after {
+                display: none;
+            }
 
             @include m.mq(pc) {}
 
@@ -1385,7 +1424,7 @@
             @include m.mq(sp) {}
         }
 
-        .tab__panel {
+        .tab-panel {
             display: none;
         }
     }
@@ -1428,6 +1467,7 @@
     }
 
     .top-cms-list {
+        width: 100%;
         @include v.columnFlex;
 
         @include m.mq(pc) {}
@@ -1438,12 +1478,12 @@
 
         @include m.mq(sp) {}
 
-        &.tab__panel {
+        &.tab-panel {
             display: none;
         }
     }
 
-    .top-cms-list.tab__panel.--active {
+    .top-cms-list.tab-panel.--active {
         display: flex;
     }
 
@@ -1551,6 +1591,12 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+
+        a {
+            &::after {
+                display: none;
+            }
+        }
     }
 
     .top-cms-post-date {
@@ -1733,12 +1779,12 @@
     }
 
     .top-cms-list {
-        &.tab__panel {
+        &.tab-panel {
             display: none;
         }
     }
 
-    .top-cms-list.tab__panel.--active {
+    .top-cms-list.tab-panel.--active {
         display: flex;
 
         @include m.mq(pc) {}
@@ -1860,6 +1906,10 @@
             border-radius: 20px;
             border: 1px solid;
             border-radius: 20px;
+
+            &::after {
+                display: none;
+            }
         }
     }
 
@@ -2027,7 +2077,7 @@ news-f-normal00
     }
 
     .top-cms-list {
-        &.tab__panel {
+        &.tab-panel {
             display: none;
         }
 
@@ -2039,7 +2089,7 @@ news-f-normal00
 
         @include m.mq(sp) {}
 
-        &.tab__panel.--active {
+        &.tab-panel.--active {
             display: block;
         }
     }
@@ -2134,6 +2184,10 @@ news-f-normal00
             padding: 0 20px;
             border-radius: 2px;
 
+            &::after {
+                display: none;
+            }
+
             @include m.mq(pc) {}
 
             @include m.mq(miniPc) {}
@@ -2191,332 +2245,314 @@ news-f-normal00
     @include m.mq(tab) {}
 
     @include m.mq(sp) {}
-}
-
-.news-g-normal00 {
-    gap: 30px;
-    display: grid;
-    grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-rows: 300px 100px auto;
-    grid-template-areas:
-        "cms_title cms_list"
-        "cms_link cms_list";
-
-    @include v.conWidth;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        @include v.columnFlex;
-        gap: 20px;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.news-g-normal00 {
-    gap: 30px;
-    display: grid;
-    grid-template-columns: 300px calc(100% - calc(300px + 30px));
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "cms_title cms_list"
-        "cms_link cms_list";
-
-    @include v.conWidth;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        @include v.columnFlex;
-        gap: 20px;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.top-cms-title {
-    grid-area: cms_title;
 
 
-    @include m.mq(pc) {}
+    .news-g-normal00 {
+        gap: 30px;
+        display: grid;
+        grid-template-columns: 300px calc(100% - calc(300px + 30px));
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "cms_title cms_list"
+            "cms_link cms_list";
 
-    @include m.mq(miniPc) {}
+        @include v.conWidth;
 
-    @include m.mq(tab) {
-        order: 1;
-        width: 100%;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.top-cms-cat {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.top-cms-cat-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    .children {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+        @include m.mq(tab) {
+            @include v.columnFlex;
+            gap: 20px;
+        }
 
         @include m.mq(sp) {}
-    }
-}
 
-.top-cms-link {
-    grid-area: cms_link;
+        .top-cms-title {
+            grid-area: cms_title;
 
-    @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {}
+            @include m.mq(pc) {}
 
-    @include m.mq(tab) {
-        order: 3;
-    }
+            @include m.mq(miniPc) {}
 
-    @include m.mq(sp) {}
-}
+            @include m.mq(tab) {
+                order: 1;
+                width: 100%;
+            }
 
-.top-cms-content {
-    grid-area: cms_list;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        order: 2;
-        border-top: 1px solid var(--base_color);
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    @include m.mq(sp) {}
-}
-
-.top-cms-list {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.top-cms-post {
-    background-color: #fff;
-    border-radius: 6px;
-    display: flex;
-    gap: 30px;
-    padding: 15px 30px;
-    position: relative;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        gap: 10px;
-    }
-
-    @include m.mq(sp) {
-        display: grid;
-        justify-content: space-between;
-        grid-template-rows: auto auto;
-        grid-template-columns: auto auto;
-        grid-template-areas:
-            "date cat"
-            "title title";
-    }
-
-    img {
-        transition: all 0.3s;
-    }
-
-    &:hover {
-        img {
-            transition: all 0.3s;
-            transform: scale(1.2);
+            @include m.mq(sp) {}
         }
 
-        .newsGN00__post__title a {
-            transition: all 0.3s;
+        .top-cms-cat {
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
+
+        .top-cms-cat-list {
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+            .children {
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+            }
+        }
+
+        .top-cms-link {
+            grid-area: cms_link;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                order: 3;
+            }
+
+            @include m.mq(sp) {}
+        }
+
+        .top-cms-content {
+            grid-area: cms_list;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                order: 2;
+                border-top: 1px solid var(--base_color);
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            @include m.mq(sp) {}
+        }
+
+        .top-cms-list {
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
+
+        .top-cms-post {
+            background-color: #fff;
+            border-radius: 6px;
+            display: flex;
+            gap: 30px;
+            padding: 15px 30px;
+            position: relative;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                gap: 10px;
+            }
+
+            @include m.mq(sp) {
+                display: grid;
+                justify-content: space-between;
+                grid-template-rows: auto auto;
+                grid-template-columns: auto auto;
+                grid-template-areas:
+                    "date cat"
+                    "title title";
+            }
+
+            img {
+                transition: all 0.3s;
+            }
+
+            &:hover {
+                img {
+                    transition: all 0.3s;
+                    transform: scale(1.2);
+                }
+
+                .newsGN00__post__title a {
+                    transition: all 0.3s;
+                    color: var(--main_color);
+                }
+            }
+        }
+
+        .top-cms-post-thumbnail {
+            grid-area: post__thumbnail;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .top-cms-post-link {
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
+
+        .top-cms-post-cat {
+
+            order: 2;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                grid-area: cat;
+                justify-content: flex-end;
+            }
+
+            a {
+                border: none;
+                color: var(--accent_color);
+
+                &::after {
+                    display: none;
+                }
+
+                @include m.mq(sp) {
+                    padding: 0;
+                }
+            }
+        }
+
+        .top-cms-post-date {
+            display: flex;
+            align-items: center;
+            order: 1;
             color: var(--main_color);
+            line-height: 1;
+            font-size: calc(var(--font_size_PC) * .8);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                font-size: calc(var(--font_size_TAB) * .8);
+            }
+
+            @include m.mq(sp) {
+                grid-area: date;
+                justify-content: flex-start;
+                font-size: calc(var(--font_size_SP) * .8);
+            }
+        }
+
+        .top-cms-post-title {
+            order: 3;
+            flex: 1;
+            width: 100%;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                grid-area: title;
+            }
+
+            // &::before {
+            //     position: absolute;
+            //     content: "";
+            //     width: 6px;
+            //     height: 6px;
+            //     top: 50%;
+            //     right: 42px;
+            //     transform: translateY(-50%) rotate(45deg);
+            //     border-top: 1px solid var(--main_color);
+            //     border-right: 1px solid var(--main_color);
+
+            //     @include m.mq(pc) {}
+
+            //     @include m.mq(miniPc) {}
+
+            //     @include m.mq(tab) {
+            //         right: 32px;
+            //     }
+
+            //     @include m.mq(sp) {
+            //         display: none;
+            //     }
+            // }
+
+            // &::after {
+            //     position: absolute;
+            //     content: "";
+            //     width: 12px;
+            //     height: 1px;
+            //     top: 50%;
+            //     right: 42px;
+            //     transform: translateY(-50%);
+            //     background-color: var(--main_color);
+
+            //     @include m.mq(pc) {}
+
+            //     @include m.mq(miniPc) {}
+
+            //     @include m.mq(tab) {
+            //         right: 32px;
+            //     }
+
+            //     @include m.mq(sp) {
+            //         display: none;
+            //     }
+            // }
         }
     }
-}
-
-.top-cms-post-thumbnail {
-    grid-area: post__thumbnail;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-.top-cms-post-link {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.top-cms-post-cat {
-
-    order: 2;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        grid-area: cat;
-        justify-content: flex-end;
-    }
-
-    a {
-        border: none;
-        color: var(--accent_color);
-
-        @include m.mq(sp) {
-            padding: 0;
-        }
-    }
-}
-
-.top-cms-post-date {
-    display: flex;
-    align-items: center;
-    order: 1;
-    color: var(--main_color);
-    line-height: 1;
-    font-size: calc(var(--font_size_PC) * .8);
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        font-size: calc(var(--font_size_TAB) * .8);
-    }
-
-    @include m.mq(sp) {
-        grid-area: date;
-        justify-content: flex-start;
-        font-size: calc(var(--font_size_SP) * .8);
-    }
-}
-
-.top-cms-post-title {
-    order: 3;
-    flex: 1;
-    width: 100%;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {
-        grid-area: title;
-    }
-
-    // &::before {
-    //     position: absolute;
-    //     content: "";
-    //     width: 6px;
-    //     height: 6px;
-    //     top: 50%;
-    //     right: 42px;
-    //     transform: translateY(-50%) rotate(45deg);
-    //     border-top: 1px solid var(--main_color);
-    //     border-right: 1px solid var(--main_color);
-
-    //     @include m.mq(pc) {}
-
-    //     @include m.mq(miniPc) {}
-
-    //     @include m.mq(tab) {
-    //         right: 32px;
-    //     }
-
-    //     @include m.mq(sp) {
-    //         display: none;
-    //     }
-    // }
-
-    // &::after {
-    //     position: absolute;
-    //     content: "";
-    //     width: 12px;
-    //     height: 1px;
-    //     top: 50%;
-    //     right: 42px;
-    //     transform: translateY(-50%);
-    //     background-color: var(--main_color);
-
-    //     @include m.mq(pc) {}
-
-    //     @include m.mq(miniPc) {}
-
-    //     @include m.mq(tab) {
-    //         right: 32px;
-    //     }
-
-    //     @include m.mq(sp) {
-    //         display: none;
-    //     }
-    // }
 }

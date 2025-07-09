@@ -1,0 +1,240 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// plan-an00 -----------------------------------------------------------------------------------------------
+.plan-bn00 {
+    background-color: #f7f7f7;
+
+    /* plan
+ ----------------------------------------------------------------------------------------------- */
+    .section-inner {
+        width: v.$pcWidth;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m.mq(pc) {
+            width: 100%;
+            max-width: v.$pcWidth;
+        }
+
+        @include m.mq(miniPc) {
+            width: 100%;
+            max-width: v.$miniWidth;
+        }
+
+        @include m.mq(tab) {
+            width: 100%;
+            max-width: v.$tabWidth;
+        }
+
+        @include m.mq(sp) {
+            width: 100%;
+            max-width: v.$spWidth;
+        }
+    }
+
+    .block-parts {
+        display: flex;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            flex-direction: column;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-inner {
+        padding: 70px 30px 30px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ddd;
+
+        &+.parts-inner {
+            border-left: 0;
+        }
+
+        &:nth-of-type(2) {
+            border: 3px solid var(--main_color);
+
+            .parts-subtitle {
+                order: 1;
+                text-align: center;
+                position: relative;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+
+                &::before {
+                    content: "おすすめ";
+                    background-color: var(--main_color);
+                    color: #fff;
+                    position: absolute;
+                    top: -40px;
+                    display: inline-flex;
+                    padding: 0 30px;
+                    border-radius: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            padding: 30px 20px;
+        }
+
+        @include m.mq(tab) {
+            padding: 30px;
+        }
+
+        @include m.mq(sp) {
+            padding: 30px 20px;
+        }
+    }
+
+    .parts-text {
+        display: flex;
+        flex-direction: column;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+    }
+
+    .parts-title {
+        text-align: center;
+        font-size: calc(var(--font_size_PC) * 3);
+        line-height: 1.2;
+        font-weight: 700;
+        order: 2;
+        color: var(--main_color);
+
+        .small {
+            font-size: 65%;
+        }
+
+        @include m.mq(pc) {
+            font-size: calc(var(--font_size_PC) * 2.5);
+        }
+
+        @include m.mq(miniPc) {
+            font-size: calc(var(--font_size_PC) * 2.0);
+        }
+
+        @include m.mq(tab) {
+            font-size: calc(var(--font_size_TAB) * 2.0);
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-subtitle {
+        order: 1;
+        text-align: center;
+        width: 100%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-content {
+        order: 3;
+        margin-top: 40px;
+
+        @include m.mq(pc) {
+            margin-top: 30px;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            margin-top: 20px;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    details {
+        margin-top: 30px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 20px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            margin-top: 10px;
+        }
+    }
+
+
+    summary {
+        background-color: #f7f7f7;
+    }
+
+    ul {
+        color: var(--main_color);
+        margin-left: 20px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        li {
+            list-style: disc;
+        }
+    }
+
+    .parts-button {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+}
