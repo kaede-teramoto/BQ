@@ -8,6 +8,47 @@
     padding: 0;
     //overflow-x: hidden;
 
+    a {
+        display: inline;
+        text-decoration: none;
+        background-color: transparent;
+        color: var(--text_color);
+        transition: all .5s ease;
+        line-height: 2;
+        position: relative;
+
+        &:not([class]) {
+            color: var(--main_color);
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                background-color: var(--main_color);
+                transition: all .5s ease .2s;
+            }
+
+            &:hover {
+                &::after {
+                    width: 0;
+                }
+            }
+        }
+
+        &:hover,
+        &:active {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        img {
+            display: block;
+        }
+    }
+
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}

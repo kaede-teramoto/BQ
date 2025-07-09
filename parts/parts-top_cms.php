@@ -41,10 +41,11 @@ if (is_front_page()) {
 }
 if ($cms_design == 'news-original') :
     get_template_part('parts/parts', 'originalCms');
-elseif ($cms_design == 'news-b-normal00') : ?>
+elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : ?>
 
     <div class="top-cms-wrapper <?php echo $cms_design; ?>-wrapper js-fadeIn">
         <div class="top-cms <?php echo $cms_design; ?>">
+
             <div class="top-cms-title">
                 <h2 class="js-fadeIn section-block-title section-block-title<?php echo $content_title_setting; ?>" style="<?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                     <?php if ($main_title) : ?>
@@ -60,8 +61,6 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                     <?php endif; ?>
                 </h2>
             </div>
-
-
 
             <div class="top-cms-content">
                 <div class="swiper">
@@ -87,28 +86,32 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                                                 <div class="top-cms-post-thumbnail-text"><?php echo $site_name ?></div>
                                             </div>
                                         <?php endif; ?>
-
-                                        <div class="top-cms-post-title">
-                                            <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
-                                        </div>
-                                        <div class="top-cms-post-footer">
-                                            <div class="top-cms-post-cat">
-                                                <?php
-                                                $categories = get_the_category();
-                                                $separator = ' '; // カテゴリーの区切り文字
-
-                                                if (! empty($categories)) {
-                                                    $output = '';
-                                                    foreach ($categories as $category) {
-                                                        $output .= esc_html($category->name) . $separator;
-                                                    }
-                                                    echo trim($output, $separator);
-                                                }
-                                                ?>
-                                            </div>
-                                            <div class="top-cms-post-date"><?php the_time('Y.m.d'); ?></div>
-                                        </div>
                                     </a>
+
+                                    <div class="top-cms-post-title">
+                                        <a class="top-cms-post-link" href="<?php the_permalink() ?>"><?php echo mb_substr($post->post_title, 0, 80) . '...'; ?></a>
+                                    </div>
+
+                                    <div class="top-cms-post-footer">
+                                        <div class="top-cms-post-cat">
+                                            <?php
+                                            $categories = get_the_category();
+                                            $separator = ' '; // カテゴリーの区切り文字
+
+                                            if (! empty($categories)) {
+                                                $output = '';
+                                                foreach ($categories as $category) {
+                                                    $cat_link = esc_url(get_category_link($category->term_id));
+                                                    $cat_name = esc_html($category->name);
+                                                    $output .= '<a href="' . $cat_link . '" class="link">' . $cat_name . '</a>' . $separator;
+                                                }
+                                                echo trim($output, $separator);
+                                            }
+
+                                            ?>
+                                        </div>
+                                        <div class="top-cms-post-date"><?php the_time('Y.m.d'); ?></div>
+                                    </div>
                                 </div>
                             <?php endwhile; ?>
                         <?php endif; ?>
@@ -159,9 +162,9 @@ elseif ($cms_design == 'news-b-normal00') : ?>
             <div class="top-cms-cat">
                 <?php
                 echo '<ul id="itemTab" class="top-cms-cat-list">';
-                echo '<li class="top-cms-cat-item"><a class="--active" href="#all">ALL</a></li>';
+                echo '<li class="top-cms-cat-item"><a class="top-cms-cat-link --active" href="#all">ALL</a></li>';
                 foreach ($categories as $category) {
-                    echo '<li class="top-cms-cat-item"><a href="#' . $category->slug . '">' . esc_html($category->name) . '</a></li>'; // カテゴリ名を表示
+                    echo '<li class="top-cms-cat-item"><a class="top-cms-cat-link" href="#' . $category->slug . '">' . esc_html($category->name) . '</a></li>'; // カテゴリ名を表示
                 }
                 echo '</ul>';
                 ?>
