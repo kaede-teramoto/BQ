@@ -83,7 +83,9 @@ elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : 
                                             </div>
                                         <?php else : /* 登録されていなかったら */ ?>
                                             <div class="top-cms-post-thumbnail">
-                                                <div class="top-cms-post-thumbnail-text"><?php echo $site_name ?></div>
+
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/thumbnails/thumbnail.webp" alt="" loading="eager">
+
                                             </div>
                                         <?php endif; ?>
                                     </a>

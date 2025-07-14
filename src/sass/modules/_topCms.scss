@@ -242,7 +242,7 @@
         }
 
         @include m.mq(miniPc) {
-            grid-template-columns: 200px 1fr 1fr;
+            grid-template-columns: 200px auto 1fr;
         }
 
         @include m.mq(tab) {
@@ -251,7 +251,7 @@
 
         @include m.mq(sp) {
             gap: 10px 20px;
-            grid-template-columns: 105px 1fr 1fr;
+            grid-template-columns: 105px auto 1fr;
         }
 
         &+.top-cms-post {
@@ -320,6 +320,8 @@
         display: flex;
         align-items: flex-end;
         height: 100%;
+        gap: 5px;
+        flex-wrap: wrap;
 
         @include m.mq(pc) {}
 
@@ -329,12 +331,22 @@
 
         @include m.mq(sp) {}
 
+        .cat {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
         a {
             padding: 3px 20px;
             border-radius: 50px;
             background-color: var(--base_color);
+            color: var(--main_color);
             line-height: 1.5;
             font-size: 1.2rem;
+            display: inline-block;
+            height: 24px;
 
             &::after {
                 display: none;
@@ -594,7 +606,7 @@
         width: 100%;
         display: grid;
         gap: 20px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
             "post__cat post__date"
@@ -667,11 +679,12 @@
     }
 
     .top-cms-post-cat {
-        font-size: 1.2rem;
-        font-weight: 700;
         grid-area: post__cat;
         display: flex;
         justify-content: flex-start;
+        height: 100%;
+        gap: 5px;
+        flex-wrap: wrap;
 
         @include m.mq(pc) {}
 
@@ -681,14 +694,36 @@
 
         @include m.mq(sp) {}
 
+        .cat {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
         a {
-            padding: 3px 28px;
-            border-radius: 20px;
+            padding: 3px 20px;
+            border-radius: 50px;
             background-color: var(--base_color);
+            color: var(--main_color);
+            line-height: 1.5;
+            font-size: 1.2rem;
+            display: inline-block;
+            height: 24px;
 
             &::after {
                 display: none;
             }
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                padding: 3px 10px;
+            }
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
         }
     }
 
@@ -1167,7 +1202,9 @@
 
         @include m.mq(miniPc) {
             order: 3;
-            margin-top: 30px;
+            margin-top: 60px;
+            width: 100%;
+            justify-content: center;
         }
 
         @include m.mq(tab) {}
@@ -1586,6 +1623,7 @@
 
         @include m.mq(miniPc) {
             right: 15px;
+            z-index: 1;
         }
 
         @include m.mq(tab) {}
@@ -1738,6 +1776,10 @@
             width: 95vw;
             margin-right: -2.5vw; // 追加
         }
+
+        .swiper {
+            overflow: unset;
+        }
     }
 
     .top-cms-cat-list {
@@ -1797,20 +1839,8 @@
 
     }
 
-    .news-e-normal00 {
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
     .top-cms-post {
         width: 432px;
-        height: 512px;
         margin: 0 20px;
         display: flex;
         flex-direction: column;
@@ -1923,6 +1953,10 @@
         @include m.mq(tab) {}
 
         @include m.mq(sp) {}
+    }
+
+    .top-cms-post-footer {
+        order: 3;
     }
 
     .top-cms-post-title {
@@ -2246,12 +2280,11 @@ news-f-normal00
 
     @include m.mq(sp) {}
 
-
     .news-g-normal00 {
         gap: 30px;
         display: grid;
         grid-template-columns: 300px calc(100% - calc(300px + 30px));
-        grid-template-rows: auto auto;
+        grid-template-rows: 300px 100px auto;
         grid-template-areas:
             "cms_title cms_list"
             "cms_link cms_list";
@@ -2265,6 +2298,51 @@ news-f-normal00
         @include m.mq(tab) {
             @include v.columnFlex;
             gap: 20px;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .news-g-normal00 {
+        gap: 30px;
+        display: grid;
+        grid-template-columns: 300px calc(100% - calc(300px + 30px));
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "cms_title cms_list"
+            "cms_link cms_list";
+
+        .news-g-normal00 {
+            gap: 30px;
+            display: grid;
+            grid-template-columns: 300px calc(100% - calc(300px + 30px));
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "cms_title cms_list"
+                "cms_link cms_list";
+
+            @include v.conWidth;
+            @include v.conWidth;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                @include v.columnFlex;
+                gap: 20px;
+            }
+
+            @include m.mq(tab) {
+                @include v.columnFlex;
+                gap: 20px;
+            }
+
+            @include m.mq(sp) {}
         }
 
         @include m.mq(sp) {}
