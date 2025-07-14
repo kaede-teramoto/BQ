@@ -1,0 +1,168 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// cta-cn00 -----------------------------------------------------------------------------------------------
+.cta-cn00 {
+    width: 100%;
+
+    .section-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        color: #fff;
+        @include v.conWidth;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+        width: 100%;
+        position: relative;
+        display: flex;
+        gap: 30px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            flex-direction: column;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-inner {
+        width: calc(50% - 15px);
+        position: relative;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        @include v.borderRadius;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            width: 100%;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-text {
+        order: 2;
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 30px;
+        @include v.conWidth;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-title {
+        @include v.titleH2;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-subtitle {
+        font-size: 85%;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-content {
+        text-align: left;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-button {
+        margin-top: 30px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        order: 1;
+
+        &::after {
+            content: "";
+            background-color: #000;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: .6;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+}

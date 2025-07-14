@@ -1,0 +1,192 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// flow-bs00 -----------------------------------------------------------------------------------------------
+.flow-bs00 {
+
+    /* cta01
+ ----------------------------------------------------------------------------------------------- */
+    .section-inner {
+
+        padding-inline: 100px;
+        @include v.conWidth;
+
+        @include m.mq(pc) {
+            padding-inline: 60px;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            padding-inline: 0;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 30px;
+
+        @include m.mq(pc) {
+            gap: 25px;
+        }
+
+        @include m.mq(miniPc) {
+            gap: 14px;
+        }
+
+        @include m.mq(tab) {
+            flex-direction: column;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        @include m.mq(sp) {
+            width: 90%;
+        }
+    }
+
+    .parts-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: var(--main_color);
+        gap: 20px;
+        height: 400px;
+
+        @include m.mq(pc) {
+            height: 380px;
+        }
+
+        @include m.mq(miniPc) {
+            height: 350px;
+        }
+
+        @include m.mq(tab) {
+            flex-direction: row;
+            height: auto;
+            width: 100%;
+        }
+
+        @include m.mq(sp) {
+            padding: 15px;
+        }
+
+        &:nth-of-type(7) {
+            background-color: #fff;
+            border: solid 2px var(--main_color);
+            justify-content: center;
+
+            .section__parts__flow04__title,
+            .section__parts__flow04__subtitle {
+                color: var(--main_color) !important;
+            }
+        }
+    }
+
+    .parts-text {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-title {
+        order: 2;
+        font-size: 2.0rem;
+        color: #fff !important;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.2em;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            font-size: 1.8rem;
+        }
+
+        @include m.mq(tab) {
+            -ms-writing-mode: unset;
+            writing-mode: unset;
+            font-size: 1.6rem;
+        }
+
+        @include m.mq(sp) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .parts-subtitle {
+        font-size: 1.6rem;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--en_font);
+        line-height: 1;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            font-size: 1.5rem;
+        }
+
+        @include m.mq(tab) {
+            font-size: 1.4rem;
+        }
+
+        @include m.mq(sp) {}
+
+    }
+
+    .parts-content {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-button {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+        display: none;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+}

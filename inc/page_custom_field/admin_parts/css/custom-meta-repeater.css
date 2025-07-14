@@ -99,6 +99,10 @@
             }
         }
 
+        .parent-block-header-image {
+            padding-top: 0;
+        }
+
         @media (max-width: 1200px) {
             .parent-block-header-box {
                 flex-direction: column;
@@ -145,7 +149,8 @@
                     color: #fff;
                 }
 
-                input[type=radio] {
+                input[type=radio],
+                input[type=checkbox] {
                     display: none;
                 }
             }

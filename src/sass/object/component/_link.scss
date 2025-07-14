@@ -8,13 +8,13 @@
     linkText01
  ----------------------------------------------------------------------------------------------- */
 
-.linkText01 {
+.link-text01 {
     display: flex;
     align-items: center;
     position: relative;
     gap: 15px;
 
-    .linkText__main {
+    .link-text-main {
         order: 2;
         color: var(--main_color);
 
@@ -36,13 +36,13 @@
     linkText02
  ----------------------------------------------------------------------------------------------- */
 
-.linkText02 {
+.link-text02 {
     display: flex;
     align-items: center;
     position: relative;
     gap: 15px;
 
-    .linkText__main {
+    .link-text-main {
         order: 2;
 
         @include m.mq(pc) {}
@@ -63,13 +63,13 @@
     linkText03
  ----------------------------------------------------------------------------------------------- */
 
-.linkText03 {
+.link-text03 {
     display: flex;
     align-items: center;
     position: relative;
     gap: 15px;
 
-    .linkText__main {
+    .link-text-main {
         order: 2;
         color: var(--main_color);
         font-size: 2.8rem;
@@ -103,13 +103,13 @@
     linkText04
  ----------------------------------------------------------------------------------------------- */
 
-.linkText04 {
+.link-text04 {
     display: flex;
     align-items: center;
     position: relative;
     gap: 15px;
 
-    .linkText__main {
+    .link-text-main {
 
         @include m.mq(pc) {}
 
@@ -129,7 +129,7 @@
     linkText05
  ----------------------------------------------------------------------------------------------- */
 
-.linkText05 {
+.link-text05 {
     display: flex;
     align-items: center;
     position: relative;
@@ -146,7 +146,7 @@
     }
 
 
-    .linkText__main {
+    .link-text-main {
 
         @include m.mq(pc) {}
 
@@ -166,13 +166,13 @@
     linkText06
  ----------------------------------------------------------------------------------------------- */
 
-.linkText06 {
+.link-text06 {
     display: flex;
     align-items: center;
     position: relative;
     gap: 15px;
 
-    .linkText__main {
+    .link-text-main {
 
         @include m.mq(pc) {}
 
@@ -192,13 +192,13 @@
     linkText07
  ----------------------------------------------------------------------------------------------- */
 
-.linkText07 {
+.link-text07 {
     display: flex;
     align-items: center;
     position: relative;
     gap: 15px;
 
-    .linkText__main {
+    .link-text-main {
 
         @include m.mq(pc) {}
 
@@ -219,7 +219,7 @@
     linkText08
  ----------------------------------------------------------------------------------------------- */
 
-.linkText08 {
+.link-text08 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -246,7 +246,7 @@
         background-color: var(--text_color);
     }
 
-    .linkText__main {
+    .link-text-main {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -265,7 +265,7 @@
     linkText09
  ----------------------------------------------------------------------------------------------- */
 
-.linkText09 {
+.link-text09 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -295,7 +295,7 @@
         background-color: var(--text_color);
     }
 
-    .linkText__main {
+    .link-text-main {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}

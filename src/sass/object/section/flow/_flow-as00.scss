@@ -1,0 +1,272 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// flow-as00 -----------------------------------------------------------------------------------------------
+.flow-as00 {
+
+    /* flow-as00
+ ----------------------------------------------------------------------------------------------- */
+    .section-inner {
+
+        padding-inline: 100px;
+        @include v.conWidth;
+
+        @include m.mq(pc) {
+            padding-inline: 0;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 60px 18px;
+        margin: 0 auto;
+
+        @include m.mq(pc) {
+            gap: 50px 15px;
+        }
+
+        @include m.mq(miniPc) {
+            gap: 40px 15px;
+        }
+
+        @include m.mq(tab) {
+            flex-direction: column;
+            width: 100%;
+            gap: 0px;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-inner {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        position: relative;
+        padding-right: 30px;
+        width: calc(280px + 30px);
+        position: relative;
+
+
+        @include m.mq(pc) {
+            padding-right: 27px;
+            width: calc(230px + 27px);
+        }
+
+        @include m.mq(miniPc) {
+            padding-right: 25px;
+            width: calc(231px + 25px);
+        }
+
+        @include m.mq(tab) {
+            display: grid;
+            grid-template-columns: 230px 280px;
+            grid-template-rows: 32px auto 1fr;
+            grid-template-areas:
+                "flow_sub flow_sub"
+                "flow_img flow_title"
+                "flow_img flow_text";
+            padding-right: 0px;
+            width: 100%;
+            gap: 10px 30px;
+            padding-bottom: 40px;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        @include m.mq(sp) {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 30px;
+            gap: 0px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 12px solid var(--main_color);
+            border-right: 0;
+            position: absolute;
+            top: 130px;
+            right: 0;
+
+            @include m.mq(pc) {
+                top: 100px;
+            }
+
+            @include m.mq(miniPc) {
+                border-top: 9px solid transparent;
+                border-bottom: 9px solid transparent;
+                border-left: 10px solid var(--main_color);
+            }
+
+            @include m.mq(tab) {
+                top: unset;
+                right: 50%;
+                bottom: 0;
+                transform: rotate(90deg);
+            }
+
+            @include m.mq(sp) {}
+
+        }
+    }
+
+    .parts-text {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-title {
+        order: 2;
+        font-size: 2.2rem;
+        line-height: 3.0rem;
+        color: var(--main_color);
+        width: 100%;
+        margin-bottom: 10px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            font-size: 2.0rem;
+            line-height: 2.8rem;
+            margin-bottom: 5px;
+        }
+
+        @include m.mq(tab) {
+            grid-area: flow_title;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        @include m.mq(sp) {
+            font-size: 2.0rem;
+            line-height: 3.0rem;
+            margin-bottom: 5px;
+        }
+    }
+
+    .parts-subtitle {
+        font-size: 2.4rem;
+        color: var(--main_color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+
+        @include m.mq(pc) {
+            font-size: 2.2rem;
+        }
+
+        @include m.mq(miniPc) {
+            font-size: 2.0rem;
+        }
+
+        @include m.mq(tab) {
+            grid-area: flow_sub;
+            font-size: 1.8rem;
+            justify-content: flex-start;
+        }
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-content {
+        order: 3;
+        overflow-wrap: break-word;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            grid-area: flow_text;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        @include m.mq(sp) {
+            line-height: 2;
+        }
+    }
+
+    .parts-button {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1.63 / 1;
+        width: 100%;
+        border-radius: 100px;
+        order: 1;
+        margin-bottom: 20px;
+        position: relative;
+        @include v.borderRadius;
+
+        @include m.mq(pc) {
+            margin-bottom: 15px;
+        }
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            grid-area: flow_img;
+            margin-bottom: 0;
+        }
+
+        @include m.mq(sp) {
+            aspect-ratio: 1.6 / 1;
+            margin-bottom: 10px;
+            max-height: 250px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+}

@@ -237,74 +237,103 @@ jQuery(document).ready(function ($) {
         refreshImagePreviews(button.closest('.parent-repeater-group, .child-repeater-group'));
     });
 
-    // 親セッット複製ボタン
+    // 親セット複製ボタン
     $('.parent-repeater-wrapper').on('click', '.copy-parent-repeater', function (e) {
         e.preventDefault();
 
-        var parentGroup = $(this).closest('.parent-repeater-group');
+        const parentGroup = $(this).closest('.parent-repeater-group');
 
-        // ★ 複製元 → checked 状態を value として保存
-        var radioCheckedValue = parentGroup.find('input[type="radio"][name$="[content_type]"]:checked').val();
+        // ラジオボタン name を一時的に変更して退避（複製元の保持対策）
+        parentGroup.find('input[type="radio"]').each(function () {
+            const name = $(this).attr('name');
+            $(this).attr('data-original-name', name);
+            $(this).removeAttr('name');
+        });
 
-        var clonedGroup = parentGroup.clone(true, true);
+        const clonedGroup = parentGroup.clone(true, true);
 
+        // 複製元ラジオ name を復元
+        parentGroup.find('input[type="radio"]').each(function () {
+            const original = $(this).attr('data-original-name');
+            if (original) {
+                $(this).attr('name', original).removeAttr('data-original-name');
+            }
+        });
+
+        // TinyMCEラッパー除去と textarea 復元
         clonedGroup.find('.wp-editor-wrap').each(function () {
-            var textarea = $(this).find('textarea');
-            var baseName = textarea.attr('name');
-            var newId = baseName.replace(/\[|\]/g, '_').replace(/__+/g, '_').replace(/^_|_$/g, '');
-
+            const textarea = $(this).find('textarea');
+            const baseName = textarea.attr('name');
+            const newId = baseName.replace(/\[|\]/g, '_').replace(/__+/g, '_').replace(/^_|_$/g, '');
             $(this).replaceWith(textarea);
             textarea.attr('id', newId);
         });
 
         clonedGroup.find('.mce-tinymce, .wp-editor-tools').remove();
 
-        $('.parent-repeater-wrapper').append(clonedGroup);
+        // 複製先を上に配置
+        parentGroup.before(clonedGroup);
+
+        // 全親閉じる
+        $('.parent-repeater-group .parent-repeater-content').hide();
+
+        // ✅ 複製先にラジオ checked 状態を引き継ぐ（name は clone に含まれている）
+        parentGroup.find('input[type="radio"]').each(function () {
+            if ($(this).is(':checked')) {
+                const val = $(this).val();
+                const suffix = $(this).attr('data-original-name')?.split(']').pop();
+                clonedGroup.find('input[type="radio"][value="' + val + '"][name$="' + suffix + '"]').prop('checked', true);
+            }
+        });
 
         refreshParentIndexes();
 
-        if (radioCheckedValue !== undefined) {
-            // 複製元 復元
-            parentGroup.find('input[type="radio"][name$="[content_type]"]').each(function () {
-                $(this).prop('checked', $(this).val() === radioCheckedValue);
-            });
-
-            // 複製先 同じものを checked にする
-            clonedGroup.find('input[type="radio"][name$="[content_type]"]').each(function () {
-                $(this).prop('checked', $(this).val() === radioCheckedValue);
-            });
-        }
-        var newParentIndex = $('.parent-repeater-group').length - 1;
-
-        var newChildrenWrapper = $('.parent-repeater-wrapper .parent-repeater-group').last().find('.children-wrapper')[0];
+        const newChildrenWrapper = clonedGroup.find('.children-wrapper')[0];
         new Sortable(newChildrenWrapper, {
             handle: '.child-repeater-header',
             animation: 150,
             onEnd: function () {
-                var parentIndex = $('.parent-repeater-group').index($(newChildrenWrapper).closest('.parent-repeater-group'));
+                const parentIndex = $('.parent-repeater-group').index($(newChildrenWrapper).closest('.parent-repeater-group'));
                 refreshChildIndexes(parentIndex);
             }
         });
 
-        updateParentBlockBodyVisibility($('.parent-repeater-wrapper .parent-repeater-group').last());
+        refreshImagePreviews(clonedGroup);
+        updateParentBlockBodyVisibility(clonedGroup);
 
         $('html, body, .edit-post-layout__content, .interface-interface-skeleton__content').animate({
-            scrollTop: $('.parent-repeater-group').last().offset().top - 20
-        }, -100);
+            scrollTop: parentGroup.offset().top - 20
+        }, 300);
     });
 
     // 子セット複製ボタン
     $('.parent-repeater-wrapper').on('click', '.copy-child-repeater', function (e) {
         e.preventDefault();
 
-        var parentGroup = $(this).closest('.parent-repeater-group');
-        var parentIndex = $('.parent-repeater-group').index(parentGroup);
+        const parentGroup = $(this).closest('.parent-repeater-group');
+        const parentIndex = $('.parent-repeater-group').index(parentGroup);
+        const childGroup = $(this).closest('.child-repeater-group');
 
-        var childGroup = $(this).closest('.child-repeater-group');
-        var clonedChild = childGroup.clone();
+        // ラジオ name を一時退避（複製元の保持対策）
+        childGroup.find('input[type="radio"]').each(function () {
+            const name = $(this).attr('name');
+            $(this).attr('data-original-name', name);
+            $(this).removeAttr('name');
+        });
 
+        const clonedChild = childGroup.clone();
+
+        // 退避した name を復元
+        childGroup.find('input[type="radio"]').each(function () {
+            const original = $(this).attr('data-original-name');
+            if (original) {
+                $(this).attr('name', original).removeAttr('data-original-name');
+            }
+        });
+
+        // TinyMCEエディタ除去
         clonedChild.find('textarea').each(function () {
-            var editorId = $(this).attr('id');
+            const editorId = $(this).attr('id');
             if (typeof tinymce !== 'undefined' && tinymce.get(editorId)) {
                 tinymce.get(editorId).remove();
             }
@@ -312,28 +341,47 @@ jQuery(document).ready(function ($) {
 
         clonedChild.find('.mce-tinymce, .wp-editor-tools').remove();
 
-        parentGroup.find('.children-wrapper').append(clonedChild);
+        // 複製を元の直前に挿入
+        childGroup.before(clonedChild);
 
         refreshChildIndexes(parentIndex);
 
-        // クローン後の子セットを開いた状態にする
-        var postId = $('input#post_ID').val();
-        var newChildIndex = parentGroup.find('.children-wrapper .child-repeater-group').length - 1;
-        var childKey = 'custom_repeater_child_' + postId + '_' + parentIndex + '_' + newChildIndex;
-        var newChildGroup = parentGroup.find('.children-wrapper .child-repeater-group').last();
+        const newChildGroup = childGroup.prev();
+        const newChildIndex = parentGroup.find('.children-wrapper .child-repeater-group').index(newChildGroup);
+
+        // ラジオの checked 状態を複製先に反映
+        childGroup.find('input[type="radio"]').each(function () {
+            if ($(this).is(':checked')) {
+                const val = $(this).val();
+                const suffix = $(this).attr('data-original-name')?.split(']').pop();
+                newChildGroup.find('input[type="radio"][value="' + val + '"][name$="' + suffix + '"]').prop('checked', true);
+            }
+        });
+
         refreshImagePreviews(newChildGroup);
 
-        newChildGroup.find('.child-repeater-content').show(); // 開く
-        saveToggleState(childKey, true); // localStorageに保存
+        const wasOpen = childGroup.find('.child-repeater-content').is(':visible');
 
-        // TinyMCE 再初期化
-        // var childEditorId = 'page_custom_repeater_parents_' + parentIndex + '_children_' + newChildIndex + '_subcontent';
-        // reinitTinyMCE(childEditorId);
+        // 全て閉じる（希望動作）
+        //newChildGroup.find('.child-repeater-content').hide();
+        //clonedChild.find('.child-repeater-content').open();
 
-        // スクロール移動
+        if (wasOpen) {
+            // 複製元が開いていたら
+            newChildGroup.find('.child-repeater-content').hide();
+            childGroup.find('.child-repeater-content').open();
+        } else {
+            // 複製元が閉じていたら
+            newChildGroup.find('.child-repeater-content').hide();
+        }
+
+        // 状態保存
+        saveToggleState('custom_repeater_child_' + $('input#post_ID').val() + '_' + parentIndex + '_' + newChildIndex, false);
+
+        // 複製元へスクロール
         $('html, body, .edit-post-layout__content, .interface-interface-skeleton__content').animate({
-            scrollTop: newChildGroup.offset().top - 20
-        }, -100);
+            scrollTop: childGroup.offset().top - 20
+        }, 300);
     });
 
     // ブロック追加ボタン
@@ -563,118 +611,6 @@ jQuery(document).ready(function ($) {
     $('.parent-repeater-wrapper .parent-repeater-group').each(function () {
         updateParentBlockBodyVisibility($(this));
     });
-
-    // Previewボタン押下時 → TinyMCE保存 + savePost実行
-    // function handlePreviewClick(e) {
-    //     // TinyMCE全保存
-    //     if (typeof tinymce !== 'undefined') {
-    //         tinymce.triggerSave();
-    //     }
-
-    //     // savePost({isPreview:true})を実行（metaがREST APIに乗る）
-    //     if (typeof wp !== 'undefined' && wp.data && wp.data.dispatch) {
-    //         e.preventDefault(); // デフォルトの遷移は止める（savePost完了後に遷移）
-
-    //         wp.data.dispatch('core/editor').savePost({ isPreview: true }).then(() => {
-    //             // savePost完了後に previewページへリダイレクト
-    //             const previewButton = e.currentTarget;
-    //             if (previewButton && previewButton.href) {
-    //                 window.location.href = previewButton.href;
-    //             }
-    //         });
-    //     }
-    // }
-
-    // // editor-post-preview ボタン対応
-    // $(document).on('click', '.editor-post-preview', handlePreviewClick);
-
-    // // editor-post-publish-panel__header-preview ボタン対応
-    // $(document).on('click', '.editor-post-publish-panel__header-preview', handlePreviewClick);
-
-
-    //
-    // $(document).on('click', '.editor-post-preview, .editor-post-publish-panel__header-preview', function (e) {
-    //     console.log('📢 Preview clicked');
-
-    //     // 一時的に sortable を無効化して影響確認
-    //     document.querySelectorAll('.parent-repeater-wrapper .children-wrapper').forEach(function (el) {
-    //         if (el._sortable) {
-    //             el._sortable.option('disabled', true);
-    //         }
-    //     });
-    //     if ($('.parent-repeater-wrapper')[0]._sortable) {
-    //         $('.parent-repeater-wrapper')[0]._sortable.option('disabled', true);
-    //     }
-
-    //     // TinyMCE 全保存
-    //     if (typeof tinymce !== 'undefined') {
-    //         console.log('📢 TinyMCE triggerSave');
-    //         tinymce.triggerSave();
-    //     }
-
-    //     if (typeof wp !== 'undefined' && wp.data && wp.data.dispatch) {
-    //         e.preventDefault();
-    //         console.log('📢 wp.data.dispatch savePost');
-    //         wp.data.dispatch('core/editor').savePost({ isPreview: true }).then(() => {
-    //             console.log('📢 savePost complete, redirect to preview');
-    //             const previewButton = e.currentTarget;
-    //             if (previewButton && previewButton.href) {
-    //                 window.location.href = previewButton.href;
-    //             }
-    //         });
-    //     }
-    // });
-
-    // ★ Previewボタン押下時 → TinyMCE保存 + savePost({isPreview:true}) + Sortable disable テスト版
-    // $(document).on('click', '.editor-post-preview', function (e) {
-
-    //     // TinyMCE全保存
-    //     if (typeof tinymce !== 'undefined') {
-    //         tinymce.triggerSave();
-    //     }
-
-    //     // SortableJS 全disable（テスト用）
-    //     window.__previewSortables = []; // グローバルに保持
-    //     $('.parent-repeater-wrapper').each(function () {
-    //         var sortable = Sortable.get(this);
-    //         if (sortable) {
-    //             sortable.option("disabled", true); // 無効化
-    //             window.__previewSortables.push(sortable);
-    //         }
-    //     });
-    //     $('.parent-repeater-wrapper .children-wrapper').each(function () {
-    //         var sortable = Sortable.get(this);
-    //         if (sortable) {
-    //             sortable.option("disabled", true); // 無効化
-    //             window.__previewSortables.push(sortable);
-    //         }
-    //     });
-
-    //     console.log('✅ [Preview Test] Sortable disabled → savePost(isPreview:true) 開始');
-
-    //     // savePost({isPreview:true})を実行（metaがREST APIに乗る）
-    //     if (typeof wp !== 'undefined' && wp.data && wp.data.dispatch) {
-    //         e.preventDefault(); // デフォルトの遷移は止める（savePost完了後に遷移）
-
-    //         wp.data.dispatch('core/editor').savePost({ isPreview: true }).then(() => {
-
-    //             console.log('✅ [Preview Test] savePost 完了 → Sortable再有効化');
-
-    //             // Sortable再有効化（念のため）
-    //             if (window.__previewSortables) {
-    //                 window.__previewSortables.forEach(s => {
-    //                     s.option("disabled", false);
-    //                 });
-    //             }
-
-    //             // previewページへリダイレクト
-    //             const previewButton = document.querySelector('.editor-post-preview');
-    //             if (previewButton && previewButton.href) {
-    //                 window.location.href = previewButton.href;
-    //             }
-    //         });
-    //     }
-    // });
 
     // ✅ Gutenberg公式対応 Preview 完全版 hook (修正版)
     if (typeof wp !== 'undefined' && wp.data && wp.data.subscribe) {

@@ -3,7 +3,7 @@
 
 /* Icon_btn
  ----------------------------------------------------------------------------------------------- */
-.c-btn__icon {
+.c-btn-icon {
     position: relative;
     z-index: 5;
 
@@ -16,7 +16,7 @@
     @include m.mq(sp) {}
 }
 
-.c-btn__icon__wrapper {
+.c-btn-icon-wrapper {
     @include m.mq(pc) {}
 
     @include m.mq(miniPc) {}
@@ -27,11 +27,11 @@
 }
 
 /*通常時（01/05/06）*/
-.c-btn__link {
+.c-btn-link {
 
-    .c-btn__icon01,
-    .c-btn__icon05,
-    .c-btn__icon06 {
+    .c-btn-icon01,
+    .c-btn-icon05,
+    .c-btn-icon06 {
 
         &::before,
         &::after {
@@ -41,11 +41,11 @@
 }
 
 /*通常時（02/03/04）*/
-.c-btn__link {
+.c-btn-link {
 
-    .c-btn__icon02,
-    .c-btn__icon03,
-    .c-btn__icon04 {
+    .c-btn-icon02,
+    .c-btn-icon03,
+    .c-btn-icon04 {
 
         &::before {
             transition: all .3s ease-out;
@@ -54,12 +54,12 @@
 }
 
 /*ホバー時（01/05/06）*/
-.c-btn__link {
+.c-btn-link {
     &:hover {
 
-        .c-btn__icon01,
-        .c-btn__icon05,
-        .c-btn__icon06 {
+        .c-btn-icon01,
+        .c-btn-icon05,
+        .c-btn-icon06 {
 
             &::before,
             &::after {
@@ -70,12 +70,12 @@
 }
 
 /*ホバー時（02/03/04）*/
-.c-btn__link {
+.c-btn-link {
     &:hover {
 
-        .c-btn__icon02,
-        .c-btn__icon03,
-        .c-btn__icon04 {
+        .c-btn-icon02,
+        .c-btn-icon03,
+        .c-btn-icon04 {
 
             &::before {
                 transition: all .3s ease-out;
@@ -88,7 +88,7 @@
     icon01
  ----------------------------------------------------------------------------------------------- */
 
-.c-btn__icon01 {
+.c-btn-icon01 {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -129,7 +129,7 @@
 }
 
 .c-btn05 {
-    .c-btn__icon01 {
+    .c-btn-icon01 {
         background-color: var(--main_color);
 
         &::before {
@@ -143,9 +143,9 @@
 }
 
 .c-btn06 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon01 {
+            .c-btn-icon01 {
                 background-color: var(--main_color);
 
                 &::before {
@@ -165,7 +165,7 @@
     icon02
  ----------------------------------------------------------------------------------------------- */
 
-.c-btn__icon02 {
+.c-btn-icon02 {
     width: 30px;
     height: 30px;
     border-radius: 15px;
@@ -194,7 +194,7 @@
 }
 
 .c-btn05 {
-    .c-btn__icon02 {
+    .c-btn-icon02 {
         background-color: var(--main_color);
 
         &::before {
@@ -204,9 +204,9 @@
 }
 
 .c-btn06 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon02 {
+            .c-btn-icon02 {
                 background-color: var(--main_color);
 
                 &::before {
@@ -222,7 +222,7 @@
     icon03
  ----------------------------------------------------------------------------------------------- */
 
-.c-btn__icon03 {
+.c-btn-icon03 {
     width: 7px;
     height: 7px;
     position: relative;
@@ -251,15 +251,15 @@
 
 .c-btn03,
 .c-btn08 {
-    .c-btn__icon03 {
+    .c-btn-icon03 {
         &::before {
             border-color: #fff;
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon03 {
+            .c-btn-icon03 {
                 &::before {
                     border-color: var(--text_color);
                 }
@@ -269,9 +269,9 @@
 }
 
 .c-btn04 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon03 {
+            .c-btn-icon03 {
                 &::before {
                     border-color: #fff;
                 }
@@ -281,9 +281,9 @@
 }
 
 .c-btn05 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon03 {
+            .c-btn-icon03 {
                 &::before {
                     border-color: var(--main_color);
                 }
@@ -293,7 +293,7 @@
 }
 
 .c-btn06 {
-    .c-btn__icon03 {
+    .c-btn-icon03 {
         margin-right: 10px;
 
         &::before {
@@ -301,9 +301,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon03 {
+            .c-btn-icon03 {
                 &::before {
                     border-color: var(--main_color);
                 }
@@ -313,7 +313,7 @@
 }
 
 .c-btn07 {
-    .c-btn__icon03 {
+    .c-btn-icon03 {
         margin-right: 5px;
 
         &::before {
@@ -321,9 +321,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon03 {
+            .c-btn-icon03 {
                 &::before {
                     border-color: #fff;
                 }
@@ -334,7 +334,7 @@
 
 .c-btn08,
 .c-btn09 {
-    .c-btn__icon03 {
+    .c-btn-icon03 {
         margin-right: 5px;
 
         &::before {
@@ -342,9 +342,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon03 {
+            .c-btn-icon03 {
                 &::before {
                     border-color: var(--main_color);
                 }
@@ -357,7 +357,7 @@
     icon04
  ----------------------------------------------------------------------------------------------- */
 
-.c-btn__icon04 {
+.c-btn-icon04 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,7 +386,7 @@
 
 
 .c-btn04 {
-    .c-btn__icon04 {
+    .c-btn-icon04 {
         background-color: var(--main_color);
 
         &::before {
@@ -394,9 +394,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon04 {
+            .c-btn-icon04 {
                 background-color: #fff;
 
                 &::before {
@@ -408,7 +408,7 @@
 }
 
 .c-btn05 {
-    .c-btn__icon04 {
+    .c-btn-icon04 {
         background-color: var(--main_color);
 
         &::before {
@@ -421,7 +421,7 @@
 .c-btn08 {
 
     &:hover {
-        .c-btn__icon04 {
+        .c-btn-icon04 {
             background-color: var(--main_color);
 
             &::before {
@@ -437,7 +437,7 @@
     icon05
  ----------------------------------------------------------------------------------------------- */
 
-.c-btn__icon05 {
+.c-btn-icon05 {
     width: 15px;
     height: 8px;
     position: relative;
@@ -476,7 +476,7 @@
 }
 
 .c-btn03 {
-    .c-btn__icon05 {
+    .c-btn-icon05 {
         &::before {
             background-color: #fff;
         }
@@ -486,9 +486,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon05 {
+            .c-btn-icon05 {
                 &::before {
                     background-color: var(--text_color);
                 }
@@ -502,9 +502,9 @@
 }
 
 .c-btn04 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon05 {
+            .c-btn-icon05 {
                 &::before {
                     background-color: #fff;
                 }
@@ -518,9 +518,9 @@
 }
 
 .c-btn05 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon05 {
+            .c-btn-icon05 {
                 &::before {
                     background-color: var(--main_color);
                 }
@@ -534,7 +534,7 @@
 }
 
 .c-btn06 {
-    .c-btn__icon05 {
+    .c-btn-icon05 {
         margin-right: 5px;
 
         &::before {
@@ -546,9 +546,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon05 {
+            .c-btn-icon05 {
                 &::before {
                     background-color: var(--main_color);
                 }
@@ -564,7 +564,7 @@
 .c-btn08,
 .c-btn09 {
 
-    .c-btn__icon05 {
+    .c-btn-icon05 {
         margin-right: 5px;
 
         &::before {
@@ -576,9 +576,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon05 {
+            .c-btn-icon05 {
 
                 &::before {
                     background-color: var(--main_color);
@@ -594,7 +594,7 @@
 
 .c-btn07 {
 
-    .c-btn__icon05 {
+    .c-btn-icon05 {
         margin-right: 5px;
 
         &::before {
@@ -606,9 +606,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon05 {
+            .c-btn-icon05 {
 
                 &::before {
                     background-color: #fff;
@@ -626,7 +626,7 @@
     icon06
  ----------------------------------------------------------------------------------------------- */
 
-.c-btn__icon06 {
+.c-btn-icon06 {
     width: 48px;
     height: 12px;
     position: relative;
@@ -665,7 +665,7 @@
 }
 
 .c-btn03 {
-    .c-btn__icon06 {
+    .c-btn-icon06 {
         &::before {
             background-color: #fff;
         }
@@ -676,8 +676,8 @@
     }
 
     &:hover {
-        .c-btn__link {
-            .c-btn__icon06 {
+        .c-btn-link {
+            .c-btn-icon06 {
                 &::before {
                     background-color: var(--text_color);
                 }
@@ -691,9 +691,9 @@
 }
 
 .c-btn04 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon06 {
+            .c-btn-icon06 {
                 &::before {
                     background-color: #fff;
                 }
@@ -707,9 +707,9 @@
 }
 
 .c-btn05 {
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon06 {
+            .c-btn-icon06 {
                 &::before {
                     background-color: var(--main_color);
                 }
@@ -723,7 +723,7 @@
 }
 
 .c-btn06 {
-    .c-btn__icon06 {
+    .c-btn-icon06 {
         margin-right: 5px;
 
         &::before {
@@ -735,9 +735,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon06 {
+            .c-btn-icon06 {
                 &::before {
                     background-color: var(--main_color);
                 }
@@ -753,7 +753,7 @@
 .c-btn08,
 .c-btn09 {
 
-    .c-btn__icon06 {
+    .c-btn-icon06 {
         margin-right: 5px;
 
         &::before {
@@ -765,9 +765,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon06 {
+            .c-btn-icon06 {
 
                 &::before {
                     background-color: var(--main_color);
@@ -783,7 +783,7 @@
 
 .c-btn07 {
 
-    .c-btn__icon06 {
+    .c-btn-icon06 {
         margin-right: 5px;
 
         &::before {
@@ -795,9 +795,9 @@
         }
     }
 
-    .c-btn__link {
+    .c-btn-link {
         &:hover {
-            .c-btn__icon06 {
+            .c-btn-icon06 {
 
                 &::before {
                     background-color: #fff;

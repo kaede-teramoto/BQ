@@ -41,10 +41,11 @@ if (is_front_page()) {
 }
 if ($cms_design == 'news-original') :
     get_template_part('parts/parts', 'originalCms');
-elseif ($cms_design == 'news-b-normal00') : ?>
+elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : ?>
 
     <div class="top-cms-wrapper <?php echo $cms_design; ?>-wrapper js-fadeIn">
         <div class="top-cms <?php echo $cms_design; ?>">
+
             <div class="top-cms-title">
                 <h2 class="js-fadeIn section-block-title section-block-title<?php echo $content_title_setting; ?>" style="<?php echo $title_underline; ?><?php echo $title_underline_thickness; ?><?php echo $title_underline_color; ?>">
                     <?php if ($main_title) : ?>
@@ -61,11 +62,9 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                 </h2>
             </div>
 
-
-
             <div class="top-cms-content">
                 <div class="swiper">
-                    <div id="all" class="top-cms-list tab__panel --active swiper-wrapper">
+                    <div id="all" class="top-cms-list tab-panel --active swiper-wrapper">
                         <?php
                         $args = array(
                             'post_type' => 'post',
@@ -87,28 +86,32 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                                                 <div class="top-cms-post-thumbnail-text"><?php echo $site_name ?></div>
                                             </div>
                                         <?php endif; ?>
-
-                                        <div class="top-cms-post-title">
-                                            <?php echo mb_substr($post->post_title, 0, 80) . '...'; ?>
-                                        </div>
-                                        <div class="top-cms-post-footer">
-                                            <div class="top-cms-post-cat">
-                                                <?php
-                                                $categories = get_the_category();
-                                                $separator = ' '; // カテゴリーの区切り文字
-
-                                                if (! empty($categories)) {
-                                                    $output = '';
-                                                    foreach ($categories as $category) {
-                                                        $output .= esc_html($category->name) . $separator;
-                                                    }
-                                                    echo trim($output, $separator);
-                                                }
-                                                ?>
-                                            </div>
-                                            <div class="top-cms-post-date"><?php the_time('Y.m.d'); ?></div>
-                                        </div>
                                     </a>
+
+                                    <div class="top-cms-post-title">
+                                        <a class="top-cms-post-link" href="<?php the_permalink() ?>"><?php echo mb_substr($post->post_title, 0, 80) . '...'; ?></a>
+                                    </div>
+
+                                    <div class="top-cms-post-footer">
+                                        <div class="top-cms-post-cat">
+                                            <?php
+                                            $categories = get_the_category();
+                                            $separator = ' '; // カテゴリーの区切り文字
+
+                                            if (! empty($categories)) {
+                                                $output = '';
+                                                foreach ($categories as $category) {
+                                                    $cat_link = esc_url(get_category_link($category->term_id));
+                                                    $cat_name = esc_html($category->name);
+                                                    $output .= '<a href="' . $cat_link . '" class="link">' . $cat_name . '</a>' . $separator;
+                                                }
+                                                echo trim($output, $separator);
+                                            }
+
+                                            ?>
+                                        </div>
+                                        <div class="top-cms-post-date"><?php the_time('Y.m.d'); ?></div>
+                                    </div>
                                 </div>
                             <?php endwhile; ?>
                         <?php endif; ?>
@@ -122,14 +125,14 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
                         <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
                         <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
-                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="linkText-main linkText<?php echo $text_link_design; ?>-main"><?php echo $btn_text; ?></span>
                             <span class="icon<?php echo $text_icon_design; ?>"></span>
                         </a>
                     <?php endif; ?>
@@ -159,25 +162,26 @@ elseif ($cms_design == 'news-b-normal00') : ?>
             <div class="top-cms-cat">
                 <?php
                 echo '<ul id="itemTab" class="top-cms-cat-list">';
-                echo '<li class="top-cms-cat-item"><a class="--active" href="#all">ALL</a></li>';
+                echo '<li class="top-cms-cat-item"><a class="top-cms-cat-link --active" href="#all">ALL</a></li>';
                 foreach ($categories as $category) {
-                    echo '<li class="top-cms-cat-item"><a href="#' . $category->slug . '">' . esc_html($category->name) . '</a></li>'; // カテゴリ名を表示
+                    echo '<li class="top-cms-cat-item"><a class="top-cms-cat-link" href="#' . $category->slug . '">' . esc_html($category->name) . '</a></li>'; // カテゴリ名を表示
                 }
                 echo '</ul>';
                 ?>
             </div>
+
             <?php if ($btn_text && $topCms_btn_link): ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
                         <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
                         <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
-                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="linkText-main linkText<?php echo $text_link_design; ?>-main"><?php echo $btn_text; ?></span>
                             <span class="icon<?php echo $text_icon_design; ?>"></span>
                         </a>
                     <?php endif; ?>
@@ -185,7 +189,7 @@ elseif ($cms_design == 'news-b-normal00') : ?>
             <?php endif; ?>
 
             <div class="top-cms-content">
-                <div id="all" class="top-cms-list tab__panel --active">
+                <div id="all" class="top-cms-list tab-panel --active">
                     <?php
                     $args = array(
                         'post_type' => 'post',
@@ -237,7 +241,7 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                     $query = new WP_Query($args);
 
                     if ($query->have_posts()) : ?>
-                        <div id="<?php echo esc_html($category->slug); ?>" class="top-cms-list tab__panel">
+                        <div id="<?php echo esc_html($category->slug); ?>" class="top-cms-list tab-panel">
 
                             <?php while ($query->have_posts()) :
                                 $query->the_post(); ?>
@@ -298,14 +302,14 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
                         <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
                         <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
-                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="linkText-main linkText<?php echo $text_link_design; ?>-main"><?php echo $btn_text; ?></span>
                             <span class="icon<?php echo $text_icon_design; ?>"></span>
                         </a>
                     <?php endif; ?>
@@ -313,7 +317,7 @@ elseif ($cms_design == 'news-b-normal00') : ?>
             <?php endif; ?>
 
             <div class="top-cms-content">
-                <div id="all" class="top-cms-list tab__panel --active">
+                <div id="all" class="top-cms-list tab-panel --active">
                     <?php
                     $args = array(
                         'post_type' => 'post',
@@ -365,7 +369,7 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                     $query = new WP_Query($args);
 
                     if ($query->have_posts()) : ?>
-                        <div id="<?php echo esc_html($category->slug); ?>" class="top-cms-list tab__panel">
+                        <div id="<?php echo esc_html($category->slug); ?>" class="top-cms-list tab-panel">
 
                             <?php while ($query->have_posts()) :
                                 $query->the_post(); ?>
@@ -426,14 +430,14 @@ elseif ($cms_design == 'news-b-normal00') : ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
                         <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn__link c-btn<?php echo $btn_link_design; ?>__link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn__text c-btn__text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn__icon c-btn__icon<?php echo $btn_icon_design; ?>"></div>
+                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
                         <a class="linkText linkText<?php echo $text_link_design; ?>" href="<?php echo $topCms_btn_link; ?>">
-                            <span class="linkText__main linkText<?php echo $text_link_design; ?>__main"><?php echo $btn_text; ?></span>
+                            <span class="linkText-main linkText<?php echo $text_link_design; ?>-main"><?php echo $btn_text; ?></span>
                             <span class="icon<?php echo $text_icon_design; ?>"></span>
                         </a>
                     <?php endif; ?>

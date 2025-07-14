@@ -1,0 +1,224 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// faq-an00 ----------------------------------------------------------------------------------------------- */
+.faq-ab00 {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    details {
+        padding-left: 30px;
+
+
+        @include m.mq(pc) {
+            padding-left: 25px;
+        }
+
+        @include m.mq(miniPc) {
+            padding-left: 20px;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+
+        .parts-inner {
+            background-color: var(--sub_color);
+            padding: 30px;
+            @include v.borderRadius;
+        }
+
+        .parts-content {
+            color: var(--main_color);
+
+            &::before {
+                content: 'A';
+                font-size: 120%;
+                font-weight: bold;
+                display: none;
+                position: absolute;
+                left: 0;
+                transform: translateY(-2px);
+            }
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+
+        }
+    }
+
+    summary {
+        display: block;
+        list-style-type: none;
+        margin-bottom: 0;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .summary-text {
+            display: block;
+            position: relative;
+            padding: 0 50px 0 0;
+            align-items: center;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+
+            &::before {
+                content: 'Q';
+                font-size: 120%;
+                font-weight: bold;
+                display: block;
+                position: absolute;
+                top: 49%;
+                left: -30px;
+                border-radius: 50px;
+                display: block;
+                transform: translateY(-50%);
+
+                @include m.mq(pc) {
+                    left: -25px;
+                }
+
+                @include m.mq(miniPc) {
+                    left: -20px;
+                }
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+
+
+            }
+
+            .af-icon {
+                width: 30px;
+                height: 30px;
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-50%);
+
+                @include m.mq(pc) {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                @include m.mq(miniPc) {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+
+                &::after {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-right: 3px solid var(--main_color);
+                    border-bottom: 3px solid var(--main_color);
+                    transform: rotate(45deg);
+                    transition: all .5s ease;
+
+                }
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {}
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+            }
+        }
+    }
+
+    details[open] .summary-text {
+        .af-icon {
+            &::after {
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    .section-inner {
+        @include v.conWidth;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+}

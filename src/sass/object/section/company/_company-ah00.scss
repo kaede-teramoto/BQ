@@ -1,0 +1,129 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// company-ah00 -----------------------------------------------------------------------------------------------
+.company-ah00 {
+
+    li {
+        list-style: inside;
+    }
+
+    @include v.conWidth;
+
+    .section-inner {
+        width: 1100px;
+        margin: 0 auto;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            width: 100%;
+        }
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .block-parts {
+        border-top: 1px solid var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-inner {
+        display: flex;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-text {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-title {
+        width: 30%;
+        padding: 30px 30px 30px 0;
+        font-size: 140%;
+        font-weight: bold;
+        color: var(--main_color);
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-subtitle {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-content {
+        width: 70%;
+        padding: 30px;
+
+        strong {
+            color: var(--main_color);
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-button {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+}

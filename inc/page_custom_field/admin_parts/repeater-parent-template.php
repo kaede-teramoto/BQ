@@ -35,43 +35,57 @@ echo '<div class="parent-block-header">';
 
 echo '<h3>ブロック設定</h3>';
 echo '<div class="parent-block-header-box">';
+
 echo '<div class="parent-block-header-text">';
+
+
 
 $content_display = $parent['content_display'] ?? '';
 
 echo '<div class="content-type-field">';
-echo '<p class="content-type-field-title">コンテンツの表示</p>';
+echo '<p class="content-type-field-title">コンテンツ表示</p>';
 echo '<p>';
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_display]" value="on" ' . checked($content_display, 'on', false) . '> 表示';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_display]" value="off" ' . checked($content_display, 'off', false) . '> 非表示';
 echo '</label>';
-
 echo '</p>';
-
 echo '</div>';
 
 $content_type = $parent['content_type'] ?? '';
-
 echo '<div class="content-type-field">';
-echo '<p class="content-type-field-title">コンテンツ種別：</p>';
+echo '<p class="content-type-field-title">コンテンツ種別</p>';
 echo '<p>';
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_content" ' . checked($content_type, 'r_content', false) . '> コンテンツ';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_news" ' . checked($content_type, 'r_news', false) . '> お知らせ';
 echo '</label>';
-
 echo '<label>';
 echo '<input type="radio" name="page_custom_repeater[parents][' . $parentIndex . '][content_type]" value="r_common" ' . checked($content_type, 'r_common', false) . '> 共通パーツ';
 echo '</label>';
 echo '</p>';
+echo '</div>';
 
+$content_tab = $parent['content_tab'] ?? '';
+$follow_menu = $parent['follow_menu'] ?? '';
+echo '<div class="content-type-field">';
+echo '<p class="content-type-field-title">タブを使用する</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="checkbox" name="page_custom_repeater[parents][' . $parentIndex . '][content_tab]" value="1" ' . checked($content_tab, '1', false) . '>ON';
+echo '</label>';
+echo '</p>';
+
+echo '<p class="content-type-field-title">追従メニュー</p>';
+echo '<p>';
+echo '<label>';
+echo '<input type="checkbox" name="page_custom_repeater[parents][' . $parentIndex . '][follow_menu]" value="1" ' . checked($follow_menu, '1', false) . '>ON';
+echo '</label>';
+echo '</p>';
 echo '</div>';
 
 // ブロック名
@@ -160,6 +174,7 @@ $children = $parent['children'] ?? array();
 echo '<div class="children-wrapper">';
 
 foreach ($children as $childIndex => $child) {
+    //echo render_child_block($child, $parentIndex, $childIndex, $parent);
     require get_template_directory() . '/inc/page_custom_field/admin_parts/repeater-child-template.php';
 }
 
@@ -179,10 +194,10 @@ wp_editor(
         'textarea_name' => 'page_custom_repeater[parents][' . $parentIndex . '][content]',
         'textarea_rows' => 6,
         'media_buttons' => true,
-        'teeny' => false,          // 簡易エディタは false → 完全に QuickTags のみ
-        'quicktags' => true,       // QuickTags 有効 → テキストエリアにボタン（b, i, link など）
-        'tinymce' => false,        // ★ TinyMCE 完全OFF（ここがポイント）
-        'editor_class' => 'custom-repeater-editor',  // 任意のクラス
+        'teeny' => false,
+        'quicktags' => true,
+        'tinymce' => false,
+        'editor_class' => 'custom-repeater-editor',
     )
 );
 

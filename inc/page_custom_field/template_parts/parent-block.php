@@ -40,7 +40,6 @@ if ($title_underline || $title_underline_thickness || $title_underline_color) {
 }
 
 $parent = $args['parent'] ?? array();
-$parent_index = $args['parent_index'] ?? 0;
 $block_class = esc_html($parent['block_class'] ?? '');
 
 $block_bg_image = esc_url($parent['background_image']);
@@ -49,6 +48,8 @@ if ($block_bg_image) {
 } else {
     $block_bg_image_style = '';
 }
+
+$parent_index = $args['parent_index'] ?? 0;
 
 $content_display = $args['parent']['content_display'] ?? 'on';
 if ($content_display === 'on') {
@@ -70,12 +71,37 @@ if ($content_display === 'on') {
             echo '</h2>';
         }
 
+        $follow_menu = $args['parent']['follow_menu'];
+
+        if ($follow_menu === '1') {
+            // 子セット
+            if (!empty($parent['children']) && is_array($parent['children'])) {
+
+                echo '<div class="block-nav">';
+                echo '<ul>';
+                foreach ($parent['children'] as $childIndex => $child) {
+                    echo '<li>';
+                    echo '<a href="#parts-' . ($childIndex + 1) . '">' . strip_tags(apply_filters('the_content', $child['subtitle'] ?? ''), '<br><span>') . '</a>';
+                    echo '</li>';
+                }
+                echo '</ul>';
+                echo '</div>';
+            }
+        }
+
         echo '<div class="block-parts">';
 
         // 子セット
-        if (!empty($parent['children']) && is_array($parent['children'])) {
-            foreach ($parent['children'] as $child) {
-                echo render_child_block($child);
+        // if (!empty($parent['children']) && is_array($parent['children'])) {
+        //     foreach ($parent['children'] as $childIndex => $child) {
+        //         echo render_child_block($child, $parent, $childIndex);
+        //     }
+        // }
+
+        if (! empty($parent['children']) && is_array($parent['children'])) {
+            foreach ($parent['children'] as $child_index => $child) {
+                // ここで render_child_block に渡すのはスネークケースの変数
+                echo render_child_block($child, $parent, $parent_index, $child_index);
             }
         }
 
@@ -96,7 +122,6 @@ if ($content_display === 'on') {
 
         // ポストが存在するか確認
         if ($post) {
-            // 本文を出力（エスケープ推奨）
             echo apply_filters('the_content', $post->post_content);
         }
     }

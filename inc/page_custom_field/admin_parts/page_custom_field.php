@@ -57,6 +57,8 @@ class Custom_Page_Repeater_Meta_Box
             $parents[] = array(
                 'block_name' => '',
                 'content_type'  => 'r_content',
+                'content_tab'  => '',
+                'follow_menu'  => '',
                 'content_display' => 'on',
                 'block_class' => '',
                 'title' => '',
@@ -118,9 +120,9 @@ class Custom_Page_Repeater_Meta_Box
             foreach ($value['parents'] as $parent_index => $parent_item) {
 
                 $block_name = trim($parent_item['block_name'] ?? '');
-                if ($block_name === '') {
-                    continue;
-                }
+                // if ($block_name === '') {
+                //     continue;
+                // }
 
                 $children = array();
                 if (isset($parent_item['children']) && is_array($parent_item['children'])) {
@@ -132,6 +134,7 @@ class Custom_Page_Repeater_Meta_Box
 
                         if (
                             ! empty(trim($child_item['content_display'] ?? '')) ||
+                            ! empty(trim($child_item['content_toggle'] ?? '')) ||
                             ! empty(trim($child_item['subtitle'] ?? '')) ||
                             ! empty(trim($child_item['subtitle_sub'] ?? '')) ||
                             ! empty(trim($child_item['subcontent'] ?? '')) ||
@@ -169,7 +172,8 @@ class Custom_Page_Repeater_Meta_Box
 
                         $children[] = array(
                             'content_display' => sanitize_text_field($child_item['content_display'] ?? 'on'),
-                            'subtitle'     => sanitize_text_field($child_item['subtitle'] ?? ''),
+                            'content_toggle' => isset($child_item['content_toggle']) ? '1' : '0',
+                            'subtitle'     => wp_kses($child_item['subtitle'] ?? '', 'post'),
                             'subtitle_sub' => wp_kses($child_item['subtitle_sub'] ?? '', 'post'),
                             'subcontent'   => wp_kses($child_item['subcontent'] ?? '', $allowed_tags),
                             'image'        => esc_url_raw($child_item['image'] ?? ''),
@@ -200,6 +204,8 @@ class Custom_Page_Repeater_Meta_Box
                 $parents[] = array(
                     'block_name'          => sanitize_text_field($block_name),
                     'content_type'        => sanitize_text_field($parent_item['content_type'] ?? ''),
+                    'content_tab'         => isset($parent_item['content_tab']) ? '1' : '0',
+                    'follow_menu'         => isset($parent_item['follow_menu']) ? '1' : '0',
                     'content_display'     => sanitize_text_field($parent_item['content_display'] ?? ''),
                     'block_class'         => sanitize_text_field($parent_item['block_class'] ?? ''),
                     'title'               => wp_kses($parent_item['title'] ?? '', 'post'),
@@ -271,6 +277,8 @@ class Custom_Page_Repeater_Meta_Box
         $parent = array(
             'block_name' => '',
             'content_type' => 'r_content',
+            'content_tab' => '',
+            'follow_menu' => '',
             'content_display' => 'on',
             'block_class' => '',
             'title' => '',
@@ -300,6 +308,7 @@ class Custom_Page_Repeater_Meta_Box
             'subtitle' => '',
             'subcontent' => '',
             'content_display' => 'on',
+            'content_toggle' => '0',
             'image' => '',
             'button_text' => '',
             'button_url' => '',
@@ -401,16 +410,35 @@ function render_parent_block($parent, $parent_index = 0)
     return ob_get_clean();
 }
 
-function render_child_block($child, $parent_index = 0, $child_index = 0)
+function render_child_block($child, $parent = [], $parent_index = 0, $child_index = 0)
 {
     ob_start();
-    get_template_part('inc/page_custom_field/template_parts/child-block', null, array(
-        'child' => $child,
-    ));
+    get_template_part(
+        'inc/page_custom_field/template_parts/child-block',
+        null,
+        [
+            'parent'       => $parent,
+            'child'        => $child,
+            'parent_index' => $parent_index,
+            'child_index'  => $child_index,
+        ]
+    );
     return ob_get_clean();
 }
 
+// function render_child_block($child, $parent = [], $parent_index = 0, $child_index = 0)
+// {
+//     ob_start();
+//     get_template_part('inc/page_custom_field/template_parts/child-block', null, array(
+//         'parent' => $parent,
+//         'child' => $child,
+//         'parent_index' => $parent_index,
+//         'child_index' => $child_index,
+//     ));
+//     return ob_get_clean();
+// }
+
 /*--------------------------------------------------------------
- クラス初期化
+クラス初期化
 --------------------------------------------------------------*/
 Custom_Page_Repeater_Meta_Box::init();
