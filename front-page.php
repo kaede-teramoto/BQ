@@ -10,7 +10,13 @@ $site_url  = home_url();
 $theme_url = get_template_directory_uri();
 $cms = get_theme_mod('cms_top_display', false);
 
-get_header(); ?>
+get_header();
+
+if (!empty($post->post_content)) {
+    the_content();
+}
+?>
+
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
