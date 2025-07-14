@@ -285,35 +285,19 @@ $loading_display = esc_html(get_theme_mod('loading_display_setting', false));
 
                         <main class="l-main">
 
-                            <?php if (is_front_page()) : //toppage display
+                            <?php if (is_front_page()) :
                                 $show_arrows = get_theme_mod('top_fv_slider_arrow', '');
                                 $top_fv_slider_pagination = get_theme_mod('top_fv_slider_pagination', '');
                             ?>
-                                <?php if (!($show_arrows)) { ?>
+                                <?php if (!($show_arrows) || !($top_fv_slider_pagination == 1)) { ?>
                                     <style>
-                                        .swiper-btn {
-                                            display: none;
+                                        <?php if (!($show_arrows)) {
+                                            echo '.swiper-btn { display: none;}';
                                         }
+                                        if (!($top_fv_slider_pagination == 1)) {
+                                            echo '.swiper-pagination {display: none;}';
+                                        } ?>
                                     </style>
                                 <?php } ?>
 
-                                <?php if (!($top_fv_slider_pagination == 1)) { ?>
-                                    <style>
-                                        .swiper-pagination {
-                                            display: none;
-                                        }
-                                    </style>
-                                <?php } ?>
-                                <div class="l-fv">
-                                    <!-- Mainvisu -->
-                                    <?php
-                                    if (get_theme_mod('')) {
-                                    } else {
-                                        echo '<div class="pageTitle">';
-                                        get_template_part('parts/parts', 'slider');
-                                        echo '</div>';
-                                    }
-                                    ?>
-                                    <!-- //Mainvisu -->
-                                </div>
                             <?php endif; ?>

@@ -467,6 +467,10 @@
  ----------------------------------------------------------------------------------------------- */
 
 .header-d-normal00 {
+  background-color: var(--header_bg_color);
+
+  .header-wrapper {}
+
   .header-btn {
     display: none;
   }
