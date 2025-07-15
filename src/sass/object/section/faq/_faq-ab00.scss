@@ -12,16 +12,10 @@
     @include m.mq(sp) {}
 
     details {
-        padding-left: 30px;
 
+        @include m.mq(pc) {}
 
-        @include m.mq(pc) {
-            padding-left: 25px;
-        }
-
-        @include m.mq(miniPc) {
-            padding-left: 20px;
-        }
+        @include m.mq(miniPc) {}
 
         @include m.mq(tab) {}
 
@@ -50,25 +44,33 @@
 
         .parts-content {
             color: var(--main_color);
+            position: relative;
+            overflow: visible;
 
             &::before {
                 content: 'A';
                 font-size: 120%;
                 font-weight: bold;
-                display: none;
                 position: absolute;
                 left: 0;
                 transform: translateY(-2px);
+                z-index: 5;
             }
 
-            @include m.mq(pc) {}
+            padding-left: 30px;
 
-            @include m.mq(miniPc) {}
+
+            @include m.mq(pc) {
+                padding-left: 25px;
+            }
+
+            @include m.mq(miniPc) {
+                padding-left: 20px;
+            }
 
             @include m.mq(tab) {}
 
             @include m.mq(sp) {}
-
 
         }
     }
@@ -82,9 +84,16 @@
             display: none;
         }
 
-        @include m.mq(pc) {}
+        padding-left: 30px;
 
-        @include m.mq(miniPc) {}
+
+        @include m.mq(pc) {
+            padding-left: 25px;
+        }
+
+        @include m.mq(miniPc) {
+            padding-left: 20px;
+        }
 
         @include m.mq(tab) {}
 

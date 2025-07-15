@@ -166,6 +166,8 @@
         align-items: center;
         font-size: 1.4rem;
         font-family: "Inter", "Zen Kaku Gothic Antique", YuGothic, "游ゴシック", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        top: calc(50% - 90px);
+        left: 0;
 
         @include m.mq(pc) {}
 
