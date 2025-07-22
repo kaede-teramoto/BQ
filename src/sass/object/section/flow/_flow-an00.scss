@@ -173,6 +173,7 @@
 
         @include m.mq(miniPc) {
             font-size: 1.2rem;
+            top: calc(50% - 70px);
         }
 
         @include m.mq(tab) {
@@ -268,7 +269,7 @@
             }
 
             @include m.mq(sp) {
-                bottom: -80px;
+                bottom: -100px;
             }
         }
 

@@ -2296,8 +2296,8 @@ news-f-normal00
         @include m.mq(miniPc) {}
 
         @include m.mq(tab) {
-            @include v.columnFlex;
             gap: 20px;
+            @include v.columnFlex;
         }
 
         @include m.mq(sp) {}
@@ -2322,7 +2322,6 @@ news-f-normal00
                 "cms_link cms_list";
 
             @include v.conWidth;
-            @include v.conWidth;
 
             @include m.mq(pc) {}
 
@@ -2333,13 +2332,13 @@ news-f-normal00
             @include m.mq(miniPc) {}
 
             @include m.mq(tab) {
-                @include v.columnFlex;
                 gap: 20px;
+                @include v.columnFlex;
             }
 
             @include m.mq(tab) {
-                @include v.columnFlex;
                 gap: 20px;
+                @include v.columnFlex;
             }
 
             @include m.mq(sp) {}

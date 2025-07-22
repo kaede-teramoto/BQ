@@ -1,0 +1,589 @@
+@use "../../../foundation/variables" as v;
+@use "../../../foundation/mixins" as m;
+
+// form-cn00 -----------------------------------------------------------------------------------------------
+.form-cn00 {
+    background-color: #fff;
+
+    /* cta01
+ ----------------------------------------------------------------------------------------------- */
+    .section-inner {
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {
+            max-width: 540px;
+        }
+
+        @include m.mq(sp) {
+            max-width: v.$spWidth;
+        }
+
+        .block-title-text {
+            order: 1;
+        }
+
+        .block-subtitle-text {
+            order: 2;
+            color: var(--text_color);
+        }
+    }
+
+    .cn00-form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+
+        .cn00-form-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 40px 30px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                padding: 30px;
+            }
+
+            @include m.mq(tab) {
+                padding: 20px;
+                gap: 20px;
+            }
+
+            @include m.mq(sp) {
+                padding: 15px 0;
+            }
+        }
+
+        .required {
+            color: #FF0000;
+        }
+
+        label {
+            color: var(--main_color);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
+
+        .cn00-form-group {
+            br {
+                display: none;
+            }
+        }
+
+        // チェックボックス、ラジオボタン、ファイルの設定
+        .checkbox,
+        .radio,
+        .file {
+            label {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                margin-bottom: 15px;
+
+                @include m.mq(pc) {}
+
+                @include m.mq(miniPc) {
+                    margin-bottom: 10px;
+                }
+
+                @include m.mq(tab) {}
+
+                @include m.mq(sp) {}
+            }
+        }
+
+        .file {
+            input {
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+
+        .form-file {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .file-contents {
+            display: flex;
+            align-items: center;
+
+            .wpcf7-form-control-wrap {
+                width: 0;
+            }
+        }
+
+        .custom-file-button {
+            background-color: var(--main_color);
+            margin-bottom: 0 !important;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 2px 15px;
+            border-radius: 4px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {
+                font-size: 1.2rem;
+            }
+
+            @include m.mq(tab) {
+                font-size: 1.0rem;
+            }
+
+            @include m.mq(sp) {
+                line-height: 1.5;
+                padding: 2px 10px;
+            }
+        }
+
+        .file-name {
+            font-size: 1.2rem;
+            margin-left: 30px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                font-size: 1.0rem;
+                margin-left: 20px;
+            }
+
+            @include m.mq(sp) {
+                line-height: 1.5;
+            }
+        }
+
+        .cn00-form-comments {
+            //labelの横のテキスト
+            font-size: 1.2rem;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                font-size: 1.0rem;
+            }
+
+            @include m.mq(sp) {}
+        }
+
+        .wpcf7-list-item {
+            margin: 0;
+
+            label {
+                margin-bottom: 0;
+            }
+        }
+
+        .wpcf7-form-control {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                gap: 10px 20px;
+            }
+        }
+
+        // 日付のカレンダーアイコンの設定
+        .wpcf7-form-control-wrap {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .form_date {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form_date::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: 25px;
+            /* フォームの右端に配置 */
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 2;
+            opacity: 1;
+            /* 必要に応じて表示を調整 */
+            pointer-events: auto;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                right: 20px;
+            }
+        }
+
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="radio"]+.wpcf7-list-item-label,
+        input[type="checkbox"]+.wpcf7-list-item-label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--text_color);
+            /* テキストの色をカスタマイズ */
+            cursor: pointer;
+            /* カーソルをポインターに */
+        }
+
+        input[type="radio"]+.wpcf7-list-item-label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid var(--main_color);
+            /* 外枠の色を設定 */
+            border-radius: 50%;
+            background-color: #fff;
+            /* デフォルトで白い背景 */
+            position: relative;
+            box-sizing: border-box;
+            transition: background-color 0.3s, border-color 0.3s;
+            /* スムーズなトランジションを設定 */
+        }
+
+        input[type="radio"]+.wpcf7-list-item-label::after {
+            content: "";
+            display: block;
+            width: 12px;
+            /* 内側の小さな円の直径 */
+            height: 12px;
+            /* 内側の小さな円の直径 */
+            border-radius: 50%;
+            background-color: var(--main_color);
+            /* 内側の小さな円の色 */
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            /* 初期状態では非表示 */
+            transition: opacity 0.3s;
+        }
+
+        input[type="checkbox"]+.wpcf7-list-item-label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid var(--main_color);
+            /* 外枠の色を設定 */
+            border-radius: 4px;
+            /* チェックボックスは角を丸めず、四角に */
+            background-color: #fff;
+            /* デフォルトで白い背景 */
+            position: relative;
+            box-sizing: border-box;
+            transition: background-color 0.3s, border-color 0.3s;
+            /* スムーズなトランジションを設定 */
+        }
+
+        input[type="checkbox"]+.wpcf7-list-item-label::after {
+            content: "";
+            display: block;
+            width: 8px;
+            /* 内側のチェックマークの大きさ */
+            height: 13px;
+            /* 内側のチェックマークの高さ */
+            border: solid var(--main_color);
+            /* チェックマークの色を設定 */
+            border-width: 0 2px 2px 0;
+            /* チェックマークの線の太さを設定 */
+            transform: rotate(45deg);
+            /* チェックマークを45度回転させて表示 */
+            position: absolute;
+            top: 48%;
+            left: 10px;
+            transform: translate(-50%, -50%) rotate(45deg);
+            opacity: 0;
+            /* 初期状態では非表示 */
+            transition: opacity 0.3s;
+        }
+
+        input[type="radio"]:checked+.wpcf7-list-item-label::after,
+        input[type="checkbox"]:checked+.wpcf7-list-item-label::after {
+            opacity: 1;
+            /* 選択時に内側の小さな円を表示 */
+        }
+
+        .wpcf7-text,
+        .wpcf7-date {
+            height: 60px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: solid 1px var(--main_color);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                height: 50px;
+            }
+
+            @include m.mq(sp) {}
+        }
+
+        select {
+            height: 60px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                height: 50px;
+            }
+
+            @include m.mq(sp) {}
+        }
+
+        textarea,
+        select {
+            border-radius: 5px;
+            background-color: #fff;
+            border: solid 1px var(--main_color);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 10px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                padding: 5px 10px;
+            }
+        }
+
+        .form_pull_down {
+            //プルダウンの矢印の設定
+            appearance: none;
+            background-image: url(../../assets/images/cn00-form/form_arrow04.svg);
+            background-repeat: no-repeat;
+            background-position: right 30px center;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {
+                background-position: right 20px center;
+            }
+        }
+
+        .cn00-form-privacypolicy {
+            margin-top: 50px;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                margin-top: 30px;
+            }
+
+            @include m.mq(sp) {
+                margin-top: 20px;
+            }
+
+            .wpcf7-form-control {
+                justify-content: center;
+            }
+
+            .underline {
+                color: var(--main_color);
+                text-decoration: underline;
+            }
+        }
+
+        .submit-btn {
+            width: 180px;
+            margin: 10px auto 0;
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {}
+
+            @include m.mq(sp) {}
+
+            input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50px;
+                color: var(--main_color);
+                border: solid 2px var(--main_color);
+                transition: all .3s ease-out;
+                height: 50px;
+
+                &:hover {
+                    color: #fff;
+                    background-color: var(--main_color);
+                    transition: all .3s ease-out;
+                }
+            }
+
+            .wpcf7-spinner {
+                display: none;
+            }
+        }
+    }
+
+    .block-parts {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-inner {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-text {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-title {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-subtitle {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-content {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-button {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+    .parts-image {
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {}
+    }
+
+}

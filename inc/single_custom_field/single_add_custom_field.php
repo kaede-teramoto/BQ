@@ -6,6 +6,8 @@
 //         ['id' => 'open_start', 'label' => '(OPEN / START)', 'type' => 'textarea'],
 //         ['id' => 'ava_door', 'label' => '(ADV / DOOR)', 'type' => 'textarea'],
 //         ['id' => 'line_up', 'label' => '(LINE UP)', 'type' => 'textarea'],
+//         // 動画
+//         ['id'    => 'video_url', 'label' => '動画URL', 'type'  => 'image']
 //         // RADIO BUTTON
 //         [
 //             'id' => 'ticket_status',
@@ -53,6 +55,8 @@ post, page, custom_post_name
         'seo' => 'SEO',
     ]
 ],
+// 動画
+['id'    => 'video_url', 'label' => '動画URL', 'type'  => 'url']
 // RADIO BUTTON
 [
     'id' => 'layout_type',
@@ -113,6 +117,13 @@ $status = get_post_meta($post_id, 'status', true);
 if ($status === 'publish') {
     echo '<p>公開状態です</p>';
 }
+
+// 動画
+$video_url = get_post_meta(get_the_ID(), 'video_url', true);
+if ($video_url) {
+    echo wp_oembed_get($video_url);
+}
+
 
 // 画像
 $image_id = get_post_meta($post_id, 'thumbnail', true);

@@ -296,3 +296,19 @@ function disable_comments_screen_options()
   }
 }
 add_action('admin_init', 'disable_comments_screen_options');
+
+
+/*--------------------------------------------------------------
+  ID取得関数
+--------------------------------------------------------------*/
+function get_current_context_id()
+{
+  if (is_singular()) {
+    return get_the_ID();
+  } elseif (is_home()) {
+    return get_option('page_for_posts');
+  } elseif (is_category() || is_tag() || is_tax()) {
+    return get_queried_object()->term_id;
+  }
+  return null;
+}

@@ -43,38 +43,43 @@ if (!class_exists('Custom_Flexible_Fields')) {
         {
             wp_nonce_field(basename(__FILE__), $this->meta_box_id . '_nonce');
 
+            echo '<div class="custom-field-wrapper" style="display:flex;flex-wrap:wrap;gap:10px;">';
+            $i = 0;
             foreach ($this->fields as $field) {
                 $id = esc_attr($field['id']);
                 $label = esc_html($field['label']);
                 $type = $field['type'] ?? 'text';
                 $value = get_post_meta($post->ID, $id, true);
+                $i++;
 
-                echo '<p>';
-                echo "<label for='{$id}'><strong>{$label}</strong></label><br>";
+                echo '<label class="custom-field label' . $i . '">';
+                echo "<span class=\"field-label\">{$label}</span>";
 
                 switch ($type) {
                     case 'textarea':
                         echo "<textarea id='{$id}' name='{$id}' rows='2' style='width:100%;'>" . esc_textarea($value) . "</textarea>";
                         break;
+
                     case 'checkbox':
                         $checked = $value ? 'checked' : '';
                         echo "<input type='checkbox' id='{$id}' name='{$id}' value='1' {$checked}> {$label}";
                         break;
+
                     case 'checkbox_multi':
                         $saved = is_array($value) ? $value : [];
                         foreach ($field['options'] as $opt_value => $opt_label) {
                             $checked = in_array($opt_value, $saved) ? 'checked' : '';
-                            echo "<label><input type='checkbox' name='{$id}[]' value='{$opt_value}' {$checked}> " . esc_html($opt_label) . "</label><br>";
+                            echo "<label><input type='checkbox' name='{$id}[]' value='{$opt_value}' {$checked}> " . esc_html($opt_label) . "</label>";
                         }
                         break;
+
                     case 'radio':
-                        echo '<div style="display: flex;gap: 10px;flex-wrap: wrap;">';
                         foreach ($field['options'] as $opt_value => $opt_label) {
                             $checked = $value === $opt_value ? 'checked' : '';
-                            echo "<label><input type='radio' name='{$id}' value='{$opt_value}' {$checked}> " . esc_html($opt_label) . "</label><br>";
+                            echo "<label><input type='radio' name='{$id}' value='{$opt_value}' {$checked}> " . esc_html($opt_label) . "</label>";
                         }
-                        echo '</div>';
                         break;
+
                     case 'select':
                         echo "<select name='{$id}' id='{$id}' style='width:100%;'>";
                         foreach ($field['options'] as $opt_value => $opt_label) {
@@ -83,52 +88,160 @@ if (!class_exists('Custom_Flexible_Fields')) {
                         }
                         echo "</select>";
                         break;
+
                     case 'image':
-                        $image_url = $value ? wp_get_attachment_image_url($value, 'medium') : '';
-                        echo "<input type='hidden' name='{$id}' id='{$id}' value='" . esc_attr($value) . "'>";
-                        echo "<div id='{$id}_preview'>" . ($image_url ? "<img src='{$image_url}' style='max-width:200px;'>" : '') . "</div>";
-                        echo "<button type='button' class='button upload_image_button' data-target='{$id}'>画像を選択</button>";
+                        $image_id = intval($value);
+                        $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : '';
+                        $has_image = $image_url ? true : false;
+
+                        echo "<input type='hidden' name='{$id}' id='{$id}' value='" . esc_attr($image_id) . "'>";
+                        echo "<div id='{$id}_preview' class='custom-field-image'>";
+                        if ($has_image) {
+                            echo "<img src='{$image_url}' style='max-width:200px;'>";
+                        }
+                        echo "</div>";
+                        echo "<button type='button' class='button upload-image-button' data-target='{$id}' data-state='" . ($has_image ? 'set' : 'empty') . "'>" . ($has_image ? '画像をクリア' : '画像を選択') . "</button>";
                         break;
+
+                    case 'video':
+                        echo "<input type='hidden' name='{$id}' id='{$id}' value='" . esc_attr($value) . "'>";
+                        echo "<div id='{$id}_preview'>";
+                        if ($value) {
+                            $video_url = wp_get_attachment_url($value);
+                            echo "<video controls width='100%'><source src='{$video_url}'></video>";
+                        }
+                        echo "</div>";
+                        echo "<button type='button' class='button upload-video-button' data-target='{$id}' data-state='" . ($value ? 'set' : 'empty') . "'>" . ($value ? '動画をクリア' : '動画を選択') . "</button>";
+                        break;
+
                     case 'url':
                         echo "<input type='url' id='{$id}' name='{$id}' value='" . esc_attr($value) . "' style='width:100%;'>";
                         break;
+
                     case 'text':
                     default:
                         echo "<input type='text' id='{$id}' name='{$id}' value='" . esc_attr($value) . "' style='width:100%;'>";
                         break;
                 }
 
-                echo '</p>';
+                echo '</label>';
             }
+
+
+            echo '</div>';
 
             // JS for image uploader
             echo <<<JS
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.upload_image_button').forEach(function (button) {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetInputId = button.dataset.target;
-            const imageInput = document.getElementById(targetInputId);
+                <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelectorAll('.custom-field-image').forEach(function (el) {
+                        if (!el.innerHTML.trim()) {
+                        el.classList.add('img-empty');
+                        }
+                    });
 
-            const frame = wp.media({
-                title: '画像を選択',
-                button: { text: '選択' },
-                multiple: false
-            });
+                    document.querySelectorAll('.upload-image-button').forEach(function (button) {
+                        const targetInputId = button.dataset.target;
+                        const imageInput = document.getElementById(targetInputId);
+                        const preview = document.getElementById(targetInputId + '_preview');
 
-            frame.on('select', function () {
-                const attachment = frame.state().get('selection').first().toJSON();
-                imageInput.value = attachment.id;
-                document.getElementById(targetInputId + '_preview').innerHTML = '<img src="' + attachment.url + '" style="max-width:200px;">';
-            });
+                        const updateButtonState = () => {
+                            const hasImage = preview.querySelector('img');
+                            if (hasImage) {
+                                button.textContent = '画像をクリア';
+                                button.dataset.state = 'set';
+                            } else {
+                                button.textContent = '画像を選択';
+                                button.dataset.state = 'empty';
+                            }
+                        };
 
-            frame.open();
-        });
-    });
-});
-</script>
-JS;
+                        // 初期化
+                        updateButtonState();
+
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+
+                            if (button.dataset.state === 'set') {
+                                // クリア処理
+                                imageInput.value = '';
+                                preview.innerHTML = '';
+                                updateButtonState();
+                                return;
+                            }
+
+                            // メディアアップローダー起動
+                            const frame = wp.media({
+                                title: '画像を選択',
+                                button: { text: '選択' },
+                                multiple: false
+                            });
+
+                            frame.on('select', function () {
+                                const attachment = frame.state().get('selection').first().toJSON();
+                                imageInput.value = attachment.id;
+                                preview.innerHTML = '<img src="' + attachment.url + '" style="max-width:200px;">';
+                                updateButtonState();
+                            });
+
+                            frame.open();
+                        });
+                    });
+
+                                        document.querySelectorAll('.upload-video-button').forEach(function (button) {
+                        const targetInputId = button.dataset.target;
+                        const videoInput = document.getElementById(targetInputId);
+                        const preview = document.getElementById(targetInputId + '_preview');
+
+                        const updateButtonState = () => {
+                            const hasVideo = preview.querySelector('video');
+                            if (hasVideo) {
+                                button.textContent = '動画をクリア';
+                                button.dataset.state = 'set';
+                            } else {
+                                button.textContent = '動画を選択';
+                                button.dataset.state = 'empty';
+                            }
+                        };
+
+                        // 初期化
+                        updateButtonState();
+
+                        button.addEventListener('click', function (e) {
+                            e.preventDefault();
+
+                            if (button.dataset.state === 'set') {
+                                // クリア処理
+                                videoInput.value = '';
+                                preview.innerHTML = '';
+                                updateButtonState();
+                                return;
+                            }
+
+                            // メディアアップローダー（動画専用）
+                            const frame = wp.media({
+                                title: '動画を選択',
+                                library: { type: 'video' },
+                                button: { text: '選択' },
+                                multiple: false
+                            });
+
+                            frame.on('select', function () {
+                                const attachment = frame.state().get('selection').first().toJSON();
+                                videoInput.value = attachment.id;
+                                preview.innerHTML = '<video controls style="max-width:100%;"><source src="' + attachment.url + '" type="' + attachment.mime + '"></video>';
+                                updateButtonState();
+                            });
+
+                            frame.open();
+                        });
+                    });
+
+                });
+
+                
+                </script>
+            JS;
         }
 
         public function save_single_meta_box($post_id)
@@ -152,6 +265,8 @@ JS;
                     $value = isset($_POST[$id]) ? '1' : '';
                 } elseif ($type === 'checkbox_multi') {
                     $value = isset($_POST[$id]) ? array_map('sanitize_text_field', (array) $_POST[$id]) : [];
+                } elseif ($type === 'image') {
+                    $value = isset($_POST[$id]) ? intval($_POST[$id]) : '';
                 } else {
                     $value = isset($_POST[$id]) ? sanitize_text_field($_POST[$id]) : '';
                 }
