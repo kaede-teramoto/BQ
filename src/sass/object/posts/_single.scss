@@ -188,11 +188,11 @@
 
 }
 
-.post-main {
 
-    /* entry01
+/* single-a-normal00
  ----------------------------------------------------------------------------------------------- */
-    .entry01-wrapper {
+.single-a-normal00-main {
+    .entry-wrapper {
         padding: 20px 0;
         border-top: 1px solid var(--text_color);
         border-bottom: 1px solid var(--text_color);
@@ -207,7 +207,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-header {
+    .entry-header {
 
         @include m.mq(miniPc) {}
 
@@ -216,7 +216,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-title {
+    .entry-title {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -226,7 +226,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-common {
+    .entry-common {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -236,7 +236,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-data {
+    .entry-data {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -246,7 +246,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-body {
+    .entry-body {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -256,7 +256,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-thumbnail {
+    .entry-thumbnail {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -273,7 +273,7 @@
 
     }
 
-    .entry01-content {
+    .entry-content {
 
         @include m.mq(pc) {}
 
@@ -284,7 +284,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-excerpt {
+    .entry-excerpt {
 
         @include m.mq(pc) {}
 
@@ -295,7 +295,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry01-footer {
+    .entry-footer {
         &:has(a) {
 
             a {
@@ -379,11 +379,14 @@
 
         @include m.mq(sp) {}
     }
+}
 
 
-    /* entry02
+
+/* single-b-normal00
  ----------------------------------------------------------------------------------------------- */
-    .entry02-wrapper {
+.single-b-normal00-main {
+    .entry-wrapper {
         padding: 20px 0;
         border-top: 1px solid var(--text_color);
         border-bottom: 1px solid var(--text_color);
@@ -398,7 +401,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-header {
+    .entry-header {
 
         @include m.mq(miniPc) {}
 
@@ -407,7 +410,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-title {
+    .entry-title {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -417,7 +420,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-common {
+    .entry-common {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -427,7 +430,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-data {
+    .entry-data {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -437,7 +440,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-body {
+    .entry-body {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -447,7 +450,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-thumbnail {
+    .entry-thumbnail {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -464,7 +467,7 @@
 
     }
 
-    .entry02-content {
+    .entry-content {
 
         @include m.mq(pc) {}
 
@@ -475,7 +478,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-excerpt {
+    .entry-excerpt {
 
         @include m.mq(pc) {}
 
@@ -486,7 +489,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry02-footer {
+    .entry-footer {
         &:has(a) {
             border-top: 1px solid var(--text_color);
         }
@@ -499,11 +502,13 @@
 
         @include m.mq(sp) {}
     }
+}
 
 
-    /* entry03
+/* single-c-normal00
  ----------------------------------------------------------------------------------------------- */
-    .entry03-wrapper {
+.single-c-normal00-main {
+    .entry-wrapper {
         border: none;
         padding-top: 0;
         @include v.miniConWidth;
@@ -517,7 +522,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-header {
+    .entry-header {
         display: flex;
         flex-direction: column;
 
@@ -528,7 +533,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-title {
+    .entry-title {
         order: 3;
 
         @include m.mq(pc) {}
@@ -540,7 +545,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-common {
+    .entry-common {
         order: 2;
         margin-top: 30px;
 
@@ -557,7 +562,7 @@
         }
     }
 
-    .entry03-data {
+    .entry-data {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -567,7 +572,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-body {
+    .entry-body {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -577,7 +582,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-thumbnail {
+    .entry-thumbnail {
         order: 1;
         border-radius: 0;
         margin-top: 0;
@@ -598,7 +603,7 @@
 
     }
 
-    .entry03-content {
+    .entry-content {
 
         @include m.mq(pc) {}
 
@@ -609,7 +614,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-excerpt {
+    .entry-excerpt {
 
         @include m.mq(pc) {}
 
@@ -620,7 +625,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry03-footer {
+    .entry-footer {
         border: none;
 
         a {
@@ -644,11 +649,28 @@
         }
 
     }
+}
 
 
-    /* entry04
+/* single-d-normal00
  ----------------------------------------------------------------------------------------------- */
-    .entry04-wrapper {
+.single-d-normal00-container {
+    margin: 0 0 200px;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {
+        margin-top: 0 !important;
+        margin: 0 0 100px;
+    }
+}
+
+.single-d-normal00-main {
+    .entry-wrapper {
         padding: 20px 0;
         border-top: 1px solid var(--text_color);
         border-bottom: 1px solid var(--text_color);
@@ -668,7 +690,7 @@
         }
     }
 
-    .entry04-header {
+    .entry-header {
 
         @include m.mq(miniPc) {}
 
@@ -677,7 +699,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-title {
+    .entry-title {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -687,7 +709,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-common {
+    .entry-common {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -697,7 +719,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-data {
+    .entry-data {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -707,7 +729,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-body {
+    .entry-body {
         @include m.mq(pc) {}
 
         @include m.mq(miniPc) {}
@@ -717,14 +739,26 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-thumbnail {
-        @include m.mq(pc) {}
+    .entry-thumbnail {
+        margin-top: 0;
+        aspect-ratio: unset;
+        height: 800px;
 
-        @include m.mq(miniPc) {}
+        @include m.mq(pc) {
+            height: 700px;
+        }
 
-        @include m.mq(tab) {}
+        @include m.mq(miniPc) {
+            height: 600px;
+        }
 
-        @include m.mq(sp) {}
+        @include m.mq(tab) {
+            height: 500px;
+        }
+
+        @include m.mq(sp) {
+            height: 400px;
+        }
 
         img {
             width: 100%;
@@ -734,7 +768,7 @@
 
     }
 
-    .entry04-content {
+    .entry-content {
 
         @include m.mq(pc) {}
 
@@ -745,7 +779,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-excerpt {
+    .entry-excerpt {
 
         @include m.mq(pc) {}
 
@@ -756,7 +790,7 @@
         @include m.mq(sp) {}
     }
 
-    .entry04-footer {
+    .entry-footer {
         &:has(a) {
             border-top: 1px solid var(--text_color);
         }
@@ -769,311 +803,312 @@
 
         @include m.mq(sp) {}
     }
+}
 
 
-    /* entry05
+
+/* entry05
  ----------------------------------------------------------------------------------------------- */
-    .entry05-wrapper {
-        @include m.mq(pc) {}
+.entry05-wrapper {
+    @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(tab) {}
 
-        @include m.mq(sp) {}
-    }
+    @include m.mq(sp) {}
+}
 
-    .entry05-header {
+.entry05-header {
+    color: var(--main_color);
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    a {
         color: var(--main_color);
+    }
+}
 
-        @include m.mq(miniPc) {}
+.entry05-title {
+    @include v.conWidth;
 
-        @include m.mq(tab) {}
+    @include m.mq(pc) {}
 
-        @include m.mq(sp) {}
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry05-common {
+    @include v.conWidth;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry05-data {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry05-body {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    .entry05-content {
+
+        h2:not([class]) {
+            padding-left: 0;
+            line-height: 1.5;
+            font-weight: 700;
+            font-size: calc(var(--heading_fontSize_PC) * .7);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                font-size: calc(var(--heading_fontSize_TAB) * .7);
+            }
+
+            @include m.mq(sp) {
+                font-size: calc(var(--heading_fontSize_SP) * .7);
+            }
+
+            &::before {
+                display: none;
+            }
+
+        }
+
+        h3:not([class]) {
+            font-weight: 700;
+            line-height: 1.5;
+            font-size: calc(var(--heading_fontSize_PC) * .5);
+
+            @include m.mq(pc) {}
+
+            @include m.mq(miniPc) {}
+
+            @include m.mq(tab) {
+                font-size: calc(var(--heading_fontSize_TAB) * .5);
+            }
+
+            @include m.mq(sp) {
+                font-size: calc(var(--heading_fontSize_SP) * .6);
+            }
+
+            &::before {
+                display: none;
+            }
+        }
 
         a {
             color: var(--main_color);
-        }
-    }
+            text-decoration: underline;
 
-    .entry05-title {
-        @include v.conWidth;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    .entry05-common {
-        @include v.conWidth;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    .entry05-data {
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    .entry05-body {
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-
-        .entry05-content {
-
-            h2:not([class]) {
-                padding-left: 0;
-                line-height: 1.5;
-                font-weight: 700;
-                font-size: calc(var(--heading_fontSize_PC) * .7);
-
-                @include m.mq(pc) {}
-
-                @include m.mq(miniPc) {}
-
-                @include m.mq(tab) {
-                    font-size: calc(var(--heading_fontSize_TAB) * .7);
-                }
-
-                @include m.mq(sp) {
-                    font-size: calc(var(--heading_fontSize_SP) * .7);
-                }
-
-                &::before {
-                    display: none;
-                }
-
-            }
-
-            h3:not([class]) {
-                font-weight: 700;
-                line-height: 1.5;
-                font-size: calc(var(--heading_fontSize_PC) * .5);
-
-                @include m.mq(pc) {}
-
-                @include m.mq(miniPc) {}
-
-                @include m.mq(tab) {
-                    font-size: calc(var(--heading_fontSize_TAB) * .5);
-                }
-
-                @include m.mq(sp) {
-                    font-size: calc(var(--heading_fontSize_SP) * .6);
-                }
-
-                &::before {
-                    display: none;
-                }
-            }
-
-            a {
-                color: var(--main_color);
-                text-decoration: underline;
-
-                &:hover {
-                    color: var(--accent_color);
-                }
-            }
-
-            strong {
-                font-weight: 700;
+            &:hover {
                 color: var(--accent_color);
             }
-
-            img {
-                @include v.borderRadius;
-            }
         }
-    }
 
-    .entry05-thumbnail {
-        display: none;
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
+        strong {
+            font-weight: 700;
+            color: var(--accent_color);
+        }
 
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            @include v.borderRadius;
         }
+    }
+}
 
+.entry05-thumbnail {
+    display: none;
+
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .entry05-content {
-        @include v.conWidth;
+}
 
-        @include m.mq(pc) {}
+.entry05-content {
+    @include v.conWidth;
 
-        @include m.mq(miniPc) {}
+    @include m.mq(pc) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(sp) {}
-    }
+    @include m.mq(tab) {}
 
-    .entry05-excerpt {
+    @include m.mq(sp) {}
+}
 
-        @include m.mq(pc) {}
+.entry05-excerpt {
 
-        @include m.mq(miniPc) {}
+    @include m.mq(pc) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(sp) {}
-    }
+    @include m.mq(tab) {}
 
-    .entry05-footer {
-        background-color: #fff;
-        border-radius: 5px;
-        padding: 20px 40px;
-        @include v.conWidth;
+    @include m.mq(sp) {}
+}
 
-        @include m.mq(pc) {}
+.entry05-footer {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px 40px;
+    @include v.conWidth;
 
-        @include m.mq(miniPc) {}
+    @include m.mq(pc) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(sp) {}
-    }
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
 
 
-    /* entry06
+/* entry06
  ----------------------------------------------------------------------------------------------- */
-    .entry06-wrapper {
-        @include m.mq(pc) {}
+.entry06-wrapper {
+    @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(tab) {}
 
-        @include m.mq(sp) {}
+    @include m.mq(sp) {}
+}
+
+.entry06-header {
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry06-title {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry06-common {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry06-data {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry06-body {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+}
+
+.entry06-thumbnail {
+    @include m.mq(pc) {}
+
+    @include m.mq(miniPc) {}
+
+    @include m.mq(tab) {}
+
+    @include m.mq(sp) {}
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .entry06-header {
+}
 
-        @include m.mq(miniPc) {}
+.entry06-content {
 
-        @include m.mq(tab) {}
+    @include m.mq(pc) {}
 
-        @include m.mq(sp) {}
-    }
+    @include m.mq(miniPc) {}
 
-    .entry06-title {
-        @include m.mq(pc) {}
+    @include m.mq(tab) {}
 
-        @include m.mq(miniPc) {}
+    @include m.mq(sp) {}
+}
 
-        @include m.mq(tab) {}
+.entry06-excerpt {
 
-        @include m.mq(sp) {}
-    }
+    @include m.mq(pc) {}
 
-    .entry06-common {
-        @include m.mq(pc) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(miniPc) {}
+    @include m.mq(tab) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(sp) {}
+}
 
-        @include m.mq(sp) {}
-    }
+.entry06-footer {
 
-    .entry06-data {
-        @include m.mq(pc) {}
+    @include m.mq(pc) {}
 
-        @include m.mq(miniPc) {}
+    @include m.mq(miniPc) {}
 
-        @include m.mq(tab) {}
+    @include m.mq(tab) {}
 
-        @include m.mq(sp) {}
-    }
-
-    .entry06-body {
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    .entry06-thumbnail {
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    }
-
-    .entry06-content {
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    .entry06-excerpt {
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
-
-    .entry06-footer {
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {}
-    }
+    @include m.mq(sp) {}
 }

@@ -42,14 +42,14 @@ class Cms_Customizer extends Base_Customizer
         ), '01');
 
         $this->add_select_field($wp_customize, 'cms_single_design_setting', __('CMS Single Design Setting', 'boutiq'), array(
-            '01'   => __('CMS Single Type01', 'boutiq'),
-            '02'   => __('CMS Single Type02', 'boutiq'),
-            '03'   => __('CMS Single Type03', 'boutiq'),
-            '04'   => __('CMS Single Type04', 'boutiq'),
+            'single-a-normal00'   => __('Single_A-Normal_00', 'boutiq'),
+            'single-b-normal00'   => __('Single_B-Normal_00', 'boutiq'),
+            'single-c-normal00'   => __('Single_C-Normal_00', 'boutiq'),
+            'single-d-normal00'   => __('Single_D-Normal_00', 'boutiq'),
             '05'   => __('CMS Single Type05', 'boutiq'),
             '06'   => __('CMS Single Type06', 'boutiq'),
             '07'   => __('CMS Single Type07', 'boutiq'),
-        ), '01');
+        ), 'single-a-normal00');
 
         $this->add_select_field($wp_customize, 'archive_cms_design_setting', __('CMS Archive Design Setting', 'boutiq'), array(
             'archive-a-normal00'   => __('Archive_A-Normal_00', 'boutiq'),

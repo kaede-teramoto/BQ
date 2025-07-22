@@ -17,13 +17,13 @@ class Error_Customizer extends Base_Customizer
     protected function add_controls($wp_customize)
     {
         $this->add_select_field($wp_customize, 'error_design_setting', __('404 Design Setting', 'boutiq'), array(
-            '01' => __('404 Type01', 'boutiq'),
-            '02' => __('404 Type02', 'boutiq'),
-            '03' => __('404 Type03', 'boutiq'),
-            '04' => __('404 Type04', 'boutiq'),
-            '05' => __('404 Type05', 'boutiq'),
+            'error-an00' => __('Error_A-Normal_00', 'boutiq'),
+            'error-bn00' => __('Error_B-Normal_00', 'boutiq'),
+            'error-cn00' => __('Error_C-Normal_00', 'boutiq'),
+            'error-as00' => __('Error_A-Square_00', 'boutiq'),
+            'error-bs00' => __('Error_B-Square_00', 'boutiq'),
             '06' => __('404 Type06', 'boutiq'),
-        ), '01');
+        ), 'error-an00');
 
         $this->add_text_field($wp_customize, 'error_main_title_setting', __('404 Main Title', 'boutiq'), '404');
         $this->add_text_field($wp_customize, 'error_sub_title_setting', __('404 Sub Title', 'boutiq'), 'NOT FOUND');

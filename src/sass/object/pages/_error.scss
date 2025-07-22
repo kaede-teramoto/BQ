@@ -1,71 +1,16 @@
 @use "../../foundation/variables" as v;
 @use "../../foundation/mixins" as m;
 
-/* page404_01
+/* page404
  ----------------------------------------------------------------------------------------------- */
 body.error404 {
     height: 100%;
 }
 
-.section__error {
 
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.section__error__title {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.section__error__subtitle {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.section__error__text {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-.section__error__btn {
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {}
-
-    @include m.mq(sp) {}
-}
-
-
-/* error01
+/* error-an00
  ----------------------------------------------------------------------------------------------- */
-.section__error01 {
+.error-an00 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +31,7 @@ body.error404 {
         padding: 120px 20px 80px;
     }
 
-    .c-btn {
+    .section-error-btn {
         margin-top: 40px;
 
         @include m.mq(pc) {}
@@ -99,72 +44,72 @@ body.error404 {
             margin-top: 30px;
         }
     }
-}
 
-.section__error01__title {
-    font-family: var(--en_font);
-    font-weight: 600;
-    font-size: 30rem;
-    line-height: 0.8;
-    color: var(--main_color);
+    .section-error-title {
+        font-family: var(--en_font);
+        font-weight: 600;
+        font-size: 30rem;
+        line-height: 0.8;
+        color: var(--main_color);
 
 
-    @include m.mq(pc) {}
+        @include m.mq(pc) {}
 
-    @include m.mq(miniPc) {
-        font-size: 26rem;
+        @include m.mq(miniPc) {
+            font-size: 26rem;
+        }
+
+        @include m.mq(tab) {
+            font-size: 22rem;
+        }
+
+        @include m.mq(sp) {
+            font-size: 40vw;
+        }
     }
 
-    @include m.mq(tab) {
-        font-size: 22rem;
+    .section-error-subtitle {
+        font-family: var(--en_font);
+        font-weight: 600;
+        font-size: 9.0rem;
+        line-height: 1;
+        color: var(--main_color);
+        margin-top: 50px;
+
+        @include m.mq(pc) {
+            margin-top: 40px;
+        }
+
+        @include m.mq(miniPc) {
+            font-size: 8.0rem;
+        }
+
+        @include m.mq(tab) {
+            font-size: 7.0rem;
+            margin-top: 30px;
+        }
+
+        @include m.mq(sp) {
+            font-size: 12vw;
+        }
     }
 
-    @include m.mq(sp) {
-        font-size: 40vw;
-    }
-}
+    .section-error-text {
+        margin-top: 50px;
+        text-align: center;
+        font-weight: 500;
 
-.section__error01__subtitle {
-    font-family: var(--en_font);
-    font-weight: 600;
-    font-size: 9.0rem;
-    line-height: 1;
-    color: var(--main_color);
-    margin-top: 50px;
+        @include m.mq(pc) {}
 
-    @include m.mq(pc) {
-        margin-top: 40px;
-    }
+        @include m.mq(miniPc) {}
 
-    @include m.mq(miniPc) {
-        font-size: 8.0rem;
-    }
+        @include m.mq(tab) {
+            margin-top: 40px;
+        }
 
-    @include m.mq(tab) {
-        font-size: 7.0rem;
-        margin-top: 30px;
-    }
-
-    @include m.mq(sp) {
-        font-size: 12vw;
-    }
-}
-
-.section__error01__text {
-    margin-top: 50px;
-    text-align: center;
-    font-weight: 500;
-
-    @include m.mq(pc) {}
-
-    @include m.mq(miniPc) {}
-
-    @include m.mq(tab) {
-        margin-top: 40px;
-    }
-
-    @include m.mq(sp) {
-        margin-top: 30px;
+        @include m.mq(sp) {
+            margin-top: 30px;
+        }
     }
 }
 

@@ -338,7 +338,8 @@
         display: grid;
         grid-template-columns: 300px calc(100% - calc(300px + 30px));
         grid-template-areas:
-            "archive_cat archive_content";
+            "archive_cat archive_content"
+            "archive_pagination archive_pagination";
 
         @include v.conWidth;
 
@@ -365,7 +366,7 @@
 
         @include m.mq(tab) {
             width: 100%;
-            order: 2;
+            order: 1;
         }
 
         @include m.mq(sp) {}
@@ -464,7 +465,7 @@
         @include m.mq(miniPc) {}
 
         @include m.mq(tab) {
-            order: 3;
+            order: 2;
             border-top: 1px solid var(--base_color);
             width: 100%;
             margin-bottom: 20px;
@@ -677,6 +678,24 @@
         @include m.mq(sp) {}
 
     }
+
+    .cms-pagination {
+        grid-area: archive_pagination;
+        margin-top: 50px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 30px;
+        }
+
+        @include m.mq(tab) {
+            order: 3;
+            margin-top: 0;
+        }
+
+        @include m.mq(sp) {}
+    }
 }
 
 
@@ -698,7 +717,8 @@
         display: grid;
         grid-template-columns: 300px calc(100% - calc(300px + 30px));
         grid-template-areas:
-            "archive_cat archive_content";
+            "archive_cat archive_content"
+            "archive_pagination archive_pagination";
         @include v.conWidth;
 
         @include m.mq(pc) {}
@@ -982,6 +1002,24 @@
         @include m.mq(sp) {}
 
     }
+
+    .cms-pagination {
+        grid-area: archive_pagination;
+        margin-top: 50px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 30px;
+        }
+
+        @include m.mq(tab) {
+            order: 3;
+            margin-top: 0;
+        }
+
+        @include m.mq(sp) {}
+    }
 }
 
 // archive-b-normal00
@@ -1228,6 +1266,66 @@
 
         @include m.mq(sp) {}
 
+    }
+
+    .cms-pagination {
+        grid-area: archive_pagination;
+        margin-top: 50px;
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {
+            margin-top: 30px;
+        }
+
+        @include m.mq(tab) {
+            order: 3;
+            margin-top: 0;
+        }
+
+        @include m.mq(sp) {}
+
+        span.page-numbers,
+        a.page-numbers {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 20px;
+
+            &.current {
+                background: var(--main_color);
+                color: #fff;
+            }
+
+            &.next,
+            &.prev {
+                width: auto;
+                white-space: nowrap;
+                display: flex;
+                gap: 10px;
+            }
+
+            &.prev {
+                margin-right: 30px;
+
+                &::before {
+                    content: "←";
+                    color: var(--main_color);
+                }
+            }
+
+            &.next {
+                margin-left: 30px;
+
+                &::after {
+                    content: "→";
+                    color: var(--main_color);
+                }
+            }
+
+        }
     }
 }
 
