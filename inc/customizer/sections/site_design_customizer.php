@@ -95,26 +95,26 @@ class Site_Button_Customizer extends Base_Customizer
     protected function add_controls($wp_customize)
     {
         $this->add_select_field($wp_customize, 'common_btn_design_setting', __('btn Link Design Type For common', 'boutiq'), array(
-            '01' => __('btn Link Type1', 'boutiq'),
-            '02' => __('btn Link Type2', 'boutiq'),
-            '03' => __('btn Link Type3', 'boutiq'),
-            '04' => __('btn Link Type4', 'boutiq'),
-            '05' => __('btn Link Type5', 'boutiq'),
-            '06' => __('btn Link Type6', 'boutiq'),
-            '07' => __('btn Link Type7', 'boutiq'),
-            '08' => __('btn Link Type8', 'boutiq'),
-            '09' => __('btn Link Type9', 'boutiq'),
-            '10' => __('btn Link Type10', 'boutiq'),
-        ), '01');
+            'button-ac00' => __('Button_A-Circle_00', 'boutiq'),
+            'button-ac01' => __('Button_A-Circle_01', 'boutiq'),
+            'button-ac02' => __('Button_A-Circle_02', 'boutiq'),
+            'button-bc00' => __('Button_B-Circle_00', 'boutiq'),
+            'button-bc01' => __('Button_B-Circle_01', 'boutiq'),
+            'button-bc02' => __('Button_B-Circle_02', 'boutiq'),
+            'button-cc00' => __('Button_C-Circle_00', 'boutiq'),
+            'button-cc01' => __('Button_C-Circle_01', 'boutiq'),
+            'button-as00' => __('Button_A-Square_00', 'boutiq'),
+            'button-as01' => __('Button_A-Square_01', 'boutiq'),
+        ), 'button-ac00');
 
         $this->add_select_field($wp_customize, 'common_btn_icon_setting', __('Icon design for buttons in page content', 'boutiq'), array(
-            '01' => __('Icon Type1', 'boutiq'),
-            '02' => __('Icon Type2', 'boutiq'),
-            '03' => __('Icon Type3', 'boutiq'),
-            '04' => __('Icon Type4', 'boutiq'),
-            '05' => __('Icon Type5', 'boutiq'),
-            '06' => __('Icon Type6', 'boutiq'),
-        ), '01');
+            'icon-ac00' => __('Icon_A-Circle_00', 'boutiq'),
+            'icon-ac01' => __('Icon_A-Circle_01', 'boutiq'),
+            'icon-ac02' => __('Icon_A-Circle_02', 'boutiq'),
+            'icon-an00' => __('Icon_A-Normal_00', 'boutiq'),
+            'icon-an01' => __('Icon_A-Normal_01', 'boutiq'),
+            'icon-an02' => __('Icon_A-Normal_02', 'boutiq'),
+        ), 'icon-ac00');
     }
 }
 
