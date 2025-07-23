@@ -11,8 +11,8 @@ $cms_design = esc_attr(get_theme_mod('cms_top_design_setting', 'news-a-normal00'
 $main_title = esc_html(get_theme_mod('cms_top_main_title_setting', ''));
 $sub_title = esc_html(get_theme_mod('cms_top_sub_title_setting', ''));
 $btn_text = esc_html(get_theme_mod('cms_top_btn_setting', ''));
-$btn_link_design = get_theme_mod('common_btn_design_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
+$btn_link_design = get_theme_mod('common_btn_design_setting', 'button-ac00');
+$btn_icon_design = get_theme_mod('common_btn_icon_setting', 'icon-ac00');
 // Text Link design type
 $text_link_design = get_theme_mod('text_link_setting', '01');
 $text_icon_design = get_theme_mod('text_link_icon_setting', '01');
@@ -126,10 +126,10 @@ elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : 
             <?php if ($btn_text && $topCms_btn_link): ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
-                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
+                        <div class="c-btn <?php echo $btn_link_design; ?>">
+                            <a class="c-btn-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon <?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
@@ -175,10 +175,10 @@ elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : 
             <?php if ($btn_text && $topCms_btn_link): ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
-                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
+                        <div class="c-btn <?php echo $btn_link_design; ?>">
+                            <a class="c-btn-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon <?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
@@ -303,10 +303,10 @@ elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : 
             <?php if ($btn_text && $topCms_btn_link): ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
-                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
+                        <div class="c-btn <?php echo $btn_link_design; ?>">
+                            <a class="c-btn-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon <?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>
@@ -431,10 +431,10 @@ elseif ($cms_design == 'news-b-normal00' || $cms_design == 'news-e-normal00') : 
             <?php if ($btn_text && $topCms_btn_link): ?>
                 <div class="top-cms-link">
                     <?php if ($link_type == 01) : ?>
-                        <div class="c-btn c-btn<?php echo $btn_link_design; ?> btn<?php echo $btn_link_design; ?>">
-                            <a class="c-btn-link c-btn<?php echo $btn_link_design; ?>-link" href='<?php echo $topCms_btn_link; ?>'>
-                                <div class="c-btn-text c-btn-text<?php echo $btn_link_design; ?>"><?php echo $btn_text; ?></div>
-                                <div class="c-btn-icon c-btn-icon<?php echo $btn_icon_design; ?>"></div>
+                        <div class="c-btn <?php echo $btn_link_design; ?>">
+                            <a class="c-btn-link" href='<?php echo $topCms_btn_link; ?>'>
+                                <div class="c-btn-text"><?php echo $btn_text; ?></div>
+                                <div class="c-btn-icon <?php echo $btn_icon_design; ?>"></div>
                             </a>
                         </div>
                     <?php else : ?>

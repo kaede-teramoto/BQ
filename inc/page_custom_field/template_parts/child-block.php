@@ -1,7 +1,7 @@
 <?php
 // btn design type
-$btn_link_design = get_theme_mod('common_btn_design_setting', '01');
-$btn_icon_design = get_theme_mod('common_btn_icon_setting', '01');
+$btn_link_design = get_theme_mod('common_btn_design_setting', 'button-ac00');
+$btn_icon_design = get_theme_mod('common_btn_icon_setting', 'icon-ac00');
 
 // Text Link design type
 $text_link_design = get_theme_mod('text_link_setting', '01');
@@ -128,10 +128,10 @@ if ($child_content_display === 'on') {
                 $button_type = $child['button_type'];
                 if ('button' === $button_type) {
                     echo '<div class="parts-button">';
-                    echo '<div class="c-btn c-btn' . $btn_link_design . ' btn' . $btn_link_design . '">';
-                    echo '<a class="c-btn-link c-btn' . $btn_link_design . '-link" href="' . esc_url($child['button_url']) . '">';
-                    echo '<span class="c-btn-text c-btn-text' . $btn_link_design . '">' . esc_html($child['button_text']) . '</span>';
-                    echo '<span class="c-btn-icon c-btn-icon' . $btn_icon_design . '"></span>';
+                    echo '<div class="c-btn ' . $btn_link_design . '">';
+                    echo '<a class="c-btn-link" href="' . esc_url($child['button_url']) . '">';
+                    echo '<span class="c-btn-text">' . esc_html($child['button_text']) . '</span>';
+                    echo '<span class="c-btn-icon ' . $btn_icon_design . '"></span>';
                     echo '</a>';
                     echo '</div>';
                     echo '</div>';
