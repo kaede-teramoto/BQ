@@ -62,33 +62,33 @@
     }
 }
 
-/*button-cc01*/
-.button-cc01 {
-    height: 50px;
+/*button-ac01*/
+.button-ac01 {
+    height: 64px;
 
     .c-btn-link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: auto;
         height: 100%;
         min-width: 180px;
-        border-radius: 30px;
-        border: 2px solid;
-        border-color: var(--main_color);
-        color: var(--main_color);
-        background-color: #fff;
-        padding: 12px 50px;
+        border-radius: 50px;
+        outline: 2px solid rgba(255, 255, 255, 0);
+        outline-offset: -2px;
+        color: #fff;
+        padding: 12px 15px 12px 30px;
         line-height: 1;
         text-align: center;
         transition: all .3s ease-out;
         gap: 50px;
+        background-color: var(--main_color);
 
         &:hover {
-            border-color: var(--main_color);
-            background-color: var(--main_color);
-            color: #ffffff;
+            background-color: transparent;
+            color: var(--main_color);
             transition: all .3s ease-out;
+            outline: 2px solid var(--main_color);
         }
 
         @include m.mq(pc) {}
@@ -102,9 +102,6 @@
         }
     }
 
-    .c-btn-icon {
-        display: none;
-    }
 }
 
 /*button-ac02*/
@@ -155,6 +152,115 @@
             &::before {
                 transform: translate(-20%, -25%) skewX(-45deg);
                 transition: all .3s ease-out;
+            }
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            gap: 15px;
+        }
+    }
+}
+
+/*button-bc00*/
+.button-bc00 {
+    height: 64px;
+
+    .c-btn-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: auto;
+        height: 100%;
+        min-width: 180px;
+        border-radius: 50px;
+        color: var(--main_color);
+        padding: 12px 15px 12px 30px;
+        line-height: 1;
+        text-align: center;
+        transition: all .3s ease-out;
+        gap: 70px;
+        background-color: var(--sub_color);
+
+        &:hover {
+            background-color: var(--main_color);
+            color: #fff;
+            transition: all .3s ease-out;
+        }
+
+        @include m.mq(pc) {}
+
+        @include m.mq(miniPc) {}
+
+        @include m.mq(tab) {}
+
+        @include m.mq(sp) {
+            gap: 15px;
+        }
+    }
+}
+
+/*button-bc01*/
+.button-bc01 {
+    height: 80px;
+
+    .c-btn-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 100%;
+        min-width: 180px;
+        border-radius: 100px;
+        color: #fff;
+        padding: 12px 20px 12px 30px;
+        line-height: 1;
+        text-align: center;
+        transition: all .3s ease-out;
+        gap: 100px;
+        background-color: var(--main_color);
+        position: relative;
+        overflow: hidden;
+
+        .c-btn-text08 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            &::after {
+                content: '詳しく見る';
+                font-size: 60%;
+                font-weight: 500;
+            }
+        }
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: var(--sub_color);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-110%);
+            transition: all .3s;
+            z-index: 2;
+        }
+
+        &:hover {
+            background-color: var(--sub_color);
+            color: var(--main_color);
+            transition: all .3s ease-out;
+
+            &::before {
+                transition: all .3s;
+                transform: translateX(0);
             }
         }
 
@@ -281,144 +387,33 @@
     }
 }
 
-/*button-ac01*/
-.button-ac01 {
-    height: 64px;
+/*button-cc01*/
+.button-cc01 {
+    height: 50px;
 
     .c-btn-link {
         display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        width: auto;
-        height: 100%;
-        min-width: 180px;
-        border-radius: 50px;
-        outline: 2px solid rgba(255, 255, 255, 0);
-        outline-offset: -2px;
-        color: #fff;
-        padding: 12px 15px 12px 30px;
-        line-height: 1;
-        text-align: center;
-        transition: all .3s ease-out;
-        gap: 50px;
-        background-color: var(--main_color);
-
-        &:hover {
-            background-color: transparent;
-            color: var(--main_color);
-            transition: all .3s ease-out;
-            outline: 2px solid var(--main_color);
-        }
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {
-            gap: 15px;
-        }
-    }
-
-}
-
-
-/*button-bc00*/
-.button-bc00 {
-    height: 64px;
-
-    .c-btn-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        width: auto;
-        height: 100%;
-        min-width: 180px;
-        border-radius: 50px;
-        color: var(--main_color);
-        padding: 12px 15px 12px 30px;
-        line-height: 1;
-        text-align: center;
-        transition: all .3s ease-out;
-        gap: 70px;
-        background-color: var(--sub_color);
-
-        &:hover {
-            background-color: var(--main_color);
-            color: #fff;
-            transition: all .3s ease-out;
-        }
-
-        @include m.mq(pc) {}
-
-        @include m.mq(miniPc) {}
-
-        @include m.mq(tab) {}
-
-        @include m.mq(sp) {
-            gap: 15px;
-        }
-    }
-}
-
-/*button-bc01*/
-.button-bc01 {
-    height: 80px;
-
-    .c-btn-link {
-        display: flex;
         align-items: center;
         justify-content: center;
         width: auto;
         height: 100%;
         min-width: 180px;
-        border-radius: 100px;
-        color: #fff;
-        padding: 12px 20px 12px 30px;
+        border-radius: 30px;
+        border: 2px solid;
+        border-color: var(--main_color);
+        color: var(--main_color);
+        background-color: #fff;
+        padding: 12px 50px;
         line-height: 1;
         text-align: center;
         transition: all .3s ease-out;
-        gap: 100px;
-        background-color: var(--main_color);
-        position: relative;
-        overflow: hidden;
-
-        .c-btn-text08 {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-
-            &::after {
-                content: '詳しく見る';
-                font-size: 60%;
-                font-weight: 500;
-            }
-        }
-
-        &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-color: var(--sub_color);
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: translateX(-110%);
-            transition: all .3s;
-            z-index: 2;
-        }
+        gap: 50px;
 
         &:hover {
-            background-color: var(--sub_color);
-            color: var(--main_color);
+            border-color: var(--main_color);
+            background-color: var(--main_color);
+            color: #ffffff;
             transition: all .3s ease-out;
-
-            &::before {
-                transition: all .3s;
-                transform: translateX(0);
-            }
         }
 
         @include m.mq(pc) {}
@@ -431,8 +426,11 @@
             gap: 15px;
         }
     }
-}
 
+    .c-btn-icon {
+        display: none;
+    }
+}
 
 /*button-as00*/
 .button-as00 {
@@ -471,7 +469,6 @@
         }
     }
 }
-
 
 /*button-as01*/
 .button-as01 {
@@ -513,8 +510,8 @@
 
 
 .header {
-    .c-btn01 {
-        .c-btn01-link {
+    .button-ac00 {
+        .c-btn-link {
             color: var(--header_btn_text_color);
             background: var(--header_btn_bg_color);
             transition: background .3s ease-out,
@@ -533,10 +530,10 @@
         }
     }
 
-    .c-btn01.btn--second {
+    .button-ac00.btn--second {
         margin-left: 5px;
 
-        .c-btn01-link {
+        .c-btn-link {
             color: var(--header_btn_sub_text_color);
             background: var(--header_btn_sub_bg_color);
             transition: background .3s ease-out,
@@ -555,9 +552,9 @@
         }
     }
 
-    .c-btn02 {
+    .button-cc01 {
 
-        .c-btn02-link {
+        .c-btn-link {
             border-color: var(--header_btn_text_color);
             color: var(--header_btn_text_color);
             position: relative;
@@ -587,11 +584,11 @@
         }
     }
 
-    .c-btn03 {
-        .c-btn03-link {
+    .button-ac02 {
+        .c-btn-link {
             color: var(--header_btn_text_color);
 
-            .c-btn-icon01 {
+            .icon-ac00 {
                 &::before {
                     background-color: var(--header_btn_bg_color);
                 }
@@ -601,8 +598,8 @@
                 }
             }
 
-            .c-btn-icon02,
-            .c-btn-icon04 {
+            .icon-ac01,
+            .icon-ac02 {
                 background-color: var(--header_btn_text_color);
 
                 &::before {
@@ -613,7 +610,7 @@
             &:hover {
                 color: var(--header_btn_bg_color);
 
-                .c-btn-icon01 {
+                .icon-ac00 {
                     background-color: var(--header_btn_bg_color);
 
                     &::before {
@@ -625,8 +622,8 @@
                     }
                 }
 
-                .c-btn-icon02,
-                .c-btn-icon04 {
+                .icon-ac01,
+                .icon-ac02 {
                     background-color: var(--header_btn_bg_color);
 
                     &::before {
@@ -634,13 +631,13 @@
                     }
                 }
 
-                .c-btn-icon03 {
+                .icon-an00 {
                     &::before {
                         border-color: var(--header_btn_bg_color);
                     }
                 }
 
-                .c-btn-icon05 {
+                .icon-an01 {
                     &::before {
                         background-color: var(--header_btn_bg_color);
                     }
@@ -650,7 +647,7 @@
                     }
                 }
 
-                .c-btn-icon06 {
+                .icon-an02 {
                     &::before {
                         background-color: var(--header_btn_bg_color);
                     }
@@ -663,21 +660,19 @@
         }
     }
 
-    .c-btn05 {
-        .c-btn05-link {
+    .button-cc00 {
+        .c-btn-link {
             border-color: var(--header_btn_text_color);
             color: var(--header_btn_text_color);
         }
     }
 
-    .c-btn06 {
-        .c-btn06-link {
+    .button-ac01 {
+        .c-btn-link {
             color: var(--header_btn_text_color);
         }
     }
 }
-
-.hm-btn {}
 
 .hm-btn-link {
     width: 100%;
@@ -724,8 +719,8 @@
 
 
 .footer {
-    .c-btn01 {
-        .c-btn01-link {
+    .button-ac00 {
+        .c-btn-link {
             color: var(--footer_first_btn_text_color);
             background: var(--footer_first_btn_bg_color);
             transition: background .3s ease-out,
@@ -744,10 +739,10 @@
         }
     }
 
-    .c-btn01.btn--second {
+    .button-ac00.btn--second {
         margin-left: 5px;
 
-        .c-btn01-link {
+        .c-btn-link {
             color: var(--footer_second_btn_text_color);
             background: var(--footer_second_btn_bg_color);
             transition: background .3s ease-out,
@@ -766,9 +761,9 @@
         }
     }
 
-    .c-btn02 {
+    .button-cc01 {
 
-        .c-btn02-link {
+        .c-btn-link {
             border-color: var(--footer_first_btn_text_color);
             color: var(--footer_first_btn_text_color);
             position: relative;
@@ -798,12 +793,12 @@
         }
     }
 
-    .c-btn03 {
-        .c-btn03-link {
+    .button-ac02 {
+        .c-btn-link {
             color: var(--footer_first_btn_text_color);
             background-color: var(--footer_first_btn_bg_color);
 
-            .c-btn-icon01 {
+            .icon-ac00 {
                 &::before {
                     background-color: var(--footer_first_btn_bg_color);
                 }
@@ -813,8 +808,8 @@
                 }
             }
 
-            .c-btn-icon02,
-            .c-btn-icon04 {
+            .icon-ac01,
+            .icon-ac02 {
                 background-color: var(--footer_first_btn_text_color);
 
                 &::before {
@@ -825,7 +820,7 @@
             &:hover {
                 color: var(--footer_first_btn_bg_color);
 
-                .c-btn-icon01 {
+                .icon-ac00 {
                     background-color: var(--footer_first_btn_bg_color);
 
                     &::before {
@@ -837,8 +832,8 @@
                     }
                 }
 
-                .c-btn-icon02,
-                .c-btn-icon04 {
+                .icon-ac01,
+                .icon-ac02 {
                     background-color: var(--footer_first_btn_bg_color);
 
                     &::before {
@@ -846,13 +841,13 @@
                     }
                 }
 
-                .c-btn-icon03 {
+                .icon-an00 {
                     &::before {
                         border-color: var(--footer_first_btn_bg_color);
                     }
                 }
 
-                .c-btn-icon05 {
+                .icon-an01 {
                     &::before {
                         background-color: var(--footer_first_btn_bg_color);
                     }
@@ -862,7 +857,7 @@
                     }
                 }
 
-                .c-btn-icon06 {
+                .icon-an02 {
                     &::before {
                         background-color: var(--footer_first_btn_bg_color);
                     }
@@ -875,13 +870,13 @@
         }
     }
 
-    .c-btn04 {
+    .button-bc02 {
 
-        .c-btn04-link {
+        .c-btn-link {
             background-color: var(--footer_first_btn_bg_color);
 
             &:hover {
-                .c-btn-icon03::before {
+                .icon-an00::before {
                     border-color: #fff;
                 }
 
@@ -889,15 +884,15 @@
         }
     }
 
-    .c-btn05 {
-        .c-btn05-link {
+    .button-cc00 {
+        .c-btn-link {
             border-color: var(--footer_first_btn_text_color);
             color: var(--footer_first_btn_text_color);
         }
     }
 
-    .c-btn06 {
-        .c-btn06-link {
+    .button-ac01 {
+        .c-btn-link {
             color: var(--footer_first_btn_text_color);
         }
     }
